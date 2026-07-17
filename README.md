@@ -74,17 +74,19 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 | Anti-AI-slop | No random purple gradients, inconsistent spacing, generic heroes |
 | UI feel | Micro craft — concentric radius, tabular-nums, press/hover feel ([`ui-feel`](skills/ui-feel/SKILL.md)) |
 | Design tokens | 9 CSS presets in `tokens/` (OKLCH + HSL + Plasma landing) |
-| Icons | **[Reicon](https://reicon.dev)** by default — [references/reicon-icons.md](references/reicon-icons.md) |
-| WebGL backgrounds | **[Plasma Studio](https://plasma.nusaiba.dev/app/)** — pure WebGL, not Three.js by default — [references/webgl.md](references/webgl.md) |
-| Quality loop | `/polish` = build → test → audit → fix until Critical/High clear (max 3) — see [fe-lifecycle](references/fe-lifecycle.md) |
+| Icons | **[Reicon](https://reicon.dev) MUST** appear in shipped markup (CDN/package) unless waiver — [compliance-gates](references/compliance-gates.md) |
+| WebGL backgrounds | Skill **`webgl`** → [Plasma Studio](https://plasma.nusaiba.dev/app/) / `Plasma.init` (not random Three.js) |
+| Compliance | Before DONE, agent reports **Conventions check** (tokens / icons / states / webgl) |
+| Quality loop | `/polish` = build → test → audit → fix until Critical/High clear (max 3) — [fe-lifecycle](references/fe-lifecycle.md) |
 | Multi-platform | Claude Code, Cursor, Codex, Gemini, OpenCode, Antigravity |
 | Claude hooks | SessionStart reminder + PostToolUse anti-slop scan |
 
 ### Defaults (when the project has no standard yet)
 
 1. **Tokens** — pick a preset from `tokens/` (or keep the project’s existing design system)
-2. **Icons** — [Reicon](https://reicon.dev) (`reicon-react` / CDN). Keep Lucide/etc. if already standardized
-3. **Shader backgrounds** — tune/export from [Plasma Studio](https://plasma.nusaiba.dev/app/), drop in via `Plasma.init`
+2. **Icons** — [Reicon](https://reicon.dev) in the **actual markup** (`reicon-react` or CDN `<re-icon>`). Keep Lucide/etc. if already standardized; text-only only with an explicit waiver
+3. **Shader backgrounds** — skill `webgl` → [Plasma Studio](https://plasma.nusaiba.dev/app/) → `Plasma.init`
+4. **Ship gate** — end UI work with a [Conventions check](references/compliance-gates.md)
 
 ### Out of scope (v1)
 
@@ -167,6 +169,8 @@ Import notes: [tokens/README.md](tokens/README.md).
 
 Default icon library: **[Reicon](https://reicon.dev)** (2,700+ MIT SVG icons, Outline / Filled).
 
+**MUST ship in markup** for nav / toolbars / empty states / icon buttons — not “prefer in docs only”. Skills can be installed and still ignored; the pack requires a [Conventions check](references/compliance-gates.md) before DONE.
+
 ```bash
 npm install reicon-react   # React (also: reicon-vue, reicon-svelte, reicon)
 ```
@@ -176,7 +180,30 @@ import { Home, Search } from "reicon-react"
 <Home size={24} color="currentColor" />
 ```
 
+Vanilla HTML:
+
+```html
+<script defer src="https://unpkg.com/reicon/cdn/reicon.min.js"></script>
+<re-icon icon="user" size="20" decorative></re-icon>
+```
+
 Full guide: [references/reicon-icons.md](references/reicon-icons.md) · Browse: [reicon.dev/icons](https://reicon.dev/icons)
+
+---
+
+## Compliance gates
+
+Agents must not silently skip pack conventions. Before marking UI done, they report:
+
+```markdown
+## Conventions check
+- Tokens: <preset | project system | waiver>
+- Icons: <Reicon … | existing lib | waiver: text-only>
+- States: loading / empty / error …
+- WebGL: <Plasma.init … | n/a>
+```
+
+Details: [references/compliance-gates.md](references/compliance-gates.md) · Eval: [evals/reicon-webgl-compliance.md](evals/reicon-webgl-compliance.md)
 
 ---
 
@@ -192,7 +219,7 @@ Guide: [references/ui-feel.md](references/ui-feel.md)
 
 ## WebGL — Plasma Studio
 
-Skill **`webgl`**. Canonical study: **[Plasma Studio](https://plasma.nusaiba.dev/app/)**.
+Skill **`webgl`** (required for shader / plasma / animated canvas backgrounds). Canonical study: **[Plasma Studio](https://plasma.nusaiba.dev/app/)**. Prefer `Plasma.init` — do not invent a Three.js hero for fullscreen backgrounds unless the user wants a 3D scene graph.
 
 
 ```js
