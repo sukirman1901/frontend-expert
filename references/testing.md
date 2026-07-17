@@ -373,6 +373,7 @@ test('button matches screenshot', async ({ page }) => {
 - Test error states
 - Test loading states
 - Test empty states
+- Stress interactive flows when risk is high (double submit, cancel mid-open, slow 3G loading UI)
 
 ### DON'T
 
@@ -382,6 +383,15 @@ test('button matches screenshot', async ({ page }) => {
 - Test third-party libraries
 - Write tests that depend on order
 - Skip flaky tests (fix them)
+
+## Robustness (optional depth)
+
+For high-risk interactive surfaces, add cases from this short list (don’t boil the ocean):
+
+- Spam click / double submit on primary async action
+- Close or navigate away while opening a dialog/drawer
+- Loading → error and loading → empty transitions
+- Keyboard-only path for the primary task
 
 ## Test Naming
 

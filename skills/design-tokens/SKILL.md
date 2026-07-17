@@ -23,7 +23,11 @@ Enforce token-based styling. Use CSS custom properties from `tokens/` presets, o
 ## Workflow
 
 1. **Detect existing system** — if the project already has tokens/theme CSS, use that (custom mode). Do not force a preset.
-2. **Otherwise pick a preset** from `tokens/`:
+2. **Style inference** (custom / existing system) — before inventing visuals:
+   - Read Tailwind `theme` / `:root` CSS variables / theme provider
+   - Skim 2–3 existing buttons, cards, forms (padding, radius, shadow, type)
+   - Reuse those patterns; store nothing exotic outside the project language
+3. **Otherwise pick a preset** from `tokens/`:
 
 | File | Base | Primary | Radius | Best for |
 |------|------|---------|--------|----------|
@@ -37,7 +41,7 @@ Enforce token-based styling. Use CSS custom properties from `tokens/` presets, o
 | `slate-cyan.css` | slate | cyan | 1 | Data-heavy interfaces |
 | `rose-amber.css` | rose | amber | 1.5 | Warm, friendly products |
 
-3. **Apply rules**
+4. **Apply rules**
    - **HSL presets** (`stone-emerald`, etc.): `hsl(var(--primary))`, `hsl(var(--muted))`, …
    - **OKLCH / hex presets** (`neutral-oklch*.css`, `stone-oklch.css`, `plasma-landing.css`): `var(--primary)` — do **not** wrap in `hsl()`
    - **Plasma landing** also exposes native names: `var(--bg-main)`, `var(--primary-color)`, …
@@ -49,6 +53,7 @@ Enforce token-based styling. Use CSS custom properties from `tokens/` presets, o
 ## Checklist
 
 - [ ] Token source chosen (preset or project system)
+- [ ] Style inferred from existing components when custom
 - [ ] No raw hex / RGB outside token definitions
 - [ ] Spacing on 0.25rem scale
 - [ ] Border radius matches token file
@@ -56,4 +61,4 @@ Enforce token-based styling. Use CSS custom properties from `tokens/` presets, o
 
 ## Depth
 
-Token CSS files live in `tokens/`. Component usage examples: `references/component-patterns.md`.
+Token CSS files live in `tokens/`. Style inference context: `references/design-axes.md`. Component usage: `references/component-patterns.md`.

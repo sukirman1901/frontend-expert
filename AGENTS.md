@@ -42,7 +42,7 @@ Do **not** start coding a generic UI before a direction is set (unless skip rule
 
 | Skill | Auto-triggers on |
 |-------|------------------|
-| `frontend-judgment` | Non-trivial / ambiguous UI before build |
+| `frontend-judgment` | Non-trivial / ambiguous UI before build — **distinct axes** (hierarchy/layout/density/…) |
 | `design-tokens` | Theme, colors, spacing, styling UI |
 | `ui-components` | Components, pages, layouts, states |
 | `anti-ai-slop` | Build polish + design audits |

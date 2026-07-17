@@ -39,6 +39,7 @@ Prove UI behavior with a lean pyramid: mostly unit/component tests, some integra
    - Loading / error / empty when those states exist
    - Primary user action (click/submit)
    - Keyboard path for custom controls when non-native
+   - **Robustness (when risk is real):** double-submit / spam click, interrupt open→close mid-animation, slow network loading UI
 
 5. **Accessibility in tests**
    - axe-core (or equivalent) on critical components when tooling exists
@@ -52,10 +53,11 @@ Prove UI behavior with a lean pyramid: mostly unit/component tests, some integra
 
 - [ ] Tests describe user-visible behavior
 - [ ] Loading / error / empty covered when applicable
+- [ ] Double-submit / interrupt paths covered when destructive or async
 - [ ] No unnecessary `test-id` queries
 - [ ] Regression test for bugs fixed
 - [ ] A11y assertion or axe run for interactive surfaces (when tooling available)
 
 ## Depth
 
-Full guide: `references/testing.md`.
+Full guide: `references/testing.md`. Robustness ideas also in `references/anti-patterns.md`.

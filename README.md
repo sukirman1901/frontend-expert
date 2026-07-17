@@ -122,7 +122,7 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 | Skill | Use when |
 |-------|----------|
-| `frontend-judgment` | Non-trivial / blank-canvas UI — options before code |
+| `frontend-judgment` | Non-trivial / blank-canvas UI — **axes** + options before code |
 | `design-tokens` | Choosing/applying theme CSS variables |
 | `ui-components` | Components, layouts, states — **Reicon icons** |
 | `anti-ai-slop` | Detecting/fixing AI aesthetic patterns |
@@ -231,7 +231,7 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, **ui-feel**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
+| Skill-backed | anti-patterns, **ui-feel**, **design-axes**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
 | WebGL | [webgl.md](references/webgl.md) — Plasma Studio first |
 | Reference-only | monitoring — promote later if needed |
@@ -273,6 +273,7 @@ See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 ## Credits
 
 - [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) — UI feel craft (adapted as `ui-feel`)
+- [design-lab / Design and Refine](https://github.com/0xdesign/design-plugin) — exploration axes & style inference (adapted into `frontend-judgment`)
 - [Reicon](https://reicon.dev) — default icon library
 - [Plasma](https://plasma.nusaiba.dev) — WebGL background studio (canonical study)
 - [shadcn/ui](https://ui.shadcn.com/) — design tokens and components

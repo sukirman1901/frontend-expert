@@ -429,3 +429,21 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
   )
 }
 ```
+
+## Text in flex / truncation
+
+Flex children that truncate need `min-w-0` (or equivalent) or text won’t shrink:
+
+```tsx
+<div className="flex items-center gap-2">
+  <span className="min-w-0 flex-1 truncate">{title}</span>
+  <Button size="sm">Edit</Button>
+</div>
+```
+
+## Destructive actions
+
+- Confirm irreversible deletes (dialog) **or** soft-delete with undo
+- State consequences clearly (“Deletes 5 files permanently”)
+- Use destructive token color + distinct styling — never rely on color alone
+- Keep a non-destructive cancel/back path

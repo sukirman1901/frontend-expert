@@ -71,6 +71,8 @@ function useTheme() {
 
 ### URL State
 
+Important view state (filters, tabs, pagination, selected id) should usually live in the URL so views are shareable and back/forward works.
+
 ```tsx
 // Good: Filters, pagination, shareable UI state
 function ProductList() {
@@ -86,6 +88,9 @@ function ProductList() {
   )
 }
 ```
+
+**Prefer URL for:** filters, sort, tabs, pagination, deep-linked panels.  
+**Prefer local state for:** ephemeral hover, draft input before submit, one-off popovers.
 
 ### Server State
 

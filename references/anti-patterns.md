@@ -241,6 +241,21 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 - Use progressive disclosure
 - Ensure all content is accessible on all devices
 
+## Interaction & robustness anti-patterns
+
+Cherry-picked from design-lab principles (pack-relevant only):
+
+| Pattern | Why it hurts | Fix |
+|---------|--------------|-----|
+| `transition: all` / bare Tailwind `transition` | Animates unintended layout props | Name properties (`transition-transform`, etc.) — see `ui-feel` |
+| Hover-only affordances without `@media (hover: hover)` | Sticky “hover” on touch | Gate hover styles; provide press/focus equivalents |
+| `onPaste` + `preventDefault` | Blocks paste | Allow paste; validate after |
+| Placeholder as the only label | A11y + disappears on type | Visible `<label>` (or `aria-label`) |
+| Validate on every keystroke harshly | Anxiety, noise | Validate on blur/submit; live-validate gently |
+| Destructive action without confirm/undo | Data loss | Confirm dialog or soft-delete + undo |
+| Filters/tabs only in React state | Unshareable, broken back | Prefer URL state for shareable view state |
+| Tiny touch targets | Mis-taps | ≥44px touch / ≥40px dense desktop (`ui-feel`) |
+
 ## Quick Checklist
 
 Before considering UI complete, scan for:
@@ -258,3 +273,6 @@ Before considering UI complete, scan for:
 - [ ] No keyboard accessibility issues
 - [ ] No desktop-first design
 - [ ] No hidden mobile content
+- [ ] No `transition: all` / bare `transition`
+- [ ] Destructive actions confirmable / recoverable
+- [ ] Shareable filters use URL state when appropriate
