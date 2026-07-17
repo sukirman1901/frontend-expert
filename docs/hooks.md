@@ -6,7 +6,7 @@ Hooks are **Claude Code** event scripts. They are not multi-platform adapters â€
 
 | Event | Script | Purpose |
 |-------|--------|---------|
-| `SessionStart` | `session-start.sh` | Chat-first reminder: build chain includes **responsive-ui** + **motion**; Conventions check; slash optional |
+| `SessionStart` | `session-start.sh` | Chat-first reminder: build chain includes **responsive-ui** + **motion** (+ **marketing-landing** if landing); Conventions (Shell / Landing); slash optional |
 | `PostToolUse` (`Edit\|Write`) | `anti-slop-scan.sh` | Warn on AI aesthetic patterns + `transition: all` / bare Tailwind `transition` |
 
 ## Docs

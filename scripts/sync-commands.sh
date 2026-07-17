@@ -36,8 +36,8 @@ check_skills() {
   done
 }
 
-check_skills ui frontend-judgment design-tokens ui-components responsive-ui motion anti-ai-slop ui-feel accessibility
-check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance design-fidelity fe-devtools motion
+check_skills ui frontend-judgment design-tokens ui-components responsive-ui motion anti-ai-slop ui-feel accessibility marketing-landing
+check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance design-fidelity fe-devtools motion marketing-landing
 check_skills test-ui frontend-testing ui-components accessibility fe-devtools
 check_skills audit design-reviewer
 check_skills polish ui-quality-loop ui-feel motion
@@ -86,6 +86,12 @@ require_phrase() {
 
 require_phrase "ui shell chrome" "avatar|account menu|custom select|theme in topbar|topbar icon" \
   "$ROOT/commands/ui.md" "$ROOT/.claude/commands/ui.md" "$ROOT/.gemini/commands/ui.toml"
+
+require_phrase "ui marketing-landing" "marketing-landing" \
+  "$ROOT/commands/ui.md" "$ROOT/.claude/commands/ui.md" "$ROOT/.gemini/commands/ui.toml"
+require_phrase "design marketing-landing" "marketing-landing" \
+  "$ROOT/commands/design.md" "$ROOT/.claude/commands/design.md" "$ROOT/.gemini/commands/design.toml"
+require_phrase "session-start marketing" "marketing-landing" "$ROOT/hooks/session-start.sh"
 
 require_phrase "design motion" "motion" \
   "$ROOT/commands/design.md" "$ROOT/.claude/commands/design.md" "$ROOT/.gemini/commands/design.toml"

@@ -17,12 +17,13 @@ Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert)
 ```text
 frontend-judgment*
   → design-tokens
+  → marketing-landing?     # if marketing homepage / landing
   → app-shell-routing?     # if multi-route / shell / dashboard / settings
   → data-fetching?         # if remote data
   → forms-validation?      # if forms
   → ui-components
   → responsive-ui          # MUST for layout UI
-  → motion                 # light shell/section defaults
+  → motion                 # light shell/section defaults; marketing hand-roll families
   → anti-ai-slop → ui-feel → accessibility
   → (+ webgl | fe-seo | fe-architecture | design-fidelity | fe-devtools as needed)
 ```

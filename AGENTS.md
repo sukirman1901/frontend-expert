@@ -16,7 +16,7 @@ Pillar map: `docs/pillars.md`.
 
 | User says / means | Load skills (order) | Optional shortcut |
 |-------------------|---------------------|-------------------|
-| Build/change UI, page, component, layout, styling | `frontend-judgment`* → `design-tokens` → `ui-components` → **`responsive-ui`** → **`motion`** (light shell defaults) → `anti-ai-slop` → `ui-feel` → `accessibility` | `/ui` |
+| Build/change UI, page, component, layout, styling | `frontend-judgment`* → `design-tokens` → (+ **`marketing-landing`** if landing) → `ui-components` → **`responsive-ui`** → **`motion`** (light shell defaults) → `anti-ai-slop` → `ui-feel` → `accessibility` | `/ui` |
 | + form / validasi / wizard | … + `forms-validation` (before or with ui-components) | `/ui` |
 | + list/detail API / loading data | … + `data-fetching` | `/ui` |
 | + app shell / sidebar / routing / 404 | … + `app-shell-routing` | `/ui` |
@@ -25,7 +25,7 @@ Pillar map: `docs/pillars.md`.
 | + marketing landing / homepage sections / logo cloud / testimonials | … + **`marketing-landing`** (+ `motion` / `fe-seo`) | `/ui` |
 | + animation / motion / marquee / parallax / text reveal / landing motion | … + `motion` (families/patterns in `motion-families.md`; hand-roll — no registry default) | `/ui` |
 | Mobile / responsive / semua device / tablet | **`responsive-ui`** (MUST on layout UI) | `/ui` |
-| Audit design, AI slop, UI generik | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` (+ `frontend-judgment` hierarchy/type if scores claimed) | `/design` or `/audit` |
+| Audit design, AI slop, UI generik | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` (+ `motion` if animated; **`marketing-landing`** if landing; + `frontend-judgment` hierarchy/type if scores claimed) | `/design` or `/audit` |
 | Match Figma / mock / pixel / fidelity | `design-fidelity` → `design-tokens` → `responsive-ui` → `ui-feel` | `/design` |
 | Lighthouse / axe / DevTools / measured audit | `fe-devtools` → `accessibility` → `web-performance` → `frontend-testing` | `/test-ui` or `/design` |
 | Hierarchy / visual hierarchy / primary CTA unclear | `frontend-judgment` (Hierarchy pass) → `anti-ai-slop` → `ui-feel` | `/design` |
@@ -55,6 +55,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 
 | Skill | Pillar | Triggers |
 |-------|--------|----------|
+| `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
 | `frontend-judgment` | UI Quality | Blank-canvas / ambiguous UI |
 | `design-tokens` | UI Quality | Theme — decision tree + scoring |
 | `ui-components` | UI Quality | Components, states, composition |
@@ -73,7 +74,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `forms-validation` | Ship FE | Forms / wizards |
 | `fe-architecture` | Depth | Folders / state boundaries |
 | `fe-seo` | Depth | Meta / OG / indexability |
-| `marketing-landing` | UI Quality | Marketing section stack (hero→footer) |
+| `marketing-landing` | UI Quality | Marketing section stack (hero→footer); **hand-roll** — not registry install |
 | `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
 | `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
 
@@ -90,10 +91,11 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 9. Loading / error / empty for interactive + async surfaces
 10. Light **Motion** defaults on shell/dashboard (or waiver) — `motion`; marketing: name families/patterns from `motion-families.md` and hand-roll (registry install is **not** the default)
 11. **Shell chrome** — theme in topbar (icon); profile = avatar → account menu; filters = custom select (`app-shell-routing` / `ui-components`)
-12. Do not fabricate visual audit scores without tokens/screenshots
-13. Never block on slash commands when intent is clear
-14. Blank-canvas → judgment first
-15. “Sampai bagus” → `ui-quality-loop` (cap 3)
-16. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**
+12. **Marketing landing** — section stack via `marketing-landing` / `landing-sections.md`; hero-only fails; hand-roll (registry install is **not** the default)
+13. Do not fabricate visual audit scores without tokens/screenshots
+14. Never block on slash commands when intent is clear
+15. Blank-canvas → judgment first
+16. “Sampai bagus” → `ui-quality-loop` (cap 3)
+17. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**, **Landing**
 
 Orchestration: session agent loads skills; agents do not call agents. See `docs/pack-layers.md`, `docs/pillars.md`.

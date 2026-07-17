@@ -131,15 +131,16 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 ---
 
-## Skills (20)
+## Skills (22)
 
-Pillar map: [docs/pillars.md](docs/pillars.md).
+Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 
 | Skill | Pillar | Use when |
 |-------|--------|----------|
+| `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
 | `frontend-judgment` | UI Quality | Blank-canvas — axes + options before code |
 | `design-tokens` | UI Quality | Scoring + applying theme CSS |
-| `ui-components` | UI Quality | Components, states — **Reicon** |
+| `ui-components` | UI Quality | Components, states — **Reicon**; custom selects |
 | `responsive-ui` | Responsive MUST | All devices 320–1440+ |
 | `anti-ai-slop` | UI Quality | AI aesthetic patterns |
 | `ui-feel` | UI Quality | Micro craft (“feels off”) |
@@ -152,6 +153,7 @@ Pillar map: [docs/pillars.md](docs/pillars.md).
 | `monitoring` | UI Quality | Sentry / analytics / OTel |
 | `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
 | `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
+| `marketing-landing` | UI Quality | Marketing section stack (hero→footer; hand-roll) |
 | `app-shell-routing` | Ship FE | Shell, nav, routes |
 | `data-fetching` | Ship FE | Async API UI states |
 | `forms-validation` | Ship FE | Forms / wizards |

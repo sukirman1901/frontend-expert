@@ -3,19 +3,20 @@ description = "Build production UI with curated tokens — avoid AI aesthetic"
 prompt = """
 Invoke the ui-developer agent.
 
-Load skills in order: frontend-judgment (if non-trivial UI) → design-tokens → app-shell-routing/data-fetching/forms-validation when needed → ui-components → responsive-ui (MUST) → motion (light shell defaults; marketing = named families/patterns from motion-families.md, hand-roll) → anti-ai-slop → ui-feel → accessibility (light). Load webgl/fe-seo only if in scope.
+Load skills in order: frontend-judgment (if non-trivial UI) → design-tokens → marketing-landing when marketing homepage → app-shell-routing/data-fetching/forms-validation when needed → ui-components → responsive-ui (MUST) → motion (light shell defaults; marketing = named families/patterns from motion-families.md, hand-roll) → anti-ai-slop → ui-feel → accessibility (light). Load webgl/fe-seo only if in scope.
 
 For blank-canvas or ambiguous UI, offer 2–3 approaches with tradeoffs and one recommendation before coding (unless the user said to just implement).
 
 Build UI that looks design-system-aware, not AI-generated:
 
 1. Choose tokens via decision tree in references/token-preset-scoring.md: custom → explicit (--token) → Plasma hard-gate → score (emit Token score n/24). Never vibe-pick or invent raw hex.
-2. Modern shell: logo SVG/mark, utilities, theme as topbar icon (not sidebar footer), avatar-only → account menu (name/email inside menu). Mobile nav = overlay drawer + backdrop (not push-down). Desktop sidebar collapsible / auto-collapse mid widths. Product filters = custom select (not bare native OS chrome); caret not flush.
-3. responsive-ui: verify 320/768/1024/1440; no page horizontal scroll
-4. motion: shell = section fade + drawer + press-scale; marketing = ≤2 families / named patterns, hand-roll (not registry default); honor prefers-reduced-motion
-5. Handle loading, error, and empty states; Reicon icons
-6. Scan for AI aesthetic patterns (incl. decorative motion spam), then apply ui-feel craft
-7. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive/shell/motion families|patterns), a11y notes
+2. Marketing landings: marketing-landing section stack (Header→Hero→Logo cloud→Features→Gallery→Testimonials→CTA→Footer) — hand-roll, not @tailark/registry install; not hero-only.
+3. Modern shell: logo SVG/mark, utilities, theme as topbar icon (not sidebar footer), avatar-only → account menu (name/email inside menu). Mobile nav = overlay drawer + backdrop (not push-down). Desktop sidebar collapsible / auto-collapse mid widths. Product filters = custom select (not bare native OS chrome); caret not flush.
+4. responsive-ui: verify 320/768/1024/1440; no page horizontal scroll
+5. motion: shell = section fade + drawer + press-scale; marketing = ≤2 families / named patterns, hand-roll (not registry default); honor prefers-reduced-motion
+6. Handle loading, error, and empty states; Reicon icons
+7. Scan for AI aesthetic patterns (incl. decorative motion spam / hero-only landing), then apply ui-feel craft
+8. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive/shell/landing/motion families|patterns), a11y notes
 
 Modes via arguments: default = decision tree, --token <file> = explicit, --custom = project system.
 """

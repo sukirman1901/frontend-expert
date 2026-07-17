@@ -19,6 +19,7 @@ Report this block (fill every line):
 - A11y: labels + focus noted? <yes | waiver>
 - WebGL: <Plasma.init … | n/a | waiver: used Three because …>
 - Shell: <logo + utilities + theme-in-topbar? | avatar→menu | waiver>
+- Landing: <section stack | n/a app-shell | waiver: …>
 - Motion: <light shell | families: … | patterns: … | none (waiver)>
 ```
 
@@ -35,6 +36,7 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **Hierarchy** | One primary focus + one primary CTA; weight/contrast before decoration (`frontend-judgment` Hierarchy pass) | Tiny copy-only tweak |
 | **Typography** | ≤2 families; one h1/page; sequential ladder; token type roles | Waiver: intentional marketing exception (state why) |
 | **Shell chrome** | Logo + utilities + **theme in topbar** (if any) + **avatar → account menu** (`app-shell-routing`) | Waiver: minimal marketing page |
+| **Marketing landing** | Section stack via `marketing-landing` / `landing-sections.md` — not hero-only; **hand-roll** (no block-registry install default) | Waiver: app-shell-only surface |
 | **Selects** | Custom select/combobox for product filters (`ui-components`); caret not flush | Waiver: native OS picker required |
 | **Motion** | Light defaults on shell/multi-section (`motion`); marketing builds name ≤2 families + patterns from `motion-families.md` and **hand-roll** — do not default to third-party registry install | User forbids animation / reduced-motion only |
 | **WebGL / shader / plasma / canvas bg** | Load skill `webgl` → Plasma Studio / `Plasma.init` | User explicitly wants Three.js/R3F scene graph |
@@ -70,6 +72,18 @@ On dashboard / settings / app layouts:
 4. Note Shell line in Conventions check
 
 Theme under sidebar / always-on header meta / bare native filter select on greenfield → **High**, Area **Shell** / **Components**.
+
+## Marketing landing expectations
+
+On marketing homepage / landing / promo surfaces:
+
+1. Load `marketing-landing` + `references/landing-sections.md`
+2. Default recipe: hero → logo cloud → features → proof/gallery → testimonials? → CTA → footer (not hero-only)
+3. **Hand-roll** sections — do not default to installing `@tailark` / block registries
+4. Note Landing line in Conventions check
+
+Hero-only (+ thin footer) on greenfield marketing → **High**, Area **Landing**.  
+“Install registry” as the primary answer → **High** (same philosophy as motion hand-roll).
 
 ## Hierarchy & typography expectations
 

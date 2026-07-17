@@ -21,21 +21,24 @@ Alias: **`/audit`** (same workflow).
 8. `motion` — when animated UI / marketing motion (family budget from `motion-families.md`, reduced-motion)
 9. `design-fidelity` — when a Figma/mock/screenshot is in scope
 10. `fe-devtools` — when measuring (Lighthouse/axe); never fabricate scores
-11. `frontend-judgment` — when recommending redesign directions (2–3 options)
-12. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
+11. `marketing-landing` — when the surface is a marketing / landing page
+12. `frontend-judgment` — when recommending redesign directions (2–3 options)
+13. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
 
 ## What It Does
 
 1. Detects framework / design system before recommending patterns
-2. Scans for AI aesthetic patterns (incl. decorative motion spam)
+2. Scans for AI aesthetic patterns (incl. decorative motion spam / hero-only landing)
 3. Checks `ui-feel` craft (concentric radius, hit areas, transition hygiene, …)
 4. Checks token adherence
 5. Reviews accessibility
 6. Notes performance risks (LCP / INP / CLS)
 7. Validates **responsive** design (320 / 768 / 1024 / 1440) via `responsive-ui`
-8. Checks **motion** family budget when animation present
-9. Checks component patterns (composition, states)
-10. Outputs scorecard + prioritized next moves
+8. Checks **shell chrome** (theme topbar, avatar menu, custom selects) on dashboards
+9. Checks **marketing landing** section stack when applicable
+10. Checks **motion** family budget when animation present
+11. Checks component patterns (composition, states)
+12. Outputs scorecard + prioritized next moves
 
 ## Usage
 

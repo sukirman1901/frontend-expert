@@ -1,21 +1,23 @@
-description = "Run a design system audit — AI aesthetic, tokens, responsive, accessibility, performance, fidelity, motion"
+description = "Run a design system audit — AI aesthetic, tokens, responsive, accessibility, performance, fidelity, motion, landing"
 
 prompt = """
 Invoke the design-reviewer agent.
 
-Load skills in order: anti-ai-slop → ui-feel → design-tokens (if available) → responsive-ui → accessibility → web-performance. Use motion when UI is animated / marketing motion (family budget from motion-families.md). Use design-fidelity when a Figma/mock/screenshot is in scope. Use fe-devtools when measuring (Lighthouse/axe) — never fabricate scores. Use ui-components for pattern/state checks as needed. Use frontend-judgment when recommending redesign directions. Note frontend-testing gaps as Info only.
+Load skills in order: anti-ai-slop → ui-feel → design-tokens (if available) → responsive-ui → accessibility → web-performance. Use motion when UI is animated / marketing motion (family budget from motion-families.md). Use marketing-landing when auditing marketing/landing pages. Use design-fidelity when a Figma/mock/screenshot is in scope. Use fe-devtools when measuring (Lighthouse/axe) — never fabricate scores. Use ui-components for pattern/state checks as needed. Use frontend-judgment when recommending redesign directions. Note frontend-testing gaps as Info only.
 
 Run a design system audit on the current codebase:
 
-1. Scan for AI aesthetic anti-patterns (incl. decorative motion spam)
+1. Scan for AI aesthetic anti-patterns (incl. decorative motion spam / hero-only landing)
 2. Check token adherence when a token file is available
 3. Check responsive-ui (320/768/1024/1440) + full-width CTA <768 — High if greenfield layout skips Conventions Responsive line
-4. Check hierarchy + typography ladder when DOM/screenshots available
-5. Check motion family budget + reduced-motion when animation present
-6. Review accessibility (WCAG 2.1 AA)
-7. Note Core Web Vitals / loading risks relevant to UI
-8. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion) — mark unevaluated fields explicitly; do not fabricate visual scores without screenshots or tokens
-9. End with prioritized next moves (max 5)
+4. Check shell chrome on dashboards (theme topbar, avatar→menu, custom selects)
+5. Check marketing landing section stack when applicable — High if hero-only; hand-roll not registry install
+6. Check hierarchy + typography ladder when DOM/screenshots available
+7. Check motion family budget + reduced-motion when animation present
+8. Review accessibility (WCAG 2.1 AA)
+9. Note Core Web Vitals / loading risks relevant to UI
+10. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing) — mark unevaluated fields explicitly; do not fabricate visual scores without screenshots or tokens
+11. End with prioritized next moves (max 5)
 
 Modes via arguments: full (default), --quick, --token <file>, --component <name>. /audit is an alias of /design.
 """

@@ -1,3 +1,29 @@
+## 2026-07-18 — Marketing landing + pack integrity (22 skills · E1–E23)
+
+**Trigger:** Audit FAIL after marketing-landing — docs/adapters still said 20 skills / E1–E20; `/ui`/`/design` missing marketing load; hero-only / registry defaults under-enforced.
+
+### Done
+
+| Area | Change |
+|------|--------|
+| Skill | `marketing-landing` + `references/landing-sections.md` (hand-roll; no `@tailark` default) |
+| Eval | E23 marketing landing section stack |
+| Adapters | `/ui` + `/design` (+ Claude/Gemini) load `marketing-landing` when landing |
+| Agents | `ui-developer` + `design-reviewer` Landing / Shell checks |
+| Hooks | session-start build/audit chain + Conventions **Landing** |
+| Gates | compliance Marketing landing row + expectations; ui-quality-loop Landing gate |
+| Docs | CLAUDE/README/pack-layers/pillars/AGENTS → **22** skills · E1–E23 |
+
+### Layer health (current)
+
+| Layer | Status |
+|-------|--------|
+| Skills | **22** (suite root `frontend-expert` + domain; incl. `marketing-landing`) |
+| Evals | E1–E23 |
+| Conventions | Responsive + Hierarchy + Typography + Motion + **Shell** + **Landing** |
+
+---
+
 ## 2026-07-17 — Motion vocabulary (12 families · 144 patterns)
 
 **Trigger:** Pack motion was shell-only vs rich public motion taxonomies.

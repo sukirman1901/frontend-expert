@@ -57,6 +57,8 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 | **Hierarchy** | Hierarchy pass (one primary focus + one primary CTA) or waiver for tiny tweaks |
 | **Typography** | One h1/page + sequential ladder (or waiver) |
 | **Motion** | Shell light defaults **or** named families/patterns from `motion-families.md`; no decorative spam; reduced-motion; hand-roll (not registry default) |
+| **Shell** | Theme in topbar; avatar → account menu; custom selects (or waivers) on dashboards |
+| **Landing** | Marketing section stack via `marketing-landing` (not hero-only; hand-roll) — or `n/a` for app-shell-only |
 | **A11y** | No Critical keyboard/label/contrast findings (potential or measured) |
 | **States** | Loading/error/empty handled for interactive surfaces touched |
 | **Tests** | Planned critical cases green, or **explicit waiver** if no test runner / out of scope (document why) |
@@ -78,7 +80,7 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 ### Round 0 — Direction + build
 
 1. Load `frontend-judgment` if non-trivial / blank-canvas
-2. After direction: `design-tokens` → (+ `app-shell-routing` / `data-fetching` / `forms-validation` if needed) → `ui-components` → **`responsive-ui`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `webgl` / `fe-seo` if needed)
+2. After direction: `design-tokens` → (+ `marketing-landing` if landing) → (+ `app-shell-routing` / `data-fetching` / `forms-validation` if needed) → `ui-components` → **`responsive-ui`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `webgl` / `fe-seo` if needed)
 3. Produce UI + **Conventions check** (`references/compliance-gates.md`)
 
 ### Each cycle — Prove + audit + fix
@@ -127,9 +129,10 @@ FIX … | DONE | STOP (cap)
 ## Checklist
 
 - [ ] Judgment only when blank-canvas / first pass (skip rules honored)
-- [ ] Build chain includes **responsive-ui** + **motion** (or waivers)
-- [ ] Gates table evaluated each cycle (Anti-slop, Feel, Tokens, Responsive, Hierarchy, Typography, Motion, Shell, A11y, States, Tests)
+- [ ] Build chain includes **responsive-ui** + **motion** (+ **marketing-landing** if landing) or waivers
+- [ ] Gates table evaluated each cycle (Anti-slop, Feel, Tokens, Responsive, Hierarchy, Typography, Motion, Shell, Landing, A11y, States, Tests)
 - [ ] Shell chrome: theme topbar + avatar menu + custom selects (or waivers)
+- [ ] Marketing landing: section stack hand-roll (or n/a / waiver)
 - [ ] Conventions check filled before DONE
 - [ ] Cap ≤3 fix cycles; STOP lists remaining Critical/High if any
 - [ ] No fabricated audit scores

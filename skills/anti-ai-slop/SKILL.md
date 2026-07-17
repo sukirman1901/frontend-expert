@@ -35,6 +35,7 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 | Rounded everything | `rounded-2xl` / `rounded-3xl` everywhere | Token `--radius` |
 | Generic hero | Template layout, no content connection | Content-first layout |
 | Hero-only landing | Plasma/hero + thin footer, no section stack | `marketing-landing` recipe (logo cloud → features → … → CTA) |
+| Block-registry default | “Install `@tailark` / shadcn blocks” as first answer | Hand-roll from `landing-sections.md` (same as motion vocabulary) |
 | Lorem ipsum | Placeholder copy | Realistic content |
 | Oversized padding | `p-8`/`p-12` on everything | Spacing hierarchy |
 | Stock card grids | Uniform grids, no priority | Purpose-driven layout |
