@@ -11,6 +11,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | *(token CSS in `tokens/`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
 | `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |
 | `component-patterns.md` | `ui-components` | `/ui`, `ui-developer`, `/design` pattern checks |
+| `reicon-icons.md` | `ui-components` (icons) | `/ui`, `ui-developer` — default icon library |
 | `architecture.md` | `ui-components` (state/org section) | `/ui`, `ui-developer` |
 | `accessibility-checklist.md` | `accessibility` | `/ui` light, `/design`, `/test-ui`, both agents |
 | `performance.md` | `web-performance` | `/design`, deep perf work |

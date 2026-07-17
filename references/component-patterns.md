@@ -362,12 +362,17 @@ export function TaskListSkeleton() {
 ### Good: Helpful, token-based
 
 ```tsx
+import { Box } from "reicon-react"
 import { Button } from "@/components/ui/button"
 
 export function EmptyState({ message, onAction }: EmptyStateProps) {
   return (
     <div role="status" className="text-center py-12">
-      <EmptyIcon className="mx-auto h-12 w-12 text-[hsl(var(--muted-foreground))]" />
+      <Box
+        size={48}
+        className="mx-auto text-[hsl(var(--muted-foreground))]"
+        aria-hidden
+      />
       <h3 className="mt-2 text-sm font-medium text-[hsl(var(--foreground))]">
         {message}
       </h3>
@@ -388,7 +393,7 @@ export function EmptyState({ message, onAction }: EmptyStateProps) {
 export function EmptyState({ message, onAction }: EmptyStateProps) {
   return (
     <div className="text-center py-12">
-      <EmptyIcon className="mx-auto h-12 w-12 text-gray-400" />
+      <svg className="mx-auto h-12 w-12 text-gray-400" />
       <h3 className="mt-2 text-sm font-medium text-gray-900">{message}</h3>
       <p className="mt-1 text-sm text-gray-500">Get started by creating a new item.</p>
       <button onClick={onAction} className="mt-4 px-4 py-2 bg-purple-600 text-white rounded-xl">

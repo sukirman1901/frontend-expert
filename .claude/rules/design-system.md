@@ -19,8 +19,9 @@ Blank-canvas / ambiguous UI → 2–3 approaches + tradeoffs + recommendation **
 ## Hard rules
 
 1. CSS variables from `tokens/` or the project's existing design system
-2. No purple/indigo defaults, `rounded-2xl` everywhere, or Lorem ipsum
-3. Loading / error / empty states; keyboard accessible
-4. Slash commands are optional shortcuts only (`/ui` `/design` `/audit` `/test-ui` `/polish`)
-5. Never fabricate design-audit scores without tokens or screenshots
-6. “Rapihin sampai bagus” → `ui-quality-loop` with iteration cap (no infinite loops)
+2. Icons: prefer [Reicon](https://reicon.dev) (`references/reicon-icons.md`); keep existing project icon lib if already standardized
+3. No purple/indigo defaults, `rounded-2xl` everywhere, or Lorem ipsum
+4. Loading / error / empty states; keyboard accessible
+5. Slash commands are optional shortcuts only (`/ui` `/design` `/audit` `/test-ui` `/polish`)
+6. Never fabricate design-audit scores without tokens or screenshots
+7. “Rapihin sampai bagus” → `ui-quality-loop` with iteration cap (no infinite loops)

@@ -47,7 +47,13 @@ Implement production UI with composition over configuration, clear state handlin
    - Verify 320 / 768 / 1024 / 1440
    - No fixed widths that break small screens
 
-5. **Tokens + slop**
+5. **Icons**
+   - Default to **[Reicon](https://reicon.dev)** (`reicon-react` / `reicon-vue` / …) — see `references/reicon-icons.md`
+   - If the project already uses another icon library, keep that for consistency
+   - Prefer `currentColor` + token text classes; Outline by default, Filled for emphasis
+   - Icon-only controls need an accessible name
+
+6. **Tokens + slop**
    - Use `design-tokens` for all visual values
    - Finish with `anti-ai-slop` scan
 
@@ -55,6 +61,7 @@ Implement production UI with composition over configuration, clear state handlin
 
 - [ ] Composition preferred over giant prop APIs
 - [ ] Loading / error / empty handled
+- [ ] Icons via Reicon (or existing project icon lib)
 - [ ] Interactive elements keyboard accessible
 - [ ] Mobile-first breakpoints covered
 - [ ] Component ≤ 200 lines or split
@@ -63,4 +70,5 @@ Implement production UI with composition over configuration, clear state handlin
 ## Depth
 
 Good/bad examples: `references/component-patterns.md`.  
+Icons: `references/reicon-icons.md`.  
 State & org: `references/architecture.md`.

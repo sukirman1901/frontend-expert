@@ -21,5 +21,5 @@ Do NOT wait for slash commands.
 * Skip judgment for tiny fixes or \"langsung saja\"
 Optional: /ui · /test-ui · /design · /audit · /polish
 Agents: ui-developer · test-engineer · design-reviewer
-Tokens: tokens/*.css (or project system). No purple defaults, raw hex, or Lorem ipsum." \
+Tokens: tokens/*.css (or project system). Icons: Reicon (reicon.dev). No purple defaults, raw hex, or Lorem ipsum." \
   '{priority: "IMPORTANT", message: $message}'

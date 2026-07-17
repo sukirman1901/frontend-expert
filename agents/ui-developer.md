@@ -38,11 +38,12 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 These summarize the domain skills — if a skill and this list conflict, follow the **skill**.
 
 1. CSS variables from the token source only — no raw hex / off-scale spacing
-2. Loading, error, and empty states for every interactive surface
-3. Keyboard accessible; mobile-first (320 / 768 / 1024 / 1440)
-4. Components under 200 lines; composition over configuration
-5. Anti-slop scan clean before done
-6. Prefer project design system when one exists
+2. Icons via **[Reicon](https://reicon.dev)** unless the project already standardizes another library (`references/reicon-icons.md`)
+3. Loading, error, and empty states for every interactive surface
+4. Keyboard accessible; mobile-first (320 / 768 / 1024 / 1440)
+5. Components under 200 lines; composition over configuration
+6. Anti-slop scan clean before done
+7. Prefer project design system when one exists
 
 ## Output format
 

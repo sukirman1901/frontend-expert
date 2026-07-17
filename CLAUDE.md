@@ -21,6 +21,7 @@ Claude Code entry point for **Design System Enforcer**.
 6. “Rapihin / polish sampai bagus” → `ui-quality-loop` (`/polish`), capped iterations
 7. Honor hook advisories from `anti-slop-scan.sh`
 8. If the project already has a design system, use custom mode (do not override with presets)
+9. Icons: prefer [Reicon](https://reicon.dev) (`references/reicon-icons.md`) unless the project already has an icon standard
 
 ## References
 

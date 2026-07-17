@@ -74,9 +74,10 @@ Every component must meet these standards. This checklist covers the most common
 <label htmlFor="email">Email</label>
 <input id="email" type="email" />
 
-// Good: Icon button with label
-<button aria-label="Close dialog">
-  <XIcon />
+// Good: Icon button with label (Reicon)
+import { CloseCircle } from "reicon-react"
+<button type="button" aria-label="Close dialog">
+  <CloseCircle size={20} aria-hidden />
 </button>
 
 // Good: Loading state announced
@@ -88,7 +89,7 @@ Every component must meet these standards. This checklist covers the most common
 <input type="email" placeholder="Email" />
 
 // Bad: Icon without label
-<button><XIcon /></button>
+<button><CloseCircle size={20} /></button>
 ```
 
 ## Focus Management

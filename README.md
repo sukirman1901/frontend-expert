@@ -70,7 +70,8 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 - **Chat-first auto-routing** — no slash required; rules + skill `description`s match intent
 - **Senior FE judgment** — 2–3 approaches + tradeoffs before blank-canvas builds (`frontend-judgment`)
 - **Prevents AI slop** — no random purple gradients, inconsistent spacing, or generic heroes
-- **Curated tokens** — 5 shadcn/ui presets with light/dark mode
+- **Curated tokens** — presets in `tokens/` (incl. OKLCH + plasma-landing)
+- **Icons** — [Reicon](https://reicon.dev) by default (`references/reicon-icons.md`)
 - **Domain skills** — agents load only what the task needs
 - **Optional shortcuts** — `/ui`, `/test-ui`, `/design`, `/audit`, `/polish`
 - **Quality loop** — `/polish` / “rapihin sampai bagus” runs build→test→audit→fix until Critical/High clear (max 3)
@@ -218,6 +219,7 @@ See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 
 ## Credits
 
+- [Reicon](https://reicon.dev) — default icon library
 - [shadcn/ui](https://ui.shadcn.com/) — design tokens and components
 - [Addy Osmani agent-skills](https://github.com/addyosmani/agent-skills) — multi-platform plugin + hooks pattern
 - [Tailwind CSS](https://tailwindcss.com/) — utility-first CSS

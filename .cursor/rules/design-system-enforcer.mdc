@@ -25,6 +25,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 ## Rules
 
 - Prefer project design system if one exists; otherwise `tokens/*.css`
+- Icons: prefer [Reicon](https://reicon.dev) (`references/reicon-icons.md`); keep existing project icon lib if already standardized
 - No raw hex, purple/indigo defaults, Lorem ipsum, or `rounded-2xl` everywhere
 - Handle loading / error / empty; keyboard accessible
 - Optional shortcuts only: `/ui`, `/design`, `/audit`, `/test-ui`, `/polish` — never require them

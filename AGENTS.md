@@ -63,9 +63,10 @@ Full layer model: `docs/pack-layers.md`.
 ## Hard rules
 
 1. Prefer CSS custom properties from `tokens/` or the project's existing design system
-2. Never invent purple/indigo defaults, raw hex, or Lorem ipsum for shipping UI
-3. Handle loading, error, and empty states
-4. Do not fabricate visual audit scores without tokens or screenshots
-5. Never block on the user typing a slash command when intent is clear
-6. For blank-canvas UI, judgment before implementation
-7. For “sampai bagus / polish”, run `ui-quality-loop` (cap iterations; no infinite audit)
+2. Icons: prefer **[Reicon](https://reicon.dev)** (`references/reicon-icons.md`); keep an existing project icon library if already standardized
+3. Never invent purple/indigo defaults, raw hex, or Lorem ipsum for shipping UI
+4. Handle loading, error, and empty states
+5. Do not fabricate visual audit scores without tokens or screenshots
+6. Never block on the user typing a slash command when intent is clear
+7. For blank-canvas UI, judgment before implementation
+8. For “sampai bagus / polish”, run `ui-quality-loop` (cap iterations; no infinite audit)
