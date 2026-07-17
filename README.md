@@ -1,10 +1,10 @@
 # Frontend Expert
 
-**Production UI quality for AI coding agents** — senior FE judgment, curated tokens, Reicon icons, UI feel craft, anti-AI-slop enforcement.
+**Suite for AI coding agents to ship product web UI** — UI quality, **responsive all devices**, ship FE (shell/data/forms), and depth (architecture/SEO).
 
 **Chat-first:** talk normally. For blank-canvas UI the agent offers **2–3 approaches** before coding. Slash commands are **optional**.
 
-Repo: [sukirman1901/frontend-expert](https://github.com/sukirman1901/frontend-expert)
+Pillars: [docs/pillars.md](docs/pillars.md) · Repo: [sukirman1901/frontend-expert](https://github.com/sukirman1901/frontend-expert)
 
 ---
 
@@ -57,7 +57,14 @@ More detail: [docs/getting-started.md](docs/getting-started.md) · per-platform 
 
 ## What This Pack Does
 
-Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/frontend)). This pack covers **UI quality** with **senior FE judgment**.
+Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **not React Native**. This suite covers **shipping product web UI** with senior FE judgment:
+
+| Pillar | What |
+|--------|------|
+| **UI Quality** | Tokens, anti-slop, ui-feel, a11y, tests, polish loop, WebGL, monitoring |
+| **Responsive MUST** | All devices 320→1440+ (`responsive-ui`) |
+| **Ship FE** | App shell/routing, data-fetching, forms-validation |
+| **Depth** | FE architecture, technical SEO |
 
 ```
   Chat (default)                         Optional shortcuts
@@ -73,24 +80,26 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 | Senior FE judgment | 2–3 approaches + tradeoffs before blank-canvas builds |
 | Anti-AI-slop | No random purple gradients, inconsistent spacing, generic heroes |
 | UI feel | Micro craft — concentric radius, tabular-nums, press/hover feel ([`ui-feel`](skills/ui-feel/SKILL.md)) |
-| Design tokens | 9 CSS presets in `tokens/` (OKLCH + HSL + Plasma landing) |
-| Icons | **[Reicon](https://reicon.dev) MUST** appear in shipped markup (CDN/package) unless waiver — [compliance-gates](references/compliance-gates.md) |
-| WebGL backgrounds | Skill **`webgl`** → [Plasma Studio](https://plasma.nusaiba.dev/app/) / `Plasma.init` (not random Three.js) |
-| Compliance | Before DONE, agent reports **Conventions check** (tokens / icons / states / webgl) |
-| Quality loop | `/polish` = build → test → audit → fix until Critical/High clear (max 3) — [fe-lifecycle](references/fe-lifecycle.md) |
-| Multi-platform | Claude Code, Cursor, Codex, Gemini, OpenCode, Antigravity |
-| Claude hooks | SessionStart reminder + PostToolUse anti-slop scan |
+| Design tokens | 9 CSS presets + **decision tree / scoring** |
+| **Responsive** | **MUST** — 320/768/1024/1440 in Conventions check |
+| Icons | **[Reicon](https://reicon.dev) MUST** in shipped markup unless waiver |
+| Ship FE | Shell, async data UI, forms |
+| WebGL backgrounds | Skill **`webgl`** → Plasma Studio / `Plasma.init` |
+| Compliance | Conventions check (tokens / icons / states / **responsive** / webgl) |
+| Quality loop | `/polish` = build → test → audit → fix (max 3) |
+| Multi-platform | Claude Code, Cursor, Codex, Gemini, OpenCode |
 
 ### Defaults (when the project has no standard yet)
 
-1. **Tokens** — score a preset from `tokens/` (`references/token-preset-scoring.md`), or keep the project’s existing design system
-2. **Icons** — [Reicon](https://reicon.dev) in the **actual markup** (`reicon-react` or CDN `<re-icon>`). Keep Lucide/etc. if already standardized; text-only only with an explicit waiver
-3. **Shader backgrounds** — skill `webgl` → [Plasma Studio](https://plasma.nusaiba.dev/app/) → `Plasma.init`
-4. **Ship gate** — end UI work with a [Conventions check](references/compliance-gates.md)
+1. **Tokens** — score a preset (`references/token-preset-scoring.md`), or keep the project’s design system
+2. **Responsive** — `responsive-ui` on every layout
+3. **Icons** — [Reicon](https://reicon.dev) in markup
+4. **Shader backgrounds** — `webgl` → Plasma → `Plasma.init`
+5. **Ship gate** — [Conventions check](references/compliance-gates.md)
 
-### Out of scope (v1)
+### Out of scope
 
-SEO, Git basics, REST/API teaching, TypeScript language courses, framework deep-dives.
+Git/CS theory deep-dives, REST teaching as a course, TypeScript language courses, **React Native**, browser Design Lab `/explore`, backend/DevOps.
 
 ---
 
@@ -122,22 +131,30 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 ---
 
-## Skills (12)
+## Skills (18)
 
-| Skill | Use when |
-|-------|----------|
-| `frontend-judgment` | Non-trivial / blank-canvas UI — **axes** + options before code |
-| `design-tokens` | Scoring + applying theme CSS variables |
-| `ui-components` | Components, layouts, states — **Reicon icons** |
-| `anti-ai-slop` | Detecting/fixing AI aesthetic patterns |
-| `ui-feel` | Micro craft that makes UI feel polished (“feels off”) |
-| `accessibility` | WCAG 2.1 AA checks and fixes |
-| `web-performance` | Core Web Vitals / loading optimization |
-| `motion` | Animations and micro-interactions only |
-| `frontend-testing` | Component tests, TDD, a11y in tests |
-| `ui-quality-loop` | Polish until Critical/High clear (capped loop) |
-| `webgl` | Plasma Studio WebGL backgrounds |
-| `monitoring` | Sentry, analytics, OTel, production alerts |
+Pillar map: [docs/pillars.md](docs/pillars.md).
+
+| Skill | Pillar | Use when |
+|-------|--------|----------|
+| `frontend-judgment` | UI Quality | Blank-canvas — axes + options before code |
+| `design-tokens` | UI Quality | Scoring + applying theme CSS |
+| `ui-components` | UI Quality | Components, states — **Reicon** |
+| `responsive-ui` | Responsive MUST | All devices 320–1440+ |
+| `anti-ai-slop` | UI Quality | AI aesthetic patterns |
+| `ui-feel` | UI Quality | Micro craft (“feels off”) |
+| `accessibility` | UI Quality | WCAG 2.1 AA |
+| `web-performance` | UI Quality | Core Web Vitals |
+| `motion` | UI Quality | Animations only |
+| `frontend-testing` | UI Quality | Component tests / TDD |
+| `ui-quality-loop` | UI Quality | Polish until Critical/High clear |
+| `webgl` | UI Quality | Plasma Studio backgrounds |
+| `monitoring` | UI Quality | Sentry / analytics / OTel |
+| `app-shell-routing` | Ship FE | Shell, nav, routes |
+| `data-fetching` | Ship FE | Async API UI states |
+| `forms-validation` | Ship FE | Forms / wizards |
+| `fe-architecture` | Depth | Folders / state boundaries |
+| `fe-seo` | Depth | Meta / OG / indexability |
 
 \* Skip judgment for tiny clear fixes or “just implement” / “langsung saja”.
 
@@ -201,6 +218,7 @@ Agents must not silently skip pack conventions. Before marking UI done, they rep
 - Tokens: <preset | project system | waiver>
 - Icons: <Reicon … | existing lib | waiver: text-only>
 - States: loading / empty / error …
+- Responsive: 320/768/1024/1440 checked | waiver
 - WebGL: <Plasma.init … | n/a>
 ```
 

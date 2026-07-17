@@ -1,17 +1,17 @@
-description = "Run a design system audit — AI aesthetic, tokens, accessibility, performance"
+description = "Run a design system audit — AI aesthetic, tokens, responsive, accessibility, performance"
 
 prompt = """
 Invoke the design-reviewer agent.
 
-Load skills in order: anti-ai-slop → ui-feel → design-tokens (if available) → accessibility → web-performance. Use ui-components for pattern/state checks as needed. Use frontend-judgment when recommending redesign directions. Note frontend-testing gaps as Info only.
+Load skills in order: anti-ai-slop → ui-feel → design-tokens (if available) → responsive-ui → accessibility → web-performance. Use ui-components for pattern/state checks as needed. Use frontend-judgment when recommending redesign directions. Note frontend-testing gaps as Info only.
 
 Run a design system audit on the current codebase:
 
 1. Scan for AI aesthetic anti-patterns
 2. Check token adherence when a token file is available
-3. Review accessibility (WCAG 2.1 AA)
-4. Note Core Web Vitals / loading risks relevant to UI
-5. Validate responsive design at 320 / 768 / 1024 / 1440
+3. Check responsive-ui (320/768/1024/1440) — High if greenfield layout skips Conventions Responsive line
+4. Review accessibility (WCAG 2.1 AA)
+5. Note Core Web Vitals / loading risks relevant to UI
 6. Output the design-reviewer scorecard — mark unevaluated fields explicitly; do not fabricate visual scores without screenshots or tokens
 7. End with prioritized next moves (max 5)
 

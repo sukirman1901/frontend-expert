@@ -13,6 +13,7 @@ EXPECTED_SKILLS=(
   frontend-judgment
   design-tokens
   ui-components
+  responsive-ui
   anti-ai-slop
   ui-feel
   accessibility
@@ -22,6 +23,11 @@ EXPECTED_SKILLS=(
   ui-quality-loop
   webgl
   monitoring
+  data-fetching
+  forms-validation
+  app-shell-routing
+  fe-architecture
+  fe-seo
 )
 
 for s in "${EXPECTED_SKILLS[@]}"; do
@@ -130,6 +136,10 @@ echo "== references map =="
 [ -f "$ROOT/references/fe-lifecycle.md" ] && ok "fe-lifecycle.md" || bad "fe-lifecycle.md"
 [ -f "$ROOT/references/token-preset-scoring.md" ] && ok "token-preset-scoring.md" || bad "token-preset-scoring.md"
 [ -f "$ROOT/references/compliance-gates.md" ] && ok "compliance-gates.md" || bad "compliance-gates.md"
+[ -f "$ROOT/references/responsive.md" ] && ok "responsive.md" || bad "responsive.md"
+[ -f "$ROOT/docs/pillars.md" ] && ok "docs/pillars.md" || bad "docs/pillars.md"
+[ -f "$ROOT/evals/responsive-all-devices.md" ] && ok "evals/responsive-all-devices.md" || bad "evals/responsive-all-devices.md"
+[ -f "$ROOT/evals/ship-feature-e2e.md" ] && ok "evals/ship-feature-e2e.md" || bad "evals/ship-feature-e2e.md"
 
 if [ "$FAIL" -ne 0 ]; then
   echo

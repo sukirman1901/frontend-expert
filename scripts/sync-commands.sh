@@ -36,8 +36,8 @@ check_skills() {
   done
 }
 
-check_skills ui frontend-judgment design-tokens ui-components anti-ai-slop ui-feel accessibility
-check_skills design anti-ai-slop ui-feel design-tokens accessibility web-performance
+check_skills ui frontend-judgment design-tokens ui-components responsive-ui anti-ai-slop ui-feel accessibility
+check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance
 check_skills test-ui frontend-testing ui-components accessibility
 check_skills audit design-reviewer
 check_skills polish ui-quality-loop ui-feel
@@ -55,6 +55,18 @@ for f in \
 do
   if ! rg -q 'decision tree|token-preset-scoring' "$f"; then
     echo "MISSING decision tree / token-preset-scoring in $f" >&2
+    FAIL=1
+  fi
+done
+
+echo "== ui responsive must =="
+for f in \
+  "$ROOT/commands/ui.md" \
+  "$ROOT/.claude/commands/ui.md" \
+  "$ROOT/.gemini/commands/ui.toml"
+do
+  if ! rg -q 'responsive-ui' "$f"; then
+    echo "MISSING responsive-ui in $f" >&2
     FAIL=1
   fi
 done

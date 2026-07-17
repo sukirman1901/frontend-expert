@@ -9,6 +9,7 @@ PACK_SKILLS=(
   frontend-judgment
   design-tokens
   ui-components
+  responsive-ui
   anti-ai-slop
   ui-feel
   accessibility
@@ -18,6 +19,11 @@ PACK_SKILLS=(
   ui-quality-loop
   webgl
   monitoring
+  data-fetching
+  forms-validation
+  app-shell-routing
+  fe-architecture
+  fe-seo
 )
 
 usage() {

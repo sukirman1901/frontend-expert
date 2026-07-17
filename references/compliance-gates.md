@@ -13,6 +13,7 @@ Report this block (fill every line):
 - Tokens: <preset (score n/24 | explicit | hard-gate) | project system | waiver>
 - Icons: <Reicon (package/CDN) | existing lib: … | waiver: text-only UI>
 - States: loading / empty / error covered? <yes | n/a | waiver>
+- Responsive: 320/768/1024/1440 checked | waiver: …
 - A11y: labels + focus noted? <yes | waiver>
 - WebGL: <Plasma.init … | n/a | waiver: used Three because …>
 - Motion: <none | skill motion used | waiver>
@@ -27,6 +28,7 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **Icons** | [Reicon](https://reicon.dev) on nav items, toolbars, empty states, icon buttons | Project already standardizes Lucide/etc., **or** intentional text-only UI (state waiver) |
 | **Vanilla HTML** | CDN: `unpkg.com/reicon/cdn/reicon.min.js` + `<re-icon icon="…">` | Same as above |
 | **React/Vue/Svelte** | `reicon-react` / `reicon-vue` / `reicon-svelte` | Same as above |
+| **Responsive** | Load `responsive-ui` — verify 320 / 768 / 1024 / 1440; no page horizontal scroll; adapt tables/nav | Explicit desktop-only waiver |
 | **WebGL / shader / plasma / canvas bg** | Load skill `webgl` → Plasma Studio / `Plasma.init` | User explicitly wants Three.js/R3F scene graph |
 | **Tokens** | Project system, else full tree: custom → explicit → Plasma hard-gate → score (`token-preset-scoring.md`) | Waiver only |
 | **Slop** | No purple/indigo defaults, no Lorem, no `transition: all` | Brand token already is purple (e.g. `plasma-landing`) |
@@ -36,6 +38,17 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 When building settings/dashboards/nav/toolbars, **include icons by default** (Reicon), not text-only rows — unless the user asked for text-only or a minimal prose layout.
 
 Examples: section nav → icon + label; empty state → icon; icon-only button → `aria-label` + Reicon glyph.
+
+## Responsive expectations
+
+On any layout/page:
+
+1. Load `responsive-ui` (or apply `references/responsive.md`)
+2. Mobile-first; check 320 · 768 · 1024 · 1440
+3. Side nav / tables must adapt — not desktop-only
+4. Note Responsive line in Conventions check
+
+Greenfield missing Responsive evidence → **High** finding (design-reviewer).
 
 ## WebGL expectations
 

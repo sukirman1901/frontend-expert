@@ -2,37 +2,43 @@
 
 Deep guides live here. **Skills** are short and triggerable; **references** hold the full checklist/examples. Agents and commands should load the skill first, then open the matching reference when depth is needed.
 
-## Linked to a skill (v1)
+Pillars: [`docs/pillars.md`](../docs/pillars.md).
+
+## Linked to a skill
 
 | Reference | Skill | Used by |
 |-----------|-------|---------|
-| *(judgment — see `design-axes.md`)* | `frontend-judgment` | `/ui` / chat before blank-canvas builds |
-| `design-axes.md` | `frontend-judgment` | Axes, inspiration, style inference, optional DESIGN_MEMORY |
-| `ux-foundations.md` | `frontend-judgment`, `design-tokens`, `accessibility` | Nielsen/Gestalt, UI system, color theory for products |
-| `fe-lifecycle.md` | `ui-quality-loop`, `frontend-judgment` | A→Z FE process + pack mapping |
-| `compliance-gates.md` | `ui-components`, `ui-developer`, always-on rules | Ship checklist — Reicon/WebGL/tokens must not be silently skipped |
-| *(loop controller)* | `ui-quality-loop` | `/polish` / “rapihin sampai bagus” |
-| *(token CSS in `tokens/` + `tokens/README.md`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
-| `token-preset-scoring.md` | `design-tokens`, `frontend-judgment` | Canonical decision tree + weighted scoring (max 24) |
-| `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |
-| `ui-feel.md` | `ui-feel` | `/ui`, `/design`, `/polish`, `ui-developer`, `design-reviewer` |
-| `component-patterns.md` | `ui-components` | `/ui`, `ui-developer`, `/design` pattern checks |
-| `reicon-icons.md` | `ui-components` (icons) | `/ui`, `ui-developer` — default icon library |
-| `architecture.md` | `ui-components` (state/org section) | `/ui`, `ui-developer` |
-| `accessibility-checklist.md` | `accessibility` | `/ui` light, `/design`, `/test-ui`, both agents |
-| `performance.md` | `web-performance` | `/design`, deep perf work |
-| `motion.md` | `motion` | `/ui` only when animating |
-| `testing.md` | `frontend-testing` | `/test-ui`, `test-engineer` |
-| `webgl.md` | `webgl` | Plasma Studio shader backgrounds |
-| `monitoring.md` | `monitoring` | Sentry, analytics, OTel, alerts |
+| `design-axes.md` | `frontend-judgment` | Axes, inspiration, style inference |
+| `ux-foundations.md` | `frontend-judgment`, `design-tokens`, `accessibility` | Nielsen/Gestalt, color |
+| `fe-lifecycle.md` | `ui-quality-loop`, `frontend-judgment` | A→Z FE process |
+| `compliance-gates.md` | always-on, `ui-components`, `ui-developer` | Ship checklist |
+| `token-preset-scoring.md` | `design-tokens`, `frontend-judgment` | Decision tree + scoring |
+| `responsive.md` | `responsive-ui` | All-devices MUST |
+| `anti-patterns.md` | `anti-ai-slop` | AI aesthetic catalog |
+| `ui-feel.md` | `ui-feel` | Micro craft |
+| `component-patterns.md` | `ui-components` | Composition patterns |
+| `reicon-icons.md` | `ui-components` | Default icons |
+| `architecture.md` | `ui-components`, `fe-architecture` | State ladder |
+| `fe-architecture.md` | `fe-architecture` | Feature folders / boundaries |
+| `data-fetching.md` | `data-fetching` | Async UI |
+| `forms-validation.md` | `forms-validation` | Forms UX |
+| `app-shell-routing.md` | `app-shell-routing` | Shell / nav / routes |
+| `fe-seo.md` | `fe-seo` | Technical SEO |
+| `accessibility-checklist.md` | `accessibility` | WCAG checks |
+| `performance.md` | `web-performance` | CWV |
+| `motion.md` | `motion` | Animation |
+| `testing.md` | `frontend-testing` | Tests |
+| `webgl.md` | `webgl` | Plasma Studio |
+| `monitoring.md` | `monitoring` | Observability |
 
 ## Evals
 
-Behavioral scenarios: [`evals/`](../evals/) (purple reject, scorecard honesty, loop cap, rapihin routing, token scoring).
+[`evals/`](../evals/) — E1–E11 (slop, scoring, responsive, ship FE, e2e).
 
 ## Missing on purpose
 
-- No full roadmap.sh topics (SEO, Git, REST, TypeScript language) — out of pack scope
+- No full roadmap.sh topics (Git, CS theory) — out of pack scope
+- No React Native — responsive **web** only
 - No Design Lab browser `/explore` — optional future; judgment stays text-first
 
 ## Rule for authors

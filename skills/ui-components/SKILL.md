@@ -42,10 +42,9 @@ Implement production UI with composition over configuration, clear state handlin
    - Empty
    - Default / success
 
-4. **Responsive**
-   - Mobile-first
-   - Verify 320 / 768 / 1024 / 1440
-   - No fixed widths that break small screens
+4. **Responsive** — **MUST** load `responsive-ui` for layout UI
+   - Mobile-first; verify 320 / 768 / 1024 / 1440
+   - No fixed widths that break small screens; adapt tables/nav
 
 5. **Icons (default on — do not omit)**
    - **MUST** use **[Reicon](https://reicon.dev)** for nav, toolbars, empty states, and icon buttons unless the project already standardizes another library
@@ -60,7 +59,7 @@ Implement production UI with composition over configuration, clear state handlin
    - Finish with `anti-ai-slop` scan
 
 7. **Before DONE**
-   - Output **Conventions check** from `references/compliance-gates.md` (tokens, icons, states, webgl n/a, …)
+   - Output **Conventions check** from `references/compliance-gates.md` (tokens, icons, states, **responsive**, webgl n/a, …)
 
 ## Checklist
 
@@ -68,7 +67,7 @@ Implement production UI with composition over configuration, clear state handlin
 - [ ] Loading / error / empty handled
 - [ ] **Reicon (or project icon lib) actually in the markup** — not forgotten
 - [ ] Interactive elements keyboard accessible
-- [ ] Mobile-first breakpoints covered
+- [ ] **Responsive:** 320/768/1024/1440 + Conventions line
 - [ ] Component ≤ 200 lines or split
 - [ ] Anti-slop scan clean
 - [ ] Conventions check reported
@@ -76,6 +75,7 @@ Implement production UI with composition over configuration, clear state handlin
 ## Depth
 
 Good/bad examples: `references/component-patterns.md`.  
+Responsive: `responsive-ui` + `references/responsive.md`.  
 Icons: `references/reicon-icons.md`.  
 Ship gates: `references/compliance-gates.md`.  
 State & org: `references/architecture.md`.

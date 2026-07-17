@@ -1,6 +1,6 @@
 # Pack layers
 
-How the pieces of Design System Enforcer fit together.
+How the pieces of **Frontend Expert** fit together.
 
 ```text
 ┌──────────────────────────────────────────────────────────┐
@@ -11,7 +11,8 @@ How the pieces of Design System Enforcer fit together.
 │          design-reviewer,                                │
 │          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
-│  Skills (12)                        ← HOW (+ feel + quality loop + webgl/monitoring)│
+│  Skills (18) — suite pillars        ← HOW                │
+│  UI Quality · Responsive MUST · Ship FE · Depth          │
 ├──────────────────────────────────────────────────────────┤
 │  References + tokens/               ← DEPTH              │
 ├──────────────────────────────────────────────────────────┤
@@ -19,23 +20,26 @@ How the pieces of Design System Enforcer fit together.
 └──────────────────────────────────────────────────────────┘
 ```
 
+Pillar map: [pillars.md](./pillars.md).
+
 ## Rules
 
 1. **Chat-first** — never require a slash command when intent is clear (`AGENTS.md`, Cursor/Claude rules).
 2. **Commands orchestrate** — optional; list agent + skills; do not duplicate full skill bodies.
 3. **Agents do not invoke other agents** — user or command orchestrates. Agents stay slim.
 4. **Skills stay short** — rich `description` for auto-match; point to `references/` for depth.
-5. **References deepen skills** — `webgl` / `monitoring` are now skills; depth stays in `references/`.
+5. **References deepen skills** — depth stays in `references/`.
 6. **Hooks** — Claude Code session reminder + anti-slop scan.
+7. **Responsive MUST** on layout UI — skill `responsive-ui` + Conventions line.
 
 ## Agent ↔ command ↔ skills
 
 | Command | Agent | Skills (order) |
 |---------|-------|----------------|
-| `/ui` (or chat) | `ui-developer` | frontend-judgment* → design-tokens → ui-components → anti-ai-slop → ui-feel → accessibility (+ motion if needed) |
-| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → design-tokens → accessibility → web-performance (+ ui-components / judgment / test gaps as needed) |
+| `/ui` (or chat) | `ui-developer` | judgment* → tokens → (+ shell/data/forms) → ui-components → **responsive-ui** → anti-ai-slop → ui-feel → accessibility |
+| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → tokens → responsive-ui → accessibility → web-performance |
 | `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility |
-| `/polish` (or chat) | loop controller | `ui-quality-loop` → ui-developer + test-engineer + design-reviewer until gates pass |
+| `/polish` (or chat) | loop controller | `ui-quality-loop` until gates pass |
 
 \* Judgment only when non-trivial / blank-canvas — see skill skip rules.
 

@@ -5,28 +5,32 @@ description: Build production UI with curated design tokens. Prevents AI aesthet
 
 # /ui
 
-Build production-quality UI. Orchestrates domain skills — not a single monolith.
+Build production-quality UI. Orchestrates suite skills — not a single monolith.
 
 ## Skills to load (in order)
 
 1. `frontend-judgment` — non-trivial / blank-canvas only (see skip rules)
 2. `design-tokens` — decision tree: custom → explicit → Plasma hard-gate → score
-3. `ui-components` — implement with states + responsive
-4. `anti-ai-slop` — scan before done
-5. `ui-feel` — micro craft (radius, press, tabular-nums, …)
-6. `accessibility` — light pass (keyboard, labels, contrast)
-7. `motion` — **only if** animation is in scope
-8. `webgl` — **only if** shader / Plasma / canvas background is in scope
+3. `app-shell-routing` — **if** shell / nav / multi-route
+4. `data-fetching` — **if** remote/async data
+5. `forms-validation` — **if** forms / wizards
+6. `ui-components` — implement with states
+7. `responsive-ui` — **MUST** for layout (320–1440)
+8. `anti-ai-slop` — scan before done
+9. `ui-feel` — micro craft
+10. `accessibility` — light pass
+11. `fe-seo` / `motion` / `webgl` — **only if** in scope
 
 ## What It Does
 
 1. Selects tokens via decision tree (custom → explicit → Plasma hard-gate → score)
-2. Implements components — composition-first, under 200 lines, CSS variables only
-3. **Ships Reicon icons** in nav/toolbars/empty/icon-buttons (CDN or package) unless waiver
-4. Handles loading, error, empty
-5. Enforces accessibility basics
-6. Scans for AI slop, then applies `ui-feel` polish
-7. Ends with **Conventions check** (`references/compliance-gates.md`)
+2. Builds shell/data/forms when needed, then components
+3. **Responsive all devices** — `responsive-ui`
+4. **Ships Reicon icons** unless waiver
+5. Handles loading, error, empty
+6. Enforces accessibility basics
+7. Scans for AI slop, then `ui-feel`
+8. Ends with **Conventions check** (includes Responsive)
 
 ## Usage
 

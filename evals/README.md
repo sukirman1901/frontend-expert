@@ -15,6 +15,11 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E4 | Rapihin routing | [rapihin-routing.md](./rapihin-routing.md) |
 | E5 | Reicon + WebGL compliance | [reicon-webgl-compliance.md](./reicon-webgl-compliance.md) |
 | E6 | Token preset scoring | [token-preset-scoring.md](./token-preset-scoring.md) |
+| E7 | Responsive all devices | [responsive-all-devices.md](./responsive-all-devices.md) |
+| E8 | Data fetching states | [data-fetching.md](./data-fetching.md) |
+| E9 | Forms validation | [forms-validation.md](./forms-validation.md) |
+| E10 | App shell routing | [app-shell-routing.md](./app-shell-routing.md) |
+| E11 | Ship feature end-to-end | [ship-feature-e2e.md](./ship-feature-e2e.md) |
 
 ## How to run
 

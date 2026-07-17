@@ -1,4 +1,13 @@
-# Pack audit log
+## 2026-07-17 — Frontend Expert suite + responsive MUST
+
+Implemented suite pillars (UI Quality · Responsive · Ship FE · Depth):
+
+- Skills: `responsive-ui`, `data-fetching`, `forms-validation`, `app-shell-routing`, `fe-architecture`, `fe-seo` (**18** total)
+- Conventions: **Responsive** line required
+- Docs: `docs/pillars.md`, AGENTS/README/pack-layers suite framing
+- Evals: E7–E11 including ship-feature e2e
+
+---
 
 ## 2026-07-17 — Post token-scoring gap audit
 

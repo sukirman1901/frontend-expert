@@ -14,11 +14,12 @@ Alias: **`/audit`** (same workflow).
 1. `anti-ai-slop` — AI aesthetic patterns
 2. `ui-feel` — micro craft (radius, press, tabular-nums, …)
 3. `design-tokens` — token adherence (when a token file is available)
-4. `accessibility` — WCAG 2.1 AA
-5. `web-performance` — CWV / loading issues relevant to UI
-6. `ui-components` — pattern / state / responsive checks as needed
-7. `frontend-judgment` — when recommending redesign directions (2–3 options)
-8. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
+4. `responsive-ui` — all-devices / breakpoint adherence
+5. `accessibility` — WCAG 2.1 AA
+6. `web-performance` — CWV / loading issues relevant to UI
+7. `ui-components` — pattern / state checks as needed
+8. `frontend-judgment` — when recommending redesign directions (2–3 options)
+9. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
 
 ## What It Does
 
@@ -28,7 +29,7 @@ Alias: **`/audit`** (same workflow).
 4. Checks token adherence
 5. Reviews accessibility
 6. Notes performance risks (LCP / INP / CLS)
-7. Validates responsive design (320 / 768 / 1024 / 1440)
+7. Validates **responsive** design (320 / 768 / 1024 / 1440) via `responsive-ui`
 8. Checks component patterns (composition, states)
 9. Outputs scorecard + prioritized next moves
 

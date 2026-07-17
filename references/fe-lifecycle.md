@@ -24,11 +24,14 @@ Default quality-loop cap in this pack: **3** audit→fix cycles (`ui-quality-loo
 | 1 | **Pahami** | Job user, constraint, existing UI vs greenfield | Chat; read `DESIGN_MEMORY.md` if present |
 | 2 | **Putuskan** | 2–3 approaches on **distinct axes**; wait for pick | `frontend-judgment` |
 | 3 | **Sistem** | Walk token **decision tree**: custom / explicit / Plasma hard-gate / score (`token-preset-scoring.md`); style-infer when custom | `design-tokens` |
-| 4 | **Bangun** | Composition, responsive, loading/empty/error; icons via Reicon | `ui-components` |
+| 4 | **Bangun** | Composition, loading/empty/error; icons via Reicon; shell/data/forms when needed | `ui-components` (+ `app-shell-routing` / `data-fetching` / `forms-validation`) |
+| — | **Responsive** | All devices 320→1440 — **MUST** | `responsive-ui` |
 | 5 | **Haluskan** | Kill AI slop → micro craft (radius, press, type wrap, …) | `anti-ai-slop` → `ui-feel` |
 | 6 | **A11y** | Keyboard, labels, contrast, semantics | `accessibility` |
 | — | **Motion** | Only if animation is in scope | `motion` |
 | — | **WebGL bg** | Plasma Studio shaders | `webgl` |
+| — | **SEO** | Public/meta routes | `fe-seo` |
+| — | **Architecture** | Folders / state boundaries | `fe-architecture` |
 | — | **Monitoring** | Errors / CWV / analytics in prod | `monitoring` |
 | 7 | **Buktikan** | Critical path tests — or **waiver** if no runner | `frontend-testing` / `/test-ui` |
 | 8 | **Audit** | Honest scorecard (no fabricated visuals) | `design-reviewer` / `/design` `/audit` |

@@ -3,18 +3,19 @@ description = "Build production UI with curated tokens — avoid AI aesthetic"
 prompt = """
 Invoke the ui-developer agent.
 
-Load skills in order: frontend-judgment (if non-trivial UI) → design-tokens → ui-components → anti-ai-slop → ui-feel → accessibility (light). Load motion only if animation is in scope.
+Load skills in order: frontend-judgment (if non-trivial UI) → design-tokens → app-shell-routing/data-fetching/forms-validation when needed → ui-components → responsive-ui (MUST for layout) → anti-ai-slop → ui-feel → accessibility (light). Load motion/webgl/fe-seo only if in scope.
 
 For blank-canvas or ambiguous UI, offer 2–3 approaches with tradeoffs and one recommendation before coding (unless the user said to just implement).
 
 Build UI that looks design-system-aware, not AI-generated:
 
 1. Choose tokens via decision tree in references/token-preset-scoring.md: custom → explicit (--token) → Plasma hard-gate → score (emit Token score n/24). Never vibe-pick or invent raw hex.
-2. Follow spacing scale (0.25rem increments) and token border-radius
-3. Handle loading, error, and empty states
-4. Make interactive elements keyboard accessible
-5. Scan for AI aesthetic patterns, then apply ui-feel craft
-6. Report implementation, tokens used, Conventions check (Reicon/tokens/states), a11y notes, and responsive behavior
+2. responsive-ui: verify 320/768/1024/1440; no page horizontal scroll; adapt nav/tables for phone
+3. Follow spacing scale (0.25rem increments) and token border-radius
+4. Handle loading, error, and empty states
+5. Make interactive elements keyboard accessible
+6. Scan for AI aesthetic patterns, then apply ui-feel craft
+7. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive), a11y notes, and responsive behavior
 
 Modes via arguments: default = decision tree, --token <file> = explicit, --custom = project system.
 """

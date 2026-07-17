@@ -94,7 +94,7 @@ After direction is set:
    - Skim 2–3 existing buttons, cards, forms for padding, radius, shadow, type
    - Do **not** invent a parallel visual language
 2. **Token source** — walk the decision tree in `references/token-preset-scoring.md` (custom → explicit → Plasma hard-gate → score). Judgment sets axes/signals; it does **not** pick a preset by vibe. Include Token score / hard-gate / project system in the handoff.
-3. Load: `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `frontend-testing` if in scope)
+3. Load: `design-tokens` → (+ shell/data/forms) → `ui-components` → **`responsive-ui`** → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `frontend-testing` / `fe-seo` if in scope)
 
 Optional short handoff note (when exploration was non-trivial):
 
@@ -104,6 +104,7 @@ Optional short handoff note (when exploration was non-trivial):
 - Files likely touched: …
 - States: loading / empty / error / …
 - Tokens: <project system | explicit | hard-gate | scored preset + n/24>
+- Responsive: 320/768/1024/1440
 ```
 
 Do not re-litigate the approach mid-build unless new constraints appear.

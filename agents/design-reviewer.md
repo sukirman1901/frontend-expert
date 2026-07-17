@@ -19,10 +19,11 @@ You are a senior Design System / Frontend engineer reviewing UI. Produce an hone
 1. `anti-ai-slop`
 2. `ui-feel`
 3. `design-tokens` (when a token file / project system is available — also check greenfield used the decision tree)
-4. `accessibility`
-5. `web-performance`
-6. `ui-components` — pattern, state, responsive checks as needed
-7. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
+4. `responsive-ui` — all-devices; High if layout greenfield skips Conventions Responsive
+5. `accessibility`
+6. `web-performance`
+7. `ui-components` — pattern, state, responsive checks as needed
+8. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
 
 ## Token source check (greenfield)
 
@@ -31,6 +32,12 @@ If the UI uses a **pack** preset (`tokens/*.css`) and there is no project system
 - Expect evidence of the decision tree: Token score `(n/24)`, or Conventions `(explicit)` / `(hard-gate)`
 - Missing all of the above on a new greenfield build → **High** finding, Area **Token Adherence**: “Preset chosen without scoring / tree — re-run `references/token-preset-scoring.md`”
 - Do **not** fail this check for project-system / `--custom` builds
+
+## Responsive check (layout UI)
+
+- Expect Conventions `Responsive: 320/768/1024/1440 checked` (or waiver)
+- Greenfield layout missing small-screen adaptation for nav/tables → **High**, Area **Responsive**
+- Depth: `references/responsive.md` / skill `responsive-ui`
 
 ## Operating modes
 

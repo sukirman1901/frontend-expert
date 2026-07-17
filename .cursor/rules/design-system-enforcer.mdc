@@ -1,24 +1,30 @@
 ---
-description: Auto-route UI work to design-system skills — chat-first, judgment first, slash optional
+description: Auto-route Frontend Expert suite skills — chat-first, judgment first, slash optional
 alwaysApply: true
 ---
 
-# Design System Enforcer (auto)
+# Frontend Expert (auto)
 
-**Users should not need slash commands.** Map natural language to skills yourself.
+**Users should not need slash commands.** Map natural language to skills yourself. Pillars: `docs/pillars.md`.
 
 ## Intent → load (mandatory)
 
 | User intent (examples) | Load skills in order |
 |------------------------|----------------------|
-| Build/change UI, page, screen, component, form, layout, styling | `frontend-judgment` (if non-trivial) → `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` |
+| Build/change UI, page, screen, component, layout, styling | `frontend-judgment` (if non-trivial) → `design-tokens` → `ui-components` → **`responsive-ui`** → `anti-ai-slop` → `ui-feel` → `accessibility` |
+| + form / validasi | above + `forms-validation` |
+| + API list/detail / async data | above + `data-fetching` |
+| + shell / sidebar / routing | above + `app-shell-routing` |
+| + architecture / folder / state | + `fe-architecture` |
+| + SEO / meta / OG | + `fe-seo` |
+| Mobile / responsive / semua device | **`responsive-ui` MUST** |
 | Animation / transition / motion | above + `motion` |
 | Feels off / rapihin detail / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) — one pass |
-| Design audit, AI slop, "UI jelek/generik", visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `accessibility` → `web-performance` (persona: `design-reviewer`; `/audit` = `/design`) |
-| Tests / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` (persona: `test-engineer`) |
-| Polish / rapihin **sampai bagus** / until audit passes | `ui-quality-loop` → orchestrate build→test→audit→fix (max 3) |
-| Slow UI / LCP / optimize performance | `web-performance` (+ `ui-components` if touching UI) |
-| WebGL / shader / Plasma / animated canvas background | **`webgl` required** (Plasma Studio / `Plasma.init` — not random Three.js) |
+| Design audit, AI slop, "UI jelek/generik", visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` |
+| Tests / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` |
+| Polish / rapihin **sampai bagus** / until audit passes | `ui-quality-loop` (max 3) |
+| Slow UI / LCP / optimize performance | `web-performance` |
+| WebGL / shader / Plasma / animated canvas background | **`webgl` required** |
 | Sentry / analytics / observability | `monitoring` |
 
 ## Expert judgment
@@ -27,11 +33,12 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 
 ## Rules (compliance — do not silently skip)
 
-- Prefer project design system if one exists; else walk token decision tree (custom → explicit → Plasma hard-gate → score) in `references/token-preset-scoring.md` — do not vibe-pick from affinity hints
-- **Icons: MUST use [Reicon](https://reicon.dev)** on nav/toolbars/empty/icon-buttons unless project already has an icon lib **or** you state a text-only waiver. Vanilla HTML → Reicon CDN + `<re-icon>`. See `references/reicon-icons.md` + `references/compliance-gates.md`
-- WebGL/shader/plasma asks → load **`webgl`**; prefer Plasma — do not invent a parallel stack
+- Prefer project design system if one exists; else walk token decision tree in `references/token-preset-scoring.md`
+- **Responsive: MUST** — `responsive-ui`; Conventions `Responsive: 320/768/1024/1440 checked`
+- **Icons: MUST use [Reicon](https://reicon.dev)** unless project icon lib or text-only waiver
+- WebGL/shader/plasma → load **`webgl`**; prefer Plasma
 - No raw hex, purple/indigo defaults, Lorem ipsum, or `rounded-2xl` everywhere
 - Handle loading / error / empty; keyboard accessible
-- Before DONE on UI builds, output the **Conventions check** block from `references/compliance-gates.md`
-- Optional shortcuts only: `/ui`, `/design`, `/audit`, `/test-ui`, `/polish` — never require them
-- Audits: do not fabricate visual metrics without tokens/screenshots (design-reviewer honesty)
+- Before DONE on UI builds, output the **Conventions check** from `references/compliance-gates.md`
+- Optional shortcuts only: `/ui`, `/design`, `/audit`, `/test-ui`, `/polish`
+- Audits: do not fabricate visual metrics without tokens/screenshots
