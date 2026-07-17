@@ -1,10 +1,10 @@
 ---
 name: motion
 description: >-
-  Add purposeful UI motion and micro-interactions (Framer Motion, GSAP,
-  prefers-reduced-motion). Use only when the user asks for animation, transition,
-  hover/focus motion, stagger, or scroll effects — not for static layout or
-  token-only work.
+  Purposeful UI motion — section enter/exit fade, drawer slides, smooth scroll,
+  micro press/hover (Framer Motion, GSAP, CSS). Use for animation requests AND
+  as a light default when shipping app shells, dashboards, multi-section pages,
+  or /ui layout work — not for pure token-color tweaks.
 ---
 
 # Motion
@@ -16,35 +16,44 @@ Motion should clarify hierarchy and feedback, not decorate. Prefer short, purpos
 ## When to Use
 
 - Micro-interactions (hover, focus, press)
-- Enter/exit or layout transitions
+- Enter/exit or layout transitions (section swaps, drawers, modals)
 - Scroll-linked or timeline animation (GSAP)
+- **Default (light):** app shell / dashboard / multi-panel settings when building with `/ui` — at least section fade + drawer slide + `scroll-behavior: smooth` (unless user forbids motion)
 
-**Do not** load this skill for static token/layout-only tasks.
+## When to skip
+
+- Static token/color-only tweaks
+- User asked for zero animation / “tanpa animasi”
+- Prefers-reduced-motion environments (still ship CSS that disables)
 
 ## Workflow
 
 1. **Principles**
    - Short micro-interactions (~100–200ms)
    - UI transitions (~200–400ms)
-   - Prefer ease-out for exits of attention; keep easing intentional
+   - Prefer ease-out; keep easing intentional
    - Stagger children sparingly
+   - **2–3 intentional motions** beat many noisy ones
 
-2. **Implementation**
-   - Framer Motion: variants, layout, gestures when in React
-   - GSAP: timelines, ScrollTrigger for complex sequences
+2. **Layout defaults (dashboard / shell)**
+   - Section/panel enter: opacity + slight `translateY` (~250–300ms)
+   - Mobile drawer: `transform` slide + backdrop fade
+   - `html { scroll-behavior: smooth }` for in-panel scroll (honor reduced motion)
+   - Do **not** delay primary task completion
+
+3. **Implementation**
+   - CSS transitions/animations fine for shell defaults
+   - Framer Motion / GSAP when in React or complex timelines
    - Prefer `transform` / `opacity` (compositor-friendly)
 
-3. **Accessibility**
-   - Honor `prefers-reduced-motion`
+4. **Accessibility**
+   - Honor `prefers-reduced-motion: reduce` (disable enter animations + smooth scroll)
    - Never convey meaning by motion alone
-
-4. **Quality bar**
-   - 2–3 intentional motions beat many noisy ones
-   - No animation that delays primary task completion
 
 ## Checklist
 
 - [ ] Motion has a purpose (feedback, hierarchy, continuity)
+- [ ] Shell/dashboard includes light enter + drawer motion (or waiver)
 - [ ] Durations appropriate to interaction scale
 - [ ] `prefers-reduced-motion` handled
 - [ ] No layout-thrashing animations
@@ -53,4 +62,5 @@ Motion should clarify hierarchy and feedback, not decorate. Prefer short, purpos
 ## Depth
 
 Full reference: `references/motion.md`.  
-Micro press/hover/stagger craft: also load `ui-feel` (`references/ui-feel.md`).
+Micro press/hover/stagger craft: also load `ui-feel` (`references/ui-feel.md`).  
+Demo: `test/` settings (section fade + drawer).

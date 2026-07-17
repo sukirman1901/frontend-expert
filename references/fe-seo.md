@@ -8,9 +8,13 @@ Used by: `fe-seo`.
 |---------|------|
 | Title | Unique, ≤~60 chars practical |
 | Meta description | Unique, useful; not keyword stuffing |
-| H1 | One primary; aligns with title intent |
+| H1 | One primary; aligns with title intent — Typography ladder |
 | Canonical | When parameters create duplicates |
 | robots | `noindex` for private/app-only |
+
+## MUST for public pages
+
+Title + description + one H1 + OG basics (`og:title`, `og:description`, `og:image`). Private app → `noindex` rather than fake marketing meta.
 
 ## Social
 

@@ -15,6 +15,12 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 
 **Fix:** Use colors from the chosen token source (project system, or pack preset via `references/token-preset-scoring.md`). Do **not** invent a purple/indigo token file to “legitimize” slop. Purple is OK only when the decision tree lands on `plasma-landing` (hard-gate) or `neutral-purple` (portfolio/violet cue + score).
 
+### Loud nav active bars
+
+**Problem:** Thick left/right accent stripes on selected nav items are a common AI/template tell.
+
+**Fix:** Quiet selected state — muted fill, slightly heavier weight, stronger icon contrast. No inset accent rail.
+
 ### Excessive Gradients
 
 **Problem:** Gradients add visual noise and clash with most design systems.
@@ -94,6 +100,8 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 - h3: Subsection title
 - body: Default text
 - small: Secondary/helper text
+
+**Ship gate:** Typography ladder in `skills/frontend-judgment/SKILL.md` + `ui-feel`. Multiple `h1` or skipped levels → Needs Work on Typography / Visual Hierarchy.
 
 ### Inconsistent Font Usage
 

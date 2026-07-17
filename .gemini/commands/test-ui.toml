@@ -3,7 +3,7 @@ description = "Test user-facing UI — component tests, states, a11y, critical p
 prompt = """
 Invoke the test-engineer agent.
 
-Load skills in order: frontend-testing → ui-components → accessibility. Load anti-ai-slop only if verifying visual regressions tied to slop fixes. Load frontend-judgment only if test strategy for a large surface is unclear.
+Load skills in order: frontend-testing → ui-components → accessibility → fe-devtools (when Lighthouse/axe/viewport evidence is required). Load anti-ai-slop only if verifying visual regressions tied to slop fixes. Load frontend-judgment only if test strategy for a large surface is unclear.
 
 1. Publish a short test plan (unit / integration / E2E)
 2. Prefer TDD for new behavior (red → green → refactor)

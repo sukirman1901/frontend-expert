@@ -5,7 +5,7 @@ Invoke the ui-quality-loop skill as the loop controller.
 
 Agents: ui-developer (build/fix), test-engineer (test), design-reviewer (audit).
 
-1. Judge if blank-canvas, then build with tokens → components → anti-slop → ui-feel → a11y
+1. Judge if blank-canvas, then build with tokens → components → responsive-ui → motion → anti-slop → ui-feel → a11y
 2. Test touched surfaces (frontend-testing)
 3. Audit with honesty scorecard (include ui-feel craft) — no fabricated metrics
 4. Fix Critical/High findings, re-test, re-audit
@@ -14,4 +14,5 @@ Agents: ui-developer (build/fix), test-engineer (test), design-reviewer (audit).
 
 Modes: default, --max N, --audit-only-fix.
 Chat equivalents: "rapihin sampai bagus", "polish until audit passes", "feels off".
+Orchestrator skill: ui-quality-loop.
 """

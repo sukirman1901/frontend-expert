@@ -9,8 +9,9 @@ Invoke the test-engineer agent.
 1. `frontend-testing`
 2. `ui-components`
 3. `accessibility`
-4. `anti-ai-slop` — only if verifying visual regressions tied to slop fixes
-5. `frontend-judgment` — only if test strategy for a large surface is unclear
+4. `fe-devtools` — Lighthouse/axe/viewport when evidence is required
+5. `anti-ai-slop` — only if verifying visual regressions tied to slop fixes
+6. `frontend-judgment` — only if test strategy for a large surface is unclear
 
 ## Modes
 

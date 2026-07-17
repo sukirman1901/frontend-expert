@@ -16,10 +16,11 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 5. `forms-validation` — **if** forms / wizards
 6. `ui-components` — implement with states
 7. `responsive-ui` — **MUST** for layout (320–1440)
-8. `anti-ai-slop` — scan before done
-9. `ui-feel` — micro craft
-10. `accessibility` — light pass
-11. `fe-seo` / `motion` / `webgl` — **only if** in scope
+8. `motion` — light shell/section defaults (unless user forbids)
+9. `anti-ai-slop` — scan before done
+10. `ui-feel` — micro craft
+11. `accessibility` — light pass
+12. `fe-seo` / `webgl` — **only if** in scope
 
 ## What It Does
 

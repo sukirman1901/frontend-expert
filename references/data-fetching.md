@@ -7,7 +7,17 @@ Used by: `data-fetching`.
 1. **Server state ≠ UI state** — filters in URL when shareable; remote entities in query cache/loader
 2. **Four states minimum** — loading, error, empty, success
 3. **Fail visibly** — never swallow errors into a blank screen
-4. **Optimistic UI** only when rollback is defined
+4. **Conventions** — States line must say loading/empty/error covered when shipping async UI
+5. **Optimistic UI** only when rollback is defined
+
+## Four states (MUST)
+
+| State | Ship |
+|-------|------|
+| Loading | Skeleton/placeholder local to the widget |
+| Error | Message + Retry |
+| Empty | Real copy + optional CTA |
+| Success | Render data |
 
 ## Patterns
 
@@ -48,4 +58,5 @@ submit → pending on control →
 
 - `forms-validation` for submit pipelines  
 - `frontend-testing` for MSW / loading assertions  
-- `responsive-ui` for skeleton layouts on small screens
+- `responsive-ui` for skeleton layouts on small screens  
+- `compliance-gates.md` States line

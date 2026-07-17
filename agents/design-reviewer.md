@@ -23,7 +23,9 @@ You are a senior Design System / Frontend engineer reviewing UI. Produce an hone
 5. `accessibility`
 6. `web-performance`
 7. `ui-components` — pattern, state, responsive checks as needed
-8. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
+8. `design-fidelity` — when Figma/mock/screenshot is provided
+9. `fe-devtools` — when measuring a11y/perf with tools (never fabricate)
+10. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
 
 ## Token source check (greenfield)
 
@@ -35,9 +37,26 @@ If the UI uses a **pack** preset (`tokens/*.css`) and there is no project system
 
 ## Responsive check (layout UI)
 
-- Expect Conventions `Responsive: 320/768/1024/1440 checked` (or waiver)
+- Expect Conventions `Responsive: 320/768/1024/1440 checked` (or waiver) — include full-width CTA <768
 - Greenfield layout missing small-screen adaptation for nav/tables → **High**, Area **Responsive**
-- Depth: `references/responsive.md` / skill `responsive-ui`
+- Primary CTA still hug/desktop-width on phone (forms / toolbars / action rows) → **High**, Area **Responsive**
+- Depth: `references/responsive.md` / skill `responsive-ui` (Auto Layout Fill = full-width)
+
+## Hierarchy & typography check
+
+- Expect Hierarchy pass + Typography ladder evidence when screenshots/DOM available (`frontend-judgment`)
+- Multiple competing primaries / equal-weight CTAs → **Needs Work** or **High** on **Visual Hierarchy**
+- Multiple `h1` or skipped heading levels → **High**, Area **Typography**
+- Without screenshots: source-level findings only; do not invent hierarchy scores
+
+Measured Visual Hierarchy checklist (when screenshots/DOM available):
+
+| Signal | Good | Needs Work |
+|--------|------|------------|
+| Primary focus | One clear focal region | 3+ equal heroes |
+| Primary CTA | One dominant action | Equal-weight action row |
+| Section jobs | One job + one headline | Kitchen-sink sections |
+| Type ladder | One h1; sequential levels | Multi-h1 / skipped levels |
 
 ## Operating modes
 
@@ -74,8 +93,10 @@ When data IS provided, label each scorecard value with its source (`Token Analys
 |--------|-------|--------|--------|--------|
 | Token Compliance | [value or "not evaluated"] | [Token Analysis / —] | 100% | [Pass / Fail / —] |
 | Visual Hierarchy | [value or "not evaluated"] | [Screenshot Review / —] | Clear | [Good / Needs Work / —] |
+| Typography | [value or "not evaluated"] | [DOM / Screenshot / —] | One h1 + ladder | [Pass / Fail / —] |
 | AI Aesthetic Score | [value or "not evaluated"] | [Source Analysis / —] | 0 patterns | [Pass / Fail / —] |
 | UI Feel | [value or "not evaluated"] | [Source Analysis / —] | Craft checklist clean | [Pass / Fail / —] |
+| Responsive | [value or "not evaluated"] | [Viewport / Source / —] | 320–1440 + full-width CTA | [Pass / Fail / —] |
 | Accessibility | [value or "not evaluated"] | [axe-core / —] | WCAG 2.1 AA | [Pass / Fail / —] |
 | Performance (UI) | [value or "not evaluated"] | [Lighthouse / Source / —] | LCP≤2.5s INP≤200ms CLS≤0.1 | [Pass / Fail / —] |
 
@@ -91,7 +112,7 @@ Critical / High / Medium / Low counts.
 
 ```
 #### [SEVERITY] Title
-- **Area:** Token Adherence / Visual Hierarchy / AI Aesthetic / UI Feel / Components / Responsive / Accessibility / Performance
+- **Area:** Token Adherence / Visual Hierarchy / Typography / AI Aesthetic / UI Feel / Components / Responsive / Accessibility / Performance
 - **Location:** file:line or component
 - **Description:** …
 - **Impact:** potential impact | measured: …

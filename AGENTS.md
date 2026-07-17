@@ -16,7 +16,7 @@ Pillar map: `docs/pillars.md`.
 
 | User says / means | Load skills (order) | Optional shortcut |
 |-------------------|---------------------|-------------------|
-| Build/change UI, page, component, layout, styling | `frontend-judgment`* → `design-tokens` → `ui-components` → **`responsive-ui`** → `anti-ai-slop` → `ui-feel` → `accessibility` | `/ui` |
+| Build/change UI, page, component, layout, styling | `frontend-judgment`* → `design-tokens` → `ui-components` → **`responsive-ui`** → **`motion`** (light shell defaults) → `anti-ai-slop` → `ui-feel` → `accessibility` | `/ui` |
 | + form / validasi / wizard | … + `forms-validation` (before or with ui-components) | `/ui` |
 | + list/detail API / loading data | … + `data-fetching` | `/ui` |
 | + app shell / sidebar / routing / 404 | … + `app-shell-routing` | `/ui` |
@@ -24,7 +24,12 @@ Pillar map: `docs/pillars.md`.
 | + SEO / meta / OG / landing public | … + `fe-seo` (+ `web-performance` if CWV) | — |
 | + animation / motion | … + `motion` | `/ui` |
 | Mobile / responsive / semua device / tablet | **`responsive-ui`** (MUST on layout UI) | `/ui` |
-| Audit design, AI slop, UI generik | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` | `/design` or `/audit` |
+| Audit design, AI slop, UI generik | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` (+ `frontend-judgment` hierarchy/type if scores claimed) | `/design` or `/audit` |
+| Match Figma / mock / pixel / fidelity | `design-fidelity` → `design-tokens` → `responsive-ui` → `ui-feel` | `/design` |
+| Lighthouse / axe / DevTools / measured audit | `fe-devtools` → `accessibility` → `web-performance` → `frontend-testing` | `/test-ui` or `/design` |
+| Hierarchy / visual hierarchy / primary CTA unclear | `frontend-judgment` (Hierarchy pass) → `anti-ai-slop` → `ui-feel` | `/design` |
+| Typography / type scale / multi-h1 / heading ladder | `frontend-judgment` (Typography ladder) → `ui-feel` → `anti-ai-slop` | `/design` |
+| Figma Auto Layout / Fill / Hug / layout from Figma | `responsive-ui` (Auto Layout ↔ CSS) → `ui-components` | `/ui` |
 | Feels off / rapihin **detail** | `ui-feel` (+ `anti-ai-slop` if generik) — **one pass** | — |
 | Test / TDD / coverage | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
 | Polish / rapihin **sampai bagus** | `ui-quality-loop` | `/polish` |
@@ -57,7 +62,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `ui-feel` | UI Quality | Micro craft |
 | `accessibility` | UI Quality | Build/audit a11y |
 | `web-performance` | UI Quality | CWV / slow |
-| `motion` | UI Quality | Explicit animation |
+| `motion` | UI Quality | Shell/dashboard light defaults + explicit animation |
 | `frontend-testing` | UI Quality | Tests / TDD |
 | `ui-quality-loop` | UI Quality | Polish until clean |
 | `webgl` | UI Quality | Plasma backgrounds |
@@ -67,19 +72,25 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `forms-validation` | Ship FE | Forms / wizards |
 | `fe-architecture` | Depth | Folders / state boundaries |
 | `fe-seo` | Depth | Meta / OG / indexability |
+| `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
+| `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
 
 ## Hard rules
 
 1. Tokens via decision tree (`token-preset-scoring.md`) or project system — never vibe-pick
 2. Icons: **MUST ship Reicon** unless waiver — `compliance-gates.md`
 3. **Responsive: MUST** verify 320/768/1024/1440 on layout UI — `responsive-ui`
-4. WebGL → `webgl` / Plasma — no parallel invented stack
-5. No purple/indigo defaults / Lorem (purple only via scored/hard-gated/explicit token)
-6. Loading / error / empty for interactive + async surfaces
-7. Do not fabricate visual audit scores without tokens/screenshots
-8. Never block on slash commands when intent is clear
-9. Blank-canvas → judgment first
-10. “Sampai bagus” → `ui-quality-loop` (cap 3)
-11. Before DONE → **Conventions check** including **Responsive**
+4. **Primary CTAs full-width below 768** (forms / toolbars / action rows) — no tiny desktop-width CTAs on phone
+5. **Hierarchy pass** before DONE on blank-canvas / layout polish — one primary focus + one primary CTA (`frontend-judgment`)
+6. **Typography ladder** — ≤2 families; **one h1/page**; sequential levels; token type roles
+7. WebGL → `webgl` / Plasma — no parallel invented stack
+8. No purple/indigo defaults / Lorem (purple only via scored/hard-gated/explicit token)
+9. Loading / error / empty for interactive + async surfaces
+10. Light **Motion** defaults on shell/dashboard (or waiver) — `motion`
+11. Do not fabricate visual audit scores without tokens/screenshots
+12. Never block on slash commands when intent is clear
+13. Blank-canvas → judgment first
+14. “Sampai bagus” → `ui-quality-loop` (cap 3)
+15. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**
 
 Orchestration: session agent loads skills; agents do not call agents. See `docs/pack-layers.md`, `docs/pillars.md`.

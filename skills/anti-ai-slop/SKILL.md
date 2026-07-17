@@ -38,10 +38,12 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 | Oversized padding | `p-8`/`p-12` on everything | Spacing hierarchy |
 | Stock card grids | Uniform grids, no priority | Purpose-driven layout |
 | Shadow-heavy | Layered competing shadows | Subtle or no shadow |
+| Loud nav “active bar” | Thick left/right accent stripe on selected items | Quiet fill + weight/contrast only |
 
 ## Checklist
 
 - [ ] No purple/indigo outside the chosen token source (scored / explicit / hard-gate / project system — not a vibe-picked purple file)
+- [ ] No loud left-accent “selected” bars on nav (prefer quiet fill + type weight)
 - [ ] No unjustified gradients
 - [ ] Radius consistent with tokens
 - [ ] No Lorem ipsum

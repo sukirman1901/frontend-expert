@@ -16,4 +16,6 @@ Bikin form create project: name required, description optional. Submit ke API.
 
 - [ ] Accessible labels
 - [ ] Error + pending states
-- [ ] Works with responsive full-width fields
+- [ ] Focus moves to first invalid field on failed submit (or equivalent)
+- [ ] Works with responsive full-width primary button + ≥16px inputs on mobile
+- [ ] Values kept on API error

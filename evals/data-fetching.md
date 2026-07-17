@@ -16,3 +16,5 @@ Bikin halaman list users dari API. Harus handle loading dan error.
 
 - [ ] All four states addressed
 - [ ] Retry or clear recovery on error
+- [ ] Empty state with real copy (not only loading+error)
+- [ ] Conventions States line or explicit state coverage in output

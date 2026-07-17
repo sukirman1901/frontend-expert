@@ -94,7 +94,7 @@ After direction is set:
    - Skim 2–3 existing buttons, cards, forms for padding, radius, shadow, type
    - Do **not** invent a parallel visual language
 2. **Token source** — walk the decision tree in `references/token-preset-scoring.md` (custom → explicit → Plasma hard-gate → score). Judgment sets axes/signals; it does **not** pick a preset by vibe. Include Token score / hard-gate / project system in the handoff.
-3. Load: `design-tokens` → (+ shell/data/forms) → `ui-components` → **`responsive-ui`** → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `frontend-testing` / `fe-seo` if in scope)
+3. Load: `design-tokens` → (+ shell/data/forms) → `ui-components` → **`responsive-ui`** → **`motion`** (light) → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `frontend-testing` / `fe-seo` if in scope)
 
 Optional short handoff note (when exploration was non-trivial):
 
@@ -108,6 +108,34 @@ Optional short handoff note (when exploration was non-trivial):
 ```
 
 Do not re-litigate the approach mid-build unless new constraints appear.
+
+## Hierarchy pass (ship gate — post-build)
+
+Before DONE / Conventions check, verify the built surface against this checklist. Theory: `references/ux-foundations.md`, axes: `references/design-axes.md`.
+
+| Check | Pass when |
+|-------|-----------|
+| **One primary focus** | One clear focal element per view (not three competing heroes) |
+| **One primary CTA** | One dominant action; secondary actions quieter (weight/contrast/position) |
+| **Weight before decoration** | Size, weight, contrast, position establish order — not badges/glow/extra chrome |
+| **One job per section** | Each section: one purpose, one headline, usually one short supporting line |
+| **Gestalt grouping** | Related items closer; sections farther; same style = same kind |
+| **No equal-weight noise** | Avoid same padding/gap/type size on primary vs tertiary |
+
+Report in Conventions when auditing: `Hierarchy: pass` (or list fails). Missing hierarchy on blank-canvas / polish → treat as **Needs Work** on Visual Hierarchy.
+
+## Typography ladder (ship gate)
+
+Pair with `ui-feel` / `anti-ai-slop`. Full anti-patterns: `references/anti-patterns.md`.
+
+| Check | Pass when |
+|-------|-----------|
+| **Families** | ≤2 type families (project tokens) |
+| **One h1** | Exactly **one** `<h1>` (or page title role) per page |
+| **Ladder** | h1 → h2 → h3 → body without skipping levels for style |
+| **Roles via tokens** | Heading/body/muted/label use type tokens — not random rem sizes |
+| **Measure** | Body ~60–75ch where long-form; product chrome may be narrower |
+| **Mobile scale** | Inputs ≥16px; heading jumps not extreme (no 3rem title crushing a 320px form) |
 
 ## Quick decision check
 
@@ -145,11 +173,19 @@ When stuck between options, prefer the one that is: **clear · fast · consisten
 Pick A/B/C (or say “go with recommended”).
 ```
 
+## Checklist
+
+- [ ] Direction chosen (or skip rules applied) before domain skills
+- [ ] Handoff includes tokens + Responsive breakpoints
+- [ ] **Hierarchy pass** completed on built surface
+- [ ] **Typography ladder** (one h1, no skipped levels, token roles)
+- [ ] Build plan notes states (loading / empty / error) when non-trivial
+
 ## Depth
 
 Lifecycle A→Z: `references/fe-lifecycle.md`.  
 Axes + memory convention: `references/design-axes.md`.  
 Token preset scoring: `references/token-preset-scoring.md`.  
-UX/UI theory + color for products: `references/ux-foundations.md`.  
+UX/UI theory + color for products: `references/ux-foundations.md` (wire hierarchy/type here into ship gates above).  
 Anti-patterns: `anti-ai-slop` + `references/anti-patterns.md`.  
 Domain how-to stays in the other skills.

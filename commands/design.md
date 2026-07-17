@@ -18,8 +18,10 @@ Alias: **`/audit`** (same workflow).
 5. `accessibility` — WCAG 2.1 AA
 6. `web-performance` — CWV / loading issues relevant to UI
 7. `ui-components` — pattern / state checks as needed
-8. `frontend-judgment` — when recommending redesign directions (2–3 options)
-9. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
+8. `design-fidelity` — when a Figma/mock/screenshot is in scope
+9. `fe-devtools` — when measuring (Lighthouse/axe); never fabricate scores
+10. `frontend-judgment` — when recommending redesign directions (2–3 options)
+11. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
 
 ## What It Does
 
@@ -45,7 +47,9 @@ Alias: **`/audit`** (same workflow).
 
 ## Output
 
-Scorecard from `design-reviewer`: Token Compliance, Visual Hierarchy, AI Aesthetic, Accessibility, Performance (UI). Mark unevaluated fields explicitly — do not fabricate visual scores without tokens or screenshots. End with **prioritized next moves** (max 5).
+Scorecard from `design-reviewer`: Token Compliance, Visual Hierarchy, **Typography**, AI Aesthetic, **UI Feel**, **Responsive**, Accessibility, Performance (UI). Mark unevaluated fields explicitly — do not fabricate visual scores without tokens or screenshots. End with **prioritized next moves** (max 5).
+
+Also verify: full-width primary CTA <768; Hierarchy pass; one h1 + type ladder.
 
 ## Agent Invoked
 

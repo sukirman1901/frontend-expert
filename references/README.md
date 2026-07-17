@@ -30,10 +30,12 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `testing.md` | `frontend-testing` | Tests |
 | `webgl.md` | `webgl` | Plasma Studio |
 | `monitoring.md` | `monitoring` | Observability |
+| `design-fidelity.md` | `design-fidelity` | Spec vs build |
+| `fe-devtools.md` | `fe-devtools` | Lighthouse / axe / tooling |
 
 ## Evals
 
-[`evals/`](../evals/) — E1–E11 (slop, scoring, responsive, ship FE, e2e).
+[`evals/`](../evals/) — E1–E19 (slop, craft gates, fidelity, ship FE, SEO/architecture/monitoring).
 
 ## Missing on purpose
 

@@ -25,12 +25,29 @@ Ship UI with enough production signal: errors, performance, and product analytic
 - Pure visual polish (`ui-feel` / `/polish`)
 - Local-only prototypes with no deploy target
 
+## MUST (when adding observability)
+
+| Signal | Minimum |
+|--------|---------|
+| **Errors** | Boundary on app shell / critical routes + reporting; scrub PII |
+| **Secrets** | DSN / keys via env — never commit |
+| **Sample rates** | Sane defaults for traffic (don’t 100% trace huge apps blindly) |
+| **Analytics** | Few high-value events (signup, checkout, critical CTA) — not every click |
+| **Alerts** | Error rate or CWV budget with a named owner |
+
+Lab Lighthouse ≠ production monitoring — use `fe-devtools` for local audits; this skill for **shipped** signal.
+
 ## Workflow
 
 1. **Errors** — boundary + reporting; scrub PII
 2. **Performance** — sample traces; watch LCP/INP/CLS on key routes
 3. **Analytics** — few high-value events, not every click
 4. **Alert** — error rate / CWV budgets that someone will actually see
+
+## Agent boundaries
+
+- **May decide:** Vendor (Sentry vs other), which 3–5 analytics events matter
+- **Must not:** Hardcode DSNs; log emails/tokens; add analytics spam on every hover
 
 ## Checklist
 
@@ -39,8 +56,9 @@ Ship UI with enough production signal: errors, performance, and product analytic
 - [ ] Sample rates sane for traffic
 - [ ] No PII in events by default
 - [ ] Alerts have an owner
+- [ ] Key product events listed (not clickstream noise)
 
 ## Depth
 
 Full guide: `references/monitoring.md`.  
-Related: `web-performance` for build-time CWV work.
+Related: `web-performance` for build-time CWV; `fe-devtools` for lab audits.

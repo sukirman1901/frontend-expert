@@ -20,6 +20,14 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E9 | Forms validation | [forms-validation.md](./forms-validation.md) |
 | E10 | App shell routing | [app-shell-routing.md](./app-shell-routing.md) |
 | E11 | Ship feature end-to-end | [ship-feature-e2e.md](./ship-feature-e2e.md) |
+| E12 | Modern dashboard shell | [dashboard-shell.md](./dashboard-shell.md) |
+| E13 | Visual hierarchy fail | [visual-hierarchy.md](./visual-hierarchy.md) |
+| E14 | Typography ladder / multi-h1 | [typography-ladder.md](./typography-ladder.md) |
+| E15 | Auto Layout Fill → full-width CTA | [auto-layout-fill-cta.md](./auto-layout-fill-cta.md) |
+| E16 | Design fidelity mismatch | [design-fidelity.md](./design-fidelity.md) |
+| E17 | FE SEO minimum | [fe-seo.md](./fe-seo.md) |
+| E18 | FE architecture boundaries | [fe-architecture.md](./fe-architecture.md) |
+| E19 | Monitoring signals | [monitoring.md](./monitoring.md) |
 
 ## How to run
 

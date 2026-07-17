@@ -176,3 +176,17 @@ Only `transform` / `opacity` / `filter` when you see first-frame stutter. Never 
 | `transition: all` | Name properties |
 | Tiny controls | Expand hit area without overlap |
 | `scale(0.9)` press | Raise to `0.96` |
+| Multiple `h1` / skipped levels | One page title; sequential ladder (`frontend-judgment`) |
+| Desktop-only polish on phone | Full-width CTA <768, safe-area, thumb zone (`responsive`) |
+
+## Mobile craft
+
+- Prefer primary actions mid/lower on long phone screens; sticky bottom bar for long forms when submit is far
+- Safe area: `padding` with `env(safe-area-inset-*)` on sticky topbar, drawers, bottom CTA bars
+- Pair with `references/responsive.md` (Auto Layout Fill → full-width buttons)
+
+## Typography feel
+
+- One `h1` per page; sequential headings; token type roles
+- `text-wrap: balance` on headings; `pretty` on short body
+- Ship gate: Typography ladder in `skills/frontend-judgment/SKILL.md`

@@ -29,6 +29,8 @@ Theme/auth/locale?     → context or framework session
 Still tangled globally? → consider a store (rare)
 ```
 
+**Agent default:** refuse Redux/Zustand for form fields and API entity caches unless the ladder was exhausted.
+
 ## Server/client boundary
 
 - Prefer server-rendered data for SEO-critical and first paint

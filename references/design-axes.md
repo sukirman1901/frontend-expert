@@ -18,6 +18,8 @@ When proposing approaches, make each option pull a **different lever**:
 
 **Rule:** 2–3 options max. Never five near-identical color skins.
 
+**Post-build:** Hierarchy is not only an exploration axis — run the **Hierarchy pass** in `skills/frontend-judgment/SKILL.md` (and type ladder) before DONE. See also `references/ux-foundations.md` → UI visual system.
+
 ## Inspiration shorthand
 
 Use as optional multiple-choice labels (not mandatory styles):

@@ -11,7 +11,7 @@ How the pieces of **Frontend Expert** fit together.
 │          design-reviewer,                                │
 │          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
-│  Skills (18) — suite pillars        ← HOW                │
+│  Skills (20) — suite pillars        ← HOW                │
 │  UI Quality · Responsive MUST · Ship FE · Depth          │
 ├──────────────────────────────────────────────────────────┤
 │  References + tokens/               ← DEPTH              │
@@ -36,9 +36,9 @@ Pillar map: [pillars.md](./pillars.md).
 
 | Command | Agent | Skills (order) |
 |---------|-------|----------------|
-| `/ui` (or chat) | `ui-developer` | judgment* → tokens → (+ shell/data/forms) → ui-components → **responsive-ui** → anti-ai-slop → ui-feel → accessibility |
-| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → tokens → responsive-ui → accessibility → web-performance |
-| `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility |
+| `/ui` (or chat) | `ui-developer` | judgment* → tokens → (+ shell/data/forms) → ui-components → **responsive-ui** → **motion** (light) → anti-ai-slop → ui-feel → accessibility |
+| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → tokens → responsive-ui → accessibility → web-performance (+ **design-fidelity** if mock; **fe-devtools** if measuring) |
+| `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility (+ **fe-devtools** when tooling evidence needed) |
 | `/polish` (or chat) | loop controller | `ui-quality-loop` until gates pass |
 
 \* Judgment only when non-trivial / blank-canvas — see skill skip rules.

@@ -2,6 +2,14 @@
 
 Error tracking, performance monitoring, analytics, and alerting.
 
+## MUST when wiring observability
+
+- DSN / keys via **env vars** — never hardcode in client source committed to git
+- Error boundary on app shell / critical routes; scrub PII
+- Few high-value analytics events (not every hover/click)
+- Sample rates sane for traffic; alerts have an owner
+- Lab audits (`fe-devtools`) ≠ production monitoring
+
 ## Error Tracking (Sentry)
 
 ### Setup
@@ -11,7 +19,7 @@ import * as Sentry from '@sentry/react'
 import { BrowserTracing } from '@sentry/tracing'
 
 Sentry.init({
-  dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
+  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, // example — use env, never commit real DSN
   integrations: [new BrowserTracing()],
   tracesSampleRate: 0.2, // 20% of transactions
   replaysSessionSampleRate: 0.1, // 10% of sessions

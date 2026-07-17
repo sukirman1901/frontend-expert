@@ -36,11 +36,11 @@ check_skills() {
   done
 }
 
-check_skills ui frontend-judgment design-tokens ui-components responsive-ui anti-ai-slop ui-feel accessibility
-check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance
-check_skills test-ui frontend-testing ui-components accessibility
+check_skills ui frontend-judgment design-tokens ui-components responsive-ui motion anti-ai-slop ui-feel accessibility
+check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance design-fidelity fe-devtools
+check_skills test-ui frontend-testing ui-components accessibility fe-devtools
 check_skills audit design-reviewer
-check_skills polish ui-quality-loop ui-feel
+check_skills polish ui-quality-loop ui-feel motion
 # audit is an alias — must mention design workflow
 if ! rg -q 'design' "$ROOT/commands/audit.md"; then
   echo "MISSING design reference in commands/audit.md" >&2

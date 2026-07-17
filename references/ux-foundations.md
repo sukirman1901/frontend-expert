@@ -69,6 +69,12 @@ Prefer options that are: **clear · fast · consistent · accessible · calm · 
 
 Exploration axes (hierarchy / layout / density / interaction / expression): `design-axes.md`.
 
+**Ship gates (enforce, don’t only theorize):**
+
+- Hierarchy + typography checklists → `skills/frontend-judgment/SKILL.md` (Hierarchy pass / Typography ladder)
+- Type anti-patterns → `references/anti-patterns.md`
+- Mobile CTA Fill / Auto Layout → `references/responsive.md`
+
 ---
 
 ## Color theory for product UI

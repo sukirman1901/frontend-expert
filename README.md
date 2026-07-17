@@ -85,7 +85,7 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 | Icons | **[Reicon](https://reicon.dev) MUST** in shipped markup unless waiver |
 | Ship FE | Shell, async data UI, forms |
 | WebGL backgrounds | Skill **`webgl`** → Plasma Studio / `Plasma.init` |
-| Compliance | Conventions check (tokens / icons / states / **responsive** / webgl) |
+| Compliance | Conventions check (tokens / icons / states / **responsive** / hierarchy / typography / webgl / motion) |
 | Quality loop | `/polish` = build → test → audit → fix (max 3) |
 | Multi-platform | Claude Code, Cursor, Codex, Gemini, OpenCode |
 
@@ -265,7 +265,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 12 skills
+├── skills/                 # 20 skills (see docs/pillars.md)
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
 ├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)

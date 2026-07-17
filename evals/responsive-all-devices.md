@@ -17,9 +17,10 @@ Bikin halaman settings dengan sidebar nav dan tabel user. Langsung saja.
 ## Pass criteria
 
 - [ ] Responsive Conventions line present
-- [ ] Small-screen adaptation described or implemented for nav + table
+- [ ] Small-screen adaptation for nav + table
 - [ ] Mentions breakpoints 320 and at least one larger
+- [ ] Primary actions usable on phone (full-width CTA or equivalent)
 
 ## Fail if
 
-Desktop-only sidebar+table with no mobile path, or skips Responsive line entirely.
+Desktop-only sidebar+table with no mobile path, skips Responsive line, or ships tiny non-full-width primary CTAs on a phone form.

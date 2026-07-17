@@ -28,6 +28,8 @@ EXPECTED_SKILLS=(
   app-shell-routing
   fe-architecture
   fe-seo
+  design-fidelity
+  fe-devtools
 )
 
 for s in "${EXPECTED_SKILLS[@]}"; do
@@ -140,6 +142,7 @@ echo "== references map =="
 [ -f "$ROOT/docs/pillars.md" ] && ok "docs/pillars.md" || bad "docs/pillars.md"
 [ -f "$ROOT/evals/responsive-all-devices.md" ] && ok "evals/responsive-all-devices.md" || bad "evals/responsive-all-devices.md"
 [ -f "$ROOT/evals/ship-feature-e2e.md" ] && ok "evals/ship-feature-e2e.md" || bad "evals/ship-feature-e2e.md"
+[ -f "$ROOT/evals/dashboard-shell.md" ] && ok "evals/dashboard-shell.md" || bad "evals/dashboard-shell.md"
 
 if [ "$FAIL" -ne 0 ]; then
   echo

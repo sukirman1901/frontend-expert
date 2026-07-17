@@ -11,6 +11,12 @@ Form
   └─ Actions (primary + secondary)
 ```
 
+## MUST checklist (mirror skill)
+
+- Labels associated; errors with text + `aria-describedby`
+- Pending submit; keep values on error; focus first invalid
+- Full-width primary <768; inputs ≥16px on mobile
+
 ## Validation timing
 
 | Moment | Use |

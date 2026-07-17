@@ -6,7 +6,7 @@ Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert)
 
 | Pillar | Skills | Role |
 |--------|--------|------|
-| **UI Quality** (default) | `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`, `motion`, `web-performance` | Visual craft, tokens, polish |
+| **UI Quality** (default) | `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`, `motion`, `web-performance`, `design-fidelity`, `fe-devtools` | Visual craft, tokens, polish, fidelity, tooling |
 | **Responsive** (MUST) | `responsive-ui` | All devices 320→1440+ |
 | **Ship FE** | `app-shell-routing`, `data-fetching`, `forms-validation` | Shell, async UI, forms |
 | **Depth** | `fe-architecture`, `fe-seo` | Structure, technical SEO |
@@ -16,13 +16,14 @@ Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert)
 ```text
 frontend-judgment*
   → design-tokens
-  → app-shell-routing?     # if multi-route / shell
+  → app-shell-routing?     # if multi-route / shell / dashboard / settings
   → data-fetching?         # if remote data
   → forms-validation?      # if forms
   → ui-components
   → responsive-ui          # MUST for layout UI
+  → motion                 # light shell/section defaults
   → anti-ai-slop → ui-feel → accessibility
-  → (+ motion | webgl | fe-seo | fe-architecture as needed)
+  → (+ webgl | fe-seo | fe-architecture | design-fidelity | fe-devtools as needed)
 ```
 
 ## Out of scope (honest)

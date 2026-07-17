@@ -2,8 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Settings — Acme</title>
+    <meta
+      name="description"
+      content="Acme account settings — profile, team, billing, notifications, and security."
+    />
+    <meta property="og:title" content="Settings — Acme" />
+    <meta
+      property="og:description"
+      content="Manage your Acme profile, team, billing, and security preferences."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,101 +25,168 @@
   <body>
     <a class="skip-link" href="#settings-panel">Skip to settings</a>
 
-    <div class="app">
+    <div class="app" id="app">
       <header class="topbar">
-        <div class="topbar__brand">
-          <span class="topbar__mark" aria-hidden="true">A</span>
-          <span class="topbar__name">Acme</span>
-        </div>
         <button
           type="button"
-          class="topbar__menu"
+          class="icon-btn topbar__menu"
           id="nav-toggle"
           aria-expanded="false"
           aria-controls="settings-nav"
           aria-label="Open settings menu"
         >
-          <re-icon icon="menu" size="20" decorative></re-icon>
-          <span class="topbar__menu-label">Menu</span>
+          <re-icon class="icon-menu" icon="menu" size="20" decorative></re-icon>
+          <re-icon class="icon-close" icon="x" size="20" decorative hidden></re-icon>
         </button>
-        <div class="topbar__user">
-          <span class="topbar__avatar" aria-hidden="true">MR</span>
-          <span class="topbar__email">maya@acme.co</span>
+
+        <a class="topbar__brand" href="/" aria-label="Acme home">
+          <svg class="topbar__logo" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="hsl(var(--primary))" />
+            <path
+              d="M8.2 19.5 14 8.2l5.8 11.3h-2.35l-1.2-2.45h-4.5l-1.2 2.45H8.2Zm4.55-4.35h2.5L14 11.4l-1.25 3.75Z"
+              fill="hsl(var(--primary-foreground))"
+            />
+          </svg>
+          <span class="topbar__name">Acme</span>
+        </a>
+
+        <div class="topbar__utilities">
+          <button type="button" class="icon-btn topbar__search" aria-label="Search">
+            <re-icon icon="search" size="18" decorative></re-icon>
+          </button>
+          <button type="button" class="icon-btn" aria-label="Notifications">
+            <re-icon icon="bell" size="18" decorative></re-icon>
+            <span class="icon-btn__dot" aria-hidden="true"></span>
+          </button>
+          <button
+            type="button"
+            class="topbar__profile"
+            id="profile-menu"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-label="Account menu"
+          >
+            <span class="topbar__avatar" aria-hidden="true">MR</span>
+            <span class="topbar__profile-meta">
+              <span class="topbar__profile-name">Maya Reyes</span>
+              <span class="topbar__email">maya@acme.co</span>
+            </span>
+            <re-icon class="topbar__chevron" icon="chevron-down" size="14" decorative></re-icon>
+          </button>
         </div>
       </header>
 
-      <div class="layout">
-        <nav
-          class="settings-nav"
-          id="settings-nav"
-          aria-label="Settings sections"
-        >
-          <p class="settings-nav__label">Settings</p>
-          <ul class="settings-nav__list" role="list">
-            <li>
+      <div
+        class="nav-backdrop"
+        id="nav-backdrop"
+        hidden
+        aria-hidden="true"
+      ></div>
+
+      <div class="layout" id="layout">
+        <aside class="sidebar" id="sidebar">
+          <nav
+            class="settings-nav"
+            id="settings-nav"
+            aria-label="Settings sections"
+          >
+            <div class="settings-nav__head">
+              <div class="settings-nav__brand">
+                <svg class="topbar__logo" width="24" height="24" viewBox="0 0 28 28" aria-hidden="true">
+                  <rect width="28" height="28" rx="7" fill="hsl(var(--primary))" />
+                  <path
+                    d="M8.2 19.5 14 8.2l5.8 11.3h-2.35l-1.2-2.45h-4.5l-1.2 2.45H8.2Zm4.55-4.35h2.5L14 11.4l-1.25 3.75Z"
+                    fill="hsl(var(--primary-foreground))"
+                  />
+                </svg>
+                <p class="settings-nav__label">Settings</p>
+              </div>
               <button
                 type="button"
-                class="settings-nav__item"
-                data-section="profile"
-                aria-current="page"
+                class="icon-btn settings-nav__close"
+                id="nav-close"
+                aria-label="Close settings menu"
               >
-                <re-icon icon="user" size="18" decorative></re-icon>
-                Profile
+                <re-icon icon="x" size="18" decorative></re-icon>
               </button>
-            </li>
-            <li>
               <button
                 type="button"
-                class="settings-nav__item"
-                data-section="team"
+                class="icon-btn settings-nav__collapse"
+                id="sidebar-collapse"
+                aria-pressed="false"
+                aria-label="Collapse sidebar"
+                title="Collapse sidebar"
               >
-                <re-icon icon="users" size="18" decorative></re-icon>
-                Team
+                <re-icon icon="chevrons-left" size="18" decorative></re-icon>
               </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="settings-nav__item"
-                data-section="billing"
-              >
-                <re-icon icon="credit-card" size="18" decorative></re-icon>
-                Billing
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="settings-nav__item"
-                data-section="notifications"
-              >
-                <re-icon icon="bell" size="18" decorative></re-icon>
-                Notifications
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="settings-nav__item"
-                data-section="security"
-              >
-                <re-icon icon="shield-check" size="18" decorative></re-icon>
-                Security
-              </button>
-            </li>
-          </ul>
-        </nav>
+            </div>
+            <ul class="settings-nav__list" role="list">
+              <li>
+                <button
+                  type="button"
+                  class="settings-nav__item"
+                  data-section="profile"
+                  aria-current="page"
+                >
+                  <re-icon icon="user" size="18" decorative></re-icon>
+                  <span class="settings-nav__text">Profile</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="settings-nav__item"
+                  data-section="team"
+                >
+                  <re-icon icon="users" size="18" decorative></re-icon>
+                  <span class="settings-nav__text">Team</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="settings-nav__item"
+                  data-section="billing"
+                >
+                  <re-icon icon="credit-card" size="18" decorative></re-icon>
+                  <span class="settings-nav__text">Billing</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="settings-nav__item"
+                  data-section="notifications"
+                >
+                  <re-icon icon="bell" size="18" decorative></re-icon>
+                  <span class="settings-nav__text">Notifications</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="settings-nav__item"
+                  data-section="security"
+                >
+                  <re-icon icon="shield-check" size="18" decorative></re-icon>
+                  <span class="settings-nav__text">Security</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </aside>
 
         <main class="panel" id="settings-panel" tabindex="-1">
+          <h1 class="sr-only">Settings</h1>
           <!-- Profile -->
           <section
-            class="section"
+            class="section is-active"
             id="section-profile"
             data-section-panel="profile"
             aria-labelledby="heading-profile"
           >
             <header class="section__header">
-              <h1 id="heading-profile">Profile</h1>
+              <h2 id="heading-profile">Profile</h2>
               <p>How you appear across Acme workspaces.</p>
             </header>
 
@@ -161,14 +237,14 @@
 
           <!-- Team -->
           <section
-            class="section is-hidden"
+            class="section"
             id="section-team"
             data-section-panel="team"
             aria-labelledby="heading-team"
             hidden
           >
             <header class="section__header">
-              <h1 id="heading-team">Team</h1>
+              <h2 id="heading-team">Team</h2>
               <p>People with access to this workspace.</p>
             </header>
 
@@ -228,14 +304,14 @@
 
           <!-- Billing -->
           <section
-            class="section is-hidden"
+            class="section"
             id="section-billing"
             data-section-panel="billing"
             aria-labelledby="heading-billing"
             hidden
           >
             <header class="section__header">
-              <h1 id="heading-billing">Billing</h1>
+              <h2 id="heading-billing">Billing</h2>
               <p>Plan and payment for this workspace.</p>
             </header>
 
@@ -264,14 +340,14 @@
 
           <!-- Notifications -->
           <section
-            class="section is-hidden"
+            class="section"
             id="section-notifications"
             data-section-panel="notifications"
             aria-labelledby="heading-notifications"
             hidden
           >
             <header class="section__header">
-              <h1 id="heading-notifications">Notifications</h1>
+              <h2 id="heading-notifications">Notifications</h2>
               <p>Choose what reaches your inbox.</p>
             </header>
 
@@ -324,14 +400,14 @@
 
           <!-- Security -->
           <section
-            class="section is-hidden"
+            class="section"
             id="section-security"
             data-section-panel="security"
             aria-labelledby="heading-security"
             hidden
           >
             <header class="section__header">
-              <h1 id="heading-security">Security</h1>
+              <h2 id="heading-security">Security</h2>
               <p>Protect your account and workspace.</p>
             </header>
 

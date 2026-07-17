@@ -1,3 +1,35 @@
+## 2026-07-17 — FE 1000% craft gates (hierarchy / type / Auto Layout)
+
+**Trigger:** Comprehensive audit plan — pack strong on suite but craft gates under-enforced.
+
+### Done this pass
+
+| Area | Change |
+|------|--------|
+| Auto Layout ↔ CSS | `references/responsive.md` + `responsive-ui` |
+| Hierarchy + Typography ship gates | `frontend-judgment` checklists; wired `ux-foundations` / `design-axes` |
+| Mobile craft | `ui-feel` + compliance Responsive CTA full-width |
+| Enforcement | AGENTS Hard rules, compliance-gates, design-reviewer scorecard (Typography + Responsive), ui-developer, commands, Cursor rule |
+| Evals | E13 hierarchy, E14 type ladder, E15 Auto Layout Fill CTA; E16 fidelity; E17–E19 SEO/arch/monitoring |
+| Demo | `test/` one page `h1` + section `h2`; SEO meta |
+| New skills | `design-fidelity`, `fe-devtools` (+ refs) |
+| Thin skills | forms / data-fetching / fe-seo / architecture / monitoring MUST + boundaries |
+
+### Follow-on in same plan
+
+- ~~Skills `design-fidelity` + `fe-devtools` (+ E16)~~ **done**
+- ~~Thicken forms / data-fetching / fe-seo / architecture / monitoring~~ **done** (MUST + boundaries + E17–E19)
+
+### Layer health (after this pass)
+
+| Layer | Status |
+|-------|--------|
+| Skills | **20** (incl. `design-fidelity`, `fe-devtools`) |
+| Evals | E1–E19 |
+| Conventions | Responsive + Hierarchy + Typography |
+
+---
+
 ## 2026-07-17 — Frontend Expert suite + responsive MUST
 
 Implemented suite pillars (UI Quality · Responsive · Ship FE · Depth):

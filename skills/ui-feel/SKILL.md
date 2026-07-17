@@ -61,6 +61,29 @@ Adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-i
 12. **Never `transition: all`** — name properties
 13. **`will-change` sparingly** — only transform/opacity/filter when first-frame stutter
 14. **Hit area** — 44×44 touch/mobile; ≥40×40 dense desktop; no overlapping hit targets
+15. **Type ladder** — ≤2 families; one h1/page; h1→body via tokens; body ~60–75ch when long-form (see judgment Typography ladder)
+16. **Mobile craft** — thumb-reachable primary actions; full-width CTAs <768 (`responsive-ui`); safe-area on sticky chrome; optional sticky CTA bar for long forms — not desktop-only micro-polish
+
+## Typography hierarchy (MUST on polish)
+
+| Do | Don’t |
+|----|-------|
+| One page title (`h1` / role) | Multiple competing `h1`s per page |
+| Sequential heading levels | Skip h2 for “style” (h1 then h3) |
+| Token type roles (title / body / muted / label) | Random rem sizes per section |
+| Calm mobile heading scale | Giant marketing title crushing a settings form |
+
+## Mobile craft (MUST when layout/touch)
+
+| Do | Don’t |
+|----|-------|
+| Primary controls in thumb-friendly zone (lower/mid screen on phone) | Tiny top-right-only primary on long pages |
+| Full-width primary buttons <768 | Hug-width desktop CTAs on 320px |
+| `env(safe-area-inset-*)` on sticky topbar / drawers / bottom bars | Content under notch / home indicator |
+| Sticky bottom CTA for long mobile forms when submit is far | Force scroll past fold with no persistent action |
+| Tap highlight off + press scale on icon/nav controls | Hover-only feedback |
+
+Cross-link: `references/responsive.md` (safe areas, Auto Layout Fill), `references/ui-feel.md`.
 
 ## Workflow
 
@@ -95,8 +118,10 @@ Adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-i
 - [ ] No `transition: all` / Tailwind bare `transition`
 - [ ] Hit areas meet 44/40 guidance without overlap
 - [ ] Image outlines only where they help (pure black/white at 10% opacity)
+- [ ] Typography ladder: one h1, sequential levels, token roles
+- [ ] Mobile craft: full-width primary <768, safe-area, thumb-reachable CTAs
 
 ## Depth
 
 Full examples: `references/ui-feel.md`.  
-Related: `references/motion.md`, `references/anti-patterns.md`.
+Related: `references/motion.md`, `references/anti-patterns.md`, `references/responsive.md`, `references/ux-foundations.md`.
