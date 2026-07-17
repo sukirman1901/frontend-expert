@@ -30,6 +30,7 @@ Enforce token-based styling. Use CSS custom properties from `tokens/` presets, o
 | `neutral-oklch.css` | neutral | mono (OKLCH) | 0 | Modern minimal / sharp UI |
 | `neutral-oklch-rounded.css` | neutral | mono (OKLCH) | 0.625rem | Mono OKLCH + soft radius |
 | `stone-oklch.css` | warm stone | mono warm (OKLCH) | 0 | Editorial / warm minimal |
+| `plasma-landing.css` | zinc-950 | purple `#6C5CE7` | 14px | Plasma marketing landing |
 | `stone-emerald.css` | stone | emerald | 0 | Clean, minimal |
 | `zinc-blue.css` | zinc | blue | 0.5 | Professional dashboards |
 | `neutral-purple.css` | neutral | violet | 0.75 | Creative portfolios |
@@ -38,7 +39,8 @@ Enforce token-based styling. Use CSS custom properties from `tokens/` presets, o
 
 3. **Apply rules**
    - **HSL presets** (`stone-emerald`, etc.): `hsl(var(--primary))`, `hsl(var(--muted))`, …
-   - **OKLCH presets** (`neutral-oklch.css`, `neutral-oklch-rounded.css`, `stone-oklch.css`): `var(--primary)`, `var(--muted)`, … — values are full colors; do **not** wrap in `hsl()`
+   - **OKLCH / hex presets** (`neutral-oklch*.css`, `stone-oklch.css`, `plasma-landing.css`): `var(--primary)` — do **not** wrap in `hsl()`
+   - **Plasma landing** also exposes native names: `var(--bg-main)`, `var(--primary-color)`, …
    - Never invent raw hex like `#7c3aed`
    - Spacing: `0.25rem` increments only
    - Radius: match `--radius` from the token file

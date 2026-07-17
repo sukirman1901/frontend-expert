@@ -55,7 +55,7 @@ done
 
 echo "== tokens =="
 token_count=$(find "$ROOT/tokens" -name '*.css' | wc -l | tr -d ' ')
-[ "$token_count" -ge 8 ] && ok "tokens ($token_count css)" || bad "expected >=8 token css files"
+[ "$token_count" -ge 9 ] && ok "tokens ($token_count css)" || bad "expected >=9 token css files"
 
 echo "== plugin paths =="
 for p in \

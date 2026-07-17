@@ -1,0 +1,117 @@
+/*
+ * Plasma Landing — tokens from plasma.nusaiba.dev marketing site
+ * Base: Zinc-950 dark | Primary: Figma purple #6C5CE7 | Radius: 14px cards
+ * Fonts: DM Sans + Cooper (set separately in HTML)
+ *
+ * Native Plasma names (--bg-main, --primary-color, …) kept for fidelity.
+ * Pack semantic aliases (--background, --primary, …) for /ui workflows.
+ * Usage: var(--primary-color) or var(--primary) — do not wrap in hsl()
+ *
+ * Light mode: body.light-theme or .light
+ */
+
+@layer base {
+  :root {
+    /* --- Plasma native --- */
+    --bg-main: #09090b;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-card-hover: rgba(255, 255, 255, 0.06);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-color-hover: rgba(255, 255, 255, 0.15);
+
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-muted: rgba(255, 255, 255, 0.35);
+    --text-dark: #111111;
+
+    --primary-color: #6c5ce7;
+    --primary-hover: #5b4cdb;
+    --primary-light: rgba(108, 92, 231, 0.15);
+    --primary-light-border: rgba(108, 92, 231, 0.3);
+
+    --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-serif: "Cooper", serif;
+    --font-mono: "Monaco", "Menlo", "JetBrains Mono", Consolas, monospace;
+
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius-card: 14px;
+
+    /* --- Pack semantic aliases --- */
+    --background: #09090b;
+    --foreground: #ffffff;
+    --card: rgba(255, 255, 255, 0.03);
+    --card-foreground: #ffffff;
+    --popover: #09090b;
+    --popover-foreground: #ffffff;
+    --primary: #6c5ce7;
+    --primary-foreground: #ffffff;
+    --secondary: rgba(255, 255, 255, 0.06);
+    --secondary-foreground: #ffffff;
+    --muted: rgba(255, 255, 255, 0.03);
+    --muted-foreground: rgba(255, 255, 255, 0.35);
+    --accent: rgba(108, 92, 231, 0.15);
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --border: rgba(255, 255, 255, 0.08);
+    --input: rgba(255, 255, 255, 0.08);
+    --ring: #6c5ce7;
+    --radius: 14px;
+    --chart-1: #6c5ce7;
+    --chart-2: #5b4cdb;
+    --chart-3: rgba(255, 255, 255, 0.6);
+    --chart-4: rgba(255, 255, 255, 0.35);
+    --chart-5: #09090b;
+    --sidebar: #09090b;
+    --sidebar-foreground: #ffffff;
+    --sidebar-primary: #6c5ce7;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: rgba(255, 255, 255, 0.06);
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: rgba(255, 255, 255, 0.08);
+    --sidebar-ring: #6c5ce7;
+  }
+
+  body.light-theme,
+  .light {
+    --bg-main: #f4f5f6;
+    --bg-card: rgba(0, 0, 0, 0.03);
+    --bg-card-hover: rgba(0, 0, 0, 0.06);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-color-hover: rgba(0, 0, 0, 0.15);
+
+    --text-primary: #111113;
+    --text-secondary: rgba(17, 17, 19, 0.65);
+    --text-muted: rgba(17, 17, 19, 0.4);
+    --text-dark: #ffffff;
+
+    --primary-light: rgba(108, 92, 231, 0.1);
+    --primary-light-border: rgba(108, 92, 231, 0.2);
+
+    --background: #f4f5f6;
+    --foreground: #111113;
+    --card: rgba(0, 0, 0, 0.03);
+    --card-foreground: #111113;
+    --popover: #f4f5f6;
+    --popover-foreground: #111113;
+    --primary: #6c5ce7;
+    --primary-foreground: #ffffff;
+    --secondary: rgba(0, 0, 0, 0.06);
+    --secondary-foreground: #111113;
+    --muted: rgba(0, 0, 0, 0.03);
+    --muted-foreground: rgba(17, 17, 19, 0.4);
+    --accent: rgba(108, 92, 231, 0.1);
+    --accent-foreground: #111113;
+    --border: rgba(0, 0, 0, 0.08);
+    --input: rgba(0, 0, 0, 0.08);
+    --ring: #6c5ce7;
+    --sidebar: #f4f5f6;
+    --sidebar-foreground: #111113;
+    --sidebar-primary: #6c5ce7;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: rgba(0, 0, 0, 0.06);
+    --sidebar-accent-foreground: #111113;
+    --sidebar-border: rgba(0, 0, 0, 0.08);
+    --sidebar-ring: #6c5ce7;
+  }
+}
