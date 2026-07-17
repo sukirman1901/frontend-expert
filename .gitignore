@@ -9,3 +9,4 @@ node_modules/
 /tmp/
 # Local UI sandbox only — not part of the shipped pack
 /test/
+/ui-skills/
