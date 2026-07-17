@@ -20,6 +20,7 @@ Guidance for AI coding agents when this pack is available.
 | Test / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
 | Polish until good / rapihin sampai lulus audit | `ui-quality-loop` (build→test→audit→fix, max 3) | `/polish` |
 | Slow / LCP / optimize | `web-performance` | — |
+| WebGL / shader bg / Plasma studio | Cite `references/webgl.md` (Plasma Studio first) | — |
 
 \* `frontend-judgment` for non-trivial / blank-canvas work only — see that skill’s skip rules.
 

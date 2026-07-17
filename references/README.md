@@ -22,7 +22,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 
 | Reference | Topic | Promote when |
 |-----------|-------|--------------|
-| `webgl.md` | Three.js, R3F, shaders | 3D/shader work is common for users of this pack |
+| `webgl.md` | **Plasma Studio** pure WebGL backgrounds ([studio](https://plasma.nusaiba.dev/app/)); Three.js only if scene graph needed | Shader/background work is a common ask |
 | `monitoring.md` | Sentry, OTel, analytics | Production observability is in scope for `/ship`-style flows |
 
 ## Missing on purpose

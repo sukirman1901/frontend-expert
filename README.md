@@ -181,7 +181,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 Deep guides under `references/`. Map to skills: [references/README.md](references/README.md).
 
 - **Skill-backed:** anti-patterns, component-patterns, architecture, accessibility, performance, motion, testing (+ `tokens/`)
-- **Reference-only (v1):** webgl, monitoring — cite when needed; not separate skills yet
+- **Reference-only (v1):** webgl ([Plasma Studio](https://plasma.nusaiba.dev/app/)), monitoring — cite when needed; not separate skills yet
 
 ## Verify pack health
 
