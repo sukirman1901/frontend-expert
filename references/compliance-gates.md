@@ -77,4 +77,4 @@ On “background animasi / shader / plasma / webgl”:
 
 ## Why this exists
 
-Pack skills can be installed and still ignored (e.g. `test/` settings UI shipped with zero icons). Gates + required report lines raise compliance without a browser Design Lab.
+Pack skills can be installed and still ignored (e.g. a settings UI shipped with zero icons). Gates + required report lines raise compliance without a browser Design Lab.

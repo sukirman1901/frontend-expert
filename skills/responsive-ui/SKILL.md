@@ -93,5 +93,5 @@ Example:
 
 Full rules + patterns: `references/responsive.md`.  
 Shell chrome: `app-shell-routing`.  
-Demo: `test/` settings.  
+Optional local sandbox: `test/` (gitignored; not shipped).  
 Ship gate: `references/compliance-gates.md`.

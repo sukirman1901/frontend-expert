@@ -57,4 +57,4 @@ Define **where the user is** and **how they move**. Shell (chrome) stays stable;
 
 `references/app-shell-routing.md`.  
 Drawer rules: `references/responsive.md`.  
-Demo reference: `test/` settings shell.
+Optional local sandbox: `test/` (gitignored; not shipped).

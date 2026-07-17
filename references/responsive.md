@@ -1,7 +1,7 @@
 # Responsive UI (all devices)
 
 Mandatory for product UI. Used by: `responsive-ui`, `ui-components`, `/ui`, `/design`, `/polish`.  
-Reference demo: `test/` settings shell.
+Reference demo: optional local `test/` sandbox (not shipped with the pack).
 
 ## Canonical breakpoints
 
