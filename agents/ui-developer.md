@@ -60,6 +60,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 12. Shader/WebGL backgrounds → `webgl` / Plasma — do not invent a parallel stack
 13. **Motion** — shell: light defaults; marketing: name families/patterns from `motion-families.md`, hand-roll, ≤2–3 motions/viewport; registry install is **not** the default; honor reduced-motion
 14. **Shell chrome** — theme in **topbar** (icon); profile = **avatar → account menu**; product filters = **custom select** (`app-shell-routing` / `ui-components`)
+15. **Marketing landings** — section stack via `marketing-landing` / `landing-sections.md` (not hero-only)
 
 ## Output format
 

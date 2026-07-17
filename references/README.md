@@ -33,6 +33,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `monitoring.md` | `monitoring` | Observability |
 | `design-fidelity.md` | `design-fidelity` | Spec vs build |
 | `fe-devtools.md` | `fe-devtools` | Lighthouse / axe / tooling |
+| `landing-sections.md` | `marketing-landing` | Marketing section catalog + recipes |
 
 ## Evals
 

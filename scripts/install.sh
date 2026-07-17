@@ -27,6 +27,7 @@ PACK_SKILLS=(
   fe-seo
   design-fidelity
   fe-devtools
+  marketing-landing
 )
 
 usage() {

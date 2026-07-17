@@ -94,13 +94,13 @@ require_phrase "polish motion" "motion" \
 require_phrase "session-start chain" "responsive-ui" "$ROOT/hooks/session-start.sh"
 require_phrase "session-start motion" "motion" "$ROOT/hooks/session-start.sh"
 
-echo "== evals E1–E22 present =="
+echo "== evals E1–E23 present =="
 for ev in \
   purple-reject scorecard-honesty loop-cap rapihin-routing reicon-webgl-compliance \
   token-preset-scoring responsive-all-devices data-fetching forms-validation \
   app-shell-routing ship-feature-e2e dashboard-shell visual-hierarchy typography-ladder \
   auto-layout-fill-cta design-fidelity fe-seo fe-architecture monitoring motion-families \
-  frontend-testing-devtools frontend-shell-chrome
+  frontend-testing-devtools frontend-shell-chrome marketing-landing
 do
   need "$ROOT/evals/${ev}.md"
 done

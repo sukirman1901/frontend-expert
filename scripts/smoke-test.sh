@@ -31,6 +31,7 @@ EXPECTED_SKILLS=(
   fe-seo
   design-fidelity
   fe-devtools
+  marketing-landing
 )
 
 for s in "${EXPECTED_SKILLS[@]}"; do
@@ -147,6 +148,8 @@ echo "== references map =="
 [ -f "$ROOT/evals/motion-families.md" ] && ok "evals/motion-families.md (E20)" || bad "evals/motion-families.md"
 [ -f "$ROOT/evals/frontend-testing-devtools.md" ] && ok "evals/frontend-testing-devtools.md (E21)" || bad "evals/frontend-testing-devtools.md"
 [ -f "$ROOT/evals/frontend-shell-chrome.md" ] && ok "evals/frontend-shell-chrome.md (E22)" || bad "evals/frontend-shell-chrome.md"
+[ -f "$ROOT/evals/marketing-landing.md" ] && ok "evals/marketing-landing.md (E23)" || bad "evals/marketing-landing.md"
+[ -f "$ROOT/references/landing-sections.md" ] && ok "landing-sections.md" || bad "landing-sections.md"
 if ! rg -q 'avatar' "$ROOT/skills/app-shell-routing/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/ui-components/SKILL.md"; then
   bad "shell chrome rules missing in app-shell / ui-components"
 else

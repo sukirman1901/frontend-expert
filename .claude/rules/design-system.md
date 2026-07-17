@@ -20,6 +20,7 @@
 | UI tests / TDD | `frontend-testing` → `ui-components` → `accessibility` (+ `fe-devtools`) (`test-engineer`) |
 | Polish until good / sampai bagus | `ui-quality-loop` (`/polish`) |
 | Performance | `web-performance` |
+| Marketing landing / homepage / logo cloud | + `marketing-landing` (+ `motion` / `fe-seo`) |
 | Motion / marquee / parallax / text reveal / landing animation | + `motion` (families/patterns in `motion-families.md`; hand-roll — not registry default) |
 | WebGL / Plasma bg | **`webgl` required** (Plasma / `Plasma.init`) |
 | Monitoring / Sentry | `monitoring` |

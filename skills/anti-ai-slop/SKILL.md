@@ -34,6 +34,7 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 | Excessive gradients | `bg-gradient-to-*`, `linear-gradient` | Flat token colors |
 | Rounded everything | `rounded-2xl` / `rounded-3xl` everywhere | Token `--radius` |
 | Generic hero | Template layout, no content connection | Content-first layout |
+| Hero-only landing | Plasma/hero + thin footer, no section stack | `marketing-landing` recipe (logo cloud → features → … → CTA) |
 | Lorem ipsum | Placeholder copy | Realistic content |
 | Oversized padding | `p-8`/`p-12` on everything | Spacing hierarchy |
 | Stock card grids | Uniform grids, no priority | Purpose-driven layout |

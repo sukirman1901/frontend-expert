@@ -18,6 +18,7 @@ alwaysApply: true
 | + architecture / folder / state | + `fe-architecture` |
 | + SEO / meta / OG | + `fe-seo` |
 | Mobile / responsive / semua device | **`responsive-ui` MUST** |
+| Marketing landing / homepage sections / Tailark-style blocks | `marketing-landing` → `design-tokens` → `motion` → `fe-seo` → `anti-ai-slop` |
 | Animation / transition / motion / marquee / parallax / text reveal | above + `motion` (families/patterns in `motion-families.md`; hand-roll — not registry default) |
 | Match Figma / mock / pixel perfect / fidelity | `design-fidelity` → `design-tokens` → `responsive-ui` → `ui-feel` |
 | Lighthouse / axe / DevTools / measured scores | `fe-devtools` → `accessibility` → `web-performance` |

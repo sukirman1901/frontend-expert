@@ -26,7 +26,7 @@ Chat-first skills for **product web UI**:
 
 | Pillar | Focus |
 |--------|--------|
-| UI Quality | Judgment, tokens, components, anti-slop, ui-feel, motion, a11y, tests, polish loop |
+| UI Quality | Judgment, tokens, components, anti-slop, ui-feel, motion, marketing landings, a11y, tests, polish loop |
 | Responsive MUST | 320→1440, drawer, full-width CTA |
 | Ship FE | App shell, data fetching, forms |
 | Depth | Architecture, SEO |
@@ -41,14 +41,16 @@ Full map: `docs/pillars.md` · agent routing: `AGENTS.md`
 ```text
 frontend-judgment*
   → design-tokens
+  → (+ marketing-landing if marketing homepage)
   → (+ app-shell-routing / data-fetching / forms-validation as needed)
   → ui-components → responsive-ui → motion
   → anti-ai-slop → ui-feel → accessibility
 ```
 
 3. Shell chrome defaults: theme in **topbar**; profile = **avatar → account menu**; filters = **custom select**.
-4. Before DONE → **Conventions check** (`references/compliance-gates.md`).
-5. “Rapihin sampai bagus” → `ui-quality-loop` (cap 3).
+4. Marketing landings: section stack from `marketing-landing` / `landing-sections.md` — not hero-only.
+5. Before DONE → **Conventions check** (`references/compliance-gates.md`).
+6. “Rapihin sampai bagus” → `ui-quality-loop` (cap 3).
 
 \* Skip judgment for tiny fixes or “langsung saja”.
 

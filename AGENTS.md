@@ -22,6 +22,7 @@ Pillar map: `docs/pillars.md`.
 | + app shell / sidebar / routing / 404 | … + `app-shell-routing` | `/ui` |
 | + architecture / folder structure / state choice | … + `fe-architecture` | — |
 | + SEO / meta / OG / landing public | … + `fe-seo` (+ `web-performance` if CWV) | — |
+| + marketing landing / homepage sections / logo cloud / testimonials | … + **`marketing-landing`** (+ `motion` / `fe-seo`) | `/ui` |
 | + animation / motion / marquee / parallax / text reveal / landing motion | … + `motion` (families/patterns in `motion-families.md`; hand-roll — no registry default) | `/ui` |
 | Mobile / responsive / semua device / tablet | **`responsive-ui`** (MUST on layout UI) | `/ui` |
 | Audit design, AI slop, UI generik | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` (+ `frontend-judgment` hierarchy/type if scores claimed) | `/design` or `/audit` |
@@ -72,6 +73,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `forms-validation` | Ship FE | Forms / wizards |
 | `fe-architecture` | Depth | Folders / state boundaries |
 | `fe-seo` | Depth | Meta / OG / indexability |
+| `marketing-landing` | UI Quality | Marketing section stack (hero→footer) |
 | `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
 | `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
 
