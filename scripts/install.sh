@@ -24,6 +24,8 @@ PACK_SKILLS=(
   app-shell-routing
   fe-architecture
   fe-seo
+  design-fidelity
+  fe-devtools
 )
 
 usage() {
