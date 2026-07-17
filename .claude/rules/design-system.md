@@ -12,6 +12,8 @@
 | UI tests / TDD | `frontend-testing` → `ui-components` → `accessibility` (`test-engineer`) |
 | Polish until good / sampai bagus | `ui-quality-loop` (`/polish`) |
 | Performance | `web-performance` |
+| WebGL / Plasma bg | `webgl` |
+| Monitoring / Sentry | `monitoring` |
 
 ## Expert judgment
 

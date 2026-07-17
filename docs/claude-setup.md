@@ -15,7 +15,7 @@ Or add as a marketplace from a clone:
 
 ## What you get
 
-- Skills: `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `web-performance`, `motion`, `frontend-testing`, `ui-quality-loop`
+- Skills: `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `web-performance`, `motion`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`
 - Agents: `design-reviewer`, `ui-developer`, `test-engineer`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish`
 - Hooks: SessionStart reminder + PostToolUse anti-slop scan

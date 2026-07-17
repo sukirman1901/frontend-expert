@@ -11,7 +11,7 @@ How the pieces of Design System Enforcer fit together.
 │          design-reviewer,                                │
 │          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
-│  Skills (10)                        ← HOW (+ feel + quality loop)│
+│  Skills (12)                        ← HOW (+ feel + quality loop + webgl/monitoring)│
 ├──────────────────────────────────────────────────────────┤
 │  References + tokens/               ← DEPTH              │
 ├──────────────────────────────────────────────────────────┤
@@ -25,7 +25,7 @@ How the pieces of Design System Enforcer fit together.
 2. **Commands orchestrate** — optional; list agent + skills; do not duplicate full skill bodies.
 3. **Agents do not invoke other agents** — user or command orchestrates. Agents stay slim.
 4. **Skills stay short** — rich `description` for auto-match; point to `references/` for depth.
-5. **References are not skills** — orphan refs (`webgl`, `monitoring`) until promoted.
+5. **References deepen skills** — `webgl` / `monitoring` are now skills; depth stays in `references/`.
 6. **Hooks** — Claude Code session reminder + anti-slop scan.
 
 ## Agent ↔ command ↔ skills

@@ -28,6 +28,8 @@ Default quality-loop cap in this pack: **3** audit→fix cycles (`ui-quality-loo
 | 5 | **Haluskan** | Kill AI slop → micro craft (radius, press, type wrap, …) | `anti-ai-slop` → `ui-feel` |
 | 6 | **A11y** | Keyboard, labels, contrast, semantics | `accessibility` |
 | — | **Motion** | Only if animation is in scope | `motion` |
+| — | **WebGL bg** | Plasma Studio shaders | `webgl` |
+| — | **Monitoring** | Errors / CWV / analytics in prod | `monitoring` |
 | 7 | **Buktikan** | Critical path tests — or **waiver** if no runner | `frontend-testing` / `/test-ui` |
 | 8 | **Audit** | Honest scorecard (no fabricated visuals) | `design-reviewer` / `/design` `/audit` |
 | 9 | **Perbaiki** | Critical/High only; re-test what you changed | `ui-developer` inside loop |

@@ -20,6 +20,8 @@ EXPECTED_SKILLS=(
   motion
   frontend-testing
   ui-quality-loop
+  webgl
+  monitoring
 )
 
 for s in "${EXPECTED_SKILLS[@]}"; do
@@ -122,6 +124,9 @@ fi
 echo "== references map =="
 [ -f "$ROOT/references/README.md" ] && ok "references/README.md" || bad "references/README.md"
 [ -f "$ROOT/docs/pack-layers.md" ] && ok "docs/pack-layers.md" || bad "docs/pack-layers.md"
+[ -f "$ROOT/tokens/README.md" ] && ok "tokens/README.md" || bad "tokens/README.md"
+[ -f "$ROOT/evals/README.md" ] && ok "evals/README.md" || bad "evals/README.md"
+[ -f "$ROOT/references/fe-lifecycle.md" ] && ok "fe-lifecycle.md" || bad "fe-lifecycle.md"
 
 if [ "$FAIL" -ne 0 ]; then
   echo

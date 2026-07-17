@@ -61,6 +61,7 @@ Enforce token-based styling. Use CSS custom properties from `tokens/` presets, o
 
 ## Depth
 
-Token CSS files live in `tokens/`. Style inference: `references/design-axes.md`.  
+Token CSS files + import notes: `tokens/README.md`.  
+Style inference: `references/design-axes.md`.  
 Color theory + neutrals/accent/semantic recipe: `references/ux-foundations.md`.  
 Component usage: `references/component-patterns.md`.

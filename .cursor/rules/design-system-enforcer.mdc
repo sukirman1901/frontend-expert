@@ -18,6 +18,8 @@ alwaysApply: true
 | Tests / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` (persona: `test-engineer`) |
 | Polish / rapihin **sampai bagus** / until audit passes | `ui-quality-loop` → orchestrate build→test→audit→fix (max 3) |
 | Slow UI / LCP / optimize performance | `web-performance` (+ `ui-components` if touching UI) |
+| WebGL / shader / Plasma background | `webgl` |
+| Sentry / analytics / observability | `monitoring` |
 
 ## Expert judgment
 

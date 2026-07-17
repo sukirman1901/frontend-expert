@@ -21,7 +21,8 @@ Guidance for AI coding agents when this pack is available.
 | Test / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
 | Polish until good / rapihin **sampai bagus** / lulus audit | `ui-quality-loop` (build→test→audit→fix, max 3) | `/polish` |
 | Slow / LCP / optimize | `web-performance` | — |
-| WebGL / shader bg / Plasma studio | Cite `references/webgl.md` (Plasma Studio first) | — |
+| WebGL / shader bg / Plasma studio | `webgl` (+ `references/webgl.md`) | — |
+| Monitoring / Sentry / analytics / OTel | `monitoring` | — |
 
 \* `frontend-judgment` for non-trivial / blank-canvas work only — see that skill’s skip rules.
 
@@ -54,6 +55,8 @@ Do **not** start coding a generic UI before a direction is set (unless skip rule
 | `motion` | Explicit animation requests only |
 | `frontend-testing` | Tests / TDD / coverage |
 | `ui-quality-loop` | Polish loop until Critical/High clear |
+| `webgl` | Plasma Studio shader backgrounds |
+| `monitoring` | Sentry, CWV monitoring, analytics, alerts |
 
 ## Composition
 

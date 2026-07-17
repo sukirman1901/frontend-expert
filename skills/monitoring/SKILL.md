@@ -1,0 +1,46 @@
+---
+name: monitoring
+description: >-
+  Frontend observability — Sentry error tracking, CWV/performance monitoring,
+  analytics, OpenTelemetry, alerting. Use when adding error boundaries, tracking
+  production bugs, measuring LCP/INP, wiring analytics, or ops asks about
+  monitoring/observability for a web UI — not for visual design polish.
+---
+
+# Monitoring
+
+## Overview
+
+Ship UI with enough production signal: errors, performance, and product analytics — without boiling the ocean.
+
+## When to use
+
+- Add/fix Sentry (or similar) + error boundaries
+- Performance monitoring / CWV in production
+- Analytics events for key UI flows
+- Alerting on error spikes or CWV regressions
+
+## When to skip
+
+- Pure visual polish (`ui-feel` / `/polish`)
+- Local-only prototypes with no deploy target
+
+## Workflow
+
+1. **Errors** — boundary + reporting; scrub PII
+2. **Performance** — sample traces; watch LCP/INP/CLS on key routes
+3. **Analytics** — few high-value events, not every click
+4. **Alert** — error rate / CWV budgets that someone will actually see
+
+## Checklist
+
+- [ ] Error boundary on app shell / critical routes
+- [ ] DSN/env via env vars — not hardcoded secrets in git
+- [ ] Sample rates sane for traffic
+- [ ] No PII in events by default
+- [ ] Alerts have an owner
+
+## Depth
+
+Full guide: `references/monitoring.md`.  
+Related: `web-performance` for build-time CWV work.

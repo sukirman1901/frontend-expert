@@ -16,6 +16,8 @@ PACK_SKILLS=(
   motion
   frontend-testing
   ui-quality-loop
+  webgl
+  monitoring
 )
 
 usage() {

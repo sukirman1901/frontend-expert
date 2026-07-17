@@ -1,5 +1,12 @@
 # Pack audit log
 
+## 2026-07-17 — Phase 3 (evals, tokens README, promote webgl/monitoring)
+
+- `evals/` — purple reject, scorecard honesty, loop cap, rapihin routing
+- `tokens/README.md` — HSL vs OKLCH/hex usage + import
+- Promoted `webgl` + `monitoring` to real skills (12 total)
+- Smoke checks evals + tokens README
+
 ## 2026-07-17 — Phase 1+2 follow-up (lifecycle + P2 gaps)
 
 - Added `references/fe-lifecycle.md` (A→Z process map)

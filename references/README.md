@@ -11,7 +11,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | `ux-foundations.md` | `frontend-judgment`, `design-tokens`, `accessibility` | Nielsen/Gestalt, UI system, color theory for products |
 | `fe-lifecycle.md` | `ui-quality-loop`, `frontend-judgment` | A→Z FE process + pack mapping |
 | *(loop controller)* | `ui-quality-loop` | `/polish` / “rapihin sampai bagus” |
-| *(token CSS in `tokens/`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
+| *(token CSS in `tokens/` + `tokens/README.md`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
 | `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |
 | `ui-feel.md` | `ui-feel` | `/ui`, `/design`, `/polish`, `ui-developer`, `design-reviewer` |
 | `component-patterns.md` | `ui-components` | `/ui`, `ui-developer`, `/design` pattern checks |
@@ -21,19 +21,18 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | `performance.md` | `web-performance` | `/design`, deep perf work |
 | `motion.md` | `motion` | `/ui` only when animating |
 | `testing.md` | `frontend-testing` | `/test-ui`, `test-engineer` |
+| `webgl.md` | `webgl` | Plasma Studio shader backgrounds |
+| `monitoring.md` | `monitoring` | Sentry, analytics, OTel, alerts |
 
-## Reference-only (no skill yet)
+## Evals
 
-| Reference | Topic | Promote when |
-|-----------|-------|--------------|
-| `webgl.md` | **Plasma Studio** pure WebGL backgrounds ([studio](https://plasma.nusaiba.dev/app/)); Three.js only if scene graph needed | Shader/background work is a common ask |
-| `monitoring.md` | Sentry, OTel, analytics | Production observability is in scope for `/ship`-style flows |
+Behavioral scenarios: [`evals/`](../evals/) (purple reject, scorecard honesty, loop cap, rapihin routing).
 
 ## Missing on purpose
 
-- No `design-system.md` — token rules live in skill `design-tokens` + files under `tokens/`
 - No full roadmap.sh topics (SEO, Git, REST, TypeScript language) — out of pack scope
+- No Design Lab browser `/explore` — optional future; judgment stays text-first
 
 ## Rule for authors
 
-When editing a reference, update the matching skill checklist if the workflow changed. When adding a new domain, add **skill + reference** together (or document it here as reference-only). After changing commands, run `./scripts/sync-commands.sh` and `./scripts/smoke-test.sh`.
+When editing a reference, update the matching skill checklist if the workflow changed. When adding a new domain, add **skill + reference** together. After changing commands, run `./scripts/sync-commands.sh` and `./scripts/smoke-test.sh`.

@@ -4,12 +4,13 @@ Claude Code entry point for **Design System Enforcer**.
 
 ## Plugin assets
 
-- Skills: `skills/` (10 skills including `frontend-judgment`, `ui-feel`, `ui-quality-loop`)
+- Skills: `skills/` (12 skills including `frontend-judgment`, `ui-feel`, `ui-quality-loop`, `webgl`, `monitoring`)
 - Agents: `agents/design-reviewer.md`, `agents/ui-developer.md`, `agents/test-engineer.md`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish` — **optional**
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
 - Hooks: `hooks/hooks.json` (SessionStart + PostToolUse anti-slop scan)
-- Tokens: `tokens/*.css`
+- Tokens: `tokens/*.css` (+ `tokens/README.md`)
+- Evals: `evals/`
 
 ## Default behavior (chat-first + judgment)
 

@@ -120,7 +120,7 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 ---
 
-## Skills (10)
+## Skills (12)
 
 | Skill | Use when |
 |-------|----------|
@@ -134,6 +134,8 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 | `motion` | Animations and micro-interactions only |
 | `frontend-testing` | Component tests, TDD, a11y in tests |
 | `ui-quality-loop` | Polish until Critical/High clear (capped loop) |
+| `webgl` | Plasma Studio WebGL backgrounds |
+| `monitoring` | Sentry, analytics, OTel, production alerts |
 
 \* Skip judgment for tiny clear fixes or “just implement” / “langsung saja”.
 
@@ -142,6 +144,8 @@ Skills stay short and triggerable; depth lives in `references/`.
 ---
 
 ## Token presets (9)
+
+Import notes: [tokens/README.md](tokens/README.md).
 
 | Preset | Base | Primary | Best for |
 |--------|------|---------|----------|
@@ -188,7 +192,8 @@ Guide: [references/ui-feel.md](references/ui-feel.md)
 
 ## WebGL — Plasma Studio
 
-Canonical study for animated backgrounds: **[Plasma Studio](https://plasma.nusaiba.dev/app/)** — pure WebGL fragment shaders (Gradient · Dither · Raymarch). No Three.js required for hero backgrounds.
+Skill **`webgl`**. Canonical study: **[Plasma Studio](https://plasma.nusaiba.dev/app/)**.
+
 
 ```js
 Plasma.init("plasma-bg", { style: "Fluid", colors: ["#6C5CE7", "#09090b", …] })
@@ -214,10 +219,11 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 10 skills
+├── skills/                 # 12 skills
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
-├── tokens/                 # 9 CSS presets
-├── references/             # Deep guides (reicon, ui-feel, webgl/Plasma, …)
+├── tokens/                 # 9 CSS presets + README
+├── references/             # Deep guides
+├── evals/                  # Behavioral scenarios (purple, honesty, loop, routing)
 ├── commands/               # /ui /design /audit /test-ui /polish
 ├── hooks/                  # Claude Code runtime
 ├── .claude-plugin/ .claude/ .codex-plugin/ .agents/
@@ -233,10 +239,10 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, **ui-feel**, **design-axes**, **ux-foundations**, **fe-lifecycle**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
+| Skill-backed | anti-patterns, ui-feel, design-axes, ux-foundations, fe-lifecycle, component-patterns, architecture, accessibility, performance, motion, testing, **webgl**, **monitoring** + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
-| WebGL | [webgl.md](references/webgl.md) — Plasma Studio first |
-| Reference-only | monitoring — promote later if needed |
+| Evals | [evals/](evals/) |
+| Guides | [tokens/README.md](tokens/README.md) · [fe-lifecycle.md](references/fe-lifecycle.md) |
 
 ---
 
