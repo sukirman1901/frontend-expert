@@ -22,8 +22,8 @@ Claude Code entry point for **Frontend Expert**.
 6. “Rapihin / polish sampai bagus” → `ui-quality-loop` (`/polish`), capped iterations
 7. Honor hook advisories from `anti-slop-scan.sh`
 8. If the project already has a design system, use custom mode (do not override with presets)
-9. Icons: prefer [Reicon](https://reicon.dev) (`references/reicon-icons.md`) unless the project already has an icon standard
-10. Before DONE on UI builds → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion** (`references/compliance-gates.md`)
+9. Icons: **MUST use [Reicon](https://reicon.dev)** in shipped markup unless project icon lib or text-only waiver (`references/compliance-gates.md`)
+10. Before DONE on UI builds → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **A11y** (`references/compliance-gates.md`)
 
 ## References
 

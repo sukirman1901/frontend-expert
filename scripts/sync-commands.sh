@@ -71,6 +71,39 @@ do
   fi
 done
 
+echo "== semantic phrases (portable + adapters) =="
+require_phrase() {
+  local label="$1"
+  local phrase="$2"
+  shift 2
+  for f in "$@"; do
+    if ! rg -q -- "$phrase" "$f"; then
+      echo "MISSING '$phrase' ($label) in $f" >&2
+      FAIL=1
+    fi
+  done
+}
+
+require_phrase "ui motion vocab" "motion-families|hand-roll|named famil" \
+  "$ROOT/commands/ui.md" "$ROOT/.claude/commands/ui.md" "$ROOT/.gemini/commands/ui.toml"
+require_phrase "design motion" "motion" \
+  "$ROOT/commands/design.md" "$ROOT/.claude/commands/design.md" "$ROOT/.gemini/commands/design.toml"
+require_phrase "polish motion" "motion" \
+  "$ROOT/commands/polish.md" "$ROOT/.claude/commands/polish.md" "$ROOT/.gemini/commands/polish.toml"
+require_phrase "session-start chain" "responsive-ui" "$ROOT/hooks/session-start.sh"
+require_phrase "session-start motion" "motion" "$ROOT/hooks/session-start.sh"
+
+echo "== evals E1–E21 present =="
+for ev in \
+  purple-reject scorecard-honesty loop-cap rapihin-routing reicon-webgl-compliance \
+  token-preset-scoring responsive-all-devices data-fetching forms-validation \
+  app-shell-routing ship-feature-e2e dashboard-shell visual-hierarchy typography-ladder \
+  auto-layout-fill-cta design-fidelity fe-seo fe-architecture monitoring motion-families \
+  frontend-testing-devtools
+do
+  need "$ROOT/evals/${ev}.md"
+done
+
 if [ "$FAIL" -ne 0 ]; then
   echo "sync-commands: FAILED" >&2
   exit 1

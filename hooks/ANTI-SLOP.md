@@ -11,6 +11,7 @@ PostToolUse advisory for `Edit` / `Write` on UI files. Detects common AI aesthet
 | `rounded-2xl` / `rounded-3xl` | Radius not from token file |
 | `Lorem ipsum` | Placeholder content |
 | Raw `#hex` outside `tokens/` without CSS vars | Token bypass |
+| `transition: all` / bare Tailwind `transition` | Animates unintended layout props |
 
 ## Setup
 

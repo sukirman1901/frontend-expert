@@ -29,6 +29,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E18 | FE architecture boundaries | [fe-architecture.md](./fe-architecture.md) |
 | E19 | Monitoring signals | [monitoring.md](./monitoring.md) |
 | E20 | Motion family pick + hand-roll | [motion-families.md](./motion-families.md) |
+| E21 | Frontend testing + DevTools | [frontend-testing-devtools.md](./frontend-testing-devtools.md) |
 
 ## How to run
 

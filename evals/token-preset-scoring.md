@@ -6,7 +6,7 @@
 
 ## Expected
 
-1. Walks decision tree: no system → not explicit → not Plasma → **score path**
+1. Loads skill **`design-tokens`** and walks decision tree: no system → not explicit → not Plasma → **score path**
 2. Does **not** jump to `neutral-purple` / `plasma-landing` without brand cue
 3. Emits Token score from `references/token-preset-scoring.md`
 4. Signals roughly: S=`dashboard`, D=`compact`, A=`blue` or `mono`, I=`linear`

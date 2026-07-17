@@ -13,7 +13,7 @@
 | Architecture | + `fe-architecture` |
 | SEO / meta | + `fe-seo` |
 | Feels off / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) — one pass |
-| Design audit / AI slop / visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` (+ `design-fidelity` if mock) (`/design` or `/audit`) |
+| Design audit / AI slop / visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `motion` (if animated) → `accessibility` → `web-performance` (+ `design-fidelity` if mock; `fe-devtools` if measuring) (`/design` or `/audit`) |
 | Figma / mock / fidelity | `design-fidelity` → `design-tokens` → `responsive-ui` |
 | Lighthouse / axe / DevTools | `fe-devtools` → `accessibility` → `web-performance` |
 | Hierarchy / typography | `frontend-judgment` Hierarchy + Typography passes |

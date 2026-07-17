@@ -143,6 +143,13 @@ echo "== references map =="
 [ -f "$ROOT/evals/responsive-all-devices.md" ] && ok "evals/responsive-all-devices.md" || bad "evals/responsive-all-devices.md"
 [ -f "$ROOT/evals/ship-feature-e2e.md" ] && ok "evals/ship-feature-e2e.md" || bad "evals/ship-feature-e2e.md"
 [ -f "$ROOT/evals/dashboard-shell.md" ] && ok "evals/dashboard-shell.md" || bad "evals/dashboard-shell.md"
+[ -f "$ROOT/evals/motion-families.md" ] && ok "evals/motion-families.md (E20)" || bad "evals/motion-families.md"
+[ -f "$ROOT/evals/frontend-testing-devtools.md" ] && ok "evals/frontend-testing-devtools.md (E21)" || bad "evals/frontend-testing-devtools.md"
+if ! rg -q 'responsive-ui' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
+  bad "hooks/session-start.sh missing responsive-ui/motion"
+else
+  ok "hooks/session-start responsive+motion"
+fi
 
 if [ "$FAIL" -ne 0 ]; then
   echo

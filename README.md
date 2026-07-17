@@ -109,11 +109,11 @@ Prefer natural chat. Use these only to pin a workflow:
 
 | Command | Purpose | Skills loaded |
 |---------|---------|---------------|
-| `/ui` | Build UI | judgment* → tokens → components → **responsive-ui** → **motion** → anti-slop → **ui-feel** → a11y |
-| `/design` | Audit | anti-slop → **ui-feel** → tokens → a11y → web-performance (+ judgment for redesigns) |
+| `/ui` | Build UI | judgment* → tokens → (+ shell/data/forms) → components → **responsive-ui** → **motion** → anti-slop → **ui-feel** → a11y |
+| `/design` | Audit | anti-slop → **ui-feel** → tokens → **responsive-ui** → **motion** (if animated) → a11y → web-performance (+ design-fidelity / fe-devtools / judgment as needed) |
 | `/audit` | Alias of `/design` | same |
-| `/test-ui` | Prove UI | frontend-testing → components → a11y |
-| `/polish` | Quality loop | build → test → audit → fix until gates pass (max 3) |
+| `/test-ui` | Prove UI | frontend-testing → components → a11y → **fe-devtools** (when measuring) |
+| `/polish` | Quality loop | build → test → audit → fix until gates pass (max 3; includes responsive + motion) |
 
 ```bash
 # optional examples
@@ -223,6 +223,7 @@ Agents must not silently skip pack conventions. Before marking UI done, they rep
 - Responsive: 320/768/1024/1440 checked | full-width CTA <768 | waiver
 - Hierarchy: pass | fails: … | waiver
 - Typography: one h1 + ladder | fails: … | waiver
+- A11y: labels + focus noted? <yes | waiver>
 - Motion: light shell | families: … | patterns: … | none (waiver)
 - WebGL: <Plasma.init … | n/a>
 ```

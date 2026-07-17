@@ -4,9 +4,10 @@ description: >-
   Loop UI work until quality gates pass — judge/build, test, audit, fix, repeat.
   Use when the user wants polished UI, "rapihin sampai bagus", polish until audit
   passes, fix Critical/High design findings, or /polish. Orchestrates
-  frontend-judgment, design-tokens, ui-components, anti-ai-slop, ui-feel, accessibility,
-  frontend-testing, and design-reviewer scorecard. Do not use for one-shot tiny
-  tweaks unless the user asked to keep iterating.
+  frontend-judgment, design-tokens, ui-components, responsive-ui, motion,
+  anti-ai-slop, ui-feel, accessibility, frontend-testing, and design-reviewer
+  scorecard. Do not use for one-shot tiny tweaks unless the user asked to keep
+  iterating.
 ---
 
 # UI Quality Loop
@@ -123,10 +124,19 @@ FIX … | DONE | STOP (cap)
 3. Remaining Medium/Low (if any)  
 4. Cycles used  
 
+## Checklist
+
+- [ ] Judgment only when blank-canvas / first pass (skip rules honored)
+- [ ] Build chain includes **responsive-ui** + **motion** (or waivers)
+- [ ] Gates table evaluated each cycle (Anti-slop, Feel, Tokens, Responsive, Hierarchy, Typography, Motion, A11y, States, Tests)
+- [ ] Conventions check filled before DONE
+- [ ] Cap ≤3 fix cycles; STOP lists remaining Critical/High if any
+- [ ] No fabricated audit scores
+
 ## Depth
 
 - Lifecycle A→Z: `references/fe-lifecycle.md`  
 - Judgment: `frontend-judgment`  
-- Build: `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`  
-- Test: `frontend-testing`  
+- Build: `design-tokens`, `ui-components`, **`responsive-ui`**, **`motion`** (`motion-families.md`), `anti-ai-slop`, `ui-feel`, `accessibility`  
+- Test: `frontend-testing` (+ `fe-devtools` when measuring)  
 - Audit: `design-reviewer` + `references/anti-patterns.md` / `references/ui-feel.md` / a11y / performance as needed  

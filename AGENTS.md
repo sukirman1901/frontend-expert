@@ -91,6 +91,6 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 12. Never block on slash commands when intent is clear
 13. Blank-canvas → judgment first
 14. “Sampai bagus” → `ui-quality-loop` (cap 3)
-15. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**
+15. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**
 
 Orchestration: session agent loads skills; agents do not call agents. See `docs/pack-layers.md`, `docs/pillars.md`.
