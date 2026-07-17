@@ -51,4 +51,5 @@ Every user-facing UI must meet WCAG 2.1 AA. Keyboard, labels, contrast, and sema
 
 ## Depth
 
-Full checklist: `references/accessibility-checklist.md`.
+Full checklist: `references/accessibility-checklist.md`.  
+Contrast & color-alone rules in context: `references/ux-foundations.md`.

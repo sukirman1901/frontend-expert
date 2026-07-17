@@ -144,5 +144,6 @@ Pick A/B/C (or say “go with recommended”).
 ## Depth
 
 Axes + memory convention: `references/design-axes.md`.  
+UX/UI theory + color for products: `references/ux-foundations.md`.  
 Anti-patterns: `anti-ai-slop` + `references/anti-patterns.md`.  
 Domain how-to stays in the other skills.

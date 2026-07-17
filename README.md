@@ -231,7 +231,7 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, **ui-feel**, **design-axes**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
+| Skill-backed | anti-patterns, **ui-feel**, **design-axes**, **ux-foundations**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
 | WebGL | [webgl.md](references/webgl.md) — Plasma Studio first |
 | Reference-only | monitoring — promote later if needed |
