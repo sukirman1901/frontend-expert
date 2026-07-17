@@ -1,27 +1,25 @@
 #!/usr/bin/env bash
-# design-system-enforcer session start hook
+# design-system-enforcer / frontend-expert session start hook
 
 set -euo pipefail
 
 if ! command -v jq >/dev/null 2>&1; then
-  echo '{"priority": "INFO", "message": "design-system-enforcer: jq missing. Chat-first + judgment: for blank-canvas UI offer 2–3 approaches before coding. Slash optional."}'
+  echo '{"priority": "INFO", "message": "frontend-expert: jq missing. Chat-first: map UI intent to skills. Polish loop: ui-quality-loop. Slash optional."}'
   exit 0
 fi
 
 jq -cn \
-  --arg message "design-system-enforcer loaded (chat-first + judgment).
+  --arg message "frontend-expert loaded (chat-first + judgment + quality loop).
 
 Do NOT wait for slash commands.
 
-Blank-canvas / ambiguous UI → frontend-judgment first (2–3 approaches + tradeoffs + recommendation), THEN:
-  design-tokens → ui-components → anti-ai-slop → accessibility
+- Build UI → frontend-judgment* → design-tokens → ui-components → anti-ai-slop → accessibility
+- Test → frontend-testing (test-engineer)
+- Audit → anti-ai-slop → tokens → a11y → web-performance (design-reviewer) [/design|/audit]
+- Polish until good → ui-quality-loop [/polish]: build→test→audit→fix (max 3)
 
-- Design audit / AI slop → anti-ai-slop → design-tokens → accessibility → web-performance
-- UI tests / TDD → frontend-testing → ui-components → accessibility
-- Motion only if user asks to animate
-- Skip judgment for tiny clear fixes or \"langsung saja\"
-
-Optional shortcuts: /ui · /design · /audit · /test-ui
-Agents: ui-developer · design-reviewer · test-engineer
+* Skip judgment for tiny fixes or \"langsung saja\"
+Optional: /ui · /test-ui · /design · /audit · /polish
+Agents: ui-developer · test-engineer · design-reviewer
 Tokens: tokens/*.css (or project system). No purple defaults, raw hex, or Lorem ipsum." \
   '{priority: "IMPORTANT", message: $message}'

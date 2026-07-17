@@ -5,13 +5,13 @@ How the pieces of Design System Enforcer fit together.
 ```text
 ┌──────────────────────────────────────────────────────────┐
 │  Natural chat (DEFAULT)         ← intent → skills auto   │
-│  Commands (/ui,/design,/audit,/test-ui) ← OPTIONAL     │
+│  Commands (/ui,/design,/audit,/test-ui,/polish) ← OPTIONAL │
 ├──────────────────────────────────────────────────────────┤
 │  Agents (ui-developer,              ← WHO                │
 │          design-reviewer,                                │
 │          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
-│  Skills (8)                         ← HOW (+ judgment)   │
+│  Skills (9)                         ← HOW (+ quality loop)│
 ├──────────────────────────────────────────────────────────┤
 │  References + tokens/               ← DEPTH              │
 ├──────────────────────────────────────────────────────────┤
@@ -35,6 +35,7 @@ How the pieces of Design System Enforcer fit together.
 | `/ui` (or chat) | `ui-developer` | frontend-judgment* → design-tokens → ui-components → anti-ai-slop → accessibility (+ motion if needed) |
 | `/design` or `/audit` | `design-reviewer` | anti-ai-slop → design-tokens → accessibility → web-performance (+ ui-components / judgment / test gaps as needed) |
 | `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility |
+| `/polish` (or chat) | loop controller | `ui-quality-loop` → ui-developer + test-engineer + design-reviewer until gates pass |
 
 \* Judgment only when non-trivial / blank-canvas — see skill skip rules.
 

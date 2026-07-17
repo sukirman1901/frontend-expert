@@ -18,6 +18,7 @@ EXPECTED_SKILLS=(
   web-performance
   motion
   frontend-testing
+  ui-quality-loop
 )
 
 for s in "${EXPECTED_SKILLS[@]}"; do

@@ -1,5 +1,11 @@
 # Pack audit log
 
+## 2026-07-17 — UI quality loop (/polish)
+
+- Added `ui-quality-loop` skill + `/polish` (build→test→audit→fix, max 3)
+- Chat-first triggers: “rapihin sampai bagus”, polish until audit passes
+- Wired rules, AGENTS, adapters, smoke/sync
+
 ## 2026-07-17 — Test + audit parity with /ui
 
 - Added `test-engineer` agent (dedicated, not reuse ui-developer)

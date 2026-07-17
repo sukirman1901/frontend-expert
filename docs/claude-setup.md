@@ -15,9 +15,9 @@ Or add as a marketplace from a clone:
 
 ## What you get
 
-- Skills: `design-tokens`, `ui-components`, `anti-ai-slop`, `accessibility`, `web-performance`, `motion`, `frontend-testing`
+- Skills: `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `accessibility`, `web-performance`, `motion`, `frontend-testing`, `ui-quality-loop`
 - Agents: `design-reviewer`, `ui-developer`, `test-engineer`
-- Commands: `/design`, `/audit`, `/ui`, `/test-ui`
+- Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish`
 - Hooks: SessionStart reminder + PostToolUse anti-slop scan
 - Rules: `.claude/rules/design-system.md`
 
@@ -27,6 +27,7 @@ Or add as a marketplace from a clone:
 /ui --token tokens/zinc-blue.css
 /test-ui --tdd
 /design --quick
+/polish
 /audit
 ```
 

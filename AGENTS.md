@@ -18,6 +18,7 @@ Guidance for AI coding agents when this pack is available.
 | + animation / transition / motion | … + `motion` | `/ui` |
 | Audit design, AI slop, UI generik, visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` | `/design` or `/audit` |
 | Test / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
+| Polish until good / rapihin sampai lulus audit | `ui-quality-loop` (build→test→audit→fix, max 3) | `/polish` |
 | Slow / LCP / optimize | `web-performance` | — |
 
 \* `frontend-judgment` for non-trivial / blank-canvas work only — see that skill’s skip rules.
@@ -47,6 +48,7 @@ Do **not** start coding a generic UI before a direction is set (unless skip rule
 | `web-performance` | Perf / CWV / slow UI |
 | `motion` | Explicit animation requests only |
 | `frontend-testing` | Tests / TDD / coverage |
+| `ui-quality-loop` | Polish loop until Critical/High clear |
 
 ## Composition
 
@@ -66,3 +68,4 @@ Full layer model: `docs/pack-layers.md`.
 4. Do not fabricate visual audit scores without tokens or screenshots
 5. Never block on the user typing a slash command when intent is clear
 6. For blank-canvas UI, judgment before implementation
+7. For “sampai bagus / polish”, run `ui-quality-loop` (cap iterations; no infinite audit)

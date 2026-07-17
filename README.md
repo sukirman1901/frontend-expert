@@ -61,10 +61,9 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 
 ```
   Chat (default)                         Optional shortcuts
- ┌──────────────────────────────┐        /ui · /design · /test-ui
- │ judgment (if non-trivial)    │
- │ → tokens → components →      │
- │   anti-slop → a11y …         │
+ ┌──────────────────────────────┐        /ui · /test-ui · /design|/audit · /polish
+ │ judgment → build → test →    │
+ │ audit → fix (loop) …         │
  └──────────────────────────────┘
 ```
 
@@ -73,7 +72,8 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 - **Prevents AI slop** — no random purple gradients, inconsistent spacing, or generic heroes
 - **Curated tokens** — 5 shadcn/ui presets with light/dark mode
 - **Domain skills** — agents load only what the task needs
-- **Optional shortcuts** — `/ui`, `/design`, `/test-ui` when you want to pin a workflow
+- **Optional shortcuts** — `/ui`, `/test-ui`, `/design`, `/audit`, `/polish`
+- **Quality loop** — `/polish` / “rapihin sampai bagus” runs build→test→audit→fix until Critical/High clear (max 3)
 - **Multi-platform** — Claude Code, Cursor, Codex, Gemini, OpenCode, Antigravity
 - **Runtime hooks** — SessionStart reminder + PostToolUse anti-slop warnings (Claude Code)
 
@@ -93,6 +93,7 @@ Prefer natural chat. Use these only to pin a workflow:
 | `/design` | Audit | anti-slop → tokens → a11y → web-performance (+ judgment for redesigns) |
 | `/audit` | Alias of `/design` | same |
 | `/test-ui` | Prove UI | frontend-testing → components → a11y |
+| `/polish` | Quality loop | build → test → audit → fix until gates pass (max 3) |
 
 ```
 # optional
@@ -101,6 +102,8 @@ Prefer natural chat. Use these only to pin a workflow:
 /ui --token tokens/zinc-blue.css
 /test-ui --component Button
 /test-ui --tdd
+/polish
+/polish --max 2
 ```
 
 Auto map (no slash): see [AGENTS.md](AGENTS.md) and [docs/pack-layers.md](docs/pack-layers.md).
@@ -119,6 +122,7 @@ Auto map (no slash): see [AGENTS.md](AGENTS.md) and [docs/pack-layers.md](docs/p
 | `web-performance` | Core Web Vitals / loading optimization |
 | `motion` | Animations and micro-interactions only |
 | `frontend-testing` | Component tests, TDD, a11y in tests |
+| `ui-quality-loop` | Polish until Critical/High clear (capped loop) |
 
 \* Skip judgment for tiny clear fixes or “just implement”.
 
@@ -130,11 +134,11 @@ Depth lives in `references/` — skills stay short and triggerable.
 
 ```
 frontend-expert/
-├── skills/                 # 8 skills (judgment + domains)
+├── skills/                 # 9 skills (judgment + domains + quality loop)
 ├── agents/                 # ui-developer, design-reviewer, test-engineer
 ├── tokens/                 # 5 CSS presets
 ├── references/             # Deep guides
-├── commands/               # Portable /ui /design /audit /test-ui
+├── commands/               # /ui /design /audit /test-ui /polish
 ├── hooks/                  # Claude Code runtime
 ├── .claude-plugin/ .claude/ .codex-plugin/ .agents/
 ├── .gemini/ .opencode/ .cursor/

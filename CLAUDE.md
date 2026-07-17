@@ -4,9 +4,9 @@ Claude Code entry point for **Design System Enforcer**.
 
 ## Plugin assets
 
-- Skills: `skills/` (8 skills including `frontend-judgment`)
+- Skills: `skills/` (9 skills including `frontend-judgment` + `ui-quality-loop`)
 - Agents: `agents/design-reviewer.md`, `agents/ui-developer.md`, `agents/test-engineer.md`
-- Commands: `/design`, `/audit`, `/ui`, `/test-ui` — **optional** (see `.claude/commands/`)
+- Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish` — **optional**
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
 - Hooks: `hooks/hooks.json` (SessionStart + PostToolUse anti-slop scan)
 - Tokens: `tokens/*.css`
@@ -18,8 +18,9 @@ Claude Code entry point for **Design System Enforcer**.
 3. Then → `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility`
 4. Tests when asked → `test-engineer` + `frontend-testing`
 5. Audit when asked → `design-reviewer` skill chain (`/design` or `/audit`); never fabricate visual scores
-6. Honor hook advisories from `anti-slop-scan.sh`
-7. If the project already has a design system, use custom mode (do not override with presets)
+6. “Rapihin / polish sampai bagus” → `ui-quality-loop` (`/polish`), capped iterations
+7. Honor hook advisories from `anti-slop-scan.sh`
+8. If the project already has a design system, use custom mode (do not override with presets)
 
 ## References
 

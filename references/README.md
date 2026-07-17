@@ -7,6 +7,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | Reference | Skill | Used by |
 |-----------|-------|---------|
 | *(judgment — no deep ref)* | `frontend-judgment` | `/ui` / chat before blank-canvas builds |
+| *(loop controller)* | `ui-quality-loop` | `/polish` / “rapihin sampai bagus” |
 | *(token CSS in `tokens/`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
 | `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |
 | `component-patterns.md` | `ui-components` | `/ui`, `ui-developer`, `/design` pattern checks |
