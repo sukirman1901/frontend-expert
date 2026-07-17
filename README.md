@@ -1,10 +1,63 @@
-# Design System Enforcer
+# Frontend Expert
 
-**Production UI quality for AI coding agents** — curated tokens, domain skills, anti-AI-slop enforcement.
+**Production UI quality for AI coding agents** — senior FE judgment, curated tokens, anti-AI-slop enforcement.
 
-**Chat-first + judgment:** talk normally. For blank-canvas UI the agent offers **2–3 approaches** before coding. Slash commands are **optional**.
+**Chat-first:** talk normally. For blank-canvas UI the agent offers **2–3 approaches** before coding. Slash commands are **optional**.
 
-Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/frontend)). This pack covers **UI quality** with **senior FE judgment**: tokens, components, anti-slop, accessibility, performance, motion, testing.
+Repo: [sukirman1901/frontend-expert](https://github.com/sukirman1901/frontend-expert)
+
+---
+
+## Installation
+
+**Fastest (any agent that supports the skills CLI):**
+
+```bash
+npx skills add sukirman1901/frontend-expert
+```
+
+### Claude Code
+
+```bash
+# Marketplace
+/plugin marketplace add https://github.com/sukirman1901/frontend-expert.git
+/plugin install frontend-expert@frontend-expert
+
+# Or local clone
+git clone https://github.com/sukirman1901/frontend-expert.git
+claude --plugin-dir ./frontend-expert
+```
+
+### Cursor
+
+```bash
+git clone https://github.com/sukirman1901/frontend-expert.git
+cd frontend-expert
+./scripts/install.sh cursor /path/to/your-app
+```
+
+### OpenCode / Codex / Gemini
+
+```bash
+git clone https://github.com/sukirman1901/frontend-expert.git
+./scripts/install.sh opencode          # OpenCode symlink
+./scripts/install.sh gemini            # copy Gemini commands
+# Codex: see docs/codex-setup.md
+```
+
+More detail: [docs/getting-started.md](docs/getting-started.md) · per-platform guides under [docs/](docs/).
+
+Verify a clone:
+
+```bash
+./scripts/smoke-test.sh
+```
+
+---
+
+## What This Pack Does
+
+Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/frontend)). This pack covers **UI quality** with **senior FE judgment**.
 
 ```
   Chat (default)                         Optional shortcuts
@@ -14,10 +67,6 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
  │   anti-slop → a11y …         │
  └──────────────────────────────┘
 ```
-
----
-
-## What This Pack Does
 
 - **Chat-first auto-routing** — no slash required; rules + skill `description`s match intent
 - **Senior FE judgment** — 2–3 approaches + tradeoffs before blank-canvas builds (`frontend-judgment`)
@@ -31,28 +80,6 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 ### Out of scope (v1)
 
 SEO, Git basics, REST/API teaching, TypeScript language courses, framework deep-dives.
-
----
-
-## Quick Start
-
-```bash
-# Universal
-npx skills add sukirman1901/frontend-expert
-
-# Claude Code
-claude --plugin-dir /path/to/frontend-expert
-# or: /plugin marketplace add https://github.com/sukirman1901/frontend-expert.git
-
-# Cursor / OpenCode helpers (from a clone)
-./scripts/install.sh --help
-./scripts/install.sh cursor /path/to/your-app
-./scripts/smoke-test.sh
-```
-
-Repo: https://github.com/sukirman1901/frontend-expert  
-
-Full guides: [docs/getting-started.md](docs/getting-started.md)
 
 ---
 
@@ -99,17 +126,17 @@ Depth lives in `references/` — skills stay short and triggerable.
 ## Directory Structure
 
 ```
-Design-system-enforcer/
-├── skills/                 # Domain skills (6)
+frontend-expert/
+├── skills/                 # 8 skills (judgment + domains)
 ├── agents/                 # design-reviewer, ui-developer
 ├── tokens/                 # 5 CSS presets
 ├── references/             # Deep guides
-├── commands/               # Portable /ui /design
+├── commands/               # Portable /ui /design /test-ui
 ├── hooks/                  # Claude Code runtime
 ├── .claude-plugin/ .claude/ .codex-plugin/ .agents/
 ├── .gemini/ .opencode/ .cursor/
 ├── plugin.json · AGENTS.md · CLAUDE.md
-├── scripts/install.sh · docs/
+├── scripts/ · docs/
 └── README.md
 ```
 
@@ -163,16 +190,17 @@ See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 
 ---
 
-## Platform Install
+## Platform guides
 
 | Platform | Guide |
 |----------|-------|
+| **All (skills CLI)** | `npx skills add sukirman1901/frontend-expert` |
 | Claude Code | [docs/claude-setup.md](docs/claude-setup.md) |
 | Cursor | [docs/cursor-setup.md](docs/cursor-setup.md) |
 | Codex | [docs/codex-setup.md](docs/codex-setup.md) |
 | Gemini CLI | [docs/gemini-setup.md](docs/gemini-setup.md) |
 | OpenCode | [docs/opencode-setup.md](docs/opencode-setup.md) |
-| Antigravity | `agy plugin install ./Design-system-enforcer` |
+| Antigravity | `agy plugin install https://github.com/sukirman1901/frontend-expert.git` |
 
 ---
 
