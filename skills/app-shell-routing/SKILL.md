@@ -2,9 +2,10 @@
 name: app-shell-routing
 description: >-
   App shell, navigation, layouts, breadcrumbs, deep links, 404/empty routes.
-  Use when building dashboards shells, side nav, top nav, multi-page flows,
+  Use when building dashboard shells, side nav, top nav, multi-page flows,
   "routing", "layout app", "404", or information architecture for web apps.
-  Requires modern chrome: logo, utilities, profile — not a bare settings page.
+  Requires modern chrome: logo, topbar theme icon, avatar→account menu,
+  custom filter selects — not a bare settings page or native OS selects.
 ---
 
 # App Shell & Routing
