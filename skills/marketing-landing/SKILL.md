@@ -38,11 +38,11 @@ Header (simple) → Hero → Logo cloud → Features → Gallery (or product) �
 Testimonials → CTA → Footer
 ```
 
-Example recipe ids (IA labels only — not packages to install):
+Example recipe (IA labels only — not packages to install):
 
-`header-10` · `hero-6` · `logo-cloud-10` · `features-9` · `gallery-8` · `testimonials-6` · `cta-11` · `footer-2`
+`header` · `hero` · `logo-cloud` · `features` · `gallery` · `testimonials` · `cta` · `footer`
 
-Ignore obsessing over Header *variants* — keep header quiet; invest in Hero → Footer jobs.
+Ignore obsessing over Header variants — keep header quiet; invest in Hero → Footer jobs.
 
 ## MUST
 
