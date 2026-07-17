@@ -57,4 +57,4 @@ These summarize the domain skills — if a skill and this list conflict, follow 
 ## Composition
 
 - **Invoke via:** natural language or `/ui`
-- **Do not invoke other agents.** If `design-reviewer` flags issues, fix them here.
+- **Do not invoke other agents.** If `design-reviewer` flags issues, fix them here. If tests are needed, hand off to `test-engineer` / `/test-ui` (or load `frontend-testing` yourself when the user asked in the same turn).

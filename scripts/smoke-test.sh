@@ -48,7 +48,7 @@ else
 fi
 
 echo "== agents =="
-for a in ui-developer design-reviewer; do
+for a in ui-developer design-reviewer test-engineer; do
   [ -f "$ROOT/agents/$a.md" ] && ok "agents/$a.md" || bad "agents/$a.md"
 done
 

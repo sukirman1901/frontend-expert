@@ -16,13 +16,13 @@ Guidance for AI coding agents when this pack is available.
 |-------------------|---------------------|-------------------|
 | Build/change UI, page, component, form, layout, styling | `frontend-judgment`* → `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility` | `/ui` |
 | + animation / transition / motion | … + `motion` | `/ui` |
-| Audit design, AI slop, UI generik, visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` | `/design` |
+| Audit design, AI slop, UI generik, visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` | `/design` or `/audit` |
 | Test / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
 | Slow / LCP / optimize | `web-performance` | — |
 
 \* `frontend-judgment` for non-trivial / blank-canvas work only — see that skill’s skip rules.
 
-Personas: build/test → `ui-developer`; audit → `design-reviewer`.
+Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-engineer`.
 
 ## Expert judgment (feel like a senior FE)
 

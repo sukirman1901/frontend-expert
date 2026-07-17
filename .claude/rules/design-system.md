@@ -7,8 +7,8 @@
 | Intent | Load |
 |--------|------|
 | Build / modify UI | `frontend-judgment` (non-trivial) → `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility` (+ `motion` if animating) |
-| Design audit / AI slop / visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` |
-| UI tests / TDD | `frontend-testing` → `ui-components` → `accessibility` |
+| Design audit / AI slop / visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` (`/design` or `/audit`) |
+| UI tests / TDD | `frontend-testing` → `ui-components` → `accessibility` (`test-engineer`) |
 | Performance | `web-performance` |
 
 ## Expert judgment

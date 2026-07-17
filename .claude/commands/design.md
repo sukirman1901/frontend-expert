@@ -11,10 +11,12 @@ Invoke the design-reviewer agent.
 3. `accessibility`
 4. `web-performance`
 5. `ui-components` as needed for pattern/state checks
+6. `frontend-judgment` when recommending redesign directions
+7. `frontend-testing` — note coverage gaps as Info only
 
 ## Modes
 
-- **`/design`** — full audit (default)
+- **`/design`** or **`/audit`** — full audit (default)
 - **`/design --quick`** — major issues only
 - **`/design --token <file>`** — audit against a specific token preset
 - **`/design --component <name>`** — audit one component
@@ -29,5 +31,6 @@ Invoke the design-reviewer agent.
 4. Review accessibility against WCAG 2.1 AA
 5. Note performance risks relevant to UI (LCP/INP/CLS)
 6. Output the design-reviewer scorecard — mark unevaluated fields explicitly
+7. End with prioritized next moves (max 5)
 
 Do not fabricate visual hierarchy or contrast scores without screenshots or token data.

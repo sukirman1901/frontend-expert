@@ -5,10 +5,11 @@ How the pieces of Design System Enforcer fit together.
 ```text
 ┌──────────────────────────────────────────────────────────┐
 │  Natural chat (DEFAULT)         ← intent → skills auto   │
-│  Commands (/ui,/design,/test-ui)← OPTIONAL shortcuts     │
+│  Commands (/ui,/design,/audit,/test-ui) ← OPTIONAL     │
 ├──────────────────────────────────────────────────────────┤
 │  Agents (ui-developer,              ← WHO                │
-│          design-reviewer)                                │
+│          design-reviewer,                                │
+│          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
 │  Skills (8)                         ← HOW (+ judgment)   │
 ├──────────────────────────────────────────────────────────┤
@@ -32,8 +33,8 @@ How the pieces of Design System Enforcer fit together.
 | Command | Agent | Skills (order) |
 |---------|-------|----------------|
 | `/ui` (or chat) | `ui-developer` | frontend-judgment* → design-tokens → ui-components → anti-ai-slop → accessibility (+ motion if needed) |
-| `/design` (or chat) | `design-reviewer` | anti-ai-slop → design-tokens → accessibility → web-performance (+ ui-components / judgment as needed) |
-| `/test-ui` (or chat) | `ui-developer` | frontend-testing → ui-components → accessibility |
+| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → design-tokens → accessibility → web-performance (+ ui-components / judgment / test gaps as needed) |
+| `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility |
 
 \* Judgment only when non-trivial / blank-canvas — see skill skip rules.
 

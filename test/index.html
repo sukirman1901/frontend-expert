@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Settings — Acme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#settings-panel">Skip to settings</a>
+
+    <div class="app">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__mark" aria-hidden="true">A</span>
+          <span class="topbar__name">Acme</span>
+        </div>
+        <button
+          type="button"
+          class="topbar__menu"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="settings-nav"
+        >
+          Menu
+        </button>
+        <div class="topbar__user">
+          <span class="topbar__avatar" aria-hidden="true">MR</span>
+          <span class="topbar__email">maya@acme.co</span>
+        </div>
+      </header>
+
+      <div class="layout">
+        <nav
+          class="settings-nav"
+          id="settings-nav"
+          aria-label="Settings sections"
+        >
+          <p class="settings-nav__label">Settings</p>
+          <ul class="settings-nav__list" role="list">
+            <li>
+              <button
+                type="button"
+                class="settings-nav__item"
+                data-section="profile"
+                aria-current="page"
+              >
+                Profile
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="settings-nav__item"
+                data-section="team"
+              >
+                Team
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="settings-nav__item"
+                data-section="billing"
+              >
+                Billing
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="settings-nav__item"
+                data-section="notifications"
+              >
+                Notifications
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="settings-nav__item"
+                data-section="security"
+              >
+                Security
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <main class="panel" id="settings-panel" tabindex="-1">
+          <!-- Profile -->
+          <section
+            class="section"
+            id="section-profile"
+            data-section-panel="profile"
+            aria-labelledby="heading-profile"
+          >
+            <header class="section__header">
+              <h1 id="heading-profile">Profile</h1>
+              <p>How you appear across Acme workspaces.</p>
+            </header>
+
+            <form class="form" id="form-profile" novalidate>
+              <div class="field">
+                <label for="display-name">Display name</label>
+                <input
+                  id="display-name"
+                  name="displayName"
+                  type="text"
+                  autocomplete="name"
+                  value="Maya Reyes"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="email">Work email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  value="maya@acme.co"
+                  required
+                />
+                <p class="field__hint">Used for login and billing receipts.</p>
+              </div>
+
+              <div class="field">
+                <label for="role-title">Title</label>
+                <input
+                  id="role-title"
+                  name="title"
+                  type="text"
+                  value="Product lead"
+                />
+              </div>
+
+              <div class="form__actions">
+                <button type="submit" class="btn btn--primary">
+                  Save changes
+                </button>
+                <p class="form__status" id="status-profile" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </section>
+
+          <!-- Team -->
+          <section
+            class="section is-hidden"
+            id="section-team"
+            data-section-panel="team"
+            aria-labelledby="heading-team"
+            hidden
+          >
+            <header class="section__header">
+              <h1 id="heading-team">Team</h1>
+              <p>People with access to this workspace.</p>
+            </header>
+
+            <div class="toolbar">
+              <button type="button" class="btn btn--primary" id="invite-btn">
+                Invite member
+              </button>
+            </div>
+
+            <div
+              class="state state--loading"
+              id="team-loading"
+              hidden
+              aria-busy="true"
+            >
+              <p>Loading members…</p>
+            </div>
+
+            <div class="state state--empty" id="team-empty" hidden>
+              <p>No teammates yet. Invite someone to collaborate.</p>
+            </div>
+
+            <div class="state state--error" id="team-error" hidden role="alert">
+              <p>Couldn’t load members. <button type="button" class="link" id="team-retry">Try again</button></p>
+            </div>
+
+            <ul class="member-list" id="team-list" role="list">
+              <li class="member">
+                <span class="member__avatar" aria-hidden="true">MR</span>
+                <div class="member__meta">
+                  <span class="member__name">Maya Reyes</span>
+                  <span class="member__email">maya@acme.co</span>
+                </div>
+                <span class="badge">Owner</span>
+              </li>
+              <li class="member">
+                <span class="member__avatar" aria-hidden="true">JK</span>
+                <div class="member__meta">
+                  <span class="member__name">Jordan Kim</span>
+                  <span class="member__email">jordan@acme.co</span>
+                </div>
+                <span class="badge badge--muted">Admin</span>
+              </li>
+              <li class="member">
+                <span class="member__avatar" aria-hidden="true">SL</span>
+                <div class="member__meta">
+                  <span class="member__name">Sam Lee</span>
+                  <span class="member__email">sam@acme.co</span>
+                </div>
+                <span class="badge badge--muted">Member</span>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Billing -->
+          <section
+            class="section is-hidden"
+            id="section-billing"
+            data-section-panel="billing"
+            aria-labelledby="heading-billing"
+            hidden
+          >
+            <header class="section__header">
+              <h1 id="heading-billing">Billing</h1>
+              <p>Plan and payment for this workspace.</p>
+            </header>
+
+            <div class="plan">
+              <div class="plan__row">
+                <div>
+                  <p class="plan__name">Pro</p>
+                  <p class="plan__meta">$48 / month · billed annually</p>
+                </div>
+                <button type="button" class="btn btn--secondary">
+                  Change plan
+                </button>
+              </div>
+              <dl class="plan__details">
+                <div>
+                  <dt>Next invoice</dt>
+                  <dd>Aug 17, 2026 · $48.00</dd>
+                </div>
+                <div>
+                  <dt>Payment method</dt>
+                  <dd>Visa ending 4242</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <!-- Notifications -->
+          <section
+            class="section is-hidden"
+            id="section-notifications"
+            data-section-panel="notifications"
+            aria-labelledby="heading-notifications"
+            hidden
+          >
+            <header class="section__header">
+              <h1 id="heading-notifications">Notifications</h1>
+              <p>Choose what reaches your inbox.</p>
+            </header>
+
+            <form class="form" id="form-notifications">
+              <fieldset class="toggle-group">
+                <legend class="sr-only">Email preferences</legend>
+
+                <label class="toggle">
+                  <span class="toggle__text">
+                    <span class="toggle__title">Product updates</span>
+                    <span class="toggle__desc">New features and release notes</span>
+                  </span>
+                  <input type="checkbox" name="product" checked />
+                </label>
+
+                <label class="toggle">
+                  <span class="toggle__text">
+                    <span class="toggle__title">Billing alerts</span>
+                    <span class="toggle__desc">Invoices, failed payments, plan changes</span>
+                  </span>
+                  <input type="checkbox" name="billing" checked />
+                </label>
+
+                <label class="toggle">
+                  <span class="toggle__text">
+                    <span class="toggle__title">Team activity</span>
+                    <span class="toggle__desc">Invites, role changes, comments</span>
+                  </span>
+                  <input type="checkbox" name="team" />
+                </label>
+              </fieldset>
+
+              <div class="form__actions">
+                <button type="submit" class="btn btn--primary">
+                  Save preferences
+                </button>
+                <p class="form__status" id="status-notifications" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </section>
+
+          <!-- Security -->
+          <section
+            class="section is-hidden"
+            id="section-security"
+            data-section-panel="security"
+            aria-labelledby="heading-security"
+            hidden
+          >
+            <header class="section__header">
+              <h1 id="heading-security">Security</h1>
+              <p>Protect your account and workspace.</p>
+            </header>
+
+            <div class="stack">
+              <div class="row">
+                <div>
+                  <p class="row__title">Password</p>
+                  <p class="row__desc">Last changed 3 months ago</p>
+                </div>
+                <button type="button" class="btn btn--secondary">
+                  Update password
+                </button>
+              </div>
+
+              <div class="row">
+                <div>
+                  <p class="row__title">Two-factor authentication</p>
+                  <p class="row__desc">Not enabled</p>
+                </div>
+                <button type="button" class="btn btn--primary">Enable 2FA</button>
+              </div>
+
+              <div class="row row--danger">
+                <div>
+                  <p class="row__title">Active sessions</p>
+                  <p class="row__desc">2 devices signed in</p>
+                </div>
+                <button type="button" class="btn btn--danger">
+                  Sign out others
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

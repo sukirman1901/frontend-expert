@@ -90,14 +90,17 @@ Prefer natural chat. Use these only to pin a workflow:
 | Command | Purpose | Skills loaded |
 |---------|---------|---------------|
 | `/ui` | Build UI | judgment* → tokens → components → anti-slop → a11y (+ motion if needed) |
-| `/design` | Audit | anti-slop → tokens → a11y → web-performance |
+| `/design` | Audit | anti-slop → tokens → a11y → web-performance (+ judgment for redesigns) |
+| `/audit` | Alias of `/design` | same |
 | `/test-ui` | Prove UI | frontend-testing → components → a11y |
 
 ```
 # optional
 /design --quick
+/audit
 /ui --token tokens/zinc-blue.css
 /test-ui --component Button
+/test-ui --tdd
 ```
 
 Auto map (no slash): see [AGENTS.md](AGENTS.md) and [docs/pack-layers.md](docs/pack-layers.md).
@@ -128,10 +131,10 @@ Depth lives in `references/` — skills stay short and triggerable.
 ```
 frontend-expert/
 ├── skills/                 # 8 skills (judgment + domains)
-├── agents/                 # design-reviewer, ui-developer
+├── agents/                 # ui-developer, design-reviewer, test-engineer
 ├── tokens/                 # 5 CSS presets
 ├── references/             # Deep guides
-├── commands/               # Portable /ui /design /test-ui
+├── commands/               # Portable /ui /design /audit /test-ui
 ├── hooks/                  # Claude Code runtime
 ├── .claude-plugin/ .claude/ .codex-plugin/ .agents/
 ├── .gemini/ .opencode/ .cursor/
@@ -158,8 +161,9 @@ frontend-expert/
 
 | Agent | Role | Command |
 |-------|------|---------|
-| `ui-developer` | Build production UI (+ tests via `/test-ui`) | `/ui`, `/test-ui` |
-| `design-reviewer` | Audit with honesty scorecard (no fabricated metrics) | `/design` |
+| `ui-developer` | Build production UI | `/ui` |
+| `design-reviewer` | Audit with honesty scorecard | `/design`, `/audit` |
+| `test-engineer` | Prove UI with tests + coverage checklist | `/test-ui` |
 
 Agents are **personas + output format**. They load **skills** for how-to; they do not call each other. Layer model: [docs/pack-layers.md](docs/pack-layers.md).
 

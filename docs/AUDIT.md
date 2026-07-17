@@ -1,5 +1,12 @@
 # Pack audit log
 
+## 2026-07-17 — Test + audit parity with /ui
+
+- Added `test-engineer` agent (dedicated, not reuse ui-developer)
+- Enriched `/test-ui` (plan + coverage checklist + `--gaps`)
+- Added `/audit` alias of `/design`; enriched audit skill list + prioritized moves
+- Fixed duplicate Output header in design command
+
 ## 2026-07-17 — Expert judgment layer (A)
 
 - Added `frontend-judgment` skill (2–3 approaches + tradeoffs before blank-canvas builds)

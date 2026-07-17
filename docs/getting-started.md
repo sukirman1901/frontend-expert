@@ -3,7 +3,8 @@
 Install **Design System Enforcer** for your coding agent. Shared content: domain `skills/`, `tokens/`, `agents/`, `references/`. Platform folders are adapters.
 
 **Chat-first + judgment:** talk normally — blank-canvas UI gets 2–3 approaches before code.  
-**Entry shortcuts (optional):** `/ui` · `/design` · `/test-ui`  
+**Entry shortcuts (optional):** `/ui` · `/design` · `/audit` · `/test-ui`  
+**Agents:** `ui-developer` · `design-reviewer` · `test-engineer`  
 **Skills:** `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `accessibility`, `web-performance`, `motion`, `frontend-testing`
 
 

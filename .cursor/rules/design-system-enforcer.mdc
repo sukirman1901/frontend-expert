@@ -13,8 +13,8 @@ alwaysApply: true
 |------------------------|----------------------|
 | Build/change UI, page, screen, component, form, layout, styling | `frontend-judgment` (if non-trivial) → `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility` |
 | Animation / transition / motion | above + `motion` |
-| Design audit, AI slop, "UI jelek/generik", visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` (+ judgment if proposing redesign directions) |
-| Tests / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` |
+| Tests / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` (persona: `test-engineer`) |
+| Design audit, AI slop, "UI jelek/generik", visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` (persona: `design-reviewer`; `/audit` = `/design`) |
 | Slow UI / LCP / optimize performance | `web-performance` (+ `ui-components` if touching UI) |
 
 ## Expert judgment

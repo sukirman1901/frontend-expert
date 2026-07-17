@@ -13,7 +13,7 @@ need() {
 }
 
 echo "== command basename parity =="
-for cmd in ui design test-ui; do
+for cmd in ui design test-ui audit; do
   need "$ROOT/commands/${cmd}.md"
   need "$ROOT/.claude/commands/${cmd}.md"
   need "$ROOT/.gemini/commands/${cmd}.toml"
@@ -39,10 +39,16 @@ check_skills() {
 check_skills ui frontend-judgment design-tokens ui-components anti-ai-slop accessibility
 check_skills design anti-ai-slop design-tokens accessibility web-performance
 check_skills test-ui frontend-testing ui-components accessibility
+check_skills audit design-reviewer
+# audit is an alias — must mention design workflow
+if ! rg -q 'design' "$ROOT/commands/audit.md"; then
+  echo "MISSING design reference in commands/audit.md" >&2
+  FAIL=1
+fi
 
 if [ "$FAIL" -ne 0 ]; then
   echo "sync-commands: FAILED" >&2
   exit 1
 fi
 
-echo "sync-commands: OK (ui, design, test-ui adapters aligned)"
+echo "sync-commands: OK (ui, design, audit, test-ui adapters aligned)"

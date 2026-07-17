@@ -21,6 +21,7 @@ Blank-canvas / ambiguous UI → frontend-judgment first (2–3 approaches + trad
 - Motion only if user asks to animate
 - Skip judgment for tiny clear fixes or \"langsung saja\"
 
-Optional shortcuts: /ui · /design · /test-ui
+Optional shortcuts: /ui · /design · /audit · /test-ui
+Agents: ui-developer · design-reviewer · test-engineer
 Tokens: tokens/*.css (or project system). No purple defaults, raw hex, or Lorem ipsum." \
   '{priority: "IMPORTANT", message: $message}'

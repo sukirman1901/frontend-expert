@@ -1,0 +1,5 @@
+description = "Alias of /design — design system audit"
+
+prompt = """
+Same as /design. Invoke the design-reviewer agent and follow the design audit skill load order and scorecard rules. Do not fabricate visual scores without tokens or screenshots.
+"""

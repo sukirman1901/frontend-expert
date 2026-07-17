@@ -14,7 +14,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | `accessibility-checklist.md` | `accessibility` | `/ui` light, `/design`, `/test-ui`, both agents |
 | `performance.md` | `web-performance` | `/design`, deep perf work |
 | `motion.md` | `motion` | `/ui` only when animating |
-| `testing.md` | `frontend-testing` | `/test-ui`, `ui-developer` when testing |
+| `testing.md` | `frontend-testing` | `/test-ui`, `test-engineer` |
 
 ## Reference-only (no skill yet)
 
