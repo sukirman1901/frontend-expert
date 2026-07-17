@@ -238,7 +238,7 @@ Guide: [references/webgl.md](references/webgl.md) · Landing: [plasma.nusaiba.de
 | `design-reviewer` | Audit with honesty scorecard | `/design`, `/audit` |
 | `test-engineer` | Prove UI with tests + coverage checklist | `/test-ui` |
 
-Agents are **personas + output format**. They load **skills** for how-to; they do not call each other.
+Agents are **personas + output format**. They load **skills** for how-to; they do not call each other. The **session agent** is the orchestrator (`docs/pack-layers.md`).
 
 ---
 
@@ -249,8 +249,8 @@ frontend-expert/
 ├── skills/                 # 12 skills
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
-├── references/             # Deep guides
-├── evals/                  # Behavioral scenarios (purple, honesty, loop, routing)
+├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)
+├── evals/                  # Behavioral scenarios (+ Reicon/WebGL compliance)
 ├── commands/               # /ui /design /audit /test-ui /polish
 ├── hooks/                  # Claude Code runtime
 ├── .claude-plugin/ .claude/ .codex-plugin/ .agents/
@@ -266,10 +266,10 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, ui-feel, design-axes, ux-foundations, fe-lifecycle, component-patterns, architecture, accessibility, performance, motion, testing, **webgl**, **monitoring** + `tokens/` |
+| Skill-backed | anti-patterns, ui-feel, design-axes, ux-foundations, fe-lifecycle, **compliance-gates**, component-patterns, architecture, accessibility, performance, motion, testing, webgl, monitoring + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
-| Evals | [evals/](evals/) |
-| Guides | [tokens/README.md](tokens/README.md) · [fe-lifecycle.md](references/fe-lifecycle.md) |
+| Evals | [evals/](evals/) (purple, honesty, loop, routing, **reicon/webgl**) |
+| Guides | [tokens/README.md](tokens/README.md) · [fe-lifecycle.md](references/fe-lifecycle.md) · [compliance-gates.md](references/compliance-gates.md) |
 
 ---
 
@@ -284,8 +284,8 @@ Map: [references/README.md](references/README.md)
 
 | Hook | Event | What it does |
 |------|-------|----------------|
-| `session-start.sh` | `SessionStart` | Chat-first reminder + skill map + Reicon note |
-| `anti-slop-scan.sh` | `PostToolUse` Edit/Write | Warns on purple/indigo, gradients, `rounded-2xl`, Lorem, raw hex |
+| `session-start.sh` | `SessionStart` | Lifecycle + routing + Reicon/WebGL reminders |
+| `anti-slop-scan.sh` | `PostToolUse` Edit/Write | Warns on purple/indigo, gradients, `rounded-2xl`, Lorem, raw hex, `transition: all` |
 
 See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 
