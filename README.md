@@ -109,7 +109,7 @@ Prefer natural chat. Use these only to pin a workflow:
 
 | Command | Purpose | Skills loaded |
 |---------|---------|---------------|
-| `/ui` | Build UI | judgment* → tokens → components → anti-slop → **ui-feel** → a11y (+ motion if needed) |
+| `/ui` | Build UI | judgment* → tokens → components → **responsive-ui** → **motion** → anti-slop → **ui-feel** → a11y |
 | `/design` | Audit | anti-slop → **ui-feel** → tokens → a11y → web-performance (+ judgment for redesigns) |
 | `/audit` | Alias of `/design` | same |
 | `/test-ui` | Prove UI | frontend-testing → components → a11y |
@@ -131,7 +131,7 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 ---
 
-## Skills (18)
+## Skills (20)
 
 Pillar map: [docs/pillars.md](docs/pillars.md).
 
@@ -145,11 +145,13 @@ Pillar map: [docs/pillars.md](docs/pillars.md).
 | `ui-feel` | UI Quality | Micro craft (“feels off”) |
 | `accessibility` | UI Quality | WCAG 2.1 AA |
 | `web-performance` | UI Quality | Core Web Vitals |
-| `motion` | UI Quality | Animations only |
+| `motion` | UI Quality | Shell defaults + family/pattern vocabulary (hand-roll) |
 | `frontend-testing` | UI Quality | Component tests / TDD |
 | `ui-quality-loop` | UI Quality | Polish until Critical/High clear |
 | `webgl` | UI Quality | Plasma Studio backgrounds |
 | `monitoring` | UI Quality | Sentry / analytics / OTel |
+| `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
+| `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
 | `app-shell-routing` | Ship FE | Shell, nav, routes |
 | `data-fetching` | Ship FE | Async API UI states |
 | `forms-validation` | Ship FE | Forms / wizards |
@@ -215,10 +217,13 @@ Agents must not silently skip pack conventions. Before marking UI done, they rep
 
 ```markdown
 ## Conventions check
-- Tokens: <preset | project system | waiver>
+- Tokens: <preset (score n/24 | explicit | hard-gate) | project system | waiver>
 - Icons: <Reicon … | existing lib | waiver: text-only>
 - States: loading / empty / error …
-- Responsive: 320/768/1024/1440 checked | waiver
+- Responsive: 320/768/1024/1440 checked | full-width CTA <768 | waiver
+- Hierarchy: pass | fails: … | waiver
+- Typography: one h1 + ladder | fails: … | waiver
+- Motion: light shell | families: … | patterns: … | none (waiver)
 - WebGL: <Plasma.init … | n/a>
 ```
 
@@ -285,7 +290,7 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, ui-feel, design-axes, ux-foundations, fe-lifecycle, **compliance-gates**, component-patterns, architecture, accessibility, performance, motion, testing, webgl, monitoring + `tokens/` |
+| Skill-backed | anti-patterns, ui-feel, design-axes, ux-foundations, fe-lifecycle, **compliance-gates**, **motion-families**, component-patterns, architecture, accessibility, performance, motion, testing, webgl, monitoring, design-fidelity, fe-devtools + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
 | Evals | [evals/](evals/) (purple, honesty, loop, routing, **reicon/webgl**) |
 | Guides | [tokens/README.md](tokens/README.md) · [fe-lifecycle.md](references/fe-lifecycle.md) · [compliance-gates.md](references/compliance-gates.md) |

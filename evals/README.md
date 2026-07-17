@@ -28,6 +28,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E17 | FE SEO minimum | [fe-seo.md](./fe-seo.md) |
 | E18 | FE architecture boundaries | [fe-architecture.md](./fe-architecture.md) |
 | E19 | Monitoring signals | [monitoring.md](./monitoring.md) |
+| E20 | Motion family pick + hand-roll | [motion-families.md](./motion-families.md) |
 
 ## How to run
 

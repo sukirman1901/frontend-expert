@@ -28,7 +28,7 @@ Default quality-loop cap in this pack: **3** audit→fix cycles (`ui-quality-loo
 | — | **Responsive** | All devices 320→1440 — **MUST** | `responsive-ui` |
 | 5 | **Haluskan** | Kill AI slop → micro craft (radius, press, type wrap, …) | `anti-ai-slop` → `ui-feel` |
 | 6 | **A11y** | Keyboard, labels, contrast, semantics | `accessibility` |
-| — | **Motion** | Only if animation is in scope | `motion` |
+| — | **Motion** | Shell light defaults; marketing → pick families/patterns from `motion-families.md` and **hand-roll** | `motion` |
 | — | **WebGL bg** | Plasma Studio shaders | `webgl` |
 | — | **SEO** | Public/meta routes | `fe-seo` |
 | — | **Architecture** | Folders / state boundaries | `fe-architecture` |

@@ -39,6 +39,7 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 | Stock card grids | Uniform grids, no priority | Purpose-driven layout |
 | Shadow-heavy | Layered competing shadows | Subtle or no shadow |
 | Loud nav “active bar” | Thick left/right accent stripe on selected items | Quiet fill + weight/contrast only |
+| Decorative motion spam | Hero+3D+Text+Spotlight+Carousel stacked; typewriter on forms | ≤2 families / ≤2–3 motions; see `motion-families.md` |
 
 ## Checklist
 
@@ -49,8 +50,10 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 - [ ] No Lorem ipsum
 - [ ] Spacing hierarchy present (not equal generous padding)
 - [ ] Layout serves content, not a stock template
+- [ ] Motion not decorative spam (≤2–3 intentional motions / viewport)
 
 ## Depth
 
 Full catalog and fixes: `references/anti-patterns.md`.  
-Token source: `references/token-preset-scoring.md` (Plasma/`neutral-purple` only with brand cue).
+Token source: `references/token-preset-scoring.md` (Plasma/`neutral-purple` only with brand cue).  
+Motion vocabulary: `references/motion-families.md`.

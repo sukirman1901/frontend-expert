@@ -58,6 +58,7 @@ You are a senior frontend test engineer. Prove UI behavior with lean, user-centr
 - [ ] Loading / error / empty (if applicable)
 - [ ] Primary user action
 - [ ] Keyboard / accessible name (if interactive)
+- [ ] Reduced-motion respected when UI is animated (Info if out of scope)
 - [ ] Regression for the bug (if fixing)
 
 ### Gaps / next

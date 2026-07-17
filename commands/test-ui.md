@@ -22,9 +22,9 @@ Prove UI behavior. Orchestrates testing skills — parity with `/ui` and `/desig
 2. Publishes a short **test plan** (unit vs integration vs E2E)
 3. Writes or updates tests (prefer TDD for new behavior)
 4. Covers loading / error / empty when those states exist
-5. Adds a11y assertions when tooling allows
+5. Adds a11y assertions when tooling allows (incl. reduced-motion if the UI is animated)
 6. Runs the project's test command when available
-7. Reports coverage checklist + remaining gaps
+7. Reports coverage checklist + remaining gaps (motion family regressions = Info unless animation was in scope)
 
 ## Usage
 

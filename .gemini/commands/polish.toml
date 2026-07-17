@@ -5,14 +5,14 @@ Invoke the ui-quality-loop skill as the loop controller.
 
 Agents: ui-developer (build/fix), test-engineer (test), design-reviewer (audit).
 
-1. Judge if blank-canvas, then build with tokens → components → responsive-ui → motion → anti-slop → ui-feel → a11y
+1. Judge if blank-canvas, then build with tokens → components → responsive-ui → motion (shell light or named families from motion-families.md, hand-roll) → anti-slop → ui-feel → a11y
 2. Test touched surfaces (frontend-testing)
-3. Audit with honesty scorecard (include ui-feel craft) — no fabricated metrics
+3. Audit with honesty scorecard (include ui-feel + Motion when animated) — no fabricated metrics
 4. Fix Critical/High findings, re-test, re-audit
 5. Repeat until gates pass or max 3 fix cycles (override with --max N)
 6. Report DONE or STOP with remaining Medium/Low
 
 Modes: default, --max N, --audit-only-fix.
 Chat equivalents: "rapihin sampai bagus", "polish until audit passes", "feels off".
-Orchestrator skill: ui-quality-loop.
+Orchestrator skill: ui-quality-loop. Motion gate: families/patterns named; no decorative spam.
 """

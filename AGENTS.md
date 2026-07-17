@@ -22,7 +22,7 @@ Pillar map: `docs/pillars.md`.
 | + app shell / sidebar / routing / 404 | … + `app-shell-routing` | `/ui` |
 | + architecture / folder structure / state choice | … + `fe-architecture` | — |
 | + SEO / meta / OG / landing public | … + `fe-seo` (+ `web-performance` if CWV) | — |
-| + animation / motion | … + `motion` | `/ui` |
+| + animation / motion / marquee / parallax / text reveal / landing motion | … + `motion` (families/patterns in `motion-families.md`; hand-roll — no registry default) | `/ui` |
 | Mobile / responsive / semua device / tablet | **`responsive-ui`** (MUST on layout UI) | `/ui` |
 | Audit design, AI slop, UI generik | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` (+ `frontend-judgment` hierarchy/type if scores claimed) | `/design` or `/audit` |
 | Match Figma / mock / pixel / fidelity | `design-fidelity` → `design-tokens` → `responsive-ui` → `ui-feel` | `/design` |
@@ -62,7 +62,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `ui-feel` | UI Quality | Micro craft |
 | `accessibility` | UI Quality | Build/audit a11y |
 | `web-performance` | UI Quality | CWV / slow |
-| `motion` | UI Quality | Shell/dashboard light defaults + explicit animation |
+| `motion` | UI Quality | Shell defaults + family/pattern vocabulary (`motion-families.md`); hand-roll |
 | `frontend-testing` | UI Quality | Tests / TDD |
 | `ui-quality-loop` | UI Quality | Polish until clean |
 | `webgl` | UI Quality | Plasma backgrounds |
@@ -86,7 +86,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 7. WebGL → `webgl` / Plasma — no parallel invented stack
 8. No purple/indigo defaults / Lorem (purple only via scored/hard-gated/explicit token)
 9. Loading / error / empty for interactive + async surfaces
-10. Light **Motion** defaults on shell/dashboard (or waiver) — `motion`
+10. Light **Motion** defaults on shell/dashboard (or waiver) — `motion`; marketing: name families/patterns from `motion-families.md` and hand-roll (registry install is **not** the default)
 11. Do not fabricate visual audit scores without tokens/screenshots
 12. Never block on slash commands when intent is clear
 13. Blank-canvas → judgment first

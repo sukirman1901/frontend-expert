@@ -1,66 +1,93 @@
 ---
 name: motion
 description: >-
-  Purposeful UI motion — section enter/exit fade, drawer slides, smooth scroll,
-  micro press/hover (Framer Motion, GSAP, CSS). Use for animation requests AND
-  as a light default when shipping app shells, dashboards, multi-section pages,
-  or /ui layout work — not for pure token-color tweaks.
+  Purposeful UI motion by family/pattern — shell defaults (fade, drawer, press)
+  plus marketing vocabulary (reveal, scroll, text, carousel, hero, …). Hand-roll
+  CSS/Motion/GSAP from named patterns. Use for animation requests, landings,
+  marquees, parallax, text reveal, and light defaults on /ui shells — not token-only tweaks.
 ---
 
 # Motion
 
 ## Overview
 
-Motion should clarify hierarchy and feedback, not decorate. Prefer short, purposeful animations; always respect reduced motion.
+Motion clarifies hierarchy and feedback — it does not decorate. Pick **families/patterns by name**, then **hand-roll** (CSS / Motion / GSAP). Do **not** default to third-party registry installs.
+
+Full catalog: `references/motion-families.md` (12 families · 144 patterns).
 
 ## When to Use
 
 - Micro-interactions (hover, focus, press)
 - Enter/exit or layout transitions (section swaps, drawers, modals)
-- Scroll-linked or timeline animation (GSAP)
-- **Default (light):** app shell / dashboard / multi-panel settings when building with `/ui` — at least section fade + drawer slide + `scroll-behavior: smooth` (unless user forbids motion)
+- Scroll-linked, text, carousel, hero, or other named patterns
+- **Default (light):** app shell / dashboard / multi-section `/ui` — section fade + drawer slide + smooth scroll (unless user forbids)
 
 ## When to skip
 
 - Static token/color-only tweaks
 - User asked for zero animation / “tanpa animasi”
-- Prefers-reduced-motion environments (still ship CSS that disables)
+- Prefers-reduced-motion (still ship CSS that disables)
+
+## Lanes
+
+| Lane | Peruntukan | Defaults |
+|------|------------|----------|
+| **Product / shell** | App chrome, settings, dashboards | `fade-up` / `page-crossfade`, `drawer-slide`, `press-scale`, `lift-hover` |
+| **Marketing / expressive** | Landing, campaigns | Choose **1–2 families** + **1–2 patterns** from catalog — budget 2–3 motions / viewport |
+
+## Family peruntukan (quick)
+
+| Family | Untuk | Bukan untuk |
+|--------|-------|-------------|
+| Micro Interaction | Toggle, toast, like, progress | Hero / scroll story |
+| Hover & Interaction | Lift, press, magnetic, tilt | Page enter |
+| Scroll-based | Sticky, horizontal, scroll-zoom | Button-only micro |
+| Reveal & Wipe | Enter fades, split, mask, drawer | Endless loops as only motion |
+| Text Motion | Word reveal, typewriter, marquee type | Forms / dense settings |
+| Carousel & Continuous Flow | Marquee, filmstrip, snap | Single CTA focus pages |
+| Grid Motion | Bento, flip grid, reflow | One-button chrome |
+| Spotlight & Focus | Center stage, dim siblings | Whole-page noise |
+| Stack & Scatter | Deck, fan, swipe deck | Admin tables |
+| Hero Section Motion | Parallax / float device / aurora | App shell (max **1** signature) |
+| Morph & Transform | Shared element, FAB morph | Every navigation |
+| 3D & Perspective | Orbit, coverflow | Default product UI |
 
 ## Workflow
 
-1. **Principles**
-   - Short micro-interactions (~100–200ms)
-   - UI transitions (~200–400ms)
-   - Prefer ease-out; keep easing intentional
-   - Stagger children sparingly
-   - **2–3 intentional motions** beat many noisy ones
+1. **Lane** — product shell vs marketing
+2. **Family** — match peruntukan (max 2 families)
+3. **Patterns** — name 1–2 from `motion-families.md`; read definisi + hand-roll hint
+4. **Implement** — CSS / Framer Motion / GSAP from definisi; project tokens; `transform`/`opacity`
+5. **Budget** — ≤2–3 intentional motions per viewport
+6. **A11y** — `prefers-reduced-motion: reduce` (opacity/instant fallbacks); never meaning-by-motion-alone
+7. **Report** — Conventions: `Motion: light shell | families: Hover+Reveal | patterns: lift-hover, fade-up`
 
-2. **Layout defaults (dashboard / shell)**
-   - Section/panel enter: opacity + slight `translateY` (~250–300ms)
-   - Mobile drawer: `transform` slide + backdrop fade
-   - `html { scroll-behavior: smooth }` for in-panel scroll (honor reduced motion)
-   - Do **not** delay primary task completion
+### Shell defaults (product)
 
-3. **Implementation**
-   - CSS transitions/animations fine for shell defaults
-   - Framer Motion / GSAP when in React or complex timelines
-   - Prefer `transform` / `opacity` (compositor-friendly)
+- Section enter: `fade-up` ~250–300ms
+- Mobile drawer: `drawer-slide` + backdrop fade
+- Controls: `press-scale` (0.96)
+- `scroll-behavior: smooth` (disabled under reduced-motion)
 
-4. **Accessibility**
-   - Honor `prefers-reduced-motion: reduce` (disable enter animations + smooth scroll)
-   - Never convey meaning by motion alone
+### Hard rules
+
+- **Hand-roll** from pattern names — registry install is **not** the pack default
+- Do not stack Hero + 3D + Text + Spotlight + Carousel in one viewport
+- Marketing: max one Hero signature pattern
 
 ## Checklist
 
-- [ ] Motion has a purpose (feedback, hierarchy, continuity)
-- [ ] Shell/dashboard includes light enter + drawer motion (or waiver)
-- [ ] Durations appropriate to interaction scale
+- [ ] Lane chosen (product vs marketing)
+- [ ] Family peruntukan matches the ask (≤2 families)
+- [ ] Named patterns listed (≤2–3 motions in viewport)
+- [ ] Hand-rolled from definisi (not registry-as-answer)
 - [ ] `prefers-reduced-motion` handled
-- [ ] No layout-thrashing animations
-- [ ] Anti-slop: motion is not decorative noise
+- [ ] No layout-thrashing / decorative spam
+- [ ] Conventions Motion line filled
 
 ## Depth
 
-Full reference: `references/motion.md`.  
-Micro press/hover/stagger craft: also load `ui-feel` (`references/ui-feel.md`).  
-Demo: `test/` settings (section fade + drawer).
+- Vocabulary: `references/motion-families.md`
+- Recipes: `references/motion.md`
+- Micro craft overlap: `ui-feel`
+- Demo shell: `test/` (section fade + drawer)

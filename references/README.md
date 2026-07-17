@@ -26,7 +26,8 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `fe-seo.md` | `fe-seo` | Technical SEO |
 | `accessibility-checklist.md` | `accessibility` | WCAG checks |
 | `performance.md` | `web-performance` | CWV |
-| `motion.md` | `motion` | Animation |
+| `motion.md` | `motion` | Recipes Framer/GSAP |
+| `motion-families.md` | `motion` | 12 families · 144 patterns vocabulary |
 | `testing.md` | `frontend-testing` | Tests |
 | `webgl.md` | `webgl` | Plasma Studio |
 | `monitoring.md` | `monitoring` | Observability |
@@ -35,7 +36,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 ## Evals
 
-[`evals/`](../evals/) — E1–E19 (slop, craft gates, fidelity, ship FE, SEO/architecture/monitoring).
+[`evals/`](../evals/) — E1–E20 (slop, craft gates, fidelity, ship FE, motion families).
 
 ## Missing on purpose
 

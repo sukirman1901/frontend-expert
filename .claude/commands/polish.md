@@ -12,7 +12,7 @@ Invoke the ui-quality-loop skill as the controller.
 
 ## Skills
 
-Lead with `ui-quality-loop`. Load domain skills as each step requires (`frontend-judgment`, `design-tokens`, `ui-components`, `responsive-ui`, `motion`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, audit chain).
+Lead with `ui-quality-loop`. Load domain skills as each step requires (`frontend-judgment`, `design-tokens`, `ui-components`, `responsive-ui`, `motion` + `motion-families` vocabulary, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, audit chain).
 
 ## Modes
 

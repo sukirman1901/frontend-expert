@@ -36,8 +36,8 @@ Pillar map: [pillars.md](./pillars.md).
 
 | Command | Agent | Skills (order) |
 |---------|-------|----------------|
-| `/ui` (or chat) | `ui-developer` | judgment* → tokens → (+ shell/data/forms) → ui-components → **responsive-ui** → **motion** (light) → anti-ai-slop → ui-feel → accessibility |
-| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → tokens → responsive-ui → accessibility → web-performance (+ **design-fidelity** if mock; **fe-devtools** if measuring) |
+| `/ui` (or chat) | `ui-developer` | judgment* → tokens → (+ shell/data/forms) → ui-components → **responsive-ui** → **motion** (light shell / `motion-families` hand-roll) → anti-ai-slop → ui-feel → accessibility |
+| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → tokens → responsive-ui → accessibility → web-performance → **motion** (if animated; `motion-families`) (+ **design-fidelity** if mock; **fe-devtools** if measuring) |
 | `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility (+ **fe-devtools** when tooling evidence needed) |
 | `/polish` (or chat) | loop controller | `ui-quality-loop` until gates pass |
 

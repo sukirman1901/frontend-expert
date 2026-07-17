@@ -18,7 +18,7 @@ Report this block (fill every line):
 - Typography: one h1 + ladder | fails: … | waiver: …
 - A11y: labels + focus noted? <yes | waiver>
 - WebGL: <Plasma.init … | n/a | waiver: used Three because …>
-- Motion: <light shell defaults | skill motion used | none (waiver)>
+- Motion: <light shell | families: … | patterns: … | none (waiver)>
 ```
 
 When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or `(hard-gate)` when those branches apply.
@@ -34,7 +34,7 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **Hierarchy** | One primary focus + one primary CTA; weight/contrast before decoration (`frontend-judgment` Hierarchy pass) | Tiny copy-only tweak |
 | **Typography** | ≤2 families; one h1/page; sequential ladder; token type roles | Waiver: intentional marketing exception (state why) |
 | **Shell chrome** | Logo + utilities + profile (`app-shell-routing`) on dashboard/settings | Waiver: minimal marketing page |
-| **Motion** | Light defaults on shell/multi-section (`motion`) | User forbids animation / reduced-motion only |
+| **Motion** | Light defaults on shell/multi-section (`motion`); marketing builds name ≤2 families + patterns from `motion-families.md` and **hand-roll** — do not default to third-party registry install | User forbids animation / reduced-motion only |
 | **WebGL / shader / plasma / canvas bg** | Load skill `webgl` → Plasma Studio / `Plasma.init` | User explicitly wants Three.js/R3F scene graph |
 | **Tokens** | Project system, else full tree: custom → explicit → Plasma hard-gate → score (`token-preset-scoring.md`) | Waiver only |
 | **Slop** | No purple/indigo defaults, no Lorem, no `transition: all` | Brand token already is purple (e.g. `plasma-landing`) |

@@ -1,3 +1,31 @@
+## 2026-07-17 — Motion vocabulary (12 families · 144 patterns)
+
+**Trigger:** Pack motion was shell-only vs rich public motion taxonomies.
+
+### Done
+
+| Area | Change |
+|------|--------|
+| Catalog | `references/motion-families.md` — peruntukan per family + 144 named patterns (definisi + hand-roll) |
+| Skill | `motion` — lanes, family pick, hand-roll; **no registry default** |
+| Enforcement | AGENTS/rules/compliance Motion line; anti-slop decorative spam |
+| Eval | E20 motion family pick + hand-roll |
+
+### Explicit non-goals
+
+- Not a third-party registry install path
+- Not Hero/3D defaults on product dashboards
+
+### Layer health (after motion + FE1000 wiring)
+
+| Layer | Status |
+|-------|--------|
+| Skills | **20** |
+| Evals | E1–E20 |
+| Conventions | Responsive + Hierarchy + Typography + Motion |
+
+---
+
 ## 2026-07-17 — FE 1000% craft gates (hierarchy / type / Auto Layout)
 
 **Trigger:** Comprehensive audit plan — pack strong on suite but craft gates under-enforced.
@@ -25,7 +53,7 @@
 | Layer | Status |
 |-------|--------|
 | Skills | **20** (incl. `design-fidelity`, `fe-devtools`) |
-| Evals | E1–E19 |
+| Evals | E1–E20 (incl. E20 motion) — see top of this doc |
 | Conventions | Responsive + Hierarchy + Typography |
 
 ---

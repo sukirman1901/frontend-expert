@@ -37,7 +37,7 @@ check_skills() {
 }
 
 check_skills ui frontend-judgment design-tokens ui-components responsive-ui motion anti-ai-slop ui-feel accessibility
-check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance design-fidelity fe-devtools
+check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance design-fidelity fe-devtools motion
 check_skills test-ui frontend-testing ui-components accessibility fe-devtools
 check_skills audit design-reviewer
 check_skills polish ui-quality-loop ui-feel motion

@@ -23,9 +23,10 @@ You are a senior Design System / Frontend engineer reviewing UI. Produce an hone
 5. `accessibility`
 6. `web-performance`
 7. `ui-components` — pattern, state, responsive checks as needed
-8. `design-fidelity` — when Figma/mock/screenshot is provided
-9. `fe-devtools` — when measuring a11y/perf with tools (never fabricate)
-10. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
+8. `motion` — when UI has animation / marketing motion; check family budget + reduced-motion (`motion-families.md`)
+9. `design-fidelity` — when Figma/mock/screenshot is provided
+10. `fe-devtools` — when measuring a11y/perf with tools (never fabricate)
+11. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
 
 ## Token source check (greenfield)
 
@@ -57,6 +58,14 @@ Measured Visual Hierarchy checklist (when screenshots/DOM available):
 | Primary CTA | One dominant action | Equal-weight action row |
 | Section jobs | One job + one headline | Kitchen-sink sections |
 | Type ladder | One h1; sequential levels | Multi-h1 / skipped levels |
+
+## Motion check
+
+- Expect Conventions Motion line (light shell **or** `families:` / `patterns:`)
+- Decorative stack (Hero+3D+Text+Spotlight+Carousel in one view) → **High**, Area **Motion** / AI Aesthetic
+- Marketing without named patterns / only “install registry” → **Medium/High** — require hand-roll from `motion-families.md`
+- Missing `prefers-reduced-motion` on animated UI → **High**, Area **Accessibility** / Motion
+- Depth: `skills/motion`, `references/motion-families.md`
 
 ## Operating modes
 
@@ -96,6 +105,7 @@ When data IS provided, label each scorecard value with its source (`Token Analys
 | Typography | [value or "not evaluated"] | [DOM / Screenshot / —] | One h1 + ladder | [Pass / Fail / —] |
 | AI Aesthetic Score | [value or "not evaluated"] | [Source Analysis / —] | 0 patterns | [Pass / Fail / —] |
 | UI Feel | [value or "not evaluated"] | [Source Analysis / —] | Craft checklist clean | [Pass / Fail / —] |
+| Motion | [value or "not evaluated"] | [Source / —] | ≤2–3 purposeful / reduced-motion | [Pass / Fail / —] |
 | Responsive | [value or "not evaluated"] | [Viewport / Source / —] | 320–1440 + full-width CTA | [Pass / Fail / —] |
 | Accessibility | [value or "not evaluated"] | [axe-core / —] | WCAG 2.1 AA | [Pass / Fail / —] |
 | Performance (UI) | [value or "not evaluated"] | [Lighthouse / Source / —] | LCP≤2.5s INP≤200ms CLS≤0.1 | [Pass / Fail / —] |
@@ -112,7 +122,7 @@ Critical / High / Medium / Low counts.
 
 ```
 #### [SEVERITY] Title
-- **Area:** Token Adherence / Visual Hierarchy / Typography / AI Aesthetic / UI Feel / Components / Responsive / Accessibility / Performance
+- **Area:** Token Adherence (aka Token Compliance) / Visual Hierarchy / Typography / AI Aesthetic / UI Feel / Motion / Components / Responsive / Accessibility / Performance
 - **Location:** file:line or component
 - **Description:** …
 - **Impact:** potential impact | measured: …
@@ -141,7 +151,7 @@ Broader improvements (Info / later).
 3. Static findings = `potential impact`
 4. Every finding needs an actionable recommendation
 5. Remediations go to domain skills — keep this report at audit level
-6. Fold AI patterns into Token Adherence / Visual Hierarchy — no separate "AI" category
+6. Fold AI patterns into Token Adherence / Visual Hierarchy / Motion — scorecard may still list AI Aesthetic as a rollup row
 7. Prefer prioritized next moves over dumping 20 equal-weight nits
 
 ## Composition

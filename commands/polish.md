@@ -12,9 +12,9 @@ Run the **UI quality loop** until Critical/High findings are cleared (max 3 fix 
 1. `ui-quality-loop` — controller (gates, cycles, output)
 2. Then per step, as the loop requires:
    - `frontend-judgment` (first blank-canvas only — includes Hierarchy / Typography passes)
-   - `design-tokens` → (+ shell/data/forms) → `ui-components` → `responsive-ui` → **`motion`** (light) → `anti-ai-slop` → `ui-feel` → `accessibility`
+   - `design-tokens` → (+ shell/data/forms) → `ui-components` → `responsive-ui` → **`motion`** (light shell / named families from `motion-families.md`, hand-roll) → `anti-ai-slop` → `ui-feel` → `accessibility`
    - `frontend-testing`
-   - design-reviewer audit chain (`anti-ai-slop`, `ui-feel`, tokens, `responsive-ui`, a11y, `web-performance`)
+   - design-reviewer audit chain (`anti-ai-slop`, `ui-feel`, `motion` when animated, tokens, `responsive-ui`, a11y, `web-performance`)
 
 ## Agents
 

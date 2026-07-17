@@ -16,8 +16,8 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 5. `forms-validation` — **if** forms / wizards
 6. `ui-components` — implement with states
 7. `responsive-ui` — **MUST** for layout (320–1440)
-8. `motion` — light shell/section defaults (unless user forbids)
-9. `anti-ai-slop` — scan before done
+8. `motion` — light shell defaults; marketing → families/patterns from `motion-families.md` (**hand-roll**)
+9. `anti-ai-slop` — scan before done (includes decorative motion spam)
 10. `ui-feel` — micro craft
 11. `accessibility` — light pass
 12. `fe-seo` / `webgl` — **only if** in scope
@@ -29,9 +29,10 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 3. **Responsive all devices** — `responsive-ui`
 4. **Ships Reicon icons** unless waiver
 5. Handles loading, error, empty
-6. Enforces accessibility basics
-7. Scans for AI slop, then `ui-feel`
-8. Ends with **Conventions check** (includes Responsive)
+6. Light **motion** (shell) or named family/patterns (marketing) — hand-roll, not registry default
+7. Enforces accessibility basics
+8. Scans for AI slop, then `ui-feel`
+9. Ends with **Conventions check** (includes Responsive + Motion)
 
 ## Usage
 

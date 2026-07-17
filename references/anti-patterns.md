@@ -264,6 +264,16 @@ Cherry-picked from design-lab principles (pack-relevant only):
 | Filters/tabs only in React state | Unshareable, broken back | Prefer URL state for shareable view state |
 | Tiny touch targets | Mis-taps | ≥44px touch / ≥40px dense desktop (`ui-feel`) |
 
+## Motion anti-patterns
+
+| Pattern | Why it hurts | Fix |
+|---------|--------------|-----|
+| Decorative motion spam | Competing heroes; no hierarchy | Max 2 families / 2–3 motions per viewport (`motion-families.md`) |
+| Typewriter / marquee on forms | Distracting, slow tasks | Text Motion = marketing only |
+| Hero+3D as dashboard default | Perf + slop | Shell lane: fade/drawer/press only |
+| Infinite autoplay no escape | Vestibular / a11y | Pause on hover/focus; respect reduced-motion |
+| Registry install as only answer | Avoids craft; wrong dependency | Hand-roll from pattern definisi |
+
 ## Quick Checklist
 
 Before considering UI complete, scan for:

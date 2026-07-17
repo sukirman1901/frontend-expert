@@ -1,6 +1,31 @@
 # Motion Reference
 
-Framer Motion, GSAP, animation principles, and micro-interactions.
+Lanes, tokens, and implementation recipes (Framer Motion / GSAP / CSS).
+
+**Family & pattern vocabulary (pick by name, then hand-roll):** [`motion-families.md`](./motion-families.md) — 12 families · 144 named patterns.
+
+## Motion lanes
+
+| Lane | When | Default patterns |
+|------|------|------------------|
+| **Product / shell** | App chrome, dashboard, settings | `fade-up` / `page-crossfade`, `drawer-slide`, `press-scale`, `lift-hover` |
+| **Marketing / expressive** | Landing, campaigns | Pick **1–2 families** from `motion-families.md` (e.g. Hero **or** Text — not both plus 3D) |
+
+**Rule:** Implement by **hand-roll** from pattern definisi. Do **not** default to installing a third-party motion registry.
+
+## Token defaults
+
+| Scale | Duration | Use |
+|-------|----------|-----|
+| Micro | 100–200ms | Hover, press, toggles |
+| UI | 200–400ms | Panels, drawers, fades |
+| Section | 400–700ms | Marketing reveals (sparingly) |
+
+Prefer **ease-out**; animate **`transform` / `opacity`**. Honor `prefers-reduced-motion`.
+
+Budget: **2–3 intentional motions** per viewport.
+
+---
 
 ## Animation Principles
 

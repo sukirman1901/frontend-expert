@@ -18,7 +18,7 @@ alwaysApply: true
 | + architecture / folder / state | + `fe-architecture` |
 | + SEO / meta / OG | + `fe-seo` |
 | Mobile / responsive / semua device | **`responsive-ui` MUST** |
-| Animation / transition / motion | above + `motion` |
+| Animation / transition / motion / marquee / parallax / text reveal | above + `motion` (families/patterns in `motion-families.md`; hand-roll — not registry default) |
 | Match Figma / mock / pixel perfect / fidelity | `design-fidelity` → `design-tokens` → `responsive-ui` → `ui-feel` |
 | Lighthouse / axe / DevTools / measured scores | `fe-devtools` → `accessibility` → `web-performance` |
 | Hierarchy / unclear primary / competing CTAs | `frontend-judgment` Hierarchy pass → `anti-ai-slop` → `ui-feel` |
@@ -42,7 +42,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 - **Responsive: MUST** — `responsive-ui`; Conventions `Responsive: 320/768/1024/1440 checked` + **full-width primary CTA <768**
 - **Hierarchy + Typography: MUST** on blank-canvas / layout polish — Hierarchy pass + one h1 / type ladder (`frontend-judgment`)
 - **Icons: MUST use [Reicon](https://reicon.dev)** unless project icon lib or text-only waiver
-- Light **Motion** defaults on shell/dashboard (`motion`) unless waived
+- Light **Motion** defaults on shell/dashboard (`motion`) unless waived; marketing: name families/patterns and hand-roll (registry install is not the pack default)
 - WebGL/shader/plasma → load **`webgl`**; prefer Plasma
 - No raw hex, purple/indigo defaults, Lorem ipsum, or `rounded-2xl` everywhere
 - Handle loading / error / empty; keyboard accessible

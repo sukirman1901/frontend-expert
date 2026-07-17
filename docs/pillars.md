@@ -6,7 +6,7 @@ Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert)
 
 | Pillar | Skills | Role |
 |--------|--------|------|
-| **UI Quality** (default) | `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`, `motion`, `web-performance`, `design-fidelity`, `fe-devtools` | Visual craft, tokens, polish, fidelity, tooling |
+| **UI Quality** (default) | `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `web-performance`, `design-fidelity`, `fe-devtools` | Visual craft, tokens, polish, fidelity, tooling, motion vocabulary |
 | **Responsive** (MUST) | `responsive-ui` | All devices 320→1440+ |
 | **Ship FE** | `app-shell-routing`, `data-fetching`, `forms-validation` | Shell, async UI, forms |
 | **Depth** | `fe-architecture`, `fe-seo` | Structure, technical SEO |

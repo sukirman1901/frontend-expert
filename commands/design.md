@@ -18,22 +18,24 @@ Alias: **`/audit`** (same workflow).
 5. `accessibility` — WCAG 2.1 AA
 6. `web-performance` — CWV / loading issues relevant to UI
 7. `ui-components` — pattern / state checks as needed
-8. `design-fidelity` — when a Figma/mock/screenshot is in scope
-9. `fe-devtools` — when measuring (Lighthouse/axe); never fabricate scores
-10. `frontend-judgment` — when recommending redesign directions (2–3 options)
-11. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
+8. `motion` — when animated UI / marketing motion (family budget from `motion-families.md`, reduced-motion)
+9. `design-fidelity` — when a Figma/mock/screenshot is in scope
+10. `fe-devtools` — when measuring (Lighthouse/axe); never fabricate scores
+11. `frontend-judgment` — when recommending redesign directions (2–3 options)
+12. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
 
 ## What It Does
 
 1. Detects framework / design system before recommending patterns
-2. Scans for AI aesthetic patterns
+2. Scans for AI aesthetic patterns (incl. decorative motion spam)
 3. Checks `ui-feel` craft (concentric radius, hit areas, transition hygiene, …)
 4. Checks token adherence
 5. Reviews accessibility
 6. Notes performance risks (LCP / INP / CLS)
 7. Validates **responsive** design (320 / 768 / 1024 / 1440) via `responsive-ui`
-8. Checks component patterns (composition, states)
-9. Outputs scorecard + prioritized next moves
+8. Checks **motion** family budget when animation present
+9. Checks component patterns (composition, states)
+10. Outputs scorecard + prioritized next moves
 
 ## Usage
 
@@ -47,9 +49,9 @@ Alias: **`/audit`** (same workflow).
 
 ## Output
 
-Scorecard from `design-reviewer`: Token Compliance, Visual Hierarchy, **Typography**, AI Aesthetic, **UI Feel**, **Responsive**, Accessibility, Performance (UI). Mark unevaluated fields explicitly — do not fabricate visual scores without tokens or screenshots. End with **prioritized next moves** (max 5).
+Scorecard from `design-reviewer`: Token Compliance, Visual Hierarchy, **Typography**, AI Aesthetic, **UI Feel**, **Motion**, **Responsive**, Accessibility, Performance (UI). Mark unevaluated fields explicitly — do not fabricate visual scores without tokens or screenshots. End with **prioritized next moves** (max 5).
 
-Also verify: full-width primary CTA <768; Hierarchy pass; one h1 + type ladder.
+Also verify: full-width primary CTA <768; Hierarchy pass; one h1 + type ladder; motion ≤2–3 purposeful patterns when animated.
 
 ## Agent Invoked
 

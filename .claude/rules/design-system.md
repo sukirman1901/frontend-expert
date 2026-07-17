@@ -6,7 +6,7 @@
 
 | Intent | Load |
 |--------|------|
-| Build / modify UI | `frontend-judgment` (non-trivial) → `design-tokens` → (+ shell/data/forms if needed) → `ui-components` → **`responsive-ui`** → **`motion`** (light) → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `webgl` if needed) |
+| Build / modify UI | `frontend-judgment` (non-trivial) → `design-tokens` → (+ shell/data/forms if needed) → `ui-components` → **`responsive-ui`** → **`motion`** (light shell; marketing = `motion-families` hand-roll) → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `webgl` if needed) |
 | Forms / validasi | + `forms-validation` |
 | API / async data | + `data-fetching` |
 | App shell / routing | + `app-shell-routing` |
@@ -20,6 +20,7 @@
 | UI tests / TDD | `frontend-testing` → `ui-components` → `accessibility` (+ `fe-devtools`) (`test-engineer`) |
 | Polish until good / sampai bagus | `ui-quality-loop` (`/polish`) |
 | Performance | `web-performance` |
+| Motion / marquee / parallax / text reveal / landing animation | + `motion` (families/patterns in `motion-families.md`; hand-roll — not registry default) |
 | WebGL / Plasma bg | **`webgl` required** (Plasma / `Plasma.init`) |
 | Monitoring / Sentry | `monitoring` |
 
@@ -33,7 +34,7 @@ Blank-canvas / ambiguous UI → 2–3 approaches + tradeoffs + recommendation **
 2. **Responsive MUST** — `responsive-ui`; full-width primary CTA <768; Conventions Responsive line
 3. **Hierarchy + Typography** — Hierarchy pass; one h1 + type ladder on blank-canvas / layout polish
 4. **Icons: MUST use [Reicon](https://reicon.dev)** unless waiver
-5. Light **Motion** defaults on shell/dashboard unless waived
+5. Light **Motion** defaults on shell/dashboard unless waived; marketing: name families/patterns and **hand-roll** (registry install is not the pack default)
 6. WebGL/shader/plasma → load `webgl`; prefer Plasma Studio
 7. No purple/indigo defaults, `rounded-2xl` everywhere, or Lorem ipsum (purple OK only via scored/hard-gated/explicit token)
 8. Loading / error / empty states; keyboard accessible

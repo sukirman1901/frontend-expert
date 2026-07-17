@@ -55,6 +55,7 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 | **Responsive** | Conventions Responsive line present; full-width primary CTA <768; no Critical/High desktop-only layout on greenfield (320–1440) |
 | **Hierarchy** | Hierarchy pass (one primary focus + one primary CTA) or waiver for tiny tweaks |
 | **Typography** | One h1/page + sequential ladder (or waiver) |
+| **Motion** | Shell light defaults **or** named families/patterns from `motion-families.md`; no decorative spam; reduced-motion; hand-roll (not registry default) |
 | **A11y** | No Critical keyboard/label/contrast findings (potential or measured) |
 | **States** | Loading/error/empty handled for interactive surfaces touched |
 | **Tests** | Planned critical cases green, or **explicit waiver** if no test runner / out of scope (document why) |
@@ -76,7 +77,7 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 ### Round 0 — Direction + build
 
 1. Load `frontend-judgment` if non-trivial / blank-canvas
-2. After direction: `design-tokens` → (+ `app-shell-routing` / `data-fetching` / `forms-validation` if needed) → `ui-components` → **`responsive-ui`** → **`motion`** (light) → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `webgl` / `fe-seo` if needed)
+2. After direction: `design-tokens` → (+ `app-shell-routing` / `data-fetching` / `forms-validation` if needed) → `ui-components` → **`responsive-ui`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `webgl` / `fe-seo` if needed)
 3. Produce UI + **Conventions check** (`references/compliance-gates.md`)
 
 ### Each cycle — Prove + audit + fix
