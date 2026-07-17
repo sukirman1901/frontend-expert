@@ -1,6 +1,6 @@
 {
-  "name": "design-system-enforcer",
-  "description": "Curated design tokens, anti-AI-slop workflows, and design audits — build production UI that does not look AI-generated.",
+  "name": "frontend-expert",
+  "description": "Chat-first frontend UI quality — judgment, tokens, anti-AI-slop, a11y, perf, testing.",
   "author": {
     "name": "sukirman1901",
     "url": "https://github.com/sukirman1901"
