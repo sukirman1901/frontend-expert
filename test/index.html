@@ -28,8 +28,10 @@
           id="nav-toggle"
           aria-expanded="false"
           aria-controls="settings-nav"
+          aria-label="Open settings menu"
         >
-          Menu
+          <re-icon icon="menu" size="20" decorative></re-icon>
+          <span class="topbar__menu-label">Menu</span>
         </button>
         <div class="topbar__user">
           <span class="topbar__avatar" aria-hidden="true">MR</span>
@@ -50,8 +52,9 @@
                 type="button"
                 class="settings-nav__item"
                 data-section="profile"
-                aria-current="true"
+                aria-current="page"
               >
+                <re-icon icon="user" size="18" decorative></re-icon>
                 Profile
               </button>
             </li>
@@ -61,6 +64,7 @@
                 class="settings-nav__item"
                 data-section="team"
               >
+                <re-icon icon="users" size="18" decorative></re-icon>
                 Team
               </button>
             </li>
@@ -70,6 +74,7 @@
                 class="settings-nav__item"
                 data-section="billing"
               >
+                <re-icon icon="credit-card" size="18" decorative></re-icon>
                 Billing
               </button>
             </li>
@@ -79,6 +84,7 @@
                 class="settings-nav__item"
                 data-section="notifications"
               >
+                <re-icon icon="bell" size="18" decorative></re-icon>
                 Notifications
               </button>
             </li>
@@ -88,6 +94,7 @@
                 class="settings-nav__item"
                 data-section="security"
               >
+                <re-icon icon="shield-check" size="18" decorative></re-icon>
                 Security
               </button>
             </li>
@@ -167,6 +174,7 @@
 
             <div class="toolbar">
               <button type="button" class="btn btn--primary" id="invite-btn">
+                <re-icon icon="user-add" size="16" decorative></re-icon>
                 Invite member
               </button>
             </div>
@@ -181,10 +189,12 @@
             </div>
 
             <div class="state state--empty" id="team-empty" hidden>
+              <re-icon icon="users" size="28" decorative></re-icon>
               <p>No teammates yet. Invite someone to collaborate.</p>
             </div>
 
             <div class="state state--error" id="team-error" hidden role="alert">
+              <re-icon icon="alert-circle" size="20" decorative></re-icon>
               <p>Couldn’t load members. <button type="button" class="link" id="team-retry">Try again</button></p>
             </div>
 
@@ -233,7 +243,7 @@
               <div class="plan__row">
                 <div>
                   <p class="plan__name">Pro</p>
-                  <p class="plan__meta">$48 / month · billed annually</p>
+                  <p class="plan__meta"><span class="tabular">$48</span> / month · billed annually</p>
                 </div>
                 <button type="button" class="btn btn--secondary">
                   Change plan
@@ -242,11 +252,11 @@
               <dl class="plan__details">
                 <div>
                   <dt>Next invoice</dt>
-                  <dd>Aug 17, 2026 · $48.00</dd>
+                  <dd>Aug 17, 2026 · <span class="tabular">$48.00</span></dd>
                 </div>
                 <div>
                   <dt>Payment method</dt>
-                  <dd>Visa ending 4242</dd>
+                  <dd>Visa ending <span class="tabular">4242</span></dd>
                 </div>
               </dl>
             </div>
@@ -274,7 +284,10 @@
                     <span class="toggle__title">Product updates</span>
                     <span class="toggle__desc">New features and release notes</span>
                   </span>
-                  <input type="checkbox" name="product" checked />
+                  <span class="switch">
+                    <input type="checkbox" name="product" checked />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </span>
                 </label>
 
                 <label class="toggle">
@@ -282,7 +295,10 @@
                     <span class="toggle__title">Billing alerts</span>
                     <span class="toggle__desc">Invoices, failed payments, plan changes</span>
                   </span>
-                  <input type="checkbox" name="billing" checked />
+                  <span class="switch">
+                    <input type="checkbox" name="billing" checked />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </span>
                 </label>
 
                 <label class="toggle">
@@ -290,7 +306,10 @@
                     <span class="toggle__title">Team activity</span>
                     <span class="toggle__desc">Invites, role changes, comments</span>
                   </span>
-                  <input type="checkbox" name="team" />
+                  <span class="switch">
+                    <input type="checkbox" name="team" />
+                    <span class="switch__track" aria-hidden="true"></span>
+                  </span>
                 </label>
               </fieldset>
 
@@ -318,9 +337,14 @@
 
             <div class="stack">
               <div class="row">
-                <div>
-                  <p class="row__title">Password</p>
-                  <p class="row__desc">Last changed 3 months ago</p>
+                <div class="row__lead">
+                  <span class="row__icon" aria-hidden="true">
+                    <re-icon icon="lock" size="18" decorative></re-icon>
+                  </span>
+                  <div>
+                    <p class="row__title">Password</p>
+                    <p class="row__desc">Last changed 3 months ago</p>
+                  </div>
                 </div>
                 <button type="button" class="btn btn--secondary">
                   Update password
@@ -328,17 +352,27 @@
               </div>
 
               <div class="row">
-                <div>
-                  <p class="row__title">Two-factor authentication</p>
-                  <p class="row__desc">Not enabled</p>
+                <div class="row__lead">
+                  <span class="row__icon" aria-hidden="true">
+                    <re-icon icon="shield-check" size="18" decorative></re-icon>
+                  </span>
+                  <div>
+                    <p class="row__title">Two-factor authentication</p>
+                    <p class="row__desc">Not enabled</p>
+                  </div>
                 </div>
                 <button type="button" class="btn btn--primary">Enable 2FA</button>
               </div>
 
               <div class="row row--danger">
-                <div>
-                  <p class="row__title">Active sessions</p>
-                  <p class="row__desc">2 devices signed in</p>
+                <div class="row__lead">
+                  <span class="row__icon" aria-hidden="true">
+                    <re-icon icon="monitor" size="18" decorative></re-icon>
+                  </span>
+                  <div>
+                    <p class="row__title">Active sessions</p>
+                    <p class="row__desc"><span class="tabular">2</span> devices signed in</p>
+                  </div>
                 </div>
                 <button type="button" class="btn btn--danger">
                   Sign out others
@@ -350,6 +384,7 @@
       </div>
     </div>
 
+    <script src="https://unpkg.com/reicon/cdn/reicon.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

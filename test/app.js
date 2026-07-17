@@ -13,6 +13,7 @@
     if (!nav.classList.contains("is-open")) return;
     nav.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open settings menu");
     if (restoreFocus) {
       toggle.focus();
     }
@@ -21,6 +22,7 @@
   function openMobileNav() {
     nav.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Close settings menu");
     const firstItem = nav.querySelector(".settings-nav__item");
     firstItem?.focus();
   }
@@ -29,7 +31,7 @@
     navItems.forEach((btn) => {
       const active = btn.dataset.section === id;
       if (active) {
-        btn.setAttribute("aria-current", "true");
+        btn.setAttribute("aria-current", "page");
       } else {
         btn.removeAttribute("aria-current");
       }
