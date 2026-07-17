@@ -18,18 +18,20 @@ alwaysApply: true
 | Tests / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` (persona: `test-engineer`) |
 | Polish / rapihin **sampai bagus** / until audit passes | `ui-quality-loop` → orchestrate build→test→audit→fix (max 3) |
 | Slow UI / LCP / optimize performance | `web-performance` (+ `ui-components` if touching UI) |
-| WebGL / shader / Plasma background | `webgl` |
+| WebGL / shader / Plasma / animated canvas background | **`webgl` required** (Plasma Studio / `Plasma.init` — not random Three.js) |
 | Sentry / analytics / observability | `monitoring` |
 
 ## Expert judgment
 
 For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one recommendation** before coding. Skip for tiny clear fixes or “just implement”. See skill `frontend-judgment`.
 
-## Rules
+## Rules (compliance — do not silently skip)
 
 - Prefer project design system if one exists; otherwise `tokens/*.css`
-- Icons: prefer [Reicon](https://reicon.dev) (`references/reicon-icons.md`); keep existing project icon lib if already standardized
+- **Icons: MUST use [Reicon](https://reicon.dev)** on nav/toolbars/empty/icon-buttons unless project already has an icon lib **or** you state a text-only waiver. Vanilla HTML → Reicon CDN + `<re-icon>`. See `references/reicon-icons.md` + `references/compliance-gates.md`
+- WebGL/shader/plasma asks → load **`webgl`**; prefer Plasma — do not invent a parallel stack
 - No raw hex, purple/indigo defaults, Lorem ipsum, or `rounded-2xl` everywhere
 - Handle loading / error / empty; keyboard accessible
+- Before DONE on UI builds, output the **Conventions check** block from `references/compliance-gates.md`
 - Optional shortcuts only: `/ui`, `/design`, `/audit`, `/test-ui`, `/polish` — never require them
 - Audits: do not fabricate visual metrics without tokens/screenshots (design-reviewer honesty)

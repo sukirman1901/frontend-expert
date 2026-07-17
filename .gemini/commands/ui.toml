@@ -14,7 +14,7 @@ Build UI that looks design-system-aware, not AI-generated:
 3. Handle loading, error, and empty states
 4. Make interactive elements keyboard accessible
 5. Scan for AI aesthetic patterns, then apply ui-feel craft
-6. Report implementation, tokens used, feel polish, a11y notes, and responsive behavior
+6. Report implementation, tokens used, Conventions check (Reicon/tokens/states), a11y notes, and responsive behavior
 
 Modes via arguments: token mode (default), --token <file>, --custom.
 """

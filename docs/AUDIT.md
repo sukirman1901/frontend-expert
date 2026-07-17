@@ -1,5 +1,10 @@
 # Pack audit log
 
+## 2026-07-17 — Compliance gates (Reicon / WebGL follow-through)
+
+Problem: skills installed but agent shipped `test/` settings with **zero icons**.  
+Fix: `references/compliance-gates.md` + MUST rules in Cursor/Claude + Conventions check in `ui-developer` / `ui-components` / `/ui`; stronger `webgl` skill; eval E5.
+
 ## 2026-07-17 — Phase 3 (evals, tokens README, promote webgl/monitoring)
 
 - `evals/` — purple reject, scorecard honesty, loop cap, rapihin routing

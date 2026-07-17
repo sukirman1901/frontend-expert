@@ -10,6 +10,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | `design-axes.md` | `frontend-judgment` | Axes, inspiration, style inference, optional DESIGN_MEMORY |
 | `ux-foundations.md` | `frontend-judgment`, `design-tokens`, `accessibility` | Nielsen/Gestalt, UI system, color theory for products |
 | `fe-lifecycle.md` | `ui-quality-loop`, `frontend-judgment` | A→Z FE process + pack mapping |
+| `compliance-gates.md` | `ui-components`, `ui-developer`, always-on rules | Ship checklist — Reicon/WebGL/tokens must not be silently skipped |
 | *(loop controller)* | `ui-quality-loop` | `/polish` / “rapihin sampai bagus” |
 | *(token CSS in `tokens/` + `tokens/README.md`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
 | `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |

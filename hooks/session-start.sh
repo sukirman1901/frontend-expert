@@ -25,5 +25,6 @@ See references/fe-lifecycle.md
 * Skip judgment for tiny fixes or \"langsung saja\"
 Optional: /ui · /test-ui · /design · /audit · /polish
 Agents: ui-developer · test-engineer · design-reviewer
-Tokens: tokens/*.css (or project system). Icons: Reicon (reicon.dev). No purple defaults, raw hex, or Lorem ipsum." \
+Tokens: tokens/*.css (or project system). Icons: MUST use Reicon in markup (or waive). WebGL/plasma → skill webgl / Plasma.init.
+Before DONE: Conventions check (references/compliance-gates.md)." \
   '{priority: "IMPORTANT", message: $message}'

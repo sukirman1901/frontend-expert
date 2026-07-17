@@ -73,8 +73,8 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 ### Round 0 — Direction + build
 
 1. Load `frontend-judgment` if non-trivial / blank-canvas
-2. After direction: `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` if needed)
-3. Produce UI
+2. After direction: `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `webgl` if needed)
+3. Produce UI + **Conventions check** (`references/compliance-gates.md`)
 
 ### Each cycle — Prove + audit + fix
 

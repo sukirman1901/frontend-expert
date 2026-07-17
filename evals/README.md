@@ -13,6 +13,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E2 | Scorecard honesty | [scorecard-honesty.md](./scorecard-honesty.md) |
 | E3 | Quality loop cap | [loop-cap.md](./loop-cap.md) |
 | E4 | Rapihin routing | [rapihin-routing.md](./rapihin-routing.md) |
+| E5 | Reicon + WebGL compliance | [reicon-webgl-compliance.md](./reicon-webgl-compliance.md) |
 
 ## How to run
 

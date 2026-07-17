@@ -72,10 +72,14 @@ FE process A→Z: `references/fe-lifecycle.md`.
 ## Hard rules
 
 1. Prefer CSS custom properties from `tokens/` or the project's existing design system
-2. Icons: prefer **[Reicon](https://reicon.dev)** (`references/reicon-icons.md`); keep an existing project icon library if already standardized
-3. Never invent purple/indigo defaults, raw hex, or Lorem ipsum for shipping UI
-4. Handle loading, error, and empty states
-5. Do not fabricate visual audit scores without tokens or screenshots
-6. Never block on the user typing a slash command when intent is clear
-7. For blank-canvas UI, judgment before implementation
-8. For “sampai bagus / polish”, run `ui-quality-loop` (cap iterations; no infinite audit)
+2. Icons: **MUST ship [Reicon](https://reicon.dev)** in markup (CDN/package) unless project icon lib or text-only waiver — `references/compliance-gates.md`
+3. WebGL/shader/plasma: load **`webgl`**, prefer Plasma / `Plasma.init` — do not invent a parallel background stack
+4. Never invent purple/indigo defaults, raw hex, or Lorem ipsum for shipping UI
+5. Handle loading, error, and empty states
+6. Do not fabricate visual audit scores without tokens or screenshots
+7. Never block on the user typing a slash command when intent is clear
+8. For blank-canvas UI, judgment before implementation
+9. For “sampai bagus / polish”, run `ui-quality-loop` (cap iterations; no infinite audit)
+10. Before DONE on UI builds, output **Conventions check** (`references/compliance-gates.md`)
+
+Orchestration: session agent loads skills; agents do not call agents (`docs/pack-layers.md`).

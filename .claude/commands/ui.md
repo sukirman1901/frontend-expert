@@ -13,6 +13,7 @@ Invoke the ui-developer agent.
 5. `ui-feel`
 6. `accessibility` (light pass)
 7. `motion` — only if animation is in scope
+8. `webgl` — only if shader/Plasma background is in scope
 
 ## Modes
 
@@ -29,4 +30,4 @@ Invoke the ui-developer agent.
 3. Implement with composition, loading/error/empty states, mobile-first
 4. Make interactive elements keyboard accessible
 5. Scan for AI aesthetic patterns, then apply `ui-feel` craft
-6. Report: implementation, tokens used, feel changes (Before/After if polish), a11y notes, responsive notes
+6. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states), a11y notes, responsive notes
