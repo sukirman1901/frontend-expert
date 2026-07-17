@@ -76,7 +76,7 @@ Critical / High / Medium / Low counts.
 
 ```
 #### [SEVERITY] Title
-- **Area:** Token Adherence / Visual Hierarchy / AI Aesthetic / Components / Responsive / Accessibility / Performance
+- **Area:** Token Adherence / Visual Hierarchy / AI Aesthetic / UI Feel / Components / Responsive / Accessibility / Performance
 - **Location:** file:line or component
 - **Description:** …
 - **Impact:** potential impact | measured: …

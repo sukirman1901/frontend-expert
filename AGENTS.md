@@ -17,13 +17,15 @@ Guidance for AI coding agents when this pack is available.
 | Build/change UI, page, component, form, layout, styling | `frontend-judgment`* → `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` | `/ui` |
 | + animation / transition / motion | … + `motion` | `/ui` |
 | Audit design, AI slop, UI generik, visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `accessibility` → `web-performance` | `/design` or `/audit` |
-| Feels off / rapihin detail / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) | `/ui` or `/polish` |
+| Feels off / rapihin **detail** / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) — **one pass**, not the full loop | — |
 | Test / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
-| Polish until good / rapihin sampai lulus audit | `ui-quality-loop` (build→test→audit→fix, max 3) | `/polish` |
+| Polish until good / rapihin **sampai bagus** / lulus audit | `ui-quality-loop` (build→test→audit→fix, max 3) | `/polish` |
 | Slow / LCP / optimize | `web-performance` | — |
 | WebGL / shader bg / Plasma studio | Cite `references/webgl.md` (Plasma Studio first) | — |
 
 \* `frontend-judgment` for non-trivial / blank-canvas work only — see that skill’s skip rules.
+
+**“Rapihin” disambiguation:** alone on existing UI → `ui-feel` (not judgment, not full loop). Alone on vague *new* UI → judgment first. “Sampai bagus / lulus audit” → `ui-quality-loop`.
 
 Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-engineer`.
 
@@ -32,11 +34,11 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 For ambiguous or blank-canvas UI:
 
 1. At most 1–2 clarifying questions if blocked
-2. Offer **2–3 approaches** with tradeoffs + one recommendation
+2. Offer **2–3 approaches on distinct axes** (hierarchy / layout / density / interaction / expression) with tradeoffs + one recommendation
 3. Wait for a clear pick (or “go with recommended” / “langsung saja”)
 4. Then run domain skills
 
-Do **not** start coding a generic UI before a direction is set (unless skip rules apply).
+Do **not** start coding a generic UI before a direction is set (unless skip rules apply). Axes detail: `references/design-axes.md`.
 
 ## Skills
 

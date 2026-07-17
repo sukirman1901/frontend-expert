@@ -24,7 +24,7 @@ Run this **before** domain skills when any of these apply:
 - New page, screen, flow, or blank-canvas layout
 - Unspecified information architecture / navigation / density
 - Multiple reasonable visual or interaction directions
-- User ask is vague (“bikin dashboard”, “UI modern”, “rapihin”)
+- User ask is vague for a **new** screen (“bikin dashboard”, “UI modern”) — not mere “rapihin” on existing UI (that’s `ui-feel` / `ui-quality-loop`)
 
 ## When to skip
 
@@ -33,6 +33,8 @@ Run this **before** domain skills when any of these apply:
 - User already chose a direction or said “langsung saja” / “just implement”
 - Pure `/design` audit with no implementation request
 - Follow-up turn continuing an already-approved plan
+- User only wants micro polish on existing UI (“rapihin detail”, “feels off”) → use `ui-feel`
+- User wants iterate until audit-clean (“sampai bagus”) → use `ui-quality-loop`, which may call judgment only on first blank-canvas pass
 
 ## Workflow
 

@@ -1,52 +1,67 @@
 # Pack audit log
 
-## 2026-07-17 — UI quality loop (/polish)
+## 2026-07-17 — Post-improvement workflow audit
 
-- Added `ui-quality-loop` skill + `/polish` (build→test→audit→fix, max 3)
-- Chat-first triggers: “rapihin sampai bagus”, polish until audit passes
-- Wired rules, AGENTS, adapters, smoke/sync
+### Verdict
 
-## 2026-07-17 — Test + audit parity with /ui
+**Core loop still matches spec.** Chat-first + `/polish` quality loop (`JUDGE* → BUILD → TEST → AUDIT → FIX`, max 3) is consistent across `ui-quality-loop`, commands, AGENTS, Cursor/Claude rules, and adapters. `scripts/smoke-test.sh` **PASSED** (10 skills, 3 agents, command sync).
 
-- Added `test-engineer` agent (dedicated, not reuse ui-developer)
-- Enriched `/test-ui` (plan + coverage checklist + `--gaps`)
-- Added `/audit` alias of `/design`; enriched audit skill list + prioritized moves
-- Fixed duplicate Output header in design command
+Build chain (canonical):
 
-## 2026-07-17 — Expert judgment layer (A)
+`frontend-judgment*` → `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` if needed)
 
-- Added `frontend-judgment` skill (2–3 approaches + tradeoffs before blank-canvas builds)
-- Wired into ui-developer, rules, AGENTS, `/ui` adapters, session-start
-- design-reviewer: prioritized next moves + optional redesign approaches
+Polish gates include Anti-slop, **UI feel**, Tokens, A11y, States, Tests, Perf (soft).
 
-## 2026-07-17 — Chat-first auto-routing
-
-- Strengthened all skill `description`s for natural-language match
-- Always-on Cursor + Claude rules: intent → skills, slash optional
-- AGENTS.md / README / session-start / pack-layers: chat-first default
-
-## 2026-07-17 — P0 + frontend-testing
-
-### Done
-
-- Slimmed agents to persona + skills + output (removed duplicated rule encyclopedias)
-- Added `frontend-testing` skill + `/test-ui` (commands / Claude / Gemini)
-- Added `scripts/sync-commands.sh` + `scripts/smoke-test.sh` (PASSED)
-- Updated README, AGENTS, pack-layers, references map, session-start
-
-### Layer health
+### Layer health (current)
 
 | Layer | Status |
 |-------|--------|
-| Commands `/ui` `/design` `/test-ui` | OK |
-| Agents (2, slim) | OK |
-| Skills (8) | OK |
-| References map | testing linked; webgl/monitoring still ref-only |
-| Hooks / multi-platform | OK |
+| Commands `/ui` `/design` `/audit` `/test-ui` `/polish` | OK — adapters synced |
+| Agents (3) | OK — ui-developer, design-reviewer, test-engineer |
+| Skills (10) | OK |
+| References | Grew a lot (ui-feel, design-axes, ux-foundations, reicon, webgl/Plasma); still skill-backed vs orphan map |
+| Hooks | OK anti-slop (classic patterns only); session-start mentions Reicon + ui-feel path |
+| Multi-platform | OK |
+
+### Aligned with original loop spec
+
+- Cap 3, no infinite audit
+- Critical/High block; Medium/Low don’t (unless user asks)
+- Agents don’t call each other; session agent is loop controller
+- Judgment skip rules for tiny / “langsung saja”
+- Honesty: don’t fabricate visual scores without tokens/screenshots
+
+### Gaps / risks (ordered)
+
+| Pri | Gap | Impact | Suggested fix |
+|-----|-----|--------|----------------|
+| **P0** | Intent collision: bare **“rapihin”** matches judgment *and* feel *and* polish-ish language | Wrong skill path (axes interview vs micro craft vs full loop) | Disambiguate in AGENTS/rules (done in follow-up) |
+| **P0** | “Feels off” listed as `/ui` **or** `/polish` | Agent may skip test/audit loop or over-loop | One-shot → `ui-feel`; “sampai bagus / lulus audit” → `ui-quality-loop` |
+| **P1** | `docs/AUDIT.md` was stale (8 skills / 2 agents) | Maintainers misread health | This entry |
+| **P1** | design-reviewer finding **Area** enum omitted UI Feel | Scorecard has UI Feel but findings tags don’t | Add area tag |
+| **P1** | `/audit` blurb still pre–ui-feel | Minor doc drift | Update description |
+| **P2** | anti-slop **hook** doesn’t flag `transition: all` / feel craft | Runtime only catches classic AI slop | Optional hook extend |
+| **P2** | Cursor install = **file copies** of skills | Drift vs repo after pull | Prefer symlink/`install.sh` refresh docs |
+| **P2** | Polish **TEST** gate when project has no test runner | Agents may invent tooling or stall | Emphasize waiver path in loop skill |
+| **P3** | No eval scenarios (purple reject, scorecard honesty, loop cap) | Regressions hard to catch | Add later |
+| **P3** | Orphan refs: `webgl`, `monitoring` | Fine until promoted | Keep |
+| **P3** | Full Design Lab browser explore | Out of scope by choice | Phase 2 only if requested |
+| **P3** | `ux-foundations` theory not auto-loaded except via judgment/tokens/a11y depth links | OK for v1 | — |
+
+### Ambiguous user phrases (routing contract)
+
+| User says | Should load |
+|-----------|-------------|
+| rapihin **detail** / feels off / micro polish | `ui-feel` (+ anti-slop if generik) — **one pass**, no loop |
+| rapihin **sampai bagus** / sampai lulus audit / polish until clean | `ui-quality-loop` |
+| rapihin (alone) on **existing** UI | Prefer `ui-feel` + light anti-slop — **not** blank-canvas judgment |
+| rapihin (alone) on **vague new** UI | `frontend-judgment` first, then build chain |
+| audit saja | `design-reviewer` chain — **no** fix loop |
 
 ### Still optional later
 
-- `tokens/README.md` (import notes)
-- Eval scenarios (purple rejection, scorecard honesty)
-- Promote `webgl` / `monitoring` only if needed
-- Publish to GitHub + `npx skills add`
+- `tokens/README.md` import notes
+- Eval scenarios
+- Hook: `transition: all` / bare `transition`
+- Symlink-based Cursor skill install
+- Promote webgl/monitoring only if demand rises

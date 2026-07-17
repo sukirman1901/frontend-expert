@@ -7,10 +7,10 @@
 | Intent | Load |
 |--------|------|
 | Build / modify UI | `frontend-judgment` (non-trivial) → `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` if animating) |
-| Feels off / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) |
+| Feels off / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) — one pass |
 | Design audit / AI slop / visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `accessibility` → `web-performance` (`/design` or `/audit`) |
 | UI tests / TDD | `frontend-testing` → `ui-components` → `accessibility` (`test-engineer`) |
-| Polish until good | `ui-quality-loop` (`/polish`) |
+| Polish until good / sampai bagus | `ui-quality-loop` (`/polish`) |
 | Performance | `web-performance` |
 
 ## Expert judgment

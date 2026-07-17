@@ -54,11 +54,13 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 | **Tokens** | No Critical/High raw-hex / off-token color-radius issues (or custom system honored) |
 | **A11y** | No Critical keyboard/label/contrast findings (potential or measured) |
 | **States** | Loading/error/empty handled for interactive surfaces touched |
-| **Tests** | Planned critical cases green, or explicit waiver documented |
+| **Tests** | Planned critical cases green, or **explicit waiver** if no test runner / out of scope (document why) |
 | **Perf (soft)** | No Critical obvious LCP/CLS footguns in touched UI; else note as remaining |
 
 **Loop continues** while any **Critical** or **High** remains on touched UI.  
 **Medium/Low** do not block DONE unless the user asked for zero findings.
+
+Do **not** invent a test stack just to satisfy the Tests gate — waive and list residual risk.
 
 ## Iteration cap
 
