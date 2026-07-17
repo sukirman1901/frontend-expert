@@ -1,0 +1,18 @@
+{
+  "name": "design-system-enforcer",
+  "description": "Curated design tokens, anti-AI-slop workflows, and design audits — build production UI that does not look AI-generated.",
+  "author": {
+    "name": "sukirman1901",
+    "url": "https://github.com/sukirman1901"
+  },
+  "homepage": "https://github.com/sukirman1901/frontend-expert",
+  "repository": "https://github.com/sukirman1901/frontend-expert",
+  "license": "MIT",
+  "commands": ["./.claude/commands", "./commands"],
+  "skills": "./skills",
+  "agents": [
+    "./agents/design-reviewer.md",
+    "./agents/ui-developer.md"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

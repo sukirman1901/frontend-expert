@@ -1,0 +1,122 @@
+/*
+ * Neutral Purple - Creative Portfolio Design System
+ * Base: Neutral | Primary: Violet | Style: Maia | Radius: 0.75
+ * Best for: Creative portfolios, design agencies, artistic websites
+ */
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Primary - Violet */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    /* Muted */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent */
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 262 83% 58%;
+
+    /* Radius - Maia style: 0.75 */
+    --radius: 0.75;
+
+    /* Chart Colors */
+    --chart-1: 262 83% 58%;
+    --chart-2: 280 76% 55%;
+    --chart-3: 245 70% 62%;
+    --chart-4: 270 80% 52%;
+    --chart-5: 255 74% 60%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .dark {
+    /* Base Colors */
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
+
+    /* Card */
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
+
+    /* Popover */
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary - Violet */
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted */
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Accent */
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive */
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border */
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 262 83% 58%;
+
+    /* Chart Colors */
+    --chart-1: 262 83% 58%;
+    --chart-2: 280 76% 55%;
+    --chart-3: 245 70% 62%;
+    --chart-4: 270 80% 52%;
+    --chart-5: 255 74% 60%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 262 83% 58%;
+  }
+}

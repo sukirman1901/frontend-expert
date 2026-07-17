@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SCRIPT=\"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh\"; [ -f \"$SCRIPT\" ] || SCRIPT=\"${CLAUDE_PROJECT_DIR}/hooks/session-start.sh\"; [ -f \"$SCRIPT\" ] && bash \"$SCRIPT\" || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SCRIPT=\"${CLAUDE_PLUGIN_ROOT}/hooks/anti-slop-scan.sh\"; [ -f \"$SCRIPT\" ] || SCRIPT=\"${CLAUDE_PROJECT_DIR}/hooks/anti-slop-scan.sh\"; [ -f \"$SCRIPT\" ] && bash \"$SCRIPT\" || true",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

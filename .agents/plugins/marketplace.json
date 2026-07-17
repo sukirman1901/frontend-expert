@@ -1,0 +1,21 @@
+{
+  "name": "design-system-enforcer",
+  "interface": {
+    "displayName": "Design System Enforcer"
+  },
+  "plugins": [
+    {
+      "name": "design-system-enforcer",
+      "description": "Curated design tokens, anti-AI-slop workflows, design audits, and UI build agents.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

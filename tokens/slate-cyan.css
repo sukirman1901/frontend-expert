@@ -1,0 +1,122 @@
+/*
+ * Slate Cyan - Data-Heavy Interface Design System
+ * Base: Slate | Primary: Cyan | Style: Mira | Radius: 1
+ * Best for: Data-heavy interfaces, analytics dashboards, monitoring tools
+ */
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Cyan */
+    --primary: 183 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 214 32% 92%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted */
+    --muted: 214 32% 92%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent */
+    --accent: 214 32% 92%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border */
+    --border: 214 32% 87%;
+    --input: 214 32% 87%;
+    --ring: 183 100% 40%;
+
+    /* Radius - Mira style: 1 */
+    --radius: 1;
+
+    /* Chart Colors */
+    --chart-1: 183 100% 40%;
+    --chart-2: 170 76% 42%;
+    --chart-3: 195 100% 38%;
+    --chart-4: 175 84% 36%;
+    --chart-5: 188 92% 44%;
+
+    /* Sidebar */
+    --sidebar-background: 210 40% 96%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 183 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 32% 92%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 87%;
+    --sidebar-ring: 183 100% 40%;
+  }
+
+  .dark {
+    /* Base Colors */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    /* Card */
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover */
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Cyan */
+    --primary: 183 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted */
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent */
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive */
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border */
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 183 100% 40%;
+
+    /* Chart Colors */
+    --chart-1: 183 100% 40%;
+    --chart-2: 170 76% 42%;
+    --chart-3: 195 100% 38%;
+    --chart-4: 175 84% 36%;
+    --chart-5: 188 92% 44%;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 183 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 22%;
+    --sidebar-ring: 183 100% 40%;
+  }
+}

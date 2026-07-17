@@ -1,0 +1,122 @@
+/*
+ * Stone Emerald - Clean, Minimal Design System
+ * Base: Stone | Primary: Emerald | Style: Lyra | Radius: 0
+ * Best for: Clean, minimal apps, productivity tools, note-taking apps
+ */
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 60 40% 98%;
+    --foreground: 24 10% 10%;
+
+    /* Card */
+    --card: 60 40% 98%;
+    --card-foreground: 24 10% 10%;
+
+    /* Popover */
+    --popover: 60 40% 98%;
+    --popover-foreground: 24 10% 10%;
+
+    /* Primary - Emerald */
+    --primary: 160 84% 39%;
+    --primary-foreground: 60 40% 98%;
+
+    /* Secondary */
+    --secondary: 30 10% 90%;
+    --secondary-foreground: 24 10% 10%;
+
+    /* Muted */
+    --muted: 30 10% 90%;
+    --muted-foreground: 24 10% 40%;
+
+    /* Accent */
+    --accent: 30 10% 90%;
+    --accent-foreground: 24 10% 10%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 60 40% 98%;
+
+    /* Border */
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 160 84% 39%;
+
+    /* Radius - Lyra style: 0 */
+    --radius: 0;
+
+    /* Chart Colors */
+    --chart-1: 160 84% 39%;
+    --chart-2: 120 60% 45%;
+    --chart-3: 180 70% 42%;
+    --chart-4: 140 75% 36%;
+    --chart-5: 170 80% 40%;
+
+    /* Sidebar */
+    --sidebar-background: 30 10% 96%;
+    --sidebar-foreground: 24 10% 10%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 60 40% 98%;
+    --sidebar-accent: 30 10% 90%;
+    --sidebar-accent-foreground: 24 10% 10%;
+    --sidebar-border: 30 10% 85%;
+    --sidebar-ring: 160 84% 39%;
+  }
+
+  .dark {
+    /* Base Colors */
+    --background: 24 10% 10%;
+    --foreground: 60 40% 98%;
+
+    /* Card */
+    --card: 24 10% 10%;
+    --card-foreground: 60 40% 98%;
+
+    /* Popover */
+    --popover: 24 10% 10%;
+    --popover-foreground: 60 40% 98%;
+
+    /* Primary - Emerald */
+    --primary: 160 84% 39%;
+    --primary-foreground: 60 40% 98%;
+
+    /* Secondary */
+    --secondary: 24 10% 15%;
+    --secondary-foreground: 60 40% 98%;
+
+    /* Muted */
+    --muted: 24 10% 15%;
+    --muted-foreground: 30 10% 60%;
+
+    /* Accent */
+    --accent: 24 10% 15%;
+    --accent-foreground: 60 40% 98%;
+
+    /* Destructive */
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 60 40% 98%;
+
+    /* Border */
+    --border: 24 10% 20%;
+    --input: 24 10% 20%;
+    --ring: 160 84% 39%;
+
+    /* Chart Colors */
+    --chart-1: 160 84% 39%;
+    --chart-2: 120 60% 45%;
+    --chart-3: 180 70% 42%;
+    --chart-4: 140 75% 36%;
+    --chart-5: 170 80% 40%;
+
+    /* Sidebar */
+    --sidebar-background: 24 10% 8%;
+    --sidebar-foreground: 60 40% 98%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 60 40% 98%;
+    --sidebar-accent: 24 10% 15%;
+    --sidebar-accent-foreground: 60 40% 98%;
+    --sidebar-border: 24 10% 20%;
+    --sidebar-ring: 160 84% 39%;
+  }
+}

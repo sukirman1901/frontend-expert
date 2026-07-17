@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "frontend-expert",
+  "description": "Chat-first frontend UI quality for AI agents — judgment, tokens, anti-slop, a11y, perf, testing.",
+  "owner": {
+    "name": "sukirman1901",
+    "url": "https://github.com/sukirman1901"
+  },
+  "plugins": [
+    {
+      "name": "frontend-expert",
+      "source": {
+        "source": "github",
+        "repo": "sukirman1901/frontend-expert"
+      },
+      "description": "Senior FE judgment + curated tokens, domain skills, agents, optional /ui /design /test-ui.",
+      "homepage": "https://github.com/sukirman1901/frontend-expert",
+      "license": "MIT",
+      "keywords": [
+        "frontend",
+        "design-system",
+        "shadcn",
+        "accessibility",
+        "anti-slop",
+        "tokens",
+        "judgment"
+      ]
+    }
+  ]
+}

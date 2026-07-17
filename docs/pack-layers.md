@@ -1,0 +1,47 @@
+# Pack layers
+
+How the pieces of Design System Enforcer fit together.
+
+```text
+┌──────────────────────────────────────────────────────────┐
+│  Natural chat (DEFAULT)         ← intent → skills auto   │
+│  Commands (/ui,/design,/test-ui)← OPTIONAL shortcuts     │
+├──────────────────────────────────────────────────────────┤
+│  Agents (ui-developer,              ← WHO                │
+│          design-reviewer)                                │
+├──────────────────────────────────────────────────────────┤
+│  Skills (8)                         ← HOW (+ judgment)   │
+├──────────────────────────────────────────────────────────┤
+│  References + tokens/               ← DEPTH              │
+├──────────────────────────────────────────────────────────┤
+│  Hooks + always-on rules            ← RUNTIME / ROUTING  │
+└──────────────────────────────────────────────────────────┘
+```
+
+## Rules
+
+1. **Chat-first** — never require a slash command when intent is clear (`AGENTS.md`, Cursor/Claude rules).
+2. **Commands orchestrate** — optional; list agent + skills; do not duplicate full skill bodies.
+3. **Agents do not invoke other agents** — user or command orchestrates. Agents stay slim.
+4. **Skills stay short** — rich `description` for auto-match; point to `references/` for depth.
+5. **References are not skills** — orphan refs (`webgl`, `monitoring`) until promoted.
+6. **Hooks** — Claude Code session reminder + anti-slop scan.
+
+## Agent ↔ command ↔ skills
+
+| Command | Agent | Skills (order) |
+|---------|-------|----------------|
+| `/ui` (or chat) | `ui-developer` | frontend-judgment* → design-tokens → ui-components → anti-ai-slop → accessibility (+ motion if needed) |
+| `/design` (or chat) | `design-reviewer` | anti-ai-slop → design-tokens → accessibility → web-performance (+ ui-components / judgment as needed) |
+| `/test-ui` (or chat) | `ui-developer` | frontend-testing → ui-components → accessibility |
+
+\* Judgment only when non-trivial / blank-canvas — see skill skip rules.
+
+## Maintainers
+
+```bash
+./scripts/sync-commands.sh   # command adapter parity
+./scripts/smoke-test.sh      # full pack integrity
+```
+
+See also: [references/README.md](../references/README.md).

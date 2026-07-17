@@ -1,0 +1,16 @@
+description = "Test user-facing UI — component tests, states, a11y, critical paths"
+
+prompt = """
+Invoke the ui-developer agent with testing in scope.
+
+Load skills in order: frontend-testing → ui-components → accessibility. Load anti-ai-slop only if verifying visual regressions tied to slop fixes.
+
+1. Identify the component or flow under test
+2. Prefer TDD for new behavior (red → green → refactor)
+3. Cover loading / error / empty when those states exist
+4. Prefer role/label queries over test IDs
+5. Add a11y assertions when tooling exists
+6. Run the project's test command when available and report results
+
+Modes via arguments: default, --component <name>, --tdd.
+"""
