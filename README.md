@@ -33,7 +33,7 @@ claude --plugin-dir ./frontend-expert
 ```bash
 git clone https://github.com/sukirman1901/frontend-expert.git
 cd frontend-expert
-./scripts/install.sh cursor-user          # personal Agent — symlinks, no drift
+./scripts/install.sh cursor-user          # personal Agent — skills + agents + commands (symlinks)
 # or project-local:
 ./scripts/install.sh cursor /path/to/your-app
 ```

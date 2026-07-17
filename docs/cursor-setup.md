@@ -13,6 +13,8 @@ From the pack repo:
 This:
 
 - Symlinks each pack skill → `~/.cursor/skills/<name>`
+- Symlinks agents → `~/.cursor/agents/{ui-developer,design-reviewer,test-engineer}.md`
+- Symlinks slash commands → `~/.cursor/commands/{ui,design,audit,test-ui,polish}.md`
 - Symlinks `references/` → `~/.cursor/skills/references`
 - Symlinks `tokens/` → `~/.cursor/skills/tokens`
 - Symlinks the pack → `~/.cursor/packs/frontend-expert`
@@ -20,7 +22,7 @@ This:
 
 After `git pull` on the pack repo, Cursor sees updates automatically (no re-copy).
 
-Re-run `cursor-user` after adding a **new** skill folder name (script lists skills explicitly).
+Re-run `cursor-user` after adding a **new** skill folder, agent, or command name (script lists them explicitly).
 
 ## Project-local skills (copy)
 

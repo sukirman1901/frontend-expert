@@ -35,7 +35,7 @@ Usage: ./scripts/install.sh <target>
 Targets:
   claude-plugin     Print Claude Code plugin-dir command
   cursor [dir]      Copy skills into <dir>/.cursor/skills (default: cwd) — project-local
-  cursor-user       Symlink pack skills + refs + tokens into ~/.cursor (no drift vs this repo)
+  cursor-user       Symlink skills + agents + commands + refs + tokens into ~/.cursor (no drift)
   opencode          Symlink pack into ~/.config/opencode/skills/design-system-enforcer
   gemini [dir]      Copy .gemini/commands into <dir>/.gemini/commands (default: cwd)
   all               cursor (cwd) + opencode symlink
@@ -71,7 +71,9 @@ sync_cursor_user() {
   local skills_dir="${HOME}/.cursor/skills"
   local rules_dir="${HOME}/.cursor/rules"
   local packs_dir="${HOME}/.cursor/packs"
-  mkdir -p "$skills_dir" "$rules_dir" "$packs_dir"
+  local agents_dir="${HOME}/.cursor/agents"
+  local commands_dir="${HOME}/.cursor/commands"
+  mkdir -p "$skills_dir" "$rules_dir" "$packs_dir" "$agents_dir" "$commands_dir"
 
   for name in "${PACK_SKILLS[@]}"; do
     local src="$ROOT/skills/$name"
@@ -100,10 +102,30 @@ sync_cursor_user() {
   ln -sfn "$ROOT" "$packs_dir/frontend-expert"
   echo "  link packs/frontend-expert"
 
+  for agent in ui-developer design-reviewer test-engineer; do
+    local src="$ROOT/agents/${agent}.md"
+    if [ ! -f "$src" ]; then
+      echo "WARN: missing $src" >&2
+      continue
+    fi
+    ln -sfn "$src" "$agents_dir/${agent}.md"
+    echo "  link agent ${agent}.md"
+  done
+
+  for cmd in ui design audit test-ui polish; do
+    local src="$ROOT/commands/${cmd}.md"
+    if [ ! -f "$src" ]; then
+      echo "WARN: missing $src" >&2
+      continue
+    fi
+    ln -sfn "$src" "$commands_dir/${cmd}.md"
+    echo "  link command /${cmd}"
+  done
+
   cp "$ROOT/.cursor/rules/design-system-enforcer.mdc" "$rules_dir/design-system-enforcer.mdc"
   echo "  copy rule design-system-enforcer.mdc"
 
-  echo "Cursor user install OK → ~/.cursor (skills/refs/tokens are symlinks into $ROOT)"
+  echo "Cursor user install OK → ~/.cursor (skills/agents/commands/refs/tokens symlinks into $ROOT)"
   echo "App CSS: import from ~/.cursor/packs/frontend-expert/tokens/ or copy into the project (docs/cursor-setup.md)."
 }
 
