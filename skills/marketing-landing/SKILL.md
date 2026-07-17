@@ -4,15 +4,18 @@ description: >-
   Marketing / SaaS landing page structure — section stack (hero, logo cloud,
   features, gallery, testimonials, CTA, footer), not a lone hero. Use when
   building or auditing landing pages, marketing sites, "landing page",
-  "homepage marketing", Tailark/shadcn block-style pages, or when the page
-  feels incomplete after only a hero. Pair with motion, fe-seo, anti-ai-slop.
+  "homepage marketing", or when the page feels incomplete after only a hero.
+  Hand-roll sections with pack tokens/craft — never default to installing a
+  third-party block registry. Pair with motion, fe-seo, anti-ai-slop.
 ---
 
 # Marketing Landing
 
 ## Overview
 
-A landing page is a **stack of section jobs**, not a WebGL hero with a footer. Use the section vocabulary in `references/landing-sections.md` (Tailark / shadcn-blocks style).
+A landing page is a **stack of section jobs**, not a WebGL hero with a footer. Use the section vocabulary in `references/landing-sections.md`.
+
+**Hand-roll** HTML/CSS (or the project’s components) from that recipe. Do **not** answer with `npx` / `shadcn add` / `@tailark/*` / registry install as the default.
 
 ## When to use
 
@@ -35,7 +38,7 @@ Header (simple) → Hero → Logo cloud → Features → Gallery (or product) �
 Testimonials → CTA → Footer
 ```
 
-Example recipe (Tailark-style ids — structure, not a required install):
+Example recipe ids (IA labels only — not packages to install):
 
 `header-10` · `hero-6` · `logo-cloud-10` · `features-9` · `gallery-8` · `testimonials-6` · `cta-11` · `footer-2`
 
@@ -49,6 +52,7 @@ Ignore obsessing over Header *variants* — keep header quiet; invest in Hero �
 | **Hero budget** | Brand (hero-level) + one headline + one lede + one CTA group + one dominant visual plane |
 | **No hero-only page** | At least Logo cloud **or** Features + CTA + Footer beyond the hero |
 | **Proof order** | Trust (logos) before deep features when possible |
+| **Hand-roll** | Implement sections yourself — registry/block CLI install is **not** the pack default |
 | **Anti-slop** | No purple defaults, no 3 identical icon-cards as the whole Features story, no Lorem, no equal-weight CTA row in hero |
 | **Motion** | ≤2 families from `motion-families.md`; hand-roll; honor reduced-motion |
 | **SEO** | Unique title/description/OG via `fe-seo` |
@@ -56,9 +60,9 @@ Ignore obsessing over Header *variants* — keep header quiet; invest in Hero �
 ## Workflow
 
 1. Confirm surface = **marketing landing** (not dashboard)
-2. Pick a **recipe** from `references/landing-sections.md` (or user-named blocks)
+2. Pick a **recipe** from `references/landing-sections.md` (or user-named section jobs)
 3. Tokens via decision tree (`design-tokens`) — landing surface signal OK
-4. Implement sections in order; Reicon for icons (`ui-components`)
+4. **Hand-roll** sections in order; Reicon for icons (`ui-components`)
 5. Responsive + full-width primary CTA <768 (`responsive-ui`)
 6. Light marketing motion (`motion`) — not decorative spam
 7. Scan `anti-ai-slop` + Conventions check
@@ -72,6 +76,7 @@ Ignore obsessing over Header *variants* — keep header quiet; invest in Hero �
 - [ ] Closing CTA section before footer
 - [ ] Footer: brand + essential links
 - [ ] No purple/Lorem/generic 3-card feature grid as the only Features pattern
+- [ ] Did **not** default to installing a block registry
 
 ## Depth
 

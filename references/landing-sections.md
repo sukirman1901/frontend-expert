@@ -1,6 +1,6 @@
 # Landing sections (marketing)
 
-Used by: `marketing-landing`. Vocabulary aligned with common **shadcn / Tailark-style** block catalogs (section *jobs*, not a required CLI install).
+Used by: `marketing-landing`. Pack-owned section **jobs** and recipes. Block ids like `hero-6` are **IA labels** only — implement by hand with pack tokens/craft. Never treat them as packages to install.
 
 ## Section catalog
 
@@ -41,7 +41,7 @@ Header → Hero → Logo cloud → Features → Gallery → Testimonials → CTA
 | 7 | `cta-11` | Final conversion |
 | 8 | `footer-2` | Close |
 
-Use these ids as **IA labels** when talking to the user. Installing `@tailark/*` is optional — hand-roll with pack tokens/craft is the default.
+Use these ids as **IA labels** when talking to the user or matching a named recipe. **Do not** install `@tailark/*`, shadcn block registries, or similar as the pack default — hand-roll the sections.
 
 ## Hero rules (pack)
 
