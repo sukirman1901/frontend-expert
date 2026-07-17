@@ -9,7 +9,7 @@ if ! command -v jq >/dev/null 2>&1; then
 fi
 
 jq -cn \
-  --arg message "frontend-expert loaded (chat-first + FE lifecycle + quality loop · 20 skills).
+  --arg message "frontend-expert loaded (chat-first + FE lifecycle + quality loop · 21 skills).
 
 Do NOT wait for slash commands. See AGENTS.md + docs/pillars.md.
 

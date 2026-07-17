@@ -6,6 +6,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TARGET="${1:-}"
 
 PACK_SKILLS=(
+  frontend-expert
   frontend-judgment
   design-tokens
   ui-components

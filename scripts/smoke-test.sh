@@ -10,6 +10,7 @@ bad() { echo "  FAIL $1" >&2; FAIL=1; }
 
 echo "== skills =="
 EXPECTED_SKILLS=(
+  frontend-expert
   frontend-judgment
   design-tokens
   ui-components
@@ -53,10 +54,10 @@ for s in "${EXPECTED_SKILLS[@]}"; do
   fi
 done
 
-if [ -d "$ROOT/skills/frontend-expert" ] || [ -d "$ROOT/skills/using-frontend-expert" ]; then
-  bad "legacy monolith skill folder still present"
+if [ -d "$ROOT/skills/using-frontend-expert" ]; then
+  bad "legacy using-frontend-expert folder still present"
 else
-  ok "no legacy monolith skills"
+  ok "no legacy using-frontend-expert skill"
 fi
 
 echo "== agents =="

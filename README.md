@@ -272,7 +272,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 20 skills (see docs/pillars.md)
+├── skills/                 # 21 skills: suite root `frontend-expert` + domain skills (see docs/pillars.md)
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
 ├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)
