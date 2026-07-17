@@ -136,7 +136,7 @@ Depth lives in `references/` — skills stay short and triggerable.
 frontend-expert/
 ├── skills/                 # 9 skills (judgment + domains + quality loop)
 ├── agents/                 # ui-developer, design-reviewer, test-engineer
-├── tokens/                 # 6 CSS presets (incl. neutral-oklch)
+├── tokens/                 # 7 CSS presets (incl. OKLCH)
 ├── references/             # Deep guides
 ├── commands/               # /ui /design /audit /test-ui /polish
 ├── hooks/                  # Claude Code runtime
@@ -154,6 +154,7 @@ frontend-expert/
 | Preset | Base | Primary | Best for |
 |--------|------|---------|----------|
 | `neutral-oklch` | Neutral | Mono (OKLCH) | Modern minimal, sharp edges |
+| `stone-oklch` | Warm stone | Mono warm (OKLCH) | Editorial, warm minimal |
 | `stone-emerald` | Stone | Emerald | Clean, minimal |
 | `zinc-blue` | Zinc | Blue | Professional dashboards |
 | `neutral-purple` | Neutral | Purple | Creative portfolios |
