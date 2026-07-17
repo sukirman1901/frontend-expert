@@ -52,4 +52,5 @@ Motion should clarify hierarchy and feedback, not decorate. Prefer short, purpos
 
 ## Depth
 
-Full reference: `references/motion.md`.
+Full reference: `references/motion.md`.  
+Micro press/hover/stagger craft: also load `ui-feel` (`references/ui-feel.md`).

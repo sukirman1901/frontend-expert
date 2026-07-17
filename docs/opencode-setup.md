@@ -14,8 +14,8 @@ ln -s /path/to/Design-system-enforcer ~/.config/opencode/skills/design-system-en
 
 ## Behavior
 
-- UI work → `/ui` mapping: `design-tokens` + `ui-components` + `anti-ai-slop` + `accessibility`
-- Design audit → `anti-ai-slop` + `accessibility` + `web-performance`
+- UI work → `/ui` mapping: `design-tokens` + `ui-components` + `anti-ai-slop` + `ui-feel` + `accessibility`
+- Design audit → `anti-ai-slop` + `ui-feel` + `accessibility` + `web-performance`
 - Tests → `frontend-testing` (`/test-ui`)
 - Motion / perf only when the task needs them
 

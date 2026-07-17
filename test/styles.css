@@ -566,6 +566,14 @@ body {
   color: hsl(var(--muted-foreground));
 }
 
+.row--danger {
+  background: hsl(var(--destructive) / 0.04);
+}
+
+.row--danger .row__title {
+  color: hsl(var(--destructive));
+}
+
 /* Desktop */
 @media (min-width: 768px) {
   .topbar {

@@ -1,5 +1,5 @@
 ---
-description: Build production UI with curated tokens — design-tokens, ui-components, anti-ai-slop, accessibility
+description: Build production UI with curated tokens — design-tokens, ui-components, anti-ai-slop, ui-feel, accessibility
 ---
 
 Invoke the ui-developer agent.
@@ -10,8 +10,9 @@ Invoke the ui-developer agent.
 2. `design-tokens`
 3. `ui-components`
 4. `anti-ai-slop`
-5. `accessibility` (light pass)
-6. `motion` — only if animation is in scope
+5. `ui-feel`
+6. `accessibility` (light pass)
+7. `motion` — only if animation is in scope
 
 ## Modes
 
@@ -27,5 +28,5 @@ Invoke the ui-developer agent.
 2. Choose tokens (preset or existing project system) — never invent raw hex
 3. Implement with composition, loading/error/empty states, mobile-first
 4. Make interactive elements keyboard accessible
-5. Scan for AI aesthetic patterns before finishing
-6. Report: implementation, tokens used, a11y notes, responsive notes
+5. Scan for AI aesthetic patterns, then apply `ui-feel` craft
+6. Report: implementation, tokens used, feel changes (Before/After if polish), a11y notes, responsive notes

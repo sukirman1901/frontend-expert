@@ -14,6 +14,7 @@ EXPECTED_SKILLS=(
   design-tokens
   ui-components
   anti-ai-slop
+  ui-feel
   accessibility
   web-performance
   motion

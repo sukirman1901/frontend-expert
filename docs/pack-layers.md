@@ -11,7 +11,7 @@ How the pieces of Design System Enforcer fit together.
 │          design-reviewer,                                │
 │          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
-│  Skills (9)                         ← HOW (+ quality loop)│
+│  Skills (10)                        ← HOW (+ feel + quality loop)│
 ├──────────────────────────────────────────────────────────┤
 │  References + tokens/               ← DEPTH              │
 ├──────────────────────────────────────────────────────────┤
@@ -32,8 +32,8 @@ How the pieces of Design System Enforcer fit together.
 
 | Command | Agent | Skills (order) |
 |---------|-------|----------------|
-| `/ui` (or chat) | `ui-developer` | frontend-judgment* → design-tokens → ui-components → anti-ai-slop → accessibility (+ motion if needed) |
-| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → design-tokens → accessibility → web-performance (+ ui-components / judgment / test gaps as needed) |
+| `/ui` (or chat) | `ui-developer` | frontend-judgment* → design-tokens → ui-components → anti-ai-slop → ui-feel → accessibility (+ motion if needed) |
+| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → design-tokens → accessibility → web-performance (+ ui-components / judgment / test gaps as needed) |
 | `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility |
 | `/polish` (or chat) | loop controller | `ui-quality-loop` → ui-developer + test-engineer + design-reviewer until gates pass |
 

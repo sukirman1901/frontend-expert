@@ -61,7 +61,7 @@ Keep the whole offer scannable — no essays.
 
 After a direction is set, load in order (unless the task is narrower):
 
-`design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility` (+ `motion` / `frontend-testing` if in scope)
+`design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `frontend-testing` if in scope)
 
 Do not re-litigate the approach mid-build unless new constraints appear.
 

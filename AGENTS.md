@@ -14,9 +14,10 @@ Guidance for AI coding agents when this pack is available.
 
 | User says / means | Load skills (order) | Optional shortcut |
 |-------------------|---------------------|-------------------|
-| Build/change UI, page, component, form, layout, styling | `frontend-judgment`* → `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility` | `/ui` |
+| Build/change UI, page, component, form, layout, styling | `frontend-judgment`* → `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` | `/ui` |
 | + animation / transition / motion | … + `motion` | `/ui` |
-| Audit design, AI slop, UI generik, visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` | `/design` or `/audit` |
+| Audit design, AI slop, UI generik, visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `accessibility` → `web-performance` | `/design` or `/audit` |
+| Feels off / rapihin detail / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) | `/ui` or `/polish` |
 | Test / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
 | Polish until good / rapihin sampai lulus audit | `ui-quality-loop` (build→test→audit→fix, max 3) | `/polish` |
 | Slow / LCP / optimize | `web-performance` | — |
@@ -45,6 +46,7 @@ Do **not** start coding a generic UI before a direction is set (unless skip rule
 | `design-tokens` | Theme, colors, spacing, styling UI |
 | `ui-components` | Components, pages, layouts, states |
 | `anti-ai-slop` | Build polish + design audits |
+| `ui-feel` | Micro craft — concentric radius, tabular-nums, press/hover feel |
 | `accessibility` | Every UI build/audit (light or full) |
 | `web-performance` | Perf / CWV / slow UI |
 | `motion` | Explicit animation requests only |

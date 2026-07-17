@@ -12,9 +12,9 @@ Run the **UI quality loop** until Critical/High findings are cleared (max 3 fix 
 1. `ui-quality-loop` — controller (gates, cycles, output)
 2. Then per step, as the loop requires:
    - `frontend-judgment` (first blank-canvas only)
-   - `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility`
+   - `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility`
    - `frontend-testing`
-   - design-reviewer audit chain (`anti-ai-slop`, tokens, a11y, `web-performance`)
+   - design-reviewer audit chain (`anti-ai-slop`, `ui-feel`, tokens, a11y, `web-performance`)
 
 ## Agents
 

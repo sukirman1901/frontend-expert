@@ -4,7 +4,7 @@ description: >-
   Loop UI work until quality gates pass — judge/build, test, audit, fix, repeat.
   Use when the user wants polished UI, "rapihin sampai bagus", polish until audit
   passes, fix Critical/High design findings, or /polish. Orchestrates
-  frontend-judgment, design-tokens, ui-components, anti-ai-slop, accessibility,
+  frontend-judgment, design-tokens, ui-components, anti-ai-slop, ui-feel, accessibility,
   frontend-testing, and design-reviewer scorecard. Do not use for one-shot tiny
   tweaks unless the user asked to keep iterating.
 ---
@@ -50,6 +50,7 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 | Gate | Pass when |
 |------|-----------|
 | **Anti-slop** | No Critical/High AI-aesthetic findings |
+| **UI feel** | No Critical/High craft issues on touched UI (concentric radius, hit overlap, `transition: all`, broken press/enter) |
 | **Tokens** | No Critical/High raw-hex / off-token color-radius issues (or custom system honored) |
 | **A11y** | No Critical keyboard/label/contrast findings (potential or measured) |
 | **States** | Loading/error/empty handled for interactive surfaces touched |
@@ -70,7 +71,7 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 ### Round 0 — Direction + build
 
 1. Load `frontend-judgment` if non-trivial / blank-canvas
-2. After direction: `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility` (+ `motion` if needed)
+2. After direction: `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` if needed)
 3. Produce UI
 
 ### Each cycle — Prove + audit + fix
@@ -119,6 +120,6 @@ FIX … | DONE | STOP (cap)
 ## Depth
 
 - Judgment: `frontend-judgment`  
-- Build: `design-tokens`, `ui-components`, `anti-ai-slop`, `accessibility`  
+- Build: `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`  
 - Test: `frontend-testing`  
-- Audit: `design-reviewer` + `references/anti-patterns.md` / a11y / performance as needed  
+- Audit: `design-reviewer` + `references/anti-patterns.md` / `references/ui-feel.md` / a11y / performance as needed  

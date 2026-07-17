@@ -4,7 +4,7 @@ Claude Code entry point for **Design System Enforcer**.
 
 ## Plugin assets
 
-- Skills: `skills/` (9 skills including `frontend-judgment` + `ui-quality-loop`)
+- Skills: `skills/` (10 skills including `frontend-judgment`, `ui-feel`, `ui-quality-loop`)
 - Agents: `agents/design-reviewer.md`, `agents/ui-developer.md`, `agents/test-engineer.md`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish` — **optional**
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
@@ -15,7 +15,7 @@ Claude Code entry point for **Design System Enforcer**.
 
 1. **Do not wait for slash commands.** Map intent → skills via `AGENTS.md` + rules
 2. Blank-canvas / ambiguous UI → `frontend-judgment` (2–3 approaches) **before** coding
-3. Then → `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility`
+3. Then → `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility`
 4. Tests when asked → `test-engineer` + `frontend-testing`
 5. Audit when asked → `design-reviewer` skill chain (`/design` or `/audit`); never fabricate visual scores
 6. “Rapihin / polish sampai bagus” → `ui-quality-loop` (`/polish`), capped iterations

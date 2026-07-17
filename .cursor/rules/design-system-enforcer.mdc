@@ -11,9 +11,10 @@ alwaysApply: true
 
 | User intent (examples) | Load skills in order |
 |------------------------|----------------------|
-| Build/change UI, page, screen, component, form, layout, styling | `frontend-judgment` (if non-trivial) → `design-tokens` → `ui-components` → `anti-ai-slop` → `accessibility` |
+| Build/change UI, page, screen, component, form, layout, styling | `frontend-judgment` (if non-trivial) → `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` |
 | Animation / transition / motion | above + `motion` |
-| Design audit, AI slop, "UI jelek/generik", visual review | `anti-ai-slop` → `design-tokens` → `accessibility` → `web-performance` (persona: `design-reviewer`; `/audit` = `/design`) |
+| Feels off / rapihin detail / micro polish | `ui-feel` (+ `anti-ai-slop` if generik) |
+| Design audit, AI slop, "UI jelek/generik", visual review | `anti-ai-slop` → `ui-feel` → `design-tokens` → `accessibility` → `web-performance` (persona: `design-reviewer`; `/audit` = `/design`) |
 | Tests / TDD / coverage / regresi UI | `frontend-testing` → `ui-components` → `accessibility` (persona: `test-engineer`) |
 | Polish / rapihin sampai bagus / until audit passes | `ui-quality-loop` → orchestrate build→test→audit→fix (max 3) |
 | Slow UI / LCP / optimize performance | `web-performance` (+ `ui-components` if touching UI) |

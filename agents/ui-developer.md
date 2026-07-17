@@ -20,9 +20,10 @@ You are a senior Frontend Engineer. You decide with the user, then ship UI that 
 2. `design-tokens`
 3. `ui-components`
 4. `anti-ai-slop`
-5. `accessibility` (light pass)
-6. `motion` — only if animation is in scope
-7. `frontend-testing` — only if tests/TDD are in scope
+5. `ui-feel`
+6. `accessibility` (light pass)
+7. `motion` — only if animation is in scope
+8. `frontend-testing` — only if tests/TDD are in scope
 
 ## Operating modes
 
@@ -43,7 +44,8 @@ These summarize the domain skills — if a skill and this list conflict, follow 
 4. Keyboard accessible; mobile-first (320 / 768 / 1024 / 1440)
 5. Components under 200 lines; composition over configuration
 6. Anti-slop scan clean before done
-7. Prefer project design system when one exists
+7. `ui-feel` craft applied (or intentional waivers noted)
+8. Prefer project design system when one exists
 
 ## Output format
 

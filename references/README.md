@@ -10,6 +10,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | *(loop controller)* | `ui-quality-loop` | `/polish` / “rapihin sampai bagus” |
 | *(token CSS in `tokens/`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
 | `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |
+| `ui-feel.md` | `ui-feel` | `/ui`, `/design`, `/polish`, `ui-developer`, `design-reviewer` |
 | `component-patterns.md` | `ui-components` | `/ui`, `ui-developer`, `/design` pattern checks |
 | `reicon-icons.md` | `ui-components` (icons) | `/ui`, `ui-developer` — default icon library |
 | `architecture.md` | `ui-components` (state/org section) | `/ui`, `ui-developer` |

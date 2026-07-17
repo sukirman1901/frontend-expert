@@ -1,6 +1,6 @@
 # Frontend Expert
 
-**Production UI quality for AI coding agents** — senior FE judgment, curated tokens, Reicon icons, anti-AI-slop enforcement.
+**Production UI quality for AI coding agents** — senior FE judgment, curated tokens, Reicon icons, UI feel craft, anti-AI-slop enforcement.
 
 **Chat-first:** talk normally. For blank-canvas UI the agent offers **2–3 approaches** before coding. Slash commands are **optional**.
 
@@ -70,6 +70,7 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 | Chat-first routing | Rules + skill `description`s match intent — no slash required |
 | Senior FE judgment | 2–3 approaches + tradeoffs before blank-canvas builds |
 | Anti-AI-slop | No random purple gradients, inconsistent spacing, generic heroes |
+| UI feel | Micro craft — concentric radius, tabular-nums, press/hover feel ([`ui-feel`](skills/ui-feel/SKILL.md)) |
 | Design tokens | 9 CSS presets in `tokens/` (OKLCH + HSL + Plasma landing) |
 | Icons | **[Reicon](https://reicon.dev)** by default — [references/reicon-icons.md](references/reicon-icons.md) |
 | WebGL backgrounds | **[Plasma Studio](https://plasma.nusaiba.dev/app/)** — pure WebGL, not Three.js by default — [references/webgl.md](references/webgl.md) |
@@ -95,8 +96,8 @@ Prefer natural chat. Use these only to pin a workflow:
 
 | Command | Purpose | Skills loaded |
 |---------|---------|---------------|
-| `/ui` | Build UI | judgment* → tokens → components → anti-slop → a11y (+ motion if needed) |
-| `/design` | Audit | anti-slop → tokens → a11y → web-performance (+ judgment for redesigns) |
+| `/ui` | Build UI | judgment* → tokens → components → anti-slop → **ui-feel** → a11y (+ motion if needed) |
+| `/design` | Audit | anti-slop → **ui-feel** → tokens → a11y → web-performance (+ judgment for redesigns) |
 | `/audit` | Alias of `/design` | same |
 | `/test-ui` | Prove UI | frontend-testing → components → a11y |
 | `/polish` | Quality loop | build → test → audit → fix until gates pass (max 3) |
@@ -117,7 +118,7 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 ---
 
-## Skills (9)
+## Skills (10)
 
 | Skill | Use when |
 |-------|----------|
@@ -125,6 +126,7 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 | `design-tokens` | Choosing/applying theme CSS variables |
 | `ui-components` | Components, layouts, states — **Reicon icons** |
 | `anti-ai-slop` | Detecting/fixing AI aesthetic patterns |
+| `ui-feel` | Micro craft that makes UI feel polished (“feels off”) |
 | `accessibility` | WCAG 2.1 AA checks and fixes |
 | `web-performance` | Core Web Vitals / loading optimization |
 | `motion` | Animations and micro-interactions only |
@@ -172,6 +174,16 @@ Full guide: [references/reicon-icons.md](references/reicon-icons.md) · Browse: 
 
 ---
 
+## UI feel (micro craft)
+
+Skill **`ui-feel`** — adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT).
+
+Concentric radius, optical alignment, tabular numbers, text-wrap, interruptible transitions, `scale(0.96)` press, hit areas, no `transition: all`. Runs after anti-slop on `/ui` and inside `/polish`.
+
+Guide: [references/ui-feel.md](references/ui-feel.md)
+
+---
+
 ## WebGL — Plasma Studio
 
 Canonical study for animated backgrounds: **[Plasma Studio](https://plasma.nusaiba.dev/app/)** — pure WebGL fragment shaders (Gradient · Dither · Raymarch). No Three.js required for hero backgrounds.
@@ -200,10 +212,10 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 9 skills
+├── skills/                 # 10 skills
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets
-├── references/             # Deep guides (incl. reicon-icons, webgl/Plasma)
+├── references/             # Deep guides (reicon, ui-feel, webgl/Plasma, …)
 ├── commands/               # /ui /design /audit /test-ui /polish
 ├── hooks/                  # Claude Code runtime
 ├── .claude-plugin/ .claude/ .codex-plugin/ .agents/
@@ -219,7 +231,7 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
+| Skill-backed | anti-patterns, **ui-feel**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
 | WebGL | [webgl.md](references/webgl.md) — Plasma Studio first |
 | Reference-only | monitoring — promote later if needed |
@@ -260,6 +272,7 @@ See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 
 ## Credits
 
+- [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) — UI feel craft (adapted as `ui-feel`)
 - [Reicon](https://reicon.dev) — default icon library
 - [Plasma](https://plasma.nusaiba.dev) — WebGL background studio (canonical study)
 - [shadcn/ui](https://ui.shadcn.com/) — design tokens and components

@@ -3,7 +3,7 @@ description = "Run a design system audit — AI aesthetic, tokens, accessibility
 prompt = """
 Invoke the design-reviewer agent.
 
-Load skills in order: anti-ai-slop → design-tokens (if available) → accessibility → web-performance. Use ui-components for pattern/state checks as needed. Use frontend-judgment when recommending redesign directions. Note frontend-testing gaps as Info only.
+Load skills in order: anti-ai-slop → ui-feel → design-tokens (if available) → accessibility → web-performance. Use ui-components for pattern/state checks as needed. Use frontend-judgment when recommending redesign directions. Note frontend-testing gaps as Info only.
 
 Run a design system audit on the current codebase:
 

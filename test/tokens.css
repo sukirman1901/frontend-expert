@@ -18,8 +18,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 6% 10%;
 
-    /* Primary - Blue */
-    --primary: 217 91% 60%;
+    /* Primary - Blue (L~50 for AA text/button contrast) */
+    --primary: 217 91% 50%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary */
@@ -28,26 +28,26 @@
 
     /* Muted */
     --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted-foreground: 240 4% 40%;
 
     /* Accent */
     --accent: 240 5% 96%;
     --accent-foreground: 240 6% 10%;
 
     /* Destructive */
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
     /* Border */
     --border: 240 6% 90%;
     --input: 240 6% 90%;
-    --ring: 217 91% 60%;
+    --ring: 217 91% 50%;
 
     /* Radius - Nova style: 0.5 */
     --radius: 0.5;
 
     /* Chart Colors */
-    --chart-1: 217 91% 60%;
+    --chart-1: 217 91% 50%;
     --chart-2: 199 89% 48%;
     --chart-3: 213 94% 68%;
     --chart-4: 205 84% 54%;
@@ -56,12 +56,12 @@
     /* Sidebar */
     --sidebar-background: 240 6% 98%;
     --sidebar-foreground: 240 6% 10%;
-    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary: 217 91% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 5% 96%;
     --sidebar-accent-foreground: 240 6% 10%;
     --sidebar-border: 240 6% 90%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 217 91% 50%;
   }
 
   .dark {
@@ -78,7 +78,7 @@
     --popover-foreground: 0 0% 98%;
 
     /* Primary - Blue */
-    --primary: 217 91% 60%;
+    --primary: 217 91% 50%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary */
@@ -87,23 +87,23 @@
 
     /* Muted */
     --muted: 240 4% 16%;
-    --muted-foreground: 240 5% 65%;
+    --muted-foreground: 240 5% 70%;
 
     /* Accent */
     --accent: 240 4% 16%;
     --accent-foreground: 0 0% 98%;
 
     /* Destructive */
-    --destructive: 0 62% 50%;
+    --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
     /* Border */
     --border: 240 4% 22%;
     --input: 240 4% 22%;
-    --ring: 217 91% 60%;
+    --ring: 217 91% 50%;
 
     /* Chart Colors */
-    --chart-1: 217 91% 60%;
+    --chart-1: 217 91% 50%;
     --chart-2: 199 89% 48%;
     --chart-3: 213 94% 68%;
     --chart-4: 205 84% 54%;
@@ -112,11 +112,11 @@
     /* Sidebar */
     --sidebar-background: 240 6% 8%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary: 217 91% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4% 16%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 4% 22%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 217 91% 50%;
   }
 }

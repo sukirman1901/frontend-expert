@@ -13,8 +13,9 @@ Build production-quality UI. Orchestrates domain skills — not a single monolit
 2. `design-tokens` — pick preset or project system
 3. `ui-components` — implement with states + responsive
 4. `anti-ai-slop` — scan before done
-5. `accessibility` — light pass (keyboard, labels, contrast)
-6. `motion` — **only if** animation is in scope
+5. `ui-feel` — micro craft (radius, press, tabular-nums, …)
+6. `accessibility` — light pass (keyboard, labels, contrast)
+7. `motion` — **only if** animation is in scope
 
 ## What It Does
 
@@ -22,7 +23,8 @@ Build production-quality UI. Orchestrates domain skills — not a single monolit
 2. Implements components — composition-first, under 200 lines, CSS variables only
 3. Handles loading, error, empty
 4. Enforces accessibility basics
-5. Scans for AI slop before complete
+5. Scans for AI slop, then applies `ui-feel` polish
+6. Completes with a11y light pass
 
 ## Usage
 

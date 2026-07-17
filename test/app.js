@@ -5,11 +5,31 @@
   const navItems = document.querySelectorAll(".settings-nav__item");
   const sections = document.querySelectorAll("[data-section-panel]");
 
+  function isMobileNav() {
+    return window.matchMedia("(max-width: 767px)").matches;
+  }
+
+  function closeMobileNav({ restoreFocus = false } = {}) {
+    if (!nav.classList.contains("is-open")) return;
+    nav.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    if (restoreFocus) {
+      toggle.focus();
+    }
+  }
+
+  function openMobileNav() {
+    nav.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    const firstItem = nav.querySelector(".settings-nav__item");
+    firstItem?.focus();
+  }
+
   function setSection(id) {
     navItems.forEach((btn) => {
       const active = btn.dataset.section === id;
       if (active) {
-        btn.setAttribute("aria-current", "page");
+        btn.setAttribute("aria-current", "true");
       } else {
         btn.removeAttribute("aria-current");
       }
@@ -21,14 +41,11 @@
       section.classList.toggle("is-hidden", !match);
     });
 
-    if (window.matchMedia("(max-width: 767px)").matches) {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
+    if (isMobileNav()) {
+      closeMobileNav();
     }
 
-    const heading = document.querySelector(
-      `#section-${id} h1`
-    );
+    const heading = document.querySelector(`#section-${id} h1`);
     if (heading) {
       document.title = `${heading.textContent} — Settings — Acme`;
     }
@@ -36,8 +53,18 @@
 
   toggle.addEventListener("click", () => {
     const open = !nav.classList.contains("is-open");
-    nav.classList.toggle("is-open", open);
-    toggle.setAttribute("aria-expanded", String(open));
+    if (open) {
+      openMobileNav();
+    } else {
+      closeMobileNav({ restoreFocus: true });
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (!nav.classList.contains("is-open") || !isMobileNav()) return;
+    event.preventDefault();
+    closeMobileNav({ restoreFocus: true });
   });
 
   navItems.forEach((btn) => {
