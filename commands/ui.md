@@ -10,7 +10,7 @@ Build production-quality UI. Orchestrates domain skills — not a single monolit
 ## Skills to load (in order)
 
 1. `frontend-judgment` — non-trivial / blank-canvas only (see skip rules)
-2. `design-tokens` — pick preset or project system
+2. `design-tokens` — decision tree: custom → explicit → Plasma hard-gate → score
 3. `ui-components` — implement with states + responsive
 4. `anti-ai-slop` — scan before done
 5. `ui-feel` — micro craft (radius, press, tabular-nums, …)
@@ -20,7 +20,7 @@ Build production-quality UI. Orchestrates domain skills — not a single monolit
 
 ## What It Does
 
-1. Selects tokens (preset from `tokens/` or existing design system)
+1. Selects tokens via decision tree (custom → explicit → Plasma hard-gate → score)
 2. Implements components — composition-first, under 200 lines, CSS variables only
 3. **Ships Reicon icons** in nav/toolbars/empty/icon-buttons (CDN or package) unless waiver
 4. Handles loading, error, empty
@@ -31,9 +31,9 @@ Build production-quality UI. Orchestrates domain skills — not a single monolit
 ## Usage
 
 ```
-/ui                      # Token mode (default)
-/ui --token <file>       # Specific preset
-/ui --custom             # Use project's existing design system
+/ui                      # Decision tree (default)
+/ui --token <file>       # Explicit preset
+/ui --custom             # Project design system
 ```
 
 ## Agent Invoked

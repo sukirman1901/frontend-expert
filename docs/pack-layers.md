@@ -39,6 +39,17 @@ How the pieces of Design System Enforcer fit together.
 
 \* Judgment only when non-trivial / blank-canvas — see skill skip rules.
 
+## Token source decision tree
+
+Canonical detail: [`references/token-preset-scoring.md`](../references/token-preset-scoring.md).
+
+```text
+--custom / existing theme / keep palette?  → CUSTOM (style-infer, no score)
+--token / named preset?                    → EXPLICIT file (no score)
+Explicit Plasma brand?                     → plasma-landing (hard-gate)
+else                                       → SCORE (signals → n/24 → #1)
+```
+
 ## Maintainers
 
 ```bash

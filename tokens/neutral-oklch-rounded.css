@@ -1,7 +1,7 @@
 /*
  * Neutral OKLCH Rounded — Monochrome design system with soft radius (shadcn-style)
  * Base: Neutral | Primary: near-black / near-white | Format: OKLCH | Radius: 0.625rem
- * Best for: Modern product UI that wants mono OKLCH + default shadcn rounding
+ * Affinity hint: Modern product UI that wants mono OKLCH + default shadcn rounding
  *
  * Differs from neutral-oklch.css: radius 0.625rem; accent matches primary weight
  * Usage: background: var(--background); — do not wrap in hsl()

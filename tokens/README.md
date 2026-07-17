@@ -2,9 +2,18 @@
 
 Curated CSS design tokens for this pack. Prefer the **project’s existing** design system when one exists (`design-tokens` custom mode).
 
+## How agents choose
+
+Walk the **decision tree** in `references/token-preset-scoring.md` (first match wins):
+
+1. Custom / existing theme / keep palette → project system (no score)
+2. `--token` / named preset → that file (no score)
+3. Explicit Plasma brand → `plasma-landing.css` (hard-gate)
+4. Else → **score** presets (max 24) and emit Token score block
+
 ## Quick pick
 
-| Preset | Format | Base | Primary | Radius | Best for |
+| Preset | Format | Base | Primary | Radius | Affinity hint |
 |--------|--------|------|---------|--------|----------|
 | `neutral-oklch.css` | OKLCH | neutral | mono | 0 | Modern minimal / sharp |
 | `neutral-oklch-rounded.css` | OKLCH | neutral | mono | 0.625rem | Mono + soft radius |
@@ -61,9 +70,10 @@ Map utilities to the same CSS variables your components already use (`bg-backgro
 
 ## Agent rules
 
-1. Detect existing theme → custom mode (don’t force a preset)
-2. Style-infer from 2–3 real components when custom
-3. Never invent raw purple/indigo hex outside the chosen token source
-4. Spacing still on `0.25rem` scale even when colors come from tokens
+1. Walk the decision tree in `references/token-preset-scoring.md` (do not jump to affinity hints)
+2. Custom → style-infer from 2–3 real components
+3. Score path → emit ranked scores; never invent purple without brand cue
+4. Never invent raw purple/indigo hex outside the chosen token source
+5. Spacing still on `0.25rem` scale even when colors come from tokens
 
-Skill: `design-tokens`. Theory: `references/ux-foundations.md`.
+Skill: `design-tokens`. Tree + scoring: `references/token-preset-scoring.md`. Theory: `references/ux-foundations.md`.

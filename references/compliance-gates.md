@@ -10,13 +10,15 @@ Report this block (fill every line):
 
 ```markdown
 ## Conventions check
-- Tokens: <preset path | project system | waiver>
+- Tokens: <preset (score n/24 | explicit | hard-gate) | project system | waiver>
 - Icons: <Reicon (package/CDN) | existing lib: … | waiver: text-only UI>
 - States: loading / empty / error covered? <yes | n/a | waiver>
 - A11y: labels + focus noted? <yes | waiver>
 - WebGL: <Plasma.init … | n/a | waiver: used Three because …>
 - Motion: <none | skill motion used | waiver>
 ```
+
+When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or `(hard-gate)` when those branches apply.
 
 ## Hard defaults (must not silently skip)
 
@@ -26,7 +28,7 @@ Report this block (fill every line):
 | **Vanilla HTML** | CDN: `unpkg.com/reicon/cdn/reicon.min.js` + `<re-icon icon="…">` | Same as above |
 | **React/Vue/Svelte** | `reicon-react` / `reicon-vue` / `reicon-svelte` | Same as above |
 | **WebGL / shader / plasma / canvas bg** | Load skill `webgl` → Plasma Studio / `Plasma.init` | User explicitly wants Three.js/R3F scene graph |
-| **Tokens** | Project system, else `tokens/*.css` | — |
+| **Tokens** | Project system, else full tree: custom → explicit → Plasma hard-gate → score (`token-preset-scoring.md`) | Waiver only |
 | **Slop** | No purple/indigo defaults, no Lorem, no `transition: all` | Brand token already is purple (e.g. `plasma-landing`) |
 
 ## Icon placement expectations

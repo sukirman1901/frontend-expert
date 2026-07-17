@@ -1,5 +1,69 @@
 # Pack audit log
 
+## 2026-07-17 — Post token-scoring gap audit
+
+**Trigger:** Many improvements (scoring, decision tree, compliance) — fear of adapter/doc drift.
+
+**Smoke:** `./scripts/smoke-test.sh` (after fixes) must PASS; asserts `token-preset-scoring.md` + E6.
+
+### Verdict
+
+Canonical tree in `references/token-preset-scoring.md` was solid, but **always-on surfaces still said “pick `tokens/*.css`”**, so agents could bypass scoring. `webgl` also nudged `plasma-landing` for any shader bg (wrong vs Plasma hard-gate).
+
+### Fixed this pass (Critical / High)
+
+| Gap | Fix |
+|-----|-----|
+| Cursor / Claude / AGENTS / session-start vibe-pick | Decision tree one-liners |
+| `webgl` auto `plasma-landing` | Chrome follows token tree; Plasma only on brand/hard-gate/explicit |
+| `ui-developer` “Token mode = pick preset” | Modes = custom / explicit / hard-gate / score |
+| Gemini `ui.toml` | Tree + Token score |
+| `CLAUDE.md` | Tree after judgment |
+| anti-slop / anti-patterns “create purple token file” | Forbid inventing purple; tree only |
+| E1 purple-reject | Expect score path, not vibe preset |
+| `ui-quality-loop` Tokens gate | Require tree + Conventions token line |
+| Smoke | Assert scoring ref + E6 + compliance-gates |
+
+### Remaining (intentionally deferred)
+
+| Pri | Gap | Notes |
+|-----|-----|--------|
+| L | Design Lab browser `/explore` | Out of scope by choice |
+| L | Historical AUDIT rows below | Superseded — leave as history |
+
+### Closed this pass (was Medium/Low)
+
+| Gap | Fix |
+|-----|-----|
+| design-reviewer missing Token score check | Greenfield Token source check (High if missing) |
+| “Best for” reads as picker | Renamed → **Affinity hint** (docs + CSS headers) |
+| install `tokens/` not linked | `cursor` rsync + `cursor-user` symlink `tokens/` |
+| sync-commands no tree assert | ui adapters must mention decision tree / scoring |
+| fe-lifecycle anti-patterns | Tree + no purple token invent |
+
+### Layer health (current)
+
+| Layer | Status |
+|-------|--------|
+| Skills | **12** |
+| Agents | 3 |
+| Commands | 5 (+ adapters) |
+| Token presets | 9 + scoring tree |
+| Evals | E1–E6 |
+| Hooks | session-start + anti-slop |
+| Always-on rules | Aligned with decision tree (this pass) |
+
+### Canonical token tree (do not regress)
+
+```text
+custom / existing / keep palette → CUSTOM
+--token / named preset           → EXPLICIT
+Plasma brand                     → HARD-GATE plasma-landing
+else                             → SCORE (n/24)
+```
+
+---
+
 ## 2026-07-17 — Compliance gates (Reicon / WebGL follow-through)
 
 Problem: skills installed but agent shipped `test/` settings with **zero icons**.  

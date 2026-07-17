@@ -21,10 +21,10 @@ Blank-canvas / ambiguous UI → 2–3 approaches + tradeoffs + recommendation **
 
 ## Hard rules
 
-1. CSS variables from `tokens/` or the project's existing design system
+1. Prefer project design system; else walk token decision tree (custom → explicit → Plasma hard-gate → score) in `references/token-preset-scoring.md` — do not vibe-pick presets
 2. **Icons: MUST use [Reicon](https://reicon.dev)** unless project icon lib exists or text-only waiver (`references/reicon-icons.md`, `references/compliance-gates.md`)
 3. WebGL/shader/plasma → load `webgl`; prefer Plasma Studio — no parallel invented stack
-4. No purple/indigo defaults, `rounded-2xl` everywhere, or Lorem ipsum
+4. No purple/indigo defaults, `rounded-2xl` everywhere, or Lorem ipsum (purple OK only via scored/hard-gated/explicit token e.g. `plasma-landing`)
 5. Loading / error / empty states; keyboard accessible
 6. Before DONE on UI builds → **Conventions check** (`references/compliance-gates.md`)
 7. Slash commands are optional shortcuts only (`/ui` `/design` `/audit` `/test-ui` `/polish`)

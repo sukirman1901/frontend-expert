@@ -47,6 +47,18 @@ if ! rg -q 'design' "$ROOT/commands/audit.md"; then
   FAIL=1
 fi
 
+echo "== ui token decision tree =="
+for f in \
+  "$ROOT/commands/ui.md" \
+  "$ROOT/.claude/commands/ui.md" \
+  "$ROOT/.gemini/commands/ui.toml"
+do
+  if ! rg -q 'decision tree|token-preset-scoring' "$f"; then
+    echo "MISSING decision tree / token-preset-scoring in $f" >&2
+    FAIL=1
+  fi
+done
+
 if [ "$FAIL" -ne 0 ]; then
   echo "sync-commands: FAILED" >&2
   exit 1

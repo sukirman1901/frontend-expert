@@ -17,16 +17,16 @@ Invoke the ui-developer agent.
 
 ## Modes
 
-- **`/ui`** — token mode (default): pick a preset from `tokens/` or use the project's existing tokens
-- **`/ui --token <file>`** — force a specific token preset
-- **`/ui --custom`** — adapt to the project's existing design system
+- **`/ui`** — token mode: walk decision tree in `references/token-preset-scoring.md`
+- **`/ui --token <file>`** — force a specific token preset (explicit branch)
+- **`/ui --custom`** — project's existing design system (custom branch)
 
 `$ARGUMENTS` selects the mode and options.
 
 ## What to do
 
 1. Choose direction via `frontend-judgment` when the UI is non-trivial / blank-canvas (2–3 approaches); skip for tiny clear fixes
-2. Choose tokens (preset or existing project system) — never invent raw hex
+2. Choose tokens via decision tree (custom → explicit → Plasma hard-gate → score) — never invent raw hex; emit Token score on score path
 3. Implement with composition, loading/error/empty states, mobile-first
 4. Make interactive elements keyboard accessible
 5. Scan for AI aesthetic patterns, then apply `ui-feel` craft

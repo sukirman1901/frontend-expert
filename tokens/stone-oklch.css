@@ -1,7 +1,7 @@
 /*
  * Stone OKLCH — Warm stone / paper design system (shadcn-style)
  * Base: Warm stone | Primary: near-black warm | Format: OKLCH | Radius: 0
- * Best for: Editorial, docs, product UI with soft warmth (not cold gray)
+ * Affinity hint: Editorial, docs, product UI with soft warmth (not cold gray)
  *
  * Usage: background: var(--background); — do not wrap in hsl()
  */

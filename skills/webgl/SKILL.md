@@ -30,7 +30,7 @@ Default path for animated **fullscreen backgrounds**: [Plasma Studio](https://pl
 2. Prefer Studio tune → export config over rewriting GLSL
 3. Drop in `shader-source` + `plasma-engine` → `Plasma.init(id, config)`
 4. Call `destroy()` on route unmount; honor `prefers-reduced-motion`
-5. UI chrome uses tokens (`plasma-landing` or project system); icons Reicon
+5. UI chrome uses tokens via the **token decision tree** (`references/token-preset-scoring.md`) — do **not** auto-force `plasma-landing` just because WebGL is on; use `plasma-landing` only for Plasma brand / hard-gate / explicit `--token`
 6. Note WebGL line in **Conventions check** (`references/compliance-gates.md`)
 
 ## Checklist

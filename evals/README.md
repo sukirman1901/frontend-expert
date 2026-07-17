@@ -14,6 +14,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E3 | Quality loop cap | [loop-cap.md](./loop-cap.md) |
 | E4 | Rapihin routing | [rapihin-routing.md](./rapihin-routing.md) |
 | E5 | Reicon + WebGL compliance | [reicon-webgl-compliance.md](./reicon-webgl-compliance.md) |
+| E6 | Token preset scoring | [token-preset-scoring.md](./token-preset-scoring.md) |
 
 ## How to run
 

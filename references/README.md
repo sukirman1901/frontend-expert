@@ -13,6 +13,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | `compliance-gates.md` | `ui-components`, `ui-developer`, always-on rules | Ship checklist — Reicon/WebGL/tokens must not be silently skipped |
 | *(loop controller)* | `ui-quality-loop` | `/polish` / “rapihin sampai bagus” |
 | *(token CSS in `tokens/` + `tokens/README.md`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
+| `token-preset-scoring.md` | `design-tokens`, `frontend-judgment` | Canonical decision tree + weighted scoring (max 24) |
 | `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |
 | `ui-feel.md` | `ui-feel` | `/ui`, `/design`, `/polish`, `ui-developer`, `design-reviewer` |
 | `component-patterns.md` | `ui-components` | `/ui`, `ui-developer`, `/design` pattern checks |
@@ -27,7 +28,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 
 ## Evals
 
-Behavioral scenarios: [`evals/`](../evals/) (purple reject, scorecard honesty, loop cap, rapihin routing).
+Behavioral scenarios: [`evals/`](../evals/) (purple reject, scorecard honesty, loop cap, rapihin routing, token scoring).
 
 ## Missing on purpose
 

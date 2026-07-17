@@ -126,7 +126,10 @@ echo "== references map =="
 [ -f "$ROOT/docs/pack-layers.md" ] && ok "docs/pack-layers.md" || bad "docs/pack-layers.md"
 [ -f "$ROOT/tokens/README.md" ] && ok "tokens/README.md" || bad "tokens/README.md"
 [ -f "$ROOT/evals/README.md" ] && ok "evals/README.md" || bad "evals/README.md"
+[ -f "$ROOT/evals/token-preset-scoring.md" ] && ok "evals/token-preset-scoring.md (E6)" || bad "evals/token-preset-scoring.md"
 [ -f "$ROOT/references/fe-lifecycle.md" ] && ok "fe-lifecycle.md" || bad "fe-lifecycle.md"
+[ -f "$ROOT/references/token-preset-scoring.md" ] && ok "token-preset-scoring.md" || bad "token-preset-scoring.md"
+[ -f "$ROOT/references/compliance-gates.md" ] && ok "compliance-gates.md" || bad "compliance-gates.md"
 
 if [ "$FAIL" -ne 0 ]; then
   echo

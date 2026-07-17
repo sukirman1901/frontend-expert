@@ -51,7 +51,7 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 |------|-----------|
 | **Anti-slop** | No Critical/High AI-aesthetic findings |
 | **UI feel** | No Critical/High craft issues on touched UI (concentric radius, hit overlap, `transition: all`, broken press/enter) |
-| **Tokens** | No Critical/High raw-hex / off-token color-radius issues (or custom system honored) |
+| **Tokens** | No Critical/High raw-hex / off-token issues; greenfield pack preset used decision tree + Token score / `(explicit)` / `(hard-gate)` / project system in Conventions check |
 | **A11y** | No Critical keyboard/label/contrast findings (potential or measured) |
 | **States** | Loading/error/empty handled for interactive surfaces touched |
 | **Tests** | Planned critical cases green, or **explicit waiver** if no test runner / out of scope (document why) |
@@ -73,7 +73,7 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 ### Round 0 — Direction + build
 
 1. Load `frontend-judgment` if non-trivial / blank-canvas
-2. After direction: `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `webgl` if needed)
+2. After direction: `design-tokens` (walk decision tree in `token-preset-scoring.md`) → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `webgl` if needed)
 3. Produce UI + **Conventions check** (`references/compliance-gates.md`)
 
 ### Each cycle — Prove + audit + fix

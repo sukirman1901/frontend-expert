@@ -13,7 +13,7 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 - Check for HSL values with hue around 260-280
 - Check for class names like `text-purple-*`, `bg-indigo-*`
 
-**Fix:** Use colors from the token file. If no token file exists, create one with curated colors.
+**Fix:** Use colors from the chosen token source (project system, or pack preset via `references/token-preset-scoring.md`). Do **not** invent a purple/indigo token file to “legitimize” slop. Purple is OK only when the decision tree lands on `plasma-landing` (hard-gate) or `neutral-purple` (portfolio/violet cue + score).
 
 ### Excessive Gradients
 

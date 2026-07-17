@@ -9,12 +9,12 @@ For blank-canvas or ambiguous UI, offer 2–3 approaches with tradeoffs and one 
 
 Build UI that looks design-system-aware, not AI-generated:
 
-1. Use CSS custom properties from tokens/ (or the project's existing design system) — never raw hex
+1. Choose tokens via decision tree in references/token-preset-scoring.md: custom → explicit (--token) → Plasma hard-gate → score (emit Token score n/24). Never vibe-pick or invent raw hex.
 2. Follow spacing scale (0.25rem increments) and token border-radius
 3. Handle loading, error, and empty states
 4. Make interactive elements keyboard accessible
 5. Scan for AI aesthetic patterns, then apply ui-feel craft
 6. Report implementation, tokens used, Conventions check (Reicon/tokens/states), a11y notes, and responsive behavior
 
-Modes via arguments: token mode (default), --token <file>, --custom.
+Modes via arguments: default = decision tree, --token <file> = explicit, --custom = project system.
 """

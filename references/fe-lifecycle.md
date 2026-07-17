@@ -23,7 +23,7 @@ Default quality-loop cap in this pack: **3** audit→fix cycles (`ui-quality-loo
 |---|--------|-----|-----------------|
 | 1 | **Pahami** | Job user, constraint, existing UI vs greenfield | Chat; read `DESIGN_MEMORY.md` if present |
 | 2 | **Putuskan** | 2–3 approaches on **distinct axes**; wait for pick | `frontend-judgment` |
-| 3 | **Sistem** | Project tokens/theme, or pack preset; style-infer from existing components | `design-tokens` |
+| 3 | **Sistem** | Walk token **decision tree**: custom / explicit / Plasma hard-gate / score (`token-preset-scoring.md`); style-infer when custom | `design-tokens` |
 | 4 | **Bangun** | Composition, responsive, loading/empty/error; icons via Reicon | `ui-components` |
 | 5 | **Haluskan** | Kill AI slop → micro craft (radius, press, type wrap, …) | `anti-ai-slop` → `ui-feel` |
 | 6 | **A11y** | Keyboard, labels, contrast, semantics | `accessibility` |
@@ -52,11 +52,14 @@ One-shot build (`/ui` or “bikin halaman”): stages **1→6** (judgment only i
 
 ## Anti-patterns in process
 
-- Coding blank-canvas UI before a direction is set  
+- Coding blank-canvas UI before a direction is set (skipping judgment)  
+- Picking a pack preset from affinity-hint tables without the decision tree  
+- Inventing a purple token file to rubber-stamp AI-slop purple  
 - Full polish loop for a one-line copy tweak  
-- Infinite audit cycles  
+- Infinite audit cycles (always cap)  
 - Inventing a test stack just to pass the Tests gate (waive instead)  
 - Fabricating visual scores without tokens/screenshots  
+- Agents invoking other agents instead of session orchestration  
 
 ## Related
 

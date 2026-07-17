@@ -30,7 +30,7 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 
 | Pattern | Detection | Fix |
 |---------|-----------|-----|
-| Purple/indigo defaults | `#7c3aed`, `bg-purple-*`, `text-indigo-*` | Token colors only |
+| Purple/indigo defaults | `#7c3aed`, `bg-purple-*`, `text-indigo-*` | Token colors only (via decision tree — never invent purple token file) |
 | Excessive gradients | `bg-gradient-to-*`, `linear-gradient` | Flat token colors |
 | Rounded everything | `rounded-2xl` / `rounded-3xl` everywhere | Token `--radius` |
 | Generic hero | Template layout, no content connection | Content-first layout |
@@ -41,7 +41,7 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 
 ## Checklist
 
-- [ ] No purple/indigo outside token file
+- [ ] No purple/indigo outside the chosen token source (scored / explicit / hard-gate / project system — not a vibe-picked purple file)
 - [ ] No unjustified gradients
 - [ ] Radius consistent with tokens
 - [ ] No Lorem ipsum
@@ -50,4 +50,5 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 
 ## Depth
 
-Full catalog and fixes: `references/anti-patterns.md`.
+Full catalog and fixes: `references/anti-patterns.md`.  
+Token source: `references/token-preset-scoring.md` (Plasma/`neutral-purple` only with brand cue).

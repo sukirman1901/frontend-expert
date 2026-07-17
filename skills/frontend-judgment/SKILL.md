@@ -93,7 +93,8 @@ After direction is set:
    - Read Tailwind theme / `:root` / theme file
    - Skim 2–3 existing buttons, cards, forms for padding, radius, shadow, type
    - Do **not** invent a parallel visual language
-2. Load: `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `frontend-testing` if in scope)
+2. **Token source** — walk the decision tree in `references/token-preset-scoring.md` (custom → explicit → Plasma hard-gate → score). Judgment sets axes/signals; it does **not** pick a preset by vibe. Include Token score / hard-gate / project system in the handoff.
+3. Load: `design-tokens` → `ui-components` → `anti-ai-slop` → `ui-feel` → `accessibility` (+ `motion` / `frontend-testing` if in scope)
 
 Optional short handoff note (when exploration was non-trivial):
 
@@ -102,7 +103,7 @@ Optional short handoff note (when exploration was non-trivial):
 - Axis chosen: …
 - Files likely touched: …
 - States: loading / empty / error / …
-- Tokens / primitives to reuse: …
+- Tokens: <project system | explicit | hard-gate | scored preset + n/24>
 ```
 
 Do not re-litigate the approach mid-build unless new constraints appear.
@@ -147,6 +148,7 @@ Pick A/B/C (or say “go with recommended”).
 
 Lifecycle A→Z: `references/fe-lifecycle.md`.  
 Axes + memory convention: `references/design-axes.md`.  
+Token preset scoring: `references/token-preset-scoring.md`.  
 UX/UI theory + color for products: `references/ux-foundations.md`.  
 Anti-patterns: `anti-ai-slop` + `references/anti-patterns.md`.  
 Domain how-to stays in the other skills.

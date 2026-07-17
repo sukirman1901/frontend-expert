@@ -83,7 +83,7 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 
 ### Defaults (when the project has no standard yet)
 
-1. **Tokens** — pick a preset from `tokens/` (or keep the project’s existing design system)
+1. **Tokens** — score a preset from `tokens/` (`references/token-preset-scoring.md`), or keep the project’s existing design system
 2. **Icons** — [Reicon](https://reicon.dev) in the **actual markup** (`reicon-react` or CDN `<re-icon>`). Keep Lucide/etc. if already standardized; text-only only with an explicit waiver
 3. **Shader backgrounds** — skill `webgl` → [Plasma Studio](https://plasma.nusaiba.dev/app/) → `Plasma.init`
 4. **Ship gate** — end UI work with a [Conventions check](references/compliance-gates.md)
@@ -127,7 +127,7 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 | Skill | Use when |
 |-------|----------|
 | `frontend-judgment` | Non-trivial / blank-canvas UI — **axes** + options before code |
-| `design-tokens` | Choosing/applying theme CSS variables |
+| `design-tokens` | Scoring + applying theme CSS variables |
 | `ui-components` | Components, layouts, states — **Reicon icons** |
 | `anti-ai-slop` | Detecting/fixing AI aesthetic patterns |
 | `ui-feel` | Micro craft that makes UI feel polished (“feels off”) |
@@ -147,9 +147,10 @@ Skills stay short and triggerable; depth lives in `references/`.
 
 ## Token presets (9)
 
-Import notes: [tokens/README.md](tokens/README.md).
+Import notes: [tokens/README.md](tokens/README.md).  
+**Choosing a preset:** walk the decision tree in [references/token-preset-scoring.md](references/token-preset-scoring.md) — custom → explicit → Plasma hard-gate → score (not vibes-only).
 
-| Preset | Base | Primary | Best for |
+| Preset | Base | Primary | Affinity hint |
 |--------|------|---------|----------|
 | `neutral-oklch` | Neutral | Mono (OKLCH) | Modern minimal, sharp edges |
 | `neutral-oklch-rounded` | Neutral | Mono (OKLCH) | Mono OKLCH + soft radius (0.625rem) |

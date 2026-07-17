@@ -27,7 +27,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 
 ## Rules (compliance — do not silently skip)
 
-- Prefer project design system if one exists; otherwise `tokens/*.css`
+- Prefer project design system if one exists; else walk token decision tree (custom → explicit → Plasma hard-gate → score) in `references/token-preset-scoring.md` — do not vibe-pick from affinity hints
 - **Icons: MUST use [Reicon](https://reicon.dev)** on nav/toolbars/empty/icon-buttons unless project already has an icon lib **or** you state a text-only waiver. Vanilla HTML → Reicon CDN + `<re-icon>`. See `references/reicon-icons.md` + `references/compliance-gates.md`
 - WebGL/shader/plasma asks → load **`webgl`**; prefer Plasma — do not invent a parallel stack
 - No raw hex, purple/indigo defaults, Lorem ipsum, or `rounded-2xl` everywhere

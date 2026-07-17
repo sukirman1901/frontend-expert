@@ -46,7 +46,7 @@ Do **not** start coding a generic UI before a direction is set (unless skip rule
 | Skill | Auto-triggers on |
 |-------|------------------|
 | `frontend-judgment` | Non-trivial / ambiguous UI before build — **distinct axes** (hierarchy/layout/density/…) |
-| `design-tokens` | Theme, colors, spacing, styling UI |
+| `design-tokens` | Theme/colors — decision tree + scoring (`token-preset-scoring.md`) |
 | `ui-components` | Components, pages, layouts, states |
 | `anti-ai-slop` | Build polish + design audits |
 | `ui-feel` | Micro craft — concentric radius, tabular-nums, press/hover feel |
@@ -71,10 +71,10 @@ FE process A→Z: `references/fe-lifecycle.md`.
 
 ## Hard rules
 
-1. Prefer CSS custom properties from `tokens/` or the project's existing design system
+1. Prefer CSS custom properties from the project's design system, or a pack preset chosen via the decision tree in `references/token-preset-scoring.md` (custom → explicit → Plasma hard-gate → score) — never vibe-pick from affinity hints
 2. Icons: **MUST ship [Reicon](https://reicon.dev)** in markup (CDN/package) unless project icon lib or text-only waiver — `references/compliance-gates.md`
 3. WebGL/shader/plasma: load **`webgl`**, prefer Plasma / `Plasma.init` — do not invent a parallel background stack
-4. Never invent purple/indigo defaults, raw hex, or Lorem ipsum for shipping UI
+4. Never invent purple/indigo defaults, raw hex, or Lorem ipsum for shipping UI (purple OK only via scored/hard-gated/explicit token)
 5. Handle loading, error, and empty states
 6. Do not fabricate visual audit scores without tokens or screenshots
 7. Never block on the user typing a slash command when intent is clear

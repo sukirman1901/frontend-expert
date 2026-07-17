@@ -37,7 +37,7 @@ Always map inspiration onto **project tokens** — never paste a foreign palette
 1. Prefer project design system / CSS variables / Tailwind theme
 2. Skim 2–3 real components: Button, Card, Form/Input
 3. Note: radius, padding, shadow, type sizes, border treatment
-4. Only then pick a pack preset if the project has **no** system
+4. If the project has **no** system → walk the **decision tree** in `token-preset-scoring.md` (custom → explicit → Plasma hard-gate → score). Do not pick by affinity hint.
 
 ## DESIGN_MEMORY.md (optional)
 

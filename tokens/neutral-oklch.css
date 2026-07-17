@@ -1,7 +1,7 @@
 /*
  * Neutral OKLCH — Sharp monochrome design system (shadcn-style)
  * Base: Neutral | Primary: near-black / near-white | Format: OKLCH | Radius: 0
- * Best for: Minimal product UI, docs, tools that want modern CSS color + sharp edges
+ * Affinity hint: Minimal product UI, docs, tools that want modern CSS color + sharp edges
  *
  * Usage: reference as oklch vars directly, e.g. background: var(--background);
  * Do not wrap in hsl() — values are already complete OKLCH colors.
