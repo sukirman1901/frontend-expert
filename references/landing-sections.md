@@ -1,26 +1,21 @@
 # Landing sections (marketing)
 
-Used by: `marketing-landing`. Pack-owned section **jobs** and recipes. Block ids like `hero-6` are **IA labels** only — implement by hand with pack tokens/craft. Never treat them as packages to install.
+Used by: `marketing-landing`. Section **jobs** and recipes for marketing pages. Implement by hand with pack tokens/craft — never install a third-party block registry.
 
-## Section catalog
+## Section jobs
 
-| Section | Job | Typical count in catalogs | Do |
-|---------|-----|---------------------------|----|
-| **Header** | Wayfinding + primary CTA | ~12 variants | Keep quiet; logo + few links + one CTA. Do not over-invest in Header variants. |
-| **Hero** | Brand + promise + CTA + dominant visual | ~15 | Brand hero-level; one headline; one lede; one CTA group; full-bleed or inset visual plane |
-| **Logo cloud** | Trust / “works with” | ~18 | Simple marks or wordmarks; avoid fake Fortune-500 spam; optional soft motion |
-| **Features** | Capability proof | ~12 | One job per block; prefer asymmetric / split / bento over 3 identical icon-cards |
-| **Call to Action** | Conversion beat | ~11 | Mid or end; one primary action |
-| **Testimonials** | Social proof | ~11 | Real-sounding quotes; restrain card chrome |
-| **Image gallery** | Product / visual proof | ~11 | Real product frames; not abstract collage |
-| **Integrations** | Ecosystem | ~11 | When the product is a hub |
-| **Pricing** | Plans | ~11 | Clear hierarchy; one recommended plan |
-| **FAQs** | Objection handling | ~11 | Accordion; plain language |
-| **Blog sections** | Content teaser | ~13 | Optional on homepage |
-| **Contact** | Lead form | ~11 | Labels + validation (`forms-validation`) |
-| **Auth** | Sign-in / sign-up marketing shell | ~11 | Rarely on marketing homepage |
-| **Footer** | Sitemap + legal | ~11 | Brand + essential links |
-| **404** | Recovery | ~11 | Clear CTA home |
+| Section | Job |
+|---------|-----|
+| **Header** | Quiet wayfinding + one primary CTA |
+| **Hero** | Brand (hero-level) + promise + CTA + one dominant visual |
+| **Logo cloud** | Trust / “works with” |
+| **Features** | Capability proof (not three identical icon-cards) |
+| **Gallery** | Real product visuals |
+| **Testimonials** | Social proof |
+| **CTA** | Conversion beat (mid or end) |
+| **Footer** | Brand + essential links |
+
+Optional when the product needs them: **Integrations**, **Pricing**, **FAQs**, **Contact**, **Blog teaser**, **Auth shell**, **404**.
 
 ## Default SaaS homepage recipe
 
@@ -28,60 +23,38 @@ Used by: `marketing-landing`. Pack-owned section **jobs** and recipes. Block ids
 Header → Hero → Logo cloud → Features → Gallery → Testimonials → CTA → Footer
 ```
 
-### Named example (structure reference)
+Example labels (IA only — not packages):
 
-| Order | Block id (example) | Job |
-|-------|--------------------|-----|
-| 1 | `header-10` | Quiet chrome |
-| 2 | `hero-6` | Brand + promise + product cue |
-| 3 | `logo-cloud-10` | Trust row |
-| 4 | `features-9` | Capabilities |
-| 5 | `gallery-8` | Product visuals |
-| 6 | `testimonials-6` | Quotes |
-| 7 | `cta-11` | Final conversion |
-| 8 | `footer-2` | Close |
+`header` · `hero` · `logo-cloud` · `features` · `gallery` · `testimonials` · `cta` · `footer`
 
-Use these ids as **IA labels** when talking to the user or matching a named recipe. **Do not** install `@tailark/*`, shadcn block registries, or similar as the pack default — hand-roll the sections.
+If the user names a denser recipe (e.g. with pricing/FAQ), keep **one job per section** and the same anti-slop rules.
 
-## Hero rules (pack)
+## Hero rules
 
 - Brand name is a **hero-level** signal (not only nav text)
-- First viewport: brand + one headline + one short sentence + one CTA group + one dominant visual — **no** stat strips, schedules, or secondary promos in the hero
-- No detached floating badges/stickers on hero media
-- Cards are not the hero container
-- WebGL/plasma backgrounds → `webgl` / Plasma; chrome tokens via decision tree
+- First viewport: brand + one headline + one short sentence + one CTA group + one dominant visual — **no** stat strips or secondary promos in the hero
+- No detached floating badges on hero media; cards are not the hero container
+- WebGL/plasma → `webgl` / Plasma; chrome tokens via decision tree
 
 ## Features anti-slop
 
 | Avoid | Prefer |
 |-------|--------|
-| Three equal rounded cards + generic icons | Split narrative, bento with one featured cell, or numbered list with proof |
-| “Fast / Secure / Scalable” with no product link | Capabilities tied to Northline/product verbs |
-| Icon row as the whole Features section | Icon + label OK as a *supporting* row, not the only story |
+| Three equal rounded cards + generic icons | Split / asymmetric / numbered list tied to the product |
+| “Fast / Secure / Scalable” with no product link | Capabilities with concrete verbs |
 
 ## Logo cloud anti-slop
 
-- Prefer monochrome wordmarks / simple SVGs
-- Label the job (“Teams using Northline” / “Works alongside”)
-- No infinite aggressive marquee unless motion budget allows (`Carousel` family, ≤1 continuous pattern)
-
-## Gallery
-
-- Show the **product** (dashboard, capture UI, studio) — not stock photos
-- Browser chrome / device frame OK; keep one primary stage per section
-
-## CTA + Footer
-
-- CTA section: one headline + one primary button (+ optional secondary)
-- Footer: brand, product links, legal; not a second mega-nav
+- Monochrome wordmarks / simple marks
+- Label the job (“Teams using …” / “Works alongside”)
+- No aggressive infinite marquee unless motion budget allows
 
 ## Incomplete landing (fail)
 
-Hero (+ plasma) + thin footer **without** trust/features/CTA stack → treat as **High** for marketing asks (`anti-ai-slop` / `marketing-landing`).
+Hero (+ plasma) + thin footer **without** trust/features/CTA stack → **High** for marketing asks.
 
 ## Related
 
 - `marketing-landing` skill
-- `motion-families.md` (Hero / Text / Carousel budgets)
-- `fe-seo.md`
+- `motion-families.md` · `fe-seo.md`
 - Craft north stars: Plasma landing, Send2Figma landing
