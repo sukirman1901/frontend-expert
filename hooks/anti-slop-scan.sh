@@ -61,6 +61,25 @@ if rg -n -i --no-heading 'lorem ipsum' "$FILE" >/tmp/dse-anti-slop-lorem.$$ 2>/d
   HITS+=("Lorem ipsum placeholder text")
 fi
 
+# transition: all — animates unintended properties (ui-feel)
+# CSS: transition: all … | Tailwind bare `transition` / `transition-all` (not transition-transform, etc.)
+if rg -n --no-heading \
+  -e 'transition\s*:\s*all\b' \
+  -e 'transition-all\b' \
+  "$FILE" >/tmp/dse-anti-slop-transition.$$ 2>/dev/null; then
+  HITS+=("transition: all / transition-all — name properties (see ui-feel)")
+fi
+
+# Tailwind \`transition\` utility alone (maps to all) — advisory, skip if already more specific
+if rg -n --no-heading -e 'class(Name)?=\{?["'\''][^"'\'']*\btransition\b' "$FILE" >/tmp/dse-anti-slop-tw-tr.$$ 2>/dev/null; then
+  if rg -n --no-heading -e 'class(Name)?=\{?["'\''][^"'\'']*\btransition\b' "$FILE" 2>/dev/null \
+    | rg -v 'transition-(all|none|transform|opacity|colors|shadow|blur|\[)' >/tmp/dse-anti-slop-tw-bare.$$ 2>/dev/null; then
+    if [ -s /tmp/dse-anti-slop-tw-bare.$$ ]; then
+      HITS+=("Tailwind bare transition utility — prefer transition-transform or transition-[…]")
+    fi
+  fi
+fi
+
 # Raw hex in style/class contexts (advisory — tokens may embed hex in CSS var files)
 if [[ "$FILE" != *"/tokens/"* ]] && rg -n --no-heading \
   '#[0-9a-fA-F]{3,8}\b' "$FILE" >/tmp/dse-anti-slop-hex.$$ 2>/dev/null; then
@@ -83,7 +102,7 @@ for h in "${HITS[@]}"; do
 done
 MSG="$MSG
 
-Load references/anti-patterns.md or skill anti-ai-slop and fix before shipping. Prefer tokens/ CSS variables."
+Load anti-ai-slop / ui-feel (references/anti-patterns.md, references/ui-feel.md) and fix before shipping. Prefer tokens/ CSS variables."
 
 # Claude Code surfaces stderr from hooks to the model
 echo "$MSG" >&2

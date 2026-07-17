@@ -9,6 +9,7 @@ Deep guides live here. **Skills** are short and triggerable; **references** hold
 | *(judgment — see `design-axes.md`)* | `frontend-judgment` | `/ui` / chat before blank-canvas builds |
 | `design-axes.md` | `frontend-judgment` | Axes, inspiration, style inference, optional DESIGN_MEMORY |
 | `ux-foundations.md` | `frontend-judgment`, `design-tokens`, `accessibility` | Nielsen/Gestalt, UI system, color theory for products |
+| `fe-lifecycle.md` | `ui-quality-loop`, `frontend-judgment` | A→Z FE process + pack mapping |
 | *(loop controller)* | `ui-quality-loop` | `/polish` / “rapihin sampai bagus” |
 | *(token CSS in `tokens/`)* | `design-tokens` | `/ui`, `/design`, `ui-developer` |
 | `anti-patterns.md` | `anti-ai-slop` | `/ui`, `/design`, both agents, anti-slop hook |

@@ -1,5 +1,12 @@
 # Pack audit log
 
+## 2026-07-17 — Phase 1+2 follow-up (lifecycle + P2 gaps)
+
+- Added `references/fe-lifecycle.md` (A→Z process map)
+- `install.sh cursor-user` — symlink personal Cursor skills (anti-drift)
+- anti-slop hook: `transition: all` / `transition-all` / bare Tailwind `transition`
+- session-start: lifecycle + rapihin routing reminder
+
 ## 2026-07-17 — Post-improvement workflow audit
 
 ### Verdict

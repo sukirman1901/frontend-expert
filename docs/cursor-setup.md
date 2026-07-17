@@ -2,31 +2,49 @@
 
 Cursor uses **rules** (short policies) and **skills** (workflows).
 
-## Install skills
+## Recommended: personal Agent skills (symlink — no drift)
+
+From the pack repo:
 
 ```bash
-mkdir -p .cursor/skills
-rsync -a /path/to/Design-system-enforcer/skills/ .cursor/skills/
+./scripts/install.sh cursor-user
 ```
 
-Optional: copy the thin always-on rule:
+This:
+
+- Symlinks each pack skill → `~/.cursor/skills/<name>`
+- Symlinks `references/` → `~/.cursor/skills/references`
+- Symlinks the pack → `~/.cursor/packs/frontend-expert`
+- Copies the always-on rule → `~/.cursor/rules/design-system-enforcer.mdc`
+
+After `git pull` on the pack repo, Cursor sees updates automatically (no re-copy).
+
+Re-run `cursor-user` after adding a **new** skill folder name (script lists skills explicitly).
+
+## Project-local skills (copy)
 
 ```bash
-mkdir -p .cursor/rules
-cp /path/to/Design-system-enforcer/.cursor/rules/design-system-enforcer.mdc .cursor/rules/
+./scripts/install.sh cursor /path/to/your-app
+# or
+mkdir -p .cursor/skills .cursor/rules
+rsync -a /path/to/frontend-expert/skills/ .cursor/skills/
+rsync -a /path/to/frontend-expert/references/ .cursor/skills/references/
+cp /path/to/frontend-expert/.cursor/rules/design-system-enforcer.mdc .cursor/rules/
 ```
+
+Prefer **cursor-user** for your daily Agent; use project-local only when the repo must vendor skills.
 
 ## Tokens
 
 Copy presets into your app (or import the CSS):
 
 ```bash
-cp /path/to/Design-system-enforcer/tokens/*.css ./src/styles/tokens/
+cp /path/to/frontend-expert/tokens/*.css ./src/styles/tokens/
 ```
 
 ## Notes
 
 - Do **not** paste full `SKILL.md` bodies into rules — keep skills in `.cursor/skills/`
-- Prefer `/ui` / `/design` intent; agents load domain skills by task
-- For audits, ask the agent to follow `agents/design-reviewer.md`
+- Chat-first: natural language maps to skills; slash is optional (`/ui`, `/design`, `/polish`, …)
+- FE process A→Z: `references/fe-lifecycle.md`
 - Claude-style hooks are not available in Cursor; rely on skills + rules instead

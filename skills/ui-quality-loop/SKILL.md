@@ -121,6 +121,7 @@ FIX … | DONE | STOP (cap)
 
 ## Depth
 
+- Lifecycle A→Z: `references/fe-lifecycle.md`  
 - Judgment: `frontend-judgment`  
 - Build: `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`  
 - Test: `frontend-testing`  

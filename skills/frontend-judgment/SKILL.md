@@ -145,6 +145,7 @@ Pick A/B/C (or say “go with recommended”).
 
 ## Depth
 
+Lifecycle A→Z: `references/fe-lifecycle.md`.  
 Axes + memory convention: `references/design-axes.md`.  
 UX/UI theory + color for products: `references/ux-foundations.md`.  
 Anti-patterns: `anti-ai-slop` + `references/anti-patterns.md`.  

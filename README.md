@@ -33,6 +33,8 @@ claude --plugin-dir ./frontend-expert
 ```bash
 git clone https://github.com/sukirman1901/frontend-expert.git
 cd frontend-expert
+./scripts/install.sh cursor-user          # personal Agent — symlinks, no drift
+# or project-local:
 ./scripts/install.sh cursor /path/to/your-app
 ```
 
@@ -74,7 +76,7 @@ Not a full frontend curriculum (see [roadmap.sh/frontend](https://roadmap.sh/fro
 | Design tokens | 9 CSS presets in `tokens/` (OKLCH + HSL + Plasma landing) |
 | Icons | **[Reicon](https://reicon.dev)** by default — [references/reicon-icons.md](references/reicon-icons.md) |
 | WebGL backgrounds | **[Plasma Studio](https://plasma.nusaiba.dev/app/)** — pure WebGL, not Three.js by default — [references/webgl.md](references/webgl.md) |
-| Quality loop | `/polish` = build → test → audit → fix until Critical/High clear (max 3) |
+| Quality loop | `/polish` = build → test → audit → fix until Critical/High clear (max 3) — see [fe-lifecycle](references/fe-lifecycle.md) |
 | Multi-platform | Claude Code, Cursor, Codex, Gemini, OpenCode, Antigravity |
 | Claude hooks | SessionStart reminder + PostToolUse anti-slop scan |
 
@@ -231,7 +233,7 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, **ui-feel**, **design-axes**, **ux-foundations**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
+| Skill-backed | anti-patterns, **ui-feel**, **design-axes**, **ux-foundations**, **fe-lifecycle**, component-patterns, architecture, accessibility, performance, motion, testing + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
 | WebGL | [webgl.md](references/webgl.md) — Plasma Studio first |
 | Reference-only | monitoring — promote later if needed |

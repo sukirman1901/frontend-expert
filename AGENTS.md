@@ -63,7 +63,8 @@ Do **not** start coding a generic UI before a direction is set (unless skip rule
 - **References** — depth (`references/README.md`)
 - **Hooks** — Claude Code runtime
 
-Full layer model: `docs/pack-layers.md`.
+Full layer model: `docs/pack-layers.md`.  
+FE process A→Z: `references/fe-lifecycle.md`.
 
 ## Hard rules
 
