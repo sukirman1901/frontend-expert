@@ -59,6 +59,13 @@ Measured Visual Hierarchy checklist (when screenshots/DOM available):
 | Section jobs | One job + one headline | Kitchen-sink sections |
 | Type ladder | One h1; sequential levels | Multi-h1 / skipped levels |
 
+## Shell chrome check (dashboard / settings)
+
+- Theme under sidebar footer → **High**, Area **Shell**
+- Name + email always visible in topbar (no avatar menu) → **High**, Area **Shell**
+- Bare native `<select>` for product filters without waiver → **High**, Area **Components**
+- Depth: `app-shell-routing`, `ui-components`, `references/app-shell-routing.md`
+
 ## Motion check
 
 - Expect Conventions Motion line (light shell **or** `families:` / `patterns:`)

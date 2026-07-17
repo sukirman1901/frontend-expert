@@ -10,12 +10,12 @@ For blank-canvas or ambiguous UI, offer 2–3 approaches with tradeoffs and one 
 Build UI that looks design-system-aware, not AI-generated:
 
 1. Choose tokens via decision tree in references/token-preset-scoring.md: custom → explicit (--token) → Plasma hard-gate → score (emit Token score n/24). Never vibe-pick or invent raw hex.
-2. Modern shell: logo SVG/mark, utilities, profile/avatar on all breakpoints. Mobile nav = overlay drawer + backdrop (not push-down). Desktop sidebar collapsible / auto-collapse mid widths.
+2. Modern shell: logo SVG/mark, utilities, theme as topbar icon (not sidebar footer), avatar-only → account menu (name/email inside menu). Mobile nav = overlay drawer + backdrop (not push-down). Desktop sidebar collapsible / auto-collapse mid widths. Product filters = custom select (not bare native OS chrome); caret not flush.
 3. responsive-ui: verify 320/768/1024/1440; no page horizontal scroll
 4. motion: shell = section fade + drawer + press-scale; marketing = ≤2 families / named patterns, hand-roll (not registry default); honor prefers-reduced-motion
 5. Handle loading, error, and empty states; Reicon icons
 6. Scan for AI aesthetic patterns (incl. decorative motion spam), then apply ui-feel craft
-7. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive/motion families|patterns), a11y notes
+7. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive/shell/motion families|patterns), a11y notes
 
 Modes via arguments: default = decision tree, --token <file> = explicit, --custom = project system.
 """

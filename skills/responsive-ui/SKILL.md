@@ -53,8 +53,9 @@ Full table: `references/responsive.md` → Figma Auto Layout ↔ CSS.
 | **Primary button** | Full width (`width: 100%`) in forms, toolbars, plan/row actions | Tiny desktop-width CTA floating left |
 | **Secondary in same row** | Stack under primary, also full width when it’s the only action column | Side-by-side cramped pair |
 | **Form inputs** | Full width; `font-size ≥ 16px` (prevents iOS zoom) | `14px` inputs that zoom the page |
-| **Icon utilities in topbar** | Keep essentials (e.g. bell + avatar); hide secondary (search) if crowded | 4–5 icon buttons + label Menu |
-| **Profile** | Avatar always; hide name/email/chevron if needed | `display: none` on whole profile |
+| **Icon utilities in topbar** | Keep essentials (e.g. theme + bell + avatar); hide secondary (search) if crowded | 4–5 icon buttons + label Menu |
+| **Profile** | Avatar-only → account menu; name/email inside menu | Always-on name/email in chrome, or `display: none` on whole profile |
+| **Theme** | Topbar icon toggle | Sidebar footer “Dark mode” button |
 
 Example:
 

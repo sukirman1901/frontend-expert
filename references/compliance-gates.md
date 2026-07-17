@@ -18,6 +18,7 @@ Report this block (fill every line):
 - Typography: one h1 + ladder | fails: … | waiver: …
 - A11y: labels + focus noted? <yes | waiver>
 - WebGL: <Plasma.init … | n/a | waiver: used Three because …>
+- Shell: <logo + utilities + theme-in-topbar? | avatar→menu | waiver>
 - Motion: <light shell | families: … | patterns: … | none (waiver)>
 ```
 
@@ -33,7 +34,8 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **Responsive** | Load `responsive-ui` — verify 320 / 768 / 1024 / 1440; drawer+backdrop for side nav; **primary CTAs `width: 100%` below 768**; no page horizontal scroll; adapt tables/nav | Explicit desktop-only waiver |
 | **Hierarchy** | One primary focus + one primary CTA; weight/contrast before decoration (`frontend-judgment` Hierarchy pass) | Tiny copy-only tweak |
 | **Typography** | ≤2 families; one h1/page; sequential ladder; token type roles | Waiver: intentional marketing exception (state why) |
-| **Shell chrome** | Logo + utilities + profile (`app-shell-routing`) on dashboard/settings | Waiver: minimal marketing page |
+| **Shell chrome** | Logo + utilities + **theme in topbar** (if any) + **avatar → account menu** (`app-shell-routing`) | Waiver: minimal marketing page |
+| **Selects** | Custom select/combobox for product filters (`ui-components`); caret not flush | Waiver: native OS picker required |
 | **Motion** | Light defaults on shell/multi-section (`motion`); marketing builds name ≤2 families + patterns from `motion-families.md` and **hand-roll** — do not default to third-party registry install | User forbids animation / reduced-motion only |
 | **WebGL / shader / plasma / canvas bg** | Load skill `webgl` → Plasma Studio / `Plasma.init` | User explicitly wants Three.js/R3F scene graph |
 | **Tokens** | Project system, else full tree: custom → explicit → Plasma hard-gate → score (`token-preset-scoring.md`) | Waiver only |
@@ -57,6 +59,17 @@ On any layout/page:
 
 Greenfield missing Responsive evidence → **High** finding (design-reviewer).  
 Tiny primary CTA on phone (desktop hug width) → **High**, Area **Responsive**.
+
+## Shell chrome expectations
+
+On dashboard / settings / app layouts:
+
+1. Theme toggle (if present) → **topbar icon**, not sidebar footer
+2. Profile → **avatar-only** + account dropdown (name/email inside menu)
+3. Filters/status pickers → **custom select** (or Selects waiver)
+4. Note Shell line in Conventions check
+
+Theme under sidebar / always-on header meta / bare native filter select on greenfield → **High**, Area **Shell** / **Components**.
 
 ## Hierarchy & typography expectations
 

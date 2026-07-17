@@ -29,10 +29,11 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 3. **Responsive all devices** — `responsive-ui`
 4. **Ships Reicon icons** unless waiver
 5. Handles loading, error, empty
-6. Light **motion** (shell) or named family/patterns (marketing) — hand-roll, not registry default
-7. Enforces accessibility basics
-8. Scans for AI slop, then `ui-feel`
-9. Ends with **Conventions check** (includes Responsive + Motion)
+6. Shell: theme in topbar; avatar → account menu; custom selects for filters
+7. Light **motion** (shell) or named family/patterns (marketing) — hand-roll, not registry default
+8. Enforces accessibility basics
+9. Scans for AI slop, then `ui-feel`
+10. Ends with **Conventions check** (includes Responsive + Shell + Motion)
 
 ## Usage
 

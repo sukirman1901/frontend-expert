@@ -31,8 +31,8 @@ Invoke the ui-developer agent.
 
 1. Choose direction via `frontend-judgment` when the UI is non-trivial / blank-canvas (2–3 approaches); skip for tiny clear fixes
 2. Choose tokens via decision tree (custom → explicit → Plasma hard-gate → score)
-3. Shell: logo + utilities + profile; mobile drawer+backdrop; desktop sidebar collapse
+3. Shell: logo + utilities + **theme in topbar**; **avatar → account menu**; mobile drawer+backdrop; desktop sidebar collapse; **custom selects** for filters
 4. Implement with composition, loading/error/empty states, **responsive-ui**, **motion** (shell light or named families)
 5. Make interactive elements keyboard accessible
 6. Scan for AI aesthetic patterns (incl. motion spam), then apply `ui-feel` craft
-7. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states/responsive/motion families|patterns), a11y notes
+7. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states/responsive/shell/motion families|patterns), a11y notes

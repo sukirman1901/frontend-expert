@@ -21,6 +21,24 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 
 **Fix:** Quiet selected state — muted fill, slightly heavier weight, stronger icon contrast. No inset accent rail.
 
+### Theme button under the sidebar
+
+**Problem:** A labeled “Dark mode” control in the sidebar footer looks like a template leftover and competes with nav.
+
+**Fix:** Theme as a **topbar utility icon** (moon/sun). Sidebar stays for navigation.
+
+### Name + email always in the topbar
+
+**Problem:** Spilling account meta into header chrome crowds utilities and breaks small widths.
+
+**Fix:** **Avatar-only** trigger → account dropdown with name/email + actions.
+
+### Native `<select>` for product filters
+
+**Problem:** OS chrome looks inconsistent, caret sits cramped, and styling fights the design system.
+
+**Fix:** Custom select/combobox with token surfaces and generous caret padding (`ui-components`).
+
 ### Excessive Gradients
 
 **Problem:** Gradients add visual noise and clash with most design systems.

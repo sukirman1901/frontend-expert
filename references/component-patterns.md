@@ -447,3 +447,25 @@ Flex children that truncate need `min-w-0` (or equivalent) or text won’t shrin
 - State consequences clearly (“Deletes 5 files permanently”)
 - Use destructive token color + distinct styling — never rely on color alone
 - Keep a non-destructive cancel/back path
+
+## Select / filter (product UI)
+
+### Good: Custom trigger + menu
+
+```tsx
+<button type="button" className="select-trigger" aria-haspopup="listbox" aria-expanded={open}>
+  <span className="truncate">{label}</span>
+  <ChevronDown className="ml-3 shrink-0 text-muted-foreground" />
+</button>
+```
+
+- Token border/background; **gap + end padding** so the caret is not flush to the edge
+- Listbox/menu with selected + hover states; Escape / outside click
+
+### Bad: Bare native OS chrome for dashboard filters
+
+```html
+<select class="w-full"><!-- OS picker, cramped caret, inconsistent chrome --></select>
+```
+
+Native `<select>` only with an explicit waiver (e.g. required OS picker on mobile).

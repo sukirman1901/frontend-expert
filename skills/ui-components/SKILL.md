@@ -54,11 +54,17 @@ Implement production UI with composition over configuration, clear state handlin
    - Icon-only controls need an accessible name
    - Text-only UI only with an explicit waiver in the Conventions check
 
-6. **Tokens + slop**
+6. **Selects / filters (product UI)**
+   - Prefer **custom select / combobox / listbox** styled with tokens — not bare OS `<select>` chrome for dashboard filters and toolbars
+   - Trigger: label + value + caret; **generous end padding / gap** so the chevron is not flush to the right edge
+   - Menu: token surface, hover/selected states, Escape + outside-click close; keyboard path required
+   - Native `<select>` only with waiver (e.g. native mobile OS picker required) — note in Conventions
+
+7. **Tokens + slop**
    - Use `design-tokens` for all visual values
    - Finish with `anti-ai-slop` scan
 
-7. **Before DONE**
+8. **Before DONE**
    - Output **Conventions check** from `references/compliance-gates.md` (tokens, icons, states, **responsive**, webgl n/a, …)
 
 ## Checklist
@@ -67,6 +73,7 @@ Implement production UI with composition over configuration, clear state handlin
 - [ ] Loading / error / empty handled
 - [ ] **Reicon (or project icon lib) actually in the markup** — not forgotten
 - [ ] Interactive elements keyboard accessible
+- [ ] Filters/selects are custom (or waived) — caret not cramped
 - [ ] **Responsive:** 320/768/1024/1440 + Conventions line
 - [ ] Component ≤ 200 lines or split
 - [ ] Anti-slop scan clean

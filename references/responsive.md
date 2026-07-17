@@ -53,7 +53,8 @@ When a Figma frame uses Auto Layout (or the user says “Fill / Hug”), map siz
 | Wide data table | Card list / stacked rows / horizontal scroll *inside* a contained region with affordance |
 | Multi-column dashboard | Single column stack; priority order top→bottom |
 | Side nav always open | **Overlay drawer + backdrop** (not push-down); burger ↔ close |
-| Account / profile in header | Keep avatar control; may hide name/email/chevron text only |
+| Account / profile in header | **Avatar-only** → account dropdown (name/email inside menu, not in chrome) |
+| Theme toggle | Topbar utility icon — never sidebar footer labeled button |
 | Dense topbar utilities | Hide secondary (e.g. search); keep bell + avatar |
 | Inline primary + secondary buttons | **Stack**; primary `width: 100%` |
 | Hover menus | Tap-open + focus visible |

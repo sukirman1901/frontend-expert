@@ -85,7 +85,7 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 | Icons | **[Reicon](https://reicon.dev) MUST** in shipped markup unless waiver |
 | Ship FE | Shell, async data UI, forms |
 | WebGL backgrounds | Skill **`webgl`** → Plasma Studio / `Plasma.init` |
-| Compliance | Conventions check (tokens / icons / states / **responsive** / hierarchy / typography / webgl / motion) |
+| Compliance | Conventions check (tokens / icons / states / **responsive** / hierarchy / typography / **shell** / webgl / motion) |
 | Quality loop | `/polish` = build → test → audit → fix (max 3) |
 | Multi-platform | Claude Code, Cursor, Codex, Gemini, OpenCode |
 
@@ -224,6 +224,7 @@ Agents must not silently skip pack conventions. Before marking UI done, they rep
 - Hierarchy: pass | fails: … | waiver
 - Typography: one h1 + ladder | fails: … | waiver
 - A11y: labels + focus noted? <yes | waiver>
+- Shell: theme in topbar? | avatar→menu | custom selects | waiver
 - Motion: light shell | families: … | patterns: … | none (waiver)
 - WebGL: <Plasma.init … | n/a>
 ```

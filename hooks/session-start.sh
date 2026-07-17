@@ -25,6 +25,6 @@ See references/fe-lifecycle.md
 * Skip judgment for tiny fixes or \"langsung saja\"
 Optional: /ui · /test-ui · /design · /audit · /polish
 Agents: ui-developer · test-engineer · design-reviewer
-Tokens: decision tree (custom → explicit → Plasma hard-gate → score). Responsive MUST (320–1440 + full-width CTA <768). Hierarchy + Typography ship gates. Motion: families/patterns named; hand-roll (not registry default). Icons: MUST use Reicon in markup (or waive). WebGL/plasma → skill webgl / Plasma.init.
-Before DONE: Conventions check — Tokens / Icons / States / Responsive / Hierarchy / Typography / Motion / A11y / WebGL (references/compliance-gates.md)." \
+Tokens: decision tree (custom → explicit → Plasma hard-gate → score). Responsive MUST (320–1440 + full-width CTA <768). Hierarchy + Typography ship gates. Shell: theme in topbar; avatar→menu; custom selects. Motion: families/patterns named; hand-roll (not registry default). Icons: MUST use Reicon in markup (or waive). WebGL/plasma → skill webgl / Plasma.init.
+Before DONE: Conventions check — Tokens / Icons / States / Responsive / Hierarchy / Typography / Shell / Motion / A11y / WebGL (references/compliance-gates.md)." \
   '{priority: "IMPORTANT", message: $message}'

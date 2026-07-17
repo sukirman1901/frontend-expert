@@ -87,10 +87,11 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 8. No purple/indigo defaults / Lorem (purple only via scored/hard-gated/explicit token)
 9. Loading / error / empty for interactive + async surfaces
 10. Light **Motion** defaults on shell/dashboard (or waiver) — `motion`; marketing: name families/patterns from `motion-families.md` and hand-roll (registry install is **not** the default)
-11. Do not fabricate visual audit scores without tokens/screenshots
-12. Never block on slash commands when intent is clear
-13. Blank-canvas → judgment first
-14. “Sampai bagus” → `ui-quality-loop` (cap 3)
-15. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**
+11. **Shell chrome** — theme in topbar (icon); profile = avatar → account menu; filters = custom select (`app-shell-routing` / `ui-components`)
+12. Do not fabricate visual audit scores without tokens/screenshots
+13. Never block on slash commands when intent is clear
+14. Blank-canvas → judgment first
+15. “Sampai bagus” → `ui-quality-loop` (cap 3)
+16. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**
 
 Orchestration: session agent loads skills; agents do not call agents. See `docs/pack-layers.md`, `docs/pillars.md`.

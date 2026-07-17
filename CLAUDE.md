@@ -23,7 +23,7 @@ Claude Code entry point for **Frontend Expert**.
 7. Honor hook advisories from `anti-slop-scan.sh`
 8. If the project already has a design system, use custom mode (do not override with presets)
 9. Icons: **MUST use [Reicon](https://reicon.dev)** in shipped markup unless project icon lib or text-only waiver (`references/compliance-gates.md`)
-10. Before DONE on UI builds → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **A11y** (`references/compliance-gates.md`)
+10. Before DONE on UI builds → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**, **A11y** (`references/compliance-gates.md`)
 
 ## References
 

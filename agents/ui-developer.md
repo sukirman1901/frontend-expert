@@ -59,6 +59,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 11. Prefer project design system when one exists
 12. Shader/WebGL backgrounds → `webgl` / Plasma — do not invent a parallel stack
 13. **Motion** — shell: light defaults; marketing: name families/patterns from `motion-families.md`, hand-roll, ≤2–3 motions/viewport; registry install is **not** the default; honor reduced-motion
+14. **Shell chrome** — theme in **topbar** (icon); profile = **avatar → account menu**; product filters = **custom select** (`app-shell-routing` / `ui-components`)
 
 ## Output format
 
@@ -66,7 +67,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 
 1. **Implementation** — code using token CSS custom properties
 2. **Token reference** — branch used (project system / explicit / hard-gate / score n/24) and why
-3. **Conventions check** — required block from `references/compliance-gates.md` (icons/tokens/states/**responsive**/hierarchy/typography/webgl/motion)
+3. **Conventions check** — required block from `references/compliance-gates.md` (icons/tokens/states/**responsive**/hierarchy/typography/**shell**/webgl/motion)
 4. **Accessibility** — keyboard, labels, contrast notes
 5. **Responsive** — behavior at 320 / 768 / 1024 / 1440 + full-width CTA evidence
 6. **Tests** — only if `frontend-testing` was in scope

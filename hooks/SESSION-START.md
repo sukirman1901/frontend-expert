@@ -9,7 +9,8 @@ On every new Claude Code session, reminds the agent: **chat-first** intent → s
 - Emits a short `IMPORTANT` message — does not dump full skill bodies
 - Build chain reminder includes **`responsive-ui`** + **`motion`** (hand-roll from `motion-families.md` for marketing)
 - Audit chain includes responsive + motion when animated
-- Points at Conventions check (Responsive / Hierarchy / Typography / Motion)
+- Points at Conventions check (Responsive / Hierarchy / Typography / Motion / Shell)
+- Shell reminders: theme in topbar; avatar → menu; custom selects
 
 ## Manual test
 

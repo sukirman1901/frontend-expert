@@ -30,6 +30,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E19 | Monitoring signals | [monitoring.md](./monitoring.md) |
 | E20 | Motion family pick + hand-roll | [motion-families.md](./motion-families.md) |
 | E21 | Frontend testing + DevTools | [frontend-testing-devtools.md](./frontend-testing-devtools.md) |
+| E22 | Shell chrome: theme, avatar menu, custom select | [frontend-shell-chrome.md](./frontend-shell-chrome.md) |
 
 ## How to run
 

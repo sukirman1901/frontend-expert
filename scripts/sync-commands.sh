@@ -84,8 +84,9 @@ require_phrase() {
   done
 }
 
-require_phrase "ui motion vocab" "motion-families|hand-roll|named famil" \
+require_phrase "ui shell chrome" "avatar|account menu|custom select|theme in topbar|topbar icon" \
   "$ROOT/commands/ui.md" "$ROOT/.claude/commands/ui.md" "$ROOT/.gemini/commands/ui.toml"
+
 require_phrase "design motion" "motion" \
   "$ROOT/commands/design.md" "$ROOT/.claude/commands/design.md" "$ROOT/.gemini/commands/design.toml"
 require_phrase "polish motion" "motion" \
@@ -93,13 +94,13 @@ require_phrase "polish motion" "motion" \
 require_phrase "session-start chain" "responsive-ui" "$ROOT/hooks/session-start.sh"
 require_phrase "session-start motion" "motion" "$ROOT/hooks/session-start.sh"
 
-echo "== evals E1–E21 present =="
+echo "== evals E1–E22 present =="
 for ev in \
   purple-reject scorecard-honesty loop-cap rapihin-routing reicon-webgl-compliance \
   token-preset-scoring responsive-all-devices data-fetching forms-validation \
   app-shell-routing ship-feature-e2e dashboard-shell visual-hierarchy typography-ladder \
   auto-layout-fill-cta design-fidelity fe-seo fe-architecture monitoring motion-families \
-  frontend-testing-devtools
+  frontend-testing-devtools frontend-shell-chrome
 do
   need "$ROOT/evals/${ev}.md"
 done

@@ -35,10 +35,11 @@ Blank-canvas / ambiguous UI → 2–3 approaches + tradeoffs + recommendation **
 3. **Hierarchy + Typography** — Hierarchy pass; one h1 + type ladder on blank-canvas / layout polish
 4. **Icons: MUST use [Reicon](https://reicon.dev)** unless waiver
 5. Light **Motion** defaults on shell/dashboard unless waived; marketing: name families/patterns and **hand-roll** (registry install is not the pack default)
-6. WebGL/shader/plasma → load `webgl`; prefer Plasma Studio
-7. No purple/indigo defaults, `rounded-2xl` everywhere, or Lorem ipsum (purple OK only via scored/hard-gated/explicit token)
-8. Loading / error / empty states; keyboard accessible
-9. Before DONE on UI builds → **Conventions check** (`references/compliance-gates.md`)
-10. Slash commands are optional shortcuts only
-11. Never fabricate design-audit scores without tokens or screenshots
-12. “Rapihin sampai bagus” → `ui-quality-loop` with iteration cap
+6. **Shell chrome** — theme in topbar (icon); avatar → account menu; custom selects for filters (`app-shell-routing` / `ui-components`)
+7. WebGL/shader/plasma → load `webgl`; prefer Plasma Studio
+8. No purple/indigo defaults, `rounded-2xl` everywhere, or Lorem ipsum (purple OK only via scored/hard-gated/explicit token)
+9. Loading / error / empty states; keyboard accessible
+10. Before DONE on UI builds → **Conventions check** including Shell (`references/compliance-gates.md`)
+11. Slash commands are optional shortcuts only
+12. Never fabricate design-audit scores without tokens or screenshots
+13. “Rapihin sampai bagus” → `ui-quality-loop` with iteration cap

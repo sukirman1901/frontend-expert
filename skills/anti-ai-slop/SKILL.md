@@ -39,6 +39,9 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 | Stock card grids | Uniform grids, no priority | Purpose-driven layout |
 | Shadow-heavy | Layered competing shadows | Subtle or no shadow |
 | Loud nav “active bar” | Thick left/right accent stripe on selected items | Quiet fill + weight/contrast only |
+| Theme under sidebar | Labeled Dark mode in sidebar footer | Topbar moon/sun icon |
+| Header account meta | Always-on name + email in topbar | Avatar → account menu |
+| Native filter `<select>` | OS chrome / cramped caret on dashboards | Custom select / combobox |
 | Decorative motion spam | Hero+3D+Text+Spotlight+Carousel stacked; typewriter on forms | ≤2 families / ≤2–3 motions; see `motion-families.md` |
 
 ## Checklist

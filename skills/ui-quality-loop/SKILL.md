@@ -128,7 +128,8 @@ FIX … | DONE | STOP (cap)
 
 - [ ] Judgment only when blank-canvas / first pass (skip rules honored)
 - [ ] Build chain includes **responsive-ui** + **motion** (or waivers)
-- [ ] Gates table evaluated each cycle (Anti-slop, Feel, Tokens, Responsive, Hierarchy, Typography, Motion, A11y, States, Tests)
+- [ ] Gates table evaluated each cycle (Anti-slop, Feel, Tokens, Responsive, Hierarchy, Typography, Motion, Shell, A11y, States, Tests)
+- [ ] Shell chrome: theme topbar + avatar menu + custom selects (or waivers)
 - [ ] Conventions check filled before DONE
 - [ ] Cap ≤3 fix cycles; STOP lists remaining Critical/High if any
 - [ ] No fabricated audit scores

@@ -145,6 +145,12 @@ echo "== references map =="
 [ -f "$ROOT/evals/dashboard-shell.md" ] && ok "evals/dashboard-shell.md" || bad "evals/dashboard-shell.md"
 [ -f "$ROOT/evals/motion-families.md" ] && ok "evals/motion-families.md (E20)" || bad "evals/motion-families.md"
 [ -f "$ROOT/evals/frontend-testing-devtools.md" ] && ok "evals/frontend-testing-devtools.md (E21)" || bad "evals/frontend-testing-devtools.md"
+[ -f "$ROOT/evals/frontend-shell-chrome.md" ] && ok "evals/frontend-shell-chrome.md (E22)" || bad "evals/frontend-shell-chrome.md"
+if ! rg -q 'avatar' "$ROOT/skills/app-shell-routing/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/ui-components/SKILL.md"; then
+  bad "shell chrome rules missing in app-shell / ui-components"
+else
+  ok "shell chrome rules in skills"
+fi
 if ! rg -q 'responsive-ui' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
   bad "hooks/session-start.sh missing responsive-ui/motion"
 else

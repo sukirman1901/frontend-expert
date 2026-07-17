@@ -32,6 +32,7 @@ Forms must be keyboard-accessible, show clear errors, and never lose user input 
 | **Focus** | On submit failure, move focus to first invalid field |
 | **Mobile** | Primary submit `width: 100%` below 768; inputs `font-size ≥ 16px` |
 | **No Lorem** | Real hint/error copy |
+| **Selects** | Product filters / status pickers: prefer **custom** select (see `ui-components`) — not bare native OS chrome |
 
 ## Workflow
 
