@@ -10,3 +10,10 @@ node_modules/
 # Local UI sandbox only — not part of the shipped pack
 /test/
 /ui-skills/
+
+# Walisongo app (Laravel) — keep secrets & vendor out of the skills pack
+/walisongo/backend/vendor/
+/walisongo/backend/node_modules/
+/walisongo/backend/.env
+/walisongo/backend/database/*.sqlite
+/walisongo/backend/storage/*.key

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Northline — Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/tokens.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <script src="https://unpkg.com/reicon/cdn/reicon.js" defer></script>
+  </head>
+  <body>
+    <div class="app" id="app">
+      <div class="backdrop" id="backdrop" hidden></div>
+
+      <aside class="sidebar" id="sidebar" aria-label="Primary">
+          <a class="sidebar__brand" href="./landing.html" aria-label="Northline home">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="28" height="28" rx="6" class="logo-mark__bg" />
+                <path
+                  d="M7 18.5V9.5h2.1l4.2 6.2V9.5H16v9h-2.1L9.7 12.3v6.2H7Z"
+                  fill="hsl(var(--primary-foreground))"
+                />
+                <path
+                  d="M18 18.5v-9h2.8v9H18Z"
+                  fill="hsl(var(--primary-foreground))"
+                  fill-opacity="0.85"
+                />
+              </svg>
+            </span>
+            <span class="brand-name">Northline</span>
+          </a>
+
+        <nav class="sidebar__nav" aria-label="Workspace">
+          <p class="nav-label">Workspace</p>
+          <button type="button" class="nav-item is-active" data-section="overview">
+            <re-icon icon="home" size="18"></re-icon>
+            <span class="nav-item__label">Overview</span>
+          </button>
+          <button type="button" class="nav-item" data-section="projects">
+            <re-icon icon="folder" size="18"></re-icon>
+            <span class="nav-item__label">Projects</span>
+          </button>
+          <button type="button" class="nav-item" data-section="customers">
+            <re-icon icon="users" size="18"></re-icon>
+            <span class="nav-item__label">Customers</span>
+          </button>
+          <button type="button" class="nav-item" data-section="billing">
+            <re-icon icon="receipt2" size="18"></re-icon>
+            <span class="nav-item__label">Billing</span>
+          </button>
+
+          <p class="nav-label">System</p>
+          <button type="button" class="nav-item" data-section="settings">
+            <re-icon icon="setting2" size="18"></re-icon>
+            <span class="nav-item__label">Settings</span>
+          </button>
+        </nav>
+
+      </aside>
+
+      <div class="shell-main">
+        <header class="topbar">
+          <button
+            type="button"
+            class="icon-btn menu-toggle"
+            id="menu-toggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            <re-icon icon="menu" size="20" id="menu-icon"></re-icon>
+          </button>
+
+          <button
+            type="button"
+            class="icon-btn collapse-toggle"
+            id="collapse-toggle"
+            aria-label="Collapse sidebar"
+            aria-pressed="false"
+          >
+            <re-icon icon="sidebar-left" size="20"></re-icon>
+          </button>
+
+          <form class="topbar__search" role="search" onsubmit="return false">
+            <re-icon icon="search" size="16"></re-icon>
+            <label class="sr-only" for="global-search">Search</label>
+            <input
+              id="global-search"
+              type="search"
+              placeholder="Search projects…"
+              autocomplete="off"
+            />
+          </form>
+
+          <div class="topbar__spacer"></div>
+
+          <div class="topbar__utils">
+            <button
+              type="button"
+              class="icon-btn"
+              id="theme-toggle"
+              aria-label="Switch to dark mode"
+              aria-pressed="false"
+            >
+              <re-icon icon="moon" size="20" id="theme-icon"></re-icon>
+            </button>
+            <button type="button" class="icon-btn" aria-label="Help">
+              <re-icon icon="help-circle" size="20"></re-icon>
+            </button>
+            <button type="button" class="icon-btn" aria-label="Notifications">
+              <re-icon icon="bell" size="20"></re-icon>
+            </button>
+            <div class="account-menu" id="account-menu">
+              <button
+                type="button"
+                class="avatar-btn"
+                id="account-trigger"
+                aria-label="Account menu"
+                aria-haspopup="menu"
+                aria-expanded="false"
+                aria-controls="account-dropdown"
+              >
+                <span class="avatar" aria-hidden="true">AK</span>
+              </button>
+              <div class="menu" id="account-dropdown" role="menu" hidden>
+                <div class="menu__header">
+                  <p class="menu__name">Ayla Kim</p>
+                  <p class="menu__email">ayla@northline.app</p>
+                </div>
+                <button type="button" class="menu__item" role="menuitem" data-section="settings">
+                  <re-icon icon="setting2" size="16"></re-icon>
+                  Settings
+                </button>
+                <button type="button" class="menu__item" role="menuitem">
+                  <re-icon icon="user" size="16"></re-icon>
+                  Profile
+                </button>
+                <div class="menu__sep" role="separator"></div>
+                <button type="button" class="menu__item menu__item--danger" role="menuitem">
+                  <re-icon icon="logout" size="16"></re-icon>
+                  Sign out
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="content" id="main" tabindex="-1">
+          <div class="page-head">
+            <div class="page-head__text">
+              <h1 id="page-title">Overview</h1>
+              <p id="page-sub">
+                Workspace pulse for the last 30 days — ship velocity, usage, and open work.
+              </p>
+            </div>
+            <div class="page-head__actions">
+              <button type="button" class="btn btn--secondary" id="btn-export">
+                <re-icon icon="download" size="16"></re-icon>
+                Export
+              </button>
+              <button type="button" class="btn btn--primary" id="btn-new-project">
+                <re-icon icon="plus" size="16"></re-icon>
+                New project
+              </button>
+            </div>
+          </div>
+
+          <section class="kpi-strip" aria-label="Key metrics" id="kpi-strip">
+            <article class="kpi">
+              <p class="kpi__label">Active projects</p>
+              <p class="kpi__value">24</p>
+              <p class="kpi__delta kpi__delta--up">+3 vs last month</p>
+            </article>
+            <article class="kpi">
+              <p class="kpi__label">API requests</p>
+              <p class="kpi__value">1.84M</p>
+              <p class="kpi__delta kpi__delta--up">+12.4%</p>
+            </article>
+            <article class="kpi">
+              <p class="kpi__label">Seats used</p>
+              <p class="kpi__value">38 / 50</p>
+              <p class="kpi__delta kpi__delta--flat">76% of plan</p>
+            </article>
+            <article class="kpi">
+              <p class="kpi__label">Error rate</p>
+              <p class="kpi__value">0.18%</p>
+              <p class="kpi__delta kpi__delta--down">−0.04 pts</p>
+            </article>
+          </section>
+
+          <div class="layout-split">
+            <section class="panel" aria-labelledby="projects-heading">
+              <div class="panel__head">
+                <h2 id="projects-heading">Projects</h2>
+                <div class="panel__tools">
+                  <div class="select" id="status-select">
+                    <span class="sr-only" id="status-filter-label">Status</span>
+                    <button
+                      type="button"
+                      class="select__trigger"
+                      id="status-filter"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="status-filter-menu"
+                      aria-labelledby="status-filter-label status-filter-value"
+                      data-value="all"
+                    >
+                      <span class="select__value" id="status-filter-value">All statuses</span>
+                      <re-icon class="select__caret" icon="chevron-down" size="16" aria-hidden="true"></re-icon>
+                    </button>
+                    <ul
+                      class="select__menu"
+                      id="status-filter-menu"
+                      role="listbox"
+                      aria-labelledby="status-filter-label"
+                      tabindex="-1"
+                      hidden
+                    >
+                      <li
+                        role="option"
+                        class="select__option is-selected"
+                        id="status-opt-all"
+                        data-value="all"
+                        aria-selected="true"
+                      >
+                        All statuses
+                      </li>
+                      <li
+                        role="option"
+                        class="select__option"
+                        id="status-opt-live"
+                        data-value="live"
+                        aria-selected="false"
+                      >
+                        Live
+                      </li>
+                      <li
+                        role="option"
+                        class="select__option"
+                        id="status-opt-paused"
+                        data-value="paused"
+                        aria-selected="false"
+                      >
+                        Paused
+                      </li>
+                      <li
+                        role="option"
+                        class="select__option"
+                        id="status-opt-draft"
+                        data-value="draft"
+                        aria-selected="false"
+                      >
+                        Draft
+                      </li>
+                    </ul>
+                  </div>
+                  <label class="sr-only" for="project-filter">Filter projects</label>
+                  <input
+                    class="filter-input"
+                    id="project-filter"
+                    type="search"
+                    placeholder="Filter by name…"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="skeleton-rows"
+                id="table-loading"
+                aria-hidden="true"
+                aria-busy="false"
+              >
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+              </div>
+
+              <div class="state-box" id="table-error" role="alert">
+                <re-icon icon="alert-circle" size="28"></re-icon>
+                <h3>Couldn’t load projects</h3>
+                <p>Check your connection, then try again.</p>
+                <button type="button" class="btn btn--primary" id="retry-load">Retry</button>
+              </div>
+
+              <div class="state-box" id="table-empty">
+                <re-icon icon="folder-error" size="28"></re-icon>
+                <h3>No projects match</h3>
+                <p>Clear filters or create a new project to get started.</p>
+                <button type="button" class="btn btn--primary" id="empty-new">
+                  New project
+                </button>
+              </div>
+
+              <div class="table-wrap" id="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Project</th>
+                      <th scope="col">Status</th>
+                      <th scope="col" class="col-hide-sm">Owner</th>
+                      <th scope="col" class="col-hide-sm">Requests</th>
+                      <th scope="col">Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody id="project-rows"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="panel" aria-labelledby="activity-heading">
+              <div class="panel__head">
+                <h2 id="activity-heading">Recent activity</h2>
+              </div>
+              <ul class="activity" id="activity-list">
+                <li class="activity__item">
+                  <span class="activity__dot" aria-hidden="true"></span>
+                  <p class="activity__text">
+                    <strong>Maya Chen</strong> deployed <strong>Checkout API</strong> to production
+                  </p>
+                  <time class="activity__time" datetime="2026-07-17T14:20">2h ago</time>
+                </li>
+                <li class="activity__item">
+                  <span class="activity__dot" aria-hidden="true"></span>
+                  <p class="activity__text">
+                    Seat invite accepted by <strong>jon@acme.co</strong>
+                  </p>
+                  <time class="activity__time" datetime="2026-07-17T11:05">5h ago</time>
+                </li>
+                <li class="activity__item">
+                  <span class="activity__dot" aria-hidden="true"></span>
+                  <p class="activity__text">
+                    <strong>Atlas Mobile</strong> paused — billing hold cleared
+                  </p>
+                  <time class="activity__time" datetime="2026-07-16T18:40">Yesterday</time>
+                </li>
+                <li class="activity__item">
+                  <span class="activity__dot" aria-hidden="true"></span>
+                  <p class="activity__text">
+                    Webhook signing key rotated for <strong>Pulse Analytics</strong>
+                  </p>
+                  <time class="activity__time" datetime="2026-07-16T09:12">Yesterday</time>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="demo-bar" id="demo-bar" aria-label="Demo states" hidden>
+            <button type="button" class="btn btn--ghost btn--sm" data-demo="ready">
+              Show data
+            </button>
+            <button type="button" class="btn btn--ghost btn--sm" data-demo="loading">
+              Loading
+            </button>
+            <button type="button" class="btn btn--ghost btn--sm" data-demo="empty">
+              Empty
+            </button>
+            <button type="button" class="btn btn--ghost btn--sm" data-demo="error">
+              Error
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="./js/app.js" defer></script>
+  </body>
+</html>
