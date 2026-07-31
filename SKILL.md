@@ -1,38 +1,93 @@
 ---
 name: frontend-expert
-description: Best practices, design patterns, modern UI/UX principles, CSS architecture, dynamic state management, responsive design, accessibility, and print/PDF layout for frontend web applications.
+description: >-
+  Chat-first frontend UI quality suite — 22 skills across UI Quality, Responsive,
+  Ship FE, and Depth pillars. Token decision tree, compliance gates, anti-AI-slop,
+  motion vocabulary (12 families), marketing landing recipes, and quality loop.
+  Auto-loads on any UI/build/audit/polish request — no slash commands needed.
 ---
 
-# Frontend Expert Skill
+# Frontend Expert
 
-This skill provides comprehensive guidelines and best practices for creating modern, aesthetic, responsive, accessible, and high-performance frontend web applications.
+**Chat-first frontend UI quality suite** for shipping polished, responsive, accessible web interfaces.
 
-## 1. Design & Aesthetics
-- **Color Systems:** Use curated CSS custom properties (HSL or HEX) for theme tokens. Maintain sufficient contrast (WCAG AA standard: 4.5:1 for normal text).
-- **Typography:** Import clean, modern fonts (e.g., Inter, Outfit, Segoe UI, system fallbacks) with a clear type scale and hierarchy.
-- **Glassmorphism & Depth:** Combine subtle borders (`1px solid rgba(...)`), soft backdrop filters (`backdrop-filter: blur(10px)`), and multi-layered box shadows (`0 8px 32px rgba(...)`).
-- **Micro-Interactions:** Add subtle transition effects (`transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1)`) on hover, focus, and active states.
+## What this pack does
 
-## 2. Modern CSS Layouts
-- **CSS Grid:** Ideal for 2D card grids, dashboard layouts, and header/content/sidebar split screens.
-- **Flexbox:** Ideal for 1D alignments, button groups, badge lists, and form rows.
-- **Responsive Web Design:** Use mobile-first or desktop-first media queries (`@media (min-width: ...)` / `@media (max-width: ...)`).
-- **CSS Variables:** Define tokens in `:root` for colors, radiuses, shadows, font-sizes, and spacing.
+This is **not** a single skill — it's a **suite of 22 skills** organized into pillars that auto-load based on what you ask. You never need to type a slash command; just describe what you want to build or fix.
 
-## 3. Print & PDF Layout (`@media print`)
-When building printable web documents (Invoices, Receipts, Reports, Certificates):
-- **Page Setup:** Specify exact print page size and margin (`@page { size: A4 portrait; margin: 10mm; }`).
-- **Color Preservation:** Force exact color rendering (`-webkit-print-color-adjust: exact; print-color-adjust: exact;`).
-- **Hiding UI Elements:** Wrap non-printable UI elements (sidebars, toolbars, buttons, inputs) in screen-only containers or hide them with `@media print { .no-print { display: none !important; } }`.
-- **Page Break Control:** Prevent awkward splitting of cards, tables, and total sections using `page-break-inside: avoid;` or `break-inside: avoid;`.
+## Pillars
 
-## 4. Interactive Forms & State Management
-- **Controlled Inputs:** Bind input events (`input`, `change`) to state models to enable live previews.
-- **Dynamic Tables:** Support adding, removing, and re-ordering rows (e.g. invoice line items).
-- **Calculated Fields:** Automatically derive subtotal, tax/PPN, discounts, and total values in real-time.
-- **User Feedback:** Clear validation styles (`:focus-visible`, valid/invalid state styling) and toast notifications for user actions.
+| Pillar | Skills | When it loads |
+|--------|--------|---------------|
+| **UI Quality** | judgment, tokens, components, anti-slop, ui-feel, a11y, testing, quality-loop, motion, webgl, monitoring, marketing-landing, design-fidelity, fe-devtools | Any UI build, audit, or polish |
+| **Responsive** (MUST) | responsive-ui | Every layout — 320/768/1024/1440 verified |
+| **Ship FE** | app-shell-routing, data-fetching, forms-validation | Shell/nav, API data, forms |
+| **Depth** | fe-architecture, fe-seo | Folder structure, meta/OG/SEO |
 
-## 5. Accessibility (A11y) & Semantic HTML
-- Use proper semantic tags (`<header>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<footer>`, `<aside>`).
-- Ensure interactive elements are keyboard reachable with visible focus rings.
-- Label all inputs using `<label for="...">` or `aria-label`.
+Full pillar map: `docs/pillars.md`.
+
+## How it works
+
+1. **You ask** — "bikin dashboard", "landing page", "rapihin UI", "audit design"
+2. **Intent map** matches your request → loads the right skills in order
+3. **Skills chain** — judgment → tokens → components → responsive → motion → anti-slop → ui-feel → a11y
+4. **Compliance gates** — before shipping, a conventions check verifies tokens, icons, responsive, hierarchy, typography, motion, shell, landing, a11y, and states
+
+See `AGENTS.md` for the full intent map.
+
+## Key systems
+
+### Token decision tree
+Colors, spacing, and radius come from a **decision tree** — not vibes. Custom project system → explicit preset → Plasma hard-gate → scored preset (max 24 points). 9 pre-built CSS token files in `tokens/`.
+
+Detail: `references/token-preset-scoring.md`.
+
+### Anti-AI slop
+Detects and fixes recognizable AI aesthetic patterns: purple/indigo defaults, Lorem ipsum, gradient spam, rounded-everything, shadow-heavy cards, hero-only landings.
+
+Detail: `references/anti-patterns.md`.
+
+### Motion vocabulary
+12 families, 144 named patterns. Choose by name, hand-roll implementation. No third-party registry installs by default. Shell gets light defaults; marketing picks ≤2 families.
+
+Detail: `references/motion-families.md`.
+
+### Compliance gates
+Ship checklist covering 12+ dimensions. Every UI build reports a conventions check before DONE.
+
+Detail: `references/compliance-gates.md`.
+
+### Quality loop
+BUILD → TEST → AUDIT → FIX cycle with max 3 iterations. Runs when you say "sampai bagus" or `/polish`.
+
+Skill: `skills/ui-quality-loop`.
+
+## Vocabulary skills
+
+### Design vocabulary
+Reverse-lookup for UI/design terms — describe something loosely and get the proper name. "Floating card over blur" → Glassmorphism. "Menu from the side" → Drawer/Sheet.
+
+Skill: `skills/design-vocabulary`.
+
+### Engineering vocabulary
+Reverse-lookup for frontend engineering patterns — "cache so it doesn't re-fetch" → SWR/stale-while-revalidate. "Render only visible list items" → Virtualization.
+
+Skill: `skills/engineering-vocabulary`.
+
+## Quick links
+
+- Intent map + hard rules: `AGENTS.md`
+- Pillar map: `docs/pillars.md`
+- Architecture layers: `docs/pack-layers.md`
+- All references: `references/README.md`
+- Token presets: `tokens/README.md`
+- Example output: `example/index.html`
+
+## Slash commands (optional — chat-first by default)
+
+| Command | Purpose |
+|---------|---------|
+| `/ui` | Build UI (auto-loads build chain) |
+| `/design` or `/audit` | Audit existing UI |
+| `/test-ui` | Test with a11y + devtools |
+| `/polish` | Quality loop until gates pass |

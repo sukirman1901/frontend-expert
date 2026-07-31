@@ -6,11 +6,11 @@ Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert)
 
 | Pillar | Skills | Role |
 |--------|--------|------|
-| **Suite root** | `frontend-expert` | Catalog / install entry — routes into the pillars below |
-| **UI Quality** (default) | `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `web-performance`, `design-fidelity`, `fe-devtools`, **`marketing-landing`** | Visual craft, tokens, polish, fidelity, tooling, motion vocabulary, marketing section IA |
+| **Suite root** | `frontend-expert`, **`writing-skills`** | Catalog / install entry — routes into the pillars below; skill authoring |
+| **UI Quality** (default) | `frontend-judgment`, `design-tokens`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `web-performance`, `design-fidelity`, `fe-devtools`, **`marketing-landing`**, **`design-vocabulary`** | Visual craft, tokens, polish, fidelity, tooling, motion vocabulary, marketing section IA, design term lookup |
 | **Responsive** (MUST) | `responsive-ui` | All devices 320→1440+ |
 | **Ship FE** | `app-shell-routing`, `data-fetching`, `forms-validation` | Shell, async UI, forms |
-| **Depth** | `fe-architecture`, `fe-seo` | Structure, technical SEO |
+| **Depth** | `fe-architecture`, `fe-seo`, **`engineering-vocabulary`** | Structure, technical SEO, engineering term lookup |
 
 ## Default build chain
 

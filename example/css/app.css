@@ -351,7 +351,7 @@ a {
   align-items: center;
   gap: var(--space-2);
   width: 100%;
-  min-height: 2.25rem;
+  min-height: 2.5rem;
   padding: 0 var(--space-3);
   border: 0;
   border-radius: calc(var(--radius) - 2px);
@@ -388,6 +388,10 @@ a {
   animation: fade-up 280ms ease both;
 }
 
+.page {
+  animation: fade-up 280ms ease both;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -412,6 +416,7 @@ a {
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.25;
+  text-wrap: balance;
 }
 
 .page-head__text p {
@@ -559,7 +564,7 @@ a {
 }
 
 .filter-input {
-  min-height: 2.5rem;
+  min-height: 2.75rem;
   padding: 0 var(--space-3);
   border: 1px solid hsl(var(--input));
   border-radius: var(--radius);
@@ -581,7 +586,7 @@ a {
   justify-content: space-between;
   gap: var(--space-4);
   width: 100%;
-  min-height: 2.5rem;
+  min-height: 2.75rem;
   padding: 0 0.875rem 0 var(--space-3);
   border: 1px solid hsl(var(--input));
   border-radius: var(--radius);
@@ -599,6 +604,7 @@ a {
 
 .select__trigger:hover {
   border-color: hsl(var(--ring) / 0.45);
+  background: hsl(var(--muted));
 }
 
 .select__trigger:focus-visible {
@@ -897,6 +903,296 @@ a {
   flex: 1 1 auto;
 }
 
+/* —— Billing —— */
+.billing-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.billing-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.billing-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.billing-plan__body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.billing-plan__tier {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+}
+
+.billing-plan__name {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.billing-plan__price {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.billing-plan__period {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: hsl(var(--muted-foreground));
+}
+
+.billing-plan__renews {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.billing-limits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.billing-limit__head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-1);
+}
+
+.billing-limit__label {
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.billing-limit__value {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.billing-limit__bar {
+  height: 0.375rem;
+  border-radius: 999px;
+  background: hsl(var(--muted));
+  overflow: hidden;
+}
+
+.billing-limit__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+  transition: width 400ms ease;
+}
+
+.payment-card {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.payment-card__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.payment-card__name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.payment-card__detail {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* —— Settings —— */
+.settings-tabs {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid hsl(var(--border));
+  padding-bottom: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.settings-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  background: transparent;
+  color: hsl(var(--muted-foreground));
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.settings-tab:hover {
+  color: hsl(var(--foreground));
+}
+
+.settings-tab.is-active {
+  color: hsl(var(--foreground));
+  border-bottom-color: hsl(var(--primary));
+  font-weight: 600;
+}
+
+.settings-form {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 32rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+.form-input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  border: 1px solid hsl(var(--input));
+  border-radius: var(--radius);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.25);
+}
+
+.form-input--mono {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.form-actions {
+  padding-top: var(--space-2);
+}
+
+.settings-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.settings-toggle-row:last-child {
+  border-bottom: 0;
+}
+
+.settings-toggle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.settings-toggle__label {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.settings-toggle__desc {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.toggle {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: hsl(var(--muted));
+  cursor: pointer;
+  transition: background 200ms ease;
+  position: relative;
+}
+
+.toggle[aria-checked="true"] {
+  background: hsl(var(--primary));
+}
+
+.toggle__track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  position: relative;
+}
+
+.toggle__thumb {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 999px;
+  background: white;
+  transition: transform 200ms ease;
+  box-shadow: 0 1px 3px hsl(var(--foreground) / 0.15);
+}
+
+.toggle[aria-checked="true"] .toggle__thumb {
+  transform: translateX(1.25rem);
+}
+
 /* —— Desktop / tablet —— */
 @media (min-width: 768px) {
   .app {
@@ -1016,6 +1312,14 @@ a {
   .layout-split .panel {
     margin-bottom: 0;
   }
+
+  .billing-layout {
+    grid-template-columns: 1.6fr 1fr;
+  }
+
+  .settings-toggle-row {
+    padding: var(--space-3) 0;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1043,6 +1347,51 @@ a {
   /* Auto-hide table columns on phone — cards-like priority */
   .data-table .col-hide-sm {
     display: none;
+  }
+
+  /* Primary buttons full-width on mobile */
+  .page-head__actions {
+    width: 100%;
+  }
+
+  .page-head__actions .btn {
+    width: 100%;
+  }
+
+  /* Settings tabs scroll hint */
+  .settings-tabs {
+    mask-image: linear-gradient(
+      to right,
+      black calc(100% - 2rem),
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black calc(100% - 2rem),
+      transparent
+    );
+  }
+
+  /* Billing — invoice table: hide description on phone */
+  .data-table .col-hide-billing {
+    display: none;
+  }
+
+  /* Billing — plan tier stacks on very small screens */
+  .billing-plan__tier {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  /* Billing — side cards get vertical spacing when stacked */
+  .billing-side .panel + .panel {
+    margin-top: 0;
+  }
+
+  /* Settings — full width on mobile */
+  .settings-form {
+    max-width: none;
+    padding: var(--space-3);
   }
 }
 

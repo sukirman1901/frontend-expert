@@ -37,6 +37,9 @@ Pillar map: `docs/pillars.md`.
 | Slow / LCP / optimize | `web-performance` | — |
 | WebGL / shader / Plasma | `webgl` | — |
 | Monitoring / Sentry / OTel | `monitoring` | — |
+| "What's the name for…" / loose UI description / design term lookup | `design-vocabulary` | — |
+| "What pattern is…" / loose engineering description / FE term lookup | `engineering-vocabulary` | — |
+| Create/add new skill / extend the pack / "buat skill baru" | `writing-skills` | — |
 
 \* `frontend-judgment` for non-trivial / blank-canvas only — see skip rules.
 
@@ -77,6 +80,9 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `marketing-landing` | UI Quality | Marketing section stack (hero→footer); **hand-roll** — not registry install |
 | `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
 | `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
+| `design-vocabulary` | UI Quality | Reverse-lookup: loose description → design term |
+| `engineering-vocabulary` | Depth | Reverse-lookup: loose description → FE engineering term |
+| `writing-skills` | Suite root | Author new pack skills following conventions |
 
 ## Hard rules
 

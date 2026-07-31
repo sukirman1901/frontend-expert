@@ -153,219 +153,506 @@
         </header>
 
         <main class="content" id="main" tabindex="-1">
-          <div class="page-head">
-            <div class="page-head__text">
-              <h1 id="page-title">Overview</h1>
-              <p id="page-sub">
-                Workspace pulse for the last 30 days — ship velocity, usage, and open work.
-              </p>
-            </div>
-            <div class="page-head__actions">
-              <button type="button" class="btn btn--secondary" id="btn-export">
-                <re-icon icon="download" size="16"></re-icon>
-                Export
-              </button>
-              <button type="button" class="btn btn--primary" id="btn-new-project">
-                <re-icon icon="plus" size="16"></re-icon>
-                New project
-              </button>
-            </div>
-          </div>
 
-          <section class="kpi-strip" aria-label="Key metrics" id="kpi-strip">
-            <article class="kpi">
-              <p class="kpi__label">Active projects</p>
-              <p class="kpi__value">24</p>
-              <p class="kpi__delta kpi__delta--up">+3 vs last month</p>
-            </article>
-            <article class="kpi">
-              <p class="kpi__label">API requests</p>
-              <p class="kpi__value">1.84M</p>
-              <p class="kpi__delta kpi__delta--up">+12.4%</p>
-            </article>
-            <article class="kpi">
-              <p class="kpi__label">Seats used</p>
-              <p class="kpi__value">38 / 50</p>
-              <p class="kpi__delta kpi__delta--flat">76% of plan</p>
-            </article>
-            <article class="kpi">
-              <p class="kpi__label">Error rate</p>
-              <p class="kpi__value">0.18%</p>
-              <p class="kpi__delta kpi__delta--down">−0.04 pts</p>
-            </article>
-          </section>
-
-          <div class="layout-split">
-            <section class="panel" aria-labelledby="projects-heading">
-              <div class="panel__head">
-                <h2 id="projects-heading">Projects</h2>
-                <div class="panel__tools">
-                  <div class="select" id="status-select">
-                    <span class="sr-only" id="status-filter-label">Status</span>
-                    <button
-                      type="button"
-                      class="select__trigger"
-                      id="status-filter"
-                      aria-haspopup="listbox"
-                      aria-expanded="false"
-                      aria-controls="status-filter-menu"
-                      aria-labelledby="status-filter-label status-filter-value"
-                      data-value="all"
-                    >
-                      <span class="select__value" id="status-filter-value">All statuses</span>
-                      <re-icon class="select__caret" icon="chevron-down" size="16" aria-hidden="true"></re-icon>
-                    </button>
-                    <ul
-                      class="select__menu"
-                      id="status-filter-menu"
-                      role="listbox"
-                      aria-labelledby="status-filter-label"
-                      tabindex="-1"
-                      hidden
-                    >
-                      <li
-                        role="option"
-                        class="select__option is-selected"
-                        id="status-opt-all"
-                        data-value="all"
-                        aria-selected="true"
-                      >
-                        All statuses
-                      </li>
-                      <li
-                        role="option"
-                        class="select__option"
-                        id="status-opt-live"
-                        data-value="live"
-                        aria-selected="false"
-                      >
-                        Live
-                      </li>
-                      <li
-                        role="option"
-                        class="select__option"
-                        id="status-opt-paused"
-                        data-value="paused"
-                        aria-selected="false"
-                      >
-                        Paused
-                      </li>
-                      <li
-                        role="option"
-                        class="select__option"
-                        id="status-opt-draft"
-                        data-value="draft"
-                        aria-selected="false"
-                      >
-                        Draft
-                      </li>
-                    </ul>
-                  </div>
-                  <label class="sr-only" for="project-filter">Filter projects</label>
-                  <input
-                    class="filter-input"
-                    id="project-filter"
-                    type="search"
-                    placeholder="Filter by name…"
-                  />
-                </div>
+          <!-- ===== OVERVIEW ===== -->
+          <section class="page" id="page-overview" data-page="overview">
+            <div class="page-head">
+              <div class="page-head__text">
+                <h1>Overview</h1>
+                <p>Workspace pulse for the last 30 days — ship velocity, usage, and open work.</p>
               </div>
-
-              <div
-                class="skeleton-rows"
-                id="table-loading"
-                aria-hidden="true"
-                aria-busy="false"
-              >
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
-              </div>
-
-              <div class="state-box" id="table-error" role="alert">
-                <re-icon icon="alert-circle" size="28"></re-icon>
-                <h3>Couldn’t load projects</h3>
-                <p>Check your connection, then try again.</p>
-                <button type="button" class="btn btn--primary" id="retry-load">Retry</button>
-              </div>
-
-              <div class="state-box" id="table-empty">
-                <re-icon icon="folder-error" size="28"></re-icon>
-                <h3>No projects match</h3>
-                <p>Clear filters or create a new project to get started.</p>
-                <button type="button" class="btn btn--primary" id="empty-new">
+              <div class="page-head__actions">
+                <button type="button" class="btn btn--secondary" id="btn-export">
+                  <re-icon icon="download" size="16"></re-icon>
+                  Export
+                </button>
+                <button type="button" class="btn btn--primary" id="btn-new-project">
+                  <re-icon icon="plus" size="16"></re-icon>
                   New project
                 </button>
               </div>
+            </div>
 
-              <div class="table-wrap" id="table-wrap">
-                <table class="data-table">
+            <section class="kpi-strip" aria-label="Key metrics">
+              <article class="kpi">
+                <p class="kpi__label">Active projects</p>
+                <p class="kpi__value">24</p>
+                <p class="kpi__delta kpi__delta--up">+3 vs last month</p>
+              </article>
+              <article class="kpi">
+                <p class="kpi__label">API requests</p>
+                <p class="kpi__value">1.84M</p>
+                <p class="kpi__delta kpi__delta--up">+12.4%</p>
+              </article>
+              <article class="kpi">
+                <p class="kpi__label">Seats used</p>
+                <p class="kpi__value">38 / 50</p>
+                <p class="kpi__delta kpi__delta--flat">76% of plan</p>
+              </article>
+              <article class="kpi">
+                <p class="kpi__label">Error rate</p>
+                <p class="kpi__value">0.18%</p>
+                <p class="kpi__delta kpi__delta--down">−0.04 pts</p>
+              </article>
+            </section>
+
+            <div class="layout-split">
+              <section class="panel" aria-labelledby="ov-projects-heading">
+                <div class="panel__head">
+                  <h2 id="ov-projects-heading">Projects</h2>
+                  <div class="panel__tools">
+                    <div class="select" id="status-select">
+                      <span class="sr-only" id="status-filter-label">Status</span>
+                      <button
+                        type="button"
+                        class="select__trigger"
+                        id="status-filter"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-controls="status-filter-menu"
+                        aria-labelledby="status-filter-label status-filter-value"
+                        data-value="all"
+                      >
+                        <span class="select__value" id="status-filter-value">All statuses</span>
+                        <re-icon class="select__caret" icon="chevron-down" size="16" aria-hidden="true"></re-icon>
+                      </button>
+                      <ul
+                        class="select__menu"
+                        id="status-filter-menu"
+                        role="listbox"
+                        aria-labelledby="status-filter-label"
+                        tabindex="-1"
+                        hidden
+                      >
+                        <li role="option" class="select__option is-selected" id="status-opt-all" data-value="all" aria-selected="true">All statuses</li>
+                        <li role="option" class="select__option" id="status-opt-live" data-value="live" aria-selected="false">Live</li>
+                        <li role="option" class="select__option" id="status-opt-paused" data-value="paused" aria-selected="false">Paused</li>
+                        <li role="option" class="select__option" id="status-opt-draft" data-value="draft" aria-selected="false">Draft</li>
+                      </ul>
+                    </div>
+                    <label class="sr-only" for="project-filter">Filter projects</label>
+                    <input class="filter-input" id="project-filter" type="search" placeholder="Filter by name…" />
+                  </div>
+                </div>
+                <div class="skeleton-rows" id="table-loading" aria-hidden="true" aria-busy="false">
+                  <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+                </div>
+                <div class="state-box" id="table-error" role="alert">
+                  <re-icon icon="alert-circle" size="28"></re-icon>
+                  <h3>Couldn't load projects</h3>
+                  <p>Check your connection, then try again.</p>
+                  <button type="button" class="btn btn--primary" id="retry-load">Retry</button>
+                </div>
+                <div class="state-box" id="table-empty">
+                  <re-icon icon="folder-error" size="28"></re-icon>
+                  <h3>No projects match</h3>
+                  <p>Clear filters or create a new project to get started.</p>
+                  <button type="button" class="btn btn--primary" id="empty-new">New project</button>
+                </div>
+                <div class="table-wrap" id="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Project</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="col-hide-sm">Owner</th>
+                        <th scope="col" class="col-hide-sm">Requests</th>
+                        <th scope="col">Updated</th>
+                      </tr>
+                    </thead>
+                    <tbody id="project-rows"></tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="panel" aria-labelledby="activity-heading">
+                <div class="panel__head">
+                  <h2 id="activity-heading">Recent activity</h2>
+                </div>
+                <ul class="activity" id="activity-list">
+                  <li class="activity__item">
+                    <span class="activity__dot" aria-hidden="true"></span>
+                    <p class="activity__text"><strong>Maya Chen</strong> deployed <strong>Checkout API</strong> to production</p>
+                    <time class="activity__time" datetime="2026-07-17T14:20">2h ago</time>
+                  </li>
+                  <li class="activity__item">
+                    <span class="activity__dot" aria-hidden="true"></span>
+                    <p class="activity__text">Seat invite accepted by <strong>jon@acme.co</strong></p>
+                    <time class="activity__time" datetime="2026-07-17T11:05">5h ago</time>
+                  </li>
+                  <li class="activity__item">
+                    <span class="activity__dot" aria-hidden="true"></span>
+                    <p class="activity__text"><strong>Atlas Mobile</strong> paused — billing hold cleared</p>
+                    <time class="activity__time" datetime="2026-07-16T18:40">Yesterday</time>
+                  </li>
+                  <li class="activity__item">
+                    <span class="activity__dot" aria-hidden="true"></span>
+                    <p class="activity__text">Webhook signing key rotated for <strong>Pulse Analytics</strong></p>
+                    <time class="activity__time" datetime="2026-07-16T09:12">Yesterday</time>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="demo-bar" id="demo-bar" aria-label="Demo states" hidden>
+              <button type="button" class="btn btn--ghost btn--sm" data-demo="ready">Show data</button>
+              <button type="button" class="btn btn--ghost btn--sm" data-demo="loading">Loading</button>
+              <button type="button" class="btn btn--ghost btn--sm" data-demo="empty">Empty</button>
+              <button type="button" class="btn btn--ghost btn--sm" data-demo="error">Error</button>
+            </div>
+          </section>
+
+          <!-- ===== PROJECTS ===== -->
+          <section class="page" id="page-projects" data-page="projects" hidden>
+            <div class="page-head">
+              <div class="page-head__text">
+                <h1>Projects</h1>
+                <p>Manage your API projects, endpoints, and webhooks.</p>
+              </div>
+              <div class="page-head__actions">
+                <button type="button" class="btn btn--primary">
+                  <re-icon icon="plus" size="16"></re-icon>
+                  New project
+                </button>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel__head">
+                <h2>All projects</h2>
+                <div class="panel__tools">
+                  <label class="sr-only" for="projects-search">Search projects</label>
+                  <input class="filter-input" id="projects-search" type="search" placeholder="Search by name or ID…" />
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table" id="projects-table">
                   <thead>
                     <tr>
                       <th scope="col">Project</th>
                       <th scope="col">Status</th>
-                      <th scope="col" class="col-hide-sm">Owner</th>
-                      <th scope="col" class="col-hide-sm">Requests</th>
-                      <th scope="col">Updated</th>
+                      <th scope="col" class="col-hide-sm">Endpoint</th>
+                      <th scope="col" class="col-hide-sm">Requests (30d)</th>
+                      <th scope="col">Last deployed</th>
+                      <th scope="col"><span class="sr-only">Actions</span></th>
                     </tr>
                   </thead>
-                  <tbody id="project-rows"></tbody>
+                  <tbody id="projects-rows"></tbody>
                 </table>
               </div>
-            </section>
+            </div>
+          </section>
 
-            <section class="panel" aria-labelledby="activity-heading">
-              <div class="panel__head">
-                <h2 id="activity-heading">Recent activity</h2>
+          <!-- ===== CUSTOMERS ===== -->
+          <section class="page" id="page-customers" data-page="customers" hidden>
+            <div class="page-head">
+              <div class="page-head__text">
+                <h1>Customers</h1>
+                <p>Organizations with active API keys and usage this billing cycle.</p>
               </div>
-              <ul class="activity" id="activity-list">
-                <li class="activity__item">
-                  <span class="activity__dot" aria-hidden="true"></span>
-                  <p class="activity__text">
-                    <strong>Maya Chen</strong> deployed <strong>Checkout API</strong> to production
-                  </p>
-                  <time class="activity__time" datetime="2026-07-17T14:20">2h ago</time>
-                </li>
-                <li class="activity__item">
-                  <span class="activity__dot" aria-hidden="true"></span>
-                  <p class="activity__text">
-                    Seat invite accepted by <strong>jon@acme.co</strong>
-                  </p>
-                  <time class="activity__time" datetime="2026-07-17T11:05">5h ago</time>
-                </li>
-                <li class="activity__item">
-                  <span class="activity__dot" aria-hidden="true"></span>
-                  <p class="activity__text">
-                    <strong>Atlas Mobile</strong> paused — billing hold cleared
-                  </p>
-                  <time class="activity__time" datetime="2026-07-16T18:40">Yesterday</time>
-                </li>
-                <li class="activity__item">
-                  <span class="activity__dot" aria-hidden="true"></span>
-                  <p class="activity__text">
-                    Webhook signing key rotated for <strong>Pulse Analytics</strong>
-                  </p>
-                  <time class="activity__time" datetime="2026-07-16T09:12">Yesterday</time>
-                </li>
-              </ul>
-            </section>
-          </div>
+              <div class="page-head__actions">
+                <button type="button" class="btn btn--primary">
+                  <re-icon icon="user-plus" size="16"></re-icon>
+                  Invite
+                </button>
+              </div>
+            </div>
 
-          <div class="demo-bar" id="demo-bar" aria-label="Demo states" hidden>
-            <button type="button" class="btn btn--ghost btn--sm" data-demo="ready">
-              Show data
-            </button>
-            <button type="button" class="btn btn--ghost btn--sm" data-demo="loading">
-              Loading
-            </button>
-            <button type="button" class="btn btn--ghost btn--sm" data-demo="empty">
-              Empty
-            </button>
-            <button type="button" class="btn btn--ghost btn--sm" data-demo="error">
-              Error
-            </button>
-          </div>
+            <section class="kpi-strip" aria-label="Customer metrics">
+              <article class="kpi">
+                <p class="kpi__label">Total organizations</p>
+                <p class="kpi__value">12</p>
+                <p class="kpi__delta kpi__delta--up">+2 this month</p>
+              </article>
+              <article class="kpi">
+                <p class="kpi__label">Active seats</p>
+                <p class="kpi__value">38 / 50</p>
+                <p class="kpi__delta kpi__delta--flat">76% of plan</p>
+              </article>
+              <article class="kpi">
+                <p class="kpi__label">Monthly revenue</p>
+                <p class="kpi__value">$4.2k</p>
+                <p class="kpi__delta kpi__delta--up">+8.1%</p>
+              </article>
+              <article class="kpi">
+                <p class="kpi__label">Avg requests/org</p>
+                <p class="kpi__value">153k</p>
+                <p class="kpi__delta kpi__delta--down">−3.2%</p>
+              </article>
+            </section>
+
+            <div class="panel">
+              <div class="panel__head">
+                <h2>All organizations</h2>
+                <div class="panel__tools">
+                  <label class="sr-only" for="customer-search">Search customers</label>
+                  <input class="filter-input" id="customer-search" type="search" placeholder="Search by name…" />
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table" id="customers-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Organization</th>
+                      <th scope="col">Plan</th>
+                      <th scope="col" class="col-hide-sm">Seats</th>
+                      <th scope="col" class="col-hide-sm">Requests (30d)</th>
+                      <th scope="col">Status</th>
+                      <th scope="col" class="col-hide-sm">Last active</th>
+                    </tr>
+                  </thead>
+                  <tbody id="customers-rows"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== BILLING ===== -->
+          <section class="page" id="page-billing" data-page="billing" hidden>
+            <div class="page-head">
+              <div class="page-head__text">
+                <h1>Billing</h1>
+                <p>Plan, invoices, and payment for Northline Pro.</p>
+              </div>
+              <div class="page-head__actions">
+                <button type="button" class="btn btn--secondary">
+                  <re-icon icon="receipt" size="16"></re-icon>
+                  View invoices
+                </button>
+                <button type="button" class="btn btn--primary">
+                  <re-icon icon="credit-card" size="16"></re-icon>
+                  Update payment
+                </button>
+              </div>
+            </div>
+
+            <div class="billing-layout">
+              <div class="billing-main">
+                <section class="panel billing-plan" aria-labelledby="plan-heading">
+                  <div class="panel__head">
+                    <h2 id="plan-heading">Current plan</h2>
+                    <span class="badge badge--live">Active</span>
+                  </div>
+                  <div class="billing-plan__body">
+                    <div class="billing-plan__tier">
+                      <p class="billing-plan__name">Northline Pro</p>
+                      <p class="billing-plan__price">$49<span class="billing-plan__period">/month</span></p>
+                    </div>
+                    <p class="billing-plan__renews">Renews on <strong>Aug 17, 2026</strong></p>
+                    <div class="billing-limits">
+                      <div class="billing-limit">
+                        <div class="billing-limit__head">
+                          <span class="billing-limit__label">API requests</span>
+                          <span class="billing-limit__value">1.84M / 5M</span>
+                        </div>
+                        <div class="billing-limit__bar"><span class="billing-limit__fill" style="width:36.8%"></span></div>
+                      </div>
+                      <div class="billing-limit">
+                        <div class="billing-limit__head">
+                          <span class="billing-limit__label">Seats</span>
+                          <span class="billing-limit__value">38 / 50</span>
+                        </div>
+                        <div class="billing-limit__bar"><span class="billing-limit__fill" style="width:76%"></span></div>
+                      </div>
+                      <div class="billing-limit">
+                        <div class="billing-limit__head">
+                          <span class="billing-limit__label">Webhooks</span>
+                          <span class="billing-limit__value">12 / 25</span>
+                        </div>
+                        <div class="billing-limit__bar"><span class="billing-limit__fill" style="width:48%"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="panel" aria-labelledby="invoices-heading">
+                  <div class="panel__head">
+                    <h2 id="invoices-heading">Invoice history</h2>
+                  </div>
+                  <div class="table-wrap">
+                    <table class="data-table" id="invoices-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col" class="col-hide-billing">Description</th>
+                          <th scope="col">Amount</th>
+                          <th scope="col">Status</th>
+                          <th scope="col"><span class="sr-only">Download</span></th>
+                        </tr>
+                      </thead>
+                      <tbody id="invoices-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+
+              <aside class="billing-side">
+                <section class="panel" aria-labelledby="payment-heading">
+                  <div class="panel__head">
+                    <h2 id="payment-heading">Payment method</h2>
+                  </div>
+                  <div class="payment-card">
+                    <div class="payment-card__brand">
+                      <re-icon icon="credit-card" size="20"></re-icon>
+                      <span>Visa ending in 4242</span>
+                    </div>
+                    <p class="payment-card__detail">Expires 09/2028</p>
+                    <button type="button" class="btn btn--secondary btn--full">Update card</button>
+                  </div>
+                </section>
+
+                <section class="panel" aria-labelledby="contact-heading">
+                  <div class="panel__head">
+                    <h2 id="contact-heading">Billing contact</h2>
+                  </div>
+                  <div class="payment-card">
+                    <p class="payment-card__name">Ayla Kim</p>
+                    <p class="payment-card__detail">ayla@northline.app</p>
+                    <button type="button" class="btn btn--secondary btn--full">Change</button>
+                  </div>
+                </section>
+              </aside>
+            </div>
+          </section>
+
+          <!-- ===== SETTINGS ===== -->
+          <section class="page" id="page-settings" data-page="settings" hidden>
+            <div class="page-head">
+              <div class="page-head__text">
+                <h1>Settings</h1>
+                <p>Org profile, members, and security defaults.</p>
+              </div>
+            </div>
+
+            <nav class="settings-tabs" aria-label="Settings sections">
+              <button type="button" class="settings-tab is-active" data-settings-tab="profile">Profile</button>
+              <button type="button" class="settings-tab" data-settings-tab="members">Members</button>
+              <button type="button" class="settings-tab" data-settings-tab="api-keys">API Keys</button>
+              <button type="button" class="settings-tab" data-settings-tab="security">Security</button>
+            </nav>
+
+            <!-- Profile -->
+            <div class="settings-section" id="settings-profile" data-settings-panel="profile">
+              <section class="panel">
+                <div class="panel__head">
+                  <h2>Organization profile</h2>
+                </div>
+                <div class="settings-form">
+                  <div class="form-row">
+                    <label class="form-label" for="org-name">Organization name</label>
+                    <input class="form-input" id="org-name" type="text" value="Northline" />
+                  </div>
+                  <div class="form-row">
+                    <label class="form-label" for="org-slug">Workspace slug</label>
+                    <input class="form-input form-input--mono" id="org-slug" type="text" value="northline" />
+                  </div>
+                  <div class="form-row">
+                    <label class="form-label" for="org-timezone">Timezone</label>
+                    <input class="form-input" id="org-timezone" type="text" value="UTC-7 (Pacific Time)" />
+                  </div>
+                  <div class="form-actions">
+                    <button type="button" class="btn btn--primary">Save changes</button>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Members -->
+            <div class="settings-section" id="settings-members" data-settings-panel="members" hidden>
+              <section class="panel">
+                <div class="panel__head">
+                  <h2>Team members</h2>
+                  <div class="panel__tools">
+                    <button type="button" class="btn btn--primary btn--sm">
+                      <re-icon icon="user-plus" size="14"></re-icon>
+                      Invite member
+                    </button>
+                  </div>
+                </div>
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Member</th>
+                        <th scope="col">Role</th>
+                        <th scope="col" class="col-hide-sm">Joined</th>
+                        <th scope="col"><span class="sr-only">Actions</span></th>
+                      </tr>
+                    </thead>
+                    <tbody id="members-rows"></tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+
+            <!-- API Keys -->
+            <div class="settings-section" id="settings-api-keys" data-settings-panel="api-keys" hidden>
+              <section class="panel">
+                <div class="panel__head">
+                  <h2>API keys</h2>
+                  <div class="panel__tools">
+                    <button type="button" class="btn btn--primary btn--sm">
+                      <re-icon icon="plus" size="14"></re-icon>
+                      Generate key
+                    </button>
+                  </div>
+                </div>
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Prefix</th>
+                        <th scope="col" class="col-hide-sm">Created</th>
+                        <th scope="col" class="col-hide-sm">Last used</th>
+                        <th scope="col"><span class="sr-only">Actions</span></th>
+                      </tr>
+                    </thead>
+                    <tbody id="api-keys-rows"></tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+
+            <!-- Security -->
+            <div class="settings-section" id="settings-security" data-settings-panel="security" hidden>
+              <section class="panel">
+                <div class="panel__head">
+                  <h2>Security</h2>
+                </div>
+                <div class="settings-form">
+                  <div class="settings-toggle-row">
+                    <div class="settings-toggle-text">
+                      <p class="settings-toggle__label">Two-factor authentication</p>
+                      <p class="settings-toggle__desc">Require 2FA for all organization members.</p>
+                    </div>
+                    <button type="button" class="toggle" role="switch" aria-checked="false" id="toggle-2fa">
+                      <span class="toggle__track"><span class="toggle__thumb"></span></span>
+                    </button>
+                  </div>
+                  <div class="settings-toggle-row">
+                    <div class="settings-toggle-text">
+                      <p class="settings-toggle__label">IP allowlist</p>
+                      <p class="settings-toggle__desc">Restrict API access to specific IP addresses.</p>
+                    </div>
+                    <button type="button" class="toggle" role="switch" aria-checked="true" id="toggle-ip">
+                      <span class="toggle__track"><span class="toggle__thumb"></span></span>
+                    </button>
+                  </div>
+                  <div class="settings-toggle-row">
+                    <div class="settings-toggle-text">
+                      <p class="settings-toggle__label">Session timeout</p>
+                      <p class="settings-toggle__desc">Automatically sign out inactive users after 30 minutes.</p>
+                    </div>
+                    <button type="button" class="toggle is-on" role="switch" aria-checked="true" id="toggle-session">
+                      <span class="toggle__track"><span class="toggle__thumb"></span></span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+
         </main>
       </div>
     </div>

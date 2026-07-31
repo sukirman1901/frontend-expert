@@ -1,5 +1,48 @@
 {
   "name": "frontend-expert",
-  "version": "1.0.0",
-  "description": "Chat-first frontend UI quality — judgment, tokens, responsive, motion, marketing landing, anti-AI-slop, a11y, perf, testing."
+  "version": "1.1.0",
+  "description": "Chat-first frontend UI quality — judgment, tokens, responsive, motion, marketing landing, anti-AI-slop, a11y, perf, testing, vocabulary.",
+  "skills": [
+    "skills/frontend-expert",
+    "skills/frontend-judgment",
+    "skills/design-tokens",
+    "skills/ui-components",
+    "skills/responsive-ui",
+    "skills/anti-ai-slop",
+    "skills/ui-feel",
+    "skills/accessibility",
+    "skills/web-performance",
+    "skills/motion",
+    "skills/frontend-testing",
+    "skills/ui-quality-loop",
+    "skills/webgl",
+    "skills/monitoring",
+    "skills/app-shell-routing",
+    "skills/data-fetching",
+    "skills/forms-validation",
+    "skills/fe-architecture",
+    "skills/fe-seo",
+    "skills/marketing-landing",
+    "skills/design-fidelity",
+    "skills/fe-devtools",
+    "skills/design-vocabulary",
+    "skills/engineering-vocabulary",
+    "skills/writing-skills"
+  ],
+  "agents": [
+    "agents/ui-developer.md",
+    "agents/design-reviewer.md",
+    "agents/test-engineer.md"
+  ],
+  "commands": [
+    "commands/ui.md",
+    "commands/design.md",
+    "commands/audit.md",
+    "commands/test-ui.md",
+    "commands/polish.md"
+  ],
+  "hooks": [
+    "hooks/SESSION-START.md",
+    "hooks/ANTI-SLOP.md"
+  ]
 }

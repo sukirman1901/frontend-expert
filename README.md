@@ -61,10 +61,10 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 
 | Pillar | What |
 |--------|------|
-| **UI Quality** | Tokens, anti-slop, ui-feel, a11y, tests, polish loop, WebGL, monitoring |
+| **UI Quality** | Tokens, anti-slop, ui-feel, a11y, tests, polish loop, WebGL, monitoring, design vocabulary |
 | **Responsive MUST** | All devices 320→1440+ (`responsive-ui`) |
 | **Ship FE** | App shell/routing, data-fetching, forms-validation |
-| **Depth** | FE architecture, technical SEO |
+| **Depth** | FE architecture, technical SEO, engineering vocabulary |
 
 ```
   Chat (default)                         Optional shortcuts
@@ -131,7 +131,7 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 ---
 
-## Skills (22)
+## Skills (25)
 
 Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 
@@ -159,6 +159,9 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 | `forms-validation` | Ship FE | Forms / wizards |
 | `fe-architecture` | Depth | Folders / state boundaries |
 | `fe-seo` | Depth | Meta / OG / indexability |
+| `design-vocabulary` | UI Quality | Name a design concept from a loose description |
+| `engineering-vocabulary` | Depth | Name a FE engineering pattern from a loose description |
+| `writing-skills` | Suite root | Author new skills following pack conventions |
 
 \* Skip judgment for tiny clear fixes or “just implement” / “langsung saja”.
 
@@ -274,7 +277,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 22 skills: suite root + domain (incl. marketing-landing) — see docs/pillars.md
+├── skills/                 # 25 skills: suite root + domain (incl. vocabulary + writing) — see docs/pillars.md
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
 ├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)
