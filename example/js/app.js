@@ -353,7 +353,7 @@
         <td class="col-hide-sm">${k.lastUsed}</td>
         <td>
           <button type="button" class="icon-btn" aria-label="Revoke key ${k.name}">
-            <re-icon icon="trash" size="16"></re-icon>
+            <re-icon icon="trash6" size="16"></re-icon>
           </button>
         </td>
       </tr>`).join("");

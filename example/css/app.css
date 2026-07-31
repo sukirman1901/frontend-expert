@@ -19,6 +19,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 button,
 input {
   font: inherit;
@@ -161,6 +171,13 @@ a {
 
 .nav-item:active {
   transform: scale(0.96);
+}
+
+re-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .nav-item.is-active {
@@ -701,6 +718,7 @@ a {
   text-align: left;
   border-bottom: 1px solid hsl(var(--border));
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .data-table th {
@@ -1059,11 +1077,15 @@ a {
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
-  transition: color 120ms ease, border-color 120ms ease;
+  transition: color 120ms ease, border-color 120ms ease, transform 100ms ease;
 }
 
 .settings-tab:hover {
   color: hsl(var(--foreground));
+}
+
+.settings-tab:active {
+  transform: scale(0.96);
 }
 
 .settings-tab.is-active {
@@ -1117,7 +1139,14 @@ a {
 }
 
 .form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   padding-top: var(--space-2);
+}
+
+.form-actions .btn {
+  width: auto;
 }
 
 .settings-toggle-row {
@@ -1392,6 +1421,10 @@ a {
   .settings-form {
     max-width: none;
     padding: var(--space-3);
+  }
+
+  .form-actions .btn {
+    width: 100%;
   }
 }
 

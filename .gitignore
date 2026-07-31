@@ -17,3 +17,7 @@ node_modules/
 /walisongo/backend/.env
 /walisongo/backend/database/*.sqlite
 /walisongo/backend/storage/*.key
+
+# Local skills install cache
+.agents/
+skills-lock.json
