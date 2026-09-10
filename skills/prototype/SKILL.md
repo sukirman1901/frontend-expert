@@ -28,7 +28,7 @@ Judgment without a render is three similar skins. This skill **shows** 2–3 dir
 - Micro polish on one chosen UI → `polish`
 - Visual AI-slop audit → `anti-slop-design`
 - Pixel/Figma match → `fidelity`
-- Frame-by-frame motion / reverse-engineering animation → not this skill (`motion` implements; inspection is later)
+- Frame-by-frame motion / reverse-engineering animation → `motion-inspection`
 
 ## MUST
 

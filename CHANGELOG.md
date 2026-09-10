@@ -2,6 +2,18 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.0] — 2026-09-10
+
+### Added
+
+- `motion-inspection` — playback of start/mid/end/interrupt/reduced-motion; reverse-engineer unnamed transitions into catalog patterns
+- Reference `references/motion-inspection.md` and behavioral eval E32
+- Implementing motion stays on `motion`; source-only “smooth” fails this skill
+
+### Changed
+
+- Canonical skill count is 33
+
 ## [2.3.0] — 2026-09-10
 
 ### Added

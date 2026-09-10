@@ -20,6 +20,7 @@ alwaysApply: true
 | Mobile / responsive / semua device | **`responsive` MUST** |
 | Marketing landing / homepage / logo cloud / testimonials | + **`marketing`** (section stack **hand-roll** — not `@tailark`/block registry) → `motion` → `seo` as needed |
 | Animation / transition / motion / marquee / parallax / text reveal | above + `motion` (families/patterns in `motion-families.md`; hand-roll — not registry default) |
+| Inspeksi animasi / frame by frame / jelaskan transisi | **`motion-inspection`** (then `motion` to fix) |
 | Match Figma / mock / pixel perfect / fidelity | `fidelity` → `tokens` → `responsive` → `polish` |
 | Lighthouse / axe / DevTools / measured scores | `devtools` → `accessibility` → `performance` |
 | Hierarchy / unclear primary / competing CTAs | `design-direction` Hierarchy pass → `design-foundations` → `anti-slop-design` → `polish` |
@@ -35,7 +36,7 @@ alwaysApply: true
 | Copy terasa AI / tulisan generik / “unlock seamless” | `content-design` (not `anti-slop-design`) |
 | Figma Auto Layout / Fill / Hug | `responsive` (Auto Layout ↔ CSS) |
 | Feels off / rapihin detail / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
-| Design audit, AI slop, "UI jelek/generik", visual review | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `marketing` if landing) |
+| Design audit, AI slop, "UI jelek/generik", visual review | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `motion` / **`motion-inspection`** if animated; + `marketing` if landing) |
 | Tests / TDD / coverage / regresi UI | `testing` → `components` → `accessibility` |
 | Polish / rapihin **sampai bagus** / until audit passes | `quality-loop` (max 3) |
 | Slow UI / LCP / optimize performance | `performance` |

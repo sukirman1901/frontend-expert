@@ -37,7 +37,7 @@ check_skills() {
 }
 
 check_skills ui design-direction prototype design-foundations tokens components anti-slop-code responsive motion anti-slop-design polish accessibility marketing
-check_skills design design-foundations anti-slop-design polish tokens responsive accessibility performance fidelity devtools motion marketing
+check_skills design design-foundations anti-slop-design polish tokens responsive accessibility performance fidelity devtools motion motion-inspection marketing
 check_skills test-ui testing components accessibility devtools
 check_skills audit design-reviewer
 check_skills polish quality-loop polish motion
@@ -100,7 +100,7 @@ require_phrase "polish motion" "motion" \
 require_phrase "session-start chain" "responsive" "$ROOT/hooks/session-start.sh"
 require_phrase "session-start motion" "motion" "$ROOT/hooks/session-start.sh"
 
-echo "== evals E1–E31 present =="
+echo "== evals E1–E32 present =="
 for ev in \
   purple-reject scorecard-honesty loop-cap rapihin-routing reicon-webgl-compliance \
   token-preset-scoring responsive-all-devices data-fetching forms-validation \
@@ -108,7 +108,7 @@ for ev in \
   auto-layout-fill-cta design-fidelity fe-seo fe-architecture monitoring motion-families \
   frontend-testing-devtools frontend-shell-chrome marketing-landing \
   design-typography design-color design-surfaces content-design design-foundations \
-  components anti-slop-code prototype
+  components anti-slop-code prototype motion-inspection
 do
   need "$ROOT/evals/${ev}.md"
 done

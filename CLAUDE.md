@@ -4,13 +4,13 @@ Claude Code entry point for **Frontend Expert**.
 
 ## Plugin assets
 
-- Skills: `skills/` (**32** skills — suite root `frontend-expert` + domain pillars; see `docs/pillars.md`)
+- Skills: `skills/` (**33** skills — suite root `frontend-expert` + domain pillars; see `docs/pillars.md`)
 - Agents: `agents/design-reviewer.md`, `agents/ui-developer.md`, `agents/test-engineer.md`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish` — **optional**
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
 - Hooks: `hooks/hooks.json` (SessionStart + PostToolUse anti-slop scan)
 - Tokens: `tokens/*.css` + decision tree / scoring in `references/token-preset-scoring.md` (+ `tokens/README.md`)
-- Evals: `evals/` (E1–E31)
+- Evals: `evals/` (E1–E32)
 
 ## Default behavior (chat-first + judgment)
 
@@ -19,7 +19,7 @@ Claude Code entry point for **Frontend Expert**.
 3. Then → `design-foundations` (structural layout) → `tokens` → (+ typography/color/surfaces/content owners when relevant) → (+ **`marketing`** if marketing) → (+ shell/data/forms) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** → `anti-slop-design` → `polish` → `accessibility`
    Blank-canvas compare/stress → **`prototype`** after `design-direction`, before foundations
 4. Tests when asked → `test-engineer` + `testing`
-5. Audit when asked → `design-reviewer` skill chain (`/design` or `/audit`); never fabricate visual scores
+5. Audit when asked → `design-reviewer` skill chain (`/design` or `/audit`); never fabricate visual scores; animated UI uses `motion-inspection`
 6. “Rapihin / polish sampai bagus” → `quality-loop` (`/polish`), capped iterations
 7. Honor hook advisories from `anti-slop-scan.sh`
 8. If the project already has a design system, use custom mode (do not override with presets)

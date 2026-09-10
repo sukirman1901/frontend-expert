@@ -31,6 +31,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `performance.md` | `performance` | CWV |
 | `motion.md` | `motion` | Recipes Framer/GSAP |
 | `motion-families.md` | `motion` | 12 families · 144 patterns vocabulary |
+| `motion-inspection.md` | `motion-inspection` | Playback protocol, reverse-engineer patterns |
 | `testing.md` | `testing` | Tests |
 | `webgl.md` | `webgl` | Plasma Studio |
 | `monitoring.md` | `monitoring` | Observability |
@@ -50,7 +51,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 ## Evals
 
-[`evals/`](../evals/) — E1–E31 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations, component API, generated-code slop, prototype).
+[`evals/`](../evals/) — E1–E32 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations, component API, generated-code slop, prototype, motion inspection).
 
 ## Missing on purpose
 

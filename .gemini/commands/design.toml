@@ -3,7 +3,7 @@ description = "Run a design system audit — AI aesthetic, tokens, responsive, a
 prompt = """
 Invoke the design-reviewer agent.
 
-Load skills in order: anti-slop-design → polish → tokens (if available) → design-foundations (when diagnosing structural layout) → responsive → accessibility → performance. Use motion when UI is animated / marketing motion (family budget from motion-families.md). Use marketing when auditing marketing/landing pages. Use fidelity when a Figma/mock/screenshot is in scope. Use devtools when measuring (Lighthouse/axe) — never fabricate scores. Use components for pattern/state checks as needed. Use design-direction when recommending redesign directions. Note testing gaps as Info only.
+Load skills in order: anti-slop-design → polish → tokens (if available) → design-foundations (when diagnosing structural layout) → responsive → accessibility → performance. Use motion when UI is animated / marketing motion (family budget from motion-families.md). Use motion-inspection when claims depend on how motion plays. Use marketing when auditing marketing/landing pages. Use fidelity when a Figma/mock/screenshot is in scope. Use devtools when measuring (Lighthouse/axe) — never fabricate scores. Use components for pattern/state checks as needed. Use design-direction when recommending redesign directions. Note testing gaps as Info only.
 
 Run a design system audit on the current codebase:
 
@@ -13,7 +13,7 @@ Run a design system audit on the current codebase:
 4. Check shell chrome on dashboards (theme topbar, avatar→menu, custom selects)
 5. Check marketing landing section stack when applicable — High if hero-only; hand-roll not registry install
 6. Check hierarchy + typography ladder when DOM/screenshots available
-7. Check motion family budget + reduced-motion when animation present
+7. Check motion family budget + reduced-motion when animation present; inspect playback via motion-inspection (or Not verified)
 8. Review accessibility (WCAG 2.2 AA)
 9. Note Core Web Vitals / loading risks relevant to UI
 10. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing) — mark unevaluated fields explicitly; do not fabricate visual scores without screenshots or tokens

@@ -24,8 +24,9 @@ Pillar map: `docs/pillars.md`.
 | + SEO / meta / OG / landing public | … + `seo` (+ `performance` if CWV) | — |
 | + marketing landing / homepage sections / logo cloud / testimonials | … + **`marketing`** (+ `motion` / `seo`) | `/ui` |
 | + animation / motion / marquee / parallax / text reveal / landing motion | … + `motion` (families/patterns in `motion-families.md`; hand-roll — no registry default) | `/ui` |
+| Inspeksi animasi / frame by frame / jelaskan transisi / kenapa animasinya aneh | **`motion-inspection`** (then `motion` to fix) | `/design` |
 | Mobile / responsive / semua device / tablet | **`responsive`** (MUST on layout UI) | `/ui` |
-| Audit design, AI slop, UI generik | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `motion` if animated; **`marketing`** if landing; + `design-direction` hierarchy/type if scores claimed) | `/design` or `/audit` |
+| Audit design, AI slop, UI generik | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `motion` / **`motion-inspection`** if animated; **`marketing`** if landing; + `design-direction` hierarchy/type if scores claimed) | `/design` or `/audit` |
 | Match Figma / mock / pixel / fidelity | `fidelity` → `tokens` → `responsive` → `polish` | `/design` |
 | Lighthouse / axe / DevTools / measured audit | `devtools` → `accessibility` → `performance` → `testing` | `/test-ui` or `/design` |
 | Hierarchy / visual hierarchy / primary CTA unclear | `design-direction` (Hierarchy pass) → `design-foundations` → `anti-slop-design` → `polish` | `/design` |
@@ -81,6 +82,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `accessibility` | UI Quality | Build/audit a11y |
 | `performance` | UI Quality | CWV / slow |
 | `motion` | UI Quality | Shell defaults + family/pattern vocabulary (`motion-families.md`); hand-roll |
+| `motion-inspection` | UI Quality | Playback / reverse-engineer existing motion |
 | `testing` | UI Quality | Tests / TDD |
 | `quality-loop` | UI Quality | Polish until clean |
 | `webgl` | UI Quality | Plasma backgrounds |

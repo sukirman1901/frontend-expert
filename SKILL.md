@@ -1,7 +1,7 @@
 ---
 name: frontend-expert
 description: >-
-  Chat-first frontend UI quality suite — 32 skills across UI Quality, Responsive,
+  Chat-first frontend UI quality suite — 33 skills across UI Quality, Responsive,
   Ship FE, and Depth pillars. Token decision tree, compliance gates, anti-AI-slop,
   motion vocabulary (12 families), marketing landing recipes, and quality loop.
   Auto-loads on any UI/build/audit/polish request — no slash commands needed.
@@ -13,7 +13,7 @@ description: >-
 
 ## What this pack does
 
-This is **not** a single skill — it's a **suite of 32 skills** organized into pillars that auto-load based on what you ask. You never need to type a slash command; just describe what you want to build or fix.
+This is **not** a single skill — it's a **suite of 33 skills** organized into pillars that auto-load based on what you ask. You never need to type a slash command; just describe what you want to build or fix.
 
 ## Start here
 
@@ -25,7 +25,7 @@ This is **not** a single skill — it's a **suite of 32 skills** organized into 
 
 | Pillar | Skills | When it loads |
 |--------|--------|---------------|
-| **UI Quality** | judgment, prototype, foundations, tokens, typography, color, surfaces, content, components, anti-slop, polish, a11y, testing, quality-loop, motion, webgl, monitoring, marketing, fidelity, devtools | Any UI build, audit, or polish |
+| **UI Quality** | judgment, prototype, foundations, tokens, typography, color, surfaces, content, components, anti-slop, polish, a11y, testing, quality-loop, motion, motion-inspection, webgl, monitoring, marketing, fidelity, devtools | Any UI build, audit, or polish |
 | **Responsive** (MUST) | responsive | Every layout — 320/768/1024/1440 verified |
 | **Ship FE** | app-shell, data-fetching, forms | Shell/nav, API data, forms |
 | **Depth** | architecture, seo | Folder structure, meta/OG/SEO |

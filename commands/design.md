@@ -21,11 +21,12 @@ Alias: **`/audit`** (same workflow).
 8. `performance` — CWV / loading issues relevant to UI
 9. `components` — pattern / state checks as needed
 10. `motion` — when animated UI / marketing motion (family budget from `motion-families.md`, reduced-motion)
-11. `fidelity` — when a Figma/mock/screenshot is in scope
-12. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
-13. `marketing` — when the surface is a marketing / landing page
-14. `design-direction` — when recommending redesign directions (2–3 options)
-15. `testing` — note test gaps as Info only (do not replace `/test-ui`)
+11. `motion-inspection` — when explaining or auditing how existing motion **plays** (not source-only)
+12. `fidelity` — when a Figma/mock/screenshot is in scope
+13. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
+14. `marketing` — when the surface is a marketing / landing page
+15. `design-direction` — when recommending redesign directions (2–3 options)
+16. `testing` — note test gaps as Info only (do not replace `/test-ui`)
 
 ## What It Does
 

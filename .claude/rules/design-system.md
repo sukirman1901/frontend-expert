@@ -18,7 +18,7 @@
 | Feels off / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
 | Layout berantakan / struktur layout / rapikan struktur / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
 | Hierarchy / typography / type scale | `design-direction` Hierarchy + Typography passes → `design-typography` → `polish` |
-| Design audit / AI slop / visual review | `anti-slop-design` → `polish` → `tokens` → `design-foundations` (if structural) → `responsive` → `motion` (if animated) → **`marketing`** (if landing) → `accessibility` → `performance` (+ `fidelity` if mock; `devtools` if measuring) (`/design` or `/audit`) |
+| Design audit / AI slop / visual review | `anti-slop-design` → `polish` → `tokens` → `design-foundations` (if structural) → `responsive` → `motion` / `motion-inspection` (if animated) → **`marketing`** (if landing) → `accessibility` → `performance` (+ `fidelity` if mock; `devtools` if measuring) (`/design` or `/audit`) |
 | Figma / mock / fidelity | `fidelity` → `tokens` → `responsive` |
 | Lighthouse / axe / DevTools | `devtools` → `accessibility` → `performance` |
 | UI tests / TDD | `testing` → `components` → `accessibility` (+ `devtools`) (`test-engineer`) |
@@ -26,6 +26,7 @@
 | Performance | `performance` |
 | Marketing landing / homepage / logo cloud | + `marketing` (section stack **hand-roll** — not registry) (+ `motion` / `seo`) |
 | Motion / marquee / parallax / text reveal / landing animation | + `motion` (families/patterns in `motion-families.md`; hand-roll — not registry default) |
+| Inspeksi animasi / frame by frame / jelaskan transisi | `motion-inspection` (then `motion` to fix) |
 | WebGL / Plasma bg | **`webgl` required** (Plasma / `Plasma.init`) |
 | Monitoring / Sentry | `monitoring` |
 

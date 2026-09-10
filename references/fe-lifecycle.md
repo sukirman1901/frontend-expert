@@ -30,6 +30,7 @@ Default quality-loop cap in this pack: **3** audit→fix cycles (`quality-loop` 
 | 5 | **Haluskan** | Kill AI slop → micro craft (radius, press, type wrap, …) | `anti-slop-design` → `polish` |
 | 6 | **A11y** | Keyboard, labels, contrast, semantics | `accessibility` |
 | — | **Motion** | Shell light defaults; marketing → pick families/patterns from `motion-families.md` and **hand-roll** | `motion` |
+| — | **Motion inspect** | Play start/mid/end/interrupt; name the pattern | `motion-inspection` |
 | — | **WebGL bg** | Plasma Studio shaders | `webgl` |
 | — | **SEO** | Public/meta routes | `seo` |
 | — | **Architecture** | Folders / state boundaries | `architecture` |
@@ -50,6 +51,7 @@ One-shot build (`/ui` or “bikin halaman”): stages **1→6** (judgment only i
 |-------------|------|
 | New / vague UI | Judgment → (+ `prototype` if they need to see it) → build chain (1→6) |
 | Bandingkan arah / cek semua state | `prototype` |
+| Inspeksi animasi / jelaskan transisi | `motion-inspection` |
 | Tiny clear fix | Skip judgment → touch only what’s needed |
 | Layout berantakan / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
 | Rapikan kode / kode terasa AI | `anti-slop-code` |

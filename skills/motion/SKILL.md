@@ -27,6 +27,7 @@ Full catalog: `references/motion-families.md` (12 families · 144 patterns).
 - Static token/color-only tweaks
 - User asked for zero animation / “tanpa animasi”
 - Prefers-reduced-motion (still ship CSS that disables)
+- Inspecting / explaining existing motion → `motion-inspection`
 
 ## Lanes
 

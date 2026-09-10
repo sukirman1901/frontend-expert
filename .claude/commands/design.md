@@ -15,11 +15,12 @@ Invoke the design-reviewer agent.
 7. `performance`
 8. `components` as needed for pattern/state checks
 9. `motion` — when animated / marketing motion (family budget from `motion-families.md`; hand-roll)
-10. `fidelity` — when Figma/mock/screenshot is in scope
-11. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
-12. `marketing` — when auditing marketing / landing pages
-13. `design-direction` when recommending redesign directions
-14. `testing` — note coverage gaps as Info only
+10. `motion-inspection` — when auditing how existing motion plays (not source-only)
+11. `fidelity` — when Figma/mock/screenshot is in scope
+12. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
+13. `marketing` — when auditing marketing / landing pages
+14. `design-direction` when recommending redesign directions
+15. `testing` — note coverage gaps as Info only
 
 ## Modes
 
@@ -40,7 +41,7 @@ Invoke the design-reviewer agent.
 6. Check shell chrome on dashboards (theme topbar, avatar menu, custom selects)
 7. Check marketing landing section stack when applicable (not hero-only; hand-roll)
 8. Check hierarchy + typography ladder when DOM/screenshots available
-9. Check motion family budget + reduced-motion when animation present
+9. Check motion family budget + reduced-motion when animation present; inspect playback via `motion-inspection` (or Not verified)
 10. Review accessibility against WCAG 2.2 AA
 11. Note performance risks relevant to UI (LCP/INP/CLS); use `devtools` when measuring
 12. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing) — mark unevaluated fields explicitly

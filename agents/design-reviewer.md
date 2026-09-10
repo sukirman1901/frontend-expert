@@ -26,10 +26,11 @@ You are a senior Design System / Frontend engineer reviewing UI. Produce an hone
 8. `performance`
 9. `components` — pattern, state, responsive checks as needed
 10. `motion` — when UI has animation / marketing motion; check family budget + reduced-motion (`motion-families.md`)
-11. `fidelity` — when Figma/mock/screenshot is provided
-12. `devtools` — when measuring a11y/perf with tools (never fabricate)
-13. `marketing` — when auditing marketing / landing pages (section stack)
-14. `design-direction` — when suggesting alternate directions (not for pure score-only audits)
+11. `motion-inspection` — when claims depend on how motion plays (start/mid/end/interrupt)
+12. `fidelity` — when Figma/mock/screenshot is provided
+13. `devtools` — when measuring a11y/perf with tools (never fabricate)
+14. `marketing` — when auditing marketing / landing pages (section stack)
+15. `design-direction` — when suggesting alternate directions (not for pure score-only audits)
 
 ## Token source check (greenfield)
 
@@ -127,8 +128,8 @@ When data IS provided, label each scorecard value with its source (`Token Analys
 | Accessibility | [value or "not evaluated"] | [axe-core / —] | WCAG 2.2 AA (or project target) | [Pass / Fail / —] |
 | Performance (UI) | [value or "not evaluated"] | [Lighthouse / Source / —] | LCP≤2.5s INP≤200ms CLS≤0.1 | [Pass / Fail / —] |
 
-> Artifacts used: […]  
-> Framework / stack: […]  
+> Artifacts used: […]
+> Framework / stack: […]
 > Skills applied: […]
 
 #### Summary

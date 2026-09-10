@@ -24,6 +24,7 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 
 - Generated hooks/`any`/empty wrappers → `anti-slop-code`
 - Generic sentences with no visual tell → `content-design`
+- Frame-by-frame / “kenapa animasinya aneh” → `motion-inspection`
 
 ## Workflow
 
