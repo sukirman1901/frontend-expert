@@ -9,10 +9,7 @@
   "plugins": [
     {
       "name": "frontend-expert",
-      "source": {
-        "source": "github",
-        "repo": "sukirman1901/frontend-expert"
-      },
+      "source": "./",
       "description": "Senior FE judgment + quality loop (/polish), curated tokens, agents, optional /ui /test-ui /design /audit.",
       "homepage": "https://github.com/sukirman1901/frontend-expert",
       "license": "MIT",

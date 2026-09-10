@@ -12,6 +12,7 @@ All notable changes to the **Frontend Expert** pack will be documented in this f
 ### Changed
 
 - Internal notes are not published: `docs/superpowers/`, `docs/AUDIT.md`, `evals/runs/`
+- Claude marketplace plugin source is `./` so local install does not clone GitHub over SSH
 
 ## [2.4.2] — 2026-09-10
 
