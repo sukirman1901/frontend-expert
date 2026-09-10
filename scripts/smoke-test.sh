@@ -12,6 +12,7 @@ echo "== skills =="
 CANONICAL_SKILLS=(
   frontend-expert
   design-direction
+  design-foundations
   tokens
   components
   responsive
@@ -80,13 +81,13 @@ for s in "${REMOVED_ALIASES[@]}"; do
 done
 
 skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')
-[ "$skill_entry_count" -eq 29 ] && ok "29 canonical skills only" || bad "expected 29 canonical skill entries, found $skill_entry_count"
+[ "$skill_entry_count" -eq 30 ] && ok "30 canonical skills only" || bad "expected 30 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.0.0" and (.skills | length == 29)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.0.0 registers exactly 29 skills"
+  if jq -e '.version == "2.1.0" and (.skills | length == 30)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.1.0 registers exactly 30 skills"
   else
-    bad "plugin must be v2.0.0 with exactly 29 skills"
+    bad "plugin must be v2.1.0 with exactly 30 skills"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
@@ -175,6 +176,7 @@ fi
 
 echo "== references map =="
 [ -f "$ROOT/references/README.md" ] && ok "references/README.md" || bad "references/README.md"
+[ -f "$ROOT/references/design-foundations.md" ] && ok "references/design-foundations.md" || bad "references/design-foundations.md"
 [ -f "$ROOT/docs/pack-layers.md" ] && ok "docs/pack-layers.md" || bad "docs/pack-layers.md"
 [ -f "$ROOT/tokens/README.md" ] && ok "tokens/README.md" || bad "tokens/README.md"
 [ -f "$ROOT/evals/README.md" ] && ok "evals/README.md" || bad "evals/README.md"
@@ -191,6 +193,7 @@ echo "== references map =="
 [ -f "$ROOT/evals/frontend-testing-devtools.md" ] && ok "evals/frontend-testing-devtools.md (E21)" || bad "evals/frontend-testing-devtools.md"
 [ -f "$ROOT/evals/frontend-shell-chrome.md" ] && ok "evals/frontend-shell-chrome.md (E22)" || bad "evals/frontend-shell-chrome.md"
 [ -f "$ROOT/evals/marketing-landing.md" ] && ok "evals/marketing-landing.md (E23)" || bad "evals/marketing-landing.md"
+[ -f "$ROOT/evals/design-foundations.md" ] && ok "evals/design-foundations.md (E28)" || bad "evals/design-foundations.md"
 [ -f "$ROOT/references/landing-sections.md" ] && ok "landing-sections.md" || bad "landing-sections.md"
 for f in evidence-policy design-typography design-color design-surfaces content-design; do
   [ -f "$ROOT/references/$f.md" ] && ok "$f.md" || bad "references/$f.md"
