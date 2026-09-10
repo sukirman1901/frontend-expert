@@ -1,6 +1,6 @@
 {
   "name": "frontend-expert",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Evidence-led frontend UI quality — judgment, tokens, typography, color, surfaces, content, responsive, motion, a11y, performance, and testing.",
   "skills": [
     "skills/frontend-expert",
@@ -31,24 +31,7 @@
     "skills/devtools",
     "skills/design-vocabulary",
     "skills/engineering-vocabulary",
-    "skills/skill-authoring",
-    "skills/frontend-judgment",
-    "skills/design-tokens",
-    "skills/ui-components",
-    "skills/responsive-ui",
-    "skills/anti-ai-slop",
-    "skills/ui-feel",
-    "skills/web-performance",
-    "skills/frontend-testing",
-    "skills/ui-quality-loop",
-    "skills/app-shell-routing",
-    "skills/forms-validation",
-    "skills/marketing-landing",
-    "skills/fe-architecture",
-    "skills/fe-seo",
-    "skills/fe-devtools",
-    "skills/design-fidelity",
-    "skills/writing-skills"
+    "skills/skill-authoring"
   ],
   "agents": [
     "agents/ui-developer.md",

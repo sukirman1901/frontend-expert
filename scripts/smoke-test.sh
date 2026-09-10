@@ -41,14 +41,14 @@ CANONICAL_SKILLS=(
   skill-authoring
 )
 
-LEGACY_ALIASES=(
+REMOVED_ALIASES=(
   frontend-judgment design-tokens ui-components responsive-ui anti-ai-slop
   ui-feel web-performance frontend-testing ui-quality-loop app-shell-routing
   forms-validation marketing-landing fe-architecture fe-seo fe-devtools
   design-fidelity writing-skills
 )
 
-EXPECTED_SKILLS=("${CANONICAL_SKILLS[@]}" "${LEGACY_ALIASES[@]}")
+EXPECTED_SKILLS=("${CANONICAL_SKILLS[@]}")
 
 for s in "${EXPECTED_SKILLS[@]}"; do
   f="$ROOT/skills/$s/SKILL.md"
@@ -71,18 +71,23 @@ for s in "${EXPECTED_SKILLS[@]}"; do
   fi
 done
 
-for s in "${LEGACY_ALIASES[@]}"; do
-  if rg -q 'Compatibility alias' "$ROOT/skills/$s/SKILL.md" && rg -qi 'deprecated' "$ROOT/skills/$s/SKILL.md"; then
-    ok "legacy alias skills/$s"
+for s in "${REMOVED_ALIASES[@]}"; do
+  if [ -e "$ROOT/skills/$s" ]; then
+    bad "removed alias still exists: skills/$s"
   else
-    bad "skills/$s is not a deprecated compatibility alias"
+    ok "no legacy alias skills/$s"
   fi
 done
 
 skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')
-[ "$skill_entry_count" -eq 46 ] && ok "29 canonical + 17 compatibility aliases" || bad "expected 46 skill entries, found $skill_entry_count"
+[ "$skill_entry_count" -eq 29 ] && ok "29 canonical skills only" || bad "expected 29 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
+  if jq -e '.version == "2.0.0" and (.skills | length == 29)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.0.0 registers exactly 29 skills"
+  else
+    bad "plugin must be v2.0.0 with exactly 29 skills"
+  fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
       ok "plugin registers skills/$s"
@@ -194,7 +199,7 @@ for f in design-typography design-color design-surfaces content-design; do
   [ -f "$ROOT/evals/$f.md" ] && ok "evals/$f.md" || bad "evals/$f.md"
 done
 [ -f "$ROOT/NOTICE.md" ] && ok "NOTICE.md" || bad "NOTICE.md"
-[ -f "$ROOT/references/skill-aliases.md" ] && ok "skill-aliases.md" || bad "references/skill-aliases.md"
+[ -f "$ROOT/references/skill-aliases.md" ] && ok "migration map skill-aliases.md" || bad "references/skill-aliases.md"
 if ! rg -q 'avatar' "$ROOT/skills/app-shell/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/components/SKILL.md"; then
   bad "shell chrome rules missing in app-shell / components"
 else

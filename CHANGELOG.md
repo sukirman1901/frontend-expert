@@ -2,6 +2,14 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.0.0] — 2026-09-10
+
+### Changed
+
+- Removed 17 deprecated compatibility alias folders and registrations
+- Exposed exactly 29 canonical skill identifiers to prevent duplicate discovery
+- Retained the legacy-to-canonical map as migration documentation only
+
 ## [1.2.0] — 2026-09-10
 
 ### Added

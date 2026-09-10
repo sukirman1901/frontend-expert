@@ -1,6 +1,6 @@
-# Skill compatibility aliases
+# Skill name migration
 
-Canonical identifiers introduced in v1.2. Legacy aliases respond only to explicit old-name requests and are scheduled for removal in v2.0.
+Canonical identifiers were introduced in v1.2. Version 2.0 removed the legacy alias folders to prevent duplicate discovery. Replace old identifiers using this map.
 
 | Legacy alias | Canonical skill |
 |---|---|
@@ -22,4 +22,4 @@ Canonical identifiers introduced in v1.2. Legacy aliases respond only to explici
 | `design-fidelity` | `fidelity` |
 | `writing-skills` | `skill-authoring` |
 
-Do not add natural-language domain triggers to alias descriptions. That would make old and canonical owners compete during auto-routing.
+Legacy identifiers are documentation-only and must not be registered as skills.

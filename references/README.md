@@ -43,7 +43,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 - `evidence-policy.md` — source precedence and rule classifications
 - `source-ledger.md` — current standards, enterprise patterns, craft sources, and verification dates
-- `skill-aliases.md` — v1.2 canonical-name migration and v2.0 removal map
+- `skill-aliases.md` — legacy-to-canonical migration map
 - `../NOTICE.md` — third-party attribution
 
 ## Evals

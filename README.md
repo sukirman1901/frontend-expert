@@ -181,9 +181,9 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 
 Skills stay short and triggerable; depth lives in `references/`.
 
-### Compatibility aliases (deprecated)
+### Canonical names
 
-The 17 pre-1.2 identifiers remain as explicit-invocation aliases for one migration cycle and are removed in v2.0. New documentation and auto-routing use canonical names only. See `references/skill-aliases.md`.
+Version 2.0 contains only the 29 canonical skill folders. Legacy identifiers were removed to prevent duplicate discovery and competing routes. Use `references/skill-aliases.md` when migrating an older prompt or integration.
 
 ---
 

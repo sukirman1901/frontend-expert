@@ -2,7 +2,7 @@
 
 Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert). Skills stay **flat** under `skills/` for discovery; this doc is the mental model.
 
-The suite has 29 canonical skills. Seventeen deprecated alias entries preserve pre-1.2 explicit invocations until v2.0; aliases are not separate capabilities.
+The suite has exactly 29 canonical skills. Version 2.0 removed legacy alias folders so discovery exposes one identifier per capability.
 
 ## Pillars
 
