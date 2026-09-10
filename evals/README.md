@@ -36,6 +36,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E25 | Design color | [design-color.md](./design-color.md) |
 | E26 | Design surfaces | [design-surfaces.md](./design-surfaces.md) |
 | E27 | Content design | [content-design.md](./content-design.md) |
+| E28 | Structural design foundations | [design-foundations.md](./design-foundations.md) |
 
 ## How to run
 
