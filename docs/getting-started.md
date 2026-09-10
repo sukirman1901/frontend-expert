@@ -26,7 +26,6 @@ npx skills add sukirman1901/frontend-expert
 | Antigravity | Use `.agents/plugins/marketplace.json` — `agy plugin install ./frontend-expert` |
 | Hooks (runtime) | [hooks.md](./hooks.md) |
 | Pack layers (commands/agents/skills/refs) | [pack-layers.md](./pack-layers.md) |
-| Historical pack notes | [AUDIT.md](./AUDIT.md) |
 
 ## Quick helper
 

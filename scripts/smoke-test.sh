@@ -300,8 +300,6 @@ rm -rf "$tmp_install"
 echo "== eval routing =="
 chmod +x "$ROOT/scripts/eval-routing-contract.sh" 2>/dev/null || true
 [ -f "$ROOT/evals/PASTE.md" ] && ok "evals/PASTE.md" || bad "evals/PASTE.md"
-[ -f "$ROOT/evals/runs/2026-09-10-desk.md" ] && ok "evals/runs/2026-09-10-desk.md" || bad "evals/runs/2026-09-10-desk.md"
-[ -f "$ROOT/evals/runs/2026-09-10-install.md" ] && ok "evals/runs/2026-09-10-install.md" || bad "evals/runs/2026-09-10-install.md"
 if bash "$ROOT/scripts/eval-routing-contract.sh"; then
   ok "eval-routing-contract"
 else

@@ -25,5 +25,7 @@ skills-lock.json
 # Isolated implementation worktrees
 /.worktrees/
 
-# Internal planning (not part of the shipped pack)
+# Internal planning and local logs (not part of the shipped pack)
 /docs/superpowers/
+/docs/AUDIT.md
+/evals/runs/

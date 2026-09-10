@@ -77,4 +77,3 @@ One-shot build (`/ui` or “bikin halaman”): stages **1→6** (judgment only i
 - Loop controller: `skills/quality-loop/SKILL.md`
 - Intent map: `AGENTS.md`
 - Layers: `docs/pack-layers.md`
-- Last workflow audit: `docs/AUDIT.md`
