@@ -48,6 +48,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 |------|----------------|-------|
 | Desk contract | Trigger phrases still map to the right skill files | `./scripts/eval-routing-contract.sh` (also in smoke-test) |
 | Desk scorecard | Human read of routing vs owners | [runs/2026-09-10-desk.md](./runs/2026-09-10-desk.md) |
+| Install adapters | Symlinks / plugin validate / Codex cache on this machine | [runs/2026-09-10-install.md](./runs/2026-09-10-install.md) |
 | Live | Fresh chat actually loads those skills | Paste [PASTE.md](./PASTE.md) — **do not** mark Live pass from desk-review |
 
 ## How to run (live)

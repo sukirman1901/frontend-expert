@@ -4,8 +4,11 @@ Requires Codex CLI with plugin support.
 
 ## Install
 
+From this clone:
+
 ```bash
-codex plugin marketplace add /path/to/Design-system-enforcer
+codex plugin marketplace add /path/to/frontend-expert
+codex plugin add frontend-expert@frontend-expert
 ```
 
 Codex reads `skills/` via `.codex-plugin/plugin.json`.

@@ -4,17 +4,23 @@ OpenCode uses agent-driven skill execution via `AGENTS.md` and the `skill` tool.
 
 ## Install
 
-1. Clone or symlink this repo into the workspace (or copy `skills/` + `AGENTS.md`)
-2. Ensure `AGENTS.md` and `skills/` are visible to OpenCode
-3. Optional:
+From this clone:
 
 ```bash
-ln -s /path/to/Design-system-enforcer ~/.config/opencode/skills/design-system-enforcer
+./scripts/install.sh opencode
+```
+
+That symlinks the pack to `~/.config/opencode/skills/frontend-expert` (and keeps a `design-system-enforcer` alias for older docs).
+
+Manual equivalent:
+
+```bash
+ln -sfn /path/to/frontend-expert ~/.config/opencode/skills/frontend-expert
 ```
 
 ## Behavior
 
-- UI work → `/ui` mapping: `tokens` + `components` + `anti-slop-design` + `polish` + `accessibility`
+- UI work → `/ui` mapping: foundations → tokens → components → anti-slop → polish → accessibility
 - Design audit → `anti-slop-design` + `polish` + `accessibility` + `performance`
 - Tests → `testing` (`/test-ui`)
 - Motion / perf only when the task needs them

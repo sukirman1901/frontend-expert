@@ -23,7 +23,7 @@ npx skills add sukirman1901/frontend-expert
 | Codex | [codex-setup.md](./codex-setup.md) |
 | Gemini CLI | [gemini-setup.md](./gemini-setup.md) |
 | OpenCode | [opencode-setup.md](./opencode-setup.md) |
-| Antigravity | Use `.agents/plugins/marketplace.json` — `agy plugin install ./Design-system-enforcer` |
+| Antigravity | Use `.agents/plugins/marketplace.json` — `agy plugin install ./frontend-expert` |
 | Hooks (runtime) | [hooks.md](./hooks.md) |
 | Pack layers (commands/agents/skills/refs) | [pack-layers.md](./pack-layers.md) |
 | Latest pack audit | [AUDIT.md](./AUDIT.md) |

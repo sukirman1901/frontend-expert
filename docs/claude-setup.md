@@ -2,20 +2,23 @@
 
 ## Marketplace / plugin install (local)
 
+From this clone (tracks local `main`, including commits not yet on GitHub):
+
 ```bash
-claude --plugin-dir /path/to/Design-system-enforcer
+claude --plugin-dir /path/to/frontend-expert
+claude plugin validate /path/to/frontend-expert
 ```
 
-Or add as a marketplace from a clone:
+GitHub marketplace (whatever is on `origin`, which may lag local `main`):
 
 ```
-/plugin marketplace add /path/to/Design-system-enforcer
-/plugin install design-system-enforcer@design-system-enforcer
+/plugin marketplace add https://github.com/sukirman1901/frontend-expert.git
+/plugin install frontend-expert@frontend-expert
 ```
 
 ## What you get
 
-- Skills: `design-direction`, `tokens`, `components`, `anti-slop-design`, `polish`, `accessibility`, `performance`, `motion`, `testing`, `quality-loop`, `webgl`, `monitoring`
+- Skills: all entries in `plugin.json` (33 — see `docs/pillars.md`)
 - Agents: `design-reviewer`, `ui-developer`, `test-engineer`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish`
 - Hooks: SessionStart reminder + PostToolUse anti-slop scan

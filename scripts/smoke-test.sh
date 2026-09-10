@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Smoke-test Design System Enforcer pack integrity.
+# Smoke-test Frontend Expert pack integrity.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -87,10 +87,10 @@ skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md |
 [ "$skill_entry_count" -eq 33 ] && ok "33 canonical skills only" || bad "expected 33 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.4.1" and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.4.1 registers exactly 33 skills"
+  if jq -e '.version == "2.4.2" and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.4.2 registers exactly 33 skills"
   else
-    bad "plugin must be v2.4.1 with exactly 33 skills"
+    bad "plugin must be v2.4.2 with exactly 33 skills"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
@@ -247,10 +247,57 @@ else
   ok "hooks/session-start responsive+motion"
 fi
 
+echo "== install adapters =="
+if rg -q 'plugin.json' "$ROOT/scripts/install.sh" && rg -q 'load_pack_skills' "$ROOT/scripts/install.sh"; then
+  ok "install.sh reads plugin.json skills"
+else
+  bad "install.sh must load skills from plugin.json"
+fi
+tmp_install=$(mktemp -d)
+if bash "$ROOT/scripts/install.sh" cursor "$tmp_install"; then
+  copied=$(find "$tmp_install/.cursor/skills" -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')
+  if [ "$copied" -eq 33 ]; then
+    ok "install.sh cursor copies 33 skills"
+  else
+    bad "install.sh cursor copied $copied skills, expected 33"
+  fi
+  if [ -f "$tmp_install/.cursor/skills/tokens/SKILL.md" ]; then
+    ok "tokens skill not overwritten by CSS"
+  else
+    bad "tokens skill missing after cursor install"
+  fi
+  if [ -d "$tmp_install/.cursor/skills/token-presets" ]; then
+    ok "token-presets CSS copied"
+  else
+    bad "token-presets CSS missing after cursor install"
+  fi
+  alias_left=0
+  for s in "${REMOVED_ALIASES[@]}"; do
+    if [ -e "$tmp_install/.cursor/skills/$s" ]; then
+      alias_left=1
+      bad "install.sh cursor copied removed alias $s"
+    fi
+  done
+  [ "$alias_left" -eq 0 ] && ok "install.sh cursor has no removed aliases"
+else
+  bad "install.sh cursor failed"
+fi
+if bash "$ROOT/scripts/install.sh" gemini "$tmp_install"; then
+  if [ -f "$tmp_install/.gemini/commands/ui.toml" ] && [ -f "$tmp_install/.gemini/commands/polish.toml" ]; then
+    ok "install.sh gemini copies slash commands"
+  else
+    bad "install.sh gemini missing command toml"
+  fi
+else
+  bad "install.sh gemini failed"
+fi
+rm -rf "$tmp_install"
+
 echo "== eval routing =="
 chmod +x "$ROOT/scripts/eval-routing-contract.sh" 2>/dev/null || true
 [ -f "$ROOT/evals/PASTE.md" ] && ok "evals/PASTE.md" || bad "evals/PASTE.md"
 [ -f "$ROOT/evals/runs/2026-09-10-desk.md" ] && ok "evals/runs/2026-09-10-desk.md" || bad "evals/runs/2026-09-10-desk.md"
+[ -f "$ROOT/evals/runs/2026-09-10-install.md" ] && ok "evals/runs/2026-09-10-install.md" || bad "evals/runs/2026-09-10-install.md"
 if bash "$ROOT/scripts/eval-routing-contract.sh"; then
   ok "eval-routing-contract"
 else

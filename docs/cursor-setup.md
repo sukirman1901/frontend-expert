@@ -16,13 +16,13 @@ This:
 - Symlinks agents → `~/.cursor/agents/{ui-developer,design-reviewer,test-engineer}.md`
 - Symlinks slash commands → `~/.cursor/commands/{ui,design,audit,test-ui,polish}.md`
 - Symlinks `references/` → `~/.cursor/skills/references`
-- Symlinks `tokens/` → `~/.cursor/skills/tokens`
+- Symlinks CSS presets → `~/.cursor/skills/token-presets` (the `tokens` **skill** stays at `~/.cursor/skills/tokens`)
 - Symlinks the pack → `~/.cursor/packs/frontend-expert`
 - Copies the always-on rule → `~/.cursor/rules/design-system-enforcer.mdc`
 
 After `git pull` on the pack repo, Cursor sees updates automatically (no re-copy).
 
-Re-run `cursor-user` after adding a **new** skill folder, agent, or command name (script lists them explicitly).
+Re-run `cursor-user` after adding a **new** skill to `plugin.json`, or a new agent/command filename. Skill folders are read from `plugin.json` (not a hardcoded subset).
 
 ## Project-local skills (copy)
 
@@ -40,7 +40,7 @@ Prefer **cursor-user** for your daily Agent; use project-local only when the rep
 
 ## Tokens
 
-Agents pick presets via the **decision tree** (`references/token-preset-scoring.md`). CSS files live in the pack (`tokens/`) and are also linked at `~/.cursor/skills/tokens` / `~/.cursor/packs/frontend-expert/tokens` after `cursor-user`.
+Agents pick presets via the **decision tree** (`references/token-preset-scoring.md`). CSS files live in the pack (`tokens/`) and are also linked at `~/.cursor/skills/token-presets` / `~/.cursor/packs/frontend-expert/tokens` after `cursor-user`.
 
 To use in an app, import or copy into your styles:
 

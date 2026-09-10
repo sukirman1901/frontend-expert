@@ -2,6 +2,14 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.2] — 2026-09-10
+
+### Changed
+
+- `install.sh` loads all `plugin.json` skills (was a stale 21-skill subset) and unlinks retired aliases
+- CSS presets install to `token-presets` so they no longer overwrite the `tokens` skill
+- Platform setup docs use `/path/to/frontend-expert`; OpenCode canonical symlink is `frontend-expert`
+
 ## [2.4.1] — 2026-09-10
 
 ### Changed

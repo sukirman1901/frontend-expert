@@ -3,7 +3,7 @@
 ## Install skills
 
 ```bash
-gemini skills install /path/to/Design-system-enforcer --path skills
+gemini skills install /path/to/frontend-expert --path skills
 ```
 
 ## Slash commands
@@ -11,8 +11,9 @@ gemini skills install /path/to/Design-system-enforcer --path skills
 Copy Gemini command definitions:
 
 ```bash
-mkdir -p ~/.gemini/commands   # or project .gemini/commands
-cp /path/to/Design-system-enforcer/.gemini/commands/*.toml .gemini/commands/
+./scripts/install.sh gemini-user
+# or
+./scripts/install.sh gemini /path/to/your-app
 ```
 
-Then use `/design`, `/ui`, and `/test-ui` from Gemini CLI.
+Then use `/design`, `/ui`, `/audit`, `/test-ui`, and `/polish` from Gemini CLI.
