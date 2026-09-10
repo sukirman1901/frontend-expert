@@ -356,7 +356,6 @@ See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 
 ## Credits
 
-- [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) — external UI-craft research; not bundled
 - [design-lab / Design and Refine](https://github.com/0xdesign/design-plugin) — external exploration research; not bundled
 - [Reicon](https://reicon.dev) — default icon library
 - [Plasma](https://plasma.nusaiba.dev) — WebGL background studio (canonical study)

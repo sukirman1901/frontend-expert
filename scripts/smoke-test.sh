@@ -211,6 +211,12 @@ if rg -qi 'adapted from|adapted as|ideas adapted|portions .* adapted' \
 else
   ok "no ambiguous third-party adaptation wording"
 fi
+if rg -qi 'jakubkrehel|make-interfaces-feel-better' \
+  "$ROOT/README.md" "$ROOT/NOTICE.md" "$ROOT/skills" "$ROOT/references"; then
+  bad "studied repository links must not appear in the distributed pack"
+else
+  ok "no studied-repository promotion in distributed docs"
+fi
 if ! rg -q 'avatar' "$ROOT/skills/app-shell/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/components/SKILL.md"; then
   bad "shell chrome rules missing in app-shell / components"
 else
