@@ -29,7 +29,7 @@ alwaysApply: true
 | Palette / OKLCH / dark mode / contrast | `tokens` → `design-color` → `accessibility` |
 | Card / modal / radius / shadow / elevation | `tokens` → `design-surfaces` → `polish` |
 | Component props / API / “prop terlalu banyak” | `components` |
-| Kode terasa AI / rapikan kode / too many useEffect / over-engineered | `anti-slop-code` (not `anti-slop-design`, not `polish`) |
+| Kode terasa AI / rapikan kode / dampak ke modul lain / error handling generik / edge case | `anti-slop-code` (not `anti-slop-design`, not `polish`) |
 | UI copy / CTA / error / empty state | `content-design` |
 | Copy terasa AI / tulisan generik / “unlock seamless” | `content-design` (not `anti-slop-design`) |
 | Figma Auto Layout / Fill / Hug | `responsive` (Auto Layout ↔ CSS) |

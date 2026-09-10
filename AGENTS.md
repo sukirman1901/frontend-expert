@@ -35,7 +35,7 @@ Pillar map: `docs/pillars.md`.
 | Palette / OKLCH / dark mode / contrast / gamut | `tokens` → `design-color` → `accessibility` | — |
 | Card / modal / radius / border / shadow / elevation | `tokens` → `design-surfaces` → `polish` | — |
 | Component props / API / “prop terlalu banyak” / composition | `components` | `/ui` |
-| Kode terasa AI / rapikan kode / too many useEffect / over-engineered | `anti-slop-code` (not `anti-slop-design`, not `polish`) | `/ui` |
+| Kode terasa AI / rapikan kode / dampak ke modul lain / error handling generik / edge case | `anti-slop-code` (not `anti-slop-design`, not `polish`) | `/ui` |
 | UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms` / `marketing` as relevant) | — |
 | Figma Auto Layout / Fill / Hug / layout from Figma | `responsive` (Auto Layout ↔ CSS) → `components` | `/ui` |
 | Feels off / rapihin **detail** | `polish` (+ `anti-slop-design` if generik) — **one pass** | — |
@@ -73,7 +73,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `components` | UI Quality | Components, states, composition, public props/API |
 | `responsive` | Responsive MUST | Every layout UI / all devices |
 | `anti-slop-design` | UI Quality | Build + visual audits |
-| `anti-slop-code` | UI Quality | Generated implementation tells |
+| `anti-slop-code` | UI Quality | Generated implementation tells, blast radius, field errors |
 | `polish` | UI Quality | Micro craft |
 | `accessibility` | UI Quality | Build/audit a11y |
 | `performance` | UI Quality | CWV / slow |

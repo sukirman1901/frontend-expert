@@ -22,6 +22,7 @@ Separate **server state** from UI chrome. Every remote surface needs loading / e
 
 - Static content / mock-only prototypes with no async
 - Pure presentational components receiving props only
+- Generated catch/toast that ignores field cases / other modules → load `anti-slop-code` for taxonomy, then this skill for retry chrome
 
 ## MUST (ship)
 
@@ -61,6 +62,6 @@ Also: abort/cancel on unmount when using raw `fetch`; don’t block the whole ap
 
 ## Depth
 
-Patterns: `references/data-fetching.md`.  
-State org: `references/architecture.md`.  
+Patterns: `references/data-fetching.md`.
+State org: `references/architecture.md`.
 Ship gate: `references/compliance-gates.md` (States).

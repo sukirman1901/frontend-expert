@@ -2,6 +2,14 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.2.1] — 2026-09-10
+
+### Changed
+
+- `anti-slop-code` now requires a blast-radius pass (callers, cache, server load) instead of isolated-function cleanup
+- Generic catch/toast is slop; field failure modes are named, unknowns labeled
+- E30 requires cross-module impact and non-boilerplate errors
+
 ## [2.2.0] — 2026-09-10
 
 ### Added

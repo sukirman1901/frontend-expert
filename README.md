@@ -158,7 +158,7 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 | `components` | UI Quality | Components, states — **Reicon**; custom selects |
 | `responsive` | Responsive MUST | All devices 320–1440+ |
 | `anti-slop-design` | UI Quality | AI aesthetic patterns |
-| `anti-slop-code` | UI Quality | Generated implementation tells |
+| `anti-slop-code` | UI Quality | Generated implementation, blast radius, field errors |
 | `polish` | UI Quality | Micro craft (“feels off”) |
 | `accessibility` | UI Quality | WCAG 2.2 AA by default; project/legal target may differ |
 | `performance` | UI Quality | Core Web Vitals |
