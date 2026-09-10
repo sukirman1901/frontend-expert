@@ -19,16 +19,17 @@ You are a senior Design System / Frontend engineer reviewing UI. Produce an hone
 1. `anti-slop-design`
 2. `polish`
 3. `tokens` (when a token file / project system is available — also check greenfield used the decision tree)
-4. `content-design` / `design-typography` / `design-color` / `design-surfaces` — apply the owning domain when relevant
-5. `responsive` — all-devices; High if layout greenfield skips Conventions Responsive
-6. `accessibility`
-7. `performance`
-8. `components` — pattern, state, responsive checks as needed
-9. `motion` — when UI has animation / marketing motion; check family budget + reduced-motion (`motion-families.md`)
-10. `fidelity` — when Figma/mock/screenshot is provided
-11. `devtools` — when measuring a11y/perf with tools (never fabricate)
-12. `marketing` — when auditing marketing / landing pages (section stack)
-13. `design-direction` — when suggesting alternate directions (not for pure score-only audits)
+4. `design-foundations` — when diagnosing grid, spacing rhythm, alignment, density, or structural layout
+5. `content-design` / `design-typography` / `design-color` / `design-surfaces` — apply the owning domain when relevant
+6. `responsive` — all-devices; High if layout greenfield skips Conventions Responsive
+7. `accessibility`
+8. `performance`
+9. `components` — pattern, state, responsive checks as needed
+10. `motion` — when UI has animation / marketing motion; check family budget + reduced-motion (`motion-families.md`)
+11. `fidelity` — when Figma/mock/screenshot is provided
+12. `devtools` — when measuring a11y/perf with tools (never fabricate)
+13. `marketing` — when auditing marketing / landing pages (section stack)
+14. `design-direction` — when suggesting alternate directions (not for pure score-only audits)
 
 ## Token source check (greenfield)
 
@@ -138,7 +139,7 @@ Critical / High / Medium / Low counts.
 
 ```
 #### [SEVERITY] Title
-- **Area:** Token Adherence (aka Token Compliance) / Visual Hierarchy / Typography / AI Aesthetic / UI Feel / Motion / Components / Responsive / Accessibility / Performance
+- **Area:** Token Adherence (aka Token Compliance) / Visual Hierarchy / Typography / AI Aesthetic / UI Feel / Motion / Components / Responsive / Accessibility / Performance / Foundations
 - **Location:** file:line or component
 - **Description:** …
 - **Impact:** potential impact | measured: …

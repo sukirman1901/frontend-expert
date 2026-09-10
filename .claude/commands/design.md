@@ -9,7 +9,8 @@ Invoke the design-reviewer agent.
 1. `anti-slop-design`
 2. `polish`
 3. `tokens` (when a token file is available)
-4. `responsive` — all-devices / breakpoint adherence
+4. `design-foundations` — when diagnosing grid, spacing rhythm, alignment, density, or structural layout
+5. `responsive` — all-devices / breakpoint adherence
 5. `accessibility`
 6. `performance`
 7. `components` as needed for pattern/state checks
@@ -40,7 +41,7 @@ Invoke the design-reviewer agent.
 7. Check marketing landing section stack when applicable (not hero-only; hand-roll)
 8. Check hierarchy + typography ladder when DOM/screenshots available
 9. Check motion family budget + reduced-motion when animation present
-10. Review accessibility against WCAG 2.1 AA
+10. Review accessibility against WCAG 2.2 AA
 11. Note performance risks relevant to UI (LCP/INP/CLS); use `devtools` when measuring
 12. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing) — mark unevaluated fields explicitly
 13. End with prioritized next moves (max 5)

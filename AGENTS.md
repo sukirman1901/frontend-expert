@@ -16,7 +16,7 @@ Pillar map: `docs/pillars.md`.
 
 | User says / means | Load skills (order) | Optional shortcut |
 |-------------------|---------------------|-------------------|
-| Build/change UI, page, component, layout, styling | `design-direction`* → `tokens` → (+ **`marketing`** if landing) → `components` → **`responsive`** → **`motion`** (light shell defaults) → `anti-slop-design` → `polish` → `accessibility` | `/ui` |
+| Build/change UI, page, component, layout, styling | `design-direction`* → **`design-foundations`**** → `tokens` → (+ **`marketing`** if landing) → `components` → **`responsive`** → **`motion`** (light shell defaults) → `anti-slop-design` → `polish` → `accessibility` | `/ui` |
 | + form / validasi / wizard | … + `forms` (before or with components) | `/ui` |
 | + list/detail API / loading data | … + `data-fetching` | `/ui` |
 | + app shell / sidebar / routing / 404 | … + `app-shell` | `/ui` |
@@ -28,7 +28,8 @@ Pillar map: `docs/pillars.md`.
 | Audit design, AI slop, UI generik | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `motion` if animated; **`marketing`** if landing; + `design-direction` hierarchy/type if scores claimed) | `/design` or `/audit` |
 | Match Figma / mock / pixel / fidelity | `fidelity` → `tokens` → `responsive` → `polish` | `/design` |
 | Lighthouse / axe / DevTools / measured audit | `devtools` → `accessibility` → `performance` → `testing` | `/test-ui` or `/design` |
-| Hierarchy / visual hierarchy / primary CTA unclear | `design-direction` (Hierarchy pass) → `anti-slop-design` → `polish` | `/design` |
+| Hierarchy / visual hierarchy / primary CTA unclear | `design-direction` (Hierarchy pass) → `design-foundations` → `anti-slop-design` → `polish` | `/design` |
+| Grid / spacing / alignment / density / cluttered layout / "layout berantakan" | `design-foundations` → `tokens` → `responsive` | `/ui` |
 | Typography / type scale / multi-h1 / heading ladder | `design-direction` (Typography ladder) → `polish` → `anti-slop-design` | `/design` |
 | Font choice / type scale / wrapping / truncation / variable fonts | `design-typography` → `responsive` → `accessibility` | — |
 | Palette / OKLCH / dark mode / contrast / gamut | `tokens` → `design-color` → `accessibility` | — |
@@ -46,8 +47,9 @@ Pillar map: `docs/pillars.md`.
 | Create/add new skill / extend the pack / "buat skill baru" | `skill-authoring` | — |
 
 \* `design-direction` for non-trivial / blank-canvas only — see skip rules.
+\*\* `design-foundations` for new layouts and structural redesigns. Skip isolated color, typography, copy, token, component-state, motion, and micro-polish changes.
 
-**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Sampai bagus” → `quality-loop`.
+**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. Layout berantakan → `design-foundations`. “Sampai bagus” → `quality-loop`.
 
 Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-engineer`.
 
@@ -64,6 +66,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 |-------|--------|----------|
 | `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
 | `design-direction` | UI Quality | Blank-canvas / ambiguous UI |
+| `design-foundations` | UI Quality | Grid, spacing rhythm, alignment, density, composition |
 | `tokens` | UI Quality | Theme — decision tree + scoring |
 | `components` | UI Quality | Components, states, composition |
 | `responsive` | Responsive MUST | Every layout UI / all devices |
@@ -112,5 +115,6 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 16. “Sampai bagus” → `quality-loop` (cap 3)
 17. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**, **Landing**
 18. Evidence before taste — classify standards, project defaults, enterprise patterns, recommendations, heuristics, and inspiration (`evidence-policy.md`)
+19. Structural layout → `design-foundations`: relationships before values; no universal column count, width, or density
 
 Orchestration: session agent loads skills; agents do not call agents. See `docs/pack-layers.md`, `docs/pillars.md`.

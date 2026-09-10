@@ -1,7 +1,7 @@
 ---
 name: frontend-expert
 description: >-
-  Chat-first frontend UI quality suite — 29 skills across UI Quality, Responsive,
+  Chat-first frontend UI quality suite — 30 skills across UI Quality, Responsive,
   Ship FE, and Depth pillars. Token decision tree, compliance gates, anti-AI-slop,
   motion vocabulary (12 families), marketing landing recipes, and quality loop.
   Auto-loads on any UI/build/audit/polish request — no slash commands needed.
@@ -36,7 +36,7 @@ Full pillar map: `docs/pillars.md`.
 
 1. **You ask** — "bikin dashboard", "landing page", "rapihin UI", "audit design"
 2. **Intent map** matches your request → loads the right skills in order
-3. **Skills chain** — design-direction → tokens → components → responsive → motion → anti-slop-design → polish → accessibility
+3. **Skills chain** — design-direction → design-foundations → tokens → components → responsive → motion → anti-slop-design → polish → accessibility
 4. **Compliance gates** — before shipping, a conventions check verifies tokens, icons, responsive, hierarchy, typography, motion, shell, landing, a11y, and states
 
 See `AGENTS.md` for the full intent map.

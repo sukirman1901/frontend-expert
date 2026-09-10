@@ -14,7 +14,8 @@ Alias: **`/audit`** (same workflow).
 1. `anti-slop-design` — AI aesthetic patterns
 2. `polish` — micro craft (radius, press, tabular-nums, …)
 3. `tokens` — token adherence (when a token file is available)
-4. `content-design` / `design-typography` / `design-color` / `design-surfaces` — owning domain when relevant
+4. `design-foundations` — when diagnosing grid, spacing rhythm, alignment, density, or structural layout
+5. `content-design` / `design-typography` / `design-color` / `design-surfaces` — owning domain when relevant
 5. `responsive` — all-devices / breakpoint adherence
 6. `accessibility` — WCAG 2.2 AA by default
 7. `performance` — CWV / loading issues relevant to UI
@@ -32,6 +33,7 @@ Alias: **`/audit`** (same workflow).
 2. Scans for AI aesthetic patterns (incl. decorative motion spam / hero-only landing)
 3. Checks `polish` craft (concentric radius, hit areas, transition hygiene, …)
 4. Checks token adherence
+5. Checks **foundations** (container/grid, spacing relationships, shared anchors, one focal path) when layout structure is in scope
 5. Reviews accessibility
 6. Notes performance risks (LCP / INP / CLS)
 7. Validates **responsive** design (320 / 768 / 1024 / 1440) via `responsive`

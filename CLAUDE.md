@@ -4,19 +4,19 @@ Claude Code entry point for **Frontend Expert**.
 
 ## Plugin assets
 
-- Skills: `skills/` (**29** skills — suite root `frontend-expert` + domain pillars; see `docs/pillars.md`)
+- Skills: `skills/` (**30** skills — suite root `frontend-expert` + domain pillars; see `docs/pillars.md`)
 - Agents: `agents/design-reviewer.md`, `agents/ui-developer.md`, `agents/test-engineer.md`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish` — **optional**
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
 - Hooks: `hooks/hooks.json` (SessionStart + PostToolUse anti-slop scan)
 - Tokens: `tokens/*.css` + decision tree / scoring in `references/token-preset-scoring.md` (+ `tokens/README.md`)
-- Evals: `evals/` (E1–E27)
+- Evals: `evals/` (E1–E28)
 
 ## Default behavior (chat-first + judgment)
 
 1. **Do not wait for slash commands.** Map intent → skills via `AGENTS.md` + rules
 2. Blank-canvas / ambiguous UI → `design-direction` (2–3 approaches) **before** coding
-3. Then → `tokens` → (+ typography/color/surfaces/content owners when relevant) → (+ **`marketing`** if marketing) → (+ shell/data/forms) → `components` → **`responsive`** → **`motion`** → `anti-slop-design` → `polish` → `accessibility`
+3. Then → `design-foundations` (structural layout) → `tokens` → (+ typography/color/surfaces/content owners when relevant) → (+ **`marketing`** if marketing) → (+ shell/data/forms) → `components` → **`responsive`** → **`motion`** → `anti-slop-design` → `polish` → `accessibility`
 4. Tests when asked → `test-engineer` + `testing`
 5. Audit when asked → `design-reviewer` skill chain (`/design` or `/audit`); never fabricate visual scores
 6. “Rapihin / polish sampai bagus” → `quality-loop` (`/polish`), capped iterations

@@ -10,8 +10,9 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 ## Skills to load (in order)
 
 1. `design-direction` — non-trivial / blank-canvas only (see skip rules)
-2. `tokens` — decision tree: custom → explicit → Plasma hard-gate → score
-3. `design-typography` / `design-color` / `design-surfaces` / `content-design` — only when their domain is in scope
+2. `design-foundations` — structural layout (grid, spacing, alignment, density); skip isolated color/type/motion/polish
+3. `tokens` — decision tree: custom → explicit → Plasma hard-gate → score
+4. `design-typography` / `design-color` / `design-surfaces` / `content-design` — only when their domain is in scope
 4. `marketing` — **if** marketing homepage / landing section stack (hand-roll; not registry)
 5. `app-shell` — **if** shell / nav / multi-route
 6. `data-fetching` — **if** remote/async data
@@ -27,7 +28,8 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 ## What It Does
 
 1. Selects tokens via decision tree (custom → explicit → Plasma hard-gate → score)
-2. Builds marketing section stack **or** shell/data/forms when needed, then components
+2. Structures layout via `design-foundations` (relationships before values)
+3. Builds marketing section stack **or** shell/data/forms when needed, then components
 3. **Responsive all devices** — `responsive`
 4. **Ships Reicon icons** unless waiver
 5. Handles loading, error, empty
