@@ -29,8 +29,8 @@ Pillar map: `docs/pillars.md`.
 | Match Figma / mock / pixel / fidelity | `fidelity` → `tokens` → `responsive` → `polish` | `/design` |
 | Lighthouse / axe / DevTools / measured audit | `devtools` → `accessibility` → `performance` → `testing` | `/test-ui` or `/design` |
 | Hierarchy / visual hierarchy / primary CTA unclear | `design-direction` (Hierarchy pass) → `design-foundations` → `anti-slop-design` → `polish` | `/design` |
-| Grid / spacing / alignment / density / cluttered layout / "layout berantakan" | `design-foundations` → `tokens` → `responsive` | `/ui` |
-| Typography / type scale / multi-h1 / heading ladder | `design-direction` (Typography ladder) → `polish` → `anti-slop-design` | `/design` |
+| Grid / spacing / alignment / density / cluttered layout / "layout berantakan" / "struktur layout" / "rapikan struktur" | `design-foundations` → `tokens` → `responsive` | `/ui` |
+| Typography / type scale / multi-h1 / heading ladder | `design-direction` (Typography ladder) → `design-typography` → `polish` → `anti-slop-design` | `/design` |
 | Font choice / type scale / wrapping / truncation / variable fonts | `design-typography` → `responsive` → `accessibility` | — |
 | Palette / OKLCH / dark mode / contrast / gamut | `tokens` → `design-color` → `accessibility` | — |
 | Card / modal / radius / border / shadow / elevation | `tokens` → `design-surfaces` → `polish` | — |
@@ -49,7 +49,7 @@ Pillar map: `docs/pillars.md`.
 \* `design-direction` for non-trivial / blank-canvas only — see skip rules.
 \*\* `design-foundations` for new layouts and structural redesigns. Skip isolated color, typography, copy, token, component-state, motion, and micro-polish changes.
 
-**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. Layout berantakan → `design-foundations`. “Sampai bagus” → `quality-loop`.
+**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Rapikan struktur” / layout berantakan → `design-foundations`. “Sampai bagus” → `quality-loop`.
 
 Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-engineer`.
 

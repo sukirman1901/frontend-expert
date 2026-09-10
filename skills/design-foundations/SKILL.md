@@ -3,8 +3,9 @@ name: design-foundations
 description: >-
   Use when creating or repairing the structural layout of a web screen: grid,
   spacing rhythm, alignment, hierarchy, density, composition, whitespace, or
-  content grouping. Trigger for blank layouts, inconsistent spacing, weak
-  hierarchy, cluttered screens, or "layout terasa berantakan". Skip isolated
+  content grouping.   Trigger for blank layouts, inconsistent spacing, weak
+  hierarchy, cluttered screens, "layout terasa berantakan", "struktur layout",
+  or "rapikan struktur". Skip isolated
   color, typography, component-state, motion, and micro-polish changes.
 ---
 

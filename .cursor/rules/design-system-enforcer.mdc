@@ -23,7 +23,7 @@ alwaysApply: true
 | Match Figma / mock / pixel perfect / fidelity | `fidelity` → `tokens` → `responsive` → `polish` |
 | Lighthouse / axe / DevTools / measured scores | `devtools` → `accessibility` → `performance` |
 | Hierarchy / unclear primary / competing CTAs | `design-direction` Hierarchy pass → `design-foundations` → `anti-slop-design` → `polish` |
-| Grid / spacing / alignment / density / "layout berantakan" | `design-foundations` → `tokens` → `responsive` |
+| Grid / spacing / alignment / density / "layout berantakan" / "struktur layout" / "rapikan struktur" | `design-foundations` → `tokens` → `responsive` |
 | Typography / type scale / multi-h1 | `design-direction` Typography ladder → `design-typography` → `polish` |
 | Font choice / wrapping / truncation | `design-typography` → `responsive` → `accessibility` |
 | Palette / OKLCH / dark mode / contrast | `tokens` → `design-color` → `accessibility` |

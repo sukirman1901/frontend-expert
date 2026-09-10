@@ -21,7 +21,7 @@ Surface styling communicates grouping, hierarchy, and state. Geometry and depth 
 ## When to skip
 
 - Palette construction → `design-color`
-- Large layout grouping → `responsive` / `design-direction`
+- Large layout grouping → `design-foundations`
 - Enter/exit behavior → `motion`
 
 ## MUST

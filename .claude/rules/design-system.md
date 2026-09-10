@@ -13,11 +13,11 @@
 | Architecture | + `architecture` |
 | SEO / meta | + `seo` |
 | Feels off / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
-| Layout berantakan / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
+| Layout berantakan / struktur layout / rapikan struktur / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
+| Hierarchy / typography / type scale | `design-direction` Hierarchy + Typography passes → `design-typography` → `polish` |
 | Design audit / AI slop / visual review | `anti-slop-design` → `polish` → `tokens` → `design-foundations` (if structural) → `responsive` → `motion` (if animated) → **`marketing`** (if landing) → `accessibility` → `performance` (+ `fidelity` if mock; `devtools` if measuring) (`/design` or `/audit`) |
 | Figma / mock / fidelity | `fidelity` → `tokens` → `responsive` |
 | Lighthouse / axe / DevTools | `devtools` → `accessibility` → `performance` |
-| Hierarchy / typography | `design-direction` Hierarchy + Typography passes → `design-foundations` / `design-typography` |
 | UI tests / TDD | `testing` → `components` → `accessibility` (+ `devtools`) (`test-engineer`) |
 | Polish until good / sampai bagus | `quality-loop` (`/polish`) |
 | Performance | `performance` |
