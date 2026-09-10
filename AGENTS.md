@@ -38,7 +38,7 @@ Pillar map: `docs/pillars.md`.
 | Component props / API / “prop terlalu banyak” / composition | `components` | `/ui` |
 | Prototype / varian / side-by-side / bandingkan arah / cek semua state | `design-direction` (if axes unnamed) → **`prototype`** — then foundations → tokens → components | `/ui` |
 | Kode terasa AI / rapikan kode / dampak ke modul lain / error handling generik / edge case | `anti-slop-code` (not `anti-slop-design`, not `polish`) | `/ui` |
-| UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms` / `marketing` as relevant) | — |
+| UI copy / CTA / error / empty state / confirmation / AI writing / tulisan AI | `content-design` (not `anti-slop-design`, not `polish`) | — |
 | Figma Auto Layout / Fill / Hug / layout from Figma | `responsive` (Auto Layout ↔ CSS) → `components` | `/ui` |
 | Feels off / rapihin **detail** | `polish` (+ `anti-slop-design` if generik) — **one pass** | — |
 | Test / TDD / coverage | `testing` → `components` → `accessibility` | `/test-ui` |
@@ -54,7 +54,7 @@ Pillar map: `docs/pillars.md`.
 \*\* `design-foundations` for new layouts and structural redesigns. Skip isolated color, typography, copy, token, component-state, motion, and micro-polish changes.
 `prototype` when the user wants rendered comparison or state stress — not on every tiny `/ui`.
 
-**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Rapikan struktur” / layout berantakan → `design-foundations`. “Rapikan kode” / kode terasa AI → `anti-slop-code`. “Sampai bagus” → `quality-loop`.
+**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Rapikan struktur” / layout berantakan → `design-foundations`. “Rapikan kode” / kode terasa AI → `anti-slop-code`. Copy / “tulisan AI” / empty-state wording → `content-design`. “Sampai bagus” → `quality-loop`.
 
 Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-engineer`.
 

@@ -42,12 +42,19 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E31 | Prototype | [prototype.md](./prototype.md) |
 | E32 | Motion inspection | [motion-inspection.md](./motion-inspection.md) |
 
-## How to run
+## Desk vs live
 
-1. Open a scratch UI project (or empty folder)
-2. Ensure pack is installed (`./scripts/install.sh cursor-user` or skills CLI)
-3. Paste the **Prompt** from a scenario
-4. Score against **Pass criteria** (binary where possible)
-5. Log date + pass/fail in your notes (optional team sheet)
+| Kind | What it proves | Where |
+|------|----------------|-------|
+| Desk contract | Trigger phrases still map to the right skill files | `./scripts/eval-routing-contract.sh` (also in smoke-test) |
+| Desk scorecard | Human read of routing vs owners | [runs/2026-09-10-desk.md](./runs/2026-09-10-desk.md) |
+| Live | Fresh chat actually loads those skills | Paste [PASTE.md](./PASTE.md) — **do not** mark Live pass from desk-review |
 
-Do **not** treat these as unit tests — they validate agent judgment under the pack’s skills.
+## How to run (live)
+
+1. Open a **fresh** chat with this pack loaded (not the pack-authoring thread)
+2. Paste one prompt from [PASTE.md](./PASTE.md)
+3. Score against **Pass criteria** in the matching `evals/*.md`
+4. Log the result under `evals/runs/` with Live = pass/fail
+
+Do **not** treat the routing script as a behavioral unit test — it only guards phrase drift.

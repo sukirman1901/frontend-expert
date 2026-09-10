@@ -2,12 +2,9 @@
 name: quality-loop
 description: >-
   Loop UI work until quality gates pass — judge/build, test, audit, fix, repeat.
-  Use when the user wants polished UI, "rapihin sampai bagus", polish until audit
-  passes, fix Critical/High design findings, or /polish. Orchestrates
-  design-direction, tokens, components, responsive, motion,
-  anti-slop-design, polish, accessibility, testing, and design-reviewer
-  scorecard. Do not use for one-shot tiny tweaks unless the user asked to keep
-  iterating.
+  Use for “rapihin sampai bagus”, polish until audit passes, fix Critical/High
+  design findings, or /polish. Do not use for one-shot “rapihin detail”, copy-only
+  rewrites, or “rapikan kode”.
 ---
 
 # UI Quality Loop
@@ -26,13 +23,16 @@ JUDGE* → BUILD → TEST → AUDIT ──Critical/High──▶ FIX ──▶ T
 
 ## When to use
 
-- User asks to polish, rapihin, “sampai lulus audit”, “UI bagus dulu baru selesai”
-- `/polish` or natural language equivalent
+- User asks “rapihin sampai bagus”, “sampai lulus audit”, keep iterating until gates pass
+- `/polish` or natural language equivalent of the loop
 - After a `/design`/`/audit` with Critical/High findings and user wants them cleared
 
 ## When to skip
 
-- Single-line copy/token tweak with no quality ask
+- “Rapihin detail” / feels off → `polish` (one pass)
+- Copy / “tulisan AI” → `content-design`
+- “Rapikan kode” → `anti-slop-code`
+- Single-line token tweak with no quality ask
 - Pure audit with no fix permission (“audit saja”)
 - User said stop / “cukup” / accepted remaining Medium/Low
 

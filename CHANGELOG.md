@@ -2,6 +2,14 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.1] — 2026-09-10
+
+### Changed
+
+- Eval routing: bare “rapihin” no longer opens `quality-loop`; “tulisan AI” / empty-state wording stays on `content-design`
+- Added `evals/PASTE.md`, desk scorecard `evals/runs/2026-09-10-desk.md`, and `scripts/eval-routing-contract.sh` (wired into smoke-test)
+- Live evals remain **Not verified** until pasted in a fresh chat
+
 ## [2.4.0] — 2026-09-10
 
 ### Added

@@ -6,7 +6,7 @@
 
 ## Expected behavior
 
-Load `content-design`, preserve product facts, clarify actions and consequences, and make recovery explicit.
+Load `content-design` (not `polish`, not `quality-loop`, not `anti-slop-design`). Preserve product facts, clarify actions and consequences, and make recovery explicit.
 
 ## Pass criteria
 

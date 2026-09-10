@@ -87,10 +87,10 @@ skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md |
 [ "$skill_entry_count" -eq 33 ] && ok "33 canonical skills only" || bad "expected 33 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.4.0" and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.4.0 registers exactly 33 skills"
+  if jq -e '.version == "2.4.1" and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.4.1 registers exactly 33 skills"
   else
-    bad "plugin must be v2.4.0 with exactly 33 skills"
+    bad "plugin must be v2.4.1 with exactly 33 skills"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
@@ -245,6 +245,16 @@ if ! rg -q 'responsive' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROO
   bad "hooks/session-start.sh missing responsive/motion"
 else
   ok "hooks/session-start responsive+motion"
+fi
+
+echo "== eval routing =="
+chmod +x "$ROOT/scripts/eval-routing-contract.sh" 2>/dev/null || true
+[ -f "$ROOT/evals/PASTE.md" ] && ok "evals/PASTE.md" || bad "evals/PASTE.md"
+[ -f "$ROOT/evals/runs/2026-09-10-desk.md" ] && ok "evals/runs/2026-09-10-desk.md" || bad "evals/runs/2026-09-10-desk.md"
+if bash "$ROOT/scripts/eval-routing-contract.sh"; then
+  ok "eval-routing-contract"
+else
+  bad "eval-routing-contract"
 fi
 
 if [ "$FAIL" -ne 0 ]; then

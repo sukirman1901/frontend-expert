@@ -28,7 +28,9 @@ After tokens, structure, and anti-slop, apply micro-craft so the UI feels right 
 - Type roles, wrapping, truncation → `design-typography`
 - Conformance (contrast, names, keyboard) → `accessibility`
 - Motion systems / named families → `motion`
-- Copy-only or backend-only edits
+- Copy-only / “tulisan AI” / empty-state wording → `content-design`
+- “Rapikan kode” / generated implementation → `anti-slop-code`
+- Backend-only edits with no rendered UI change
 
 ## MUST
 

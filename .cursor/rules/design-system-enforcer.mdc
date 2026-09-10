@@ -33,7 +33,7 @@ alwaysApply: true
 | Prototype / varian / side-by-side / bandingkan arah / cek semua state | `design-direction` (if needed) → **`prototype`** |
 | Kode terasa AI / rapikan kode / dampak ke modul lain / error handling generik / edge case | `anti-slop-code` (not `anti-slop-design`, not `polish`) |
 | UI copy / CTA / error / empty state | `content-design` |
-| Copy terasa AI / tulisan generik / “unlock seamless” | `content-design` (not `anti-slop-design`) |
+| Copy terasa AI / tulisan generik / “unlock seamless” / “tulisan AI” | `content-design` (not `anti-slop-design`, not `polish`) |
 | Figma Auto Layout / Fill / Hug | `responsive` (Auto Layout ↔ CSS) |
 | Feels off / rapihin detail / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
 | Design audit, AI slop, "UI jelek/generik", visual review | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `motion` / **`motion-inspection`** if animated; + `marketing` if landing) |
@@ -44,6 +44,8 @@ alwaysApply: true
 | Sentry / analytics / observability | `monitoring` |
 
 Skip `design-foundations` for isolated color, typography, copy, token, component-state, motion, and micro-polish changes.
+
+**“Rapihin”:** alone on existing UI → `polish`. “Rapikan struktur” → `design-foundations`. Copy / “tulisan AI” → `content-design`. “Rapikan kode” → `anti-slop-code`. “Sampai bagus” → `quality-loop`.
 
 ## Expert judgment
 

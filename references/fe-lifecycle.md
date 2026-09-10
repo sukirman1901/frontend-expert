@@ -55,6 +55,7 @@ One-shot build (`/ui` or “bikin halaman”): stages **1→6** (judgment only i
 | Tiny clear fix | Skip judgment → touch only what’s needed |
 | Layout berantakan / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
 | Rapikan kode / kode terasa AI | `anti-slop-code` |
+| Rapikan copy / tulisan AI / empty-state wording | `content-design` |
 | Feels off / rapihin detail | `polish` one pass |
 | Rapihin sampai bagus | `quality-loop` (max 3) |
 | Audit saja | `/design` — no fix loop |

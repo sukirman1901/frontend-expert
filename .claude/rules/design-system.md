@@ -12,7 +12,7 @@
 | App shell / routing | + `app-shell` |
 | Architecture | + `architecture` |
 | SEO / meta | + `seo` |
-| UI copy / CTA / error / empty / AI writing | `content-design` (not `anti-slop-design`) |
+| UI copy / CTA / error / empty / AI writing / tulisan AI | `content-design` (not `anti-slop-design`, not `polish`) |
 | Kode terasa AI / rapikan kode / over-engineered / error handling generik / edge case | `anti-slop-code` (not `anti-slop-design`, not `polish`) |
 | Prototype / varian / side-by-side / bandingkan / cek semua state | `prototype` (after `design-direction` if axes unnamed) |
 | Feels off / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
@@ -53,3 +53,4 @@ Blank-canvas / ambiguous UI → 2–3 approaches + tradeoffs + recommendation **
 13. Slash commands are optional shortcuts only
 14. Never fabricate design-audit scores without tokens or screenshots
 15. “Rapihin sampai bagus” → `quality-loop` with iteration cap
+16. Bare “rapihin detail” → `polish`; copy / “tulisan AI” → `content-design`; “rapikan kode” → `anti-slop-code`

@@ -3,9 +3,9 @@ name: content-design
 description: >-
   Write and repair UI copy: labels, CTAs, errors, empty states, confirmations,
   onboarding, product voice, localization-ready strings, and AI-sounding prose.
-  Trigger for “copy terasa AI”, “pesan error”, “teks tombol”, “empty state”,
-  “tulisan generik”, or docs/changelog that read like filler. Visual slop stays
-  on anti-slop-design; this skill owns words.
+  Trigger for “copy terasa AI”, “tulisan AI”, “pesan error”, “teks tombol”,
+  “empty state”, “tulisan generik”, or docs/changelog that read like filler.
+  Visual slop stays on anti-slop-design; this skill owns words.
 ---
 
 # Content Design
@@ -17,6 +17,7 @@ Copy helps someone understand, act, and recover. Product facts beat generic enth
 ## When to use
 
 - Labels, buttons, help, empty/error/success, confirmations, onboarding
+- “Tulisan AI” / copy that sounds generated
 - Terminology, voice, or localization-ready strings
 - README, changelog, docs, or marketing sentences that read like filler
 
