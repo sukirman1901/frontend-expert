@@ -22,6 +22,7 @@ Keep UI **modular and owned**. Prefer local state and server cache over inventin
 
 - Single-file prototype the user wants kept flat
 - Pure visual polish with no structure ask
+- Generated-hook soup without a folder/state ask → `anti-slop-code`
 
 ## MUST (agent decisions)
 

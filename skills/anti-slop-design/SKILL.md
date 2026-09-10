@@ -20,6 +20,11 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 - During `/design` audits
 - When visual output looks generic or template-like
 
+## When to skip
+
+- Generated hooks/`any`/empty wrappers → `anti-slop-code`
+- Generic sentences with no visual tell → `content-design`
+
 ## Workflow
 
 1. **Scan** for the patterns below (and detail in `references/anti-patterns.md`)
@@ -59,6 +64,6 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 
 ## Depth
 
-Full catalog and fixes: `references/anti-patterns.md`.  
-Token source: `references/token-preset-scoring.md` (Plasma/`neutral-purple` only with brand cue).  
+Full catalog and fixes: `references/anti-patterns.md`.
+Token source: `references/token-preset-scoring.md` (Plasma/`neutral-purple` only with brand cue).
 Motion vocabulary: `references/motion-families.md`.

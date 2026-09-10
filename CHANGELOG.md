@@ -2,6 +2,19 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.2.0] — 2026-09-10
+
+### Added
+
+- `anti-slop-code` — generated frontend implementation tells (effects, type lies, wrappers, premature abstraction)
+- Reference `references/anti-slop-code.md` and behavioral eval E30
+- Writing slop stays on `content-design`; visual slop stays on `anti-slop-design`; hardening stays deferred
+
+### Changed
+
+- Canonical skill count is 31
+- Build routing places a code-slop scan after `components` and before `responsive`
+
 ## [2.1.3] — 2026-09-10
 
 ### Changed

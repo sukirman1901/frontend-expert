@@ -11,7 +11,7 @@ alwaysApply: true
 
 | User intent (examples) | Load skills in order |
 |------------------------|----------------------|
-| Build/change UI, page, screen, component, layout, styling | `design-direction` (if non-trivial) → `design-foundations` → `tokens` → (+ **`marketing`** if landing) → `components` → **`responsive`** → **`motion`** (light) → `anti-slop-design` → `polish` → `accessibility` |
+| Build/change UI, page, screen, component, layout, styling | `design-direction` (if non-trivial) → `design-foundations` → `tokens` → (+ **`marketing`** if landing) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light) → `anti-slop-design` → `polish` → `accessibility` |
 | + form / validasi | above + `forms` |
 | + API list/detail / async data | above + `data-fetching` |
 | + shell / sidebar / routing | above + `app-shell` |
@@ -29,6 +29,7 @@ alwaysApply: true
 | Palette / OKLCH / dark mode / contrast | `tokens` → `design-color` → `accessibility` |
 | Card / modal / radius / shadow / elevation | `tokens` → `design-surfaces` → `polish` |
 | Component props / API / “prop terlalu banyak” | `components` |
+| Kode terasa AI / rapikan kode / too many useEffect / over-engineered | `anti-slop-code` (not `anti-slop-design`, not `polish`) |
 | UI copy / CTA / error / empty state | `content-design` |
 | Copy terasa AI / tulisan generik / “unlock seamless” | `content-design` (not `anti-slop-design`) |
 | Figma Auto Layout / Fill / Hug | `responsive` (Auto Layout ↔ CSS) |

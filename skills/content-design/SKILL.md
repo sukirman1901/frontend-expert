@@ -26,6 +26,7 @@ Copy helps someone understand, act, and recover. Product facts beat generic enth
 - Validation mechanics → `forms`
 - Landing section stack / IA → `marketing`
 - Purple/gradients/Lorem-as-layout → `anti-slop-design` (then replace Lorem here)
+- Generated hooks/`any`/empty wrappers → `anti-slop-code`
 
 ## MUST
 

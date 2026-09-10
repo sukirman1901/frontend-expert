@@ -64,7 +64,7 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 | **Tests** | Planned critical cases green, or **explicit waiver** if no test runner / out of scope (document why) |
 | **Perf (soft)** | No Critical obvious LCP/CLS footguns in touched UI; else note as remaining |
 
-**Loop continues** while any **Critical** or **High** remains on touched UI.  
+**Loop continues** while any **Critical** or **High** remains on touched UI.
 **Medium/Low** do not block DONE unless the user asked for zero findings.
 
 Do **not** invent a test stack just to satisfy the Tests gate — waive and list residual risk.
@@ -80,13 +80,13 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 ### Round 0 — Direction + build
 
 1. Load `design-direction` if non-trivial / blank-canvas
-2. After direction: `tokens` → (+ `marketing` if landing) → (+ `app-shell` / `data-fetching` / `forms` if needed) → `components` → **`responsive`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` / `seo` if needed)
+2. After direction: `tokens` → (+ `marketing` if landing) → (+ `app-shell` / `data-fetching` / `forms` if needed) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` / `seo` if needed)
 3. Produce UI + **Conventions check** (`references/compliance-gates.md`)
 
 ### Each cycle — Prove + audit + fix
 
-1. **TEST** — `testing` via `test-engineer` (/test-ui workflow) for touched surfaces  
-2. **AUDIT** — `design-reviewer` scorecard (/design or /audit). Mark unevaluated honestly.  
+1. **TEST** — `testing` via `test-engineer` (/test-ui workflow) for touched surfaces
+2. **AUDIT** — `design-reviewer` scorecard (/design or /audit). Mark unevaluated honestly.
 3. **DECIDE**
    - All Critical/High clear → **DONE** (report scorecard + remaining Medium/Low)
    - Else if iterations left → **FIX** with `ui-developer` (only findings that block gates)
@@ -121,10 +121,10 @@ FIX … | DONE | STOP (cap)
 
 ## Final output (DONE or STOP)
 
-1. What shipped / changed  
-2. Final scorecard  
-3. Remaining Medium/Low (if any)  
-4. Cycles used  
+1. What shipped / changed
+2. Final scorecard
+3. Remaining Medium/Low (if any)
+4. Cycles used
 
 ## Checklist
 
@@ -139,8 +139,8 @@ FIX … | DONE | STOP (cap)
 
 ## Depth
 
-- Lifecycle A→Z: `references/fe-lifecycle.md`  
-- Judgment: `design-direction`  
-- Build: `tokens`, `components`, **`responsive`**, **`motion`** (`motion-families.md`), `anti-slop-design`, `polish`, `accessibility`  
-- Test: `testing` (+ `devtools` when measuring)  
-- Audit: `design-reviewer` + `references/anti-patterns.md` / `references/polish.md` / a11y / performance as needed  
+- Lifecycle A→Z: `references/fe-lifecycle.md`
+- Judgment: `design-direction`
+- Build: `tokens`, `components`, **`anti-slop-code`**, **`responsive`**, **`motion`** (`motion-families.md`), `anti-slop-design`, `polish`, `accessibility`
+- Test: `testing` (+ `devtools` when measuring)
+- Audit: `design-reviewer` + `references/anti-patterns.md` / `references/polish.md` / a11y / performance as needed

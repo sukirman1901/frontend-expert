@@ -141,7 +141,7 @@ Domain skills auto-load from natural language; slash commands remain optional ad
 
 ---
 
-## Skills (30)
+## Skills (31)
 
 Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 
@@ -158,6 +158,7 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 | `components` | UI Quality | Components, states — **Reicon**; custom selects |
 | `responsive` | Responsive MUST | All devices 320–1440+ |
 | `anti-slop-design` | UI Quality | AI aesthetic patterns |
+| `anti-slop-code` | UI Quality | Generated implementation tells |
 | `polish` | UI Quality | Micro craft (“feels off”) |
 | `accessibility` | UI Quality | WCAG 2.2 AA by default; project/legal target may differ |
 | `performance` | UI Quality | Core Web Vitals |
@@ -190,7 +191,7 @@ Version 2.1 contains 30 canonical skill folders. Legacy identifiers were removed
 
 ## Token presets (9)
 
-Import notes: [tokens/README.md](tokens/README.md).  
+Import notes: [tokens/README.md](tokens/README.md).
 **Choosing a preset:** walk the decision tree in [references/token-preset-scoring.md](references/token-preset-scoring.md) — custom → explicit → Plasma hard-gate → score (not vibes-only).
 
 | Preset | Base | Primary | Affinity hint |
@@ -296,7 +297,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 30 skills: suite root + domain — see docs/pillars.md
+├── skills/                 # 31 skills: suite root + domain — see docs/pillars.md
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
 ├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)

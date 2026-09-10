@@ -14,12 +14,13 @@ Invoke the ui-developer agent.
 6. `data-fetching` — if async API UI
 7. `forms` — if forms
 8. `components`
-9. `responsive` — MUST for layout (all devices; drawer+backdrop)
-10. `motion` — light shell defaults; marketing → families/patterns (`motion-families.md`) hand-roll
-11. `anti-slop-design`
-12. `polish`
-13. `accessibility` (light pass)
-14. `seo` / `webgl` — only if in scope
+9. `anti-slop-code` — generated implementation tells (preserve UI)
+10. `responsive` — MUST for layout (all devices; drawer+backdrop)
+11. `motion` — light shell defaults; marketing → families/patterns (`motion-families.md`) hand-roll
+12. `anti-slop-design`
+13. `polish`
+14. `accessibility` (light pass)
+15. `seo` / `webgl` — only if in scope
 
 ## Modes
 
@@ -38,5 +39,5 @@ Invoke the ui-developer agent.
 5. Marketing landings: load `marketing` — section stack (not hero-only); hand-roll, no registry install
 6. Implement with composition, loading/error/empty states, **responsive**, **motion** (shell light or named families)
 7. Make interactive elements keyboard accessible
-8. Scan for AI aesthetic patterns (incl. motion spam / hero-only), then apply `polish` craft
+8. Scan for generated-code tells (`anti-slop-code`), then AI aesthetic patterns (incl. motion spam / hero-only), then apply `polish` craft
 9. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states/responsive/shell/landing/motion), a11y notes

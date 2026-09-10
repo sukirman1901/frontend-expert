@@ -26,6 +26,7 @@ A component’s public props are a contract. Prefer composition and project prim
 - Async list/detail fetching only → `data-fetching`
 - Grid/spacing of the page → `design-foundations`
 - Radius/elevation language → `design-surfaces`
+- Generated-hook soup / empty wrappers without an API ask → `anti-slop-code`
 
 ## MUST
 

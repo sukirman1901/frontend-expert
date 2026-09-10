@@ -6,13 +6,14 @@
 
 | Intent | Load |
 |--------|------|
-| Build / modify UI | `design-direction` (non-trivial) → `design-foundations` → `tokens` → (+ **`marketing`** if landing) → (+ shell/data/forms if needed) → `components` → **`responsive`** → **`motion`** (light shell; marketing = `motion-families` hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` if needed) |
+| Build / modify UI | `design-direction` (non-trivial) → `design-foundations` → `tokens` → (+ **`marketing`** if landing) → (+ shell/data/forms if needed) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell; marketing = `motion-families` hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` if needed) |
 | Forms / validasi | + `forms` |
 | API / async data | + `data-fetching` |
 | App shell / routing | + `app-shell` |
 | Architecture | + `architecture` |
 | SEO / meta | + `seo` |
 | UI copy / CTA / error / empty / AI writing | `content-design` (not `anti-slop-design`) |
+| Kode terasa AI / rapikan kode / over-engineered | `anti-slop-code` (not `anti-slop-design`, not `polish`) |
 | Feels off / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
 | Layout berantakan / struktur layout / rapikan struktur / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
 | Hierarchy / typography / type scale | `design-direction` Hierarchy + Typography passes → `design-typography` → `polish` |

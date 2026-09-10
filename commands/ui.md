@@ -18,12 +18,13 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 7. `data-fetching` — **if** remote/async data
 8. `forms` — **if** forms / wizards
 9. `components` — implement with states
-10. `responsive` — **MUST** for layout (320–1440)
-11. `motion` — light shell defaults; marketing → families/patterns from `motion-families.md` (**hand-roll**)
-12. `anti-slop-design` — scan before done (includes decorative motion spam / hero-only landing)
-13. `polish` — micro craft
-14. `accessibility` — light pass
-15. `seo` / `webgl` — **only if** in scope
+10. `anti-slop-code` — generated implementation tells (not a visual restyle)
+11. `responsive` — **MUST** for layout (320–1440)
+12. `motion` — light shell defaults; marketing → families/patterns from `motion-families.md` (**hand-roll**)
+13. `anti-slop-design` — scan before done (includes decorative motion spam / hero-only landing)
+14. `polish` — micro craft
+15. `accessibility` — light pass
+16. `seo` / `webgl` — **only if** in scope
 
 ## What It Does
 
@@ -37,7 +38,7 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 8. Marketing: Header→Hero→Logo cloud→Features→Gallery→Testimonials→CTA→Footer (not hero-only)
 9. Light **motion** (shell) or named family/patterns (marketing) — hand-roll, not registry default
 10. Enforces accessibility basics
-11. Scans for AI slop, then `polish`
+11. Scans for generated-code tells (`anti-slop-code`), then visual AI slop, then `polish`
 12. Ends with **Conventions check** (includes Responsive + Shell + Landing + Motion)
 
 ## Usage

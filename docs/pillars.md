@@ -2,14 +2,14 @@
 
 Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert). Skills stay **flat** under `skills/` for discovery; this doc is the mental model.
 
-The suite has exactly 30 canonical skills. Version 2.1 adds `design-foundations` after optional `design-direction` and before `tokens`.
+The suite has exactly 31 canonical skills. Version 2.2 adds `anti-slop-code` after `components` and beside `anti-slop-design`.
 
 ## Pillars
 
 | Pillar | Skills | Role |
 |--------|--------|------|
 | **Suite root** | `frontend-expert`, **`skill-authoring`** | Catalog / install entry — routes into the pillars below; skill authoring |
-| **UI Quality** (default) | `design-direction`, `design-foundations`, `tokens`, `design-typography`, `design-color`, `design-surfaces`, `content-design`, `components`, `anti-slop-design`, `polish`, `accessibility`, `testing`, `quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `performance`, `fidelity`, `devtools`, **`marketing`**, **`design-vocabulary`** | Visual craft, structure, type, color, surfaces, product copy, tokens, polish, fidelity, tooling, motion, marketing IA |
+| **UI Quality** (default) | `design-direction`, `design-foundations`, `tokens`, `design-typography`, `design-color`, `design-surfaces`, `content-design`, `components`, `anti-slop-design`, `anti-slop-code`, `polish`, `accessibility`, `testing`, `quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `performance`, `fidelity`, `devtools`, **`marketing`**, **`design-vocabulary`** | Visual craft, structure, type, color, surfaces, product copy, generated-code tells, tokens, polish, fidelity, tooling, motion, marketing IA |
 | **Responsive** (MUST) | `responsive` | All devices 320→1440+ |
 | **Ship FE** | `app-shell`, `data-fetching`, `forms` | Shell, async UI, forms |
 | **Depth** | `architecture`, `seo`, **`engineering-vocabulary`** | Structure, technical SEO, engineering term lookup |
@@ -26,6 +26,7 @@ design-direction*
   → data-fetching?         # if remote data
   → forms?      # if forms
   → components
+  → anti-slop-code
   → responsive          # MUST for layout UI
   → motion                 # light shell/section defaults; marketing hand-roll families
   → anti-slop-design → polish → accessibility

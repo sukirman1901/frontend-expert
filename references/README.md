@@ -16,6 +16,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `token-preset-scoring.md` | `tokens`, `design-direction` | Decision tree + scoring |
 | `responsive.md` | `responsive` | All-devices MUST |
 | `anti-patterns.md` | `anti-slop-design` | AI aesthetic catalog |
+| `anti-slop-code.md` | `anti-slop-code` | Generated implementation catalog |
 | `polish.md` | `polish` | Micro craft |
 | `component-patterns.md` | `components` | Composition patterns |
 | `reicon-icons.md` | `components` | Default icons |
@@ -48,7 +49,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 ## Evals
 
-[`evals/`](../evals/) — E1–E29 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations, component API).
+[`evals/`](../evals/) — E1–E30 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations, component API, generated-code slop).
 
 ## Missing on purpose
 

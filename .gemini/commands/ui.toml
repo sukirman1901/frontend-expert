@@ -3,7 +3,7 @@ description = "Build production UI with curated tokens — avoid AI aesthetic"
 prompt = """
 Invoke the ui-developer agent.
 
-Load skills in order: design-direction (if non-trivial UI) → design-foundations (structural layout; skip isolated color/type/motion/polish) → tokens → marketing when marketing homepage → app-shell/data-fetching/forms when needed → components → responsive (MUST) → motion (light shell defaults; marketing = named families/patterns from motion-families.md, hand-roll) → anti-slop-design → polish → accessibility (light). Load webgl/seo only if in scope.
+Load skills in order: design-direction (if non-trivial UI) → design-foundations (structural layout; skip isolated color/type/motion/polish) → tokens → marketing when marketing homepage → app-shell/data-fetching/forms when needed → components → anti-slop-code → responsive (MUST) → motion (light shell defaults; marketing = named families/patterns from motion-families.md, hand-roll) → anti-slop-design → polish → accessibility (light). Load webgl/seo only if in scope.
 
 For blank-canvas or ambiguous UI, offer 2–3 approaches with tradeoffs and one recommendation before coding (unless the user said to just implement).
 
@@ -15,7 +15,7 @@ Build UI that looks design-system-aware, not AI-generated:
 4. responsive: verify 320/768/1024/1440; no page horizontal scroll
 5. motion: shell = section fade + drawer + press-scale; marketing = ≤2 families / named patterns, hand-roll (not registry default); honor prefers-reduced-motion
 6. Handle loading, error, and empty states; Reicon icons
-7. Scan for AI aesthetic patterns (incl. decorative motion spam / hero-only landing), then apply polish craft
+7. Scan for generated-code tells (anti-slop-code), then AI aesthetic patterns (incl. decorative motion spam / hero-only landing), then apply polish craft
 8. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive/shell/landing/motion families|patterns), a11y notes
 
 Modes via arguments: default = decision tree, --token <file> = explicit, --custom = project system.

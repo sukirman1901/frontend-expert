@@ -16,7 +16,7 @@ Pillar map: `docs/pillars.md`.
 
 | User says / means | Load skills (order) | Optional shortcut |
 |-------------------|---------------------|-------------------|
-| Build/change UI, page, component, layout, styling | `design-direction`* → **`design-foundations`**** → `tokens` → (+ **`marketing`** if landing) → `components` → **`responsive`** → **`motion`** (light shell defaults) → `anti-slop-design` → `polish` → `accessibility` | `/ui` |
+| Build/change UI, page, component, layout, styling | `design-direction`* → **`design-foundations`**** → `tokens` → (+ **`marketing`** if landing) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell defaults) → `anti-slop-design` → `polish` → `accessibility` | `/ui` |
 | + form / validasi / wizard | … + `forms` (before or with components) | `/ui` |
 | + list/detail API / loading data | … + `data-fetching` | `/ui` |
 | + app shell / sidebar / routing / 404 | … + `app-shell` | `/ui` |
@@ -35,6 +35,7 @@ Pillar map: `docs/pillars.md`.
 | Palette / OKLCH / dark mode / contrast / gamut | `tokens` → `design-color` → `accessibility` | — |
 | Card / modal / radius / border / shadow / elevation | `tokens` → `design-surfaces` → `polish` | — |
 | Component props / API / “prop terlalu banyak” / composition | `components` | `/ui` |
+| Kode terasa AI / rapikan kode / too many useEffect / over-engineered | `anti-slop-code` (not `anti-slop-design`, not `polish`) | `/ui` |
 | UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms` / `marketing` as relevant) | — |
 | Figma Auto Layout / Fill / Hug / layout from Figma | `responsive` (Auto Layout ↔ CSS) → `components` | `/ui` |
 | Feels off / rapihin **detail** | `polish` (+ `anti-slop-design` if generik) — **one pass** | — |
@@ -50,7 +51,7 @@ Pillar map: `docs/pillars.md`.
 \* `design-direction` for non-trivial / blank-canvas only — see skip rules.
 \*\* `design-foundations` for new layouts and structural redesigns. Skip isolated color, typography, copy, token, component-state, motion, and micro-polish changes.
 
-**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Rapikan struktur” / layout berantakan → `design-foundations`. “Sampai bagus” → `quality-loop`.
+**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Rapikan struktur” / layout berantakan → `design-foundations`. “Rapikan kode” / kode terasa AI → `anti-slop-code`. “Sampai bagus” → `quality-loop`.
 
 Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-engineer`.
 
@@ -71,7 +72,8 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `tokens` | UI Quality | Theme — decision tree + scoring |
 | `components` | UI Quality | Components, states, composition, public props/API |
 | `responsive` | Responsive MUST | Every layout UI / all devices |
-| `anti-slop-design` | UI Quality | Build + audits |
+| `anti-slop-design` | UI Quality | Build + visual audits |
+| `anti-slop-code` | UI Quality | Generated implementation tells |
 | `polish` | UI Quality | Micro craft |
 | `accessibility` | UI Quality | Build/audit a11y |
 | `performance` | UI Quality | CWV / slow |

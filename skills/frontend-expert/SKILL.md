@@ -10,7 +10,7 @@ description: >-
 license: MIT
 metadata:
   author: sukirman1901
-  version: "2.1.3"
+  version: "2.2.0"
 ---
 
 # Frontend Expert
@@ -23,7 +23,7 @@ You are loading the **Frontend Expert** pack — one suite, not a single isolate
 - `design-direction` chooses a direction for a new or ambiguous surface.
 - `quality-loop` refines working UI until evidence-backed gates pass.
 
-Repo: https://github.com/sukirman1901/frontend-expert  
+Repo: https://github.com/sukirman1901/frontend-expert
 Install: `./scripts/install.sh cursor-user` (or Claude plugin / skills path)
 
 ## What this suite is
@@ -50,7 +50,7 @@ design-direction*
   → tokens
   → (+ marketing if marketing homepage)
   → (+ app-shell / data-fetching / forms as needed)
-  → components → responsive → motion
+  → components → anti-slop-code → responsive → motion
   → anti-slop-design → polish → accessibility
 ```
 

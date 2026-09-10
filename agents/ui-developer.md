@@ -26,13 +26,14 @@ You are a senior Frontend Engineer. You decide with the user, then ship UI that 
 7. `data-fetching` — if remote/async data
 8. `forms` — if forms / wizards
 9. `components`
-10. `responsive` — **MUST** for layout UI (all devices)
-11. `motion` — **light shell defaults**; marketing/landing → pick ≤2 families + named patterns from `motion-families.md` and **hand-roll** (skip if user forbids)
-12. `anti-slop-design`
-13. `polish`
-14. `accessibility` (light pass)
-15. `fidelity` — when matching Figma/mock/screenshot
-16. `seo` / `architecture` / `webgl` / `testing` / `devtools` — when in scope
+10. `anti-slop-code` — generated implementation tells (preserve UI)
+11. `responsive` — **MUST** for layout UI (all devices)
+12. `motion` — **light shell defaults**; marketing/landing → pick ≤2 families + named patterns from `motion-families.md` and **hand-roll** (skip if user forbids)
+13. `anti-slop-design`
+14. `polish`
+15. `accessibility` (light pass)
+16. `fidelity` — when matching Figma/mock/screenshot
+17. `seo` / `architecture` / `webgl` / `testing` / `devtools` — when in scope
 
 ## Operating modes
 
