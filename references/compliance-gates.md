@@ -2,7 +2,7 @@
 
 Skills are **instructions**, not runtime injectors. Agents must **self-check** before marking UI done. If a gate fails, fix or write an explicit **waiver** (one line why).
 
-Used by: always-on rules, `ui-developer`, `ui-components`, `/ui`, `/polish` build step.
+Used by: always-on rules, `ui-developer`, `components`, `/ui`, `/polish` build step.
 
 ## Before DONE on any UI build
 
@@ -33,12 +33,12 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **Icons** | [Reicon](https://reicon.dev) on nav items, toolbars, empty states, icon buttons | Project already standardizes Lucide/etc., **or** intentional text-only UI (state waiver) |
 | **Vanilla HTML** | CDN: `unpkg.com/reicon/cdn/reicon.min.js` + `<re-icon icon="…">` | Same as above |
 | **React/Vue/Svelte** | `reicon-react` / `reicon-vue` / `reicon-svelte` | Same as above |
-| **Responsive** | Load `responsive-ui` — verify 320 / 768 / 1024 / 1440; drawer+backdrop for side nav; **primary CTAs `width: 100%` below 768**; no page horizontal scroll; adapt tables/nav | Explicit desktop-only waiver |
-| **Hierarchy** | One primary focus + one primary CTA; weight/contrast before decoration (`frontend-judgment` Hierarchy pass) | Tiny copy-only tweak |
+| **Responsive** | Load `responsive` — verify 320 / 768 / 1024 / 1440; drawer+backdrop for side nav; **primary CTAs `width: 100%` below 768**; no page horizontal scroll; adapt tables/nav | Explicit desktop-only waiver |
+| **Hierarchy** | One primary focus + one primary CTA; weight/contrast before decoration (`design-direction` Hierarchy pass) | Tiny copy-only tweak |
 | **Typography** | ≤2 families; one h1/page; sequential ladder; token type roles | Waiver: intentional marketing exception (state why) |
-| **Shell chrome** | Logo + utilities + **theme in topbar** (if any) + **avatar → account menu** (`app-shell-routing`) | Waiver: minimal marketing page |
-| **Marketing landing** | Section stack via `marketing-landing` / `landing-sections.md` — not hero-only; **hand-roll** (no block-registry install default) | Waiver: app-shell-only surface |
-| **Selects** | Custom select/combobox for product filters (`ui-components`); caret not flush | Waiver: native OS picker required |
+| **Shell chrome** | Logo + utilities + **theme in topbar** (if any) + **avatar → account menu** (`app-shell`) | Waiver: minimal marketing page |
+| **Marketing landing** | Section stack via `marketing` / `landing-sections.md` — not hero-only; **hand-roll** (no block-registry install default) | Waiver: app-shell-only surface |
+| **Selects** | Custom select/combobox for product filters (`components`); caret not flush | Waiver: native OS picker required |
 | **Motion** | Light defaults on shell/multi-section (`motion`); marketing builds name ≤2 families + patterns from `motion-families.md` and **hand-roll** — do not default to third-party registry install | User forbids animation / reduced-motion only |
 | **WebGL / shader / plasma / canvas bg** | Load skill `webgl` → Plasma Studio / `Plasma.init` | User explicitly wants Three.js/R3F scene graph |
 | **Tokens** | Project system, else full tree: custom → explicit → Plasma hard-gate → score (`token-preset-scoring.md`) | Waiver only |
@@ -55,7 +55,7 @@ Examples: section nav → icon + label; empty state → icon; icon-only button �
 
 On any layout/page:
 
-1. Load `responsive-ui` (or apply `references/responsive.md`)
+1. Load `responsive` (or apply `references/responsive.md`)
 2. Mobile-first; check 320 · 768 · 1024 · 1440
 3. Side nav / tables must adapt — not desktop-only
 4. **Primary CTAs / form submit / toolbar primary → full width below 768** (Figma Fill → `width: 100%`)
@@ -79,7 +79,7 @@ Theme under sidebar / always-on header meta / bare native filter select on green
 
 On marketing homepage / landing / promo surfaces:
 
-1. Load `marketing-landing` + `references/landing-sections.md`
+1. Load `marketing` + `references/landing-sections.md`
 2. Default recipe: hero → logo cloud → features → proof/gallery → testimonials? → CTA → footer (not hero-only)
 3. **Hand-roll** sections — do not default to installing `@tailark` / block registries
 4. Note Landing line in Conventions check
@@ -89,7 +89,7 @@ Hero-only (+ thin footer) on greenfield marketing → **High**, Area **Landing**
 
 ## Hierarchy & typography expectations
 
-1. Run Hierarchy pass + Typography ladder (`frontend-judgment`) before DONE on blank-canvas / layout polish
+1. Run Hierarchy pass + Typography ladder (`design-direction`) before DONE on blank-canvas / layout polish
 2. One primary focus + one primary CTA; one h1 per page; sequential heading levels
 3. Note Hierarchy + Typography lines in Conventions check
 

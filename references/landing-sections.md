@@ -1,6 +1,6 @@
 # Landing sections (marketing)
 
-Used by: `marketing-landing`. Section **jobs** and recipes for marketing pages. Implement by hand with pack tokens/craft — never install a third-party block registry.
+Used by: `marketing`. Section **jobs** and recipes for marketing pages. Implement by hand with pack tokens/craft — never install a third-party block registry.
 
 ## Section jobs
 
@@ -55,6 +55,6 @@ Hero (+ plasma) + thin footer **without** trust/features/CTA stack → **High** 
 
 ## Related
 
-- `marketing-landing` skill
-- `motion-families.md` · `fe-seo.md`
+- `marketing` skill
+- `motion-families.md` · `seo.md`
 - Craft north stars: Plasma landing, Send2Figma landing

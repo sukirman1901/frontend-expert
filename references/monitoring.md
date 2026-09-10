@@ -8,7 +8,7 @@ Error tracking, performance monitoring, analytics, and alerting.
 - Error boundary on app shell / critical routes; scrub PII
 - Few high-value analytics events (not every hover/click)
 - Sample rates sane for traffic; alerts have an owner
-- Lab audits (`fe-devtools`) ≠ production monitoring
+- Lab audits (`devtools`) ≠ production monitoring
 
 ## Error Tracking (Sentry)
 

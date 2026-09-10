@@ -10,7 +10,7 @@ description: >-
 license: MIT
 metadata:
   author: sukirman1901
-  version: "1.0.0"
+  version: "1.2.0"
 ---
 
 # Frontend Expert
@@ -20,8 +20,8 @@ You are loading the **Frontend Expert** pack — one suite, not a single isolate
 ## Start here
 
 - `frontend-expert` routes an uncertain request.
-- `frontend-judgment` chooses a direction for a new or ambiguous surface.
-- `ui-quality-loop` refines working UI until evidence-backed gates pass.
+- `design-direction` chooses a direction for a new or ambiguous surface.
+- `quality-loop` refines working UI until evidence-backed gates pass.
 
 Repo: https://github.com/sukirman1901/frontend-expert  
 Install: `./scripts/install.sh cursor-user` (or Claude plugin / skills path)
@@ -32,7 +32,7 @@ Chat-first skills for **product web UI**:
 
 | Pillar | Focus |
 |--------|--------|
-| UI Quality | Judgment, tokens, components, anti-slop, ui-feel, motion, marketing landings, a11y, tests, polish loop |
+| UI Quality | Judgment, tokens, components, anti-slop, polish, motion, marketing landings, a11y, tests, polish loop |
 | Responsive MUST | 320→1440, drawer, full-width CTA |
 | Ship FE | App shell, data fetching, forms |
 | Depth | Architecture, SEO |
@@ -45,18 +45,18 @@ Full map: `docs/pillars.md` · agent routing: `AGENTS.md`
 2. Prefer the default build chain when shipping UI:
 
 ```text
-frontend-judgment*
-  → design-tokens
-  → (+ marketing-landing if marketing homepage)
-  → (+ app-shell-routing / data-fetching / forms-validation as needed)
-  → ui-components → responsive-ui → motion
-  → anti-ai-slop → ui-feel → accessibility
+design-direction*
+  → tokens
+  → (+ marketing if marketing homepage)
+  → (+ app-shell / data-fetching / forms as needed)
+  → components → responsive → motion
+  → anti-slop-design → polish → accessibility
 ```
 
 3. Shell chrome defaults: theme in **topbar**; profile = **avatar → account menu**; filters = **custom select**.
-4. Marketing landings: section stack from `marketing-landing` / `landing-sections.md` — not hero-only.
+4. Marketing landings: section stack from `marketing` / `landing-sections.md` — not hero-only.
 5. Before DONE → **Conventions check** (`references/compliance-gates.md`).
-6. “Rapihin sampai bagus” → `ui-quality-loop` (cap 3).
+6. “Rapihin sampai bagus” → `quality-loop` (cap 3).
 
 \* Skip judgment for tiny fixes or “langsung saja”.
 

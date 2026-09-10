@@ -1,6 +1,6 @@
 # App shell & routing
 
-Used by: `app-shell-routing`. Optional local sandbox: `test/` (gitignored; not shipped).
+Used by: `app-shell`. Optional local sandbox: `test/` (gitignored; not shipped).
 
 ## Shell anatomy (modern dashboard)
 
@@ -73,4 +73,4 @@ Used by: `app-shell-routing`. Optional local sandbox: `test/` (gitignored; not s
 
 ## Related
 
-- `responsive-ui`, `motion`, `data-fetching`, `fe-architecture`
+- `responsive`, `motion`, `data-fetching`, `architecture`

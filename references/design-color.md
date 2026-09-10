@@ -2,7 +2,7 @@
 
 ## Ownership and precedence
 
-`design-color` constructs and verifies color relationships. `design-tokens` chooses the source and packages values; `accessibility` classifies WCAG requirements. Start with the project or brand system.
+`design-color` constructs and verifies color relationships. `tokens` chooses the source and packages values; `accessibility` classifies WCAG requirements. Start with the project or brand system.
 
 ## Palette jobs
 

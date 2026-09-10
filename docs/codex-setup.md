@@ -15,11 +15,11 @@ Codex reads `skills/` via `.codex-plugin/plugin.json`.
 Invoke skills with `@`, for example:
 
 ```
-@design-tokens
-@ui-components
-@anti-ai-slop
+@tokens
+@components
+@anti-slop-design
 @accessibility
-@frontend-testing
+@testing
 ```
 
 ## Notes

@@ -37,7 +37,7 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 
 **Problem:** OS chrome looks inconsistent, caret sits cramped, and styling fights the design system.
 
-**Fix:** Custom select/combobox with token surfaces and generous caret padding (`ui-components`).
+**Fix:** Custom select/combobox with token surfaces and generous caret padding (`components`).
 
 ### Excessive Gradients
 
@@ -119,7 +119,7 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 - body: Default text
 - small: Secondary/helper text
 
-**Ship gate:** Typography ladder in `skills/frontend-judgment/SKILL.md` + `ui-feel`. Multiple `h1` or skipped levels → Needs Work on Typography / Visual Hierarchy.
+**Ship gate:** Typography ladder in `skills/design-direction/SKILL.md` + `polish`. Multiple `h1` or skipped levels → Needs Work on Typography / Visual Hierarchy.
 
 ### Inconsistent Font Usage
 
@@ -273,14 +273,14 @@ Cherry-picked from design-lab principles (pack-relevant only):
 
 | Pattern | Why it hurts | Fix |
 |---------|--------------|-----|
-| `transition: all` / bare Tailwind `transition` | Animates unintended layout props | Name properties (`transition-transform`, etc.) — see `ui-feel` |
+| `transition: all` / bare Tailwind `transition` | Animates unintended layout props | Name properties (`transition-transform`, etc.) — see `polish` |
 | Hover-only affordances without `@media (hover: hover)` | Sticky “hover” on touch | Gate hover styles; provide press/focus equivalents |
 | `onPaste` + `preventDefault` | Blocks paste | Allow paste; validate after |
 | Placeholder as the only label | A11y + disappears on type | Visible `<label>` (or `aria-label`) |
 | Validate on every keystroke harshly | Anxiety, noise | Validate on blur/submit; live-validate gently |
 | Destructive action without confirm/undo | Data loss | Confirm dialog or soft-delete + undo |
 | Filters/tabs only in React state | Unshareable, broken back | Prefer URL state for shareable view state |
-| Tiny touch targets | Mis-taps | ≥44px touch / ≥40px dense desktop (`ui-feel`) |
+| Tiny touch targets | Mis-taps | ≥44px touch / ≥40px dense desktop (`polish`) |
 
 ## Motion anti-patterns
 

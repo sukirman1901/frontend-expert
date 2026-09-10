@@ -1,6 +1,6 @@
 # FE SEO (technical)
 
-Used by: `fe-seo`.
+Used by: `seo`.
 
 ## Per-route essentials
 
@@ -33,7 +33,7 @@ Client-only shells with no SSR/prerender rank poorly for marketing URLs. Use SSR
 
 ## Overlap with performance
 
-- LCP image: dimensions + priority hints → `web-performance`
+- LCP image: dimensions + priority hints → `performance`
 - This skill: whether the **content and meta** exist for crawlers/sharers
 
 ## Anti-patterns
@@ -45,4 +45,4 @@ Client-only shells with no SSR/prerender rank poorly for marketing URLs. Use SSR
 
 ## Related
 
-- `web-performance`, `accessibility`, `app-shell-routing`
+- `performance`, `accessibility`, `app-shell`

@@ -8,7 +8,7 @@ Audit HTML settings page yang punya <h1> di setiap section (Profile, Team, Billi
 
 ## Expected
 
-1. Loads Typography ladder (`frontend-judgment`) and/or `ui-feel` / `anti-ai-slop`
+1. Loads Typography ladder (`design-direction`) and/or `polish` / `anti-slop-design`
 2. Identifies **multiple h1** as High / Needs Work (Area Typography or Visual Hierarchy)
 3. Fixes to **one h1 per page** + sequential `h2` section titles (or equivalent)
 4. Does not skip levels for style (h1 → h3)

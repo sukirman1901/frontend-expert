@@ -2,7 +2,7 @@
 description: Loop build → test → audit → fix until UI quality gates pass
 ---
 
-Invoke the ui-quality-loop skill as the controller.
+Invoke the quality-loop skill as the controller.
 
 ## Agents per step
 
@@ -12,7 +12,7 @@ Invoke the ui-quality-loop skill as the controller.
 
 ## Skills
 
-Lead with `ui-quality-loop`. Load domain skills as each step requires (`frontend-judgment`, `design-tokens`, `ui-components`, `responsive-ui`, `motion` + `motion-families` vocabulary, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, audit chain).
+Lead with `quality-loop`. Load domain skills as each step requires (`design-direction`, `tokens`, `components`, `responsive`, `motion` + `motion-families` vocabulary, `anti-slop-design`, `polish`, `accessibility`, `testing`, audit chain).
 
 ## Modes
 
@@ -24,7 +24,7 @@ Lead with `ui-quality-loop`. Load domain skills as each step requires (`frontend
 
 ## What to do
 
-1. Follow `ui-quality-loop` gates and cycle output template
+1. Follow `quality-loop` gates and cycle output template
 2. Clear Critical/High only as blockers; leave Medium/Low unless asked
 3. Never infinite-loop — stop at cap with remaining list
 4. Do not fabricate audit metrics without tokens/screenshots

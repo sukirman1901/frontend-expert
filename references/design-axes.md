@@ -2,7 +2,7 @@
 
 Lightweight patterns adapted from [0xdesign design-lab](https://github.com/0xdesign/design-plugin) for this pack’s **text-first** judgment — not a browser Design Lab.
 
-Used by: `frontend-judgment`.
+Used by: `design-direction`.
 
 ## Variant axes
 
@@ -18,7 +18,7 @@ When proposing approaches, make each option pull a **different lever**:
 
 **Rule:** 2–3 options max. Never five near-identical color skins.
 
-**Post-build:** Hierarchy is not only an exploration axis — run the **Hierarchy pass** in `skills/frontend-judgment/SKILL.md` (and type ladder) before DONE. See also `references/ux-foundations.md` → UI visual system.
+**Post-build:** Hierarchy is not only an exploration axis — run the **Hierarchy pass** in `skills/design-direction/SKILL.md` (and type ladder) before DONE. See also `references/ux-foundations.md` → UI visual system.
 
 ## Inspiration shorthand
 

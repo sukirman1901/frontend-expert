@@ -1,6 +1,6 @@
 # Design fidelity
 
-Used by: `design-fidelity`, `design-reviewer`, `/design` when a mock exists.
+Used by: `fidelity`, `design-reviewer`, `/design` when a mock exists.
 
 ## Goal
 
@@ -42,6 +42,6 @@ If the file uses a foreign purple palette and the project system is not purple �
 
 ## Related
 
-- `frontend-judgment` Hierarchy / Typography passes
-- `anti-ai-slop` when “matching” would introduce slop
-- `ui-feel` for micro craft after structure matches
+- `design-direction` Hierarchy / Typography passes
+- `anti-slop-design` when “matching” would introduce slop
+- `polish` for micro craft after structure matches

@@ -4,7 +4,7 @@
 set -euo pipefail
 
 if ! command -v jq >/dev/null 2>&1; then
-  echo '{"priority": "INFO", "message": "frontend-expert: jq missing. Chat-first: map UI intent to skills (AGENTS.md). Include responsive-ui + motion. Polish: ui-quality-loop. Slash optional."}'
+  echo '{"priority": "INFO", "message": "frontend-expert: jq missing. Chat-first: map UI intent to skills (AGENTS.md). Include responsive + motion. Polish: quality-loop. Slash optional."}'
   exit 0
 fi
 
@@ -16,11 +16,11 @@ Do NOT wait for slash commands. See AGENTS.md + docs/pillars.md.
 Lifecycle: pahami → putuskan → sistem → bangun → haluskan → a11y → bukti → audit → fix (cap 3) → ship
 See references/fe-lifecycle.md
 
-- Build UI → frontend-judgment* → design-tokens → (+ typography/color/surfaces/content owners as relevant) → (+ marketing-landing if landing) → (+ shell/data/forms) → ui-components → responsive-ui → motion → anti-ai-slop → ui-feel → accessibility
-- Test → frontend-testing (+ fe-devtools when measuring) (test-engineer)
-- Audit → anti-ai-slop → ui-feel → tokens → responsive-ui → motion (if animated) → marketing-landing (if landing) → a11y → web-performance (+ design-fidelity / fe-devtools as needed) [/design|/audit]
-- Polish until good → ui-quality-loop [/polish]: build→test→audit→fix (max 3)
-- Feels off / rapihin detail → ui-feel (one pass). Rapihin sampai bagus → ui-quality-loop
+- Build UI → design-direction* → tokens → (+ typography/color/surfaces/content owners as relevant) → (+ marketing if landing) → (+ shell/data/forms) → components → responsive → motion → anti-slop-design → polish → accessibility
+- Test → testing (+ devtools when measuring) (test-engineer)
+- Audit → anti-slop-design → polish → tokens → responsive → motion (if animated) → marketing (if landing) → a11y → performance (+ fidelity / devtools as needed) [/design|/audit]
+- Polish until good → quality-loop [/polish]: build→test→audit→fix (max 3)
+- Feels off / rapihin detail → polish (one pass). Rapihin sampai bagus → quality-loop
 
 * Skip judgment for tiny fixes or \"langsung saja\"
 Optional: /ui · /test-ui · /design · /audit · /polish

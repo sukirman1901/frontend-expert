@@ -61,13 +61,13 @@ if rg -n -i --no-heading 'lorem ipsum' "$FILE" >/tmp/dse-anti-slop-lorem.$$ 2>/d
   HITS+=("Lorem ipsum placeholder text")
 fi
 
-# transition: all — animates unintended properties (ui-feel)
+# transition: all — animates unintended properties (polish)
 # CSS: transition: all … | Tailwind bare `transition` / `transition-all` (not transition-transform, etc.)
 if rg -n --no-heading \
   -e 'transition\s*:\s*all\b' \
   -e 'transition-all\b' \
   "$FILE" >/tmp/dse-anti-slop-transition.$$ 2>/dev/null; then
-  HITS+=("transition: all / transition-all — name properties (see ui-feel)")
+  HITS+=("transition: all / transition-all — name properties (see polish)")
 fi
 
 # Tailwind \`transition\` utility alone (maps to all) — advisory, skip if already more specific
@@ -102,7 +102,7 @@ for h in "${HITS[@]}"; do
 done
 MSG="$MSG
 
-Load anti-ai-slop / ui-feel (references/anti-patterns.md, references/ui-feel.md) and fix before shipping. Prefer tokens/ CSS variables."
+Load anti-slop-design / polish (references/anti-patterns.md, references/polish.md) and fix before shipping. Prefer tokens/ CSS variables."
 
 # Claude Code surfaces stderr from hooks to the model
 echo "$MSG" >&2

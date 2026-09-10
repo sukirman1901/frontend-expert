@@ -8,7 +8,7 @@
 Rapihin detail UI card ini, feels off (radius / press / tabular numbers).
 ```
 
-**Expect:** `ui-feel` one pass — **not** full `ui-quality-loop`, **not** blank-canvas `frontend-judgment` axes interview.
+**Expect:** `polish` one pass — **not** full `quality-loop`, **not** blank-canvas `design-direction` axes interview.
 
 ### B — Until audit-clean
 
@@ -16,7 +16,7 @@ Rapihin detail UI card ini, feels off (radius / press / tabular numbers).
 Rapihin sampai bagus, sampai lulus audit.
 ```
 
-**Expect:** `ui-quality-loop` / `/polish`.
+**Expect:** `quality-loop` / `/polish`.
 
 ### C — Vague new UI
 
@@ -24,7 +24,7 @@ Rapihin sampai bagus, sampai lulus audit.
 Rapihin… eh bikin dashboard analytics dong, belum ada arah.
 ```
 
-**Expect:** `frontend-judgment` (2–3 axes) **before** coding.
+**Expect:** `design-direction` (2–3 axes) **before** coding.
 
 ## Pass criteria
 

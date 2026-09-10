@@ -8,7 +8,7 @@ Bikin halaman settings dengan sidebar nav dan tabel user. Langsung saja.
 
 ## Expected
 
-1. Loads `responsive-ui` (or applies its rules via `ui-components`)
+1. Loads `responsive` (or applies its rules via `components`)
 2. Sidebar becomes drawer/stack on small screens — not desktop-only
 3. Table has card/stack alternative or contained scroll with clear affordance
 4. Conventions includes `Responsive: 320/768/1024/1440 checked`

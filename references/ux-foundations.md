@@ -1,6 +1,6 @@
 # UX / UI foundations
 
-Short theory reference for product UI. Prefer project tokens and judgment axes over inventing a new look. Deep craft: `ui-feel`, `anti-patterns`, `accessibility-checklist`.
+Short theory reference for product UI. Prefer project tokens and judgment axes over inventing a new look. Deep craft: `polish`, `anti-patterns`, `accessibility-checklist`.
 
 ## UX frameworks (most used)
 
@@ -46,7 +46,7 @@ Short theory reference for product UI. Prefer project tokens and judgment axes o
 
 ### Fitts & Hick (interaction)
 
-- **Fitts:** bigger + closer targets are faster → CTAs and hit areas matter (`ui-feel`: 44/40px)
+- **Fitts:** bigger + closer targets are faster → CTAs and hit areas matter (`polish`: 44/40px)
 - **Hick:** more options → slower decisions → hide advanced behind progressive disclosure
 
 ### Quick decision check
@@ -71,7 +71,7 @@ Exploration axes (hierarchy / layout / density / interaction / expression): `des
 
 **Ship gates (enforce, don’t only theorize):**
 
-- Hierarchy + typography checklists → `skills/frontend-judgment/SKILL.md` (Hierarchy pass / Typography ladder)
+- Hierarchy + typography checklists → `skills/design-direction/SKILL.md` (Hierarchy pass / Typography ladder)
 - Type anti-patterns → `references/anti-patterns.md`
 - Mobile CTA Fill / Auto Layout → `references/responsive.md`
 
@@ -140,10 +140,10 @@ OKLCH/HSL make lightness adjustments easier than guessing hex. Pack presets: `to
 
 | Concern | Skill / reference |
 |---------|-------------------|
-| Choose direction | `frontend-judgment`, `design-axes.md` |
-| Apply palette / type / space | `design-tokens`, `tokens/` |
-| Kill generic AI look | `anti-ai-slop`, `anti-patterns.md` |
-| Micro craft | `ui-feel`, `ui-feel.md` |
+| Choose direction | `design-direction`, `design-axes.md` |
+| Apply palette / type / space | `tokens`, `tokens/` |
+| Kill generic AI look | `anti-slop-design`, `anti-patterns.md` |
+| Micro craft | `polish`, `polish.md` |
 | Contrast, focus, labels | `accessibility`, `accessibility-checklist.md` |
 | Motion timing | `motion`, `motion.md` |
 

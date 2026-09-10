@@ -8,32 +8,32 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 | Reference | Skill | Used by |
 |-----------|-------|---------|
-| `design-axes.md` | `frontend-judgment` | Axes, inspiration, style inference |
-| `ux-foundations.md` | `frontend-judgment`, `design-tokens`, `accessibility` | Nielsen/Gestalt, color |
-| `fe-lifecycle.md` | `ui-quality-loop`, `frontend-judgment` | A→Z FE process |
-| `compliance-gates.md` | always-on, `ui-components`, `ui-developer` | Ship checklist |
-| `token-preset-scoring.md` | `design-tokens`, `frontend-judgment` | Decision tree + scoring |
-| `responsive.md` | `responsive-ui` | All-devices MUST |
-| `anti-patterns.md` | `anti-ai-slop` | AI aesthetic catalog |
-| `ui-feel.md` | `ui-feel` | Micro craft |
-| `component-patterns.md` | `ui-components` | Composition patterns |
-| `reicon-icons.md` | `ui-components` | Default icons |
-| `architecture.md` | `ui-components`, `fe-architecture` | State ladder |
-| `fe-architecture.md` | `fe-architecture` | Feature folders / boundaries |
+| `design-axes.md` | `design-direction` | Axes, inspiration, style inference |
+| `ux-foundations.md` | `design-direction`, `tokens`, `accessibility` | Nielsen/Gestalt, color |
+| `fe-lifecycle.md` | `quality-loop`, `design-direction` | A→Z FE process |
+| `compliance-gates.md` | always-on, `components`, `ui-developer` | Ship checklist |
+| `token-preset-scoring.md` | `tokens`, `design-direction` | Decision tree + scoring |
+| `responsive.md` | `responsive` | All-devices MUST |
+| `anti-patterns.md` | `anti-slop-design` | AI aesthetic catalog |
+| `polish.md` | `polish` | Micro craft |
+| `component-patterns.md` | `components` | Composition patterns |
+| `reicon-icons.md` | `components` | Default icons |
+| `architecture.md` | `components`, `architecture` | State ladder |
+| `fe-architecture.md` | `architecture` | Feature folders / boundaries |
 | `data-fetching.md` | `data-fetching` | Async UI |
-| `forms-validation.md` | `forms-validation` | Forms UX |
-| `app-shell-routing.md` | `app-shell-routing` | Shell / nav / routes |
-| `fe-seo.md` | `fe-seo` | Technical SEO |
+| `forms.md` | `forms` | Forms UX |
+| `app-shell.md` | `app-shell` | Shell / nav / routes |
+| `seo.md` | `seo` | Technical SEO |
 | `accessibility-checklist.md` | `accessibility` | WCAG checks |
-| `performance.md` | `web-performance` | CWV |
+| `performance.md` | `performance` | CWV |
 | `motion.md` | `motion` | Recipes Framer/GSAP |
 | `motion-families.md` | `motion` | 12 families · 144 patterns vocabulary |
-| `testing.md` | `frontend-testing` | Tests |
+| `testing.md` | `testing` | Tests |
 | `webgl.md` | `webgl` | Plasma Studio |
 | `monitoring.md` | `monitoring` | Observability |
-| `design-fidelity.md` | `design-fidelity` | Spec vs build |
-| `fe-devtools.md` | `fe-devtools` | Lighthouse / axe / tooling |
-| `landing-sections.md` | `marketing-landing` | Marketing section catalog + recipes |
+| `fidelity.md` | `fidelity` | Spec vs build |
+| `devtools.md` | `devtools` | Lighthouse / axe / tooling |
+| `landing-sections.md` | `marketing` | Marketing section catalog + recipes |
 | `design-typography.md` | `design-typography` | Type roles, font behavior, wrapping, truncation |
 | `design-color.md` | `design-color` | OKLCH, palettes, themes, contrast, gamut |
 | `design-surfaces.md` | `design-surfaces` | Radius, borders, elevation, overlays |
@@ -43,6 +43,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 - `evidence-policy.md` — source precedence and rule classifications
 - `source-ledger.md` — current standards, enterprise patterns, craft sources, and verification dates
+- `skill-aliases.md` — v1.2 canonical-name migration and v2.0 removal map
 - `../NOTICE.md` — third-party attribution
 
 ## Evals

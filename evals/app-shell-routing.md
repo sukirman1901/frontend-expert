@@ -8,7 +8,7 @@ Bikin shell dashboard: sidebar, top bar, outlet untuk halaman nested.
 
 ## Expected
 
-- Loads `app-shell-routing` + `responsive-ui`
+- Loads `app-shell` + `responsive`
 - Stable chrome; mobile drawer/stack for sidebar
 - Active nav + main landmark
 

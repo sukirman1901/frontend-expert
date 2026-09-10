@@ -10,7 +10,7 @@ Rapihin UI ini sampai bagus / sampai lulus audit. Jangan berhenti di satu pass.
 
 ## Expected behavior
 
-1. Routes to `ui-quality-loop` / `/polish` (not only `ui-feel`)
+1. Routes to `quality-loop` / `/polish` (not only `polish`)
 2. Runs build/fix → test (or waiver) → audit → fix cycles
 3. Stops at **max 3** audit→fix cycles if Critical/High remain
 4. On cap: **STOP** with remaining findings list — no infinite loop

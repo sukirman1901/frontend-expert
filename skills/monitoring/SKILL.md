@@ -22,7 +22,7 @@ Ship UI with enough production signal: errors, performance, and product analytic
 
 ## When to skip
 
-- Pure visual polish (`ui-feel` / `/polish`)
+- Pure visual polish (`polish` / `/polish`)
 - Local-only prototypes with no deploy target
 
 ## MUST (when adding observability)
@@ -35,7 +35,7 @@ Ship UI with enough production signal: errors, performance, and product analytic
 | **Analytics** | Few high-value events (signup, checkout, critical CTA) — not every click |
 | **Alerts** | Error rate or CWV budget with a named owner |
 
-Lab Lighthouse ≠ production monitoring — use `fe-devtools` for local audits; this skill for **shipped** signal.
+Lab Lighthouse ≠ production monitoring — use `devtools` for local audits; this skill for **shipped** signal.
 
 ## Workflow
 
@@ -61,4 +61,4 @@ Lab Lighthouse ≠ production monitoring — use `fe-devtools` for local audits;
 ## Depth
 
 Full guide: `references/monitoring.md`.  
-Related: `web-performance` for build-time CWV; `fe-devtools` for lab audits.
+Related: `performance` for build-time CWV; `devtools` for lab audits.

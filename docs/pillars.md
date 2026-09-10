@@ -2,31 +2,33 @@
 
 Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert). Skills stay **flat** under `skills/` for discovery; this doc is the mental model.
 
+The suite has 29 canonical skills. Seventeen deprecated alias entries preserve pre-1.2 explicit invocations until v2.0; aliases are not separate capabilities.
+
 ## Pillars
 
 | Pillar | Skills | Role |
 |--------|--------|------|
-| **Suite root** | `frontend-expert`, **`writing-skills`** | Catalog / install entry — routes into the pillars below; skill authoring |
-| **UI Quality** (default) | `frontend-judgment`, `design-tokens`, `design-typography`, `design-color`, `design-surfaces`, `content-design`, `ui-components`, `anti-ai-slop`, `ui-feel`, `accessibility`, `frontend-testing`, `ui-quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `web-performance`, `design-fidelity`, `fe-devtools`, **`marketing-landing`**, **`design-vocabulary`** | Visual craft, type, color, surfaces, product copy, tokens, polish, fidelity, tooling, motion, marketing IA |
-| **Responsive** (MUST) | `responsive-ui` | All devices 320→1440+ |
-| **Ship FE** | `app-shell-routing`, `data-fetching`, `forms-validation` | Shell, async UI, forms |
-| **Depth** | `fe-architecture`, `fe-seo`, **`engineering-vocabulary`** | Structure, technical SEO, engineering term lookup |
+| **Suite root** | `frontend-expert`, **`skill-authoring`** | Catalog / install entry — routes into the pillars below; skill authoring |
+| **UI Quality** (default) | `design-direction`, `tokens`, `design-typography`, `design-color`, `design-surfaces`, `content-design`, `components`, `anti-slop-design`, `polish`, `accessibility`, `testing`, `quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `performance`, `fidelity`, `devtools`, **`marketing`**, **`design-vocabulary`** | Visual craft, type, color, surfaces, product copy, tokens, polish, fidelity, tooling, motion, marketing IA |
+| **Responsive** (MUST) | `responsive` | All devices 320→1440+ |
+| **Ship FE** | `app-shell`, `data-fetching`, `forms` | Shell, async UI, forms |
+| **Depth** | `architecture`, `seo`, **`engineering-vocabulary`** | Structure, technical SEO, engineering term lookup |
 
 ## Default build chain
 
 ```text
-frontend-judgment*
-  → design-tokens
+design-direction*
+  → tokens
   → design-typography? / design-color? / design-surfaces? / content-design?
-  → marketing-landing?     # if marketing homepage / landing
-  → app-shell-routing?     # if multi-route / shell / dashboard / settings
+  → marketing?     # if marketing homepage / landing
+  → app-shell?     # if multi-route / shell / dashboard / settings
   → data-fetching?         # if remote data
-  → forms-validation?      # if forms
-  → ui-components
-  → responsive-ui          # MUST for layout UI
+  → forms?      # if forms
+  → components
+  → responsive          # MUST for layout UI
   → motion                 # light shell/section defaults; marketing hand-roll families
-  → anti-ai-slop → ui-feel → accessibility
-  → (+ webgl | fe-seo | fe-architecture | design-fidelity | fe-devtools as needed)
+  → anti-slop-design → polish → accessibility
+  → (+ webgl | seo | architecture | fidelity | devtools as needed)
 ```
 
 ## Out of scope (honest)

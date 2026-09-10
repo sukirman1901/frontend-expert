@@ -44,7 +44,7 @@ New design-domain skills use a `design-` prefix where it prevents ambiguity:
 - `design-surfaces`
 - `content-design`
 
-Existing identifiers remain unchanged in phase 1. Renaming all existing folders would break installed paths, prompts, command adapters, and third-party references for little immediate user value. Documentation groups existing skills under consistent user-facing categories. A later major release may add aliases before any physical rename.
+Canonical identifiers use the approved concise taxonomy. Seventeen pre-1.2 identifiers remain as deprecated, explicit-invocation-only aliases for one migration cycle and are removed in v2.0. This prevents auto-routing competition while preserving installed prompts during migration.
 
 ## Start-here design
 
@@ -167,4 +167,3 @@ Phase 1 is complete when:
 | Reference drift | `last_verified` metadata and source ledger |
 | Copying external packs | Adapt principles, cite sources, retain license notices where required |
 | Documentation bloat | Keep triggerable skills concise; move depth into `references/` |
-

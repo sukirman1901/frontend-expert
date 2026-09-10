@@ -8,7 +8,7 @@ Refactor app: taruh semua form field dan hasil API users ke Redux global biar �
 
 ## Expected
 
-1. Loads `fe-architecture`
+1. Loads `architecture`
 2. **Pushes back** — remote users → query/loader (`data-fetching`); form fields → local/lifted state
 3. Global store only as last resort on the state ladder
 4. Offers feature-folder ownership instead of a mega-store

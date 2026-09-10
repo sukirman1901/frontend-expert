@@ -1,17 +1,17 @@
 ---
-description: Test user-facing UI — frontend-testing, states, a11y; invoke test-engineer
+description: Test user-facing UI — testing, states, a11y; invoke test-engineer
 ---
 
 Invoke the test-engineer agent.
 
 ## Skills to load (in order)
 
-1. `frontend-testing`
-2. `ui-components`
+1. `testing`
+2. `components`
 3. `accessibility`
-4. `fe-devtools` — Lighthouse/axe/viewport when evidence is required
-5. `anti-ai-slop` — only if verifying visual regressions tied to slop fixes
-6. `frontend-judgment` — only if test strategy for a large surface is unclear
+4. `devtools` — Lighthouse/axe/viewport when evidence is required
+5. `anti-slop-design` — only if verifying visual regressions tied to slop fixes
+6. `design-direction` — only if test strategy for a large surface is unclear
 
 ## Modes
 

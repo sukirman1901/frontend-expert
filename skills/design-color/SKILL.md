@@ -20,7 +20,7 @@ Build color from product meaning and measured pairs. OKLCH is a useful working s
 
 ## When to skip
 
-- Selecting which existing token preset applies → `design-tokens`
+- Selecting which existing token preset applies → `tokens`
 - Accessibility audit without palette changes → `accessibility`
 - Surface depth without color-system work → `design-surfaces`
 
@@ -41,7 +41,7 @@ Build color from product meaning and measured pairs. OKLCH is a useful working s
 2. **Model** — choose a working space and build neutral, accent, and semantic roles.
 3. **Derive** — create states and themes while preserving meaning and hierarchy.
 4. **Measure** — contrast, gamut, forced-colors, and color-vision risks.
-5. **Integrate** — hand final values to `design-tokens`; document method and waivers.
+5. **Integrate** — hand final values to `tokens`; document method and waivers.
 
 ## Boundaries
 

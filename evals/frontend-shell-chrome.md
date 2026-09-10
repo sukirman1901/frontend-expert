@@ -9,7 +9,7 @@ dengan dropdown, filter status jangan pakai select native browser.
 
 ## Expected
 
-1. Loads `app-shell-routing` + `ui-components` (+ `responsive-ui` if layout touched)
+1. Loads `app-shell` + `components` (+ `responsive` if layout touched)
 2. Moves theme to **topbar icon** (moon/sun); removes sidebar footer theme button
 3. Replaces header name/email with **avatar → menu** (meta inside panel)
 4. Replaces native `<select>` with **custom** listbox/combobox; caret not flush to the edge
@@ -20,7 +20,7 @@ dengan dropdown, filter status jangan pakai select native browser.
 - [ ] No theme control under sidebar nav
 - [ ] Avatar-only trigger + working account menu
 - [ ] Custom status/filter control (token-styled)
-- [ ] Mentions or follows `app-shell-routing` / `ui-components` rules
+- [ ] Mentions or follows `app-shell` / `components` rules
 
 ## Fail if
 

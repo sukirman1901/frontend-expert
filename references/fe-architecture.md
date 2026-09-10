@@ -1,6 +1,6 @@
 # FE architecture (suite)
 
-Used by: `fe-architecture`. Complements `references/architecture.md` (state ladder detail).
+Used by: `architecture`. Complements `references/architecture.md` (state ladder detail).
 
 ## Default layout
 
@@ -46,4 +46,4 @@ Still tangled globally? → consider a store (rare)
 
 ## Related
 
-- `app-shell-routing`, `data-fetching`, `ui-components`
+- `app-shell`, `data-fetching`, `components`

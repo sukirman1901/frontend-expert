@@ -18,17 +18,17 @@ This is **not** a single skill — it's a **suite of 29 skills** organized into 
 ## Start here
 
 - **`frontend-expert`** — use when you are unsure which skill owns the problem.
-- **`frontend-judgment`** — use when a new or ambiguous surface needs a direction.
-- **`ui-quality-loop`** — use when an existing interface works and needs evidence-backed refinement before shipping.
+- **`design-direction`** — use when a new or ambiguous surface needs a direction.
+- **`quality-loop`** — use when an existing interface works and needs evidence-backed refinement before shipping.
 
 ## Pillars
 
 | Pillar | Skills | When it loads |
 |--------|--------|---------------|
-| **UI Quality** | judgment, tokens, typography, color, surfaces, content, components, anti-slop, ui-feel, a11y, testing, quality-loop, motion, webgl, monitoring, marketing-landing, fidelity, devtools | Any UI build, audit, or polish |
-| **Responsive** (MUST) | responsive-ui | Every layout — 320/768/1024/1440 verified |
-| **Ship FE** | app-shell-routing, data-fetching, forms-validation | Shell/nav, API data, forms |
-| **Depth** | fe-architecture, fe-seo | Folder structure, meta/OG/SEO |
+| **UI Quality** | judgment, tokens, typography, color, surfaces, content, components, anti-slop, polish, a11y, testing, quality-loop, motion, webgl, monitoring, marketing, fidelity, devtools | Any UI build, audit, or polish |
+| **Responsive** (MUST) | responsive | Every layout — 320/768/1024/1440 verified |
+| **Ship FE** | app-shell, data-fetching, forms | Shell/nav, API data, forms |
+| **Depth** | architecture, seo | Folder structure, meta/OG/SEO |
 
 Full pillar map: `docs/pillars.md`.
 
@@ -36,7 +36,7 @@ Full pillar map: `docs/pillars.md`.
 
 1. **You ask** — "bikin dashboard", "landing page", "rapihin UI", "audit design"
 2. **Intent map** matches your request → loads the right skills in order
-3. **Skills chain** — judgment → tokens → components → responsive → motion → anti-slop → ui-feel → a11y
+3. **Skills chain** — design-direction → tokens → components → responsive → motion → anti-slop-design → polish → accessibility
 4. **Compliance gates** — before shipping, a conventions check verifies tokens, icons, responsive, hierarchy, typography, motion, shell, landing, a11y, and states
 
 See `AGENTS.md` for the full intent map.
@@ -66,7 +66,7 @@ Detail: `references/compliance-gates.md`.
 ### Quality loop
 BUILD → TEST → AUDIT → FIX cycle with max 3 iterations. Runs when you say "sampai bagus" or `/polish`.
 
-Skill: `skills/ui-quality-loop`.
+Skill: `skills/quality-loop`.
 
 ## Vocabulary skills
 

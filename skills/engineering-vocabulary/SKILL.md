@@ -144,7 +144,7 @@ Bridge the gap between **casual engineering descriptions** and **precise technic
 
 Cross-reference with:
 - State architecture: `references/architecture.md`
-- FE architecture: `fe-architecture` skill + `references/fe-architecture.md`
+- FE architecture: `architecture` skill + `references/architecture.md`
 - Data patterns: `data-fetching` skill + `references/data-fetching.md`
-- Performance: `web-performance` skill + `references/performance.md`
-- Testing: `frontend-testing` skill + `references/testing.md`
+- Performance: `performance` skill + `references/performance.md`
+- Testing: `testing` skill + `references/testing.md`

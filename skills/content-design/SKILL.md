@@ -21,8 +21,8 @@ Interface copy helps a person understand, act, and recover. Preserve product tru
 ## When to skip
 
 - Visual text rendering → `design-typography`
-- Validation mechanics → `forms-validation`
-- Landing section structure → `marketing-landing`
+- Validation mechanics → `forms`
+- Landing section structure → `marketing`
 
 ## MUST
 

@@ -12,7 +12,7 @@ Pakai purple gradient hero, rounded-2xl cards, dan Lorem ipsum dulu.
 1. May skip long judgment because user said “langsung saja” — OK
 2. Must **not** ship purple/indigo defaults, gradient hero, or Lorem as final UI
 3. Should push back: walk token **decision tree** (score path for greenfield SaaS — not purple-by-request) + real copy; emit Token score
-4. Should load `anti-ai-slop` / mention token-based colors
+4. Should load `anti-slop-design` / mention token-based colors
 5. Icons if any → Reicon (or existing project lib), not random Lucide-by-default if no standard
 
 ## Pass criteria

@@ -61,9 +61,9 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 
 | Pillar | What |
 |--------|------|
-| **UI Quality** | Tokens, anti-slop, ui-feel, a11y, tests, polish loop, WebGL, monitoring, design vocabulary |
-| **Responsive MUST** | All devices 320→1440+ (`responsive-ui`) |
-| **Ship FE** | App shell/routing, data-fetching, forms-validation |
+| **UI Quality** | Tokens, anti-slop, polish, a11y, tests, polish loop, WebGL, monitoring, design vocabulary |
+| **Responsive MUST** | All devices 320→1440+ (`responsive`) |
+| **Ship FE** | App shell/routing, data-fetching, forms |
 | **Depth** | FE architecture, technical SEO, engineering vocabulary |
 
 ```
@@ -79,7 +79,7 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 | Chat-first routing | Rules + skill `description`s match intent — no slash required |
 | Senior FE judgment | 2–3 approaches + tradeoffs before blank-canvas builds |
 | Anti-AI-slop | No random purple gradients, inconsistent spacing, generic heroes |
-| UI feel | Micro craft — concentric radius, tabular-nums, press/hover feel ([`ui-feel`](skills/ui-feel/SKILL.md)) |
+| UI feel | Micro craft — concentric radius, tabular-nums, press/hover feel ([`polish`](skills/polish/SKILL.md)) |
 | Design tokens | 9 CSS presets + **decision tree / scoring** |
 | **Responsive** | **MUST** — 320/768/1024/1440 in Conventions check |
 | Icons | **[Reicon](https://reicon.dev) MUST** in shipped markup unless waiver |
@@ -92,7 +92,7 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 ### Defaults (when the project has no standard yet)
 
 1. **Tokens** — score a preset (`references/token-preset-scoring.md`), or keep the project’s design system
-2. **Responsive** — `responsive-ui` on every layout
+2. **Responsive** — `responsive` on every layout
 3. **Icons** — [Reicon](https://reicon.dev) in markup
 4. **Shader backgrounds** — `webgl` → Plasma → `Plasma.init`
 5. **Ship gate** — [Conventions check](references/compliance-gates.md)
@@ -109,10 +109,10 @@ Prefer natural chat. Use these only to pin a workflow:
 
 | Command | Purpose | Skills loaded |
 |---------|---------|---------------|
-| `/ui` | Build UI | judgment* → tokens → (+ shell/data/forms) → components → **responsive-ui** → **motion** → anti-slop → **ui-feel** → a11y |
-| `/design` | Audit | anti-slop → **ui-feel** → tokens → **responsive-ui** → **motion** (if animated) → a11y → web-performance (+ design-fidelity / fe-devtools / judgment as needed) |
+| `/ui` | Build UI | judgment* → tokens → (+ shell/data/forms) → components → **responsive** → **motion** → anti-slop → **polish** → a11y |
+| `/design` | Audit | anti-slop → **polish** → tokens → **responsive** → **motion** (if animated) → a11y → performance (+ fidelity / devtools / judgment as needed) |
 | `/audit` | Alias of `/design` | same |
-| `/test-ui` | Prove UI | frontend-testing → components → a11y → **fe-devtools** (when measuring) |
+| `/test-ui` | Prove UI | testing → components → a11y → **devtools** (when measuring) |
 | `/polish` | Quality loop | build → test → audit → fix until gates pass (max 3; includes responsive + motion) |
 
 ```bash
@@ -134,8 +134,8 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 ## Start here
 
 - **`frontend-expert`** — when you are unsure which skill owns the problem
-- **`frontend-judgment`** — when designing a new or ambiguous surface
-- **`ui-quality-loop`** — when working UI needs an evidence-backed final pass
+- **`design-direction`** — when designing a new or ambiguous surface
+- **`quality-loop`** — when working UI needs an evidence-backed final pass
 
 Domain skills auto-load from natural language; slash commands remain optional adapters.
 
@@ -148,38 +148,42 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 | Skill | Pillar | Use when |
 |-------|--------|----------|
 | `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
-| `frontend-judgment` | UI Quality | Blank-canvas — axes + options before code |
-| `design-tokens` | UI Quality | Scoring + applying theme CSS |
+| `design-direction` | UI Quality | Blank-canvas — axes + options before code |
+| `tokens` | UI Quality | Scoring + applying theme CSS |
 | `design-typography` | UI Quality | Fonts, type roles/scales, wrapping, truncation |
 | `design-color` | UI Quality | Palette, OKLCH, themes, contrast, gamut |
 | `design-surfaces` | UI Quality | Radius, borders, elevation, shadows, overlays |
 | `content-design` | UI Quality | UI copy, errors, empty states, voice |
-| `ui-components` | UI Quality | Components, states — **Reicon**; custom selects |
-| `responsive-ui` | Responsive MUST | All devices 320–1440+ |
-| `anti-ai-slop` | UI Quality | AI aesthetic patterns |
-| `ui-feel` | UI Quality | Micro craft (“feels off”) |
+| `components` | UI Quality | Components, states — **Reicon**; custom selects |
+| `responsive` | Responsive MUST | All devices 320–1440+ |
+| `anti-slop-design` | UI Quality | AI aesthetic patterns |
+| `polish` | UI Quality | Micro craft (“feels off”) |
 | `accessibility` | UI Quality | WCAG 2.2 AA by default; project/legal target may differ |
-| `web-performance` | UI Quality | Core Web Vitals |
+| `performance` | UI Quality | Core Web Vitals |
 | `motion` | UI Quality | Shell defaults + family/pattern vocabulary (hand-roll) |
-| `frontend-testing` | UI Quality | Component tests / TDD |
-| `ui-quality-loop` | UI Quality | Polish until Critical/High clear |
+| `testing` | UI Quality | Component tests / TDD |
+| `quality-loop` | UI Quality | Polish until Critical/High clear |
 | `webgl` | UI Quality | Plasma Studio backgrounds |
 | `monitoring` | UI Quality | Sentry / analytics / OTel |
-| `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
-| `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
-| `marketing-landing` | UI Quality | Marketing section stack (hero→footer; hand-roll) |
-| `app-shell-routing` | Ship FE | Shell, nav, routes |
+| `fidelity` | UI Quality | Spec / Figma / screenshot match |
+| `devtools` | UI Quality | Lighthouse / axe / measured checks |
+| `marketing` | UI Quality | Marketing section stack (hero→footer; hand-roll) |
+| `app-shell` | Ship FE | Shell, nav, routes |
 | `data-fetching` | Ship FE | Async API UI states |
-| `forms-validation` | Ship FE | Forms / wizards |
-| `fe-architecture` | Depth | Folders / state boundaries |
-| `fe-seo` | Depth | Meta / OG / indexability |
+| `forms` | Ship FE | Forms / wizards |
+| `architecture` | Depth | Folders / state boundaries |
+| `seo` | Depth | Meta / OG / indexability |
 | `design-vocabulary` | UI Quality | Name a design concept from a loose description |
 | `engineering-vocabulary` | Depth | Name a FE engineering pattern from a loose description |
-| `writing-skills` | Suite root | Author new skills following pack conventions |
+| `skill-authoring` | Suite root | Author new skills following pack conventions |
 
 \* Skip judgment for tiny clear fixes or “just implement” / “langsung saja”.
 
 Skills stay short and triggerable; depth lives in `references/`.
+
+### Compatibility aliases (deprecated)
+
+The 17 pre-1.2 identifiers remain as explicit-invocation aliases for one migration cycle and are removed in v2.0. New documentation and auto-routing use canonical names only. See `references/skill-aliases.md`.
 
 ---
 
@@ -254,11 +258,11 @@ Details: [references/compliance-gates.md](references/compliance-gates.md) · Eva
 
 ## UI feel (micro craft)
 
-Skill **`ui-feel`** — adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT).
+Skill **`polish`** — adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT).
 
 Concentric radius, optical alignment, tabular numbers, text-wrap, interruptible transitions, `scale(0.96)` press, hit areas, no `transition: all`. Runs after anti-slop on `/ui` and inside `/polish`.
 
-Guide: [references/ui-feel.md](references/ui-feel.md)
+Guide: [references/polish.md](references/polish.md)
 
 ---
 
@@ -311,7 +315,7 @@ Map: [references/README.md](references/README.md)
 
 | Kind | Files |
 |------|--------|
-| Skill-backed | anti-patterns, ui-feel, design-axes, ux-foundations, fe-lifecycle, **compliance-gates**, **motion-families**, component-patterns, architecture, accessibility, performance, motion, testing, webgl, monitoring, design-fidelity, fe-devtools + `tokens/` |
+| Skill-backed | anti-patterns, polish, design-axes, ux-foundations, fe-lifecycle, **compliance-gates**, **motion-families**, component-patterns, architecture, accessibility, performance, motion, testing, webgl, monitoring, fidelity, devtools + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
 | Evals | [evals/](evals/) (purple, honesty, loop, routing, **reicon/webgl**) |
 | Guides | [tokens/README.md](tokens/README.md) · [fe-lifecycle.md](references/fe-lifecycle.md) · [compliance-gates.md](references/compliance-gates.md) |
@@ -352,8 +356,8 @@ See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 
 ## Credits
 
-- [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) — UI feel craft (adapted as `ui-feel`)
-- [design-lab / Design and Refine](https://github.com/0xdesign/design-plugin) — exploration axes & style inference (adapted into `frontend-judgment`)
+- [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) — UI feel craft (adapted as `polish`)
+- [design-lab / Design and Refine](https://github.com/0xdesign/design-plugin) — exploration axes & style inference (adapted into `design-direction`)
 - [Reicon](https://reicon.dev) — default icon library
 - [Plasma](https://plasma.nusaiba.dev) — WebGL background studio (canonical study)
 - [shadcn/ui](https://ui.shadcn.com/) — design tokens and components

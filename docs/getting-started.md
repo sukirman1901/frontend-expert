@@ -5,7 +5,7 @@ Install **Design System Enforcer** for your coding agent. Shared content: domain
 **Chat-first + judgment:** talk normally — blank-canvas UI gets 2–3 approaches before code.  
 **Entry shortcuts (optional):** `/ui` · `/design` · `/audit` · `/test-ui` · `/polish`  
 **Agents:** `ui-developer` · `design-reviewer` · `test-engineer`  
-**Skills:** includes `ui-quality-loop` for polish-until-good
+**Skills:** includes `quality-loop` for polish-until-good
 
 
 ## Universal (skills CLI)

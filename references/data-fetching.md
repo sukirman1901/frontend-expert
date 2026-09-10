@@ -56,7 +56,7 @@ submit → pending on control →
 
 ## Related
 
-- `forms-validation` for submit pipelines  
-- `frontend-testing` for MSW / loading assertions  
-- `responsive-ui` for skeleton layouts on small screens  
+- `forms` for submit pipelines
+- `testing` for MSW / loading assertions
+- `responsive` for skeleton layouts on small screens
 - `compliance-gates.md` States line

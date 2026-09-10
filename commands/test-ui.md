@@ -9,12 +9,12 @@ Prove UI behavior. Orchestrates testing skills — parity with `/ui` and `/desig
 
 ## Skills to load (in order)
 
-1. `frontend-testing` — pyramid, TDD, Testing Library, a11y in tests
-2. `ui-components` — know which states must exist
+1. `testing` — pyramid, TDD, Testing Library, a11y in tests
+2. `components` — know which states must exist
 3. `accessibility` — what a11y invariants to assert
-4. `fe-devtools` — Lighthouse/axe/viewport when evidence is required
-5. `anti-ai-slop` — only if verifying visual regressions of slop fixes
-6. `frontend-judgment` — only if test *strategy* for a large/ambiguous surface is unclear
+4. `devtools` — Lighthouse/axe/viewport when evidence is required
+5. `anti-slop-design` — only if verifying visual regressions of slop fixes
+6. `design-direction` — only if test *strategy* for a large/ambiguous surface is unclear
 
 ## What It Does
 

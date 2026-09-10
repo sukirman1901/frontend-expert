@@ -16,38 +16,38 @@ Pillar map: `docs/pillars.md`.
 
 | User says / means | Load skills (order) | Optional shortcut |
 |-------------------|---------------------|-------------------|
-| Build/change UI, page, component, layout, styling | `frontend-judgment`* → `design-tokens` → (+ **`marketing-landing`** if landing) → `ui-components` → **`responsive-ui`** → **`motion`** (light shell defaults) → `anti-ai-slop` → `ui-feel` → `accessibility` | `/ui` |
-| + form / validasi / wizard | … + `forms-validation` (before or with ui-components) | `/ui` |
+| Build/change UI, page, component, layout, styling | `design-direction`* → `tokens` → (+ **`marketing`** if landing) → `components` → **`responsive`** → **`motion`** (light shell defaults) → `anti-slop-design` → `polish` → `accessibility` | `/ui` |
+| + form / validasi / wizard | … + `forms` (before or with components) | `/ui` |
 | + list/detail API / loading data | … + `data-fetching` | `/ui` |
-| + app shell / sidebar / routing / 404 | … + `app-shell-routing` | `/ui` |
-| + architecture / folder structure / state choice | … + `fe-architecture` | — |
-| + SEO / meta / OG / landing public | … + `fe-seo` (+ `web-performance` if CWV) | — |
-| + marketing landing / homepage sections / logo cloud / testimonials | … + **`marketing-landing`** (+ `motion` / `fe-seo`) | `/ui` |
+| + app shell / sidebar / routing / 404 | … + `app-shell` | `/ui` |
+| + architecture / folder structure / state choice | … + `architecture` | — |
+| + SEO / meta / OG / landing public | … + `seo` (+ `performance` if CWV) | — |
+| + marketing landing / homepage sections / logo cloud / testimonials | … + **`marketing`** (+ `motion` / `seo`) | `/ui` |
 | + animation / motion / marquee / parallax / text reveal / landing motion | … + `motion` (families/patterns in `motion-families.md`; hand-roll — no registry default) | `/ui` |
-| Mobile / responsive / semua device / tablet | **`responsive-ui`** (MUST on layout UI) | `/ui` |
-| Audit design, AI slop, UI generik | `anti-ai-slop` → `ui-feel` → `design-tokens` → `responsive-ui` → `accessibility` → `web-performance` (+ `motion` if animated; **`marketing-landing`** if landing; + `frontend-judgment` hierarchy/type if scores claimed) | `/design` or `/audit` |
-| Match Figma / mock / pixel / fidelity | `design-fidelity` → `design-tokens` → `responsive-ui` → `ui-feel` | `/design` |
-| Lighthouse / axe / DevTools / measured audit | `fe-devtools` → `accessibility` → `web-performance` → `frontend-testing` | `/test-ui` or `/design` |
-| Hierarchy / visual hierarchy / primary CTA unclear | `frontend-judgment` (Hierarchy pass) → `anti-ai-slop` → `ui-feel` | `/design` |
-| Typography / type scale / multi-h1 / heading ladder | `frontend-judgment` (Typography ladder) → `ui-feel` → `anti-ai-slop` | `/design` |
-| Font choice / type scale / wrapping / truncation / variable fonts | `design-typography` → `responsive-ui` → `accessibility` | — |
-| Palette / OKLCH / dark mode / contrast / gamut | `design-tokens` → `design-color` → `accessibility` | — |
-| Card / modal / radius / border / shadow / elevation | `design-tokens` → `design-surfaces` → `ui-feel` | — |
-| UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms-validation` / `marketing-landing` as relevant) | — |
-| Figma Auto Layout / Fill / Hug / layout from Figma | `responsive-ui` (Auto Layout ↔ CSS) → `ui-components` | `/ui` |
-| Feels off / rapihin **detail** | `ui-feel` (+ `anti-ai-slop` if generik) — **one pass** | — |
-| Test / TDD / coverage | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
-| Polish / rapihin **sampai bagus** | `ui-quality-loop` | `/polish` |
-| Slow / LCP / optimize | `web-performance` | — |
+| Mobile / responsive / semua device / tablet | **`responsive`** (MUST on layout UI) | `/ui` |
+| Audit design, AI slop, UI generik | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `motion` if animated; **`marketing`** if landing; + `design-direction` hierarchy/type if scores claimed) | `/design` or `/audit` |
+| Match Figma / mock / pixel / fidelity | `fidelity` → `tokens` → `responsive` → `polish` | `/design` |
+| Lighthouse / axe / DevTools / measured audit | `devtools` → `accessibility` → `performance` → `testing` | `/test-ui` or `/design` |
+| Hierarchy / visual hierarchy / primary CTA unclear | `design-direction` (Hierarchy pass) → `anti-slop-design` → `polish` | `/design` |
+| Typography / type scale / multi-h1 / heading ladder | `design-direction` (Typography ladder) → `polish` → `anti-slop-design` | `/design` |
+| Font choice / type scale / wrapping / truncation / variable fonts | `design-typography` → `responsive` → `accessibility` | — |
+| Palette / OKLCH / dark mode / contrast / gamut | `tokens` → `design-color` → `accessibility` | — |
+| Card / modal / radius / border / shadow / elevation | `tokens` → `design-surfaces` → `polish` | — |
+| UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms` / `marketing` as relevant) | — |
+| Figma Auto Layout / Fill / Hug / layout from Figma | `responsive` (Auto Layout ↔ CSS) → `components` | `/ui` |
+| Feels off / rapihin **detail** | `polish` (+ `anti-slop-design` if generik) — **one pass** | — |
+| Test / TDD / coverage | `testing` → `components` → `accessibility` | `/test-ui` |
+| Polish / rapihin **sampai bagus** | `quality-loop` | `/polish` |
+| Slow / LCP / optimize | `performance` | — |
 | WebGL / shader / Plasma | `webgl` | — |
 | Monitoring / Sentry / OTel | `monitoring` | — |
 | "What's the name for…" / loose UI description / design term lookup | `design-vocabulary` | — |
 | "What pattern is…" / loose engineering description / FE term lookup | `engineering-vocabulary` | — |
-| Create/add new skill / extend the pack / "buat skill baru" | `writing-skills` | — |
+| Create/add new skill / extend the pack / "buat skill baru" | `skill-authoring` | — |
 
-\* `frontend-judgment` for non-trivial / blank-canvas only — see skip rules.
+\* `design-direction` for non-trivial / blank-canvas only — see skip rules.
 
-**“Rapihin”:** alone on existing UI → `ui-feel`. Vague *new* UI → judgment. “Sampai bagus” → `ui-quality-loop`.
+**“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Sampai bagus” → `quality-loop`.
 
 Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-engineer`.
 
@@ -56,37 +56,37 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 1. At most 1–2 clarifying questions if blocked
 2. Offer **2–3 approaches on distinct axes** with tradeoffs + one recommendation
 3. Wait for a clear pick (or “langsung saja”)
-4. Then run domain skills (including **responsive-ui** for layout)
+4. Then run domain skills (including **responsive** for layout)
 
 ## Skills (suite)
 
 | Skill | Pillar | Triggers |
 |-------|--------|----------|
 | `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
-| `frontend-judgment` | UI Quality | Blank-canvas / ambiguous UI |
-| `design-tokens` | UI Quality | Theme — decision tree + scoring |
-| `ui-components` | UI Quality | Components, states, composition |
-| `responsive-ui` | Responsive MUST | Every layout UI / all devices |
-| `anti-ai-slop` | UI Quality | Build + audits |
-| `ui-feel` | UI Quality | Micro craft |
+| `design-direction` | UI Quality | Blank-canvas / ambiguous UI |
+| `tokens` | UI Quality | Theme — decision tree + scoring |
+| `components` | UI Quality | Components, states, composition |
+| `responsive` | Responsive MUST | Every layout UI / all devices |
+| `anti-slop-design` | UI Quality | Build + audits |
+| `polish` | UI Quality | Micro craft |
 | `accessibility` | UI Quality | Build/audit a11y |
-| `web-performance` | UI Quality | CWV / slow |
+| `performance` | UI Quality | CWV / slow |
 | `motion` | UI Quality | Shell defaults + family/pattern vocabulary (`motion-families.md`); hand-roll |
-| `frontend-testing` | UI Quality | Tests / TDD |
-| `ui-quality-loop` | UI Quality | Polish until clean |
+| `testing` | UI Quality | Tests / TDD |
+| `quality-loop` | UI Quality | Polish until clean |
 | `webgl` | UI Quality | Plasma backgrounds |
 | `monitoring` | UI Quality | Sentry / analytics |
-| `app-shell-routing` | Ship FE | Shell, nav, routes |
+| `app-shell` | Ship FE | Shell, nav, routes |
 | `data-fetching` | Ship FE | Async API UI |
-| `forms-validation` | Ship FE | Forms / wizards |
-| `fe-architecture` | Depth | Folders / state boundaries |
-| `fe-seo` | Depth | Meta / OG / indexability |
-| `marketing-landing` | UI Quality | Marketing section stack (hero→footer); **hand-roll** — not registry install |
-| `design-fidelity` | UI Quality | Spec / Figma / screenshot match |
-| `fe-devtools` | UI Quality | Lighthouse / axe / measured checks |
+| `forms` | Ship FE | Forms / wizards |
+| `architecture` | Depth | Folders / state boundaries |
+| `seo` | Depth | Meta / OG / indexability |
+| `marketing` | UI Quality | Marketing section stack (hero→footer); **hand-roll** — not registry install |
+| `fidelity` | UI Quality | Spec / Figma / screenshot match |
+| `devtools` | UI Quality | Lighthouse / axe / measured checks |
 | `design-vocabulary` | UI Quality | Reverse-lookup: loose description → design term |
 | `engineering-vocabulary` | Depth | Reverse-lookup: loose description → FE engineering term |
-| `writing-skills` | Suite root | Author new pack skills following conventions |
+| `skill-authoring` | Suite root | Author new pack skills following conventions |
 | `design-typography` | UI Quality | Font choice, type roles/scales, wrapping, truncation, numerics, bidi |
 | `design-color` | UI Quality | Palette construction, OKLCH, themes, contrast, gamut |
 | `design-surfaces` | UI Quality | Radius, borders, elevation, shadows, overlays |
@@ -96,20 +96,20 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 
 1. Tokens via decision tree (`token-preset-scoring.md`) or project system — never vibe-pick
 2. Icons: **MUST ship Reicon** unless waiver — `compliance-gates.md`
-3. **Responsive: MUST** verify 320/768/1024/1440 on layout UI — `responsive-ui`
+3. **Responsive: MUST** verify 320/768/1024/1440 on layout UI — `responsive`
 4. **Primary CTAs full-width below 768** (forms / toolbars / action rows) — no tiny desktop-width CTAs on phone
-5. **Hierarchy pass** before DONE on blank-canvas / layout polish — one primary focus + one primary CTA (`frontend-judgment`)
+5. **Hierarchy pass** before DONE on blank-canvas / layout polish — one primary focus + one primary CTA (`design-direction`)
 6. **Typography ladder** — ≤2 families; **one h1/page**; sequential levels; token type roles
 7. WebGL → `webgl` / Plasma — no parallel invented stack
 8. No purple/indigo defaults / Lorem (purple only via scored/hard-gated/explicit token)
 9. Loading / error / empty for interactive + async surfaces
 10. Light **Motion** defaults on shell/dashboard (or waiver) — `motion`; marketing: name families/patterns from `motion-families.md` and hand-roll (registry install is **not** the default)
-11. **Shell chrome** — theme in topbar (icon); profile = avatar → account menu; filters = custom select (`app-shell-routing` / `ui-components`)
-12. **Marketing landing** — section stack via `marketing-landing` / `landing-sections.md`; hero-only fails; hand-roll (registry install is **not** the default)
+11. **Shell chrome** — theme in topbar (icon); profile = avatar → account menu; filters = custom select (`app-shell` / `components`)
+12. **Marketing landing** — section stack via `marketing` / `landing-sections.md`; hero-only fails; hand-roll (registry install is **not** the default)
 13. Do not fabricate visual audit scores without tokens/screenshots
 14. Never block on slash commands when intent is clear
 15. Blank-canvas → judgment first
-16. “Sampai bagus” → `ui-quality-loop` (cap 3)
+16. “Sampai bagus” → `quality-loop` (cap 3)
 17. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**, **Landing**
 18. Evidence before taste — classify standards, project defaults, enterprise patterns, recommendations, heuristics, and inspiration (`evidence-policy.md`)
 

@@ -1,6 +1,6 @@
 # Forms & validation
 
-Used by: `forms-validation`.
+Used by: `forms`.
 
 ## Structure
 
@@ -44,7 +44,7 @@ Form
 - Errors only as red borders with no text
 - `alert()` validation
 - Required markers without indicating required fields in text/legend
-- Bare native `<select>` for product filters/status without Conventions waiver — prefer custom select/combobox (`ui-components`)
+- Bare native `<select>` for product filters/status without Conventions waiver — prefer custom select/combobox (`components`)
 
 ## Related
 

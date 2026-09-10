@@ -1,6 +1,6 @@
 # Responsive UI (all devices)
 
-Mandatory for product UI. Used by: `responsive-ui`, `ui-components`, `/ui`, `/design`, `/polish`.  
+Mandatory for product UI. Used by: `responsive`, `components`, `/ui`, `/design`, `/polish`.
 Reference demo: optional local `test/` sandbox (not shipped with the pack).
 
 ## Canonical breakpoints
@@ -87,7 +87,7 @@ At ≥768, restore auto width so desktop chrome stays compact.
 4. Body scroll lock while open  
 5. `matchMedia` / resize clears open state when leaving mobile  
 
-### Mobile feel helpers (pair with `ui-feel`)
+### Mobile feel helpers (pair with `polish`)
 
 - `-webkit-tap-highlight-color: transparent`
 - `touch-action: manipulation`
@@ -110,11 +110,11 @@ Note full-width CTAs + drawer when auditing greenfield. Missing evidence → **H
 - Tiny hit targets (`h-6 w-6` icon buttons without padding)
 - Primary CTA left-aligned tiny width on a 320px form
 - Assuming hover for delete/edit
-- Loud left-accent bar as the only “selected” affordance (`anti-ai-slop`)
+- Loud left-accent bar as the only “selected” affordance (`anti-slop-design`)
 
 ## Related
 
-- Components: `ui-components`, `references/component-patterns.md`
-- Shell: `app-shell-routing`
+- Components: `components`, `references/component-patterns.md`
+- Shell: `app-shell`
 - A11y overlap: `accessibility` (focus, labels)
-- Feel: `ui-feel` (press states still apply on touch)
+- Feel: `polish` (press states still apply on touch)

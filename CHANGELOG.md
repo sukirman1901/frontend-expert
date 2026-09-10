@@ -16,7 +16,9 @@ All notable changes to the **Frontend Expert** pack will be documented in this f
 - Pack documentation and plugin registration now reflect 29 skills
 
 ### Compatibility
-- Existing skill folders and slash commands remain unchanged
+- Seventeen pre-1.2 names remain as deprecated compatibility aliases until v2.0
+- Canonical identifiers now follow the approved concise taxonomy (`design-direction`, `tokens`, `components`, `responsive`, and peers)
+- Slash commands remain unchanged
 - Numeric craft recipes are labeled recommendations or heuristics unless a standard/project owns them
 
 ## [1.1.0] — 2026-07-31

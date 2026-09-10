@@ -272,3 +272,16 @@ git add AGENTS.md CHANGELOG.md NOTICE.md README.md SKILL.md agents commands docs
 git commit -m "feat: add evidence-led design foundations"
 ```
 
+### Task 10: Apply canonical naming with compatibility aliases
+
+**Files:**
+- Move: 17 existing skill implementations to their approved canonical folders
+- Create: 17 legacy alias `SKILL.md` files
+- Create: `references/skill-aliases.md`
+- Modify: routing, manifests, docs, smoke tests, references, and changelog
+
+- [ ] **Step 1: Make the smoke contract expect 29 canonical skills and 17 aliases**
+- [ ] **Step 2: Verify RED against the pre-migration folder layout**
+- [ ] **Step 3: Move implementations and update active references to canonical names**
+- [ ] **Step 4: Add explicit-invocation-only deprecated aliases scheduled for v2.0 removal**
+- [ ] **Step 5: Verify 46 registered entries represent 29 capabilities plus 17 aliases**

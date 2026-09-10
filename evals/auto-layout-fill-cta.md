@@ -8,7 +8,7 @@ Implement form “Upgrade plan” dari Figma: Auto Layout column, primary button
 
 ## Expected
 
-1. Loads `responsive-ui` Auto Layout ↔ CSS mapping
+1. Loads `responsive` Auto Layout ↔ CSS mapping
 2. Maps **Fill** → `width: 100%` / stretch (especially below 768)
 3. Maps **Hug** → `fit-content` / auto for secondary when appropriate
 4. Conventions Responsive notes full-width CTA <768

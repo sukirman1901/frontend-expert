@@ -1,6 +1,6 @@
 # Token presets
 
-Curated CSS design tokens for this pack. Prefer the **project’s existing** design system when one exists (`design-tokens` custom mode).
+Curated CSS design tokens for this pack. Prefer the **project’s existing** design system when one exists (`tokens` custom mode).
 
 ## How agents choose
 
@@ -76,4 +76,4 @@ Map utilities to the same CSS variables your components already use (`bg-backgro
 4. Never invent raw purple/indigo hex outside the chosen token source
 5. Spacing still on `0.25rem` scale even when colors come from tokens
 
-Skill: `design-tokens`. Tree + scoring: `references/token-preset-scoring.md`. Theory: `references/ux-foundations.md`.
+Skill: `tokens`. Tree + scoring: `references/token-preset-scoring.md`. Theory: `references/ux-foundations.md`.

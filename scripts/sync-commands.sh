@@ -36,11 +36,11 @@ check_skills() {
   done
 }
 
-check_skills ui frontend-judgment design-tokens ui-components responsive-ui motion anti-ai-slop ui-feel accessibility marketing-landing
-check_skills design anti-ai-slop ui-feel design-tokens responsive-ui accessibility web-performance design-fidelity fe-devtools motion marketing-landing
-check_skills test-ui frontend-testing ui-components accessibility fe-devtools
+check_skills ui design-direction tokens components responsive motion anti-slop-design polish accessibility marketing
+check_skills design anti-slop-design polish tokens responsive accessibility performance fidelity devtools motion marketing
+check_skills test-ui testing components accessibility devtools
 check_skills audit design-reviewer
-check_skills polish ui-quality-loop ui-feel motion
+check_skills polish quality-loop polish motion
 # audit is an alias — must mention design workflow
 if ! rg -q 'design' "$ROOT/commands/audit.md"; then
   echo "MISSING design reference in commands/audit.md" >&2
@@ -65,8 +65,8 @@ for f in \
   "$ROOT/.claude/commands/ui.md" \
   "$ROOT/.gemini/commands/ui.toml"
 do
-  if ! rg -q 'responsive-ui' "$f"; then
-    echo "MISSING responsive-ui in $f" >&2
+  if ! rg -q 'responsive' "$f"; then
+    echo "MISSING responsive in $f" >&2
     FAIL=1
   fi
 done
@@ -87,17 +87,17 @@ require_phrase() {
 require_phrase "ui shell chrome" "avatar|account menu|custom select|theme in topbar|topbar icon" \
   "$ROOT/commands/ui.md" "$ROOT/.claude/commands/ui.md" "$ROOT/.gemini/commands/ui.toml"
 
-require_phrase "ui marketing-landing" "marketing-landing" \
+require_phrase "ui marketing" "marketing" \
   "$ROOT/commands/ui.md" "$ROOT/.claude/commands/ui.md" "$ROOT/.gemini/commands/ui.toml"
-require_phrase "design marketing-landing" "marketing-landing" \
+require_phrase "design marketing" "marketing" \
   "$ROOT/commands/design.md" "$ROOT/.claude/commands/design.md" "$ROOT/.gemini/commands/design.toml"
-require_phrase "session-start marketing" "marketing-landing" "$ROOT/hooks/session-start.sh"
+require_phrase "session-start marketing" "marketing" "$ROOT/hooks/session-start.sh"
 
 require_phrase "design motion" "motion" \
   "$ROOT/commands/design.md" "$ROOT/.claude/commands/design.md" "$ROOT/.gemini/commands/design.toml"
 require_phrase "polish motion" "motion" \
   "$ROOT/commands/polish.md" "$ROOT/.claude/commands/polish.md" "$ROOT/.gemini/commands/polish.toml"
-require_phrase "session-start chain" "responsive-ui" "$ROOT/hooks/session-start.sh"
+require_phrase "session-start chain" "responsive" "$ROOT/hooks/session-start.sh"
 require_phrase "session-start motion" "motion" "$ROOT/hooks/session-start.sh"
 
 echo "== evals E1–E27 present =="

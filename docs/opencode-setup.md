@@ -14,9 +14,9 @@ ln -s /path/to/Design-system-enforcer ~/.config/opencode/skills/design-system-en
 
 ## Behavior
 
-- UI work → `/ui` mapping: `design-tokens` + `ui-components` + `anti-ai-slop` + `ui-feel` + `accessibility`
-- Design audit → `anti-ai-slop` + `ui-feel` + `accessibility` + `web-performance`
-- Tests → `frontend-testing` (`/test-ui`)
+- UI work → `/ui` mapping: `tokens` + `components` + `anti-slop-design` + `polish` + `accessibility`
+- Design audit → `anti-slop-design` + `polish` + `accessibility` + `performance`
+- Tests → `testing` (`/test-ui`)
 - Motion / perf only when the task needs them
 
 OpenCode does not run Claude Code hooks; skill discipline comes from `AGENTS.md`.

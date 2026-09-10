@@ -1,6 +1,6 @@
 # FE DevTools
 
-Used by: `fe-devtools`, `test-engineer`, `/test-ui`, deep `/design`.
+Used by: `devtools`, `test-engineer`, `/test-ui`, deep `/design`.
 
 ## Honesty
 
@@ -34,11 +34,11 @@ Used by: `fe-devtools`, `test-engineer`, `/test-ui`, deep `/design`.
 
 | Finding | Skill |
 |---------|-------|
-| LCP image / font | `web-performance` |
+| LCP image / font | `performance` |
 | Missing labels / contrast | `accessibility` |
-| Desktop-only layout | `responsive-ui` |
-| Spec mismatch | `design-fidelity` |
-| Missing tests for regression | `frontend-testing` |
+| Desktop-only layout | `responsive` |
+| Spec mismatch | `fidelity` |
+| Missing tests for regression | `testing` |
 
 ## Related
 

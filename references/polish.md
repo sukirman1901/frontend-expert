@@ -1,6 +1,6 @@
 # UI Feel — reference
 
-Craft details adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT). Skill entry: `skills/ui-feel/SKILL.md`.
+Craft details adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT). Skill entry: `skills/polish/SKILL.md`.
 
 ## Surfaces
 
@@ -21,7 +21,7 @@ If geometric center looks off (play ▶, chevrons, asymmetric Reicon glyphs), nu
 
 ### Shadows over hard borders
 
-Prefer layered transparent `box-shadow` for section depth. Keep subtle — pack `anti-ai-slop` forbids heavy competing shadows.
+Prefer layered transparent `box-shadow` for section depth. Keep subtle — pack `anti-slop-design` forbids heavy competing shadows.
 
 ```css
 .card {
@@ -176,7 +176,7 @@ Only `transform` / `opacity` / `filter` when you see first-frame stutter. Never 
 | `transition: all` | Name properties |
 | Tiny controls | Expand hit area without overlap |
 | `scale(0.9)` press | Raise to `0.96` |
-| Multiple `h1` / skipped levels | One page title; sequential ladder (`frontend-judgment`) |
+| Multiple `h1` / skipped levels | One page title; sequential ladder (`design-direction`) |
 | Desktop-only polish on phone | Full-width CTA <768, safe-area, thumb zone (`responsive`) |
 
 ## Mobile craft
@@ -189,4 +189,4 @@ Only `transform` / `opacity` / `filter` when you see first-frame stutter. Never 
 
 - One `h1` per page; sequential headings; token type roles
 - `text-wrap: balance` on headings; `pretty` on short body
-- Ship gate: Typography ladder in `skills/frontend-judgment/SKILL.md`
+- Ship gate: Typography ladder in `skills/design-direction/SKILL.md`

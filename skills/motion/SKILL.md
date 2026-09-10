@@ -89,5 +89,5 @@ Full catalog: `references/motion-families.md` (12 families · 144 patterns).
 
 - Vocabulary: `references/motion-families.md`
 - Recipes: `references/motion.md`
-- Micro craft overlap: `ui-feel`
+- Micro craft overlap: `polish`
 - Demo shell: local `test/` sandbox (optional; not shipped)

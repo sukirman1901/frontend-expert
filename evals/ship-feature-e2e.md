@@ -9,12 +9,12 @@ form create project, harus bagus di HP dan desktop. Langsung saja.
 
 ## Expected skill chain (order flexible but complete)
 
-1. Token decision tree / project system (`design-tokens`)
-2. `app-shell-routing`
+1. Token decision tree / project system (`tokens`)
+2. `app-shell`
 3. `data-fetching` (list)
-4. `forms-validation` (create)
-5. `ui-components` + `anti-ai-slop` + `ui-feel` + `accessibility`
-6. `responsive-ui` — Conventions Responsive line
+4. `forms` (create)
+5. `components` + `anti-slop-design` + `polish` + `accessibility`
+6. `responsive` — Conventions Responsive line
 7. `motion` — light shell defaults (section/drawer); Conventions Motion line
 
 ## Pass criteria

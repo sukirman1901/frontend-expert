@@ -15,11 +15,11 @@ Claude Code entry point for **Frontend Expert**.
 ## Default behavior (chat-first + judgment)
 
 1. **Do not wait for slash commands.** Map intent → skills via `AGENTS.md` + rules
-2. Blank-canvas / ambiguous UI → `frontend-judgment` (2–3 approaches) **before** coding
-3. Then → `design-tokens` → (+ typography/color/surfaces/content owners when relevant) → (+ **`marketing-landing`** if marketing) → (+ shell/data/forms) → `ui-components` → **`responsive-ui`** → **`motion`** → `anti-ai-slop` → `ui-feel` → `accessibility`
-4. Tests when asked → `test-engineer` + `frontend-testing`
+2. Blank-canvas / ambiguous UI → `design-direction` (2–3 approaches) **before** coding
+3. Then → `tokens` → (+ typography/color/surfaces/content owners when relevant) → (+ **`marketing`** if marketing) → (+ shell/data/forms) → `components` → **`responsive`** → **`motion`** → `anti-slop-design` → `polish` → `accessibility`
+4. Tests when asked → `test-engineer` + `testing`
 5. Audit when asked → `design-reviewer` skill chain (`/design` or `/audit`); never fabricate visual scores
-6. “Rapihin / polish sampai bagus” → `ui-quality-loop` (`/polish`), capped iterations
+6. “Rapihin / polish sampai bagus” → `quality-loop` (`/polish`), capped iterations
 7. Honor hook advisories from `anti-slop-scan.sh`
 8. If the project already has a design system, use custom mode (do not override with presets)
 9. Icons: **MUST use [Reicon](https://reicon.dev)** in shipped markup unless project icon lib or text-only waiver (`references/compliance-gates.md`)

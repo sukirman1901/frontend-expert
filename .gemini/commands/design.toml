@@ -3,13 +3,13 @@ description = "Run a design system audit — AI aesthetic, tokens, responsive, a
 prompt = """
 Invoke the design-reviewer agent.
 
-Load skills in order: anti-ai-slop → ui-feel → design-tokens (if available) → responsive-ui → accessibility → web-performance. Use motion when UI is animated / marketing motion (family budget from motion-families.md). Use marketing-landing when auditing marketing/landing pages. Use design-fidelity when a Figma/mock/screenshot is in scope. Use fe-devtools when measuring (Lighthouse/axe) — never fabricate scores. Use ui-components for pattern/state checks as needed. Use frontend-judgment when recommending redesign directions. Note frontend-testing gaps as Info only.
+Load skills in order: anti-slop-design → polish → tokens (if available) → responsive → accessibility → performance. Use motion when UI is animated / marketing motion (family budget from motion-families.md). Use marketing when auditing marketing/landing pages. Use fidelity when a Figma/mock/screenshot is in scope. Use devtools when measuring (Lighthouse/axe) — never fabricate scores. Use components for pattern/state checks as needed. Use design-direction when recommending redesign directions. Note testing gaps as Info only.
 
 Run a design system audit on the current codebase:
 
 1. Scan for AI aesthetic anti-patterns (incl. decorative motion spam / hero-only landing)
 2. Check token adherence when a token file is available
-3. Check responsive-ui (320/768/1024/1440) + full-width CTA <768 — High if greenfield layout skips Conventions Responsive line
+3. Check responsive (320/768/1024/1440) + full-width CTA <768 — High if greenfield layout skips Conventions Responsive line
 4. Check shell chrome on dashboards (theme topbar, avatar→menu, custom selects)
 5. Check marketing landing section stack when applicable — High if hero-only; hand-roll not registry install
 6. Check hierarchy + typography ladder when DOM/screenshots available

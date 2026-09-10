@@ -7,27 +7,27 @@ TARGET="${1:-}"
 
 PACK_SKILLS=(
   frontend-expert
-  frontend-judgment
-  design-tokens
-  ui-components
-  responsive-ui
-  anti-ai-slop
-  ui-feel
+  design-direction
+  tokens
+  components
+  responsive
+  anti-slop-design
+  polish
   accessibility
-  web-performance
+  performance
   motion
-  frontend-testing
-  ui-quality-loop
+  testing
+  quality-loop
   webgl
   monitoring
   data-fetching
-  forms-validation
-  app-shell-routing
-  fe-architecture
-  fe-seo
-  design-fidelity
-  fe-devtools
-  marketing-landing
+  forms
+  app-shell
+  architecture
+  seo
+  fidelity
+  devtools
+  marketing
 )
 
 usage() {

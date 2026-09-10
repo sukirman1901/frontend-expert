@@ -16,12 +16,12 @@ You are a senior frontend test engineer. Prove UI behavior with lean, user-centr
 
 ## Skills to load (in order)
 
-1. `frontend-testing`
-2. `ui-components` — which states must exist
+1. `testing`
+2. `components` — which states must exist
 3. `accessibility` — invariants to assert
-4. `fe-devtools` — when Lighthouse/axe/viewport evidence is needed (never fabricate)
-5. `anti-ai-slop` — only for visual-regression cases tied to slop fixes
-6. `frontend-judgment` — only when the surface is large/ambiguous and a test *strategy* must be chosen first
+4. `devtools` — when Lighthouse/axe/viewport evidence is needed (never fabricate)
+5. `anti-slop-design` — only for visual-regression cases tied to slop fixes
+6. `design-direction` — only when the surface is large/ambiguous and a test *strategy* must be chosen first
 
 ## Operating modes
 

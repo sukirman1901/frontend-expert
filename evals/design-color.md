@@ -6,7 +6,7 @@
 
 ## Expected behavior
 
-Load `design-color` with `design-tokens`, preserve the project/brand source, derive semantic roles, handle target gamut, and measure rendered foreground/background pairs.
+Load `design-color` with `tokens`, preserve the project/brand source, derive semantic roles, handle target gamut, and measure rendered foreground/background pairs.
 
 ## Pass criteria
 

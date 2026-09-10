@@ -8,9 +8,9 @@ Bikin dashboard overview: hero title, 4 primary CTAs sama besar di atas, 3 promo
 
 ## Expected
 
-1. Loads `frontend-judgment` Hierarchy pass (or applies it via build/audit)
+1. Loads `design-direction` Hierarchy pass (or applies it via build/audit)
 2. Pushes back or simplifies: **one primary CTA**, not four equal primaries
-3. Rejects floating promo badges / competing heroes (`anti-ai-slop` + hierarchy)
+3. Rejects floating promo badges / competing heroes (`anti-slop-design` + hierarchy)
 4. Sections: one job + one headline (not kitchen-sink)
 5. Conventions includes `Hierarchy: pass` (or lists fails + fixes)
 

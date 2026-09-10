@@ -2,7 +2,7 @@
 
 Mandatory when choosing a **pack** preset. Skip when hard gates select custom mode or an explicit file.
 
-Used by: `design-tokens` (required), `frontend-judgment` (handoff).
+Used by: `tokens` (required), `design-direction` (handoff).
 
 ## Decision tree (canonical)
 
@@ -90,7 +90,7 @@ Run top → bottom. **First matching branch wins.** Do not reorder.
   user message
        │
        ▼
-  judgment answers (density / inspiration / …)   ← if frontend-judgment ran
+  judgment answers (density / inspiration / …)   ← if design-direction ran
        │
        ▼
   DESIGN_MEMORY.md (if present)

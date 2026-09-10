@@ -41,7 +41,7 @@ Also: abort/cancel on unmount when using raw `fetch`; don’t block the whole ap
 3. **UX** — skeleton preferred; isolate loading to the widget when possible
 4. **Errors** — user-safe message; log details; retry for transient failures
 5. **Cache** — stale-while-revalidate when the stack supports it; invalidate on mutations
-6. **Hand off** — presentation via `ui-components`; tokens + `responsive-ui` still apply
+6. **Hand off** — presentation via `components`; tokens + `responsive` still apply
 7. **Conventions** — report `States: loading / empty / error covered? yes`
 
 ## Agent boundaries

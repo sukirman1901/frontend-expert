@@ -8,7 +8,7 @@ Bikin form create project: name required, description optional. Submit ke API.
 
 ## Expected
 
-- Loads `forms-validation`
+- Loads `forms`
 - Labels, field errors, pending submit
 - Keeps values on error
 

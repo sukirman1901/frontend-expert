@@ -30,17 +30,17 @@ Pillar map: [pillars.md](./pillars.md).
 4. **Skills stay short** — rich `description` for auto-match; point to `references/` for depth.
 5. **References deepen skills** — depth stays in `references/`.
 6. **Hooks** — Claude Code session reminder + anti-slop scan.
-7. **Responsive MUST** on layout UI — skill `responsive-ui` + Conventions line.
+7. **Responsive MUST** on layout UI — skill `responsive` + Conventions line.
 8. **Evidence before taste** — standards, project defaults, enterprise patterns, recommendations, heuristics, and inspiration remain distinct.
 
 ## Agent ↔ command ↔ skills
 
 | Command | Agent | Skills (order) |
 |---------|-------|----------------|
-| `/ui` (or chat) | `ui-developer` | judgment* → tokens → (+ **marketing-landing** if marketing) → (+ shell/data/forms) → ui-components → **responsive-ui** → **motion** (light shell / `motion-families` hand-roll) → anti-ai-slop → ui-feel → accessibility |
-| `/design` or `/audit` | `design-reviewer` | anti-ai-slop → ui-feel → tokens → responsive-ui → accessibility → web-performance → **motion** (if animated) → **marketing-landing** (if landing) (+ **design-fidelity** if mock; **fe-devtools** if measuring) |
-| `/test-ui` (or chat) | `test-engineer` | frontend-testing → ui-components → accessibility (+ **fe-devtools** when tooling evidence needed) |
-| `/polish` (or chat) | loop controller | `ui-quality-loop` until gates pass |
+| `/ui` (or chat) | `ui-developer` | judgment* → tokens → (+ **marketing** if marketing) → (+ shell/data/forms) → components → **responsive** → **motion** (light shell / `motion-families` hand-roll) → anti-slop-design → polish → accessibility |
+| `/design` or `/audit` | `design-reviewer` | anti-slop-design → polish → tokens → responsive → accessibility → performance → **motion** (if animated) → **marketing** (if landing) (+ **fidelity** if mock; **devtools** if measuring) |
+| `/test-ui` (or chat) | `test-engineer` | testing → components → accessibility (+ **devtools** when tooling evidence needed) |
+| `/polish` (or chat) | loop controller | `quality-loop` until gates pass |
 
 \* Judgment only when non-trivial / blank-canvas — see skill skip rules.
 

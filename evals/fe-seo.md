@@ -8,7 +8,7 @@ Landing page marketing “Acme — ship faster”. Public, shareable. Langsung s
 
 ## Expected
 
-1. Loads `fe-seo`
+1. Loads `seo`
 2. Unique `<title>` + meta description
 3. One H1 aligned with title
 4. OG title/description (image optional if noted as TODO with real placeholder path)
@@ -19,7 +19,7 @@ Landing page marketing “Acme — ship faster”. Public, shareable. Langsung s
 - [ ] Title + description present
 - [ ] One h1
 - [ ] OG basics or explicit next step for image
-- [ ] Mentions `fe-seo` or SEO checklist
+- [ ] Mentions `seo` or SEO checklist
 
 ## Fail if
 

@@ -9,34 +9,46 @@ ok() { echo "  OK  $1"; }
 bad() { echo "  FAIL $1" >&2; FAIL=1; }
 
 echo "== skills =="
-EXPECTED_SKILLS=(
+CANONICAL_SKILLS=(
   frontend-expert
-  frontend-judgment
-  design-tokens
-  ui-components
-  responsive-ui
-  anti-ai-slop
-  ui-feel
+  design-direction
+  tokens
+  components
+  responsive
+  anti-slop-design
+  polish
   accessibility
-  web-performance
+  performance
   motion
-  frontend-testing
-  ui-quality-loop
+  testing
+  quality-loop
   webgl
   monitoring
   data-fetching
-  forms-validation
-  app-shell-routing
-  fe-architecture
-  fe-seo
-  design-fidelity
-  fe-devtools
-  marketing-landing
+  forms
+  app-shell
+  architecture
+  seo
+  fidelity
+  devtools
+  marketing
   design-typography
   design-color
   design-surfaces
   content-design
+  design-vocabulary
+  engineering-vocabulary
+  skill-authoring
 )
+
+LEGACY_ALIASES=(
+  frontend-judgment design-tokens ui-components responsive-ui anti-ai-slop
+  ui-feel web-performance frontend-testing ui-quality-loop app-shell-routing
+  forms-validation marketing-landing fe-architecture fe-seo fe-devtools
+  design-fidelity writing-skills
+)
+
+EXPECTED_SKILLS=("${CANONICAL_SKILLS[@]}" "${LEGACY_ALIASES[@]}")
 
 for s in "${EXPECTED_SKILLS[@]}"; do
   f="$ROOT/skills/$s/SKILL.md"
@@ -58,6 +70,17 @@ for s in "${EXPECTED_SKILLS[@]}"; do
     fi
   fi
 done
+
+for s in "${LEGACY_ALIASES[@]}"; do
+  if rg -q 'Compatibility alias' "$ROOT/skills/$s/SKILL.md" && rg -qi 'deprecated' "$ROOT/skills/$s/SKILL.md"; then
+    ok "legacy alias skills/$s"
+  else
+    bad "skills/$s is not a deprecated compatibility alias"
+  fi
+done
+
+skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')
+[ "$skill_entry_count" -eq 46 ] && ok "29 canonical + 17 compatibility aliases" || bad "expected 46 skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
   for s in "${EXPECTED_SKILLS[@]}"; do
@@ -171,13 +194,14 @@ for f in design-typography design-color design-surfaces content-design; do
   [ -f "$ROOT/evals/$f.md" ] && ok "evals/$f.md" || bad "evals/$f.md"
 done
 [ -f "$ROOT/NOTICE.md" ] && ok "NOTICE.md" || bad "NOTICE.md"
-if ! rg -q 'avatar' "$ROOT/skills/app-shell-routing/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/ui-components/SKILL.md"; then
-  bad "shell chrome rules missing in app-shell / ui-components"
+[ -f "$ROOT/references/skill-aliases.md" ] && ok "skill-aliases.md" || bad "references/skill-aliases.md"
+if ! rg -q 'avatar' "$ROOT/skills/app-shell/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/components/SKILL.md"; then
+  bad "shell chrome rules missing in app-shell / components"
 else
   ok "shell chrome rules in skills"
 fi
-if ! rg -q 'responsive-ui' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
-  bad "hooks/session-start.sh missing responsive-ui/motion"
+if ! rg -q 'responsive' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
+  bad "hooks/session-start.sh missing responsive/motion"
 else
   ok "hooks/session-start responsive+motion"
 fi

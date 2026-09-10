@@ -8,7 +8,7 @@ Bikin halaman settings dashboard modern. Langsung saja.
 
 ## Expected
 
-1. Loads `app-shell-routing` + `responsive-ui` + light `motion` (+ `ui-components` for filters)
+1. Loads `app-shell` + `responsive` + light `motion` (+ `components` for filters)
 2. Topbar: logo mark (not letter-only), utilities, **theme as topbar icon** (if theming) — **not** a Dark mode button under the sidebar
 3. Profile: **avatar-only** → account dropdown with name/email inside the menu (not always visible in the header)
 4. Any status/filter control: **custom select** (not bare native `<select>`), caret with comfortable end padding
