@@ -200,6 +200,17 @@ for f in design-typography design-color design-surfaces content-design; do
 done
 [ -f "$ROOT/NOTICE.md" ] && ok "NOTICE.md" || bad "NOTICE.md"
 [ -f "$ROOT/references/skill-aliases.md" ] && ok "migration map skill-aliases.md" || bad "references/skill-aliases.md"
+if rg -qi 'authored for this pack' "$ROOT/NOTICE.md" && rg -qi 'not bundled' "$ROOT/NOTICE.md"; then
+  ok "authorship and research-only provenance are explicit"
+else
+  bad "NOTICE.md must distinguish pack authorship from external research"
+fi
+if rg -qi 'adapted from|adapted as|ideas adapted|portions .* adapted' \
+  "$ROOT/README.md" "$ROOT/NOTICE.md" "$ROOT/skills" "$ROOT/references"; then
+  bad "ambiguous third-party adaptation wording remains"
+else
+  ok "no ambiguous third-party adaptation wording"
+fi
 if ! rg -q 'avatar' "$ROOT/skills/app-shell/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/components/SKILL.md"; then
   bad "shell chrome rules missing in app-shell / components"
 else

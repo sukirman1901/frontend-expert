@@ -258,7 +258,7 @@ Details: [references/compliance-gates.md](references/compliance-gates.md) · Eva
 
 ## UI feel (micro craft)
 
-Skill **`polish`** — adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT).
+Skill **`polish`** — original pack workflow informed by interface-craft research.
 
 Concentric radius, optical alignment, tabular numbers, text-wrap, interruptible transitions, `scale(0.96)` press, hit areas, no `transition: all`. Runs after anti-slop on `/ui` and inside `/polish`.
 
@@ -356,8 +356,8 @@ See [docs/hooks.md](docs/hooks.md). Requires `jq` + `rg`.
 
 ## Credits
 
-- [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) — UI feel craft (adapted as `polish`)
-- [design-lab / Design and Refine](https://github.com/0xdesign/design-plugin) — exploration axes & style inference (adapted into `design-direction`)
+- [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) — external UI-craft research; not bundled
+- [design-lab / Design and Refine](https://github.com/0xdesign/design-plugin) — external exploration research; not bundled
 - [Reicon](https://reicon.dev) — default icon library
 - [Plasma](https://plasma.nusaiba.dev) — WebGL background studio (canonical study)
 - [shadcn/ui](https://ui.shadcn.com/) — design tokens and components

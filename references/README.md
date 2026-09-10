@@ -42,9 +42,9 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 ## Evidence and provenance
 
 - `evidence-policy.md` — source precedence and rule classifications
-- `source-ledger.md` — current standards, enterprise patterns, craft sources, and verification dates
+- `source-ledger.md` — external research bibliography and verification dates
 - `skill-aliases.md` — legacy-to-canonical migration map
-- `../NOTICE.md` — third-party attribution
+- `../NOTICE.md` — pack authorship and external-research boundary
 
 ## Evals
 

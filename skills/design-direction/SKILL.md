@@ -6,7 +6,7 @@ description: >-
   tradeoffs; max 1–2 clarifying questions; optional inspiration (Linear/Stripe/…).
   Use at the start of non-trivial UI work and whenever direction is unclear.
   Skip for obvious bugfixes, single-token tweaks, or “just implement”. Runs
-  before domain skills. Inspired by design-lab exploration patterns.
+  before domain skills.
 ---
 
 # Frontend Judgment
@@ -15,7 +15,7 @@ description: >-
 
 Feel like a senior frontend engineer: **decide with the user, then build**. Do not dump a generic UI for blank-canvas work. This skill is a short gate before `tokens` / `components` / etc.
 
-Exploration ideas adapted from [design-lab](https://github.com/0xdesign/design-plugin) (axes, inspiration, style inference) — **without** a temporary `/__design_lab` route or multi-phase interview.
+This pack-authored workflow uses independent design-axis analysis. External exploration tools were studied as research and are listed in `references/source-ledger.md`; none are bundled.
 
 ## When to use (mandatory gate)
 

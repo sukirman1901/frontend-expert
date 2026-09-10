@@ -5,7 +5,7 @@ description: >-
   alignment, tabular nums, text-wrap, interruptible transitions, scale-on-press,
   hit areas, no transition:all. Use when building/reviewing UI polish, "feels
   off", "rapihin detail", hover/press feedback, stagger enter/exit, or after
-  anti-slop-design on /ui and /polish. Adapted from make-interfaces-feel-better.
+  anti-slop-design on /ui and /polish.
 ---
 
 # UI Feel
@@ -14,7 +14,7 @@ description: >-
 
 Great interfaces compound from small craft details. After tokens + structure + anti-slop, apply this skill so the UI doesn’t just look correct — it **feels** right.
 
-Adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT) for this pack.
+This pack-authored workflow is informed by interface-craft research listed in `references/source-ledger.md`; no external skill is bundled.
 
 ## When to use
 

@@ -35,4 +35,4 @@ verification: [gamut check, rendered contrast measurement]
 last_verified: 2026-09
 ```
 
-Sources: `references/source-ledger.md`. Adapted craft guidance attribution: `NOTICE.md`.
+Research sources: `references/source-ledger.md`. Authorship boundary: `NOTICE.md`.

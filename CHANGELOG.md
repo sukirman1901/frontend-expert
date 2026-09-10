@@ -14,7 +14,7 @@ All notable changes to the **Frontend Expert** pack will be documented in this f
 
 ### Added
 - `design-typography`, `design-color`, `design-surfaces`, and `content-design`
-- Evidence classification policy, source ledger, provenance format, and third-party notices
+- Evidence classification policy, research ledger, provenance format, and authorship notice
 - Behavioral evals E24–E27
 
 ### Changed

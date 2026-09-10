@@ -1,6 +1,6 @@
 # Design axes & exploration
 
-Lightweight patterns adapted from [0xdesign design-lab](https://github.com/0xdesign/design-plugin) for this pack’s **text-first** judgment — not a browser Design Lab.
+Pack-authored, text-first design-axis framework. External exploration tools are research references only and are not bundled.
 
 Used by: `design-direction`.
 

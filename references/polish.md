@@ -1,6 +1,6 @@
 # UI Feel — reference
 
-Craft details adapted from [make-interfaces-feel-better](https://github.com/jakubkrehel/make-interfaces-feel-better) (MIT). Skill entry: `skills/polish/SKILL.md`.
+Pack-authored craft guidance. External research is recorded separately in `references/source-ledger.md`. Skill entry: `skills/polish/SKILL.md`.
 
 ## Surfaces
 
