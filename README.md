@@ -109,7 +109,7 @@ Prefer natural chat. Use these only to pin a workflow:
 
 | Command | Purpose | Skills loaded |
 |---------|---------|---------------|
-| `/ui` | Build UI | judgment* → tokens → (+ shell/data/forms) → components → **responsive** → **motion** → anti-slop → **polish** → a11y |
+| `/ui` | Build UI | judgment* → **foundations** → tokens → (+ shell/data/forms) → components → **responsive** → **motion** → anti-slop → **polish** → a11y |
 | `/design` | Audit | anti-slop → **polish** → tokens → **responsive** → **motion** (if animated) → a11y → performance (+ fidelity / devtools / judgment as needed) |
 | `/audit` | Alias of `/design` | same |
 | `/test-ui` | Prove UI | testing → components → a11y → **devtools** (when measuring) |
@@ -141,7 +141,7 @@ Domain skills auto-load from natural language; slash commands remain optional ad
 
 ---
 
-## Skills (29)
+## Skills (30)
 
 Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 
@@ -149,6 +149,7 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 |-------|--------|----------|
 | `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
 | `design-direction` | UI Quality | Blank-canvas — axes + options before code |
+| `design-foundations` | UI Quality | Grid, spacing rhythm, alignment, density, composition |
 | `tokens` | UI Quality | Scoring + applying theme CSS |
 | `design-typography` | UI Quality | Fonts, type roles/scales, wrapping, truncation |
 | `design-color` | UI Quality | Palette, OKLCH, themes, contrast, gamut |
@@ -183,7 +184,7 @@ Skills stay short and triggerable; depth lives in `references/`.
 
 ### Canonical names
 
-Version 2.0 contains only the 29 canonical skill folders. Legacy identifiers were removed to prevent duplicate discovery and competing routes. Use `references/skill-aliases.md` when migrating an older prompt or integration.
+Version 2.1 contains 30 canonical skill folders. Legacy identifiers were removed in 2.0 to prevent duplicate discovery. Use `references/skill-aliases.md` when migrating an older prompt or integration.
 
 ---
 
@@ -295,7 +296,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 29 skills: suite root + domain — see docs/pillars.md
+├── skills/                 # 30 skills: suite root + domain — see docs/pillars.md
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
 ├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)

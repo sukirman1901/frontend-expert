@@ -23,7 +23,7 @@ Default quality-loop cap in this pack: **3** audit→fix cycles (`quality-loop` 
 |---|--------|-----|-----------------|
 | 1 | **Pahami** | Job user, constraint, existing UI vs greenfield | Chat; read `DESIGN_MEMORY.md` if present |
 | 2 | **Putuskan** | 2–3 approaches on **distinct axes**; wait for pick | `design-direction` |
-| 3 | **Sistem** | Walk token **decision tree**; add typography, color, surface, and content owners only when relevant | `tokens` (+ `design-typography` / `design-color` / `design-surfaces` / `content-design`) |
+| 3 | **Sistem** | For layout work, set structural relationships first; then walk the token decision tree and add typography, color, surface, and content owners only when relevant | `design-foundations`? → `tokens` (+ `design-typography` / `design-color` / `design-surfaces` / `content-design`) |
 | 4 | **Bangun** | Composition, loading/empty/error; icons via Reicon; shell/data/forms when needed | `components` (+ `app-shell` / `data-fetching` / `forms`) |
 | — | **Responsive** | All devices 320→1440 — **MUST** | `responsive` |
 | 5 | **Haluskan** | Kill AI slop → micro craft (radius, press, type wrap, …) | `anti-slop-design` → `polish` |
@@ -49,6 +49,7 @@ One-shot build (`/ui` or “bikin halaman”): stages **1→6** (judgment only i
 |-------------|------|
 | New / vague UI | Judgment → build chain (1→6) |
 | Tiny clear fix | Skip judgment → touch only what’s needed |
+| Layout berantakan / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
 | Feels off / rapihin detail | `polish` one pass |
 | Rapihin sampai bagus | `quality-loop` (max 3) |
 | Audit saja | `/design` — no fix loop |

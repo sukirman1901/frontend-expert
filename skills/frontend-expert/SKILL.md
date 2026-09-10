@@ -10,7 +10,7 @@ description: >-
 license: MIT
 metadata:
   author: sukirman1901
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Frontend Expert
@@ -46,6 +46,7 @@ Full map: `docs/pillars.md` · agent routing: `AGENTS.md`
 
 ```text
 design-direction*
+  → design-foundations
   → tokens
   → (+ marketing if marketing homepage)
   → (+ app-shell / data-fetching / forms as needed)

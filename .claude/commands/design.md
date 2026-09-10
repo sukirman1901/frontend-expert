@@ -11,15 +11,15 @@ Invoke the design-reviewer agent.
 3. `tokens` (when a token file is available)
 4. `design-foundations` — when diagnosing grid, spacing rhythm, alignment, density, or structural layout
 5. `responsive` — all-devices / breakpoint adherence
-5. `accessibility`
-6. `performance`
-7. `components` as needed for pattern/state checks
-8. `motion` — when animated / marketing motion (family budget from `motion-families.md`; hand-roll)
-9. `fidelity` — when Figma/mock/screenshot is in scope
-10. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
-11. `marketing` — when auditing marketing / landing pages
-12. `design-direction` when recommending redesign directions
-13. `testing` — note coverage gaps as Info only
+6. `accessibility`
+7. `performance`
+8. `components` as needed for pattern/state checks
+9. `motion` — when animated / marketing motion (family budget from `motion-families.md`; hand-roll)
+10. `fidelity` — when Figma/mock/screenshot is in scope
+11. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
+12. `marketing` — when auditing marketing / landing pages
+13. `design-direction` when recommending redesign directions
+14. `testing` — note coverage gaps as Info only
 
 ## Modes
 

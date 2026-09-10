@@ -2,14 +2,14 @@
 
 Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert). Skills stay **flat** under `skills/` for discovery; this doc is the mental model.
 
-The suite has exactly 29 canonical skills. Version 2.0 removed legacy alias folders so discovery exposes one identifier per capability.
+The suite has exactly 30 canonical skills. Version 2.1 adds `design-foundations` after optional `design-direction` and before `tokens`.
 
 ## Pillars
 
 | Pillar | Skills | Role |
 |--------|--------|------|
 | **Suite root** | `frontend-expert`, **`skill-authoring`** | Catalog / install entry — routes into the pillars below; skill authoring |
-| **UI Quality** (default) | `design-direction`, `tokens`, `design-typography`, `design-color`, `design-surfaces`, `content-design`, `components`, `anti-slop-design`, `polish`, `accessibility`, `testing`, `quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `performance`, `fidelity`, `devtools`, **`marketing`**, **`design-vocabulary`** | Visual craft, type, color, surfaces, product copy, tokens, polish, fidelity, tooling, motion, marketing IA |
+| **UI Quality** (default) | `design-direction`, `design-foundations`, `tokens`, `design-typography`, `design-color`, `design-surfaces`, `content-design`, `components`, `anti-slop-design`, `polish`, `accessibility`, `testing`, `quality-loop`, `webgl`, `monitoring`, `motion` (+ `motion-families` vocabulary), `performance`, `fidelity`, `devtools`, **`marketing`**, **`design-vocabulary`** | Visual craft, structure, type, color, surfaces, product copy, tokens, polish, fidelity, tooling, motion, marketing IA |
 | **Responsive** (MUST) | `responsive` | All devices 320→1440+ |
 | **Ship FE** | `app-shell`, `data-fetching`, `forms` | Shell, async UI, forms |
 | **Depth** | `architecture`, `seo`, **`engineering-vocabulary`** | Structure, technical SEO, engineering term lookup |
@@ -18,6 +18,7 @@ The suite has exactly 29 canonical skills. Version 2.0 removed legacy alias fold
 
 ```text
 design-direction*
+  → design-foundations     # structural layout; skip isolated color/type/motion/polish
   → tokens
   → design-typography? / design-color? / design-surfaces? / content-design?
   → marketing?     # if marketing homepage / landing

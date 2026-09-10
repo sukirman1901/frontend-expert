@@ -22,6 +22,7 @@ Report this block (fill every line):
 - Landing: <section stack | n/a app-shell | waiver: …>
 - Motion: <light shell | families: … | patterns: … | none (waiver)>
 - Design domains: <typography / color / surfaces / content applied as relevant | n/a>
+- Foundations: <container/grid + spacing relationships + shared anchors + one focal path | n/a | waiver>
 ```
 
 When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or `(hard-gate)` when those branches apply.
@@ -36,6 +37,7 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **Responsive** | Load `responsive` — verify 320 / 768 / 1024 / 1440; drawer+backdrop for side nav; **primary CTAs `width: 100%` below 768**; no page horizontal scroll; adapt tables/nav | Explicit desktop-only waiver |
 | **Hierarchy** | One primary focus + one primary CTA; weight/contrast before decoration (`design-direction` Hierarchy pass) | Tiny copy-only tweak |
 | **Typography** | ≤2 families; one h1/page; sequential ladder; token type roles | Waiver: intentional marketing exception (state why) |
+| **Foundations** | Coherent container/grid, spacing relationships, shared alignment anchors, one focal path, and realistic content stress (`design-foundations`) | Isolated color/type/copy/token/state/motion/polish with no layout change |
 | **Shell chrome** | Logo + utilities + **theme in topbar** (if any) + **avatar → account menu** (`app-shell`) | Waiver: minimal marketing page |
 | **Marketing landing** | Section stack via `marketing` / `landing-sections.md` — not hero-only; **hand-roll** (no block-registry install default) | Waiver: app-shell-only surface |
 | **Selects** | Custom select/combobox for product filters (`components`); caret not flush | Waiver: native OS picker required |

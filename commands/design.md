@@ -16,16 +16,16 @@ Alias: **`/audit`** (same workflow).
 3. `tokens` — token adherence (when a token file is available)
 4. `design-foundations` — when diagnosing grid, spacing rhythm, alignment, density, or structural layout
 5. `content-design` / `design-typography` / `design-color` / `design-surfaces` — owning domain when relevant
-5. `responsive` — all-devices / breakpoint adherence
-6. `accessibility` — WCAG 2.2 AA by default
-7. `performance` — CWV / loading issues relevant to UI
-8. `components` — pattern / state checks as needed
-9. `motion` — when animated UI / marketing motion (family budget from `motion-families.md`, reduced-motion)
-10. `fidelity` — when a Figma/mock/screenshot is in scope
-11. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
-12. `marketing` — when the surface is a marketing / landing page
-13. `design-direction` — when recommending redesign directions (2–3 options)
-14. `testing` — note test gaps as Info only (do not replace `/test-ui`)
+6. `responsive` — all-devices / breakpoint adherence
+7. `accessibility` — WCAG 2.2 AA by default
+8. `performance` — CWV / loading issues relevant to UI
+9. `components` — pattern / state checks as needed
+10. `motion` — when animated UI / marketing motion (family budget from `motion-families.md`, reduced-motion)
+11. `fidelity` — when a Figma/mock/screenshot is in scope
+12. `devtools` — when measuring (Lighthouse/axe); never fabricate scores
+13. `marketing` — when the surface is a marketing / landing page
+14. `design-direction` — when recommending redesign directions (2–3 options)
+15. `testing` — note test gaps as Info only (do not replace `/test-ui`)
 
 ## What It Does
 
@@ -34,14 +34,14 @@ Alias: **`/audit`** (same workflow).
 3. Checks `polish` craft (concentric radius, hit areas, transition hygiene, …)
 4. Checks token adherence
 5. Checks **foundations** (container/grid, spacing relationships, shared anchors, one focal path) when layout structure is in scope
-5. Reviews accessibility
-6. Notes performance risks (LCP / INP / CLS)
-7. Validates **responsive** design (320 / 768 / 1024 / 1440) via `responsive`
-8. Checks **shell chrome** (theme topbar, avatar menu, custom selects) on dashboards
-9. Checks **marketing landing** section stack when applicable
-10. Checks **motion** family budget when animation present
-11. Checks component patterns (composition, states)
-12. Outputs scorecard + prioritized next moves
+6. Reviews accessibility
+7. Notes performance risks (LCP / INP / CLS)
+8. Validates **responsive** design (320 / 768 / 1024 / 1440) via `responsive`
+9. Checks **shell chrome** (theme topbar, avatar menu, custom selects) on dashboards
+10. Checks **marketing landing** section stack when applicable
+11. Checks **motion** family budget when animation present
+12. Checks component patterns (composition, states)
+13. Outputs scorecard + prioritized next moves
 
 ## Usage
 

@@ -2,6 +2,19 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.1.0] — 2026-09-10
+
+### Added
+
+- `design-foundations` — grid, spacing rhythm, alignment, hierarchy, density, composition, and whitespace
+- Structural reference `references/design-foundations.md` and behavioral eval E28
+
+### Changed
+
+- Build routing places foundations after optional `design-direction` and before `tokens`
+- Canonical skill count is 30
+- Always-on Cursor and Claude rules now use canonical identifiers instead of removed aliases
+
 ## [2.0.0] — 2026-09-10
 
 ### Changed

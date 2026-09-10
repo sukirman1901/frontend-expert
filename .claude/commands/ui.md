@@ -10,16 +10,16 @@ Invoke the ui-developer agent.
 2. `design-foundations` — structural layout (grid, spacing, alignment, density); skip isolated color/type/motion/polish
 3. `tokens`
 4. `marketing` — if marketing homepage / landing (hand-roll section stack)
-4. `app-shell` — if shell / routing / dashboard / settings
-5. `data-fetching` — if async API UI
-6. `forms` — if forms
-7. `components`
-8. `responsive` — MUST for layout (all devices; drawer+backdrop)
-9. `motion` — light shell defaults; marketing → families/patterns (`motion-families.md`) hand-roll
-10. `anti-slop-design`
-11. `polish`
-12. `accessibility` (light pass)
-13. `seo` / `webgl` — only if in scope
+5. `app-shell` — if shell / routing / dashboard / settings
+6. `data-fetching` — if async API UI
+7. `forms` — if forms
+8. `components`
+9. `responsive` — MUST for layout (all devices; drawer+backdrop)
+10. `motion` — light shell defaults; marketing → families/patterns (`motion-families.md`) hand-roll
+11. `anti-slop-design`
+12. `polish`
+13. `accessibility` (light pass)
+14. `seo` / `webgl` — only if in scope
 
 ## Modes
 
@@ -34,9 +34,9 @@ Invoke the ui-developer agent.
 1. Choose direction via `design-direction` when the UI is non-trivial / blank-canvas (2–3 approaches); skip for tiny clear fixes
 2. Structure the layout via `design-foundations` (relationships before token values); skip isolated color/type/motion/polish
 3. Choose tokens via decision tree (custom → explicit → Plasma hard-gate → score)
-3. Shell: logo + utilities + **theme in topbar**; **avatar → account menu**; mobile drawer+backdrop; desktop sidebar collapse; **custom selects** for filters
-4. Marketing landings: load `marketing` — section stack (not hero-only); hand-roll, no registry install
-5. Implement with composition, loading/error/empty states, **responsive**, **motion** (shell light or named families)
-6. Make interactive elements keyboard accessible
-7. Scan for AI aesthetic patterns (incl. motion spam / hero-only), then apply `polish` craft
-8. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states/responsive/shell/landing/motion), a11y notes
+4. Shell: logo + utilities + **theme in topbar**; **avatar → account menu**; mobile drawer+backdrop; desktop sidebar collapse; **custom selects** for filters
+5. Marketing landings: load `marketing` — section stack (not hero-only); hand-roll, no registry install
+6. Implement with composition, loading/error/empty states, **responsive**, **motion** (shell light or named families)
+7. Make interactive elements keyboard accessible
+8. Scan for AI aesthetic patterns (incl. motion spam / hero-only), then apply `polish` craft
+9. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states/responsive/shell/landing/motion), a11y notes
