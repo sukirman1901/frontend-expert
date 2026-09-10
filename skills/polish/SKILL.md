@@ -1,127 +1,84 @@
 ---
 name: polish
 description: >-
-  Polish micro-details that make UI feel better — concentric radius, optical
-  alignment, tabular nums, text-wrap, interruptible transitions, scale-on-press,
-  hit areas, no transition:all. Use when building/reviewing UI polish, "feels
-  off", "rapihin detail", hover/press feedback, stagger enter/exit, or after
-  anti-slop-design on /ui and /polish.
+  Polish micro-details that make UI feel better — optical alignment, tabular
+  nums, text-wrap, interruptible transitions, press feedback, hit areas, no
+  transition:all. Use when building/reviewing UI polish, "feels off",
+  "rapihin detail", hover/press feedback, or after anti-slop-design.
+  Structural layout, radius language, and WCAG conformance belong to other owners.
 ---
 
-# UI Feel
+# Polish
 
 ## Overview
 
-Great interfaces compound from small craft details. After tokens + structure + anti-slop, apply this skill so the UI doesn’t just look correct — it **feels** right.
-
-This is a pack-authored workflow; no external skill is bundled.
+After tokens, structure, and anti-slop, apply micro-craft so the UI feels right in the rendered surface. Numeric recipes here are heuristics unless a standard or project token owns them.
 
 ## When to use
 
 - Finishing `/ui` builds (after `anti-slop-design`)
-- `/polish` / “rapihin detail” / “feels off” / “make it feel better”
-- Design audits that go beyond slop into craft
-- Hover, press, enter/exit, icon swap micro-interactions
+- `/polish` / “rapihin detail” / “feels off”
+- Hover, press, enter/exit, icon-swap micro-interactions
 
 ## When to skip
 
-- Pure token/theme pick with no UI surface
-- Backend-only or copy-only edits
-- User asked for a one-line fix unrelated to feel
+- Structural grid/spacing/hierarchy → `design-foundations`
+- Nested radius / elevation language → `design-surfaces`
+- Type roles, wrapping, truncation → `design-typography`
+- Conformance (contrast, names, keyboard) → `accessibility`
+- Motion systems / named families → `motion`
+- Copy-only or backend-only edits
 
-## Pack fit
+## MUST
 
-| Skill | Job |
-|-------|-----|
-| `anti-slop-design` | Kill generic AI aesthetic |
-| **`polish`** | Micro craft that compounds into polish |
-| `motion` | Larger animation systems (Framer/GSAP timelines) |
-| `accessibility` | Labels, keyboard, contrast (hit areas overlap here) |
+| Rule | Detail |
+|------|--------|
+| **Rendered proof** | Judge wrapping, alignment, press, and radius from the rendered UI, not source alone |
+| **Tokens first** | Use `--radius`, spacing, and type tokens; do not invent one-off values when a token exists |
+| **Classify recipes** | Label `0.96`, stagger ms, and similar numbers as heuristics |
+| **Cheapest valid fix** | Delete decoration → native CSS → reuse project tokens → then add abstraction |
+| **Mobile craft** | Full-width primary CTA <768; safe-area on sticky chrome; thumb-reachable actions |
+| **No `transition: all`** | Name properties; skip Tailwind bare `transition` |
 
-**Conflict rules (this pack wins):**
+## Craft (starting points)
 
-- Prefer **subtle layered transparent shadows** — not heavy multi-layer card stacks (`anti-slop-design`)
-- Image outlines are **optional** (media cards / product shots), not mandatory on every `<img>`
-- Keep project fonts; only add smoothing / wrap / tabular-nums
-- Icons stay **[Reicon](https://reicon.dev)** unless project already standardized another lib
+| Concern | Starting point | Class | Hand off |
+|---------|----------------|-------|----------|
+| Nested corners | Outer ≈ inner + inset when curves share a center | Heuristic | `design-surfaces` |
+| Icon in control | Optical nudge over geometric center | Recommendation | — |
+| Section depth | Project border/elevation language | Project default | `design-surfaces` |
+| Hover/toggle | Interruptible CSS transitions | Recommendation | `motion` if choreography |
+| Press | `scale(0.96)` if press feedback is wanted | Heuristic | — |
+| Dynamic numbers | `tabular-nums` | Recommendation | `design-typography` |
+| Short titles | `text-wrap: balance` | Recommendation | `design-typography` |
+| Hit area | 44×44 touch / ≥40 dense desktop | Recommendation | `accessibility` for WCAG 2.5.8 (24px) |
 
-## Core principles (quick)
-
-1. **Concentric radius** — `outer = inner + padding`
-2. **Optical > geometric** alignment for icons in controls
-3. **Subtle shadows over hard borders** between sections (when depth is needed)
-4. **Interruptible** — CSS transitions for hover/toggle; keyframes for one-shot only
-5. **Split + stagger** enters (~100ms); soft exits (small `translateY`, not full height)
-6. **Icon swaps** — opacity + scale `0.25→1` + blur `4px→0` (spring bounce `0` if Motion)
-7. **Font smoothing** on root (`antialiased`)
-8. **`tabular-nums`** for dynamic numbers
-9. **`text-wrap: balance`** headings · **`pretty`** short body
-10. **Scale on press** — exactly `0.96` (never below `0.95`); disable when distracting
-11. **`initial={false}`** on `AnimatePresence` for default-state UI (skip load flash)
-12. **Never `transition: all`** — name properties
-13. **`will-change` sparingly** — only transform/opacity/filter when first-frame stutter
-14. **Hit area** — 44×44 touch/mobile; ≥40×40 dense desktop; no overlapping hit targets
-15. **Type ladder** — ≤2 families; one h1/page; h1→body via tokens; body ~60–75ch when long-form (see judgment Typography ladder)
-16. **Mobile craft** — thumb-reachable primary actions; full-width CTAs <768 (`responsive`); safe-area on sticky chrome; optional sticky CTA bar for long forms — not desktop-only micro-polish
-
-## Typography hierarchy (MUST on polish)
-
-| Do | Don’t |
-|----|-------|
-| One page title (`h1` / role) | Multiple competing `h1`s per page |
-| Sequential heading levels | Skip h2 for “style” (h1 then h3) |
-| Token type roles (title / body / muted / label) | Random rem sizes per section |
-| Calm mobile heading scale | Giant marketing title crushing a settings form |
-
-## Mobile craft (MUST when layout/touch)
-
-| Do | Don’t |
-|----|-------|
-| Primary controls in thumb-friendly zone (lower/mid screen on phone) | Tiny top-right-only primary on long pages |
-| Full-width primary buttons <768 | Hug-width desktop CTAs on 320px |
-| `env(safe-area-inset-*)` on sticky topbar / drawers / bottom bars | Content under notch / home indicator |
-| Sticky bottom CTA for long mobile forms when submit is far | Force scroll past fold with no persistent action |
-| Tap highlight off + press scale on icon/nav controls | Hover-only feedback |
-
-Cross-link: `references/responsive.md` (safe areas, Auto Layout Fill), `references/polish.md`.
+Exceptions: pills/circles, dense toolbars (disable press-scale), reduced motion, brand language that is non-concentric, images that do not need outlines.
 
 ## Workflow
 
-1. Scan touched UI against the checklist below
-2. Fix with tokens (`--radius`, spacing scale) — don’t invent one-off magic numbers when a token exists
-3. Report changes as **Before / After tables** grouped by principle (omit empty groups)
+1. **Scope** — name the surface; skip structural or token-system work.
+2. **Scan** — rendered 1x/2x, light/dark, hover/press/focus, mobile width.
+3. **Fix** — cheapest valid change; map values to tokens.
+4. **Report** — Before/After tables grouped by principle; mark uninspected states `Not verified`.
 
-### Review output format
+## Boundaries
 
-```markdown
-#### Concentric border radius
-| Before | After |
-| --- | --- |
-| `rounded-xl` on card + inner (`p-2`) | Outer `rounded-2xl`, inner `rounded-lg` |
-
-#### Scale on press
-| Before | After |
-| --- | --- |
-| bare `<button>` | `active:scale-[0.96] transition-transform` |
-```
+- **May decide:** optical nudges, named transitions, tabular-nums, wrap helpers, press feedback when the project has none.
+- **Must not:** treat `0.96`, bounce `0`, or concentric radius as universal law; polish over broken layout; replace brand fonts.
 
 ## Checklist
 
-- [ ] Nested radii are concentric
-- [ ] Icons optically centered
-- [ ] Depth via subtle transparent shadows where borders feel harsh
-- [ ] Enter split/staggered; exits soft
-- [ ] Dynamic numbers use `tabular-nums`
-- [ ] Root font smoothing applied (or already present)
+- [ ] Nested radii verified optically (or handed to `design-surfaces`)
+- [ ] Icons optically centered where they looked off
+- [ ] No `transition: all`; hover/press interruptible
+- [ ] Dynamic numbers use `tabular-nums` where they would jitter
 - [ ] Headings `text-balance`; short copy `text-pretty` where useful
-- [ ] Press feedback `scale(0.96)` where appropriate
-- [ ] No `transition: all` / Tailwind bare `transition`
 - [ ] Hit areas meet 44/40 guidance without overlap
-- [ ] Image outlines only where they help (pure black/white at 10% opacity)
-- [ ] Typography ladder: one h1, sequential levels, token roles
-- [ ] Mobile craft: full-width primary <768, safe-area, thumb-reachable CTAs
+- [ ] Mobile craft: full-width primary <768, safe-area, thumb zone
+- [ ] Heuristics labeled; untested states marked `Not verified`
 
 ## Depth
 
 Full examples: `references/polish.md`.  
-Related: `references/motion.md`, `references/anti-patterns.md`, `references/responsive.md`, `references/ux-foundations.md`.
+Related: `design-surfaces`, `design-foundations`, `design-typography`, `motion`, `accessibility`, `references/evidence-policy.md`.

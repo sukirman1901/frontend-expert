@@ -1,17 +1,27 @@
-# UI Feel — reference
+# Polish — reference
 
 Pack-authored craft guidance. Skill entry: `skills/polish/SKILL.md`.
+Classify numeric recipes via `references/evidence-policy.md`. Owner for radius/elevation language: `design-surfaces`.
 
 ## Surfaces
 
 ### Concentric border radius
 
-`outerRadius = innerRadius + padding`.
+```yaml
+principle: Concentric nested radius
+classification: heuristic
+recommendation: outer ≈ inner + inset when nested curves share a visual center
+exceptions: [pills, circles, asymmetric inset, contrasting brand shapes]
+verification: [render at actual size, 1x and 2x, light and dark]
+last_verified: 2026-09
+```
+
+Hand the radius *language* to `design-surfaces`. Polish only checks that nested corners do not look mechanically wrong.
 
 ```tsx
-// Padding 8px, inner radius 8px → outer 16px
-<div className="rounded-2xl p-2">       {/* 16px */}
-  <button className="rounded-lg">…</button> {/* 8px */}
+// Heuristic when padding is uniform and corners share a center
+<div className="rounded-2xl p-2">
+  <button className="rounded-lg">…</button>
 </div>
 ```
 
@@ -19,20 +29,17 @@ Pack-authored craft guidance. Skill entry: `skills/polish/SKILL.md`.
 
 If geometric center looks off (play ▶, chevrons, asymmetric Reicon glyphs), nudge with padding or `translate` — don’t “fix” with larger hit-box alone.
 
-### Shadows over hard borders
+### Shadows vs borders
 
-Prefer layered transparent `box-shadow` for section depth. Keep subtle — pack `anti-slop-design` forbids heavy competing shadows.
+Project depth language wins. Shadows are not universally better than borders.
 
-```css
-.card {
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.04),
-    0 1px 2px rgba(0, 0, 0, 0.06),
-    0 4px 12px rgba(0, 0, 0, 0.04);
-}
-```
+| Need | Prefer |
+|------|--------|
+| Structural boundary | Border, divider, spacing, or tone |
+| Elevated temporary layer | Subtle transparent shadow + backdrop, if the project uses elevation |
+| Selected/focus | Explicit state token plus a non-color cue |
 
-Dark surfaces: use white alpha rings (`rgba(255,255,255,0.06)`) instead of slate borders that muddy the edge.
+If shadows are in language, keep them subtle — `anti-slop-design` forbids heavy competing stacks. Dark surfaces: white-alpha rings (`rgba(255,255,255,0.06)`) often beat slate borders.
 
 ### Image outlines (optional)
 
@@ -46,10 +53,11 @@ Tailwind: `outline outline-1 -outline-offset-1 outline-black/10 dark:outline-whi
 
 ### Minimum hit area
 
-| Context | Target |
-|---------|--------|
-| Touch / mobile | 44×44px |
-| Dense desktop | ≥40×40px |
+| Context | Target | Class |
+|---------|--------|-------|
+| Touch / mobile product UI | 44×44px | Recommendation |
+| Dense desktop | ≥40×40px | Recommendation |
+| WCAG 2.2 AA 2.5.8 | 24×24 CSS px, with listed exceptions | Standard — `accessibility` |
 
 Extend small visibles with `::after` pseudo; **never** let two hit areas overlap — shrink before colliding.
 
@@ -117,7 +125,7 @@ Use for counters, timers, live prices, numeric table columns — not phone numbe
 
 ### Enter: split + stagger
 
-Don’t fade one giant container. Stagger semantic chunks ~100ms (words in a title ~80ms). Combine `opacity` + light `translateY` (+ optional `blur`).
+Don’t fade one giant container. Stagger semantic chunks (~100ms is a heuristic). Combine `opacity` + light `translateY` (+ optional `blur`). Honor `prefers-reduced-motion`.
 
 ### Exit: softer than enter
 
@@ -125,7 +133,14 @@ Small fixed `translateY` (e.g. 4–8px) + opacity — not collapsing full height
 
 ### Scale on press
 
-Always `scale(0.96)` — never below `0.95`. Offer a way to disable on dense toolbars.
+```yaml
+principle: Press scale
+classification: heuristic
+recommendation: scale(0.96) when press feedback is wanted
+exceptions: [dense toolbars, reduced motion, brand forbids scale]
+verification: [press on touch and pointer; disable if it distracts]
+last_verified: 2026-09
+```
 
 ```tsx
 <button className="transition-transform active:scale-[0.96]">
@@ -135,7 +150,7 @@ Always `scale(0.96)` — never below `0.95`. Offer a way to disable on dense too
 
 Enter values: scale `0.25→1`, opacity `0→1`, blur `4px→0`.
 
-- With `motion` / `framer-motion`: `transition: { type: "spring", duration: 0.3, bounce: 0 }`
+- With `motion` / `framer-motion`: a tested recipe is `{ type: "spring", duration: 0.3, bounce: 0 }` — bounce `0` is a heuristic, not required.
 - Without: keep both icons in DOM; absolute cross-fade with `cubic-bezier(0.2, 0, 0, 1)`
 
 Prefer **Reicon** components (`reicon-react`) for the glyphs.
@@ -166,16 +181,16 @@ Only `transform` / `opacity` / `filter` when you see first-frame stutter. Never 
 
 | Mistake | Fix |
 |---------|-----|
-| Same radius parent + child | `outer = inner + padding` |
+| Same radius parent + child | Check concentric heuristic optically (`design-surfaces`) |
 | Icon looks off-center | Optical nudge |
-| Hard section borders everywhere | Subtle transparent shadow stack |
+| Competing depth (border + heavy shadow) | Follow project language; one depth method |
 | Jarring enter/exit | Split, stagger, soft exit |
 | Numbers shift layout | `tabular-nums` |
 | Heavy macOS text | Root `antialiased` |
 | Animates on first load | `initial={false}` |
 | `transition: all` | Name properties |
 | Tiny controls | Expand hit area without overlap |
-| `scale(0.9)` press | Raise to `0.96` |
+| Harsh `scale(0.9)` press | Try `0.96`, or disable scale |
 | Multiple `h1` / skipped levels | One page title; sequential ladder (`design-direction`) |
 | Desktop-only polish on phone | Full-width CTA <768, safe-area, thumb zone (`responsive`) |
 

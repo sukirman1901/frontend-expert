@@ -20,7 +20,7 @@ Base styles = phone. Enhance with `min-width` media queries (or container querie
 ## Hard rules
 
 1. **No horizontal page scroll** at 320–1440 (except intentional code blocks / media with internal scroll)
-2. **Tap targets ≥ 44×44px** for primary controls on touch
+2. **Tap targets ≥ 44×44px** for primary controls on touch (pack recommendation). WCAG 2.5.8 AA minimum is 24×24 CSS px — see `accessibility`.
 3. **Nav / forms / primary CTAs usable on phone** — not desktop-only chrome
 4. **Primary actions full-width below 768** — form submit, toolbar primary, row/plan CTAs
 5. **Adapt, don’t delete** — if a column/table hides on small screens, provide a stacked/card/alternative view

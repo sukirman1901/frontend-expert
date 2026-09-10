@@ -2,7 +2,28 @@
 
 Record the project/legal conformance target. W3C encourages the latest WCAG version; a project pinned to 2.1 may retain that reporting target while adopting compatible 2.2 safeguards.
 
-Every component must meet these standards. This checklist covers the most common accessibility requirements for web applications.
+Mark any check that was not actually performed as `Not verified`. Source inspection is not a screen-reader test.
+
+## WCAG 2.2 AA (own these; do not blur with craft)
+
+| Criterion | Requirement | Not the same as |
+|-----------|-------------|-----------------|
+| 2.4.11 Focus Not Obscured | Focused item is not entirely hidden by author-created sticky/fixed UI | “Looks fine in the mock” |
+| 2.5.7 Dragging Movements | A dragging action has a single-pointer non-drag alternative | “Mouse users can drag” |
+| 2.5.8 Target Size (Minimum) | **24×24 CSS pixels**, or equivalent spacing / listed exceptions | Pack **44×44** touch recommendation (`polish` / `responsive`) |
+| 3.3.7 Redundant Entry | Don’t re-ask information the user already entered in the same process | Prefill as decoration |
+| 3.3.8 Accessible Authentication | No cognitive-function test (e.g. transcribe a password) without an alternative | “CAPTCHA is fine” |
+
+```yaml
+principle: Target size
+classification: standard vs recommendation
+standard: WCAG 2.2 2.5.8 → 24×24 CSS px (with exceptions)
+recommendation: 44×44 touch / ≥40 dense desktop for product UI
+verification: [rendered hit testing, not icon-box size alone]
+last_verified: 2026-09
+```
+
+Every component must meet the **declared** conformance target. This checklist covers the most common accessibility requirements for web applications.
 
 ## Keyboard Navigation
 

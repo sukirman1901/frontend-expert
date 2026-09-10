@@ -280,7 +280,7 @@ Cherry-picked from design-lab principles (pack-relevant only):
 | Validate on every keystroke harshly | Anxiety, noise | Validate on blur/submit; live-validate gently |
 | Destructive action without confirm/undo | Data loss | Confirm dialog or soft-delete + undo |
 | Filters/tabs only in React state | Unshareable, broken back | Prefer URL state for shareable view state |
-| Tiny touch targets | Mis-taps | ≥44px touch / ≥40px dense desktop (`polish`) |
+| Tiny touch targets | Mis-taps | ≥44px touch recommendation / ≥40px dense desktop (`polish`); WCAG 2.5.8 is 24px (`accessibility`) |
 
 ## Motion anti-patterns
 

@@ -261,7 +261,7 @@ Details: [references/compliance-gates.md](references/compliance-gates.md) · Eva
 
 Skill **`polish`** — original pack workflow informed by interface-craft research.
 
-Concentric radius, optical alignment, tabular numbers, text-wrap, interruptible transitions, `scale(0.96)` press, hit areas, no `transition: all`. Runs after anti-slop on `/ui` and inside `/polish`.
+Concentric radius (heuristic, via `design-surfaces`), optical alignment, tabular numbers, text-wrap, interruptible transitions, press-scale heuristic, hit areas, no `transition: all`. Runs after anti-slop on `/ui` and inside `/polish`.
 
 Guide: [references/polish.md](references/polish.md)
 

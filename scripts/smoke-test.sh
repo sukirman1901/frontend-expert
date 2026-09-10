@@ -84,10 +84,10 @@ skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md |
 [ "$skill_entry_count" -eq 30 ] && ok "30 canonical skills only" || bad "expected 30 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.1.0" and (.skills | length == 30)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.1.0 registers exactly 30 skills"
+  if jq -e '.version == "2.1.1" and (.skills | length == 30)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.1.1 registers exactly 30 skills"
   else
-    bad "plugin must be v2.1.0 with exactly 30 skills"
+    bad "plugin must be v2.1.1 with exactly 30 skills"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then

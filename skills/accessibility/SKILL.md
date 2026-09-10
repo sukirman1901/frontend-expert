@@ -1,177 +1,75 @@
 ---
 name: accessibility
 description: >-
-  Enforce WCAG 2.2 AA by default (keyboard, ARIA, focus, contrast, semantics). Use for
+  Enforce WCAG 2.2 AA by default (keyboard, ARIA, focus, contrast, semantics,
+  target size, dragging alternatives, accessible authentication). Use for
   accessibility work, pre-ship UI checks, and as a light pass on every UI build
   or design review — including "a11y", "keyboard", "screen reader", or shipping
-  user-facing changes, without requiring a slash command.
+  user-facing changes.
 ---
 
 # Accessibility
 
 ## Overview
 
-New user-facing UI targets WCAG 2.2 AA by default. Honor an explicit legal/project target such as WCAG 2.1, while documenting the target and preserving newer compatible safeguards where possible.
+New user-facing UI targets **WCAG 2.2 AA** by default. Honor an explicit legal/project target such as 2.1, and record it. Do not claim a check that was not performed.
 
-## When to Use
+## When to use
 
-- `/design` audits
-- Light check during `/ui` builds
-- Dedicated accessibility fixes
+- Light pass on every `/ui` build
+- `/design` audits and dedicated a11y fixes
+- Keyboard, screen reader, contrast, focus, or target-size issues
+
+## When to skip
+
+- Palette construction → `design-color` (this skill owns *conformance* of pairs)
+- Type wrapping/truncation → `design-typography`
+- Hit-area *feel* only, with no conformance claim → `polish`
+
+## MUST
+
+| Rule | Detail |
+|------|--------|
+| **Name the target** | WCAG 2.2 AA unless the project/legal pin is different |
+| **Keyboard path** | Native controls first; visible `:focus-visible`; logical order |
+| **Focus not obscured** | Sticky/fixed UI must not hide focused items (2.4.11) |
+| **Names and states** | Visible labels; icon-only buttons have `aria-label`; toggles expose state |
+| **Contrast measured** | Text 4.5:1 / large 3:1 / UI 3:1 — measure pairs, do not guess from lightness |
+| **Not color alone** | State needs icon, text, or pattern as well as color |
+| **Target size** | 2.5.8 minimum is **24×24 CSS px** (with exceptions). 44×44 is a pack *recommendation*, not 2.5.8 |
+| **Dragging alternative** | Pointer-drag actions have a non-drag method (2.5.7) |
+| **Auth / redundant entry** | No cognitive-function test without an alternative (3.3.8); don’t re-ask data the user already gave in the same process (3.3.7) |
+| **Honest verification** | Untested screen-reader or zoom checks are `Not verified` |
 
 ## Workflow
 
-### 1. Keyboard
+1. **Target** — record 2.2 AA or the project pin.
+2. **Keyboard** — tab the real UI; trap/restore in dialogs; skip link on long nav.
+3. **Names** — labels, landmarks, live regions for dynamic status.
+4. **Perceive** — measured contrast; color-blind-safe state; 200% zoom if claiming it.
+5. **Operate** — 2.2 target size, dragging alternative, focus not obscured.
+6. **Report** — pass/fail per check; `Not verified` for tools not run.
 
-- All interactive elements focusable (native `<button>`, `<a>`, or `tabIndex={0}` + key handler)
-- Logical focus order; visible focus indicators (`focus-visible` outline)
-- Focus trapped in modals; restore to trigger on close
-- Skip link to main content when long nav exists
-- Focus is not obscured by sticky/fixed UI
-- Pointer drag interactions have a non-drag alternative
-- Authentication does not require cognitive-function tests without an accessible alternative
+Cheapest valid fix: native element → correct name/role → then ARIA.
 
-**Recipe — focus trap (vanilla):**
-```js
-// Trap focus inside a modal
-function trapFocus(modal) {
-  const focusable = modal.querySelectorAll(
-    'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
-  );
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
-  
-  modal.addEventListener('keydown', (e) => {
-    if (e.key !== 'Tab') return;
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  });
-  first?.focus();
-}
-```
+## Boundaries
 
-**Recipe — skip link:**
-```html
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<!-- In CSS: .skip-link { position: absolute; top: -100%; }
-     .skip-link:focus { top: 0; z-index: 9999; } -->
-<main id="main-content">...</main>
-```
-
-### 2. ARIA / labels
-
-- Form inputs have visible labels (`<label for="id">` or wrapping `<label>`)
-- Icon-only buttons have `aria-label`
-- Toggle states use `aria-pressed`, `aria-expanded`, `aria-selected`
-- Loading announced via `aria-busy="true"` on the loading container
-- Live regions (`aria-live="polite"`) for dynamic content updates (toasts, search results count)
-
-**Recipe — live region for dynamic count:**
-```html
-<div aria-live="polite" aria-atomic="true" class="sr-only">
-  <!-- JS updates this when results change -->
-  <span id="result-count">12 results found</span>
-</div>
-```
-
-**Recipe — icon button with Reicon:**
-```html
-<button type="button" aria-label="Close dialog">
-  <re-icon icon="close-circle" size="20" aria-hidden="true"></re-icon>
-</button>
-```
-
-### 3. Color & contrast
-
-- Normal text ≥ 4.5:1 contrast ratio
-- Large text (18px+ or 14px+ bold) ≥ 3:1
-- Interactive focus indicators ≥ 3:1 against adjacent colors
-- Do not rely on color alone for state — add icon, text, or pattern
-
-**Decision tree — contrast checking:**
-```
-Is it text?
-  YES → Normal text: 4.5:1 | Large text: 3:1
-  NO  → Is it a UI component or graphic?
-         YES → 3:1 against adjacent color
-         NO  → Decorative — no requirement
-```
-
-### 4. Semantics
-
-- One `<h1>` per page; sequential heading levels (h1 → h2 → h3, never skip)
-- Landmarks: `<header>`, `<nav>`, `<main>`, `<footer>`, `<aside>`
-- Multiple `<nav>` → each needs `aria-label` (e.g. "Main navigation", "Footer links")
-- Lists use `<ul>`/`<ol>`/`<dl>` — not styled divs
-- `<dialog>` for modals (native focus management + backdrop)
-
-### 5. Dialog / Modal a11y (recipe)
-
-```html
-<!-- Native dialog — best practice for modals -->
-<dialog id="my-dialog" aria-labelledby="dialog-title">
-  <h2 id="dialog-title">Confirm action</h2>
-  <p>Are you sure you want to proceed?</p>
-  <form method="dialog">
-    <button value="cancel">Cancel</button>
-    <button value="confirm" autofocus>Confirm</button>
-  </form>
-</dialog>
-
-<script>
-  // Open
-  document.getElementById('my-dialog').showModal();
-  // Native dialog automatically traps focus + adds backdrop + handles Escape
-</script>
-```
-
-### 6. Color-blind safe patterns
-
-| State | Don't (color only) | Do (color + indicator) |
-|-------|---------------------|------------------------|
-| Error | Red border | Red border + error icon + text |
-| Success | Green text | Green text + checkmark icon |
-| Required | Red asterisk only | Asterisk + "(required)" text |
-| Active tab | Blue color | Blue + underline/weight + `aria-selected` |
-| Disabled | Gray color | Gray + `disabled` attr + reduced opacity |
-
-### 7. Touch & tap targets
-
-- Interactive elements ≥ 44×44px on mobile (WCAG 2.5.8 target size)
-- ≥ 40×40px acceptable on dense desktop UIs
-- No overlapping tap targets
-- Adequate spacing between adjacent interactive elements (≥ 8px gap)
-
-## Quick audit method
-
-Run in this order (5-minute check):
-
-1. **Tab through** — can you reach everything? Is focus visible?
-2. **Screen reader** — does heading structure make sense? Are buttons/links announced correctly?
-3. **Contrast check** — run browser DevTools contrast checker or axe
-4. **Zoom to 200%** — does layout still work?
-5. **Color only** — remove color perception (Chrome DevTools → Rendering → Emulate vision deficiency)
+- **May decide:** native `<dialog>` vs labeled custom modal; live-region politeness.
+- **Must not:** report 44px as WCAG 2.5.8; claim SR/axe results without running them; use ARIA to paper over unkeyboardable divs.
 
 ## Checklist
 
-- [ ] Keyboard path works without mouse
-- [ ] Focus visible everywhere interactive
-- [ ] Focus trapped in modals, restored on close
-- [ ] Skip link present when nav is long
-- [ ] Labels / aria-label present on all interactive elements
-- [ ] Live regions for dynamic content updates
-- [ ] Contrast meets AA (4.5:1 text, 3:1 large/UI)
-- [ ] No color-only state communication
-- [ ] Semantic structure (one h1, sequential levels, landmarks)
-- [ ] Touch targets ≥ 44px on mobile
-- [ ] Dialogs use native `<dialog>` or proper focus management
+- [ ] Conformance target recorded (2.2 AA or project pin)
+- [ ] Keyboard path and visible focus; focus not obscured
+- [ ] Labels / `aria-label` / toggle states / live regions as relevant
+- [ ] Contrast measured for text and UI components
+- [ ] No color-only state
+- [ ] 2.5.8 target size (24px) distinguished from 44px recommendation
+- [ ] Dragging alternative and accessible authentication checked if in scope
+- [ ] Untested items marked `Not verified`
 
 ## Depth
 
-Full checklist: `references/accessibility-checklist.md`.  
-Contrast & color-alone rules in context: `references/ux-foundations.md`.
+Full checklist and recipes: `references/accessibility-checklist.md`.
+Contrast context: `references/design-color.md`, `references/ux-foundations.md`.
+Evidence classes: `references/evidence-policy.md`.

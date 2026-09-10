@@ -89,7 +89,7 @@ user intent → pick 1 family (max 2) by peruntukan
 | Pattern | Definisi | Peruntukan | Hand-roll hint |
 |---------|----------|------------|----------------|
 | `lift-hover` | Naik tipis + depth on hover | Cards, list rows | translateY(-2px) + shadow token ~150ms ease-out |
-| `press-scale` | Scale down saat active/press | Buttons, icon buttons | scale(0.96); never below 0.95 |
+| `press-scale` | Scale down saat active/press | Buttons, icon buttons | heuristic: scale(0.96); disable on dense toolbars |
 | `magnetic-button` | Ikuti pointer dengan offset terbatas | Marketing CTA | pointer delta capped ~8–12px; reduced-motion → static |
 | `tilt-hover` | rotateX/Y kecil dari posisi pointer | Feature cards | perspective + small rotate; disable on touch |
 | `glow-hover` | Ring/glow opacity naik on hover | Primary controls | token-colored shadow; no purple slop |

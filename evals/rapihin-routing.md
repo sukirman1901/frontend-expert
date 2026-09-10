@@ -26,11 +26,20 @@ Rapihin… eh bikin dashboard analytics dong, belum ada arah.
 
 **Expect:** `design-direction` (2–3 axes) **before** coding.
 
+### D — Structural clutter
+
+```text
+Rapikan struktur layout-nya, jangan ganti brand atau komponen.
+```
+
+**Expect:** `design-foundations` — **not** `polish` one-pass, **not** a token/palette rewrite.
+
 ## Pass criteria
 
 - [ ] A → feel only (no 3-cycle polish unless user escalates)
 - [ ] B → quality loop
 - [ ] C → judgment first
+- [ ] D → foundations (spacing/grid/anchors), brand and components preserved
 
 ## Fail if
 

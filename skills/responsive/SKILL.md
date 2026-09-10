@@ -28,7 +28,7 @@ Ship layouts that work on **all devices** — phone floor through desktop. Not R
 ## Workflow
 
 1. **Mobile-first** — base styles for ~320px; enhance at 768 / 1024 / 1440
-2. **Check** — no horizontal page scroll; primary actions reachable; tap targets ≥44px
+2. **Tap targets** — pack recommendation ≥44×44px for primary touch controls; WCAG 2.5.8 AA is 24×24 (`accessibility`)
 3. **Adapt content** — tables → cards/stack; **side nav → overlay drawer + backdrop**; don’t hide profile/account without alternative
 4. **Mobile controls** — primary CTAs / form submit / destructive row actions → **`width: 100%`** below 768; stack button rows vertically
 5. **Breakpoint cleanup** — on resize past mobile, close drawer / clear `is-open` / unlock body scroll
@@ -82,7 +82,7 @@ Example:
 
 - [ ] Verified (or reasoned) at 320 / 768 / 1024 / 1440
 - [ ] No page-level horizontal overflow
-- [ ] Touch targets ≥44px for primary controls
+- [ ] Touch targets ≥44px for primary controls (recommendation; 2.5.8 is 24px)
 - [ ] **Primary buttons full-width on mobile** (forms / toolbars / action rows)
 - [ ] Figma Fill/Hug mapped correctly when a design file exists
 - [ ] Inputs ≥16px font on mobile

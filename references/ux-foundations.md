@@ -62,7 +62,7 @@ Prefer options that are: **clear · fast · consistent · accessible · calm · 
 | Hierarchy | One primary focus per view; weight often beats size |
 | Spacing | Stick to a scale (4/8px or `0.25rem`); related = tight, sections = loose |
 | Type | ≤2 families; body ~60–75ch; clear h1→body ladder; one h1/page |
-| Radius | 2–3 values; nested = concentric (`outer = inner + padding`) |
+| Radius | 2–3 values; nested corners concentric **when they share a visual center** (`design-surfaces`) |
 | Elevation | Pick borders *or* soft shadows as the language — stay consistent |
 | States | default · hover · focus · active · disabled · loading · empty · error |
 | Motion | Feedback/continuity only; honor `prefers-reduced-motion` |

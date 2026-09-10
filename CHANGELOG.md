@@ -2,6 +2,14 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.1.1] — 2026-09-10
+
+### Changed
+
+- `polish` and `accessibility` now classify numeric craft recipes vs WCAG standards
+- Concentric radius and press-scale are heuristics; 2.5.8 target size is 24px, not 44px
+- Cursor/Claude always-on rules on this branch stay aligned with canonical skill names
+
 ## [2.1.0] — 2026-09-10
 
 ### Added
