@@ -39,6 +39,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E28 | Structural design foundations | [design-foundations.md](./design-foundations.md) |
 | E29 | Component props / API | [components.md](./components.md) |
 | E30 | Anti-slop code | [anti-slop-code.md](./anti-slop-code.md) |
+| E31 | Prototype | [prototype.md](./prototype.md) |
 
 ## How to run
 

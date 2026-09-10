@@ -12,6 +12,7 @@ echo "== skills =="
 CANONICAL_SKILLS=(
   frontend-expert
   design-direction
+  prototype
   design-foundations
   tokens
   components
@@ -82,13 +83,13 @@ for s in "${REMOVED_ALIASES[@]}"; do
 done
 
 skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')
-[ "$skill_entry_count" -eq 31 ] && ok "31 canonical skills only" || bad "expected 31 canonical skill entries, found $skill_entry_count"
+[ "$skill_entry_count" -eq 32 ] && ok "32 canonical skills only" || bad "expected 32 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.2.1" and (.skills | length == 31)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.2.1 registers exactly 31 skills"
+  if jq -e '.version == "2.3.0" and (.skills | length == 32)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.3.0 registers exactly 32 skills"
   else
-    bad "plugin must be v2.2.1 with exactly 31 skills"
+    bad "plugin must be v2.3.0 with exactly 32 skills"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
@@ -197,7 +198,9 @@ echo "== references map =="
 [ -f "$ROOT/evals/design-foundations.md" ] && ok "evals/design-foundations.md (E28)" || bad "evals/design-foundations.md"
 [ -f "$ROOT/evals/components.md" ] && ok "evals/components.md (E29)" || bad "evals/components.md"
 [ -f "$ROOT/evals/anti-slop-code.md" ] && ok "evals/anti-slop-code.md (E30)" || bad "evals/anti-slop-code.md"
+[ -f "$ROOT/evals/prototype.md" ] && ok "evals/prototype.md (E31)" || bad "evals/prototype.md"
 [ -f "$ROOT/references/anti-slop-code.md" ] && ok "references/anti-slop-code.md" || bad "references/anti-slop-code.md"
+[ -f "$ROOT/references/prototype.md" ] && ok "references/prototype.md" || bad "references/prototype.md"
 [ -f "$ROOT/references/landing-sections.md" ] && ok "landing-sections.md" || bad "landing-sections.md"
 for f in evidence-policy design-typography design-color design-surfaces content-design; do
   [ -f "$ROOT/references/$f.md" ] && ok "$f.md" || bad "references/$f.md"

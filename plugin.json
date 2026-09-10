@@ -1,10 +1,11 @@
 {
   "name": "frontend-expert",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Evidence-led frontend UI quality — judgment, foundations, tokens, typography, color, surfaces, content, responsive, motion, a11y, performance, and testing.",
   "skills": [
     "skills/frontend-expert",
     "skills/design-direction",
+    "skills/prototype",
     "skills/design-foundations",
     "skills/tokens",
     "skills/design-typography",

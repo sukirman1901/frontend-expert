@@ -23,6 +23,7 @@ Default quality-loop cap in this pack: **3** audit→fix cycles (`quality-loop` 
 |---|--------|-----|-----------------|
 | 1 | **Pahami** | Job user, constraint, existing UI vs greenfield | Chat; read `DESIGN_MEMORY.md` if present |
 | 2 | **Putuskan** | 2–3 approaches on **distinct axes**; wait for pick | `design-direction` |
+| — | **Prototype** | Render those axes side by side; stress loading/error/empty/overflow | `prototype` (skip if direction locked) |
 | 3 | **Sistem** | For layout work, set structural relationships first; then walk the token decision tree and add typography, color, surface, and content owners only when relevant | `design-foundations`? → `tokens` (+ `design-typography` / `design-color` / `design-surfaces` / `content-design`) |
 | 4 | **Bangun** | Composition, loading/empty/error; icons via Reicon; shell/data/forms when needed; generated-code scan | `components` (+ `app-shell` / `data-fetching` / `forms`) → `anti-slop-code` |
 | — | **Responsive** | All devices 320→1440 — **MUST** | `responsive` |
@@ -47,7 +48,8 @@ One-shot build (`/ui` or “bikin halaman”): stages **1→6** (judgment only i
 
 | User intent | Path |
 |-------------|------|
-| New / vague UI | Judgment → build chain (1→6) |
+| New / vague UI | Judgment → (+ `prototype` if they need to see it) → build chain (1→6) |
+| Bandingkan arah / cek semua state | `prototype` |
 | Tiny clear fix | Skip judgment → touch only what’s needed |
 | Layout berantakan / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
 | Rapikan kode / kode terasa AI | `anti-slop-code` |

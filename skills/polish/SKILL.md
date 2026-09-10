@@ -23,6 +23,7 @@ After tokens, structure, and anti-slop, apply micro-craft so the UI feels right 
 ## When to skip
 
 - Structural grid/spacing/hierarchy → `design-foundations`
+- Comparing rendered directions / stressing all states → `prototype`
 - Nested radius / elevation language → `design-surfaces`
 - Type roles, wrapping, truncation → `design-typography`
 - Conformance (contrast, names, keyboard) → `accessibility`
@@ -80,5 +81,5 @@ Exceptions: pills/circles, dense toolbars (disable press-scale), reduced motion,
 
 ## Depth
 
-Full examples: `references/polish.md`.  
+Full examples: `references/polish.md`.
 Related: `design-surfaces`, `design-foundations`, `design-typography`, `motion`, `accessibility`, `references/evidence-policy.md`.

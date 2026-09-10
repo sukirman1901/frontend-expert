@@ -2,6 +2,19 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.3.0] — 2026-09-10
+
+### Added
+
+- `prototype` — rendered 2–3 axis variants side by side, then state stress before the production build
+- Reference `references/prototype.md` and behavioral eval E31
+- Frame-by-frame motion inspection stays deferred (`motion-inspection`)
+
+### Changed
+
+- Canonical skill count is 32
+- `design-direction` hands coded comparison to `prototype`; it stays prose axes only
+
 ## [2.2.1] — 2026-09-10
 
 ### Changed

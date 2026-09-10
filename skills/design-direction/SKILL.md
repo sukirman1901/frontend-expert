@@ -57,7 +57,8 @@ Ask only what changes the design. Prefer multiple choice. Do **not** run a full 
 | Pain (redesign) | Cluttered · Unclear hierarchy · Weak mobile · Outdated |
 | Inspiration | Linear density · Stripe clarity · Notion flexibility · Apple space |
 
-Skip questions you can infer from the repo or `DESIGN_MEMORY.md`.
+- Skip questions you can infer from the repo or `DESIGN_MEMORY.md`.
+- Coded side-by-side comparison is `prototype`, not this skill. Do **not** emit five full coded variants here.
 
 ### 2. Offer 2–3 approaches on **distinct axes**
 
@@ -95,7 +96,7 @@ After direction is set:
    - Skim 2–3 existing buttons, cards, forms for padding, radius, shadow, type
    - Do **not** invent a parallel visual language
 2. **Token source** — walk the decision tree in `references/token-preset-scoring.md` (custom → explicit → Plasma hard-gate → score). Judgment sets axes/signals; it does **not** pick a preset by vibe. Include Token score / hard-gate / project system in the handoff.
-3. Load: `tokens` → (+ shell/data/forms) → `components` → **`responsive`** → **`motion`** (light) → `anti-slop-design` → `polish` → `accessibility` (+ `testing` / `seo` if in scope)
+3. Load: (+ **`prototype`** if they asked to see options or stress states) → `tokens` → (+ shell/data/forms) → `components` → **`responsive`** → **`motion`** (light) → `anti-slop-design` → `polish` → `accessibility` (+ `testing` / `seo` if in scope)
 
 Optional short handoff note (when exploration was non-trivial):
 
@@ -155,7 +156,7 @@ When stuck between options, prefer the one that is: **clear · fast · consisten
 
 - Block on slash commands
 - Ask more than 2 questions up front
-- Offer 5+ options or five full coded variants by default
+- Offer 5+ options or five full coded variants by default (coded comparison is `prototype`, cap 2–3)
 - Start a temporary design-lab route unless the user explicitly asks to explore in-browser
 - Start coding blank-canvas UI before a direction is set (unless skip rules apply)
 
@@ -184,9 +185,9 @@ Pick A/B/C (or say “go with recommended”).
 
 ## Depth
 
-Lifecycle A→Z: `references/fe-lifecycle.md`.  
-Axes + memory convention: `references/design-axes.md`.  
-Token preset scoring: `references/token-preset-scoring.md`.  
-UX/UI theory + color for products: `references/ux-foundations.md` (wire hierarchy/type here into ship gates above).  
-Anti-patterns: `anti-slop-design` + `references/anti-patterns.md`.  
+Lifecycle A→Z: `references/fe-lifecycle.md`.
+Axes + memory convention: `references/design-axes.md`.
+Token preset scoring: `references/token-preset-scoring.md`.
+UX/UI theory + color for products: `references/ux-foundations.md` (wire hierarchy/type here into ship gates above).
+Anti-patterns: `anti-slop-design` + `references/anti-patterns.md`.
 Domain how-to stays in the other skills.

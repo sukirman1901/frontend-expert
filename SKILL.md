@@ -1,7 +1,7 @@
 ---
 name: frontend-expert
 description: >-
-  Chat-first frontend UI quality suite — 31 skills across UI Quality, Responsive,
+  Chat-first frontend UI quality suite — 32 skills across UI Quality, Responsive,
   Ship FE, and Depth pillars. Token decision tree, compliance gates, anti-AI-slop,
   motion vocabulary (12 families), marketing landing recipes, and quality loop.
   Auto-loads on any UI/build/audit/polish request — no slash commands needed.
@@ -13,19 +13,19 @@ description: >-
 
 ## What this pack does
 
-This is **not** a single skill — it's a **suite of 31 skills** organized into pillars that auto-load based on what you ask. You never need to type a slash command; just describe what you want to build or fix.
+This is **not** a single skill — it's a **suite of 32 skills** organized into pillars that auto-load based on what you ask. You never need to type a slash command; just describe what you want to build or fix.
 
 ## Start here
 
 - **`frontend-expert`** — use when you are unsure which skill owns the problem.
-- **`design-direction`** — use when a new or ambiguous surface needs a direction.
+- **`design-direction`** — use when a new or ambiguous surface needs a direction. **`prototype`** if they need those options **on screen** or a state stress pass.
 - **`quality-loop`** — use when an existing interface works and needs evidence-backed refinement before shipping.
 
 ## Pillars
 
 | Pillar | Skills | When it loads |
 |--------|--------|---------------|
-| **UI Quality** | judgment, foundations, tokens, typography, color, surfaces, content, components, anti-slop, polish, a11y, testing, quality-loop, motion, webgl, monitoring, marketing, fidelity, devtools | Any UI build, audit, or polish |
+| **UI Quality** | judgment, prototype, foundations, tokens, typography, color, surfaces, content, components, anti-slop, polish, a11y, testing, quality-loop, motion, webgl, monitoring, marketing, fidelity, devtools | Any UI build, audit, or polish |
 | **Responsive** (MUST) | responsive | Every layout — 320/768/1024/1440 verified |
 | **Ship FE** | app-shell, data-fetching, forms | Shell/nav, API data, forms |
 | **Depth** | architecture, seo | Folder structure, meta/OG/SEO |
@@ -36,7 +36,7 @@ Full pillar map: `docs/pillars.md`.
 
 1. **You ask** — "bikin dashboard", "landing page", "rapihin UI", "audit design"
 2. **Intent map** matches your request → loads the right skills in order
-3. **Skills chain** — design-direction → design-foundations → tokens → components → anti-slop-code → responsive → motion → anti-slop-design → polish → accessibility
+3. **Skills chain** — design-direction → prototype? → design-foundations → tokens → components → anti-slop-code → responsive → motion → anti-slop-design → polish → accessibility
 4. **Compliance gates** — before shipping, a conventions check verifies tokens, icons, responsive, hierarchy, typography, motion, shell, landing, a11y, and states
 
 See `AGENTS.md` for the full intent map.

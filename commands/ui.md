@@ -10,26 +10,28 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 ## Skills to load (in order)
 
 1. `design-direction` — non-trivial / blank-canvas only (see skip rules)
-2. `design-foundations` — structural layout (grid, spacing, alignment, density); skip isolated color/type/motion/polish
-3. `tokens` — decision tree: custom → explicit → Plasma hard-gate → score
-4. `design-typography` / `design-color` / `design-surfaces` / `content-design` — only when their domain is in scope
-5. `marketing` — **if** marketing homepage / landing section stack (hand-roll; not registry)
-6. `app-shell` — **if** shell / nav / multi-route
-7. `data-fetching` — **if** remote/async data
-8. `forms` — **if** forms / wizards
-9. `components` — implement with states
-10. `anti-slop-code` — generated implementation tells (not a visual restyle)
-11. `responsive` — **MUST** for layout (320–1440)
-12. `motion` — light shell defaults; marketing → families/patterns from `motion-families.md` (**hand-roll**)
-13. `anti-slop-design` — scan before done (includes decorative motion spam / hero-only landing)
-14. `polish` — micro craft
-15. `accessibility` — light pass
-16. `seo` / `webgl` — **only if** in scope
+2. `prototype` — **if** comparing rendered directions or stressing states (not every `/ui`)
+3. `design-foundations` — structural layout (grid, spacing, alignment, density); skip isolated color/type/motion/polish
+4. `tokens` — decision tree: custom → explicit → Plasma hard-gate → score
+5. `design-typography` / `design-color` / `design-surfaces` / `content-design` — only when their domain is in scope
+6. `marketing` — **if** marketing homepage / landing section stack (hand-roll; not registry)
+7. `app-shell` — **if** shell / nav / multi-route
+8. `data-fetching` — **if** remote/async data
+9. `forms` — **if** forms / wizards
+10. `components` — implement with states
+11. `anti-slop-code` — generated implementation tells (not a visual restyle)
+12. `responsive` — **MUST** for layout (320–1440)
+13. `motion` — light shell defaults; marketing → families/patterns from `motion-families.md` (**hand-roll**)
+14. `anti-slop-design` — scan before done (includes decorative motion spam / hero-only landing)
+15. `polish` — micro craft
+16. `accessibility` — light pass
+17. `seo` / `webgl` — **only if** in scope
 
 ## What It Does
 
 1. Selects tokens via decision tree (custom → explicit → Plasma hard-gate → score)
-2. Structures layout via `design-foundations` (relationships before values)
+2. Optionally renders 2–3 axis variants via `prototype` when comparing or stressing states
+3. Structures layout via `design-foundations` (relationships before values)
 3. Builds marketing section stack **or** shell/data/forms when needed, then components
 4. **Responsive all devices** — `responsive`
 5. **Ships Reicon icons** unless waiver

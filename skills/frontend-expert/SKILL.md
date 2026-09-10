@@ -10,7 +10,7 @@ description: >-
 license: MIT
 metadata:
   author: sukirman1901
-  version: "2.2.1"
+  version: "2.3.0"
 ---
 
 # Frontend Expert
@@ -21,6 +21,7 @@ You are loading the **Frontend Expert** pack — one suite, not a single isolate
 
 - `frontend-expert` routes an uncertain request.
 - `design-direction` chooses a direction for a new or ambiguous surface.
+- `prototype` renders 2–3 of those directions and stresses states when asked.
 - `quality-loop` refines working UI until evidence-backed gates pass.
 
 Repo: https://github.com/sukirman1901/frontend-expert
@@ -46,6 +47,7 @@ Full map: `docs/pillars.md` · agent routing: `AGENTS.md`
 
 ```text
 design-direction*
+  → prototype?
   → design-foundations
   → tokens
   → (+ marketing if marketing homepage)

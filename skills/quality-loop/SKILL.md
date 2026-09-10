@@ -80,7 +80,7 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 ### Round 0 — Direction + build
 
 1. Load `design-direction` if non-trivial / blank-canvas
-2. After direction: `tokens` → (+ `marketing` if landing) → (+ `app-shell` / `data-fetching` / `forms` if needed) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` / `seo` if needed)
+2. After direction: (+ `prototype` if comparing/stressing) → `tokens` → (+ `marketing` if landing) → (+ `app-shell` / `data-fetching` / `forms` if needed) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` / `seo` if needed)
 3. Produce UI + **Conventions check** (`references/compliance-gates.md`)
 
 ### Each cycle — Prove + audit + fix

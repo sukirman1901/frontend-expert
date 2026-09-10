@@ -9,6 +9,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | Reference | Skill | Used by |
 |-----------|-------|---------|
 | `design-axes.md` | `design-direction` | Axes, inspiration, style inference |
+| `prototype.md` | `prototype` | Rendered variants, state stress |
 | `design-foundations.md` | `design-foundations` | Grid, spacing rhythm, alignment, density, composition |
 | `ux-foundations.md` | `design-direction`, `tokens`, `accessibility` | Nielsen/Gestalt, color |
 | `fe-lifecycle.md` | `quality-loop`, `design-direction` | A→Z FE process |
@@ -49,7 +50,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 ## Evals
 
-[`evals/`](../evals/) — E1–E30 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations, component API, generated-code slop).
+[`evals/`](../evals/) — E1–E31 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations, component API, generated-code slop, prototype).
 
 ## Missing on purpose
 

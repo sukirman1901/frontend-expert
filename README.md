@@ -141,7 +141,7 @@ Domain skills auto-load from natural language; slash commands remain optional ad
 
 ---
 
-## Skills (31)
+## Skills (32)
 
 Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 
@@ -149,6 +149,7 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 |-------|--------|----------|
 | `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
 | `design-direction` | UI Quality | Blank-canvas — axes + options before code |
+| `prototype` | UI Quality | Rendered 2–3 variants + state stress |
 | `design-foundations` | UI Quality | Grid, spacing rhythm, alignment, density, composition |
 | `tokens` | UI Quality | Scoring + applying theme CSS |
 | `design-typography` | UI Quality | Fonts, type roles/scales, wrapping, truncation |
@@ -297,7 +298,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 31 skills: suite root + domain — see docs/pillars.md
+├── skills/                 # 32 skills: suite root + domain — see docs/pillars.md
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
 ├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)

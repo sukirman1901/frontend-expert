@@ -7,20 +7,21 @@ Invoke the ui-developer agent.
 ## Skills to load (in order)
 
 1. `design-direction` — non-trivial / blank-canvas only (see skip rules)
-2. `design-foundations` — structural layout (grid, spacing, alignment, density); skip isolated color/type/motion/polish
-3. `tokens`
-4. `marketing` — if marketing homepage / landing (hand-roll section stack)
-5. `app-shell` — if shell / routing / dashboard / settings
-6. `data-fetching` — if async API UI
-7. `forms` — if forms
-8. `components`
-9. `anti-slop-code` — generated implementation tells (preserve UI)
-10. `responsive` — MUST for layout (all devices; drawer+backdrop)
-11. `motion` — light shell defaults; marketing → families/patterns (`motion-families.md`) hand-roll
-12. `anti-slop-design`
-13. `polish`
-14. `accessibility` (light pass)
-15. `seo` / `webgl` — only if in scope
+2. `prototype` — if comparing rendered directions or stressing states
+3. `design-foundations` — structural layout (grid, spacing, alignment, density); skip isolated color/type/motion/polish
+4. `tokens`
+5. `marketing` — if marketing homepage / landing (hand-roll section stack)
+6. `app-shell` — if shell / routing / dashboard / settings
+7. `data-fetching` — if async API UI
+8. `forms` — if forms
+9. `components`
+10. `anti-slop-code` — generated implementation tells (preserve UI)
+11. `responsive` — MUST for layout (all devices; drawer+backdrop)
+12. `motion` — light shell defaults; marketing → families/patterns (`motion-families.md`) hand-roll
+13. `anti-slop-design`
+14. `polish`
+15. `accessibility` (light pass)
+16. `seo` / `webgl` — only if in scope
 
 ## Modes
 

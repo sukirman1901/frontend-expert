@@ -16,7 +16,7 @@ Pillar map: `docs/pillars.md`.
 
 | User says / means | Load skills (order) | Optional shortcut |
 |-------------------|---------------------|-------------------|
-| Build/change UI, page, component, layout, styling | `design-direction`* → **`design-foundations`**** → `tokens` → (+ **`marketing`** if landing) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell defaults) → `anti-slop-design` → `polish` → `accessibility` | `/ui` |
+| Build/change UI, page, component, layout, styling | `design-direction`* → (+ **`prototype`** if comparing/stressing) → **`design-foundations`**** → `tokens` → (+ **`marketing`** if landing) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell defaults) → `anti-slop-design` → `polish` → `accessibility` | `/ui` |
 | + form / validasi / wizard | … + `forms` (before or with components) | `/ui` |
 | + list/detail API / loading data | … + `data-fetching` | `/ui` |
 | + app shell / sidebar / routing / 404 | … + `app-shell` | `/ui` |
@@ -35,6 +35,7 @@ Pillar map: `docs/pillars.md`.
 | Palette / OKLCH / dark mode / contrast / gamut | `tokens` → `design-color` → `accessibility` | — |
 | Card / modal / radius / border / shadow / elevation | `tokens` → `design-surfaces` → `polish` | — |
 | Component props / API / “prop terlalu banyak” / composition | `components` | `/ui` |
+| Prototype / varian / side-by-side / bandingkan arah / cek semua state | `design-direction` (if axes unnamed) → **`prototype`** — then foundations → tokens → components | `/ui` |
 | Kode terasa AI / rapikan kode / dampak ke modul lain / error handling generik / edge case | `anti-slop-code` (not `anti-slop-design`, not `polish`) | `/ui` |
 | UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms` / `marketing` as relevant) | — |
 | Figma Auto Layout / Fill / Hug / layout from Figma | `responsive` (Auto Layout ↔ CSS) → `components` | `/ui` |
@@ -50,6 +51,7 @@ Pillar map: `docs/pillars.md`.
 
 \* `design-direction` for non-trivial / blank-canvas only — see skip rules.
 \*\* `design-foundations` for new layouts and structural redesigns. Skip isolated color, typography, copy, token, component-state, motion, and micro-polish changes.
+`prototype` when the user wants rendered comparison or state stress — not on every tiny `/ui`.
 
 **“Rapihin”:** alone on existing UI → `polish`. Vague *new* UI → judgment. “Rapikan struktur” / layout berantakan → `design-foundations`. “Rapikan kode” / kode terasa AI → `anti-slop-code`. “Sampai bagus” → `quality-loop`.
 
@@ -68,6 +70,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 |-------|--------|----------|
 | `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
 | `design-direction` | UI Quality | Blank-canvas / ambiguous UI |
+| `prototype` | UI Quality | Rendered variants + state stress |
 | `design-foundations` | UI Quality | Grid, spacing rhythm, alignment, density, composition |
 | `tokens` | UI Quality | Theme — decision tree + scoring |
 | `components` | UI Quality | Components, states, composition, public props/API |

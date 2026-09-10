@@ -11,7 +11,7 @@ How the pieces of **Frontend Expert** fit together.
 │          design-reviewer,                                │
 │          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
-│  Skills (31) — suite pillars        ← HOW                │
+│  Skills (32) — suite pillars        ← HOW                │
 │  UI Quality · Responsive MUST · Ship FE · Depth          │
 ├──────────────────────────────────────────────────────────┤
 │  References + tokens/               ← DEPTH              │
@@ -37,7 +37,7 @@ Pillar map: [pillars.md](./pillars.md).
 
 | Command | Agent | Skills (order) |
 |---------|-------|----------------|
-| `/ui` (or chat) | `ui-developer` | judgment* → **foundations** → tokens → (+ **marketing** if marketing) → (+ shell/data/forms) → components → **anti-slop-code** → **responsive** → **motion** (light shell / `motion-families` hand-roll) → anti-slop-design → polish → accessibility |
+| `/ui` (or chat) | `ui-developer` | judgment* → **prototype?** → **foundations** → tokens → (+ **marketing** if marketing) → (+ shell/data/forms) → components → **anti-slop-code** → **responsive** → **motion** (light shell / `motion-families` hand-roll) → anti-slop-design → polish → accessibility |
 | `/design` or `/audit` | `design-reviewer` | anti-slop-design → polish → tokens → responsive → accessibility → performance → **motion** (if animated) → **marketing** (if landing) (+ **fidelity** if mock; **devtools** if measuring) |
 | `/test-ui` (or chat) | `test-engineer` | testing → components → accessibility (+ **devtools** when tooling evidence needed) |
 | `/polish` (or chat) | loop controller | `quality-loop` until gates pass |
