@@ -131,7 +131,17 @@ Auto intent map (no slash): [AGENTS.md](AGENTS.md) · layers: [docs/pack-layers.
 
 ---
 
-## Skills (25)
+## Start here
+
+- **`frontend-expert`** — when you are unsure which skill owns the problem
+- **`frontend-judgment`** — when designing a new or ambiguous surface
+- **`ui-quality-loop`** — when working UI needs an evidence-backed final pass
+
+Domain skills auto-load from natural language; slash commands remain optional adapters.
+
+---
+
+## Skills (29)
 
 Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 
@@ -140,11 +150,15 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 | `frontend-expert` | Suite root | Catalog / install entry — routes into pillars |
 | `frontend-judgment` | UI Quality | Blank-canvas — axes + options before code |
 | `design-tokens` | UI Quality | Scoring + applying theme CSS |
+| `design-typography` | UI Quality | Fonts, type roles/scales, wrapping, truncation |
+| `design-color` | UI Quality | Palette, OKLCH, themes, contrast, gamut |
+| `design-surfaces` | UI Quality | Radius, borders, elevation, shadows, overlays |
+| `content-design` | UI Quality | UI copy, errors, empty states, voice |
 | `ui-components` | UI Quality | Components, states — **Reicon**; custom selects |
 | `responsive-ui` | Responsive MUST | All devices 320–1440+ |
 | `anti-ai-slop` | UI Quality | AI aesthetic patterns |
 | `ui-feel` | UI Quality | Micro craft (“feels off”) |
-| `accessibility` | UI Quality | WCAG 2.1 AA |
+| `accessibility` | UI Quality | WCAG 2.2 AA by default; project/legal target may differ |
 | `web-performance` | UI Quality | Core Web Vitals |
 | `motion` | UI Quality | Shell defaults + family/pattern vocabulary (hand-roll) |
 | `frontend-testing` | UI Quality | Component tests / TDD |
@@ -277,7 +291,7 @@ Agents are **personas + output format**. They load **skills** for how-to; they d
 
 ```
 frontend-expert/
-├── skills/                 # 25 skills: suite root + domain (incl. vocabulary + writing) — see docs/pillars.md
+├── skills/                 # 29 skills: suite root + domain — see docs/pillars.md
 ├── agents/                 # ui-developer · design-reviewer · test-engineer
 ├── tokens/                 # 9 CSS presets + README
 ├── references/             # Deep guides (incl. compliance-gates, fe-lifecycle)

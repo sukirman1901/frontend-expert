@@ -32,6 +32,10 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E21 | Frontend testing + DevTools | [frontend-testing-devtools.md](./frontend-testing-devtools.md) |
 | E22 | Shell chrome: theme, avatar menu, custom select | [frontend-shell-chrome.md](./frontend-shell-chrome.md) |
 | E23 | Marketing landing section stack | [marketing-landing.md](./marketing-landing.md) |
+| E24 | Design typography | [design-typography.md](./design-typography.md) |
+| E25 | Design color | [design-color.md](./design-color.md) |
+| E26 | Design surfaces | [design-surfaces.md](./design-surfaces.md) |
+| E27 | Content design | [content-design.md](./content-design.md) |
 
 ## How to run
 

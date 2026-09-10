@@ -59,6 +59,16 @@ for s in "${EXPECTED_SKILLS[@]}"; do
   fi
 done
 
+if command -v jq >/dev/null 2>&1; then
+  for s in "${EXPECTED_SKILLS[@]}"; do
+    if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
+      ok "plugin registers skills/$s"
+    else
+      bad "plugin missing skills/$s"
+    fi
+  done
+fi
+
 if [ -d "$ROOT/skills/using-frontend-expert" ]; then
   bad "legacy using-frontend-expert folder still present"
 else

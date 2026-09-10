@@ -1,11 +1,15 @@
 {
   "name": "frontend-expert",
-  "version": "1.1.0",
-  "description": "Chat-first frontend UI quality — judgment, tokens, responsive, motion, marketing landing, anti-AI-slop, a11y, perf, testing, vocabulary.",
+  "version": "1.2.0",
+  "description": "Evidence-led frontend UI quality — judgment, tokens, typography, color, surfaces, content, responsive, motion, a11y, performance, and testing.",
   "skills": [
     "skills/frontend-expert",
     "skills/frontend-judgment",
     "skills/design-tokens",
+    "skills/design-typography",
+    "skills/design-color",
+    "skills/design-surfaces",
+    "skills/content-design",
     "skills/ui-components",
     "skills/responsive-ui",
     "skills/anti-ai-slop",

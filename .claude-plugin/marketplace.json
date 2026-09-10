@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "frontend-expert",
-  "description": "Chat-first frontend UI quality for AI agents — judgment, tokens, anti-slop, a11y, perf, testing.",
+  "description": "Evidence-led frontend UI quality for AI agents — design foundations, responsive, accessibility, performance, and testing.",
   "owner": {
     "name": "sukirman1901",
     "url": "https://github.com/sukirman1901"

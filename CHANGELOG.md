@@ -2,6 +2,23 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [1.2.0] — 2026-09-10
+
+### Added
+- `design-typography`, `design-color`, `design-surfaces`, and `content-design`
+- Evidence classification policy, source ledger, provenance format, and third-party notices
+- Behavioral evals E24–E27
+
+### Changed
+- Added three-entry “Start here” guidance without breaking existing skill identifiers
+- Accessibility defaults to WCAG 2.2 AA while honoring explicit project/legal targets
+- Monitoring examples use INP instead of retired FID and avoid raw user email examples
+- Pack documentation and plugin registration now reflect 29 skills
+
+### Compatibility
+- Existing skill folders and slash commands remain unchanged
+- Numeric craft recipes are labeled recommendations or heuristics unless a standard/project owns them
+
 ## [1.1.0] — 2026-07-31
 
 ### Added

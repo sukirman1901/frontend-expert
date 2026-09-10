@@ -80,11 +80,7 @@ Sentry.addBreadcrumb({
 
 ```tsx
 // Set user info
-Sentry.setUser({
-  id: '123',
-  email: 'user@example.com',
-  username: 'johndoe',
-})
+Sentry.setUser({ id: stablePseudonymousId })
 
 // Set tags
 Sentry.setTag('plan', 'pro')
@@ -102,7 +98,7 @@ Sentry.setContext('subscription', {
 ### Web Vitals (Core Web Vitals)
 
 ```tsx
-import { onLCP, onFID, onCLS, onFCP, onTTFB } from 'web-vitals'
+import { onLCP, onINP, onCLS, onFCP, onTTFB } from 'web-vitals'
 
 function sendToAnalytics(metric) {
   console.log(metric)
@@ -114,7 +110,7 @@ function sendToAnalytics(metric) {
 }
 
 onLCP(sendToAnalytics)  // Largest Contentful Paint
-onFID(sendToAnalytics)  // First Input Delay
+onINP(sendToAnalytics)  // Interaction to Next Paint
 onCLS(sendToAnalytics)  // Cumulative Layout Shift
 onFCP(sendToAnalytics)  // First Contentful Paint
 onTTFB(sendToAnalytics) // Time to First Byte

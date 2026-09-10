@@ -17,6 +17,12 @@ metadata:
 
 You are loading the **Frontend Expert** pack — one suite, not a single isolated tip sheet.
 
+## Start here
+
+- `frontend-expert` routes an uncertain request.
+- `frontend-judgment` chooses a direction for a new or ambiguous surface.
+- `ui-quality-loop` refines working UI until evidence-backed gates pass.
+
 Repo: https://github.com/sukirman1901/frontend-expert  
 Install: `./scripts/install.sh cursor-user` (or Claude plugin / skills path)
 

@@ -1,4 +1,6 @@
-# Accessibility Checklist (WCAG 2.1 AA)
+# Accessibility Checklist (WCAG 2.2 AA default)
+
+Record the project/legal conformance target. W3C encourages the latest WCAG version; a project pinned to 2.1 may retain that reporting target while adopting compatible 2.2 safeguards.
 
 Every component must meet these standards. This checklist covers the most common accessibility requirements for web applications.
 
@@ -417,7 +419,12 @@ Before considering UI complete:
 
 - [ ] All interactive elements are keyboard accessible
 - [ ] All form inputs have visible labels
-- [ ] Color contrast meets WCAG 2.1 AA requirements
+- [ ] Color contrast meets the declared WCAG AA target
+- [ ] Focus is not obscured by author-created content (2.4.11)
+- [ ] Dragging has a non-drag alternative when required (2.5.7)
+- [ ] Target size meets the declared 2.5.8 requirement or documented exception
+- [ ] Previously entered information is not requested redundantly (3.3.7)
+- [ ] Authentication has an accessible alternative to cognitive-function tests (3.3.8)
 - [ ] Headings follow sequential hierarchy
 - [ ] Landmark regions are properly used
 - [ ] Images have appropriate alt text

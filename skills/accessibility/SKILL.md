@@ -1,7 +1,7 @@
 ---
 name: accessibility
 description: >-
-  Enforce WCAG 2.1 AA (keyboard, ARIA, focus, contrast, semantic HTML). Use for
+  Enforce WCAG 2.2 AA by default (keyboard, ARIA, focus, contrast, semantics). Use for
   accessibility work, pre-ship UI checks, and as a light pass on every UI build
   or design review — including "a11y", "keyboard", "screen reader", or shipping
   user-facing changes, without requiring a slash command.
@@ -11,7 +11,7 @@ description: >-
 
 ## Overview
 
-Every user-facing UI must meet WCAG 2.1 AA. Keyboard, labels, contrast, and semantics are required — not optional polish.
+New user-facing UI targets WCAG 2.2 AA by default. Honor an explicit legal/project target such as WCAG 2.1, while documenting the target and preserving newer compatible safeguards where possible.
 
 ## When to Use
 
@@ -27,6 +27,9 @@ Every user-facing UI must meet WCAG 2.1 AA. Keyboard, labels, contrast, and sema
 - Logical focus order; visible focus indicators (`focus-visible` outline)
 - Focus trapped in modals; restore to trigger on close
 - Skip link to main content when long nav exists
+- Focus is not obscured by sticky/fixed UI
+- Pointer drag interactions have a non-drag alternative
+- Authentication does not require cognitive-function tests without an accessible alternative
 
 **Recipe — focus trap (vanilla):**
 ```js

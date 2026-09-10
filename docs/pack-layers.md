@@ -11,7 +11,7 @@ How the pieces of **Frontend Expert** fit together.
 │          design-reviewer,                                │
 │          test-engineer)                                  │
 ├──────────────────────────────────────────────────────────┤
-│  Skills (22) — suite pillars        ← HOW                │
+│  Skills (29) — suite pillars        ← HOW                │
 │  UI Quality · Responsive MUST · Ship FE · Depth          │
 ├──────────────────────────────────────────────────────────┤
 │  References + tokens/               ← DEPTH              │
@@ -31,6 +31,7 @@ Pillar map: [pillars.md](./pillars.md).
 5. **References deepen skills** — depth stays in `references/`.
 6. **Hooks** — Claude Code session reminder + anti-slop scan.
 7. **Responsive MUST** on layout UI — skill `responsive-ui` + Conventions line.
+8. **Evidence before taste** — standards, project defaults, enterprise patterns, recommendations, heuristics, and inspiration remain distinct.
 
 ## Agent ↔ command ↔ skills
 

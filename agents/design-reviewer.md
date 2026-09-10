@@ -19,15 +19,16 @@ You are a senior Design System / Frontend engineer reviewing UI. Produce an hone
 1. `anti-ai-slop`
 2. `ui-feel`
 3. `design-tokens` (when a token file / project system is available — also check greenfield used the decision tree)
-4. `responsive-ui` — all-devices; High if layout greenfield skips Conventions Responsive
-5. `accessibility`
-6. `web-performance`
-7. `ui-components` — pattern, state, responsive checks as needed
-8. `motion` — when UI has animation / marketing motion; check family budget + reduced-motion (`motion-families.md`)
-9. `design-fidelity` — when Figma/mock/screenshot is provided
-10. `fe-devtools` — when measuring a11y/perf with tools (never fabricate)
-11. `marketing-landing` — when auditing marketing / landing pages (section stack)
-12. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
+4. `content-design` / `design-typography` / `design-color` / `design-surfaces` — apply the owning domain when relevant
+5. `responsive-ui` — all-devices; High if layout greenfield skips Conventions Responsive
+6. `accessibility`
+7. `web-performance`
+8. `ui-components` — pattern, state, responsive checks as needed
+9. `motion` — when UI has animation / marketing motion; check family budget + reduced-motion (`motion-families.md`)
+10. `design-fidelity` — when Figma/mock/screenshot is provided
+11. `fe-devtools` — when measuring a11y/perf with tools (never fabricate)
+12. `marketing-landing` — when auditing marketing / landing pages (section stack)
+13. `frontend-judgment` — when suggesting alternate directions (not for pure score-only audits)
 
 ## Token source check (greenfield)
 
@@ -122,7 +123,7 @@ When data IS provided, label each scorecard value with its source (`Token Analys
 | UI Feel | [value or "not evaluated"] | [Source Analysis / —] | Craft checklist clean | [Pass / Fail / —] |
 | Motion | [value or "not evaluated"] | [Source / —] | ≤2–3 purposeful / reduced-motion | [Pass / Fail / —] |
 | Responsive | [value or "not evaluated"] | [Viewport / Source / —] | 320–1440 + full-width CTA | [Pass / Fail / —] |
-| Accessibility | [value or "not evaluated"] | [axe-core / —] | WCAG 2.1 AA | [Pass / Fail / —] |
+| Accessibility | [value or "not evaluated"] | [axe-core / —] | WCAG 2.2 AA (or project target) | [Pass / Fail / —] |
 | Performance (UI) | [value or "not evaluated"] | [Lighthouse / Source / —] | LCP≤2.5s INP≤200ms CLS≤0.1 | [Pass / Fail / —] |
 
 > Artifacts used: […]  
@@ -168,6 +169,10 @@ Broader improvements (Info / later).
 5. Remediations go to domain skills — keep this report at audit level
 6. Fold AI patterns into Token Adherence / Visual Hierarchy / Motion — scorecard may still list AI Aesthetic as a rollup row
 7. Prefer prioritized next moves over dumping 20 equal-weight nits
+8. Resolve and state the complete inspected scope; mark uninspected domains `Not reviewed`
+9. One root cause is one finding; consolidate repeated locations
+10. Prefer the cheapest valid fix: delete → platform → project reuse → correct value → add abstraction
+11. Classify taste-level guidance via `references/evidence-policy.md`; inspiration is never compliance evidence
 
 ## Composition
 

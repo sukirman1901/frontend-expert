@@ -30,6 +30,10 @@ Pillar map: `docs/pillars.md`.
 | Lighthouse / axe / DevTools / measured audit | `fe-devtools` → `accessibility` → `web-performance` → `frontend-testing` | `/test-ui` or `/design` |
 | Hierarchy / visual hierarchy / primary CTA unclear | `frontend-judgment` (Hierarchy pass) → `anti-ai-slop` → `ui-feel` | `/design` |
 | Typography / type scale / multi-h1 / heading ladder | `frontend-judgment` (Typography ladder) → `ui-feel` → `anti-ai-slop` | `/design` |
+| Font choice / type scale / wrapping / truncation / variable fonts | `design-typography` → `responsive-ui` → `accessibility` | — |
+| Palette / OKLCH / dark mode / contrast / gamut | `design-tokens` → `design-color` → `accessibility` | — |
+| Card / modal / radius / border / shadow / elevation | `design-tokens` → `design-surfaces` → `ui-feel` | — |
+| UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms-validation` / `marketing-landing` as relevant) | — |
 | Figma Auto Layout / Fill / Hug / layout from Figma | `responsive-ui` (Auto Layout ↔ CSS) → `ui-components` | `/ui` |
 | Feels off / rapihin **detail** | `ui-feel` (+ `anti-ai-slop` if generik) — **one pass** | — |
 | Test / TDD / coverage | `frontend-testing` → `ui-components` → `accessibility` | `/test-ui` |
@@ -83,6 +87,10 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `design-vocabulary` | UI Quality | Reverse-lookup: loose description → design term |
 | `engineering-vocabulary` | Depth | Reverse-lookup: loose description → FE engineering term |
 | `writing-skills` | Suite root | Author new pack skills following conventions |
+| `design-typography` | UI Quality | Font choice, type roles/scales, wrapping, truncation, numerics, bidi |
+| `design-color` | UI Quality | Palette construction, OKLCH, themes, contrast, gamut |
+| `design-surfaces` | UI Quality | Radius, borders, elevation, shadows, overlays |
+| `content-design` | UI Quality | UI copy, recovery language, voice, localization readiness |
 
 ## Hard rules
 
@@ -103,5 +111,6 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 15. Blank-canvas → judgment first
 16. “Sampai bagus” → `ui-quality-loop` (cap 3)
 17. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**, **Landing**
+18. Evidence before taste — classify standards, project defaults, enterprise patterns, recommendations, heuristics, and inspiration (`evidence-policy.md`)
 
 Orchestration: session agent loads skills; agents do not call agents. See `docs/pack-layers.md`, `docs/pillars.md`.

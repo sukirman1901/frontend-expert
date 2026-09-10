@@ -105,7 +105,7 @@ Exploration axes (hierarchy / layout / density / interaction / expression): `des
 4. **States** — hover/focus/disabled via lightness or opacity on the same tokens  
 5. **Never color alone** — pair with icon/text for errors and status  
 
-### Contrast (WCAG 2.1 AA)
+### Contrast (declared WCAG AA target; WCAG 2.2 default)
 
 | Content | Minimum ratio |
 |---------|----------------|

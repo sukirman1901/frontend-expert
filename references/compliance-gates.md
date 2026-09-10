@@ -21,6 +21,7 @@ Report this block (fill every line):
 - Shell: <logo + utilities + theme-in-topbar? | avatar→menu | waiver>
 - Landing: <section stack | n/a app-shell | waiver: …>
 - Motion: <light shell | families: … | patterns: … | none (waiver)>
+- Design domains: <typography / color / surfaces / content applied as relevant | n/a>
 ```
 
 When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or `(hard-gate)` when those branches apply.
@@ -42,6 +43,7 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **WebGL / shader / plasma / canvas bg** | Load skill `webgl` → Plasma Studio / `Plasma.init` | User explicitly wants Three.js/R3F scene graph |
 | **Tokens** | Project system, else full tree: custom → explicit → Plasma hard-gate → score (`token-preset-scoring.md`) | Waiver only |
 | **Slop** | No purple/indigo defaults, no Lorem, no `transition: all` | Brand token already is purple (e.g. `plasma-landing`) |
+| **Evidence** | Project system and current standards precede pack recipes; label heuristics and inspiration | Explicit product requirement |
 
 ## Icon placement expectations
 

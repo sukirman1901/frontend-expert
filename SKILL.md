@@ -1,7 +1,7 @@
 ---
 name: frontend-expert
 description: >-
-  Chat-first frontend UI quality suite — 22 skills across UI Quality, Responsive,
+  Chat-first frontend UI quality suite — 29 skills across UI Quality, Responsive,
   Ship FE, and Depth pillars. Token decision tree, compliance gates, anti-AI-slop,
   motion vocabulary (12 families), marketing landing recipes, and quality loop.
   Auto-loads on any UI/build/audit/polish request — no slash commands needed.
@@ -13,13 +13,19 @@ description: >-
 
 ## What this pack does
 
-This is **not** a single skill — it's a **suite of 22 skills** organized into pillars that auto-load based on what you ask. You never need to type a slash command; just describe what you want to build or fix.
+This is **not** a single skill — it's a **suite of 29 skills** organized into pillars that auto-load based on what you ask. You never need to type a slash command; just describe what you want to build or fix.
+
+## Start here
+
+- **`frontend-expert`** — use when you are unsure which skill owns the problem.
+- **`frontend-judgment`** — use when a new or ambiguous surface needs a direction.
+- **`ui-quality-loop`** — use when an existing interface works and needs evidence-backed refinement before shipping.
 
 ## Pillars
 
 | Pillar | Skills | When it loads |
 |--------|--------|---------------|
-| **UI Quality** | judgment, tokens, components, anti-slop, ui-feel, a11y, testing, quality-loop, motion, webgl, monitoring, marketing-landing, design-fidelity, fe-devtools | Any UI build, audit, or polish |
+| **UI Quality** | judgment, tokens, typography, color, surfaces, content, components, anti-slop, ui-feel, a11y, testing, quality-loop, motion, webgl, monitoring, marketing-landing, fidelity, devtools | Any UI build, audit, or polish |
 | **Responsive** (MUST) | responsive-ui | Every layout — 320/768/1024/1440 verified |
 | **Ship FE** | app-shell-routing, data-fetching, forms-validation | Shell/nav, API data, forms |
 | **Depth** | fe-architecture, fe-seo | Folder structure, meta/OG/SEO |

@@ -11,17 +11,18 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 
 1. `frontend-judgment` — non-trivial / blank-canvas only (see skip rules)
 2. `design-tokens` — decision tree: custom → explicit → Plasma hard-gate → score
-3. `marketing-landing` — **if** marketing homepage / landing section stack (hand-roll; not registry)
-4. `app-shell-routing` — **if** shell / nav / multi-route
-5. `data-fetching` — **if** remote/async data
-6. `forms-validation` — **if** forms / wizards
-7. `ui-components` — implement with states
-8. `responsive-ui` — **MUST** for layout (320–1440)
-9. `motion` — light shell defaults; marketing → families/patterns from `motion-families.md` (**hand-roll**)
-10. `anti-ai-slop` — scan before done (includes decorative motion spam / hero-only landing)
-11. `ui-feel` — micro craft
-12. `accessibility` — light pass
-13. `fe-seo` / `webgl` — **only if** in scope
+3. `design-typography` / `design-color` / `design-surfaces` / `content-design` — only when their domain is in scope
+4. `marketing-landing` — **if** marketing homepage / landing section stack (hand-roll; not registry)
+5. `app-shell-routing` — **if** shell / nav / multi-route
+6. `data-fetching` — **if** remote/async data
+7. `forms-validation` — **if** forms / wizards
+8. `ui-components` — implement with states
+9. `responsive-ui` — **MUST** for layout (320–1440)
+10. `motion` — light shell defaults; marketing → families/patterns from `motion-families.md` (**hand-roll**)
+11. `anti-ai-slop` — scan before done (includes decorative motion spam / hero-only landing)
+12. `ui-feel` — micro craft
+13. `accessibility` — light pass
+14. `fe-seo` / `webgl` — **only if** in scope
 
 ## What It Does
 

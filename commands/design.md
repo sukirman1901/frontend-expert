@@ -14,16 +14,17 @@ Alias: **`/audit`** (same workflow).
 1. `anti-ai-slop` — AI aesthetic patterns
 2. `ui-feel` — micro craft (radius, press, tabular-nums, …)
 3. `design-tokens` — token adherence (when a token file is available)
-4. `responsive-ui` — all-devices / breakpoint adherence
-5. `accessibility` — WCAG 2.1 AA
-6. `web-performance` — CWV / loading issues relevant to UI
-7. `ui-components` — pattern / state checks as needed
-8. `motion` — when animated UI / marketing motion (family budget from `motion-families.md`, reduced-motion)
-9. `design-fidelity` — when a Figma/mock/screenshot is in scope
-10. `fe-devtools` — when measuring (Lighthouse/axe); never fabricate scores
-11. `marketing-landing` — when the surface is a marketing / landing page
-12. `frontend-judgment` — when recommending redesign directions (2–3 options)
-13. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
+4. `content-design` / `design-typography` / `design-color` / `design-surfaces` — owning domain when relevant
+5. `responsive-ui` — all-devices / breakpoint adherence
+6. `accessibility` — WCAG 2.2 AA by default
+7. `web-performance` — CWV / loading issues relevant to UI
+8. `ui-components` — pattern / state checks as needed
+9. `motion` — when animated UI / marketing motion (family budget from `motion-families.md`, reduced-motion)
+10. `design-fidelity` — when a Figma/mock/screenshot is in scope
+11. `fe-devtools` — when measuring (Lighthouse/axe); never fabricate scores
+12. `marketing-landing` — when the surface is a marketing / landing page
+13. `frontend-judgment` — when recommending redesign directions (2–3 options)
+14. `frontend-testing` — note test gaps as Info only (do not replace `/test-ui`)
 
 ## What It Does
 

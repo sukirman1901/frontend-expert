@@ -9,14 +9,14 @@ if ! command -v jq >/dev/null 2>&1; then
 fi
 
 jq -cn \
-  --arg message "frontend-expert loaded (chat-first + FE lifecycle + quality loop · 22 skills).
+  --arg message "frontend-expert loaded (chat-first + FE lifecycle + quality loop · 29 skills).
 
 Do NOT wait for slash commands. See AGENTS.md + docs/pillars.md.
 
 Lifecycle: pahami → putuskan → sistem → bangun → haluskan → a11y → bukti → audit → fix (cap 3) → ship
 See references/fe-lifecycle.md
 
-- Build UI → frontend-judgment* → design-tokens → (+ marketing-landing if landing) → (+ shell/data/forms) → ui-components → responsive-ui → motion (light shell; marketing = motion-families hand-roll) → anti-ai-slop → ui-feel → accessibility
+- Build UI → frontend-judgment* → design-tokens → (+ typography/color/surfaces/content owners as relevant) → (+ marketing-landing if landing) → (+ shell/data/forms) → ui-components → responsive-ui → motion → anti-ai-slop → ui-feel → accessibility
 - Test → frontend-testing (+ fe-devtools when measuring) (test-engineer)
 - Audit → anti-ai-slop → ui-feel → tokens → responsive-ui → motion (if animated) → marketing-landing (if landing) → a11y → web-performance (+ design-fidelity / fe-devtools as needed) [/design|/audit]
 - Polish until good → ui-quality-loop [/polish]: build→test→audit→fix (max 3)
