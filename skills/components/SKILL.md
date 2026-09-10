@@ -1,88 +1,91 @@
 ---
 name: components
 description: >-
-  Build composable UI with loading/error/empty states, Reicon icons by default,
-  mobile-first layout, and clean composition. Use whenever implementing or
-  modifying pages, screens, components, forms, dialogs, tables, or navigation —
-  including "buat component", "bikin form", "layout dashboard". Must report
-  Conventions check (tokens/icons/states) before done — see compliance-gates.
+  Build composable UI with a small public props contract, loading/error/empty
+  states, Reicon icons by default, and mobile-first layout. Use when implementing
+  or refactoring pages, screens, components, dialogs, tables, navigation,
+  “buat component”, “prop terlalu banyak”, “API component”, or “bikin form”.
+  Report Conventions check before done.
 ---
 
-# UI Components
+# Components
 
 ## Overview
 
-Implement production UI with composition over configuration, clear state handling, and components under 200 lines.
+A component’s public props are a contract. Prefer composition and project primitives over boolean soup, style knobs, and one-off APIs.
 
-## When to Use
+## When to use
 
-- Building or modifying components, pages, layouts
-- Wiring interactive UI with `/ui`
-- Refactoring overgrown or prop-heavy components
+- Building or modifying components, pages, interactive controls
+- Refactoring overgrown or prop-heavy APIs
+- Wiring states, icons, selects, or composition
+
+## When to skip
+
+- Validation mechanics only → `forms`
+- Async list/detail fetching only → `data-fetching`
+- Grid/spacing of the page → `design-foundations`
+- Radius/elevation language → `design-surfaces`
+
+## MUST
+
+| Rule | Detail |
+|------|--------|
+| **Small contract** | Public props are required data, events, and exclusive modes — not a grab-bag of style flags |
+| **Compose, don’t configure** | Slots/`children`/subcomponents for optional regions; do not add `showHeader` / `showFooter` / `hasIcon` |
+| **Tokens own visuals** | No `color` / `radius` / `shadow` / `padding` props that duplicate tokens |
+| **States in the contract** | Loading, error, empty, disabled, invalid are designed, not leftover booleans that collapse the UI |
+| **Native-capable controls** | Buttons/inputs forward useful native attributes; icon-only needs an accessible name |
+| **Reicon** | Icons in nav, toolbars, empty states, icon buttons unless project lib or text-only waiver |
+| **Custom selects** | Product filters use custom select/combobox; native `<select>` only with waiver |
+| **Responsive** | Load `responsive` for layout UI; 320/768/1024/1440 + full-width primary CTA <768 |
+| **Size** | Keep a component file under 200 lines or split |
+
+## Props / API
+
+| Do | Don’t |
+|----|-------|
+| Discriminated unions for exclusive modes | `variant` plus conflicting booleans |
+| `children` / named slots for structure | Parallel props for every inner node |
+| Domain events (`onSelect(id)`) | Leaking internal setters |
+| Extend the native element when it *is* that element | Wrap `<div onClick>` and re-implement keyboard |
+| Widen later with a wrapper | Breaking existing public props silently |
+
+```yaml
+principle: Composition over prop bags
+classification: recommendation
+recommendation: optional UI regions are composition, not show* booleans
+exceptions: [one-shot presentational stubs, generated design-system primitives]
+verification: [count public props; render loading/empty/disabled]
+last_verified: 2026-09
+```
 
 ## Workflow
 
-1. **Structure**
-   - Prefer composition over configuration
-   - Separate data fetching from presentation
-   - Colocate component + test + styles when practical
-   - Keep files under 200 lines (split if larger)
+1. **Reuse** — find the project primitive before adding a new component.
+2. **Contract** — list data, events, exclusive modes, and states; delete style props.
+3. **Compose** — slots for optional chrome; fetch data outside presentational components.
+4. **States** — loading / error / empty / default; selects and icons as above.
+5. **Verify** — keyboard, 320–1440, Conventions check.
 
-2. **State** (see also `references/architecture.md`)
-   - Local (`useState`) → component UI
-   - Lifted → 2–3 siblings
-   - Context → theme, auth, locale
-   - URL → filters, pagination
-   - Server state (React Query/SWR) → remote data
-   - Avoid prop drilling deeper than 3 levels
+## Boundaries
 
-3. **Required UI states**
-   - Loading
-   - Error
-   - Empty
-   - Default / success
-
-4. **Responsive** — **MUST** load `responsive` for layout UI
-   - Mobile-first; verify 320 / 768 / 1024 / 1440
-   - No fixed widths that break small screens; adapt tables/nav
-
-5. **Icons (default on — do not omit)**
-   - **MUST** use **[Reicon](https://reicon.dev)** for nav, toolbars, empty states, and icon buttons unless the project already standardizes another library
-   - Vanilla HTML/CSS/JS: add CDN `https://unpkg.com/reicon/cdn/reicon.min.js` + `<re-icon icon="kebab-name" size="20">`
-   - React: `reicon-react`; Vue/Svelte: matching package — see `references/reicon-icons.md`
-   - Prefer `currentColor` + token text classes; Outline default, Filled for emphasis
-   - Icon-only controls need an accessible name
-   - Text-only UI only with an explicit waiver in the Conventions check
-
-6. **Selects / filters (product UI)**
-   - Prefer **custom select / combobox / listbox** styled with tokens — not bare OS `<select>` chrome for dashboard filters and toolbars
-   - Trigger: label + value + caret; **generous end padding / gap** so the chevron is not flush to the right edge
-   - Menu: token surface, hover/selected states, Escape + outside-click close; keyboard path required
-   - Native `<select>` only with waiver (e.g. native mobile OS picker required) — note in Conventions
-
-7. **Tokens + slop**
-   - Use `tokens` for all visual values
-   - Finish with `anti-slop-design` scan
-
-8. **Before DONE**
-   - Output **Conventions check** from `references/compliance-gates.md` (tokens, icons, states, **responsive**, webgl n/a, …)
+- **May decide:** slot names, whether `className` is an escape hatch, local vs lifted UI state.
+- **Must not:** ship boolean/style soup, invent a kit when the project has one, or skip loading/error/empty on interactive/async surfaces.
 
 ## Checklist
 
-- [ ] Composition preferred over giant prop APIs
+- [ ] Public props are a small typed contract
+- [ ] Optional regions use composition, not `show*` flags
+- [ ] No token-duplicating style props
 - [ ] Loading / error / empty handled
-- [ ] **Reicon (or project icon lib) actually in the markup** — not forgotten
-- [ ] Interactive elements keyboard accessible
-- [ ] Filters/selects are custom (or waived) — caret not cramped
-- [ ] **Responsive:** 320/768/1024/1440 + Conventions line
-- [ ] Component ≤ 200 lines or split
-- [ ] Anti-slop scan clean
-- [ ] Conventions check reported
+- [ ] Reicon (or project lib) in the markup — or waiver
+- [ ] Filters/selects custom (or waived)
+- [ ] Responsive 320/768/1024/1440 + Conventions check
 
 ## Depth
 
-Good/bad examples: `references/component-patterns.md`.  
-Responsive: `responsive` + `references/responsive.md`.  
-Icons: `references/reicon-icons.md`.  
-Ship gates: `references/compliance-gates.md`.  
-State & org: `references/architecture.md`.
+Patterns: `references/component-patterns.md`.
+State/org: `references/architecture.md`.
+Icons: `references/reicon-icons.md`.
+Ship gates: `references/compliance-gates.md`.

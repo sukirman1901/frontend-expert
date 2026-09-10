@@ -84,10 +84,10 @@ skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md |
 [ "$skill_entry_count" -eq 30 ] && ok "30 canonical skills only" || bad "expected 30 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.1.1" and (.skills | length == 30)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.1.1 registers exactly 30 skills"
+  if jq -e '.version == "2.1.2" and (.skills | length == 30)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.1.2 registers exactly 30 skills"
   else
-    bad "plugin must be v2.1.1 with exactly 30 skills"
+    bad "plugin must be v2.1.2 with exactly 30 skills"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
@@ -194,6 +194,7 @@ echo "== references map =="
 [ -f "$ROOT/evals/frontend-shell-chrome.md" ] && ok "evals/frontend-shell-chrome.md (E22)" || bad "evals/frontend-shell-chrome.md"
 [ -f "$ROOT/evals/marketing-landing.md" ] && ok "evals/marketing-landing.md (E23)" || bad "evals/marketing-landing.md"
 [ -f "$ROOT/evals/design-foundations.md" ] && ok "evals/design-foundations.md (E28)" || bad "evals/design-foundations.md"
+[ -f "$ROOT/evals/components.md" ] && ok "evals/components.md (E29)" || bad "evals/components.md"
 [ -f "$ROOT/references/landing-sections.md" ] && ok "landing-sections.md" || bad "landing-sections.md"
 for f in evidence-policy design-typography design-color design-surfaces content-design; do
   [ -f "$ROOT/references/$f.md" ] && ok "$f.md" || bad "references/$f.md"

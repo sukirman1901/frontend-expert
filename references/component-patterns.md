@@ -1,6 +1,62 @@
 # Component Patterns
 
-Reference for building components using shadcn/ui design tokens and composition patterns.
+Skill entry: `skills/components/SKILL.md`. Examples may use typical product primitives — prefer the **project’s** existing components over installing a new kit. Token values come from the project system or the pack decision tree, not from raw purple/indigo.
+
+## Props and public API
+
+```yaml
+principle: Composition over prop bags
+classification: recommendation
+recommendation: optional regions are slots/children; visuals stay in tokens
+exceptions: [leaf primitives from an existing design system]
+verification: [public prop count, exclusive modes, rendered states]
+last_verified: 2026-09
+```
+
+| Smell | Fix |
+|-------|-----|
+| `showHeader`, `showIcon`, `hasFooter` | `CardHeader` / icon slot / don’t render the slot |
+| `color`, `shadow`, `rounded`, `padding` on a product component | Token classes or `design-surfaces` |
+| `variant` + overlapping booleans | One discriminant (`variant: 'filter' \| 'display'`) |
+| 12 optional props added in one PR | Wrapper, split, or composition |
+| Fetch inside every presentational card | Container fetches; child receives data |
+
+### Good: data + events + slots
+
+```tsx
+type OrderCardProps = {
+  order: Order
+  onOpen: (id: string) => void
+  children?: React.ReactNode
+}
+
+export function OrderCard({ order, onOpen, children }: OrderCardProps) {
+  return (
+    <article>
+      <h3>{order.title}</h3>
+      <button type="button" onClick={() => onOpen(order.id)}>Open</button>
+      {children}
+    </article>
+  )
+}
+```
+
+### Bad: style and boolean soup
+
+```tsx
+type OrderCardProps = {
+  title: string
+  showHeader?: boolean
+  showFooter?: boolean
+  isLoading?: boolean
+  color?: string
+  shadow?: boolean
+  rounded?: string
+  padding?: number
+}
+```
+
+Do not treat `className` as a substitute for a missing slot, and do not treat `className` as forbidden — it is an escape hatch, not the layout API.
 
 ## Button
 

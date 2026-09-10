@@ -34,6 +34,7 @@ Pillar map: `docs/pillars.md`.
 | Font choice / type scale / wrapping / truncation / variable fonts | `design-typography` → `responsive` → `accessibility` | — |
 | Palette / OKLCH / dark mode / contrast / gamut | `tokens` → `design-color` → `accessibility` | — |
 | Card / modal / radius / border / shadow / elevation | `tokens` → `design-surfaces` → `polish` | — |
+| Component props / API / “prop terlalu banyak” / composition | `components` | `/ui` |
 | UI copy / CTA / error / empty state / confirmation / AI writing | `content-design` (+ `forms` / `marketing` as relevant) | — |
 | Figma Auto Layout / Fill / Hug / layout from Figma | `responsive` (Auto Layout ↔ CSS) → `components` | `/ui` |
 | Feels off / rapihin **detail** | `polish` (+ `anti-slop-design` if generik) — **one pass** | — |
@@ -68,7 +69,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `design-direction` | UI Quality | Blank-canvas / ambiguous UI |
 | `design-foundations` | UI Quality | Grid, spacing rhythm, alignment, density, composition |
 | `tokens` | UI Quality | Theme — decision tree + scoring |
-| `components` | UI Quality | Components, states, composition |
+| `components` | UI Quality | Components, states, composition, public props/API |
 | `responsive` | Responsive MUST | Every layout UI / all devices |
 | `anti-slop-design` | UI Quality | Build + audits |
 | `polish` | UI Quality | Micro craft |

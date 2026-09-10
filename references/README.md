@@ -48,7 +48,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 ## Evals
 
-[`evals/`](../evals/) — E1–E28 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations).
+[`evals/`](../evals/) — E1–E29 (slop, craft gates, fidelity, ship FE, motion, shell, marketing, typography, color, surfaces, content, foundations, component API).
 
 ## Missing on purpose
 

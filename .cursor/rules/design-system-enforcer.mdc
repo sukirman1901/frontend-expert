@@ -28,6 +28,7 @@ alwaysApply: true
 | Font choice / wrapping / truncation | `design-typography` → `responsive` → `accessibility` |
 | Palette / OKLCH / dark mode / contrast | `tokens` → `design-color` → `accessibility` |
 | Card / modal / radius / shadow / elevation | `tokens` → `design-surfaces` → `polish` |
+| Component props / API / “prop terlalu banyak” | `components` |
 | UI copy / CTA / error / empty state | `content-design` |
 | Figma Auto Layout / Fill / Hug | `responsive` (Auto Layout ↔ CSS) |
 | Feels off / rapihin detail / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |

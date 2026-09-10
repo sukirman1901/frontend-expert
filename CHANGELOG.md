@@ -2,6 +2,13 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.1.2] — 2026-09-10
+
+### Changed
+
+- `components` now owns a small public props/API contract: composition over boolean/style soup
+- Added behavioral eval E29
+
 ## [2.1.1] — 2026-09-10
 
 ### Changed

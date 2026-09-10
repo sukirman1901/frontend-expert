@@ -10,7 +10,7 @@ Claude Code entry point for **Frontend Expert**.
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
 - Hooks: `hooks/hooks.json` (SessionStart + PostToolUse anti-slop scan)
 - Tokens: `tokens/*.css` + decision tree / scoring in `references/token-preset-scoring.md` (+ `tokens/README.md`)
-- Evals: `evals/` (E1–E28)
+- Evals: `evals/` (E1–E29)
 
 ## Default behavior (chat-first + judgment)
 
