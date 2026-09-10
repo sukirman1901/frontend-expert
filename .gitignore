@@ -21,3 +21,6 @@ node_modules/
 # Local skills install cache
 .agents/
 skills-lock.json
+
+# Isolated implementation worktrees
+/.worktrees/
