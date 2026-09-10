@@ -87,10 +87,10 @@ skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md |
 [ "$skill_entry_count" -eq 33 ] && ok "33 canonical skills only" || bad "expected 33 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.4.2" and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.4.2 registers exactly 33 skills"
+  if jq -e '.version == "2.4.3" and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v2.4.3 registers exactly 33 skills"
   else
-    bad "plugin must be v2.4.2 with exactly 33 skills"
+    bad "plugin must be v2.4.3 with exactly 33 skills"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
@@ -141,9 +141,13 @@ if command -v jq >/dev/null 2>&1; then
   done < <(jq -r '
     .skills // empty,
     (.commands // [])[],
-    (.agents // [])[],
-    .hooks // empty
+    (.agents // [])[]
   ' "$ROOT/.claude-plugin/plugin.json" 2>/dev/null | sed '/\[/d')
+  if jq -e '.hooks != null' "$ROOT/.claude-plugin/plugin.json" >/dev/null; then
+    bad "claude plugin.json must omit hooks (Claude auto-loads hooks/hooks.json; duplicate load error)"
+  else
+    ok "claude plugin.json omits hooks (auto-load)"
+  fi
 else
   bad "jq not installed (skip plugin path resolve)"
 fi

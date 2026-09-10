@@ -21,7 +21,7 @@ GitHub marketplace (whatever is on `origin`, which may lag local `main`):
 - Skills: all entries in `plugin.json` (33 — see `docs/pillars.md`)
 - Agents: `design-reviewer`, `ui-developer`, `test-engineer`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish`
-- Hooks: SessionStart reminder + PostToolUse anti-slop scan
+- Hooks: SessionStart + PostToolUse via auto-loaded `hooks/hooks.json` (do not list it in `.claude-plugin/plugin.json`)
 - Rules: `.claude/rules/design-system.md`
 
 ## Verify

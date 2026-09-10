@@ -2,6 +2,13 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.3] — 2026-09-10
+
+### Fixed
+
+- Re-applied GitHub PR #2: omit `hooks` from `.claude-plugin/plugin.json` so Claude Code does not double-load `hooks/hooks.json`
+- README / getting-started: current skill count (33), pack name Frontend Expert, `/ui` chain includes `anti-slop-code`
+
 ## [2.4.2] — 2026-09-10
 
 ### Changed

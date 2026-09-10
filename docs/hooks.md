@@ -4,6 +4,8 @@ Hooks are **Claude Code** event scripts. They are not multi-platform adapters �
 
 ## Enabled by default (`hooks/hooks.json`)
 
+Claude Code loads this file automatically from the plugin’s `hooks/` directory. **Do not** add `"hooks": "./hooks/hooks.json"` to `.claude-plugin/plugin.json` — that double-loads the same file and `/reload-plugins` errors with “Duplicate hooks file detected” (PR #2).
+
 | Event | Script | Purpose |
 |-------|--------|---------|
 | `SessionStart` | `session-start.sh` | Chat-first reminder: build chain includes **responsive** + **motion** (+ **marketing** if landing); Conventions (Shell / Landing); slash optional |

@@ -43,7 +43,7 @@ cd frontend-expert
 ```bash
 git clone https://github.com/sukirman1901/frontend-expert.git
 ./scripts/install.sh opencode          # OpenCode symlink
-./scripts/install.sh gemini            # copy Gemini commands
+./scripts/install.sh gemini-user       # ~/.gemini/commands
 # Codex: see docs/codex-setup.md
 ```
 
@@ -61,7 +61,7 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 
 | Pillar | What |
 |--------|------|
-| **UI Quality** | Tokens, anti-slop, polish, a11y, tests, polish loop, WebGL, monitoring, design vocabulary |
+| **UI Quality** | Judgment, foundations, tokens, type/color/surfaces, copy, anti-slop (visual + code), polish, a11y, tests, polish loop, WebGL, monitoring, design vocabulary |
 | **Responsive MUST** | All devices 320→1440+ (`responsive`) |
 | **Ship FE** | App shell/routing, data-fetching, forms |
 | **Depth** | FE architecture, technical SEO, engineering vocabulary |
@@ -109,7 +109,7 @@ Prefer natural chat. Use these only to pin a workflow:
 
 | Command | Purpose | Skills loaded |
 |---------|---------|---------------|
-| `/ui` | Build UI | judgment* → **foundations** → tokens → (+ shell/data/forms) → components → **responsive** → **motion** → anti-slop → **polish** → a11y |
+| `/ui` | Build UI | judgment* → **foundations** → tokens → (+ shell/data/forms) → components → **anti-slop-code** → **responsive** → **motion** → anti-slop-design → **polish** → a11y |
 | `/design` | Audit | anti-slop → **polish** → tokens → **responsive** → **motion** (if animated) → a11y → performance (+ fidelity / devtools / judgment as needed) |
 | `/audit` | Alias of `/design` | same |
 | `/test-ui` | Prove UI | testing → components → a11y → **devtools** (when measuring) |
@@ -187,7 +187,7 @@ Skills stay short and triggerable; depth lives in `references/`.
 
 ### Canonical names
 
-Version 2.1 contains 30 canonical skill folders. Legacy identifiers were removed in 2.0 to prevent duplicate discovery. Use `references/skill-aliases.md` when migrating an older prompt or integration.
+Version **2.4.x** ships **33** canonical skill folders. Legacy identifiers were removed in 2.0 to prevent duplicate discovery. Use `references/skill-aliases.md` when migrating an older prompt or integration.
 
 ---
 
@@ -321,7 +321,7 @@ Map: [references/README.md](references/README.md)
 |------|--------|
 | Skill-backed | anti-patterns, polish, design-axes, ux-foundations, fe-lifecycle, **compliance-gates**, **motion-families**, component-patterns, architecture, accessibility, performance, motion, testing, webgl, monitoring, fidelity, devtools + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
-| Evals | [evals/](evals/) (purple, honesty, loop, routing, **reicon/webgl**) |
+| Evals | [evals/](evals/) (E1–E32; paste sheet + desk/install runs) |
 | Guides | [tokens/README.md](tokens/README.md) · [fe-lifecycle.md](references/fe-lifecycle.md) · [compliance-gates.md](references/compliance-gates.md) |
 
 ---
@@ -334,6 +334,8 @@ Map: [references/README.md](references/README.md)
 ```
 
 ## Runtime hooks (Claude Code)
+
+Claude Code **auto-loads** `hooks/hooks.json`. Do **not** list that file again in `.claude-plugin/plugin.json` — a duplicate `hooks` field makes `/reload-plugins` fail (GitHub PR #2).
 
 | Hook | Event | What it does |
 |------|-------|----------------|

@@ -14,6 +14,5 @@
     "./agents/design-reviewer.md",
     "./agents/ui-developer.md",
     "./agents/test-engineer.md"
-  ],
-  "hooks": "./hooks/hooks.json"
+  ]
 }

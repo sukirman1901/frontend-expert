@@ -2,7 +2,7 @@
 
 Suite map for [frontend-expert](https://github.com/sukirman1901/frontend-expert). Skills stay **flat** under `skills/` for discovery; this doc is the mental model.
 
-The suite has exactly 33 canonical skills. Version 2.4 adds `motion-inspection` beside `motion` for playback and reverse-engineering.
+The suite has exactly 33 canonical skills. Current pack version is **2.4.3**. `motion-inspection` sits beside `motion` for playback and reverse-engineering.
 
 ## Pillars
 

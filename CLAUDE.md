@@ -8,7 +8,7 @@ Claude Code entry point for **Frontend Expert**.
 - Agents: `agents/design-reviewer.md`, `agents/ui-developer.md`, `agents/test-engineer.md`
 - Commands: `/design`, `/audit`, `/ui`, `/test-ui`, `/polish` — **optional**
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
-- Hooks: `hooks/hooks.json` (SessionStart + PostToolUse anti-slop scan)
+- Hooks: `hooks/hooks.json` auto-loaded by Claude Code (SessionStart + PostToolUse). Do not duplicate that path in `.claude-plugin/plugin.json`.
 - Tokens: `tokens/*.css` + decision tree / scoring in `references/token-preset-scoring.md` (+ `tokens/README.md`)
 - Evals: `evals/` (E1–E32)
 
