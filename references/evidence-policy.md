@@ -38,7 +38,7 @@ recommendation: <claim>
 applies_when: [<conditions>]
 exceptions: [<exceptions>]
 verification: [<rendered, automated, or manual checks>]
-sources: [<primary first>]
+basis: <standard | project default | enterprise pattern | recommendation | heuristic>
 last_verified: YYYY-MM
 ```
 

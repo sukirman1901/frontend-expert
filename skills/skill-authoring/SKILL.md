@@ -249,7 +249,7 @@ Create `evals/<skill-name>.md` with test scenarios:
 4. **Integrate** — update AGENTS.md, plugin.json, pillars.md, CHANGELOG.md
 5. **Eval** — write at least one eval case
 6. **Test** — verify the skill triggers correctly on natural language input
-7. **Evidence** — classify normative-looking rules via `references/evidence-policy.md`; update `references/source-ledger.md` and `NOTICE.md` when needed
+7. **Evidence** — classify normative-looking rules via `references/evidence-policy.md`; update `NOTICE.md` only when third-party material is actually included
 
 ## Checklist
 
@@ -272,5 +272,5 @@ Create `evals/<skill-name>.md` with test scenarios:
 Pack architecture: `docs/pack-layers.md`.
 Pillar map: `docs/pillars.md`.
 Evidence policy: `references/evidence-policy.md`.
-Source ledger: `references/source-ledger.md`.
+Write the synthesized rule into its owning reference; do not distribute a research-link ledger.
 Existing skills as examples: any `skills/*/SKILL.md`.

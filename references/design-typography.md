@@ -39,4 +39,4 @@ Mobile Safari has historically zoomed focused inputs with small text. Treat 16px
 - Throttle font loading and inspect fallback shift.
 - Verify heading semantics separately with `accessibility`.
 
-Research sources: `references/source-ledger.md`. Authorship boundary: `NOTICE.md`.
+Authorship boundary: `NOTICE.md`.

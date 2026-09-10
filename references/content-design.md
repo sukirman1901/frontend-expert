@@ -32,4 +32,4 @@ Adapt wording to actual product behavior. If retry, retained state, scope, or re
 
 Remove throat-clearing, stacked adjectives, false dichotomies, generic “elevate/unlock/seamless” claims, fake quotations, and repetitive summary conclusions. Preserve necessary domain terminology and the author’s natural voice.
 
-Sources and attribution: `references/source-ledger.md`, `NOTICE.md`.
+Authorship boundary: `NOTICE.md`.

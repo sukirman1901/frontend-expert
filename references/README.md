@@ -42,7 +42,6 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 ## Evidence and provenance
 
 - `evidence-policy.md` — source precedence and rule classifications
-- `source-ledger.md` — external research bibliography and verification dates
 - `skill-aliases.md` — legacy-to-canonical migration map
 - `../NOTICE.md` — pack authorship and external-research boundary
 
@@ -58,4 +57,4 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 ## Rule for authors
 
-When editing a reference, update the matching skill checklist if the workflow changed. Classify normative-looking claims via `evidence-policy.md`, refresh version-sensitive sources in `source-ledger.md`, and preserve required attribution. When adding a domain, add **skill + reference + eval** together. After changing commands, run `./scripts/sync-commands.sh` and `./scripts/smoke-test.sh`.
+When editing a reference, update the matching skill checklist if the workflow changed. Classify normative-looking claims via `evidence-policy.md` and preserve required attribution for material actually included. When adding a domain, add **skill + reference + eval** together. After changing commands, run `./scripts/sync-commands.sh` and `./scripts/smoke-test.sh`.

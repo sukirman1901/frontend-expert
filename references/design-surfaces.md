@@ -38,4 +38,4 @@ For asymmetric inset, reason per axis/corner. For pills and circles, preserve th
 
 Dark-mode shadows often lose definition or become harsh. Tune surface lightness, border alpha, and shadow opacity together; do not merely invert a light shadow. Verify against the real canvas and adjacent layers.
 
-Research sources: `references/source-ledger.md`. Authorship boundary: `NOTICE.md`.
+Authorship boundary: `NOTICE.md`.

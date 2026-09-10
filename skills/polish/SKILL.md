@@ -14,7 +14,7 @@ description: >-
 
 Great interfaces compound from small craft details. After tokens + structure + anti-slop, apply this skill so the UI doesn’t just look correct — it **feels** right.
 
-This pack-authored workflow is informed by interface-craft research listed in `references/source-ledger.md`; no external skill is bundled.
+This is a pack-authored workflow; no external skill is bundled.
 
 ## When to use
 

@@ -15,7 +15,7 @@ description: >-
 
 Feel like a senior frontend engineer: **decide with the user, then build**. Do not dump a generic UI for blank-canvas work. This skill is a short gate before `tokens` / `components` / etc.
 
-This pack-authored workflow uses independent design-axis analysis. External exploration tools were studied as research and are listed in `references/source-ledger.md`; none are bundled.
+This pack-authored workflow uses independent design-axis analysis; no external exploration tool is bundled.
 
 ## When to use (mandatory gate)
 

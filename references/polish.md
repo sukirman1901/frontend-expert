@@ -1,6 +1,6 @@
 # UI Feel — reference
 
-Pack-authored craft guidance. External research is recorded separately in `references/source-ledger.md`. Skill entry: `skills/polish/SKILL.md`.
+Pack-authored craft guidance. Skill entry: `skills/polish/SKILL.md`.
 
 ## Surfaces
 
