@@ -32,6 +32,10 @@ EXPECTED_SKILLS=(
   design-fidelity
   fe-devtools
   marketing-landing
+  design-typography
+  design-color
+  design-surfaces
+  content-design
 )
 
 for s in "${EXPECTED_SKILLS[@]}"; do
@@ -150,6 +154,13 @@ echo "== references map =="
 [ -f "$ROOT/evals/frontend-shell-chrome.md" ] && ok "evals/frontend-shell-chrome.md (E22)" || bad "evals/frontend-shell-chrome.md"
 [ -f "$ROOT/evals/marketing-landing.md" ] && ok "evals/marketing-landing.md (E23)" || bad "evals/marketing-landing.md"
 [ -f "$ROOT/references/landing-sections.md" ] && ok "landing-sections.md" || bad "landing-sections.md"
+for f in evidence-policy source-ledger design-typography design-color design-surfaces content-design; do
+  [ -f "$ROOT/references/$f.md" ] && ok "$f.md" || bad "references/$f.md"
+done
+for f in design-typography design-color design-surfaces content-design; do
+  [ -f "$ROOT/evals/$f.md" ] && ok "evals/$f.md" || bad "evals/$f.md"
+done
+[ -f "$ROOT/NOTICE.md" ] && ok "NOTICE.md" || bad "NOTICE.md"
 if ! rg -q 'avatar' "$ROOT/skills/app-shell-routing/SKILL.md" || ! rg -q 'custom select' "$ROOT/skills/ui-components/SKILL.md"; then
   bad "shell chrome rules missing in app-shell / ui-components"
 else
