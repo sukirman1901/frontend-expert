@@ -12,6 +12,7 @@
 | App shell / routing | + `app-shell` |
 | Architecture | + `architecture` |
 | SEO / meta | + `seo` |
+| UI copy / CTA / error / empty / AI writing | `content-design` (not `anti-slop-design`) |
 | Feels off / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
 | Layout berantakan / struktur layout / rapikan struktur / grid / spacing / alignment | `design-foundations` → `tokens` → `responsive` |
 | Hierarchy / typography / type scale | `design-direction` Hierarchy + Typography passes → `design-typography` → `polish` |

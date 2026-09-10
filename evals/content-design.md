@@ -14,3 +14,4 @@ Load `content-design`, preserve product facts, clarify actions and consequences,
 - [ ] Error copy states what happened and the next available action
 - [ ] Destructive confirmation names the object and consequence
 - [ ] Produces concrete before/after examples without fabricating facts
+- [ ] Labels unknowns instead of inventing retry, scope, or reversibility

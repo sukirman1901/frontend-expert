@@ -94,7 +94,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 | `design-typography` | UI Quality | Font choice, type roles/scales, wrapping, truncation, numerics, bidi |
 | `design-color` | UI Quality | Palette construction, OKLCH, themes, contrast, gamut |
 | `design-surfaces` | UI Quality | Radius, borders, elevation, shadows, overlays |
-| `content-design` | UI Quality | UI copy, recovery language, voice, localization readiness |
+| `content-design` | UI Quality | UI copy, recovery language, voice, localization, AI-sounding prose |
 
 ## Hard rules
 

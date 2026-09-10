@@ -38,7 +38,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `design-typography.md` | `design-typography` | Type roles, font behavior, wrapping, truncation |
 | `design-color.md` | `design-color` | OKLCH, palettes, themes, contrast, gamut |
 | `design-surfaces.md` | `design-surfaces` | Radius, borders, elevation, overlays |
-| `content-design.md` | `content-design` | UI copy, recovery, voice, localization readiness |
+| `content-design.md` | `content-design` | UI copy, recovery, voice, AI-writing scan |
 
 ## Evidence and provenance
 

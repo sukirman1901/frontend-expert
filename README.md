@@ -154,7 +154,7 @@ Pillar map: [docs/pillars.md](docs/pillars.md). Suite root + domain skills:
 | `design-typography` | UI Quality | Fonts, type roles/scales, wrapping, truncation |
 | `design-color` | UI Quality | Palette, OKLCH, themes, contrast, gamut |
 | `design-surfaces` | UI Quality | Radius, borders, elevation, shadows, overlays |
-| `content-design` | UI Quality | UI copy, errors, empty states, voice |
+| `content-design` | UI Quality | UI copy, errors, empty states, voice, AI-sounding prose |
 | `components` | UI Quality | Components, states — **Reicon**; custom selects |
 | `responsive` | Responsive MUST | All devices 320–1440+ |
 | `anti-slop-design` | UI Quality | AI aesthetic patterns |

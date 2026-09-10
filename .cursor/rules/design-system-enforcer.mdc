@@ -30,6 +30,7 @@ alwaysApply: true
 | Card / modal / radius / shadow / elevation | `tokens` → `design-surfaces` → `polish` |
 | Component props / API / “prop terlalu banyak” | `components` |
 | UI copy / CTA / error / empty state | `content-design` |
+| Copy terasa AI / tulisan generik / “unlock seamless” | `content-design` (not `anti-slop-design`) |
 | Figma Auto Layout / Fill / Hug | `responsive` (Auto Layout ↔ CSS) |
 | Feels off / rapihin detail / micro polish | `polish` (+ `anti-slop-design` if generik) — one pass |
 | Design audit, AI slop, "UI jelek/generik", visual review | `anti-slop-design` → `polish` → `tokens` → `responsive` → `accessibility` → `performance` (+ `marketing` if landing) |

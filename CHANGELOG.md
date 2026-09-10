@@ -2,6 +2,14 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.1.3] — 2026-09-10
+
+### Changed
+
+- `content-design` now includes an AI-writing scan, unknown-fact rule, and review before/after table
+- Writing slop stays on `content-design`; no separate `anti-slop-writing` skill (visual slop remains `anti-slop-design`)
+- E27 requires unknowns to be labeled instead of invented
+
 ## [2.1.2] — 2026-09-10
 
 ### Changed
