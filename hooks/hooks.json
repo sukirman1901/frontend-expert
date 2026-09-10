@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "SCRIPT=\"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh\"; [ -f \"$SCRIPT\" ] || SCRIPT=\"${CLAUDE_PROJECT_DIR}/hooks/session-start.sh\"; [ -f \"$SCRIPT\" ] && bash \"$SCRIPT\" || true"
+            "command": "if [ -f \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh\" ]; then bash \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.sh\"; elif [ -f \"./hooks/session-start.sh\" ]; then bash \"./hooks/session-start.sh\"; fi"
           }
         ]
       }
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "SCRIPT=\"${CLAUDE_PLUGIN_ROOT}/hooks/anti-slop-scan.sh\"; [ -f \"$SCRIPT\" ] || SCRIPT=\"${CLAUDE_PROJECT_DIR}/hooks/anti-slop-scan.sh\"; [ -f \"$SCRIPT\" ] && bash \"$SCRIPT\" || true",
+            "command": "if [ -f \"${CLAUDE_PLUGIN_ROOT}/hooks/anti-slop-scan.sh\" ]; then bash \"${CLAUDE_PLUGIN_ROOT}/hooks/anti-slop-scan.sh\"; elif [ -f \"./hooks/anti-slop-scan.sh\" ]; then bash \"./hooks/anti-slop-scan.sh\"; fi",
             "timeout": 15
           }
         ]

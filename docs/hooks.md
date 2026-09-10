@@ -20,6 +20,15 @@ Claude Code loads this file automatically from the plugin’s `hooks/` directory
 
 - `bash`, `jq`, `rg` (ripgrep)
 
-## Manual enable (without plugin)
+## Security (Socket / skills.sh)
+
+Claude Code runs these two **pack-owned** scripts on session start and after Edit/Write. They do not download code, do not change files, and do not bypass security scanners.
+
+| Script | What it actually does |
+|--------|------------------------|
+| `session-start.sh` | Prints a JSON reminder (skill routing). Needs `jq`. |
+| `anti-slop-scan.sh` | **UI** lint: warns if a written CSS/JSX file looks like purple-gradient AI slop. Advisory only. |
+
+The Socket “Anomaly” on `hooks/hooks.json` is the normal Claude hook pattern (`bash` + `${CLAUDE_PLUGIN_ROOT}`). `anti-slop-scan` is an aesthetic check, not an antivirus. The public skills.sh audit is pinned to an **old snapshot** (commit `9226153`, 5 Sep) until they re-index — see [vercel-labs/skills#2200](https://github.com/vercel-labs/skills/issues/2200).
 
 Merge into `.claude/settings.json` or `.claude/settings.local.json` — see examples in the hook markdown docs.

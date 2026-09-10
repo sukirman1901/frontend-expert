@@ -2,6 +2,13 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.4] — 2026-09-10
+
+### Changed
+
+- Hook commands call only `hooks/session-start.sh` and `hooks/anti-slop-scan.sh` by name (no generic `$SCRIPT` sink)
+- Document Socket’s LOW anomaly: Claude Code session hooks, not a malware dropper
+
 ## [2.4.3] — 2026-09-10
 
 ### Fixed
