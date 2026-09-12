@@ -150,7 +150,7 @@ Critical / High / Medium / Low counts.
 
 ```
 #### [SEVERITY] Title
-- **Area:** Token Adherence (aka Token Compliance) / Visual Hierarchy / Typography / AI Aesthetic / UI Feel / Motion / Components / Responsive / Accessibility / Performance / Foundations
+- **Area:** Token Adherence (aka Token Compliance) / Visual Hierarchy / Typography / AI Aesthetic / UI Feel / Control Geometry / Motion / Components / Responsive / Accessibility / Performance / Foundations
 - **Location:** file:line or component
 - **Description:** …
 - **Impact:** potential impact | measured: …
