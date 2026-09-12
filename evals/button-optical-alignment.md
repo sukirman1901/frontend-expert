@@ -6,7 +6,7 @@
 
 ## Expected behavior
 
-Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendered control-geometry problem: preserve stable outer geometry, assign radius ownership to the control family, and compensate only the proven glyph inside its icon slot.
+Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendered control-geometry problem: preserve stable outer geometry, assign radius ownership to the control family, and compensate only the proven glyph inside its icon slot. Finish with the canonical `- Control geometry:` conventions field, populated with evidence from this scenario rather than its schema placeholder.
 
 ## Pass criteria
 
@@ -19,7 +19,8 @@ Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendere
 - [ ] Keeps pending geometry stable and preserves an accessible name plus `aria-busy`; any status announcement is separate
 - [ ] Assigns radius ownership to project/control-family tokens and documents intentional pill, circle, segmented, asymmetric, or brand exceptions
 - [ ] Rejects a universal/global magic offset across icons, sizes, or variants
-- [ ] Reports the canonical line: `- Control geometry: <radius token + text/icon optical balance + relevant states checked | n/a | waiver: …>`
+- [ ] Reports a populated `- Control geometry:` line containing the actual project radius token, rendered text-only/leading-icon/trailing-icon/icon-only variants and relevant states, plus the observed optical-balance outcome
+- [ ] Treats the literal schema placeholder and `n/a` as failures for this scenario; a waiver is valid only when it names the explicit exception and supporting rendered evidence
 
 ## Fail signals
 
@@ -27,3 +28,4 @@ Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendere
 - Checks a single static button instead of the variant/state matrix
 - Replaces the label with a spinner and allows width, accessible name, or alignment to shift
 - Hardcodes a new radius without checking the project surface/control language
+- Copies the conventions schema placeholder, reports `n/a`, or claims “passed” without naming the token and rendered evidence

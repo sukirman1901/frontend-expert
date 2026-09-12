@@ -211,6 +211,23 @@ if [ -f "$ROOT/evals/button-optical-alignment.md" ] \
 else
   bad "evals/button-optical-alignment.md must exist and be labeled E33"
 fi
+e33="$ROOT/evals/button-optical-alignment.md"
+e33_pass=$(awk '
+  /^## Pass criteria[[:space:]]*$/ { in_section=1; next }
+  in_section && /^##[[:space:]]/ { exit }
+  in_section { print }
+' "$e33")
+if printf '%s\n' "$e33_pass" | rg -qi 'populated[[:space:]]+`?- Control geometry:' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'actual project radius token' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'rendered text-only/leading-icon/trailing-icon/icon-only' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'relevant states' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'observed optical-balance outcome' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'literal schema placeholder.*fail' \
+  && printf '%s\n' "$e33_pass" | rg -qi '`n/a`.*fail'; then
+  ok "E33 requires populated Control geometry evidence"
+else
+  bad "E33 must reject placeholder/n-a and require actual token + rendered variant/state + optical outcome evidence"
+fi
 [ -f "$ROOT/references/anti-slop-code.md" ] && ok "references/anti-slop-code.md" || bad "references/anti-slop-code.md"
 [ -f "$ROOT/references/prototype.md" ] && ok "references/prototype.md" || bad "references/prototype.md"
 [ -f "$ROOT/references/motion-inspection.md" ] && ok "references/motion-inspection.md" || bad "references/motion-inspection.md"
@@ -354,7 +371,22 @@ rm -rf "$tmp_install"
 
 echo "== eval routing =="
 chmod +x "$ROOT/scripts/eval-routing-contract.sh" 2>/dev/null || true
-[ -f "$ROOT/evals/PASTE.md" ] && ok "evals/PASTE.md" || bad "evals/PASTE.md"
+if [ -f "$ROOT/evals/PASTE.md" ] \
+  && rg -q '^## E33 .*button optical alignment' "$ROOT/evals/PASTE.md" \
+  && awk '
+    /^## E33 .*button optical alignment/ { in_section=1; next }
+    in_section && /^##[[:space:]]/ { exit }
+    in_section { print }
+  ' "$ROOT/evals/PASTE.md" | rg -qi 'text-only.*leading icon.*trailing icon.*icon-only' \
+  && awk '
+    /^## E33 .*button optical alignment/ { in_section=1; next }
+    in_section && /^##[[:space:]]/ { exit }
+    in_section { print }
+  ' "$ROOT/evals/PASTE.md" | rg -qi 'Control geometry'; then
+  ok "evals/PASTE.md includes runnable E33 prompt"
+else
+  bad "evals/PASTE.md missing runnable E33 button optical alignment prompt"
+fi
 if bash "$ROOT/scripts/eval-routing-contract.sh"; then
   ok "eval-routing-contract"
 else

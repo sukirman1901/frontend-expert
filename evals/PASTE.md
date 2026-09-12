@@ -52,6 +52,12 @@ Bandingkan 2–3 arah dashboard berdampingan, lalu tekan loading, error, empty, 
 Animasi drawer dan hero-nya aneh. Inspeksi frame by frame, jelaskan transisinya, jangan langsung ganti library.
 ```
 
+## E33 — button optical alignment
+
+```text
+Perbaiki empat varian button: text-only, leading icon, trailing icon, dan icon-only. Semuanya sudah inline-flex items-center justify-center, tetapi glyph leading icon asimetris sehingga terlihat berat ke kiri, padding visual berbeda, spinner pending mengubah lebar, dan radius antarvarian tidak konsisten. Jangan gunakan global magic offset. Uji seluruh state dan laporkan bukti pada baris Control geometry.
+```
+
 ## E1 — anti-slop-design
 
 ```text
