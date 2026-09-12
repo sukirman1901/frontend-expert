@@ -88,7 +88,9 @@ Measured Visual Hierarchy checklist (when screenshots/DOM available):
 ## Control Geometry check
 
 - When controls changed, expect a rendered matrix of the relevant text-only, leading-icon, trailing-icon, and icon-only variants plus pending, disabled, and focus states.
-- Verify radius follows project tokens and variants remain optically balanced without content-box, border, spinner, ring, or icon swaps shifting geometry.
+- Require that rendered matrix before evaluating optical balance; source analysis alone cannot prove it.
+- When only source is available, assess radius-token use and structural geometry stability, and mark optical balance `not evaluated`.
+- With rendered evidence, verify radius follows project tokens and variants remain optically balanced without content-box, border, spinner, ring, or icon swaps shifting geometry.
 - Treat pills, circles, segmented controls, asymmetric inset, and deliberate brand geometry as explicit exceptions; do not impose a universal radius.
 - Root-cause routing: radius/token mismatch → `design-surfaces`; content-box or optical-alignment mismatch → `components` + `polish`.
 
@@ -132,7 +134,7 @@ When data IS provided, label each scorecard value with its source (`Token Analys
 | Typography | [value or "not evaluated"] | [DOM / Screenshot / —] | One h1 + ladder | [Pass / Fail / —] |
 | AI Aesthetic Score | [value or "not evaluated"] | [Source Analysis / —] | 0 patterns | [Pass / Fail / —] |
 | UI Feel | [value or "not evaluated"] | [Source Analysis / —] | Craft checklist clean | [Pass / Fail / —] |
-| Control Geometry | [value or "not evaluated"] | [Rendered matrix / Source Analysis / —] | Project radius + optically balanced variants/states | [Pass / Fail / —] |
+| Control Geometry | [radius/stability result; optical balance result or "not evaluated"] | [Rendered matrix / Source Analysis (radius and structural stability only) / —] | Project radius + optically balanced variants/states | [Pass / Fail / —] |
 | Motion | [value or "not evaluated"] | [Source / —] | ≤2–3 purposeful / reduced-motion | [Pass / Fail / —] |
 | Responsive | [value or "not evaluated"] | [Viewport / Source / —] | 320–1440 + full-width CTA | [Pass / Fail / —] |
 | Accessibility | [value or "not evaluated"] | [axe-core / —] | WCAG 2.2 AA (or project target) | [Pass / Fail / —] |
