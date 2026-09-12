@@ -60,6 +60,48 @@ Do not treat `className` as a substitute for a missing slot, and do not treat `c
 
 ## Button
 
+## Button content geometry
+
+Keep button content as one stable inline layout. Outer inline padding is symmetric and tokenized; the gap and icon size also come from control tokens. Logical `start`/`end` slots preserve reading-order semantics in both LTR and RTL.
+
+```tsx
+type ButtonContentProps = {
+  children: React.ReactNode
+  icon?: React.ReactNode
+  iconPosition?: "start" | "end"
+  pending?: boolean
+}
+
+export function ButtonContent({
+  children,
+  icon,
+  iconPosition = "start",
+  pending = false,
+}: ButtonContentProps) {
+  const iconSlot = icon ? (
+    <span
+      aria-hidden
+      className="inline-flex size-[--control-icon-size] shrink-0 items-center justify-center"
+    >
+      {icon}
+    </span>
+  ) : null
+
+  return (
+    <span className="relative inline-flex items-center justify-center gap-[--control-gap] px-[--control-padding-inline]">
+      <span className={pending ? "invisible inline-flex items-center gap-[--control-gap]" : "inline-flex items-center gap-[--control-gap]"}>
+        {iconPosition === "start" && iconSlot}
+        <span>{children}</span>
+        {iconPosition === "end" && iconSlot}
+      </span>
+      {pending && <span className="absolute inset-0 inline-flex items-center justify-center"><Spinner aria-hidden /></span>}
+    </span>
+  )
+}
+```
+
+The fixed `shrink-0` icon slot prevents glyph bounds from changing the gap. Preserve pending width with an overlaid loader or hidden retained content; replacing the label directly causes a shift. Apply optical correction only inside the icon wrapper or glyph, and only after rendered evidence shows a mismatch. In RTL, keep the API and layout expressed as `start`/`end`, not physical left/right.
+
 ### Good: Token-based, focused
 
 ```tsx

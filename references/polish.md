@@ -27,7 +27,28 @@ Hand the radius *language* to `design-surfaces`. Polish only checks that nested 
 
 ### Optical alignment
 
-If geometric center looks off (play ▶, chevrons, asymmetric Reicon glyphs), nudge with padding or `translate` — don’t “fix” with larger hit-box alone.
+Geometric centering (`inline-flex`, `items-center`, `justify-center`) is necessary but not proof. Glyph bounds are not perceived bounds: play ▶, chevrons, arrows, and asymmetric Reicon glyphs can look displaced even when their boxes are centered. There is no universal pixel offset. Render first, then use the smallest compensation inside the fixed icon slot or glyph; never move the control box or change its hit area to disguise an optical problem.
+
+Render this matrix at actual control sizes and in every supported direction:
+
+| Variant | Compare |
+|---------|---------|
+| Text-only | Label visual center within symmetric tokenized inline padding |
+| Leading icon | Label center, icon-to-cap-height relationship, token gap, combined visual weight |
+| Trailing icon | Same checks mirrored by logical `end`, including RTL |
+| Icon-only | Perceived glyph center inside the fixed icon slot and hit area |
+| Pending/loading | Retained label/control width, stable gap, no content jump |
+
+Also compare default, focus, disabled, and loading states. Focus treatment must not alter size; disabled styling must not change perceived balance; an overlaid loader or hidden retained content should preserve geometry.
+
+| Diagnosis | Fix |
+|-----------|-----|
+| Entire label/icon group is off-center | Restore symmetric tokenized outer padding; check start/end slot participation |
+| Gap changes between glyphs | Use one token gap and a fixed, non-shrinking icon slot |
+| Glyph looks high, low, or laterally heavy | Adjust only the icon wrapper/glyph after rendered 1x/2x evidence |
+| Loading replaces text and shrinks the button | Overlay the loader or retain content invisibly so intrinsic width remains |
+| LTR passes but RTL feels reversed | Use logical `start`/`end`; render both directions |
+| Focus, disabled, or pending shifts dimensions | Keep borders and state layers size-neutral; compare the full state matrix |
 
 ### Shadows vs borders
 

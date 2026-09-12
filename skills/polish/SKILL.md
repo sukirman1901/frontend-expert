@@ -42,6 +42,7 @@ After tokens, structure, and anti-slop, apply micro-craft so the UI feels right 
 | **Cheapest valid fix** | Delete decoration → native CSS → reuse project tokens → then add abstraction |
 | **Mobile craft** | Full-width primary CTA <768; safe-area on sticky chrome; thumb-reachable actions |
 | **No `transition: all`** | Name properties; skip Tailwind bare `transition` |
+| **Control geometry proof** | Render the complete control matrix, including pending/loading and applicable LTR/RTL, before accepting optical alignment |
 
 ## Craft (starting points)
 
@@ -58,12 +59,21 @@ After tokens, structure, and anti-slop, apply micro-craft so the UI feels right 
 
 Exceptions: pills/circles, dense toolbars (disable press-scale), reduced motion, brand language that is non-concentric, images that do not need outlines.
 
+## Control geometry
+
+- [ ] Rendered optical variants matrix: text-only, leading icon, trailing icon, icon-only, and pending/loading.
+
+Geometric centering (`inline-flex` / `items-center` / `justify-center`) is necessary but not proof. There is no universal pixel offset: compare the rendered matrix first, then apply the smallest compensation inside the fixed icon slot or glyph.
+
+Judge whether the label remains visually centered across variants and states; whether each icon is perceived as centered against the label cap-height; and whether icon visual weight, token gap, and symmetric token padding feel balanced. Verify focus, hit area, disabled, and pending/loading together, with no label or control-width shift. Include both LTR and RTL when the product supports them.
+
 ## Workflow
 
 1. **Scope** — name the surface; skip structural or token-system work.
 2. **Scan** — rendered 1x/2x, light/dark, hover/press/focus, mobile width.
-3. **Fix** — cheapest valid change; map values to tokens.
-4. **Report** — Before/After tables grouped by principle; mark uninspected states `Not verified`.
+3. **Control matrix** — compare text-only, leading/trailing icon, icon-only, pending/loading, and applicable LTR/RTL at rendered size.
+4. **Fix** — cheapest valid change; map values to tokens; keep optical compensation inside the icon slot.
+5. **Report** — Before/After tables grouped by principle; mark uninspected states `Not verified`.
 
 ## Boundaries
 
@@ -74,6 +84,9 @@ Exceptions: pills/circles, dense toolbars (disable press-scale), reduced motion,
 
 - [ ] Nested radii verified optically (or handed to `design-surfaces`)
 - [ ] Icons optically centered where they looked off
+- [ ] Full rendered control matrix checked: text-only, leading/trailing icon, icon-only, pending/loading, and LTR/RTL when applicable
+- [ ] Label visual center; icon perceived center/cap-height and visual weight; token gap/padding verified
+- [ ] Focus, hit area, disabled, and loading preserve geometry without label or width shift
 - [ ] No `transition: all`; hover/press interruptible
 - [ ] Dynamic numbers use `tabular-nums` where they would jitter
 - [ ] Headings `text-balance`; short copy `text-pretty` where useful
