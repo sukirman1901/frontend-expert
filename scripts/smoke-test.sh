@@ -4,6 +4,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 FAIL=0
+RELEASE_VERSION="2.4.5"
 
 ok() { echo "  OK  $1"; }
 bad() { echo "  FAIL $1" >&2; FAIL=1; }
@@ -87,10 +88,15 @@ skill_entry_count=$(find "$ROOT/skills" -mindepth 2 -maxdepth 2 -name SKILL.md |
 [ "$skill_entry_count" -eq 33 ] && ok "33 canonical skills only" || bad "expected 33 canonical skill entries, found $skill_entry_count"
 
 if command -v jq >/dev/null 2>&1; then
-  if jq -e '.version == "2.4.5" and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
-    ok "plugin v2.4.5 registers exactly 33 skills"
+  if jq -e --arg version "$RELEASE_VERSION" '.version == $version and (.skills | length == 33)' "$ROOT/plugin.json" >/dev/null; then
+    ok "plugin v$RELEASE_VERSION registers exactly 33 skills"
   else
-    bad "plugin must be v2.4.5 with exactly 33 skills"
+    bad "plugin must be v$RELEASE_VERSION with exactly 33 skills"
+  fi
+  if jq -e --arg version "$RELEASE_VERSION" '.version == $version' "$ROOT/.codex-plugin/plugin.json" >/dev/null; then
+    ok ".codex-plugin manifest matches v$RELEASE_VERSION"
+  else
+    bad ".codex-plugin manifest must match v$RELEASE_VERSION"
   fi
   for s in "${EXPECTED_SKILLS[@]}"; do
     if jq -e --arg path "skills/$s" '.skills | index($path) != null' "$ROOT/plugin.json" >/dev/null; then
@@ -99,6 +105,18 @@ if command -v jq >/dev/null 2>&1; then
       bad "plugin missing skills/$s"
     fi
   done
+fi
+
+if sed -n '/^metadata:/,/^---$/p' "$ROOT/skills/frontend-expert/SKILL.md" | rg -Fxq "  version: \"$RELEASE_VERSION\""; then
+  ok "frontend-expert skill metadata matches v$RELEASE_VERSION"
+else
+  bad "frontend-expert skill metadata must match v$RELEASE_VERSION"
+fi
+
+if rg -Fq "Current pack version is **$RELEASE_VERSION**." "$ROOT/docs/pillars.md"; then
+  ok "pillars current version matches v$RELEASE_VERSION"
+else
+  bad "pillars current version must match v$RELEASE_VERSION"
 fi
 
 if [ -d "$ROOT/skills/using-frontend-expert" ]; then
