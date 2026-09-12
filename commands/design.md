@@ -42,7 +42,7 @@ Alias: **`/audit`** (same workflow).
 10. Checks **marketing landing** section stack when applicable
 11. Checks **motion** family budget when animation present
 12. Checks component patterns (composition, states)
-13. Outputs scorecard + prioritized next moves
+13. Outputs scorecard (including Control Geometry) + prioritized next moves
 
 ## Usage
 
@@ -56,7 +56,7 @@ Alias: **`/audit`** (same workflow).
 
 ## Output
 
-Scorecard from `design-reviewer`: Token Compliance, Visual Hierarchy, **Typography**, AI Aesthetic, **UI Feel**, **Motion**, **Responsive**, Accessibility, Performance (UI). Mark unevaluated fields explicitly — do not fabricate visual scores without tokens or screenshots. End with **prioritized next moves** (max 5).
+Scorecard from `design-reviewer`: Token Compliance, Visual Hierarchy, **Typography**, AI Aesthetic, **UI Feel**, **Control Geometry**, **Motion**, **Responsive**, Accessibility, Performance (UI). Mark unevaluated fields explicitly — do not fabricate visual scores without tokens or screenshots. End with **prioritized next moves** (max 5).
 
 Also verify: full-width primary CTA <768; Hierarchy pass; one h1 + type ladder; motion ≤2–3 purposeful patterns when animated.
 

@@ -16,7 +16,7 @@ Run a design system audit on the current codebase:
 7. Check motion family budget + reduced-motion when animation present; inspect playback via motion-inspection (or Not verified)
 8. Review accessibility (WCAG 2.2 AA)
 9. Note Core Web Vitals / loading risks relevant to UI
-10. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing) — mark unevaluated fields explicitly; do not fabricate visual scores without screenshots or tokens
+10. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing + Control Geometry) — mark unevaluated fields explicitly; do not fabricate visual scores without screenshots or tokens
 11. End with prioritized next moves (max 5)
 
 Modes via arguments: full (default), --quick, --token <file>, --component <name>. /audit is an alias of /design.

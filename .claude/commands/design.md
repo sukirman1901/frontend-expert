@@ -44,7 +44,7 @@ Invoke the design-reviewer agent.
 9. Check motion family budget + reduced-motion when animation present; inspect playback via `motion-inspection` (or Not verified)
 10. Review accessibility against WCAG 2.2 AA
 11. Note performance risks relevant to UI (LCP/INP/CLS); use `devtools` when measuring
-12. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing) — mark unevaluated fields explicitly
+12. Output the design-reviewer scorecard (incl. Typography + Responsive + Motion + Landing + Control Geometry) — mark unevaluated fields explicitly
 13. End with prioritized next moves (max 5)
 
 Do not fabricate visual hierarchy or contrast scores without screenshots or token data.

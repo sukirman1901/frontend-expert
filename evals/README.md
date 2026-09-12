@@ -41,6 +41,7 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 | E30 | Anti-slop code | [anti-slop-code.md](./anti-slop-code.md) |
 | E31 | Prototype | [prototype.md](./prototype.md) |
 | E32 | Motion inspection | [motion-inspection.md](./motion-inspection.md) |
+| E33 | Button optical alignment | [button-optical-alignment.md](./button-optical-alignment.md) |
 
 ## Desk vs live
 

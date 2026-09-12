@@ -16,7 +16,7 @@ Build UI that looks design-system-aware, not AI-generated:
 5. motion: shell = section fade + drawer + press-scale; marketing = ≤2 families / named patterns, hand-roll (not registry default); honor prefers-reduced-motion
 6. Handle loading, error, and empty states; Reicon icons
 7. Scan for generated-code tells (anti-slop-code), then AI aesthetic patterns (incl. decorative motion spam / hero-only landing), then apply polish craft
-8. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive/shell/landing/motion families|patterns), a11y notes
+8. Report implementation, tokens used, Conventions check (Reicon/tokens/states/responsive/shell/landing/motion families|patterns/control geometry), a11y notes
 
 Modes via arguments: default = decision tree, --token <file> = explicit, --custom = project system.
 """

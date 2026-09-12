@@ -41,7 +41,7 @@ Build production-quality UI. Orchestrates suite skills — not a single monolith
 9. Light **motion** (shell) or named family/patterns (marketing) — hand-roll, not registry default
 10. Enforces accessibility basics
 11. Scans for generated-code tells (`anti-slop-code`), then visual AI slop, then `polish`
-12. Ends with **Conventions check** (includes Responsive + Shell + Landing + Motion)
+12. Ends with **Conventions check** (includes Responsive + Shell + Landing + Motion + Control geometry)
 
 ## Usage
 

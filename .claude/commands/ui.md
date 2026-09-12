@@ -41,4 +41,4 @@ Invoke the ui-developer agent.
 6. Implement with composition, loading/error/empty states, **responsive**, **motion** (shell light or named families)
 7. Make interactive elements keyboard accessible
 8. Scan for generated-code tells (`anti-slop-code`), then AI aesthetic patterns (incl. motion spam / hero-only), then apply `polish` craft
-9. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states/responsive/shell/landing/motion), a11y notes
+9. Report: implementation, tokens used, **Conventions check** (Reicon/tokens/states/responsive/shell/landing/motion/control geometry), a11y notes
