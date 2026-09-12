@@ -60,7 +60,7 @@ Do not treat `className` as a substitute for a missing slot, and do not treat `c
 
 ## Button
 
-## Button content geometry
+### Button content geometry
 
 Keep button content as one stable inline layout. Outer inline padding is symmetric and tokenized; the gap and icon size also come from control tokens. Logical `start`/`end` slots preserve reading-order semantics in both LTR and RTL.
 
@@ -90,7 +90,7 @@ export function ButtonContent({
 
   return (
     <span className="relative inline-flex items-center justify-center gap-[--control-gap] px-[--control-padding-inline]">
-      <span className={pending ? "invisible inline-flex items-center gap-[--control-gap]" : "inline-flex items-center gap-[--control-gap]"}>
+      <span className={pending ? "inline-flex items-center gap-[--control-gap] opacity-0" : "inline-flex items-center gap-[--control-gap]"}>
         {iconPosition === "start" && iconSlot}
         {!iconOnly && <span>{children}</span>}
         {iconPosition === "end" && iconSlot}
@@ -101,7 +101,7 @@ export function ButtonContent({
 }
 ```
 
-The fixed `shrink-0` icon slot prevents glyph bounds from changing the gap. `iconOnly` omits the label node entirely, so no empty flex item creates a gap; its accessible name belongs on the outer `<button>` via `aria-label`, not on this presentational content wrapper. Preserve pending width with an overlaid loader or hidden retained content; replacing the label directly causes a shift. Apply optical correction only inside the icon wrapper or glyph, and only after rendered evidence shows a mismatch. In RTL, keep the API and layout expressed as `start`/`end`, not physical left/right.
+The fixed `shrink-0` icon slot prevents glyph bounds from changing the gap. `iconOnly` omits the label node entirely, so no empty flex item creates a gap; its accessible name belongs on the outer `<button>` via `aria-label`, not on this presentational content wrapper. The outer button must set `aria-busy={pending}` and preserve its accessible name while pending. `opacity-0` retains labeled content in both layout and the accessibility tree while the overlaid spinner stays `aria-hidden`; if progress needs an announcement, provide a separate status/live region. Replacing or accessibility-hiding the label can lose its name as well as shift width. Apply optical correction only inside the icon wrapper or glyph, and only after rendered evidence shows a mismatch. In RTL, keep the API and layout expressed as `start`/`end`, not physical left/right.
 
 ### Good: Token-based, focused
 

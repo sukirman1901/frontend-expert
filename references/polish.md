@@ -34,8 +34,8 @@ Render this matrix at actual control sizes and in every supported direction:
 | Variant | Compare |
 |---------|---------|
 | Text-only | Label visual center within symmetric tokenized inline padding |
-| Leading icon | Label center, icon-to-cap-height relationship, token gap, combined visual weight |
-| Trailing icon | Same checks mirrored by logical `end`, including RTL |
+| Leading icon | Combined icon-label group/perceived visual mass, label baseline/cap-height relationship, token gap, visual weight |
+| Trailing icon | Same combined-group checks mirrored by logical `end`, including RTL |
 | Icon-only | Perceived glyph center inside the fixed icon slot and hit area |
 | Pending/loading | Retained label/control width, stable gap, no content jump |
 
@@ -43,7 +43,8 @@ Also compare default, focus, disabled, and loading states. Focus treatment must 
 
 | Diagnosis | Fix |
 |-----------|-----|
-| Entire label/icon group is off-center | Restore symmetric tokenized outer padding; check start/end slot participation |
+| Combined icon-label group/perceived visual mass is off-center | Restore symmetric tokenized outer padding; check start/end slot participation and visual weight |
+| Label alone is not at the control center in icon+text | Do not compensate merely to center the label; judge the combined group, then inspect baseline/cap-height relationship separately |
 | Gap changes between glyphs | Use one token gap and a fixed, non-shrinking icon slot |
 | Glyph looks high, low, or laterally heavy | Adjust only the icon wrapper/glyph after rendered 1x/2x evidence |
 | Loading replaces text and shrinks the button | Overlay the loader or retain content invisibly so intrinsic width remains |

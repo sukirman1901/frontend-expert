@@ -65,7 +65,7 @@ Exceptions: pills/circles, dense toolbars (disable press-scale), reduced motion,
 
 Geometric centering (`inline-flex` / `items-center` / `justify-center`) is necessary but not proof. There is no universal pixel offset: compare the rendered matrix first, then apply the smallest compensation inside the fixed icon slot or glyph.
 
-Judge whether the label remains visually centered across variants and states; whether each icon is perceived as centered against the label cap-height; and whether icon visual weight, token gap, and symmetric token padding feel balanced. Verify focus, hit area, disabled, and pending/loading together, with no label or control-width shift. Include both LTR and RTL when the product supports them.
+Judge whether the combined icon-label content group and its perceived visual mass are balanced and centered across variants and states. Assess the label baseline/cap-height relationship to the icon separately; the label itself need not occupy the control center in an icon+text variant. Verify icon visual weight, token gap, symmetric token padding, focus, hit area, disabled, and pending/loading together, with no content-group or control-width shift. Include both LTR and RTL when the product supports them.
 
 ## Workflow
 
@@ -85,7 +85,7 @@ Judge whether the label remains visually centered across variants and states; wh
 - [ ] Nested radii verified optically (or handed to `design-surfaces`)
 - [ ] Icons optically centered where they looked off
 - [ ] Full rendered control matrix checked: text-only, leading/trailing icon, icon-only, pending/loading, and LTR/RTL when applicable
-- [ ] Label visual center; icon perceived center/cap-height and visual weight; token gap/padding verified
+- [ ] Combined icon-label group/perceived visual mass centered; label baseline/cap-height relationship, icon visual weight, and token gap/padding verified
 - [ ] Focus, hit area, disabled, and loading preserve geometry without label or width shift
 - [ ] No `transition: all`; hover/press interruptible
 - [ ] Dynamic numbers use `tabular-nums` where they would jitter
