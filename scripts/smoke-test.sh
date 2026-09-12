@@ -251,11 +251,13 @@ if ! rg -q 'avatar' "$ROOT/skills/app-shell/SKILL.md" || ! rg -q 'custom select'
 else
   ok "shell chrome rules in skills"
 fi
-if rg -qi '^[[:space:]]*-[[:space:]]+Control[[:space:]]+geometry:.*(radius.*(optical|state)|(optical|state).*radius)' \
-  "$ROOT/references/compliance-gates.md"; then
+if rg -Fqx -- '- Control geometry: <radius token + text/icon optical balance + relevant states checked | n/a | waiver: …>' \
+  "$ROOT/references/compliance-gates.md" \
+  || rg -Fqx -- '- Control geometry: <radius token + text/icon optical balance + relevant states checked | n/a | waiver: ...>' \
+    "$ROOT/references/compliance-gates.md"; then
   ok "control geometry conventions gate"
 else
-  bad "references/compliance-gates.md missing '- Control geometry:' radius + optical/state conventions line"
+  bad "references/compliance-gates.md missing canonical positive '- Control geometry:' conventions bullet"
 fi
 polish_control_geometry=$(awk '
   /^## Control geometry[[:space:]]*$/ { in_section=1; next }
@@ -286,17 +288,17 @@ if rg -qi 'icon[[:space:]-]+slot' "$ROOT/skills/components/SKILL.md"; then
 else
   bad "skills/components/SKILL.md missing icon slot contract"
 fi
-if rg -qi '^[[:space:]]*(\|.*Control[[:space:]-]+Geometry.*(passes?([[:space:]:|]|$)|verif(y|ied))|-[[:space:]]+\[[ xX]\].*Control[[:space:]-]+Geometry.*(must[[:space:]]+(pass|verify)|verif(y|ied)))' \
+if rg -Fqx -- '| **Control geometry** | radius follows project tokens; text/icon variants are optically balanced; pending/disabled/focus states do not shift geometry |' \
   "$ROOT/skills/quality-loop/SKILL.md"; then
   ok "quality-loop Control Geometry check"
 else
-  bad "skills/quality-loop/SKILL.md missing active Control Geometry pass/verify gate"
+  bad "skills/quality-loop/SKILL.md missing canonical positive Control geometry gate row"
 fi
-if rg -qi '^[[:space:]]*(\|.*Control[[:space:]-]+Geometry.*((Critical|High)([[:space:]:|]|$)|verif(y|ied))|-[[:space:]]+\[[ xX]\].*Control[[:space:]-]+Geometry.*(must[[:space:]]+verify|verif(y|ied)|Critical|High)|-[[:space:]]+.*Control[[:space:]-]+Geometry.*(must[[:space:]]+verify|verif(y|ied)|(Critical|High)([[:space:]:]|$)))' \
+if rg -Fqx -- '- **Control Geometry:** High for primary or repeated control geometry violations; Medium for isolated secondary control geometry violations.' \
   "$ROOT/agents/design-reviewer.md"; then
   ok "design-reviewer Control Geometry check"
 else
-  bad "agents/design-reviewer.md missing active Control Geometry severity/verify rule"
+  bad "agents/design-reviewer.md missing canonical positive Control Geometry severity rule"
 fi
 if ! rg -q 'responsive' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
   bad "hooks/session-start.sh missing responsive/motion"
