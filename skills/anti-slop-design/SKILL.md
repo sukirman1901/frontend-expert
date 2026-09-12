@@ -66,5 +66,6 @@ AI-generated UI has recognizable tells. Scan for them before shipping; fix with 
 ## Depth
 
 Full catalog and fixes: `references/anti-patterns.md`.
+Evidence-aware craft principles for spacing, color, type, controls, and common surfaces: `references/good-ui-principles.md`.
 Token source: `references/token-preset-scoring.md` (Plasma/`neutral-purple` only with brand cue).
 Motion vocabulary: `references/motion-families.md`.

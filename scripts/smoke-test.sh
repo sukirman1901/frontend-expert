@@ -258,6 +258,71 @@ else
   bad "E33 must require target + render provenance, reject simulated/stand-in evidence, and keep not-evaluated outcomes incomplete"
 fi
 [ -f "$ROOT/references/anti-slop-code.md" ] && ok "references/anti-slop-code.md" || bad "references/anti-slop-code.md"
+
+good_ui="$ROOT/references/good-ui-principles.md"
+anti_slop_skill="$ROOT/skills/anti-slop-design/SKILL.md"
+references_map="$ROOT/references/README.md"
+
+if [ -f "$good_ui" ]; then
+  ok "references/good-ui-principles.md"
+else
+  bad "references/good-ui-principles.md"
+fi
+
+if rg -Fq '| `good-ui-principles.md` | `anti-slop-design`' "$references_map" \
+  && rg -q 'design-foundations|design-color|design-typography|components|forms|accessibility' "$references_map"; then
+  ok "references map links Good UI principles and domain owners"
+else
+  bad "references map must link Good UI principles to anti-slop-design and relevant domain owners"
+fi
+
+if rg -Fq 'references/good-ui-principles.md' "$anti_slop_skill"; then
+  ok "anti-slop-design links Good UI principles"
+else
+  bad "anti-slop-design must link references/good-ui-principles.md"
+fi
+
+if [ -f "$good_ui" ] \
+  && rg -qi 'evidence (class|classification)|classification' "$good_ui" \
+  && rg -qi 'project (system|default).*first|existing project.*(tokens|components|conventions)' "$good_ui" \
+  && rg -qi 'heuristic|fallback' "$good_ui"; then
+  ok "Good UI principles classify evidence and define decision hierarchy"
+else
+  bad "Good UI principles must classify evidence, prefer the project system, and label numeric recipes as fallbacks/heuristics"
+fi
+
+if [ -f "$good_ui" ] \
+  && rg -qi 'rendered (evidence|context|verification)|actual render' "$good_ui" \
+  && rg -qi 'source inspection.*(not|cannot)|cannot.*source inspection' "$good_ui"; then
+  ok "Good UI principles require rendered verification for visual claims"
+else
+  bad "Good UI principles must require actual rendered evidence and reject source-only visual claims"
+fi
+
+if [ -f "$good_ui" ] \
+  && rg -qi 'achromatic' "$good_ui" \
+  && rg -qi 'tinted neutral' "$good_ui" \
+  && rg -qi 'context|token' "$good_ui"; then
+  ok "Good UI principles allow contextual achromatic or tinted neutrals"
+else
+  bad "Good UI principles must allow achromatic and tinted neutrals according to context and tokens"
+fi
+
+if [ -f "$good_ui" ] \
+  && rg -qi 'conditional recipe|apply when|when .* applies|context-dependent' "$good_ui" \
+  && rg -qi 'accessibility.*(canonical|owner)|canonical.*accessibility' "$good_ui"; then
+  ok "Good UI principles keep recipes conditional and route accessibility"
+else
+  bad "Good UI principles must make recipes conditional and route formal accessibility to its canonical owner"
+fi
+
+if [ -f "$good_ui" ] \
+  && ! rg -Fq 'spacing/margin/dimension = multiples of 8 (4 for fine detail). Never arbitrary.' "$good_ui" \
+  && ! rg -Fq 'spacing/margin/dimension = multiples of 8 (4 for fine detail). Never arbitrary.' "$anti_slop_skill"; then
+  ok "Good UI guidance avoids universal 8-point sentence"
+else
+  bad "Good UI guidance must not contain the universal 8-point sentence"
+fi
 [ -f "$ROOT/references/prototype.md" ] && ok "references/prototype.md" || bad "references/prototype.md"
 [ -f "$ROOT/references/motion-inspection.md" ] && ok "references/motion-inspection.md" || bad "references/motion-inspection.md"
 [ -f "$ROOT/references/landing-sections.md" ] && ok "landing-sections.md" || bad "landing-sections.md"

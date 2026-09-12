@@ -17,6 +17,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `token-preset-scoring.md` | `tokens`, `design-direction` | Decision tree + scoring |
 | `responsive.md` | `responsive` | All-devices MUST |
 | `anti-patterns.md` | `anti-slop-design` | AI aesthetic catalog |
+| `good-ui-principles.md` | `anti-slop-design` | Evidence-aware craft review; routes to `design-foundations`, `design-color`, `design-typography`, `components`, `forms`, `accessibility`, and other domain owners |
 | `anti-slop-code.md` | `anti-slop-code` | Generated implementation, blast radius, field errors |
 | `polish.md` | `polish` | Micro craft |
 | `component-patterns.md` | `components` | Composition patterns |
