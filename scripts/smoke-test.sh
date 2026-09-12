@@ -372,7 +372,7 @@ if [ -f "$good_ui" ]; then
     bad "Good UI principles Color section must preserve achromatic/tinted neutral choice by context or tokens"
   fi
   good_ui_domain_contract "Shadows and gradients" "shadows and gradients" 'elevation.*layering' 'light direction' 'Gradients.*hierarchy' 'banding.*text contrast'
-  good_ui_domain_contract "Typography" "typography" 'type roles' 'two families' 'heading structure' 'wrapping.*truncation'
+  good_ui_domain_contract "Typography" "typography" 'type roles' 'two families' 'one page-level `<h1>`' 'sequential lower heading levels' 'wrapping.*truncation'
   good_ui_domain_contract "Buttons" "button hierarchy and states" 'primary.*secondary.*tertiary' 'hover.*focus.*pressed.*disabled.*loading' 'target.*fallback'
   good_ui_domain_contract "Forms" "forms and validation" 'labels.*placeholder' 'validation.*field' 'pending.*failure.*recovery.*success'
   good_ui_domain_contract "Cards" "card structure and interaction" 'bounded object or action' 'whole card interactive' 'truncation.*bottom-aligned' 'Spacing ranges.*heuristic'

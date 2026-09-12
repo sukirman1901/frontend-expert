@@ -55,7 +55,7 @@ Gradients can support hierarchy or atmosphere when the product language calls fo
 
 ## Typography
 
-Use named project type roles, no more than two families without a deliberate brand reason, one page-level heading, and a sequential heading structure. Prefer weight, size, spacing, and measure that produce a clear ladder over arbitrary one-off values.
+Use named project type roles, no more than two families without a deliberate brand reason, one page-level `<h1>`, and sequential lower heading levels. Prefer weight, size, spacing, and measure that produce a clear ladder over arbitrary one-off values.
 
 Fallback body sizes and line heights are heuristics only; language, font metrics, zoom, platform, and density change what works. Verify wrapping, truncation, numerals, long labels, localization, and text zoom. Canonical owner: `design-typography`; semantic heading requirements belong to `accessibility`.
 
