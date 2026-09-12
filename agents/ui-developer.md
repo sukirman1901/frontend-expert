@@ -67,6 +67,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 14. **Shell chrome** — theme in **topbar** (icon); profile = **avatar → account menu**; product filters = **custom select** (`app-shell` / `components`)
 15. **Marketing landings** — section stack via `marketing` / `landing-sections.md` (not hero-only)
 16. **Evidence before taste** — project system first; label standards, recommendations, heuristics, inspiration, and waivers
+17. **Control geometry** — when buttons/controls change, build and render the relevant matrix (text-only, leading-icon, trailing-icon, icon-only; pending, disabled, focus as relevant), use project radius tokens, and verify no optical or geometry shift
 
 ## Output format
 
@@ -74,7 +75,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 
 1. **Implementation** — code using token CSS custom properties
 2. **Token reference** — branch used (project system / explicit / hard-gate / score n/24) and why
-3. **Conventions check** — required block from `references/compliance-gates.md` (icons/tokens/states/**responsive**/hierarchy/typography/**shell**/webgl/motion)
+3. **Conventions check** — required block from `references/compliance-gates.md` (icons/tokens/states/**responsive**/hierarchy/typography/**shell**/webgl/motion/**Control geometry**); report the rendered control matrix whenever controls changed
 4. **Accessibility** — keyboard, labels, contrast notes
 5. **Responsive** — behavior at 320 / 768 / 1024 / 1440 + full-width CTA evidence
 6. **Tests** — only if `testing` was in scope

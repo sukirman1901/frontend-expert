@@ -52,6 +52,7 @@ You (the session agent) are the **loop controller**. Personas do not call each o
 |------|-----------|
 | **Anti-slop** | No Critical/High AI-aesthetic findings |
 | **UI feel** | No Critical/High craft issues on touched UI (concentric radius, hit overlap, `transition: all`, broken press/enter) |
+| **Control geometry** | radius follows project tokens; text/icon variants are optically balanced; pending/disabled/focus states do not shift geometry |
 | **Tokens** | No Critical/High raw-hex / off-token issues; greenfield pack preset used decision tree + Token score / `(explicit)` / `(hard-gate)` / project system in Conventions check |
 | **Responsive** | Conventions Responsive line present; full-width primary CTA <768; no Critical/High desktop-only layout on greenfield (320–1440) |
 | **Hierarchy** | Hierarchy pass (one primary focus + one primary CTA) or waiver for tiny tweaks |
@@ -80,7 +81,7 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 ### Round 0 — Direction + build
 
 1. Load `design-direction` if non-trivial / blank-canvas
-2. After direction: (+ `prototype` if comparing/stressing) → `tokens` → (+ `marketing` if landing) → (+ `app-shell` / `data-fetching` / `forms` if needed) → `components` → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` / `seo` if needed)
+2. After direction: (+ `prototype` if comparing/stressing) → `tokens` → (+ `marketing` if landing) → (+ `app-shell` / `data-fetching` / `forms` if needed) → `components` → (+ `design-surfaces` when radius/control geometry is implicated) → **`anti-slop-code`** → **`responsive`** → **`motion`** (light shell; marketing = families/patterns from `motion-families.md`, hand-roll) → `anti-slop-design` → `polish` → `accessibility` (+ `webgl` / `seo` if needed)
 3. Produce UI + **Conventions check** (`references/compliance-gates.md`)
 
 ### Each cycle — Prove + audit + fix
@@ -89,7 +90,7 @@ Do **not** invent a test stack just to satisfy the Tests gate — waive and list
 2. **AUDIT** — `design-reviewer` scorecard (/design or /audit). Mark unevaluated honestly.
 3. **DECIDE**
    - All Critical/High clear → **DONE** (report scorecard + remaining Medium/Low)
-   - Else if iterations left → **FIX** with `ui-developer` (only findings that block gates)
+   - Else if iterations left → **FIX** with `ui-developer` (only findings that block gates; include `design-surfaces` when radius is implicated)
    - Else → **STOP** at cap with remaining list
 
 ### Fix discipline
@@ -134,6 +135,7 @@ FIX … | DONE | STOP (cap)
 - [ ] Shell chrome: theme topbar + avatar menu + custom selects (or waivers)
 - [ ] Marketing landing: section stack hand-roll (or n/a / waiver)
 - [ ] Conventions check filled before DONE
+- [ ] Control geometry Conventions line covers radius token, text/icon optical balance, and relevant states (or valid n/a/waiver)
 - [ ] Cap ≤3 fix cycles; STOP lists remaining Critical/High if any
 - [ ] No fabricated audit scores
 
@@ -141,6 +143,6 @@ FIX … | DONE | STOP (cap)
 
 - Lifecycle A→Z: `references/fe-lifecycle.md`
 - Judgment: `design-direction`
-- Build: `tokens`, `components`, **`anti-slop-code`**, **`responsive`**, **`motion`** (`motion-families.md`), `anti-slop-design`, `polish`, `accessibility`
+- Build: `tokens`, `components`, `design-surfaces` when radius is implicated, **`anti-slop-code`**, **`responsive`**, **`motion`** (`motion-families.md`), `anti-slop-design`, `polish`, `accessibility`
 - Test: `testing` (+ `devtools` when measuring)
 - Audit: `design-reviewer` + `references/anti-patterns.md` / `references/polish.md` / a11y / performance as needed

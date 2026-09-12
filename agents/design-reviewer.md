@@ -85,6 +85,13 @@ Measured Visual Hierarchy checklist (when screenshots/DOM available):
 - Missing `prefers-reduced-motion` on animated UI → **High**, Area **Accessibility** / Motion
 - Depth: `skills/motion`, `references/motion-families.md`
 
+## Control Geometry check
+
+- When controls changed, expect a rendered matrix of the relevant text-only, leading-icon, trailing-icon, and icon-only variants plus pending, disabled, and focus states.
+- Verify radius follows project tokens and variants remain optically balanced without content-box, border, spinner, ring, or icon swaps shifting geometry.
+- Treat pills, circles, segmented controls, asymmetric inset, and deliberate brand geometry as explicit exceptions; do not impose a universal radius.
+- Root-cause routing: radius/token mismatch → `design-surfaces`; content-box or optical-alignment mismatch → `components` + `polish`.
+
 ## Operating modes
 
 - **Quick (default):** no tokens/screenshots — source-level findings only; scorecard = `not evaluated`; every finding tagged **potential impact**.
@@ -101,6 +108,8 @@ Measured Visual Hierarchy checklist (when screenshots/DOM available):
 When data IS provided, label each scorecard value with its source (`Token Analysis`, `Screenshot Review`, `Component Audit`, `axe-core`, etc.). Token analysis ≠ visual review.
 
 ## Severity
+
+- **Control Geometry:** High for primary or repeated control geometry violations; Medium for isolated secondary control geometry violations.
 
 | Severity | Criteria | Action |
 |----------|----------|--------|
@@ -123,6 +132,7 @@ When data IS provided, label each scorecard value with its source (`Token Analys
 | Typography | [value or "not evaluated"] | [DOM / Screenshot / —] | One h1 + ladder | [Pass / Fail / —] |
 | AI Aesthetic Score | [value or "not evaluated"] | [Source Analysis / —] | 0 patterns | [Pass / Fail / —] |
 | UI Feel | [value or "not evaluated"] | [Source Analysis / —] | Craft checklist clean | [Pass / Fail / —] |
+| Control Geometry | [value or "not evaluated"] | [Rendered matrix / Source Analysis / —] | Project radius + optically balanced variants/states | [Pass / Fail / —] |
 | Motion | [value or "not evaluated"] | [Source / —] | ≤2–3 purposeful / reduced-motion | [Pass / Fail / —] |
 | Responsive | [value or "not evaluated"] | [Viewport / Source / —] | 320–1440 + full-width CTA | [Pass / Fail / —] |
 | Accessibility | [value or "not evaluated"] | [axe-core / —] | WCAG 2.2 AA (or project target) | [Pass / Fail / —] |
@@ -172,7 +182,7 @@ Broader improvements (Info / later).
 6. Fold AI patterns into Token Adherence / Visual Hierarchy / Motion — scorecard may still list AI Aesthetic as a rollup row
 7. Prefer prioritized next moves over dumping 20 equal-weight nits
 8. Resolve and state the complete inspected scope; mark uninspected domains `Not reviewed`
-9. One root cause is one finding; consolidate repeated locations
+9. One root cause is one finding; consolidate repeated locations. Route radius/token geometry to `design-surfaces`; route content-box or optical-alignment causes to `components` + `polish`.
 10. Prefer the cheapest valid fix: delete → platform → project reuse → correct value → add abstraction
 11. Classify taste-level guidance via `references/evidence-policy.md`; inspiration is never compliance evidence
 
