@@ -205,7 +205,8 @@ echo "== references map =="
 [ -f "$ROOT/evals/anti-slop-code.md" ] && ok "evals/anti-slop-code.md (E30)" || bad "evals/anti-slop-code.md"
 [ -f "$ROOT/evals/prototype.md" ] && ok "evals/prototype.md (E31)" || bad "evals/prototype.md"
 [ -f "$ROOT/evals/motion-inspection.md" ] && ok "evals/motion-inspection.md (E32)" || bad "evals/motion-inspection.md"
-if [ -f "$ROOT/evals/button-optical-alignment.md" ] && rg -qi '\bE33\b' "$ROOT/evals/button-optical-alignment.md"; then
+if [ -f "$ROOT/evals/button-optical-alignment.md" ] \
+  && head -n 1 "$ROOT/evals/button-optical-alignment.md" | rg -qi '^# Eval E33:'; then
   ok "evals/button-optical-alignment.md (E33)"
 else
   bad "evals/button-optical-alignment.md must exist and be labeled E33"
@@ -250,34 +251,52 @@ if ! rg -q 'avatar' "$ROOT/skills/app-shell/SKILL.md" || ! rg -q 'custom select'
 else
   ok "shell chrome rules in skills"
 fi
-if rg -qi '^.*Control[[:space:]]+geometry:' "$ROOT/references/compliance-gates.md"; then
+if rg -qi '^[[:space:]]*-[[:space:]]+Control[[:space:]]+geometry:.*(radius.*(optical|state)|(optical|state).*radius)' \
+  "$ROOT/references/compliance-gates.md"; then
   ok "control geometry conventions gate"
 else
-  bad "references/compliance-gates.md missing 'Control geometry:' conventions line"
+  bad "references/compliance-gates.md missing '- Control geometry:' radius + optical/state conventions line"
 fi
-if rg -qi 'variant[[:space:]-]+matrix|matrix.*variant' "$ROOT/skills/polish/SKILL.md" \
-  && rg -qi 'text[[:space:]-]*only' "$ROOT/skills/polish/SKILL.md" \
-  && rg -qi 'leading[[:space:]-]+icon' "$ROOT/skills/polish/SKILL.md" \
-  && rg -qi 'trailing[[:space:]-]+icon' "$ROOT/skills/polish/SKILL.md" \
-  && rg -qi 'icon[[:space:]-]*only' "$ROOT/skills/polish/SKILL.md"; then
+polish_control_geometry=$(awk '
+  /^## Control geometry[[:space:]]*$/ { in_section=1; next }
+  in_section && /^##[[:space:]]/ { exit }
+  in_section { print }
+' "$ROOT/skills/polish/SKILL.md")
+polish_matrix=0
+while IFS= read -r line; do
+  if printf '%s\n' "$line" | rg -qi '^[[:space:]]*(-[[:space:]]+\[[ xX]\]|[-*]|\|)' \
+    && printf '%s\n' "$line" | rg -qi 'matrix|variants?[[:space:]]*:' \
+    && printf '%s\n' "$line" | rg -qi 'text[[:space:]-]*only' \
+    && printf '%s\n' "$line" | rg -qi 'leading[[:space:]-]+icon' \
+    && printf '%s\n' "$line" | rg -qi 'trailing[[:space:]-]+icon' \
+    && printf '%s\n' "$line" | rg -qi 'icon[[:space:]-]*only' \
+    && printf '%s\n' "$line" | rg -qi 'render(ed|ing)?|optical' \
+    && ! printf '%s\n' "$line" | rg -qi '\b(do not|don.t|skip|ignore|omit)[[:space:]]+(verify|render|test|check|compare)'; then
+    polish_matrix=1
+    break
+  fi
+done <<< "$polish_control_geometry"
+if [ -n "$polish_control_geometry" ] && [ "$polish_matrix" -eq 1 ]; then
   ok "polish control variant matrix"
 else
-  bad "skills/polish/SKILL.md missing text-only + leading icon + trailing icon + icon-only variant matrix requirement"
+  bad "skills/polish/SKILL.md missing affirmative ## Control geometry matrix line with all four variants + rendered/optical proof"
 fi
 if rg -qi 'icon[[:space:]-]+slot' "$ROOT/skills/components/SKILL.md"; then
   ok "components icon slot contract"
 else
   bad "skills/components/SKILL.md missing icon slot contract"
 fi
-if rg -qi 'Control[[:space:]-]+Geometry' "$ROOT/skills/quality-loop/SKILL.md"; then
+if rg -qi '^[[:space:]]*(\|.*Control[[:space:]-]+Geometry.*(passes?([[:space:]:|]|$)|verif(y|ied))|-[[:space:]]+\[[ xX]\].*Control[[:space:]-]+Geometry.*(must[[:space:]]+(pass|verify)|verif(y|ied)))' \
+  "$ROOT/skills/quality-loop/SKILL.md"; then
   ok "quality-loop Control Geometry check"
 else
-  bad "skills/quality-loop/SKILL.md missing Control Geometry"
+  bad "skills/quality-loop/SKILL.md missing active Control Geometry pass/verify gate"
 fi
-if rg -qi 'Control[[:space:]-]+Geometry' "$ROOT/agents/design-reviewer.md"; then
+if rg -qi '^[[:space:]]*(\|.*Control[[:space:]-]+Geometry.*((Critical|High)([[:space:]:|]|$)|verif(y|ied))|-[[:space:]]+\[[ xX]\].*Control[[:space:]-]+Geometry.*(must[[:space:]]+verify|verif(y|ied)|Critical|High)|-[[:space:]]+.*Control[[:space:]-]+Geometry.*(must[[:space:]]+verify|verif(y|ied)|(Critical|High)([[:space:]:]|$)))' \
+  "$ROOT/agents/design-reviewer.md"; then
   ok "design-reviewer Control Geometry check"
 else
-  bad "agents/design-reviewer.md missing Control Geometry"
+  bad "agents/design-reviewer.md missing active Control Geometry severity/verify rule"
 fi
 if ! rg -q 'responsive' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
   bad "hooks/session-start.sh missing responsive/motion"
