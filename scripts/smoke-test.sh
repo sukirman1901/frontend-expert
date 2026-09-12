@@ -235,16 +235,27 @@ e33_pass=$(awk '
   in_section && /^##[[:space:]]/ { exit }
   in_section { print }
 ' "$e33")
+e33_fail=$(awk '
+  /^## Fail signals[[:space:]]*$/ { in_section=1; next }
+  in_section && /^##[[:space:]]/ { exit }
+  in_section { print }
+' "$e33")
 if printf '%s\n' "$e33_pass" | rg -qi 'populated[[:space:]]+`?- Control geometry:' \
   && printf '%s\n' "$e33_pass" | rg -qi 'actual project radius token' \
   && printf '%s\n' "$e33_pass" | rg -qi 'rendered text-only/leading-icon/trailing-icon/icon-only' \
   && printf '%s\n' "$e33_pass" | rg -qi 'relevant states' \
   && printf '%s\n' "$e33_pass" | rg -qi 'observed optical-balance outcome' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'actual inspected target.*component.*URL' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'render provenance.*browser.*screenshot.*DOM artifact.*real render method' \
+  && printf '%s\n' "$e33_pass" | rg -qi 'prose simulation.*stand-in fixture.*(invalid|fail|not target evidence)' \
+  && printf '%s\n' "$e33_pass" | rg -qi '`not evaluated`.*(incomplete|fail).*(not.*pass|cannot pass)' \
   && printf '%s\n' "$e33_pass" | rg -qi 'literal schema placeholder.*fail' \
-  && printf '%s\n' "$e33_pass" | rg -qi '`n/a`.*fail'; then
-  ok "E33 requires populated Control geometry evidence"
+  && printf '%s\n' "$e33_pass" | rg -qi '`n/a`.*fail' \
+  && printf '%s\n' "$e33_fail" | rg -qi '(prose simulation|stand-in fixture)' \
+  && printf '%s\n' "$e33_fail" | rg -qi '`not evaluated`.*(pass|complete)'; then
+  ok "E33 requires real rendered Control geometry evidence"
 else
-  bad "E33 must reject placeholder/n-a and require actual token + rendered variant/state + optical outcome evidence"
+  bad "E33 must require target + render provenance, reject simulated/stand-in evidence, and keep not-evaluated outcomes incomplete"
 fi
 [ -f "$ROOT/references/anti-slop-code.md" ] && ok "references/anti-slop-code.md" || bad "references/anti-slop-code.md"
 [ -f "$ROOT/references/prototype.md" ] && ok "references/prototype.md" || bad "references/prototype.md"
@@ -423,18 +434,18 @@ rm -rf "$tmp_install"
 
 echo "== eval routing =="
 chmod +x "$ROOT/scripts/eval-routing-contract.sh" 2>/dev/null || true
+e33_paste=$(awk '
+  /^## E33 .*button optical alignment/ { in_section=1; next }
+  in_section && /^##[[:space:]]/ { exit }
+  in_section { print }
+' "$ROOT/evals/PASTE.md")
 if [ -f "$ROOT/evals/PASTE.md" ] \
   && rg -q '^## E33 .*button optical alignment' "$ROOT/evals/PASTE.md" \
-  && awk '
-    /^## E33 .*button optical alignment/ { in_section=1; next }
-    in_section && /^##[[:space:]]/ { exit }
-    in_section { print }
-  ' "$ROOT/evals/PASTE.md" | rg -qi 'text-only.*leading icon.*trailing icon.*icon-only' \
-  && awk '
-    /^## E33 .*button optical alignment/ { in_section=1; next }
-    in_section && /^##[[:space:]]/ { exit }
-    in_section { print }
-  ' "$ROOT/evals/PASTE.md" | rg -qi 'Control geometry'; then
+  && printf '%s\n' "$e33_paste" | rg -qi 'text-only.*leading icon.*trailing icon.*icon-only' \
+  && printf '%s\n' "$e33_paste" | rg -qi 'Control geometry' \
+  && printf '%s\n' "$e33_paste" | rg -qi 'actual.*target.*(component|URL)' \
+  && printf '%s\n' "$e33_paste" | rg -qi 'render provenance' \
+  && printf '%s\n' "$e33_paste" | rg -qi 'not evaluated.*incomplete'; then
   ok "evals/PASTE.md includes runnable E33 prompt"
 else
   bad "evals/PASTE.md missing runnable E33 button optical alignment prompt"

@@ -6,7 +6,7 @@
 
 ## Expected behavior
 
-Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendered control-geometry problem: preserve stable outer geometry, assign radius ownership to the control family, and compensate only the proven glyph inside its icon slot. Finish with the canonical `- Control geometry:` conventions field, populated with evidence from this scenario rather than its schema placeholder.
+Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendered control-geometry problem: preserve stable outer geometry, assign radius ownership to the control family, and compensate only the proven glyph inside its icon slot. Inspect the user's actual rendered target; do not substitute an invented fixture. Finish with the canonical `- Control geometry:` conventions field, populated with traceable render evidence rather than its schema placeholder.
 
 ## Pass criteria
 
@@ -19,8 +19,12 @@ Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendere
 - [ ] Keeps pending geometry stable and preserves an accessible name plus `aria-busy`; any status announcement is separate
 - [ ] Assigns radius ownership to project/control-family tokens and documents intentional pill, circle, segmented, asymmetric, or brand exceptions
 - [ ] Rejects a universal/global magic offset across icons, sizes, or variants
-- [ ] Reports a populated `- Control geometry:` line containing the actual project radius token, rendered text-only/leading-icon/trailing-icon/icon-only variants and relevant states, plus the observed optical-balance outcome
+- [ ] Identifies the actual inspected target by component path/name and URL when one is available
+- [ ] Records render provenance: browser plus screenshot/DOM artifact, or a documented real render method that another reviewer can reproduce
+- [ ] Treats prose simulation or a stand-in fixture as invalid, not target evidence; either may explain the method but cannot make E33 pass
+- [ ] Reports a populated `- Control geometry:` line containing the actual project radius token, rendered text-only/leading-icon/trailing-icon/icon-only variants and relevant states, plus the observed optical-balance outcome and target provenance
 - [ ] Treats the literal schema placeholder and `n/a` as failures for this scenario; a waiver is valid only when it names the explicit exception and supporting rendered evidence
+- [ ] When no actual target render is available, reports optical balance as `not evaluated`, marks live E33 incomplete/fail, and cannot pass until real render evidence exists
 
 ## Fail signals
 
@@ -29,3 +33,5 @@ Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendere
 - Replaces the label with a spinner and allows width, accessible name, or alignment to shift
 - Hardcodes a new radius without checking the project surface/control language
 - Copies the conventions schema placeholder, reports `n/a`, or claims “passed” without naming the token and rendered evidence
+- Uses a prose simulation or stand-in fixture as proof for the user's target
+- Reports `not evaluated` but marks E33 pass or complete

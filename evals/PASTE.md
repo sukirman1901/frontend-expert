@@ -55,7 +55,7 @@ Animasi drawer dan hero-nya aneh. Inspeksi frame by frame, jelaskan transisinya,
 ## E33 — button optical alignment
 
 ```text
-Perbaiki empat varian button: text-only, leading icon, trailing icon, dan icon-only. Semuanya sudah inline-flex items-center justify-center, tetapi glyph leading icon asimetris sehingga terlihat berat ke kiri, padding visual berbeda, spinner pending mengubah lebar, dan radius antarvarian tidak konsisten. Jangan gunakan global magic offset. Uji seluruh state dan laporkan bukti pada baris Control geometry.
+Perbaiki empat varian button: text-only, leading icon, trailing icon, dan icon-only. Semuanya sudah inline-flex items-center justify-center, tetapi glyph leading icon asimetris sehingga terlihat berat ke kiri, padding visual berbeda, spinner pending mengubah lebar, dan radius antarvarian tidak konsisten. Jangan gunakan global magic offset. Uji seluruh state pada actual target component/URL, lalu laporkan render provenance (browser + screenshot/DOM artifact atau metode render nyata yang dapat direproduksi) dan bukti pada baris Control geometry. Simulasi prosa atau stand-in fixture bukan bukti target. Jika target nyata tidak dapat dirender, tulis optical balance `not evaluated` dan tandai E33 incomplete—jangan nyatakan pass atau `n/a`.
 ```
 
 ## E1 — anti-slop-design
