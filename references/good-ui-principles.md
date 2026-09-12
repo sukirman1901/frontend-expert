@@ -1,6 +1,6 @@
 # Good UI principles
 
-This guide turns user-provided craft notes, distilled from Adrian Kuleszo's UI teaching, into review prompts for this pack. It is a source of **inspiration and heuristics**, not a new standards authority or ownership claim.
+This guide turns user-provided craft notes, distilled from Adrian Kuleszo's UI teaching and Pixsel Academy, into review prompts for this pack. The Pixsel Academy material is treated as craft heuristic and inspiration, not a new standards authority or ownership claim.
 
 Use it with `references/anti-patterns.md`. Start with relationships and product intent; use code markers to find likely problems, then inspect the actual interface.
 
@@ -41,11 +41,19 @@ Prefer the project's spacing scale. If none exists, a small rhythm such as 4- or
 
 A centered desktop content width around 1200px, 16px mobile insets, or similar familiar values may help when no project constraint exists. They remain fallbacks; density and content can justify other choices. Canonical owners: `design-foundations` and `responsive`.
 
+Align related controls and copy to shared anchors. A single-column form is a useful default for straightforward completion, not universal: comparison, short coupled fields, and wide data tasks can justify another structure. Dividers should mark real boundaries; use proximity and whitespace for ordinary grouping.
+
+For long-form reading, roughly 45–75 characters per line, often around 60–70ch, is a heuristic to test with the actual typeface and language—not a limit for tables, labels, or dashboards. Avoid decorative logo repetition, while allowing legitimate partner or proof marks where they support trust. Avoid nested prose scroll regions; bounded data, code, and list scroll may be valid when dimensions, focus, and affordances are clear. A continuation peek and Gutenberg-style reading flow are inspiration only, never placement laws.
+
 ## Color
 
 Build semantic roles and tonal steps from project tokens. Achromatic neutrals and tinted neutrals are both valid: choose according to the brand, surrounding materials, contrast needs, and established tokens. Do not tint grays merely to satisfy a style recipe.
 
 Designing in grayscale can expose weak hierarchy before color is added. A proportional palette mnemonic such as 60/30/10 may help exploration, but it is not a composition rule. Status meaning must not rely on hue alone. Route contrast and non-color requirements to `accessibility`; route palette construction to `design-color` and `tokens`.
+
+Literal black and white may be correct, or near-black and off-white may reduce glare; this choice is conditional on project tokens, display context, surrounding luminance, and measured contrast. Dark-mode tone ranges and the number of selection colors are similarly contextual—not fixed palettes or numeric caps. Measure the actual foreground/background pairs in each theme.
+
+Text over imagery may need an overlay, scrim, deliberate crop, solid backing, or image replacement. Choose the least disruptive treatment that preserves meaning, then measure rendered contrast at representative crops and responsive viewports; a source color value alone is insufficient.
 
 ## Shadows and gradients
 
@@ -58,6 +66,16 @@ Gradients can support hierarchy or atmosphere when the product language calls fo
 Use named project type roles, no more than two families without a deliberate brand reason, one page-level `<h1>`, and sequential lower heading levels. Prefer weight, size, spacing, and measure that produce a clear ladder over arbitrary one-off values.
 
 Fallback body sizes and line heights are heuristics only; language, font metrics, zoom, platform, and density change what works. Verify wrapping, truncation, numerals, long labels, localization, and text zoom. Canonical owner: `design-typography`; semantic heading requirements belong to `accessibility`.
+
+The pack's limit of two typefaces remains project- and brand-aware: use fewer when one family covers the roles, and request an explicit waiver when brand expression genuinely needs more.
+
+## Content and microcopy
+
+Protect product truth. Never use invented urgency, inventory scarcity, customer counts, popularity, or a “Most Popular” claim. Show such statements only when current product data supports them and the wording accurately reflects what was measured.
+
+Actions should use meaningful verbs and labels that describe the outcome. Destination navigation labels may omit verbs when the noun clearly names the place, such as “Order history”; this is different from an action control that must explain what it does.
+
+Dialog actions need unambiguous outcome labels tied to the affected object. Avoid generic pairs such as “Cancel / OK” and the double-negative `Don't Cancel` pattern; prefer direct labels such as “Keep upload” and “Cancel upload.” Canonical owner: `content-design`.
 
 ## Buttons
 
@@ -76,6 +94,16 @@ Keep labels available independently of placeholder text, use appropriate input s
 
 Marking optional fields can reduce clutter when most fields are required, but explicit required indicators may be clearer in mixed or regulated forms. Split long forms only when steps form meaningful groups; otherwise splitting adds navigation cost. Always verify pending, failure, recovery, and success. Canonical owners: `forms`, `content-design`, and `accessibility`.
 
+## Interaction and input patterns
+
+Choose a choice control from comparison needs, available space, semantics, platform behavior, and accessibility—not a fixed option count. Radios or chips can expose comparable options; a select or combobox can conserve space; neither is automatically correct.
+
+Use a slider for an approximate range when direct manipulation improves comprehension, and provide a precise alternative when exact entry matters. Input masks must preserve paste, autofill, mid-string edit, deletion, and locale-aware formats; a visual template that breaks those behaviors is a regression.
+
+Swipe actions require a visible single-pointer alternative and a keyboard alternative. Inline errors route to `forms` and `accessibility`, including focus, association, and recovery behavior. Multi-step indicators belong only to real sequences with meaningful position and progress, not a single page split for decoration.
+
+Nested radius follows the canonical conditional relation `outer ≈ inner + inset` when concentric geometry applies; do not halve the inner radius blindly. Pointer target guidance routes to the canonical 24px accessibility standard and this pack's 44px recommendation, with spacing and exceptions verified in the rendered component.
+
 ## Cards
 
 Use a card only when the content is one bounded object or action. Align repeated content where scanning benefits, but do not force unequal content into identical heights without considering clipping and localization. Image ratios, truncation, and bottom-aligned actions are conditional recipes for comparable collections, not requirements for every card.
@@ -87,6 +115,12 @@ Make the whole card interactive only when it has one destination and semantics r
 Choose composition from content: an F-like reading path may suit text-heavy material; a Z-like path may suit a concise visual story. State the product value in plain language, make one CTA primary, and add secondary action or social proof only when evidence and the journey support them.
 
 A glimpse of the next section can suggest continuation, but must not compromise the hero's message at short viewports. A complete landing page follows the `marketing` section stack rather than ending after the hero.
+
+## Pricing and choice architecture
+
+Emphasize a plan only from verified user value or product data, such as a documented fit for the target segment or a current measured preference. A “Most Popular” badge must never be fabricated; neither should artificial scarcity or urgency be used to steer selection.
+
+Keep a transparent comparison of features and prices, disclose material differences, and avoid dark patterns such as preselected costly options or obscured renewal terms. Use CTA hierarchy plus measured contrast on the actual card and theme; do not blindly apply the primary token when another semantic role or treatment communicates the choice more accurately.
 
 ## Modal and destructive actions
 
@@ -103,6 +137,14 @@ Verify default, open, focus, selected, disabled, loading, empty, no-results, and
 ## Navigation
 
 Use short, recognizable labels, a visible current-location state, and a reachable home route. Sticky headers need enough separation from content; border, fill, blur, or shadow are contextual options rather than a mandated recipe. Keep navigation depth and link count aligned with the information architecture. Shell conventions belong to `app-shell`; responsive and keyboard behavior belong to their canonical owners.
+
+## Cognitive load and navigation
+
+Reduce choices contextually by grouping, progressive disclosure, useful defaults, or removing genuinely low-value paths; do not hide necessary comparison. Offer “Other” with free text only when the domain permits an unmodeled answer and the product can handle it safely.
+
+Use a danger semantic token for destructive actions plus non-color cues such as explicit wording, iconography, placement, or confirmation proportional to risk. Serial-position research can inform evaluation, but never put important navigation items at corners from serial-position alone; information architecture, platform convention, reach, and frequency take precedence.
+
+Prefer at most two typefaces in line with project and brand needs. Reduce styles and choices when they compete without adding meaning, not merely to hit a numeric score.
 
 ## Style system
 

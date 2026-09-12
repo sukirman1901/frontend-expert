@@ -381,6 +381,74 @@ if [ -f "$good_ui" ]; then
   good_ui_domain_contract "Dropdown and search" "dropdown and search states" 'radios.*chips.*select.*combobox' 'Long lists' 'recent queries.*autocomplete.*conditional' 'no-results.*keyboard states'
   good_ui_domain_contract "Navigation" "navigation" 'current-location state' 'Sticky headers' 'information architecture' 'app-shell'
   good_ui_domain_contract "Style system" "style guide and system" 'semantic color.*type.*spacing.*radius.*elevation.*motion' 'shared system' 'token.*repeated decision' 'component.*stable responsibility'
+
+  good_ui_domain_contract "Content and microcopy" "truthful content and microcopy" \
+    'invented urgency|fabricat(ed|ing).*urgency' \
+    'destination.*(omit|without).*verbs' \
+    'actions.*meaningful verbs' \
+    'outcome.*labels' \
+    "Don't Cancel"
+
+  color_section=$(good_ui_section "Color")
+  color_expansion_complete=1
+  for pattern in \
+    'black.*white.*conditional|conditional.*black.*white' \
+    'dark.*tone.*(context|conditional)' \
+    'selection color.*(context|conditional)' \
+    'overlay.*scrim.*crop.*backing.*replacement' \
+    'measur(ed|e).*rendered.*contrast'; do
+    if ! printf '%s\n' "$color_section" | rg -qi "$pattern"; then
+      color_expansion_complete=0
+    fi
+  done
+  if [ "$color_expansion_complete" -eq 1 ]; then
+    ok "Good UI Color section preserves contextual dark-mode and media-contrast guidance"
+  else
+    bad "Good UI Color section must keep dark-mode/selection recipes contextual and require measured rendered media contrast"
+  fi
+
+  good_ui_domain_contract "Spacing and layout" "expanded layout craft" \
+    'shared anchors' \
+    'single-column.*default.*not universal' \
+    'Dividers.*real boundaries' \
+    'long-form' \
+    '45.*75' \
+    '60.*70ch' \
+    'logo repetition.*partner.*proof' \
+    'nested prose scroll.*data.*code.*list' \
+    'continuation.*Gutenberg.*inspiration'
+
+  good_ui_domain_contract "Interaction and input patterns" "interaction and input patterns" \
+    'comparison.*space.*semantics.*accessibility' \
+    'slider.*approximate.*precise alternative' \
+    'masks.*paste.*autofill.*edit.*locale' \
+    'Swipe.*visible.*single-pointer.*keyboard' \
+    'Inline errors.*forms.*accessibility' \
+    'Multi-step indicators.*real sequences' \
+    'outer.*inner.*inset' \
+    '24px.*standard.*44px.*recommendation'
+
+  good_ui_domain_contract "Cognitive load and navigation" "cognitive load and navigation" \
+    'reduce choices.*context' \
+    'Other.*free text' \
+    'domain permits' \
+    'danger.*semantic token.*non-color' \
+    'serial-position.*(not|never).*corners|not.*corners.*serial-position' \
+    'two typefaces.*project.*brand|project.*brand.*two typefaces'
+
+  good_ui_domain_contract "Pricing and choice architecture" "pricing and choice architecture" \
+    'verified.*user value.*data' \
+    'Most Popular.*(fabricat|invent)' \
+    'transparent comparison.*dark patterns' \
+    'CTA hierarchy.*measured contrast' \
+    'not.*blindly.*primary token|primary token.*not.*blindly'
+
+  if rg -qi 'Pixsel Academy.*(craft heuristic|inspiration)' "$good_ui" \
+    && ! rg -q 'https?://|##[[:space:]]+NEW|\*\*NEW\*\*' "$good_ui"; then
+    ok "Good UI principles classify Pixsel notes without source-ledger bookkeeping"
+  else
+    bad "Good UI principles must classify Pixsel Academy as craft heuristic/inspiration without links or NEW bookkeeping"
+  fi
 else
   bad "Good UI domain contracts require references/good-ui-principles.md"
 fi
