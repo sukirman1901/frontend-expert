@@ -66,15 +66,16 @@ Keep button content as one stable inline layout. Outer inline padding is symmetr
 
 ```tsx
 type ButtonContentProps = {
-  children: React.ReactNode
-  icon?: React.ReactNode
-  iconPosition?: "start" | "end"
   pending?: boolean
-}
+} & (
+  | { iconOnly: true; icon: React.ReactNode; children?: never; iconPosition?: never }
+  | { iconOnly?: false; children: React.ReactNode; icon?: React.ReactNode; iconPosition?: "start" | "end" }
+)
 
 export function ButtonContent({
   children,
   icon,
+  iconOnly = false,
   iconPosition = "start",
   pending = false,
 }: ButtonContentProps) {
@@ -91,7 +92,7 @@ export function ButtonContent({
     <span className="relative inline-flex items-center justify-center gap-[--control-gap] px-[--control-padding-inline]">
       <span className={pending ? "invisible inline-flex items-center gap-[--control-gap]" : "inline-flex items-center gap-[--control-gap]"}>
         {iconPosition === "start" && iconSlot}
-        <span>{children}</span>
+        {!iconOnly && <span>{children}</span>}
         {iconPosition === "end" && iconSlot}
       </span>
       {pending && <span className="absolute inset-0 inline-flex items-center justify-center"><Spinner aria-hidden /></span>}
@@ -100,7 +101,7 @@ export function ButtonContent({
 }
 ```
 
-The fixed `shrink-0` icon slot prevents glyph bounds from changing the gap. Preserve pending width with an overlaid loader or hidden retained content; replacing the label directly causes a shift. Apply optical correction only inside the icon wrapper or glyph, and only after rendered evidence shows a mismatch. In RTL, keep the API and layout expressed as `start`/`end`, not physical left/right.
+The fixed `shrink-0` icon slot prevents glyph bounds from changing the gap. `iconOnly` omits the label node entirely, so no empty flex item creates a gap; its accessible name belongs on the outer `<button>` via `aria-label`, not on this presentational content wrapper. Preserve pending width with an overlaid loader or hidden retained content; replacing the label directly causes a shift. Apply optical correction only inside the icon wrapper or glyph, and only after rendered evidence shows a mismatch. In RTL, keep the API and layout expressed as `start`/`end`, not physical left/right.
 
 ### Good: Token-based, focused
 
