@@ -205,6 +205,11 @@ echo "== references map =="
 [ -f "$ROOT/evals/anti-slop-code.md" ] && ok "evals/anti-slop-code.md (E30)" || bad "evals/anti-slop-code.md"
 [ -f "$ROOT/evals/prototype.md" ] && ok "evals/prototype.md (E31)" || bad "evals/prototype.md"
 [ -f "$ROOT/evals/motion-inspection.md" ] && ok "evals/motion-inspection.md (E32)" || bad "evals/motion-inspection.md"
+if [ -f "$ROOT/evals/button-optical-alignment.md" ] && rg -qi '\bE33\b' "$ROOT/evals/button-optical-alignment.md"; then
+  ok "evals/button-optical-alignment.md (E33)"
+else
+  bad "evals/button-optical-alignment.md must exist and be labeled E33"
+fi
 [ -f "$ROOT/references/anti-slop-code.md" ] && ok "references/anti-slop-code.md" || bad "references/anti-slop-code.md"
 [ -f "$ROOT/references/prototype.md" ] && ok "references/prototype.md" || bad "references/prototype.md"
 [ -f "$ROOT/references/motion-inspection.md" ] && ok "references/motion-inspection.md" || bad "references/motion-inspection.md"
@@ -244,6 +249,35 @@ if ! rg -q 'avatar' "$ROOT/skills/app-shell/SKILL.md" || ! rg -q 'custom select'
   bad "shell chrome rules missing in app-shell / components"
 else
   ok "shell chrome rules in skills"
+fi
+if rg -qi '^.*Control[[:space:]]+geometry:' "$ROOT/references/compliance-gates.md"; then
+  ok "control geometry conventions gate"
+else
+  bad "references/compliance-gates.md missing 'Control geometry:' conventions line"
+fi
+if rg -qi 'variant[[:space:]-]+matrix|matrix.*variant' "$ROOT/skills/polish/SKILL.md" \
+  && rg -qi 'text[[:space:]-]*only' "$ROOT/skills/polish/SKILL.md" \
+  && rg -qi 'leading[[:space:]-]+icon' "$ROOT/skills/polish/SKILL.md" \
+  && rg -qi 'trailing[[:space:]-]+icon' "$ROOT/skills/polish/SKILL.md" \
+  && rg -qi 'icon[[:space:]-]*only' "$ROOT/skills/polish/SKILL.md"; then
+  ok "polish control variant matrix"
+else
+  bad "skills/polish/SKILL.md missing text-only + leading icon + trailing icon + icon-only variant matrix requirement"
+fi
+if rg -qi 'icon[[:space:]-]+slot' "$ROOT/skills/components/SKILL.md"; then
+  ok "components icon slot contract"
+else
+  bad "skills/components/SKILL.md missing icon slot contract"
+fi
+if rg -qi 'Control[[:space:]-]+Geometry' "$ROOT/skills/quality-loop/SKILL.md"; then
+  ok "quality-loop Control Geometry check"
+else
+  bad "skills/quality-loop/SKILL.md missing Control Geometry"
+fi
+if rg -qi 'Control[[:space:]-]+Geometry' "$ROOT/agents/design-reviewer.md"; then
+  ok "design-reviewer Control Geometry check"
+else
+  bad "agents/design-reviewer.md missing Control Geometry"
 fi
 if ! rg -q 'responsive' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
   bad "hooks/session-start.sh missing responsive/motion"
