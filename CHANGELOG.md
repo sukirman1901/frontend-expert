@@ -2,6 +2,14 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.5] — 2026-09-12
+
+### Changed
+
+- Enforce control geometry across components, polish, surfaces, quality gates, and reviewers: stable icon slots, rendered optical evidence, explicit radius ownership, and conditional nested-radius concentricity
+- Add behavioral eval E33 for button optical alignment and surface Control geometry findings through command adapters
+- Keep live behavioral verification explicitly unverified until E33 is run in a fresh installed-pack conversation
+
 ## [2.4.4] — 2026-09-10
 
 ### Changed
