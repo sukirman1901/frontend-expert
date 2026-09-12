@@ -269,11 +269,17 @@ else
   bad "references/good-ui-principles.md"
 fi
 
-if rg -Fq '| `good-ui-principles.md` | `anti-slop-design`' "$references_map" \
-  && rg -q 'design-foundations|design-color|design-typography|components|forms|accessibility' "$references_map"; then
+good_ui_map_row=$(rg -F '| `good-ui-principles.md` | `anti-slop-design`' "$references_map" || true)
+good_ui_map_complete=1
+for owner in design-foundations design-color design-typography components forms accessibility; do
+  if ! printf '%s\n' "$good_ui_map_row" | rg -Fq "\`$owner\`"; then
+    good_ui_map_complete=0
+  fi
+done
+if [ -n "$good_ui_map_row" ] && [ "$good_ui_map_complete" -eq 1 ]; then
   ok "references map links Good UI principles and domain owners"
 else
-  bad "references map must link Good UI principles to anti-slop-design and relevant domain owners"
+  bad "Good UI references-map row must link anti-slop-design and every intended domain owner"
 fi
 
 if rg -Fq 'references/good-ui-principles.md' "$anti_slop_skill"; then
@@ -322,6 +328,61 @@ if [ -f "$good_ui" ] \
   ok "Good UI guidance avoids universal 8-point sentence"
 else
   bad "Good UI guidance must not contain the universal 8-point sentence"
+fi
+
+good_ui_section() {
+  local heading="$1"
+  awk -v heading="## $heading" '
+    $0 == heading { in_section=1; next }
+    in_section && /^##[[:space:]]/ { exit }
+    in_section { print }
+  ' "$good_ui"
+}
+
+good_ui_domain_contract() {
+  local heading="$1"
+  local label="$2"
+  shift 2
+  local section
+  local pattern
+  local complete=1
+  section=$(good_ui_section "$heading")
+  [ -n "$section" ] || complete=0
+  for pattern in "$@"; do
+    if ! printf '%s\n' "$section" | rg -qi "$pattern"; then
+      complete=0
+    fi
+  done
+  if [ "$complete" -eq 1 ]; then
+    ok "Good UI principles preserve $label guidance"
+  else
+    bad "Good UI principles $heading section must preserve explicit $label guidance"
+  fi
+}
+
+if [ -f "$good_ui" ]; then
+  good_ui_domain_contract "Spacing and layout" "spacing and layout" 'project.*spacing scale' '4- or 8-unit.*heuristic' 'mobile-first.*responsive viewports'
+  color_section=$(good_ui_section "Color")
+  if [ -n "$color_section" ] \
+    && printf '%s\n' "$color_section" | rg -qi 'achromatic neutrals' \
+    && printf '%s\n' "$color_section" | rg -qi 'tinted neutrals' \
+    && printf '%s\n' "$color_section" | rg -qi 'brand|context|token'; then
+    ok "Good UI principles preserve contextual neutral-color guidance"
+  else
+    bad "Good UI principles Color section must preserve achromatic/tinted neutral choice by context or tokens"
+  fi
+  good_ui_domain_contract "Shadows and gradients" "shadows and gradients" 'elevation.*layering' 'light direction' 'Gradients.*hierarchy' 'banding.*text contrast'
+  good_ui_domain_contract "Typography" "typography" 'type roles' 'two families' 'heading structure' 'wrapping.*truncation'
+  good_ui_domain_contract "Buttons" "button hierarchy and states" 'primary.*secondary.*tertiary' 'hover.*focus.*pressed.*disabled.*loading' 'target.*fallback'
+  good_ui_domain_contract "Forms" "forms and validation" 'labels.*placeholder' 'validation.*field' 'pending.*failure.*recovery.*success'
+  good_ui_domain_contract "Cards" "card structure and interaction" 'bounded object or action' 'whole card interactive' 'truncation.*bottom-aligned' 'Spacing ranges.*heuristic'
+  good_ui_domain_contract "Hero" "hero composition and hierarchy" 'F-like.*Z-like' 'one CTA primary' 'social proof' 'marketing.*section stack'
+  good_ui_domain_contract "Modal and destructive actions" "modal and destructive-action safety" 'close or cancel' 'reversible.*destructive' 'Confirmation dialogs' 'progress.*recovery'
+  good_ui_domain_contract "Dropdown and search" "dropdown and search states" 'radios.*chips.*select.*combobox' 'Long lists' 'recent queries.*autocomplete.*conditional' 'no-results.*keyboard states'
+  good_ui_domain_contract "Navigation" "navigation" 'current-location state' 'Sticky headers' 'information architecture' 'app-shell'
+  good_ui_domain_contract "Style system" "style guide and system" 'semantic color.*type.*spacing.*radius.*elevation.*motion' 'shared system' 'token.*repeated decision' 'component.*stable responsibility'
+else
+  bad "Good UI domain contracts require references/good-ui-principles.md"
 fi
 [ -f "$ROOT/references/prototype.md" ] && ok "references/prototype.md" || bad "references/prototype.md"
 [ -f "$ROOT/references/motion-inspection.md" ] && ok "references/motion-inspection.md" || bad "references/motion-inspection.md"
