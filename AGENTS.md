@@ -121,7 +121,7 @@ Personas: build → `ui-developer`; audit → `design-reviewer`; test → `test-
 14. Never block on slash commands when intent is clear
 15. Blank-canvas → judgment first
 16. “Sampai bagus” → `quality-loop` (cap 3)
-17. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**, **Landing**
+17. Before DONE → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Control geometry**, **Motion**, **Shell**, **Landing**; report `n/a` or an explicit waiver when a gate does not apply
 18. Evidence before taste — classify standards, project defaults, enterprise patterns, recommendations, heuristics, and inspiration (`evidence-policy.md`)
 19. Structural layout → `design-foundations`: relationships before values; no universal column count, width, or density
 

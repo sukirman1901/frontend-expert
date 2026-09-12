@@ -85,7 +85,7 @@ Not a full [roadmap.sh/frontend](https://roadmap.sh/frontend) curriculum and **n
 | Icons | **[Reicon](https://reicon.dev) MUST** in shipped markup unless waiver |
 | Ship FE | Shell, async data UI, forms |
 | WebGL backgrounds | Skill **`webgl`** → Plasma Studio / `Plasma.init` |
-| Compliance | Conventions check (tokens / icons / states / **responsive** / hierarchy / typography / **shell** / webgl / motion) |
+| Compliance | Conventions check (tokens / icons / states / **responsive** / hierarchy / typography / **control geometry** / **shell** / webgl / motion) |
 | Quality loop | `/polish` = build → test → audit → fix (max 3) |
 | Multi-platform | Claude Code, Cursor, Codex, Gemini, OpenCode |
 
@@ -250,6 +250,7 @@ Agents must not silently skip pack conventions. Before marking UI done, they rep
 - Responsive: 320/768/1024/1440 checked | full-width CTA <768 | waiver
 - Hierarchy: pass | fails: … | waiver
 - Typography: one h1 + ladder | fails: … | waiver
+- Control geometry: <radius token + text/icon optical balance + relevant states checked | n/a | waiver: …>
 - A11y: labels + focus noted? <yes | waiver>
 - Shell: theme in topbar? | avatar→menu | custom selects | waiver
 - Motion: light shell | families: … | patterns: … | none (waiver)
@@ -321,7 +322,7 @@ Map: [references/README.md](references/README.md)
 |------|--------|
 | Skill-backed | anti-patterns, polish, design-axes, ux-foundations, fe-lifecycle, **compliance-gates**, **motion-families**, component-patterns, architecture, accessibility, performance, motion, testing, webgl, monitoring, fidelity, devtools + `tokens/` |
 | Icons | [reicon-icons.md](references/reicon-icons.md) |
-| Evals | [evals/](evals/) (E1–E32; paste sheet + desk/install runs) |
+| Evals | [evals/](evals/) (E1–E33; paste sheet + desk/install runs) |
 | Guides | [tokens/README.md](tokens/README.md) · [fe-lifecycle.md](references/fe-lifecycle.md) · [compliance-gates.md](references/compliance-gates.md) |
 
 ---

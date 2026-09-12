@@ -10,7 +10,7 @@ Claude Code entry point for **Frontend Expert**.
 - Rules: `.claude/rules/design-system.md` (chat-first + judgment)
 - Hooks: `hooks/hooks.json` auto-loaded by Claude Code (SessionStart + PostToolUse). Do not duplicate that path in `.claude-plugin/plugin.json`.
 - Tokens: `tokens/*.css` + decision tree / scoring in `references/token-preset-scoring.md` (+ `tokens/README.md`)
-- Evals: `evals/` (E1–E32)
+- Evals: `evals/` (E1–E33)
 
 ## Default behavior (chat-first + judgment)
 
@@ -24,7 +24,7 @@ Claude Code entry point for **Frontend Expert**.
 7. Honor hook advisories from `anti-slop-scan.sh`
 8. If the project already has a design system, use custom mode (do not override with presets)
 9. Icons: **MUST use [Reicon](https://reicon.dev)** in shipped markup unless project icon lib or text-only waiver (`references/compliance-gates.md`)
-10. Before DONE on UI builds → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Motion**, **Shell**, **Landing** (if marketing), **A11y** (`references/compliance-gates.md`)
+10. Before DONE on UI builds → **Conventions check** including **Responsive**, **Hierarchy**, **Typography**, **Control geometry**, **Motion**, **Shell**, **Landing** (if marketing), **A11y**; use `n/a` or an explicit waiver only when a gate does not apply (`references/compliance-gates.md`)
 
 ## References
 

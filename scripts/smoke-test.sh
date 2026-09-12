@@ -335,6 +335,40 @@ if rg -Fqx -- '- **Control Geometry:** High for primary or repeated control geom
 else
   bad "agents/design-reviewer.md missing canonical positive Control Geometry severity rule"
 fi
+agents_hard_rules=$(awk '
+  /^## Hard rules[[:space:]]*$/ { in_section=1; next }
+  in_section && /^##[[:space:]]/ { exit }
+  in_section { print }
+' "$ROOT/AGENTS.md")
+if printf '%s\n' "$agents_hard_rules" | rg -q 'Before DONE .*Conventions check.*Control [Gg]eometry'; then
+  ok "AGENTS hard Conventions rule includes Control geometry"
+else
+  bad "AGENTS.md hard Conventions rule must include Control geometry"
+fi
+if rg -Fq -- '- Control geometry: <radius token + text/icon optical balance + relevant states checked | n/a | waiver: …>' \
+  "$ROOT/hooks/session-start.sh"; then
+  ok "session hook injects canonical Control geometry gate"
+else
+  bad "hooks/session-start.sh must inject canonical Control geometry gate"
+fi
+readme_conventions=$(awk '
+  /^## Conventions check[[:space:]]*$/ { in_section=1; next }
+  in_section && /^##[[:space:]]/ { exit }
+  in_section { print }
+' "$ROOT/README.md")
+if printf '%s\n' "$readme_conventions" | rg -Fqx -- '- Control geometry: <radius token + text/icon optical balance + relevant states checked | n/a | waiver: …>'; then
+  ok "README canonical Control geometry convention"
+else
+  bad "README Conventions check must include canonical Control geometry line"
+fi
+for public_index in "$ROOT/README.md" "$ROOT/CLAUDE.md" "$ROOT/references/README.md"; do
+  public_label=${public_index#"$ROOT/"}
+  if rg -q 'E1[–-]E33' "$public_index" && ! rg -q 'E1[–-]E32' "$public_index"; then
+    ok "$public_label publishes E1–E33"
+  else
+    bad "$public_index must publish E1–E33 without stale E1–E32 claims"
+  fi
+done
 if ! rg -q 'responsive' "$ROOT/hooks/session-start.sh" || ! rg -q 'motion' "$ROOT/hooks/session-start.sh"; then
   bad "hooks/session-start.sh missing responsive/motion"
 else

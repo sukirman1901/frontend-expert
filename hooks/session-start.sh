@@ -26,5 +26,6 @@ See references/fe-lifecycle.md
 Optional: /ui · /test-ui · /design · /audit · /polish
 Agents: ui-developer · test-engineer · design-reviewer
 Tokens: decision tree (custom → explicit → Plasma hard-gate → score). Responsive MUST (320–1440 + full-width CTA <768). Hierarchy + Typography ship gates. Shell: theme in topbar; avatar→menu; custom selects. Landing: section stack hand-roll (not hero-only / not registry). Motion: families/patterns named; hand-roll (not registry default). Icons: MUST use Reicon in markup (or waive). WebGL/plasma → skill webgl / Plasma.init.
-Before DONE: Conventions check — Tokens / Icons / States / Responsive / Hierarchy / Typography / Shell / Landing / Motion / A11y / WebGL (references/compliance-gates.md)." \
+Before DONE: Conventions check — Tokens / Icons / States / Responsive / Hierarchy / Typography / Control geometry / Shell / Landing / Motion / A11y / WebGL (references/compliance-gates.md).
+- Control geometry: <radius token + text/icon optical balance + relevant states checked | n/a | waiver: …>" \
   '{priority: "IMPORTANT", message: $message}'
