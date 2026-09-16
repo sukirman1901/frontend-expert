@@ -319,6 +319,8 @@ anti_pattern_section() {
 if [ -f "$anti_patterns" ]; then
   high_contrast_section=$(anti_pattern_section "High Contrast Without Purpose")
   arbitrary_spacing_section=$(anti_pattern_section "Arbitrary Pixel Values")
+  high_contrast_normalized=$(printf '%s\n' "$high_contrast_section" | tr '[:upper:]' '[:lower:]' | tr '\n' ' ' | sed -E 's/[[:space:]]+/ /g')
+  arbitrary_spacing_normalized=$(printf '%s\n' "$arbitrary_spacing_section" | tr '[:upper:]' '[:lower:]' | tr '\n' ' ' | sed -E 's/[[:space:]]+/ /g')
 
   if [ -n "$high_contrast_section" ] \
     && printf '%s\n' "$high_contrast_section" | rg -Fq 'references/good-ui-principles.md' \
@@ -329,8 +331,8 @@ if [ -f "$anti_patterns" ]; then
     bad "High Contrast Without Purpose must route to Good UI decision hierarchy/project tokens and measured rendered pairs"
   fi
 
-  if ! printf '%s\n' "$high_contrast_section" | rg -qi \
-    '((black|white)[^.!?\n]*(inherently|always|universally)[^.!?\n]*(wrong|bad|avoid))|((never|forbid|must not|do not use)[^.!?\n]*(literal|pure)?[ -]*(black|white))'; then
+  if ! printf '%s\n' "$high_contrast_normalized" | rg -q \
+    '((literal|pure)?[ -]*(black|white)[^.!?]*(inherently|universally|always)[^.!?]*(wrong|bad|avoid))|((literal|pure)?[ -]*(black|white)[^.!?]*(forbidden|prohibited))|((forbid|forbidden|prohibit|prohibited|never|must not|do not use)[^.!?]*(literal|pure)?[ -]*(black|white))|((use|choose|prefer|require|must|always)[^.!?]*(near-black|off-white)[^.!?]*instead of[^.!?]*(black|white)[^.!?]*(always|(in )?(every|all)[ -]*(case|cases|context|contexts)))|(((in )?(every|all)[ -]*(case|cases|context|contexts)|always)[^.!?]*(use|choose|prefer|require|must)[^.!?]*(near-black|off-white)[^.!?]*instead of[^.!?]*(black|white))|((black|white)[^.!?]*(must|required)[^.!?]*(replace|replaced|substitute|substituted)[^.!?]*(near-black|off-white))'; then
     ok "Legacy high-contrast anti-pattern does not ban literal black or white universally"
   else
     bad "High Contrast Without Purpose must not imply literal black or white is inherently wrong"
@@ -346,8 +348,8 @@ if [ -f "$anti_patterns" ]; then
     bad "Arbitrary Pixel Values must route to Good UI project tokens/relationships and label 4/8 rhythm as fallback heuristic"
   fi
 
-  if ! printf '%s\n' "$arbitrary_spacing_section" | rg -qi \
-    '((every|all|always|must|required)[^.!?\n]*(spacing|value)[^.!?\n]*(divisible by 4|multiple(s)? of 4|0\.25rem))|((spacing|value)[^.!?\n]*(must|required|always)[^.!?\n]*(divisible by 4|multiple(s)? of 4|0\.25rem))'; then
+  if ! printf '%s\n' "$arbitrary_spacing_normalized" | rg -q \
+    '((only|always|must|required)[^.!?]*(use )?spacing[^.!?]*(divisible by 4|multiples? of 4|0\.25rem increments?))|((every|all)[^.!?]*(spacing|value)[^.!?]*(must|required|only|always)?[^.!?]*(divisible by 4|multiples? of 4|0\.25rem increments?))|((spacing|values?)[^.!?]*(must|required|always|only)[^.!?]*(be )?(on )?(divisible by 4|multiples? of 4|0\.25rem increments?))|((spacing|values?)[^.!?]*(divisible by 4|multiples? of 4|0\.25rem increments?)[^.!?]*(always|(in )?(every|all)[ -]*cases?))|(avoid[^.!?]*non-?[ -]?multiples?[^.!?]*(of )?4)'; then
     ok "Legacy spacing anti-pattern does not universalize a four-unit scale"
   else
     bad "Arbitrary Pixel Values must not require every spacing value to be divisible by 4 or 0.25rem"
