@@ -4,7 +4,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 FAIL=0
-RELEASE_VERSION="2.4.5"
+RELEASE_VERSION="2.4.6"
 
 ok() { echo "  OK  $1"; }
 bad() { echo "  FAIL $1" >&2; FAIL=1; }

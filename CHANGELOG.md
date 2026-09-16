@@ -2,6 +2,16 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.6] — 2026-09-16
+
+### Changed
+
+- Establish `references/good-ui-principles.md` as the canonical, evidence-aware Good UI reference, with project-first decisions and routing to the relevant domain-owner skills
+- Integrate user-provided Adrian Kuleszo / Pixsel craft notes as explicitly classified heuristics and inspiration rather than universal standards
+- Add truth, accessibility, and dark-pattern safeguards so visual guidance cannot justify fabricated evidence, inaccessible controls, or deceptive hierarchy
+- Harden smoke contracts against mutations that weaken provenance, rendered-evidence, conditional-recipe, domain-routing, and safety requirements
+- Keep fresh installed-pack conversation verification explicitly unverified for this release
+
 ## [2.4.5] — 2026-09-12
 
 ### Changed
