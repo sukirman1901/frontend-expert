@@ -52,26 +52,26 @@ AI-generated UI has recognizable patterns that signal low quality. This document
 
 ### High Contrast Without Purpose
 
-**Problem:** Using extreme contrast (black/white) without design justification.
+**Problem:** Extreme contrast is a review signal when it is unjustified, bypasses the project system, or weakens the intended hierarchy. Literal black and white can be correct choices; their presence alone is not an anti-pattern.
 
 **Detection:**
-- Check for `#000000` or `#ffffff` as primary colors
-- Check for `text-black`, `bg-white` without token reference
+- Check whether `#000000`, `#ffffff`, `text-black`, or `bg-white` bypass semantic project tokens
+- Measure the rendered foreground/background pairs in their actual states and surfaces instead of judging source literals alone
 
-**Fix:** Use semantic tokens: `hsl(var(--foreground))`, `hsl(var(--background))`
+**Fix:** Follow the decision hierarchy in `references/good-ui-principles.md`: keep the project's semantic tokens first, then use measured rendered contrast and context to decide whether literal black/white, near-black/off-white, or another token pair is appropriate. Do not replace an off-system value with a universal fixed color recipe.
 
 ## Spacing Anti-Patterns
 
 ### Arbitrary Pixel Values
 
-**Problem:** Using values not on the spacing scale (13px, 2.3rem, etc.)
+**Problem:** Off-scale spacing is a review signal when it bypasses project tokens or creates inconsistent relationships between elements. A value such as `13px` or `2.3rem` is not inherently wrong when geometry, typography, or an established system justifies it.
 
 **Detection:**
-- Check for pixel values not divisible by 4
-- Check for rem values not on 0.25rem increments
-- Check for inline styles with arbitrary values
+- Check for repeated one-off values that bypass the project's spacing tokens or scale
+- Check whether related and unrelated elements express a coherent spacing hierarchy
+- Check inline values against their rendered relationship and local constraint, not divisibility alone
 
-**Fix:** Follow the spacing scale: `0.25rem` increments (4px, 8px, 12px, 16px, etc.)
+**Fix:** Follow the decision hierarchy in `references/good-ui-principles.md`: preserve project spacing tokens and the relationships they encode. When no project system exists, a 4- or 8-unit rhythm is a fallback heuristic for establishing consistency, not a universal correction; choose exceptions from measured layout needs.
 
 ### Oversized Padding
 

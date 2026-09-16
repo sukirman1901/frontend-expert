@@ -277,6 +277,7 @@ fi
 [ -f "$ROOT/references/anti-slop-code.md" ] && ok "references/anti-slop-code.md" || bad "references/anti-slop-code.md"
 
 good_ui="$ROOT/references/good-ui-principles.md"
+anti_patterns="$ROOT/references/anti-patterns.md"
 anti_slop_skill="$ROOT/skills/anti-slop-design/SKILL.md"
 references_map="$ROOT/references/README.md"
 
@@ -303,6 +304,56 @@ if rg -Fq 'references/good-ui-principles.md' "$anti_slop_skill"; then
   ok "anti-slop-design links Good UI principles"
 else
   bad "anti-slop-design must link references/good-ui-principles.md"
+fi
+
+anti_pattern_section() {
+  local heading="$1"
+  awk -v heading="### $heading" '
+    $0 == heading { in_section=1; next }
+    in_section && /^###[[:space:]]/ { exit }
+    in_section && /^##[[:space:]]/ { exit }
+    in_section { print }
+  ' "$anti_patterns"
+}
+
+if [ -f "$anti_patterns" ]; then
+  high_contrast_section=$(anti_pattern_section "High Contrast Without Purpose")
+  arbitrary_spacing_section=$(anti_pattern_section "Arbitrary Pixel Values")
+
+  if [ -n "$high_contrast_section" ] \
+    && printf '%s\n' "$high_contrast_section" | rg -Fq 'references/good-ui-principles.md' \
+    && printf '%s\n' "$high_contrast_section" | rg -qi 'decision hierarchy|project.*tokens?' \
+    && printf '%s\n' "$high_contrast_section" | rg -qi 'measur(e|ed).*rendered.*(pair|contrast)|rendered.*(pair|contrast).*measur'; then
+    ok "Legacy high-contrast anti-pattern routes decisions to evidence-aware project guidance"
+  else
+    bad "High Contrast Without Purpose must route to Good UI decision hierarchy/project tokens and measured rendered pairs"
+  fi
+
+  if ! printf '%s\n' "$high_contrast_section" | rg -qi \
+    '((black|white)[^.!?\n]*(inherently|always|universally)[^.!?\n]*(wrong|bad|avoid))|((never|forbid|must not|do not use)[^.!?\n]*(literal|pure)?[ -]*(black|white))'; then
+    ok "Legacy high-contrast anti-pattern does not ban literal black or white universally"
+  else
+    bad "High Contrast Without Purpose must not imply literal black or white is inherently wrong"
+  fi
+
+  if [ -n "$arbitrary_spacing_section" ] \
+    && printf '%s\n' "$arbitrary_spacing_section" | rg -Fq 'references/good-ui-principles.md' \
+    && printf '%s\n' "$arbitrary_spacing_section" | rg -qi 'project.*(tokens?|spacing scale)' \
+    && printf '%s\n' "$arbitrary_spacing_section" | rg -qi 'relationship' \
+    && printf '%s\n' "$arbitrary_spacing_section" | rg -qi '(4|8).*(fallback|heuristic)|(fallback|heuristic).*(4|8)'; then
+    ok "Legacy spacing anti-pattern routes off-scale values through project relationships and fallback heuristics"
+  else
+    bad "Arbitrary Pixel Values must route to Good UI project tokens/relationships and label 4/8 rhythm as fallback heuristic"
+  fi
+
+  if ! printf '%s\n' "$arbitrary_spacing_section" | rg -qi \
+    '((every|all|always|must|required)[^.!?\n]*(spacing|value)[^.!?\n]*(divisible by 4|multiple(s)? of 4|0\.25rem))|((spacing|value)[^.!?\n]*(must|required|always)[^.!?\n]*(divisible by 4|multiple(s)? of 4|0\.25rem))'; then
+    ok "Legacy spacing anti-pattern does not universalize a four-unit scale"
+  else
+    bad "Arbitrary Pixel Values must not require every spacing value to be divisible by 4 or 0.25rem"
+  fi
+else
+  bad "references/anti-patterns.md"
 fi
 
 if [ -f "$good_ui" ] \

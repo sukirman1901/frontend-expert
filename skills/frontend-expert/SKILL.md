@@ -10,7 +10,7 @@ description: >-
 license: MIT
 metadata:
   author: sukirman1901
-  version: "2.4.6"
+  version: "2.4.7"
 ---
 
 # Frontend Expert

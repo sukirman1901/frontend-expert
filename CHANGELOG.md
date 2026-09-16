@@ -2,6 +2,13 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.7] — 2026-09-16
+
+### Fixed
+
+- Align legacy high-contrast and arbitrary-spacing anti-pattern wording with the evidence-aware Good UI reference after installed fresh-session verification found the gap
+- Keep a second fresh installed-pack conversation verification explicitly unverified until it is run
+
 ## [2.4.6] — 2026-09-16
 
 ### Changed
