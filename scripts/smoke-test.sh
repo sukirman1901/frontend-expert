@@ -441,6 +441,8 @@ if [ -f "$good_ui" ]; then
   dropdown_section=$(good_ui_section "Dropdown and search")
   cognitive_section=$(good_ui_section "Cognitive load and navigation")
   pricing_section=$(good_ui_section "Pricing and choice architecture")
+  pricing_guard_text=$(printf '%s\n' "$pricing_section" | sed -E \
+    's/((must|should|may|can|is|are|was|were)[[:space:]]+)?(never|not)[[:space:]]+(be[[:space:]]+)?(fabricat(e|ed|ing)|invent(ed|ing)?)/ /Ig')
   if printf '%s\n' "$content_section" | rg -qi \
     '((recommend|prefer|should|must|always)[^.\n]*(invent(ed)?|fabricat(ed)?)[^.\n]*(urgency|scarcity|popularity))|(^|[.!?][[:space:]]+)Use[[:space:]]+(invented|fabricated)[^.\n]*(urgency|scarcity|popularity)|((recommend|prefer|should|must|always|use)[^.\n]*Don.t Cancel)|(Don.t Cancel[^.\n]*(recommended|preferred|required))'; then
     good_ui_forbidden=1
@@ -457,8 +459,8 @@ if [ -f "$good_ui" ]; then
     '(danger|destructive)[^.\n]*(colou?r only|only colou?r)|serial-position[^.\n]*(requires?|must|always)[^.\n]*corners|(requires?|must|always)[^.\n]*corners[^.\n]*serial-position'; then
     good_ui_forbidden=1
   fi
-  if printf '%s\n' "$pricing_section" | rg -qi \
-    '((fabricate|invent)[^.\n]*Most Popular)|(Most Popular[^.\n]*(without|regardless of)[^.\n]*(evidence|data))|(Most Popular( badge)?[[:space:]]+(should|must|always|is required to)[[:space:]]+(be[[:space:]]+)?(used|added|shown|required))|(CTA[^.\n]*(must|always|required)[^.\n]*primary (token|colou?r))|(primary (token|colou?r)[^.\n]*(must|always|required)[^.\n]*CTA)'; then
+  if printf '%s\n' "$pricing_guard_text" | rg -qi \
+    '((fabricat(e|ed|ing)|invent(ed|ing)?)[^.\n]*Most Popular)|(Most Popular[^.\n]*(fabricat(e|ed|ing)|invent(ed|ing)?))|(Most Popular[^.\n]*(without|regardless of)[^.\n]*(evidence|data))|(Most Popular( badge)?[[:space:]]+(should|must|always|is required to)[[:space:]]+(be[[:space:]]+)?(used|added|shown|required))|(CTA[^.\n]*(must|always|required)[^.\n]*primary (token|colou?r))|(primary (token|colou?r)[^.\n]*(must|always|required)[^.\n]*CTA)'; then
     good_ui_forbidden=1
   fi
   if [ "$good_ui_forbidden" -eq 0 ]; then
