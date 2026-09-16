@@ -382,72 +382,98 @@ if [ -f "$good_ui" ]; then
   good_ui_domain_contract "Navigation" "navigation" 'current-location state' 'Sticky headers' 'information architecture' 'app-shell'
   good_ui_domain_contract "Style system" "style guide and system" 'semantic color.*type.*spacing.*radius.*elevation.*motion' 'shared system' 'token.*repeated decision' 'component.*stable responsibility'
 
-  good_ui_domain_contract "Content and microcopy" "truthful content and microcopy" \
-    'invented urgency|fabricat(ed|ing).*urgency' \
-    'destination.*(omit|without).*verbs' \
-    'actions.*meaningful verbs' \
-    'outcome.*labels' \
-    "Don't Cancel"
-
-  color_section=$(good_ui_section "Color")
-  color_expansion_complete=1
-  for pattern in \
-    'black.*white.*conditional|conditional.*black.*white' \
-    'dark.*tone.*(context|conditional)' \
-    'selection color.*(context|conditional)' \
-    'overlay.*scrim.*crop.*backing.*replacement' \
-    'measur(ed|e).*rendered.*contrast'; do
-    if ! printf '%s\n' "$color_section" | rg -qi "$pattern"; then
-      color_expansion_complete=0
+  good_ui_expansion_structure=1
+  for heading in \
+    "Content and microcopy" \
+    "Interaction and input patterns" \
+    "Cognitive load and navigation" \
+    "Pricing and choice architecture"; do
+    if ! rg -Fxq "## $heading" "$good_ui"; then
+      good_ui_expansion_structure=0
     fi
   done
-  if [ "$color_expansion_complete" -eq 1 ]; then
-    ok "Good UI Color section preserves contextual dark-mode and media-contrast guidance"
+  if [ "$good_ui_expansion_structure" -eq 1 ]; then
+    ok "Good UI principles preserve expansion H2 structure"
   else
-    bad "Good UI Color section must keep dark-mode/selection recipes contextual and require measured rendered media contrast"
+    bad "Good UI principles must keep each expansion domain as an exact H2 section"
   fi
 
-  good_ui_domain_contract "Spacing and layout" "expanded layout craft" \
-    'shared anchors' \
+  good_ui_domain_contract "Content and microcopy" "truthful content routing" \
+    'Protect product truth' \
+    'Destination navigation labels may omit verbs.*different from an action control' \
+    'Dialog actions need unambiguous outcome labels.*affected object' \
+    'Canonical owner: `content-design`'
+  good_ui_domain_contract "Color" "contextual color and media verification" \
+    'black and white may be correct.*near-black and off-white may reduce glare' \
+    'choice is conditional on project tokens.*measured contrast' \
+    'Dark-mode tone ranges and the number of selection colors are similarly contextual' \
+    'Text over imagery may need an overlay, scrim.*or image replacement' \
+    'measure rendered contrast.*representative crops and responsive viewports'
+  good_ui_domain_contract "Spacing and layout" "expanded layout classification" \
     'single-column.*default.*not universal' \
     'Dividers.*real boundaries' \
-    'long-form' \
-    '45.*75' \
-    '60.*70ch' \
-    'logo repetition.*partner.*proof' \
-    'nested prose scroll.*data.*code.*list' \
-    'continuation.*Gutenberg.*inspiration'
+    'long-form.*heuristic' \
+    'prose scroll.*data.*code.*list scroll.*valid' \
+    'Gutenberg.*inspiration only'
+  good_ui_domain_contract "Interaction and input patterns" "interaction routing" \
+    'Choose a choice control from comparison needs.*semantics.*accessibility.not a fixed option count' \
+    'slider for an approximate range.*provide a precise alternative' \
+    'Input masks must preserve paste, autofill.*locale-aware formats' \
+    'Swipe actions require a visible single-pointer alternative and a keyboard alternative' \
+    'Inline errors route to `forms` and `accessibility`' \
+    'canonical conditional relation `outer ≈ inner \+ inset`.*concentric geometry applies' \
+    'canonical 24px accessibility standard.*44px recommendation'
+  good_ui_domain_contract "Cognitive load and navigation" "cognitive-load safeguards" \
+    'Reduce choices contextually.*do not hide necessary comparison' \
+    'Other.*free text only when the domain permits an unmodeled answer' \
+    'danger semantic token.*plus non-color cues' \
+    'Serial-position research can inform evaluation.*never put important navigation items at corners' \
+    'two typefaces in line with project and brand needs'
+  good_ui_domain_contract "Pricing and choice architecture" "pricing safeguards" \
+    'Emphasize a plan only from verified user value or product data' \
+    'transparent comparison of features and prices.*avoid dark patterns' \
+    'CTA hierarchy plus measured contrast.*do not blindly apply the primary token'
 
-  good_ui_domain_contract "Interaction and input patterns" "interaction and input patterns" \
-    'comparison.*space.*semantics.*accessibility' \
-    'slider.*approximate.*precise alternative' \
-    'masks.*paste.*autofill.*edit.*locale' \
-    'Swipe.*visible.*single-pointer.*keyboard' \
-    'Inline errors.*forms.*accessibility' \
-    'Multi-step indicators.*real sequences' \
-    'outer.*inner.*inset' \
-    '24px.*standard.*44px.*recommendation'
-
-  good_ui_domain_contract "Cognitive load and navigation" "cognitive load and navigation" \
-    'reduce choices.*context' \
-    'Other.*free text' \
-    'domain permits' \
-    'danger.*semantic token.*non-color' \
-    'serial-position.*(not|never).*corners|not.*corners.*serial-position' \
-    'two typefaces.*project.*brand|project.*brand.*two typefaces'
-
-  good_ui_domain_contract "Pricing and choice architecture" "pricing and choice architecture" \
-    'verified.*user value.*data' \
-    'Most Popular.*(fabricat|invent)' \
-    'transparent comparison.*dark patterns' \
-    'CTA hierarchy.*measured contrast' \
-    'not.*blindly.*primary token|primary token.*not.*blindly'
-
-  if rg -qi 'Pixsel Academy.*(craft heuristic|inspiration)' "$good_ui" \
-    && ! rg -q 'https?://|##[[:space:]]+NEW|\*\*NEW\*\*' "$good_ui"; then
-    ok "Good UI principles classify Pixsel notes without source-ledger bookkeeping"
+  good_ui_forbidden=0
+  content_section=$(good_ui_section "Content and microcopy")
+  color_section=$(good_ui_section "Color")
+  interaction_section=$(good_ui_section "Interaction and input patterns")
+  dropdown_section=$(good_ui_section "Dropdown and search")
+  cognitive_section=$(good_ui_section "Cognitive load and navigation")
+  pricing_section=$(good_ui_section "Pricing and choice architecture")
+  if printf '%s\n' "$content_section" | rg -qi \
+    '((recommend|prefer|should|must|always)[^.\n]*(invent(ed)?|fabricat(ed)?)[^.\n]*(urgency|scarcity|popularity))|(^|[.!?][[:space:]]+)Use[[:space:]]+(invented|fabricated)[^.\n]*(urgency|scarcity|popularity)|((recommend|prefer|should|must|always|use)[^.\n]*Don.t Cancel)|(Don.t Cancel[^.\n]*(recommended|preferred|required))'; then
+    good_ui_forbidden=1
+  fi
+  if printf '%s\n' "$color_section" | rg -qi \
+    '((never|forbid|must not)[^.\n]*(literal|pure)?[ -]*(black|white))|((always|must|required)[^.\n]*(near-black|off-white))|(dark(-mode)? (tone|palette)s?[^.\n]*(must|require|always)[^.\n]*[0-9]+)|(selection colou?rs?[^.\n]*(must|require|limit|cap|always)[^.\n]*[0-9]+)'; then
+    good_ui_forbidden=1
+  fi
+  if printf '%s\n%s\n' "$interaction_section" "$dropdown_section" | rg -qi \
+    '((dropdown|select|combobox|radio|chips?)[^.\n]*(must|required|only|always)[^.\n]*[0-9]+)|([0-9]+[^.\n]*(options?|choices?)[^.\n]*(must|required|always)[^.\n]*(dropdown|select|combobox|radio|chips?))|swipe[- ]only|only (by )?swip(e|ing)|((always|must|required)[^.\n]*(halve|half)[^.\n]*radius)|(inner radius[^.\n]*(must|always|required)[^.\n]*(half|50%))'; then
+    good_ui_forbidden=1
+  fi
+  if printf '%s\n' "$cognitive_section" | rg -qi \
+    '(danger|destructive)[^.\n]*(colou?r only|only colou?r)|serial-position[^.\n]*(requires?|must|always)[^.\n]*corners|(requires?|must|always)[^.\n]*corners[^.\n]*serial-position'; then
+    good_ui_forbidden=1
+  fi
+  if printf '%s\n' "$pricing_section" | rg -qi \
+    '((fabricate|invent)[^.\n]*Most Popular)|(Most Popular[^.\n]*(without|regardless of)[^.\n]*(evidence|data))|(Most Popular( badge)?[[:space:]]+(should|must|always|is required to)[[:space:]]+(be[[:space:]]+)?(used|added|shown|required))|(CTA[^.\n]*(must|always|required)[^.\n]*primary (token|colou?r))|(primary (token|colou?r)[^.\n]*(must|always|required)[^.\n]*CTA)'; then
+    good_ui_forbidden=1
+  fi
+  if [ "$good_ui_forbidden" -eq 0 ]; then
+    ok "Good UI principles reject unsafe opposite formulations"
   else
-    bad "Good UI principles must classify Pixsel Academy as craft heuristic/inspiration without links or NEW bookkeeping"
+    bad "Good UI principles contain a universal, deceptive, inaccessible, or unsafe opposite formulation"
+  fi
+
+  good_ui_h1_count=$(rg -c '^# ' "$good_ui")
+  if [ "$good_ui_h1_count" -eq 1 ] \
+    && rg -qi 'Pixsel Academy.*craft heuristic.*inspiration' "$good_ui" \
+    && ! rg -qi 'source-ledger|^##?[[:space:]]+NEW([[:space:]]|$)|\*\*NEW\*\*|^# .*Pixsel|^# .*50 UI|\[[^]]*(Pixsel|Adrian|Kuleszo)[^]]*\]\(https?://|https?://[^[:space:])]*(pixsel|kuleszo)' "$good_ui"; then
+    ok "Good UI principles keep one H1 and classified craft provenance"
+  else
+    bad "Good UI principles must keep one H1, classified craft provenance, and no source-dump bookkeeping or promotional source link"
   fi
 else
   bad "Good UI domain contracts require references/good-ui-principles.md"
