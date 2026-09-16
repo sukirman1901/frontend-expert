@@ -308,10 +308,10 @@ fi
 
 anti_pattern_section() {
   local heading="$1"
-  awk -v heading="### $heading" '
-    $0 == heading { in_section=1; next }
-    in_section && /^###[[:space:]]/ { exit }
-    in_section && /^##[[:space:]]/ { exit }
+  LC_ALL=C awk -v heading="### $heading" '
+    { sub(/\r$/, "") }
+    $0 == heading { in_section=1 }
+    in_section && $0 != heading && (/^###[[:space:]]/ || /^##[[:space:]]/) { exit }
     in_section { print }
   ' "$anti_patterns"
 }
@@ -319,8 +319,6 @@ anti_pattern_section() {
 if [ -f "$anti_patterns" ]; then
   high_contrast_section=$(anti_pattern_section "High Contrast Without Purpose")
   arbitrary_spacing_section=$(anti_pattern_section "Arbitrary Pixel Values")
-  high_contrast_normalized=$(printf '%s\n' "$high_contrast_section" | tr '[:upper:]' '[:lower:]' | tr '\n' ' ' | sed -E 's/[[:space:]]+/ /g')
-  arbitrary_spacing_normalized=$(printf '%s\n' "$arbitrary_spacing_section" | tr '[:upper:]' '[:lower:]' | tr '\n' ' ' | sed -E 's/[[:space:]]+/ /g')
 
   if [ -n "$high_contrast_section" ] \
     && printf '%s\n' "$high_contrast_section" | rg -Fq 'references/good-ui-principles.md' \
@@ -331,11 +329,14 @@ if [ -f "$anti_patterns" ]; then
     bad "High Contrast Without Purpose must route to Good UI decision hierarchy/project tokens and measured rendered pairs"
   fi
 
-  if ! printf '%s\n' "$high_contrast_normalized" | rg -q \
-    '((literal|pure)?[ -]*(black|white)[^.!?]*(inherently|universally|always)[^.!?]*(wrong|bad|avoid))|((literal|pure)?[ -]*(black|white)[^.!?]*(forbidden|prohibited))|((forbid|forbidden|prohibit|prohibited|never|must not|do not use)[^.!?]*(literal|pure)?[ -]*(black|white))|((use|choose|prefer|require|must|always)[^.!?]*(near-black|off-white)[^.!?]*instead of[^.!?]*(black|white)[^.!?]*(always|(in )?(every|all)[ -]*(case|cases|context|contexts)))|(((in )?(every|all)[ -]*(case|cases|context|contexts)|always)[^.!?]*(use|choose|prefer|require|must)[^.!?]*(near-black|off-white)[^.!?]*instead of[^.!?]*(black|white))|((black|white)[^.!?]*(must|required)[^.!?]*(replace|replaced|substitute|substituted)[^.!?]*(near-black|off-white))'; then
-    ok "Legacy high-contrast anti-pattern does not ban literal black or white universally"
+  # Evidence-policy review is required for any edit to these two high-risk legacy
+  # sections. Update a snapshot only after intentionally reviewing the full section.
+  high_contrast_hash=$(anti_pattern_section "High Contrast Without Purpose" | git hash-object --stdin)
+  arbitrary_spacing_hash=$(anti_pattern_section "Arbitrary Pixel Values" | git hash-object --stdin)
+  if [ "$high_contrast_hash" = "ee1a084a10efd2015bba4791b797d289b5e91ee3" ]; then
+    ok "Legacy high-contrast guidance matches its evidence-reviewed snapshot"
   else
-    bad "High Contrast Without Purpose must not imply literal black or white is inherently wrong"
+    bad "High Contrast Without Purpose changed; require evidence-policy review and intentional snapshot update"
   fi
 
   if [ -n "$arbitrary_spacing_section" ] \
@@ -348,11 +349,10 @@ if [ -f "$anti_patterns" ]; then
     bad "Arbitrary Pixel Values must route to Good UI project tokens/relationships and label 4/8 rhythm as fallback heuristic"
   fi
 
-  if ! printf '%s\n' "$arbitrary_spacing_normalized" | rg -q \
-    '((only|always|must|required)[^.!?]*(use )?spacing[^.!?]*(divisible by 4|multiples? of 4|0\.25rem increments?))|((every|all)[^.!?]*(spacing|value)[^.!?]*(must|required|only|always)?[^.!?]*(divisible by 4|multiples? of 4|0\.25rem increments?))|((spacing|values?)[^.!?]*(must|required|always|only)[^.!?]*(be )?(on )?(divisible by 4|multiples? of 4|0\.25rem increments?))|((spacing|values?)[^.!?]*(divisible by 4|multiples? of 4|0\.25rem increments?)[^.!?]*(always|(in )?(every|all)[ -]*cases?))|(avoid[^.!?]*non-?[ -]?multiples?[^.!?]*(of )?4)'; then
-    ok "Legacy spacing anti-pattern does not universalize a four-unit scale"
+  if [ "$arbitrary_spacing_hash" = "00490074936ec62bdd98b2753264d663b139c276" ]; then
+    ok "Legacy spacing guidance matches its evidence-reviewed snapshot"
   else
-    bad "Arbitrary Pixel Values must not require every spacing value to be divisible by 4 or 0.25rem"
+    bad "Arbitrary Pixel Values changed; require evidence-policy review and intentional snapshot update"
   fi
 else
   bad "references/anti-patterns.md"
