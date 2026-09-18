@@ -2,6 +2,13 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## [2.4.8] — 2026-09-18
+
+### Fixed
+
+- Clarify the anti-pattern quick checklist: avoid unexplained off-system spacing, start with project tokens and layout relationships, document exceptions, and verify the rendered result
+- An isolated agent reading the installed v2.4.7 pack found the remaining checklist wording; this was not a fresh app-session test, and fresh installed-session verification remains unverified
+
 ## [2.4.7] — 2026-09-16
 
 ### Fixed

@@ -298,7 +298,7 @@ Before considering UI complete, scan for:
 
 - [ ] No purple/indigo colors unless in token file
 - [ ] No excessive gradients
-- [ ] No arbitrary pixel values
+- [ ] No unexplained off-system spacing: start with project tokens and layout relationships; document exceptions and verify the rendered result
 - [ ] No oversized padding everywhere
 - [ ] No skipped heading levels
 - [ ] No generic hero sections
