@@ -6,6 +6,10 @@ All notable changes to the **Frontend Expert** pack will be documented in this f
 
 ### Changed
 
+- Add task-shaped block and component anatomy for repeated editors, queues, charts and draft-review workspaces within existing owners
+- Connect reference observations to explicit composition decisions; use available product evidence to choose marketing sequences
+- Extend rendered craft comparison guidance and E31 with five matched briefs, local readability checks and explicit improvement/regression reporting
+
 - Define project-first control size tuples, separate visual and interactive boxes, and stable versus intentional measured-morph width policies across existing component, surface and optical owners
 - Reconcile layout-animation guidance with bounded disclosure/morph transitions; add interruption, input alternatives, nested reduced-motion, live-chart and stream-follow contracts
 - Align loading examples with retained accessible labels and extend E20/E33 application scenarios without adding skills or motion families

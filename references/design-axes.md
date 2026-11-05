@@ -36,6 +36,25 @@ Always map inspiration onto **project tokens** — never paste a foreign palette
 
 ## Style inference (before inventing UI)
 
+### Turn a reference into decisions
+
+**Classification: recommendation.** A well-crafted reference is evidence to inspect, not a style name to imitate. Read it at three scales: page composition, block anatomy, and component/state detail. Separate observed geometry/behavior from guesses about its implementation; a screenshot cannot prove motion timing.
+
+For the chosen direction, record a short **craft intent**: the user's task, the dominant content form, and two or three visible decisions that serve it. For example: “Dispatch work prioritizes exceptions in aligned rows; selection keeps details beside the queue; healthy work stays quieter.” “Modern, premium, clean” is not an implementation decision.
+
+| Reference observation | Transferable decision | Do not automatically transfer |
+|---|---|---|
+| A compact editor aligns labels, values and actions | Shared tracks and bounded field widths for repeated editing | Its exact font, pill shape or 8px gap |
+| A trigger visibly becomes its detail surface | Preserve identity/origin and focus across states | Morph every menu and navigation item |
+| A feature is shown through a usable product specimen | Use the actual domain object as proof | A decorative mock dashboard or fabricated data |
+| A chart keeps labels, plot and inspector distinct | Give labels their own readable geometry | SVG scaling, gradients and entrance timing |
+
+Name one competing structure and why it fits less well; keep the choice lightweight when the direction is already approved. Different tasks should lead to different compositions, not five instances of one rounded-card shell. Conversely, a familiar table or ordinary button is correct when it best supports the task—novelty is not a requirement.
+
+**Specificity test:** if replacing the product name leaves every region, component and interaction equally plausible, inspect whether the real domain objects and decisions are visible. Fix content form and workflow before adding expressive effects. Keep one restrained expressive detail only where it strengthens identity or feedback; zero is valid in a dense work surface.
+
+Map decisions into owners: `design-foundations.md` for block choice, `component-patterns.md` for anatomy, `motion.md` for state continuity, and `prototype.md` for rendered proof. Carry craft intent through the build so the final review can test it against visible results rather than adjectives.
+
 1. Prefer project design system / CSS variables / Tailwind theme
 2. Skim 2–3 real components: Button, Card, Form/Input
 3. Note: radius, padding, shadow, type sizes, border treatment

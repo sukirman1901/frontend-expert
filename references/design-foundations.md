@@ -15,6 +15,31 @@ Start with the work the screen must support, not a preferred grid. Inventory pri
 
 ## Container and grid strategy
 
+### Choose blocks by the work they carry
+
+**Classification: recommendation.** Build a page out of task-shaped regions, not a catalog of attractive rectangles. For each region name its job, primary content, supporting context, action and responsive transformation. A card is a boundary choice, not the default content form.
+
+| User's work | Block anatomy | Narrow-width transformation | Avoid |
+|---|---|---|---|
+| Triage exceptions | Compact status context → aligned exception queue → selected-item inspector | Keep selection visible; show an inline detail or explicit list/detail view with return context | Large equal-weight KPI tiles ahead of urgent work |
+| Compare records | Shared column headers, aligned values, stable row-action edge | Prioritize fields, use a labeled detail view or deliberate table scroll | Independently formatted cards that erase comparison |
+| Edit repeated settings | Section explanation → shared label/field/action tracks → local errors → save boundary | Stack fields when their usable intrinsic width fails; move secondary actions beneath the relevant row | One oversized card per input or squeezed native time fields |
+| Inspect a trend | Definition/range → local series controls → plot with readable axes → values/inspection | Recompute marks and label stride; keep text legible and controls reachable | Shrinking an entire desktop SVG or giving the toolbar more weight than the data |
+| Review generated work | Request context → draft/artifact → linked evidence → explicit next action; activity subordinate | Sources accessible from the draft; composer and artifact retain usable space | Every tool event as an equally prominent chat bubble |
+| Manage files/tasks | Stable identity marker → title/meta → status/progress → local recovery/action | Preserve identity/status before secondary metadata | Motion that detaches errors or retry from the affected item |
+| Explain a product | Promise → actual product specimen → capability demonstration → next step | Preserve the story/proof order, not alternating columns mechanically | Logo/testimonial sections without supplied proof |
+| Choose among options | Comparable names, differentiating facts and selected state | Keep comparison criteria visible or reveal details per option | Styling all choices as primary actions |
+
+Related detail: `component-patterns.md` → **Task-shaped component anatomy**. Do not import all rows into every page. Use only the jobs actually present.
+
+### Compose the page, not just its blocks
+
+Choose a dominant region and subordinate context. Give repeated regions common scanning anchors; give different jobs distinct forms. Vary section density only when the reading task changes, not to satisfy an arbitrary asymmetry quota. A public product page can move from a spacious promise to a focused specimen to compact supporting facts; a work queue usually benefits from steady density instead.
+
+Before styling, read the sequence as a sentence: “notice the exception → inspect its context → act → confirm the result.” If a block does not advance that sequence, remove, merge or subordinate it. On marketing pages the sequence may be “understand → see how it works → judge fit → try”; verified evidence determines which proof sections exist.
+
+On responsive changes, protect the job of each region. An inspector moved below a long list can lose the selected-item context; fields in a two-column row can clip their own values even when the page has no horizontal overflow. Inspect these local boundaries and the distance between action and result, not only `document.scrollWidth`.
+
 Choose a container and grid from content relationships. Do not assume a universal column count or maximum width.
 
 | Content/task condition | Prefer | Verify |

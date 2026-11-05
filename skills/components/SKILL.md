@@ -66,7 +66,7 @@ last_verified: 2026-09
 
 1. **Reuse** — find the project primitive before adding a new component.
 2. **Contract** — list data, events, exclusive modes, and states; delete style props.
-3. **Compose** — slots for optional chrome; fetch data outside presentational components.
+3. **Compose** — select the task-shaped anatomy in `references/component-patterns.md` (editor, queue/inspector, chart, agent workspace); assign identity/content/context/state/action regions, then slots for optional chrome. Fetch data outside presentational components.
 4. **States** — loading / error / empty / default; selects and icons as above.
 5. **Control geometry** — choose density/size tuple and stable vs intentional morph width; construct text-only, leading-icon, trailing-icon, icon-only, and pending variants. Distinguish glyph, slot, surface, hit area and focus ring.
 6. **Verify** — keyboard, 320–1440, Conventions check.
