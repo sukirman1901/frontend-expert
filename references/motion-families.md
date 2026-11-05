@@ -34,6 +34,21 @@ user intent → pick 1 family (max 2) by peruntukan
 | List → detail continuity | Morph & Transform | `shared-element` |
 | 3D showcase | 3D & Perspective | `orbit-carousel, coverflow — perf check` |
 
+## Product-state selection
+
+Use these combinations within the existing catalog; they are recipes, not extra families or a reason to animate every state. Operational contracts and data/stream recipes: `motion.md` → **Product-state motion contracts**.
+
+| Intent | Existing family/pattern | Decision |
+|---|---|---|
+| Async action feedback | Micro Interaction: `spinner-replace`, `count-tick` | Stable footprint by default; measured width only by explicit control policy |
+| Persistent selection | Spotlight & Focus: `tab-ink-bar` | Preserve selection identity; state changes immediately, indicator follows |
+| Dynamic disclosure | Spotlight & Focus: `accordion-focus` | Bounded intrinsic-size transition, not scale of still-occupied content |
+| Trigger → search/detail | Morph & Transform: `button-to-input`, `shared-element` | Preserve origin and focus; instant functional endpoint under reduced motion |
+| Live chart values | Micro Interaction: `count-tick`, `progress-fill` where applicable | Geometry updates follow data identity/domain; not a replayed entrance or an invented chart pattern |
+| Stream-follow | Scroll-based behavior; no decorative pattern required | Follow only when reader opts in/is near latest; preserve manual scroll |
+
+Gesture snap, direction-aware swaps and local stagger should clarify an existing relationship, not delay access. See recipe contracts for cancellation, rapid reversal and input alternatives.
+
 ## Anti-patterns
 
 - Stacking Hero + 3D + Text + Spotlight + Carousel in one viewport
@@ -53,7 +68,7 @@ user intent → pick 1 family (max 2) by peruntukan
 | Text Motion | Animasi tipografi: word/char reveal, typewriter, rolling, marquee type. | Marketing; avoid in forms/product density |
 | Carousel & Continuous Flow | Aliran konten horizontal/sirkular: marquee, filmstrip, snap, story rail. | Mostly marketing / logo clouds |
 | Grid Motion | Animasi berbasis layout grid: bento reveal, flip, masonry, elastic cells. | Marketing / feature grids |
-| Spotlight & Focus | Mengarahkan perhatian: center stage, blur dim, cursor spotlight. | Marketing features |
+| Spotlight & Focus | Mengarahkan perhatian: center stage, blur dim, cursor spotlight; selection/disclosure. | Product = tab/accordion; expressive effects = marketing |
 | Stack & Scatter | Tumpukan/sebar kartu: deck, fan, cascade, poster burst. | Marketing only |
 | Hero Section Motion | Signature landing: parallax, floating device, orb/aurora — max satu signature. | Marketing; max 1 signature per page |
 | Morph & Transform | Transisi bentuk/kontainer: shared element, FAB morph, path morph. | Rare; shared element OK in product |
@@ -210,7 +225,7 @@ user intent → pick 1 family (max 2) by peruntukan
 
 **Peruntukan:** Mengarahkan perhatian: center stage, blur dim, cursor spotlight.
 **Bukan untuk:** Noise seluruh halaman tanpa hierarki.
-**Lane:** Marketing features
+**Lane:** Product for `tab-ink-bar` / `accordion-focus`; marketing for expressive spotlight effects
 
 | Pattern | Definisi | Peruntukan | Hand-roll hint |
 |---------|----------|------------|----------------|

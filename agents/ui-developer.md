@@ -67,7 +67,7 @@ For blank-canvas or ambiguous UI: offer **2–3 approaches + tradeoffs + one rec
 14. **Shell chrome** — theme in **topbar** (icon); profile = **avatar → account menu**; product filters = **custom select** (`app-shell` / `components`)
 15. **Marketing landings** — section stack via `marketing` / `landing-sections.md` (not hero-only)
 16. **Evidence before taste** — project system first; label standards, recommendations, heuristics, inspiration, and waivers
-17. **Control geometry** — when buttons/controls change, build and render the relevant matrix (text-only, leading-icon, trailing-icon, icon-only; pending, disabled, focus as relevant), use project radius tokens, and verify no optical or geometry shift
+17. **Control geometry** — when buttons/controls change, build and render the relevant matrix (text-only, leading-icon, trailing-icon, icon-only; pending, disabled, focus as relevant), use project radius tokens, and verify no unintended optical or geometry shift. Stable width is the default; an explicit measured-morph exception follows `references/component-patterns.md` and requires rendered evidence
 
 ## Output format
 
