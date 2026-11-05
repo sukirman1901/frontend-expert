@@ -60,6 +60,29 @@ Do not treat `className` as a substitute for a missing slot, and do not treat `c
 
 ## Button
 
+### Control size contract
+
+**Classification: recommendation.** Use the project's control tokens first. Define each density/size as one tuple, not independently chosen padding and font values:
+
+| Dimension | Decision |
+|---|---|
+| Min-height + line-height | Fit the actual label and zoom; choose wrap, truncation with an accessible full label, or row reflow deliberately |
+| Padding-inline + gap | Symmetric outer padding, logical start/end slots; density belongs to the control family |
+| Icon slot | Fixed non-shrinking box; glyph bounds can be smaller and optically corrected inside it |
+| Radius | Project token; nested relationships belong to `design-surfaces.md` |
+| Interactive target + focus ring | Measure separately from the visible surface and glyph; hit-area expansion must not overlap adjacent actions |
+
+For scale comparison only, a compact/regular/large button might use heights 32/40/48px, inline padding 12/20/24px, gaps 6/8/8px and text 12/14/16px. These are **illustrative inspiration**, not accessibility thresholds or a required preset. A 64px expressive CTA and a dense toolbar control serve different purposes. Prefer min-height where text can wrap; verify long translations, narrow widths, zoom and relevant RTL before accepting the tuple.
+
+### State width policy
+
+| Policy | Use when | Contract |
+|---|---|---|
+| **Stable footprint (default)** | Submit actions, dense toolbars, adjacent click targets | Retain label/slot dimensions during pending; overlay feedback without shifting neighboring actions |
+| **Measured morph (explicit exception)** | A status control deliberately changes size and has room | Measure intrinsic content, constrain width to available space, reserve a stable surrounding action region, and animate the shell without scaling text |
+
+An intentional morph is not an accidental loading shift. State the policy before implementation. Both policies preserve the accessible action name while pending, expose busy/status semantics, prevent duplicate actions, retarget on rapid state changes, and retain a usable instant reduced-motion endpoint. A changed action may have a new accessible name; do not announce every animated letter. Verify final labels and focus, not just the shell animation. Report a measured morph as an explicit geometry exception in the existing Conventions check, with rendered evidence; it does not waive optical inspection.
+
 ### Button content geometry
 
 Keep button content as one stable inline layout. Outer inline padding is symmetric and tokenized; the gap and icon size also come from control tokens. Logical `start`/`end` slots preserve reading-order semantics in both LTR and RTL.
@@ -113,9 +136,10 @@ export function SubmitButton({ isLoading }: { isLoading: boolean }) {
     <Button 
       type="submit" 
       disabled={isLoading}
+      aria-busy={isLoading}
       className="bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))]"
     >
-      {isLoading ? "Submitting..." : "Submit"}
+      <ButtonContent pending={isLoading}>Submit</ButtonContent>
     </Button>
   )
 }
@@ -144,6 +168,8 @@ export function SubmitButton({
 ```
 
 ## Card
+
+Choose one inset/gap density for the card family (for example 16px compact or 24px relaxed only if those project tokens fit). Separate header, content and action regions; do not repeat the entire card padding inside each nested child. Radius/inset geometry is owned by `design-surfaces.md`, not by the padding example.
 
 ### Good: Composable, token-based
 

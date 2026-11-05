@@ -27,13 +27,15 @@ This follows concentric geometry for uniform inset. CSS itself calculates a box�
 
 For asymmetric inset, reason per axis/corner. For pills and circles, preserve the intended shape. Account for border thickness, clipping, and the browser’s proportional radius reduction when adjacent radii exceed box dimensions.
 
+For example, an inner 16px radius separated by a uniform 6px visual inset suggests an outer 22px radius **only if** the curves share a center. Measure the actual inset between the relevant edges, including borders; padding alone may not equal it. These numbers illustrate the relationship, not new project tokens.
+
 ## Control-family radius consistency
 
 Buttons and related controls use the project's radius tokens. Review the family together—text-only, leading-icon, trailing-icon, and icon-only variants—at the sizes and states that changed. A shared token is the baseline; rendered optical balance remains the proof because glyph bounds, label length, border thickness, and control size can change the perceived curve and centering.
 
 For a control nested inside another control surface, use `outer ≈ inner + inset` only when the two curves share a visual center. This is a conditional relationship, not a universal radius value or formula. Preserve explicit exceptions: pills, circles, segmented controls, asymmetric inset, and deliberate brand geometry. Document intentional exceptions rather than forcing them back onto the default control radius.
 
-Check pending, disabled, hover/pressed, and focus treatments as relevant. Added spinners, borders, rings, or icon swaps must not change the control's content-box dimensions, radius, or alignment.
+Check pending, disabled, hover/pressed, and focus treatments as relevant. Added spinners, borders, rings, or icon swaps must not accidentally change the control's content-box dimensions, radius, or alignment. For an explicit measured-morph width policy (`component-patterns.md`), inspect both endpoints and the transition; preserve the intended corner relationship and stable neighboring targets rather than forcing identical endpoint widths.
 
 ### Control geometry checklist
 

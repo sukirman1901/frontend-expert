@@ -141,6 +141,8 @@ FIX … | DONE | STOP (cap)
 
 ## Depth
 
+Geometry exceptions: an explicit measured-morph policy from `references/component-patterns.md` must be reported with endpoint/playback evidence and stable neighboring targets. The default stable-pending gate still applies to ordinary controls; accidental shifts are defects.
+
 - Lifecycle A→Z: `references/fe-lifecycle.md`
 - Judgment: `design-direction`
 - Build: `tokens`, `components`, `design-surfaces` when radius is implicated, **`anti-slop-code`**, **`responsive`**, **`motion`** (`motion-families.md`), `anti-slop-design`, `polish`, `accessibility`

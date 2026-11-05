@@ -26,8 +26,9 @@ Full catalog: `references/motion-families.md` (12 families · 144 patterns).
 
 - Static token/color-only tweaks
 - User asked for zero animation / “tanpa animasi”
-- Prefers-reduced-motion (still ship CSS that disables)
 - Inspecting / explaining existing motion → `motion-inspection`
+
+Reduced-motion users still need state changes and usable instant/opacity fallbacks; skip spatial/decorative effects, not the interaction contract.
 
 ## Lanes
 
@@ -58,10 +59,10 @@ Full catalog: `references/motion-families.md` (12 families · 144 patterns).
 1. **Lane** — product shell vs marketing
 2. **Family** — match peruntukan (max 2 families)
 3. **Patterns** — name 1–2 from `motion-families.md`; read definisi + hand-roll hint
-4. **Implement** — CSS / Framer Motion / GSAP from definisi; project tokens; `transform`/`opacity`
+4. **Contract + implement** — record trigger/state identity, properties, interruption, input alternatives and reduced-motion endpoint (`motion.md`). Prefer `transform`/`opacity`; use bounded measured size/layout when disclosure or morph requires it.
 5. **Budget** — ≤2–3 intentional motions per viewport
 6. **A11y** — `prefers-reduced-motion: reduce` (opacity/instant fallbacks); never meaning-by-motion-alone
-7. **Report** — Conventions: `Motion: light shell | families: Hover+Reveal | patterns: lift-hover, fade-up`
+7. **Report** — Conventions: `Motion: light shell | families: Hover+Reveal | patterns: lift-hover, fade-up`; distinguish source/state checks from actual target playback and performance measurements.
 
 ### Shell defaults (product)
 
@@ -69,6 +70,8 @@ Full catalog: `references/motion-families.md` (12 families · 144 patterns).
 - Mobile drawer: `drawer-slide` + backdrop fade
 - Controls: `press-scale` (0.96)
 - `scroll-behavior: smooth` (disabled under reduced-motion)
+
+Smooth scroll is not permission to auto-scroll incoming data. Product-state recipes in `references/motion.md` govern chart updates, disclosure and stream-follow; a reader who scrolls upward keeps control.
 
 ### Hard rules
 
@@ -83,6 +86,7 @@ Full catalog: `references/motion-families.md` (12 families · 144 patterns).
 - [ ] Named patterns listed (≤2–3 motions in viewport)
 - [ ] Hand-rolled from definisi (not registry-as-answer)
 - [ ] `prefers-reduced-motion` handled
+- [ ] Rapid reversal, nested motion, focus/keyboard and gesture cancellation checked where relevant; final data/state stays truthful
 - [ ] No layout-thrashing / decorative spam
 - [ ] Conventions Motion line filled
 

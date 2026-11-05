@@ -354,7 +354,54 @@ function AnimatedComponent() {
 }
 ```
 
-## Micro-Interactions
+## Product-state motion contracts
+
+**Classification: recommendations.** Project motion tokens and existing primitives take precedence. Name the existing family/pattern where applicable; data and scroll behavior need not acquire a decorative pattern. Record these decisions for each changed interaction:
+
+| Field | Contract |
+|---|---|
+| Purpose + trigger | What action/change does motion explain? State changes immediately; animation completion must not authorize or delay the action |
+| Identity + origin | Keep stable data keys/selection identity and a meaningful origin; do not remount unchanged content to replay entrance |
+| Properties + timing | Choose transform/opacity first; bounded size/layout transitions when flow must change. Specify easing or spring role, not arbitrary bounce everywhere |
+| Interruption | Retarget from the current visual state; cancel stale timers/completions on reversal, replacement and unmount |
+| Input | Keyboard activation/focus, touch equivalent, pointercancel/lost capture cleanup, and a non-drag alternative where applicable |
+| Reduced motion | Show the final state immediately or with a short opacity change; remove travel, scale, blur, stagger and decorative loops. Check child/CSS/layout animations too |
+| Evidence | Separate source inspection, state assertions, target screenshots, temporal playback and measured performance; none substitutes for all the others |
+
+### Disclosure and origin-aware morph
+
+- For an accordion, animate a clipped outer shell only when surrounding flow must change. Measure the inner content (including late fonts/images or streamed text) and retarget its size; leave it intrinsically sized after settling. `height: auto` entry alone does not prove dynamic resizing is smooth. Avoid read/write layout loops and observation feedback on the animated shell.
+- Keep a native trigger with `aria-expanded` and a stable `aria-controls` relationship. Closed/exiting content must not remain focusable; return focus to the trigger before hiding a focused descendant. Use an appropriate hidden/inert lifecycle, not opacity alone.
+- For trigger-to-panel morphs, animate a shared shell/origin while keeping text/glyph scale undistorted. Bound the panel to the viewport. Focus the usable input without waiting for decorative motion; support Escape, dismissal and focus restoration.
+- On rapid open/close, reverse from the current visual state rather than queueing full transitions. Semantic open/closed state is authoritative even if the exit is still painting.
+- Reduced motion directly applies the open/closed endpoint with the same semantics. Verify a late content resize, repeated reversal, keyboard dismissal and focus return on the actual component.
+
+### Selection, gestures and local choreography
+
+- Selection indicators follow the selected ID; arrow-key navigation must not wait for the indicator. Direction-aware content swaps derive direction from item order/history, not a constant left/right entrance.
+- Drag/snap declares activation threshold, bounds, resistance and velocity policy. Preserve page scrolling on the other axis; clean up on pointercancel, lost capture and unmount. Cancelled gestures must not fire stale click actions. Provide explicit buttons/keyboard actions for the same outcome.
+- Hover is enhancement. Touch may use visible labels or an explicit reveal control; first-tap reveal/second-tap activation is an optional pattern, not a universal toolbar rule.
+- Bound stagger to a small new group and a total delay budget. Do not stagger every streamed token or hold critical controls until an entrance completes.
+
+### Live charts and numeric updates
+
+- Treat loading, empty, error and valid data separately. Placeholder values are not real data; expose an accessible table/summary for actual values and keyboard-accessible inspection where interactive.
+- Keep series/point IDs stable. Choose and disclose domain behavior; preserve missing-data gaps. A domain change must not appear to be a data change. Interpolation is visual continuity, not additional measured samples.
+- Retarget/coalesce burst updates instead of queueing every transition. Never replay a full chart entrance on every update. Tooltip, selection and accessible values must refer coherently to the current data snapshot, not invented intermediate values.
+- Use tabular numerals for rolling values, preserve precision/sign/units, and announce meaningful final changes rather than every animation frame. Reduced motion applies final geometry/value immediately.
+- Verify burst updates, filtering/removal of the selected series, all-zero/missing data, domain changes, keyboard inspection and actual frame/layout performance before calling updates smooth.
+
+### Streaming and follow-latest
+
+- Follow incoming content only while the reader is near the latest content or explicitly enables follow. User scroll away suspends following; offer a keyboard-accessible jump/resume control and preserve reading position as content grows above it.
+- Do not repeatedly smooth-scroll per token or use typewriter effects to delay available text. Batch meaningful updates; avoid live-region announcements on every token.
+- Resume only on explicit action or return to the follow region. Reduced motion uses instant repositioning when following; it never overrides the user's reading position.
+
+### Timing by role
+
+Use a firm, short settling response for press/selection; a calmer shell transition for panels; stronger tracking for direct manipulation. Easing is useful for bounded fades/exits, springs for interruptible continuity. Spring stiffness/damping/mass are coupled and do not promise a fixed duration. Scale depends on surface size and density: a small expressive button's press scale is not a large panel's default. Tune from project tokens and inspect rapid reversals, not just a single ideal playback.
+
+## Micro-interaction examples
 
 ### Button States
 
@@ -368,100 +415,44 @@ function AnimatedComponent() {
   Button
 </motion.button>
 
-// Loading state
-function LoadingButton({ isLoading, children }) {
-  return (
-    <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      disabled={isLoading}
-    >
-      <AnimatePresence mode="wait">
-        {isLoading ? (
-          <motion.div
-            key="spinner"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, rotate: 360 }}
-            exit={{ opacity: 0 }}
-            transition={{ rotate: { repeat: Infinity, duration: 1 } }}
-          >
-            <Spinner />
-          </motion.div>
-        ) : (
-          <motion.span
-            key="text"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            {children}
-          </motion.span>
-        )}
-      </AnimatePresence>
-    </motion.button>
-  )
-}
 ```
+
+For loading, use the retained-label `ButtonContent` / `SubmitButton` example in `component-patterns.md`: overlay an `aria-hidden` spinner, keep the accessible action name and footprint, and set `aria-busy`. Do not replace the label node with a spinner. Gate hover effects on hover capability, remove scale/spinner rotation under reduced motion, and suppress press scale in dense toolbars. An explicitly chosen measured-width morph uses the separate state-width policy there.
 
 ### Toggle Switch
 
 ```tsx
-function Toggle({ isOn, onToggle }) {
+function Toggle({ isOn, onToggle, label, disabled = false, dir = 'ltr' }) {
+  const reduce = useReducedMotion()
   return (
-    <div
+    <button
+      type="button"
+      role="switch"
+      aria-checked={isOn}
+      aria-label={label}
+      disabled={disabled}
+      dir={dir}
       onClick={onToggle}
-      className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-colors ${
-        isOn ? 'bg-green-500' : 'bg-gray-300'
+      className={`flex w-12 h-6 items-center rounded-full p-1 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:opacity-50 ${
+        isOn ? 'bg-primary' : 'bg-muted'
       }`}
     >
-      <motion.div
-        className="w-4 h-4 bg-white rounded-full"
-        animate={{ x: isOn ? 24 : 0 }}
-        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+      <motion.span
+        aria-hidden="true"
+        className="block w-4 h-4 shrink-0 bg-background rounded-full"
+        animate={{ x: isOn ? (dir === 'rtl' ? -24 : 24) : 0 }}
+        transition={reduce ? { duration: 0 } : { type: 'spring', stiffness: 500, damping: 30 }}
       />
-    </div>
+    </button>
   )
 }
 ```
+
+The switch sketch assumes 48px track, 16px thumb and 4px inset, giving 24px travel. Replace these together from the project control tuple, including a suitable interactive target and measured contrast. Supply a persistent action label, not a changing “on/off” name.
 
 ### Accordion
 
-```tsx
-function Accordion({ title, children }) {
-  const [isOpen, setIsOpen] = useState(false)
-  
-  return (
-    <div>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full p-4"
-      >
-        <span>{title}</span>
-        <motion.span
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          ▼
-        </motion.span>
-      </button>
-      
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div className="p-4">{children}</div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  )
-}
-```
+Use `accordion-focus` with the **Disclosure and origin-aware morph** contract above. For a simple fixed-content entry, `height: 0 → auto` plus opacity can work; dynamic content needs measurement/retargeting or an instant intrinsic-size fallback. Keep trigger semantics, focusability and reduced-motion behavior in the implementation rather than treating the animation snippet as a complete accordion.
 
 ### Toast Notification
 
@@ -524,7 +515,7 @@ function PageTransition({ children }) {
 
 ### DON'T
 
-- Animate `width`, `height`, `top`, `left`, `margin`, `padding`
+- Animate layout properties continuously across broad/deep trees without a measured need. Bounded disclosure/size morphs may animate width/height when flow must change; measure inner content, constrain the scope, retarget on interruption and profile layout cost. Transform scaling alone does not change occupied layout space
 - Use too many animations at once
 - Animate elements off-screen
 - Ignore `prefers-reduced-motion`
@@ -532,14 +523,15 @@ function PageTransition({ children }) {
 ### Reduced Motion
 
 ```tsx
-import { useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 function AnimatedComponent() {
   const shouldReduceMotion = useReducedMotion()
   
   return (
     <motion.div
-      animate={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
     >
       Content

@@ -47,7 +47,7 @@ When using a **scored** pack preset, include `(score n/24)`. Use `(explicit)` or
 | **Tokens** | Project system, else full tree: custom → explicit → Plasma hard-gate → score (`token-preset-scoring.md`) | Waiver only |
 | **Slop** | No purple/indigo defaults, no Lorem, no `transition: all` | Brand token already is purple (e.g. `plasma-landing`) |
 | **Evidence** | Project system and current standards precede pack recipes; label heuristics and inspiration | Explicit product requirement |
-| **Control geometry** | For every newly built or modified button/control, render the relevant matrix of text-only, leading-icon, trailing-icon, and icon-only variants plus pending, disabled, and focus states; use project radius tokens and verify optical balance without geometry shifts | `n/a` only when control geometry did not change; otherwise explicit waiver |
+| **Control geometry** | For every newly built or modified button/control, render the relevant matrix of text-only, leading-icon, trailing-icon, and icon-only variants plus pending, disabled, and focus states; use project radius tokens and verify optical balance without unintended geometry shifts | `n/a` only when control geometry did not change; an intentional measured-morph policy requires an explicit exception with endpoint/playback evidence and stable neighboring targets (`component-patterns.md`) |
 
 ## Icon placement expectations
 

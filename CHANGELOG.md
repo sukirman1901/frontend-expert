@@ -2,6 +2,15 @@
 
 All notable changes to the **Frontend Expert** pack will be documented in this file.
 
+## Unreleased
+
+### Changed
+
+- Define project-first control size tuples, separate visual and interactive boxes, and stable versus intentional measured-morph width policies across existing component, surface and optical owners
+- Reconcile layout-animation guidance with bounded disclosure/morph transitions; add interruption, input alternatives, nested reduced-motion, live-chart and stream-follow contracts
+- Align loading examples with retained accessible labels and extend E20/E33 application scenarios without adding skills or motion families
+- Isolated-agent application checks are separate from fresh installed-pack triggering and actual UI playback verification
+
 ## [2.4.8] — 2026-09-18
 
 ### Fixed

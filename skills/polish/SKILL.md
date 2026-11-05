@@ -65,7 +65,9 @@ Exceptions: pills/circles, dense toolbars (disable press-scale), reduced motion,
 
 Geometric centering (`inline-flex` / `items-center` / `justify-center`) is necessary but not proof. There is no universal pixel offset: compare the rendered matrix first, then apply the smallest compensation inside the fixed icon slot or glyph.
 
-Judge whether the combined icon-label content group and its perceived visual mass are balanced and centered across variants and states. Assess the label baseline/cap-height relationship to the icon separately; the label itself need not occupy the control center in an icon+text variant. Verify icon visual weight, token gap, symmetric token padding, focus, hit area, disabled, and pending/loading together, with no content-group or control-width shift. Include both LTR and RTL when the product supports them.
+Judge whether the combined icon-label content group and its perceived visual mass are balanced and centered across variants and states. Assess the label baseline/cap-height relationship to the icon separately; the label itself need not occupy the control center in an icon+text variant. Verify icon visual weight, token gap, symmetric token padding, focus, hit area, disabled, and pending/loading together, with no unintended content-group or control-width shift. Include both LTR and RTL when the product supports them.
+
+Stable pending geometry is the default. For an explicit measured-morph exception (`references/component-patterns.md`), inspect both endpoints and target playback, confirm neighboring actions remain stable, and report the exception with evidence. A deliberate morph does not excuse accidental spinner shifts or missing accessible names.
 
 ## Workflow
 

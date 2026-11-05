@@ -45,6 +45,8 @@ Manual / agent pressure tests for this pack. Run with a fresh chat that has the 
 
 ## Desk vs live
 
+E20 also includes product disclosure/interruption and live chart/stream application scenarios; E33 includes a geometry/intentional-width policy scenario. Score these separately from original rendered-target and marketing cases. An isolated application answer does not establish installed-pack triggering or UI playback quality.
+
 | Kind | What it proves | Where |
 |------|----------------|-------|
 | Desk contract | Trigger phrases still map to the right skill files | `./scripts/eval-routing-contract.sh` (also in smoke-test) |

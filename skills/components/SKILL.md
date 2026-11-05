@@ -37,7 +37,7 @@ A component’s public props are a contract. Prefer composition and project prim
 | **Tokens own visuals** | No `color` / `radius` / `shadow` / `padding` props that duplicate tokens |
 | **States in the contract** | Loading, error, empty, disabled, invalid are designed, not leftover booleans that collapse the UI |
 | **Native-capable controls** | Buttons/inputs forward useful native attributes; icon-only needs an accessible name |
-| **Control geometry** | Construct a stable inline layout with token gap/padding and a fixed, non-shrinking icon slot; pending/loading must not shift the label or control width |
+| **Control geometry** | Define a project-token size tuple and a fixed, non-shrinking icon slot. Stable pending width is the default; an explicit measured-morph exception requires bounded layout, stable surrounding targets, accessible naming and rendered proof (`component-patterns.md`) |
 | **Reicon** | Icons in nav, toolbars, empty states, icon buttons unless project lib or text-only waiver |
 | **Custom selects** | Product filters use custom select/combobox; native `<select>` only with waiver |
 | **Responsive** | Load `responsive` for layout UI; 320/768/1024/1440 + full-width primary CTA <768 |
@@ -68,7 +68,7 @@ last_verified: 2026-09
 2. **Contract** — list data, events, exclusive modes, and states; delete style props.
 3. **Compose** — slots for optional chrome; fetch data outside presentational components.
 4. **States** — loading / error / empty / default; selects and icons as above.
-5. **Control geometry** — construct text-only, leading-icon, trailing-icon, icon-only, and pending variants from the same tokenized inline layout.
+5. **Control geometry** — choose density/size tuple and stable vs intentional morph width; construct text-only, leading-icon, trailing-icon, icon-only, and pending variants. Distinguish glyph, slot, surface, hit area and focus ring.
 6. **Verify** — keyboard, 320–1440, Conventions check.
 
 ## Boundaries
@@ -83,7 +83,7 @@ last_verified: 2026-09
 - [ ] Optional regions use composition, not `show*` flags
 - [ ] No token-duplicating style props
 - [ ] Loading / error / empty handled
-- [ ] Control geometry covers text-only, leading icon, trailing icon, icon-only, and pending; token gap/padding, a fixed non-shrinking icon slot, and retained content keep label/width stable
+- [ ] Control geometry covers text-only, leading icon, trailing icon, icon-only, and pending; token gap/padding, fixed non-shrinking icon slot, stable width by default or documented measured-morph exception with rendered evidence
 - [ ] Reicon (or project lib) in the markup — or waiver
 - [ ] Filters/selects custom (or waived)
 - [ ] Responsive 320/768/1024/1440 + Conventions check

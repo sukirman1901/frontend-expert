@@ -35,3 +35,16 @@ Load `components`, `polish`, and `design-surfaces`. Treat centering as a rendere
 - Copies the conventions schema placeholder, reports `n/a`, or claims “passed” without naming the token and rendered evidence
 - Uses a prose simulation or stand-in fixture as proof for the user's target
 - Reports `not evaluated` but marks E33 pass or complete
+
+## A — Geometry and intentional width policy
+
+“Toolbar Save padat memakai label terjemahan panjang. Di tempat lain ada status button ekspresif yang sengaja berubah lebar dari idle ke success. Tentukan geometry dan strategi pending; jangan samakan ukuran semua button dengan referensi library.”
+
+- [ ] Defines a project-token size tuple: min-height, inline padding, line-height, gap, icon slot, radius and interactive target
+- [ ] Distinguishes glyph, slot, visible surface, hit area and focus ring
+- [ ] Keeps dense toolbar pending footprint stable; permits a deliberate measured-width morph for the separate expressive control
+- [ ] Constrains morph width, prevents adjacent-action displacement, keeps accessible naming/status coherent and supports interruption/reduced motion
+- [ ] Applies concentric radius only for appropriate nested surfaces, accounting for inset and borders
+- [ ] Requires long-label, narrow viewport, zoom, relevant RTL and state rendering before optical claims
+
+This policy scenario does not relax the original E33 stable-pending scenario or its actual-target render requirement. An isolated agent answer can pass policy application while live E33 remains unverified.
