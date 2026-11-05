@@ -2,6 +2,58 @@
 
 Skill entry: `skills/components/SKILL.md`. Examples may use typical product primitives — prefer the **project’s** existing components over installing a new kit. Token values come from the project system or the pack decision tree, not from raw purple/indigo.
 
+## Task-shaped component anatomy
+
+**Classification: recommendations, not a new component kit.** Start with the project's primitives and the selected block job (`design-foundations.md`). Specify the regions inside the component before choosing its surface treatment. Read only the recipe relevant to the task.
+
+| Region | Construction question |
+|---|---|
+| Identity | Which name, marker or thumbnail lets the reader recognize the object across states? |
+| Primary content | What must remain readable and dominant? Give this flexible width and an explicit wrapping rule |
+| Context | Which metadata belongs on the same baseline, a subordinate line, or in disclosure? |
+| State | Where do selected/pending/error/success appear without moving the action target or hiding the object? |
+| Action edge | Which action is local, which is primary, and what space is reserved for it? |
+| Boundary | Does this need a surface, divider, whitespace or no extra container? Nested cards require a grouping reason |
+
+### Repeated editor / scheduler
+
+- Compose a stable label/toggle track, a flexible field region and a compact secondary-action edge. Repeat their alignment across rows; do not repeat a large section heading or card padding for every field.
+- Bound field widths by the information they edit. A time pair should not stretch to fill an entire wide panel merely because space exists. Conversely, stack start/end controls when native rendering, localization or font size cannot fit; `min-width: 0` does not make clipped text readable.
+- Keep add/remove/copy attached to the affected row. Preserve input and scroll/focus context after validation; put the correction beside the field, and save status at the save boundary.
+- Off/disabled rows can be quieter but still identifiable and reversible. Adding a range preserves the day anchor; motion explains insertion rather than animating all rows on every keystroke.
+- Check repeated-row height against the editing task: aligned fields alone do not establish compactness. If secondary actions and empty spacing dominate each row, test a shared action track on wide screens while preserving labels and hit areas.
+- Verify actual native control rendering where used: time segments, AM/PM, calendar affordance and zoom. Cross-browser differences require evidence or an explicit verification gap.
+
+### Queue row / object inspector
+
+- Keep object identity, critical status and one relevant action visible; secondary metadata receives less weight. Use aligned fields for comparison and a stable selection cue tied to the object's ID.
+- Contextual detail should answer the next decision, not duplicate the entire row in a new ornamental card. Keep list selection and detail heading visibly connected.
+- On narrow screens, use an inline expansion or explicit list/detail mode with a return path and preserved filters/scroll. If stacking is chosen, bring the requested detail into view without losing the selected identity.
+- A long name must not push actions outside the container. Inspect local clipping and hit-area overlap; use row reflow or disclosure rather than hiding the problem with overflow clipping.
+
+### Chart as an analytic component
+
+- Separate title/definition/range, series controls, plot, inspector and accessible data alternative. Units and missing-data meaning belong near the plot; quiet controls must not overwhelm the comparison.
+- Size axes and labels in readable CSS pixels. Recalculate plot width, gutters, tick count and date stride at each available width; do not shrink a fixed desktop viewBox with all its text and stroke widths. Fewer labeled ticks plus exact inspection is preferable to microscopic labels.
+- Data geometry and text geometry have different constraints: keep a useful plot height, stable text scale and non-clipping edge labels. Reserve an inspector position or clamp it inside the visible region; keyboard and touch can inspect the same data.
+- Choose encoding by question: line for ordered trend, bars for magnitude comparison, distribution for spread. Do not default to a smooth area chart for every dataset, bridge missing samples, or add decorative trends.
+- Keep series IDs and definitions aligned with tooltips/table. Read **Live charts and numeric updates** in `motion.md` for interpolation, burst updates and state truth.
+
+### Agent workspace: conversation, activity, evidence and artifact
+
+- Distinguish four content roles. **Conversation** records intent; **activity** reports tool progress; **evidence** exposes sources; **artifact** is the output the user reviews/edits/uses. Their weight follows the task—do not render all four as identical bubbles/cards.
+- For review work, prioritize the artifact, then the relevant evidence; keep completed activity compact and inspectable. Error activity stays attached to its tool/item with a usable retry. Respect user-opened details rather than repeatedly auto-collapsing them.
+- Source markers point to actual supplied excerpts/links. Put source access near the supported claim or artifact; at mobile widths disclose it locally rather than burying it below a tall composer. No decorative citation numbers or invented provenance.
+- Verify that mobile reading order actually implements that relationship: provide source disclosure beside the artifact or before the composer, with matching DOM/focus order. A desktop sidebar that simply stacks after the entire workspace does not meet this intent.
+- Composer anatomy: bounded auto-growing text area, optional attachments/context, then an action rail. Keep Send/Stop in a stable slot; separate generation status from acceptance. Enter/Shift+Enter behavior respects IME composition; preserve recoverable input/partial output on failure.
+- Allocate explicit space to transcript/artifact/composer if using a viewport workspace. Put scrolling on the intended content region (`min-height: 0` where needed), avoid nested accidental scrollers, and never clip status or recovery behind a fixed footer. Natural document flow is also valid; choose deliberately.
+- When the product requires approval or acceptance, display the actual action and consequence separately from generated output. Generation completion is not execution/approval. Do not add approval UI to unrelated workflows.
+- For streaming, use the follow-latest contract in `motion.md`; inspect long content, Stop, Retry, source expansion and narrow-screen reading position.
+
+### Craft pass across the family
+
+Render one representative component through its states before multiplying it across a page. Compare text-start alignment, label/value proximity, icon-slot weight, action edge, border/inset relationship and state continuity. Keep shared values in tokens; deliberate differences should follow role/density, not accidental one-off styling. Review at actual size, not only enlarged screenshots or a component isolated from its neighbors.
+
 ## Props and public API
 
 ```yaml

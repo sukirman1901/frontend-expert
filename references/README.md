@@ -8,9 +8,9 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 
 | Reference | Skill | Used by |
 |-----------|-------|---------|
-| `design-axes.md` | `design-direction` | Axes, inspiration, style inference |
-| `prototype.md` | `prototype` | Rendered variants, state stress |
-| `design-foundations.md` | `design-foundations` | Grid, spacing rhythm, alignment, density, composition |
+| `design-axes.md` | `design-direction` | Axes, reference-to-decision craft intent, style inference |
+| `prototype.md` | `prototype`, `quality-loop` | Rendered variants, state stress, matched craft comparisons |
+| `design-foundations.md` | `design-foundations` | Task-shaped block selection, page cadence, grid, alignment, density |
 | `ux-foundations.md` | `design-direction`, `tokens`, `accessibility` | Nielsen/Gestalt, color |
 | `fe-lifecycle.md` | `quality-loop`, `design-direction` | A→Z FE process |
 | `compliance-gates.md` | always-on, `components`, `ui-developer` | Ship checklist |
@@ -20,7 +20,7 @@ Pillars: [`docs/pillars.md`](../docs/pillars.md).
 | `good-ui-principles.md` | `anti-slop-design` | Evidence-aware craft review; routes to `design-foundations`, `design-color`, `design-typography`, `components`, `forms`, `accessibility`, and other domain owners |
 | `anti-slop-code.md` | `anti-slop-code` | Generated implementation, blast radius, field errors |
 | `polish.md` | `polish` | Micro craft |
-| `component-patterns.md` | `components` | Composition patterns |
+| `component-patterns.md` | `components` | Anatomy for editors, queues, charts and agent workspaces; control geometry and composition |
 | `reicon-icons.md` | `components` | Default icons |
 | `architecture.md` | `components`, `architecture` | State ladder |
 | `fe-architecture.md` | `architecture` | Feature folders / boundaries |

@@ -71,6 +71,25 @@ last_verified: 2026-09
 
 ## Review output
 
+### Craft comparison, not a taste score
+
+For a user-requested quality comparison, freeze the brief, factual content, tokens, states and viewport before rendering variants. If comparing instruction versions, use isolated runs with the same inputs and record generation differences; a single pair is evidence of those outputs, not a universal improvement rate. Synthetic evaluation fixtures must be labeled and must not replace the actual target in fidelity/optical acceptance.
+
+| Lens | Observe in the actual render | Specific correction |
+|---|---|---|
+| Task specificity | Can the user identify the domain object and next decision without a generic explanatory banner? | Replace generic tiles with an appropriate queue/editor/plot/artifact anatomy |
+| Composition | Dominant region, subordinate context, shared scan anchors and reading rhythm | Change region relationships before changing colors |
+| Component craft | Legible labels/values, stable action edge, useful density, consistent inset/radius | Tune the representative family then propagate; no global optical offsets |
+| Responsive anatomy | Local fields, chart ticks, labels, selected details and source access—not just page overflow | Reflow the affected region, recompute plot labels, or disclose context locally |
+| State continuity | User action changes the correct object; pending/error/recovery remains attached | Preserve identity/focus/input and repair the state boundary |
+| Motion | Trigger, moving object, resting endpoint, reversal and reduced-motion path | Remove gratuitous motion or repair the handoff; a still cannot prove easing |
+
+Use one observation → one causal hypothesis → one change → a matched recapture. For example: “At 320px the time suffix is clipped inside the native field; the paired layout lacks usable width; stack the pair and recapture.” `scrollWidth <= innerWidth` is insufficient: text can be tiny, internally clipped or hidden behind an overlay with zero page overflow.
+
+Keep improvements and regressions in the report. Do not equate more animation, unusual geometry, larger whitespace or similarity to a reference with higher quality. Preserve already-strong parts. A plain, readable form can beat an expressive one for repeated work.
+
+Recommended result record: **target + viewport/state + artifact → observed issue/change → remaining limit**. No numerical aesthetic score without an explicit grounded rubric. Source inspection proves intent, assertions prove states, screenshots prove sampled appearance, temporal captures prove sampled motion; report the evidence actually obtained.
+
 ```markdown
 | Variant | Axis | Stress notes | Keep? |
 |---------|------|--------------|-------|

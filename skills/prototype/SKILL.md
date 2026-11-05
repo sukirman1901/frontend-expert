@@ -45,7 +45,7 @@ Judgment without a render is three similar skins. This skill **shows** 2–3 dir
 
 1. **Inherit** — load `design-direction` first if axes are not yet named.
 2. **Render** — place 2–3 variants side by side (≥1024) or stacked (<768).
-3. **Stress** — run the state matrix on the recommended variant (all variants if cheap).
+3. **Stress** — run the state matrix on the recommended variant (all variants if cheap); inspect local clipping and text/plot readability at actual size, not just viewport overflow. Use the craft-comparison lenses in `references/prototype.md`.
 4. **Recommend** — one winner + why; wait unless they already picked.
 5. **Discard** — delete or isolate losing variants; do not ship a gallery as the app.
 6. **Handoff** — foundations → tokens → (+ shell/data/forms) → components → rest of `/ui`.

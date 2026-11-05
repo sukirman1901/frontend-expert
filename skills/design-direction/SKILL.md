@@ -96,6 +96,7 @@ After direction is set:
    - Skim 2–3 existing buttons, cards, forms for padding, radius, shadow, type
    - Do **not** invent a parallel visual language
 2. **Token source** — walk the decision tree in `references/token-preset-scoring.md` (custom → explicit → Plasma hard-gate → score). Judgment sets axes/signals; it does **not** pick a preset by vibe. Include Token score / hard-gate / project system in the handoff.
+   Capture a one-sentence craft intent (task + dominant content form + 2–3 visible decisions), using `references/design-axes.md` → **Turn a reference into decisions**. Apply this even when the approach-choice gate was skipped for an already-approved direction; do not reopen approval.
 3. Load: (+ **`prototype`** if they asked to see options or stress states) → `tokens` → (+ shell/data/forms) → `components` → **`responsive`** → **`motion`** (light) → `anti-slop-design` → `polish` → `accessibility` (+ `testing` / `seo` if in scope)
 
 Optional short handoff note (when exploration was non-trivial):

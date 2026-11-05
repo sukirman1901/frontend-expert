@@ -19,6 +19,8 @@ Optional when the product needs them: **Integrations**, **Pricing**, **FAQs**, *
 
 ## Default SaaS homepage recipe
 
+This is one starting sequence **when the evidence exists**, not mandatory slots to fill. Audit supplied product facts, real visuals and permissioned proof first. Omit unsupported logos/testimonials; a working specimen or an honest explanation of the workflow can establish fit without invented social proof.
+
 ```text
 Header → Hero → Logo cloud → Features → Gallery → Testimonials → CTA → Footer
 ```
@@ -28,6 +30,19 @@ Example labels (IA only — not packages):
 `header` · `hero` · `logo-cloud` · `features` · `gallery` · `testimonials` · `cta` · `footer`
 
 If the user names a denser recipe (e.g. with pricing/FAQ), keep **one job per section** and the same anti-slop rules.
+
+## Evidence-led alternatives
+
+| Available material / buyer question | Sequence candidate | Why |
+|---|---|---|
+| A useful product workflow, no customer proof yet | Promise → usable product specimen → annotated workflow/capabilities → closing trial action | The visitor can understand what they would do without fabricated logos |
+| A comparison-heavy product | Promise → comparable task/result demonstration → differentiating facts → fit/limitations → next step | Supports evaluation instead of repeating benefits in cards |
+| Real visual work or a physical product | Hero object → detail/context views → specifications/use → next step | Imagery and information carry the evidence, not a fake dashboard |
+| Verified customer evidence plus a complex workflow | Promise → concise verified proof → workflow demonstration → deeper evidence → next step | Trust supports understanding; it does not replace the product story |
+
+These are conditional recipes, not an instruction to build every section. Derive cadence from changing reading tasks: spacious promise, focused specimen, compact supporting facts, clear closing action. Alternate columns only when it helps the narrative. A single product specimen can connect sections through a consistent object/selection; avoid repeating the same mock card with new captions.
+
+Show a real domain object with its identifying content, state and next action. For a handoff tool, a note with owner, unresolved state and usable next-step interaction communicates more than three cards labeled “Collaborate / Automate / Scale.” Keep all claims within supplied facts. A demo must be labeled as a demo, and its control must actually respond.
 
 ## Hero rules
 
@@ -51,7 +66,7 @@ If the user names a denser recipe (e.g. with pricing/FAQ), keep **one job per se
 
 ## Incomplete landing (fail)
 
-Hero (+ plasma) + thin footer **without** trust/features/CTA stack → **High** for marketing asks.
+Hero (+ plasma) + thin footer **without** product explanation/evidence and a clear next step → **High** for marketing asks. Missing unsupported testimonials or logos is not an incompleteness defect.
 
 ## Related
 

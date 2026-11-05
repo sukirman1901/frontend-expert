@@ -141,7 +141,7 @@ FIX … | DONE | STOP (cap)
 
 ## Depth
 
-Geometry exceptions: an explicit measured-morph policy from `references/component-patterns.md` must be reported with endpoint/playback evidence and stable neighboring targets. The default stable-pending gate still applies to ordinary controls; accidental shifts are defects.
+Craft review: use `references/prototype.md` → **Craft comparison, not a taste score** for matched captures, local readability and causal fixes. Geometry exceptions follow `references/component-patterns.md`: explicit measured morph needs endpoint/playback evidence and stable neighboring targets; accidental shifts remain defects.
 
 - Lifecycle A→Z: `references/fe-lifecycle.md`
 - Judgment: `design-direction`

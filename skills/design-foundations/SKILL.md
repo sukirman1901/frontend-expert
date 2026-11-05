@@ -58,13 +58,13 @@ Build structural order from content priority and user tasks. This skill owns rel
 ## Workflow
 
 1. **Inventory** — list user tasks, content priority, content shapes, actions, states, and constraints.
-2. **Structure** — choose container and grid relationships; map groups and the primary focal path.
+2. **Structure** — choose task-shaped blocks from `references/design-foundations.md`; name each job/content/action, then choose container/grid and primary focal path. Different jobs need not share the same card shell.
 3. **Rhythm** — define a small set of spacing relationships and section cadence, then request token values.
 4. **Align** — establish shared edges, baselines, axes, and intentional alignment breaks.
 5. **Density** — tune grouping, whitespace, progressive disclosure, and scan depth for the task.
 6. **Stress** — test the content stress matrix and nested/inset geometry with realistic data.
 7. **Hand off** — route type, color, surfaces, components, breakpoints, and optical finishing to canonical owners.
-8. **Verify** — confirm the hierarchy survives responsive transformations and realistic content.
+8. **Verify** — confirm hierarchy, selected-item context and local field/plot readability survive responsive transformations; no page overflow alone is insufficient evidence.
 
 ## Agent boundaries
 
